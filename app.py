@@ -214,18 +214,16 @@ def calculate_text_similarity(text1, text2):
     return combined_score
 
 def calculate_weighted_similarity(source_row, target_row):
-    """Calculate weighted similarity based on product attributes including images"""
+    """Calculate weighted similarity based on product attributes"""
     # Attribute weights (total = 100)
     weights = {
-        'product_name': 0.25,
-        'brand': 0.20,
+        'product_name': 0.30,
+        'brand': 0.25,
         'model': 0.20,
-        'dimensions': 0.12,
+        'dimensions': 0.10,
         'category': 0.08,
-        'material': 0.05,
-        'color': 0.05,
-        'description': 0.03,
-        'image': 0.02,
+        'material': 0.04,
+        'color': 0.03,
     }
     
     total_score = 0
@@ -298,22 +296,6 @@ def calculate_weighted_similarity(source_row, target_row):
             color_sim = fuzz.token_set_ratio(source_color, target_color)
         total_score += color_sim * weights['color']
         weight_applied += weights['color']
-    
-    # Description matching
-    source_desc = get_description(source_row).lower()
-    target_desc = get_description(target_row).lower()
-    if source_desc and target_desc:
-        desc_sim = calculate_text_similarity(source_desc, target_desc)
-        total_score += desc_sim * weights['description']
-        weight_applied += weights['description']
-    
-    # Image matching (if both have images)
-    source_img = get_image_url(source_row)
-    target_img = get_image_url(target_row)
-    if source_img and target_img:
-        img_sim = calculate_image_similarity(source_row, target_row)
-        total_score += img_sim * weights['image']
-        weight_applied += weights['image']
     
     # Normalize by applied weights (in case some attributes are missing)
     if weight_applied > 0:
@@ -566,55 +548,6 @@ def get_image_url(row):
                 return url_str
     return ''
 
-def calculate_image_similarity(source_row, target_row):
-    """Calculate image similarity using OpenRouter vision API"""
-    source_img = get_image_url(source_row)
-    target_img = get_image_url(target_row)
-    
-    # If either image is missing, return 0
-    if not source_img or not target_img:
-        return 0
-    
-    client = get_openrouter_client()
-    if not client:
-        return 0
-    
-    try:
-        # Use vision API to compare images
-        response = client.chat.completions.create(
-            model="google/gemini-2.5-flash-lite",
-            messages=[
-                {
-                    "role": "user",
-                    "content": [
-                        {
-                            "type": "text",
-                            "text": "Compare these two product images. Return ONLY a JSON with this format: {\"similarity\": <0-100 percentage>, \"reason\": \"<brief explanation>\"}. Consider visual appearance, size, design, and product characteristics."
-                        },
-                        {
-                            "type": "image_url",
-                            "image_url": {"url": source_img}
-                        },
-                        {
-                            "type": "image_url",
-                            "image_url": {"url": target_img}
-                        }
-                    ]
-                }
-            ],
-            max_tokens=100
-        )
-        
-        # Parse response
-        response_text = response.choices[0].message.content.strip()
-        try:
-            result = json.loads(response_text)
-            similarity = float(result.get('similarity', 0))
-            return min(100, max(0, similarity))
-        except (json.JSONDecodeError, ValueError, TypeError):
-            return 0
-    except Exception as e:
-        return 0
 
 def main():
     st.title("🔍 Product Matching & Price Comparison")
@@ -648,7 +581,7 @@ def main():
         elif data_source == "Upload Files (CSV/JSON)":
             st.markdown("**Supported formats:** CSV, JSON")
             st.markdown("**Required fields:** `name` or `product_name`, `current_price` or `price`")
-            st.markdown("**Optional:** `description`, `brand`, `retailer`, `category`, `url` or `link`, `image_url` or `image`")
+            st.markdown("**Optional:** `description`, `brand`, `retailer`, `category`, `url`, `image_url`")
             
             source_file = st.file_uploader("Source Products", type=['csv', 'json'], key='source')
             target_file = st.file_uploader("Target Products", type=['csv', 'json'], key='target')
