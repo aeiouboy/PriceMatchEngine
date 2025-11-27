@@ -8,6 +8,141 @@ from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 from io import StringIO
 import json
+import os
+from openai import OpenAI
+
+OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
+
+def get_openrouter_client():
+    """Get OpenRouter client if API key is available"""
+    if OPENROUTER_API_KEY:
+        return OpenAI(
+            api_key=OPENROUTER_API_KEY,
+            base_url="https://openrouter.ai/api/v1"
+        )
+    return None
+
+def ai_match_products(source_products, target_products, progress_callback=None):
+    """Use AI to find matching products between two lists"""
+    client = get_openrouter_client()
+    if not client:
+        return None
+    
+    matches = []
+    total = len(source_products)
+    
+    for idx, source in enumerate(source_products):
+        if progress_callback:
+            progress_callback((idx + 1) / total)
+        
+        source_name = source.get('name', source.get('product_name', ''))
+        source_brand = source.get('brand', '')
+        source_model = source.get('model', '')
+        source_category = source.get('category', '')
+        source_desc = source.get('description', '')
+        
+        target_list = []
+        for i, t in enumerate(target_products):
+            t_name = t.get('name', t.get('product_name', ''))
+            t_brand = t.get('brand', '')
+            t_model = t.get('model', '')
+            target_list.append(f"{i}: {t_name} (Brand: {t_brand}, Model: {t_model})")
+        
+        prompt = f"""You are a product matching expert. Find the BEST matching product from the target list for this source product.
+
+SOURCE PRODUCT:
+- Name: {source_name}
+- Brand: {source_brand}
+- Model: {source_model}
+- Category: {source_category}
+- Description: {source_desc[:200] if source_desc else 'N/A'}
+
+TARGET PRODUCTS:
+{chr(10).join(target_list[:50])}
+
+INSTRUCTIONS:
+1. Find products that are the SAME or very similar (same brand, model, or equivalent product)
+2. Consider brand names, model numbers, product specifications
+3. Return JSON with this format: {{"match_index": <number or null>, "confidence": <0-100>, "reason": "<brief explanation>"}}
+4. If no good match exists, set match_index to null and confidence to 0
+5. Only match if confidence is above 60%
+
+Return ONLY valid JSON, no other text."""
+
+        try:
+            response = client.chat.completions.create(
+                model="google/gemini-2.0-flash-exp:free",
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=200
+            )
+            
+            result_text = response.choices[0].message.content.strip()
+            if result_text.startswith("```"):
+                result_text = result_text.split("```")[1]
+                if result_text.startswith("json"):
+                    result_text = result_text[4:]
+            result_text = result_text.strip()
+            
+            result = json.loads(result_text)
+            
+            if result.get('match_index') is not None and result.get('confidence', 0) >= 60:
+                match_idx = int(result['match_index'])
+                if 0 <= match_idx < len(target_products):
+                    matches.append({
+                        'source_idx': idx,
+                        'target_idx': match_idx,
+                        'confidence': result.get('confidence', 0),
+                        'reason': result.get('reason', '')
+                    })
+        except Exception as e:
+            continue
+    
+    return matches
+
+def ai_enhance_matching(source_df, target_df, similarity_threshold=60, progress_callback=None):
+    """Enhanced matching using AI"""
+    client = get_openrouter_client()
+    if not client:
+        return None
+    
+    source_products = source_df.to_dict('records')
+    target_products = target_df.to_dict('records')
+    
+    ai_matches = ai_match_products(source_products, target_products, progress_callback)
+    
+    if not ai_matches:
+        return pd.DataFrame()
+    
+    matches = []
+    for match in ai_matches:
+        source_row = source_df.iloc[match['source_idx']]
+        target_row = target_df.iloc[match['target_idx']]
+        
+        source_name = get_product_name(source_row)
+        target_name = get_product_name(target_row)
+        price1 = get_price(source_row)
+        price2 = get_price(target_row)
+        price_diff = price2 - price1
+        price_diff_pct = ((price2 - price1) / price1 * 100) if price1 > 0 else 0
+        
+        matches.append({
+            'source_product': source_name,
+            'source_price': price1,
+            'source_retailer': get_retailer(source_row),
+            'target_product': target_name,
+            'target_price': price2,
+            'target_retailer': get_retailer(target_row),
+            'similarity_score': match['confidence'],
+            'price_difference': round(price_diff, 2),
+            'price_difference_pct': round(price_diff_pct, 1),
+            'source_description': get_description(source_row),
+            'target_description': get_description(target_row),
+            'source_brand': source_row.get('brand', '') if 'brand' in source_row.index else '',
+            'target_brand': target_row.get('brand', '') if 'brand' in target_row.index else '',
+            'ai_reason': match.get('reason', '')
+        })
+    
+    return pd.DataFrame(matches)
 
 st.set_page_config(
     page_title="Product Matching System",
@@ -368,14 +503,58 @@ def main():
         st.subheader("Product Matching")
         
         if st.session_state.source_df is not None and st.session_state.target_df is not None:
-            if st.button("🔍 Find Similar Products", type="primary"):
-                with st.spinner("Analyzing products for matches..."):
-                    matches_df = find_similar_products(
+            ai_available = OPENROUTER_API_KEY is not None
+            
+            col_method, col_btn = st.columns([2, 1])
+            with col_method:
+                if ai_available:
+                    matching_method = st.radio(
+                        "Matching Method:",
+                        ["Text Similarity", "AI-Powered (OpenRouter)"],
+                        horizontal=True,
+                        help="AI matching uses OpenRouter to understand product semantics for better matching"
+                    )
+                else:
+                    matching_method = "Text Similarity"
+                    st.info("Add OPENROUTER_API_KEY to enable AI-powered matching")
+            
+            with col_btn:
+                if matching_method == "AI-Powered (OpenRouter)" and ai_available:
+                    run_matching = st.button("🤖 Find Matches with AI", type="primary")
+                else:
+                    run_matching = st.button("🔍 Find Similar Products", type="primary")
+            
+            if run_matching:
+                if matching_method == "AI-Powered (OpenRouter)" and ai_available:
+                    progress_bar = st.progress(0)
+                    status_text = st.empty()
+                    status_text.text("AI is analyzing products...")
+                    
+                    def update_progress(pct):
+                        progress_bar.progress(pct)
+                        status_text.text(f"AI analyzing... {int(pct * 100)}%")
+                    
+                    matches_df = ai_enhance_matching(
                         st.session_state.source_df,
                         st.session_state.target_df,
-                        similarity_threshold
+                        similarity_threshold,
+                        update_progress
                     )
-                    st.session_state.matches_df = matches_df
+                    progress_bar.empty()
+                    status_text.empty()
+                    
+                    if matches_df is None or len(matches_df) == 0:
+                        st.warning("No AI matches found. Try using text similarity instead.")
+                    else:
+                        st.session_state.matches_df = matches_df
+                else:
+                    with st.spinner("Analyzing products for matches..."):
+                        matches_df = find_similar_products(
+                            st.session_state.source_df,
+                            st.session_state.target_df,
+                            similarity_threshold
+                        )
+                        st.session_state.matches_df = matches_df
             
             if st.session_state.matches_df is not None and len(st.session_state.matches_df) > 0:
                 matches_df = st.session_state.matches_df
@@ -445,6 +624,9 @@ def main():
                                 delta=f"{row['price_difference_pct']:+.1f}%",
                                 delta_color=delta_color
                             )
+                        
+                        if 'ai_reason' in row.index and row['ai_reason']:
+                            st.info(f"🤖 AI Reason: {row['ai_reason']}")
                 
                 st.divider()
                 st.subheader("Matches Summary Table")

@@ -1,10 +1,11 @@
 # Product Matching & Price Comparison System
 
 ## Overview
-A Streamlit-based web application that identifies similar products between two datasets and compares their prices. The system uses text similarity algorithms to match products and provides comprehensive price analysis. Optimized for Thai retail product data.
+A Streamlit-based web application that identifies similar products between two datasets and compares their prices. The system uses text similarity algorithms and AI-powered matching via OpenRouter for enhanced product matching. Optimized for Thai retail product data.
 
 ## Current State
 - Fully functional MVP with product matching and price comparison features
+- AI-powered matching via OpenRouter API (uses free Gemini model)
 - Sample data available for demonstration
 - CSV and JSON file upload support
 - Manual product entry
@@ -13,7 +14,7 @@ A Streamlit-based web application that identifies similar products between two d
 ## Project Structure
 ```
 /
-├── app.py              # Main Streamlit application
+├── app.py              # Main Streamlit application with AI integration
 ├── .streamlit/
 │   └── config.toml     # Streamlit server configuration
 ├── pyproject.toml      # Python dependencies
@@ -33,8 +34,8 @@ A Streamlit-based web application that identifies similar products between two d
    - Supports additional fields: `retailer`, `brand`, `model`, `category`, `description`
 
 3. **Product Matching**:
-   - Uses RapidFuzz for fuzzy string matching
-   - Combines multiple similarity metrics (ratio, partial ratio, token sort, token set)
+   - **Text Similarity**: Uses RapidFuzz for fuzzy string matching
+   - **AI-Powered Matching**: Uses OpenRouter API (Gemini model) for semantic understanding
    - Adjustable similarity threshold (30-100%)
    - Enhanced matching using brand, model, and category data
 
@@ -55,12 +56,16 @@ A Streamlit-based web application that identifies similar products between two d
    - Download matches as CSV
    - Download matches as JSON
 
+## Environment Variables
+- `OPENROUTER_API_KEY`: Required for AI-powered matching (get free at openrouter.ai)
+
 ## Dependencies
 - streamlit: Web application framework
 - pandas: Data manipulation
 - plotly: Interactive visualizations
 - rapidfuzz: Fuzzy string matching
-- scikit-learn: TF-IDF vectorization (available for future enhancements)
+- scikit-learn: TF-IDF vectorization
+- openai: OpenRouter API client (OpenAI-compatible)
 
 ## File Format Requirements
 
@@ -102,6 +107,7 @@ streamlit run app.py --server.port 5000
 ```
 
 ## Recent Changes
+- 2025-11-27: Added AI-powered matching via OpenRouter API
 - 2025-11-27: Added support for flexible field names (name/current_price)
 - 2025-11-27: Added retailer display and Thai Baht currency
 - 2025-11-27: Enhanced matching with brand/model/category data
@@ -111,3 +117,4 @@ streamlit run app.py --server.port 5000
 ## User Preferences
 - Thai retail product data format
 - Thai Baht (฿) currency display
+- OpenRouter API for AI matching
