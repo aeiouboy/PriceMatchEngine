@@ -10,8 +10,38 @@ from io import StringIO
 import json
 import os
 from openai import OpenAI
+from datetime import datetime
 
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
+RESULTS_DIR = "saved_results"
+os.makedirs(RESULTS_DIR, exist_ok=True)
+
+def save_results(matches_df):
+    """Save results to a JSON file with timestamp"""
+    if matches_df is None or len(matches_df) == 0:
+        return None
+    try:
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filepath = os.path.join(RESULTS_DIR, f"matches_{timestamp}.json")
+        matches_df.to_json(filepath, orient='records', indent=2)
+        return filepath
+    except Exception as e:
+        st.warning(f"Could not save results: {e}")
+        return None
+
+def load_latest_results():
+    """Load the most recent saved results"""
+    try:
+        if not os.path.exists(RESULTS_DIR):
+            return None
+        files = sorted([f for f in os.listdir(RESULTS_DIR) if f.endswith('.json')], reverse=True)
+        if files:
+            filepath = os.path.join(RESULTS_DIR, files[0])
+            df = pd.read_json(filepath)
+            return df
+    except Exception:
+        return None
+    return None
 
 def get_openrouter_client():
     """Get OpenRouter client if API key is available"""
@@ -360,7 +390,9 @@ def main():
     if 'target_df' not in st.session_state:
         st.session_state.target_df = None
     if 'matches_df' not in st.session_state:
-        st.session_state.matches_df = None
+        st.session_state.matches_df = load_latest_results()
+        if st.session_state.matches_df is not None and len(st.session_state.matches_df) > 0:
+            st.info("📂 Loaded previous comparison results")
     
     with st.sidebar:
         st.header("Data Input")
@@ -547,6 +579,7 @@ def main():
                         st.warning("No AI matches found. Try using text similarity instead.")
                     else:
                         st.session_state.matches_df = matches_df
+                        save_results(matches_df)
                 else:
                     with st.spinner("Analyzing products for matches..."):
                         matches_df = find_similar_products(
@@ -555,6 +588,7 @@ def main():
                             similarity_threshold
                         )
                         st.session_state.matches_df = matches_df
+                        save_results(matches_df)
             
             if st.session_state.matches_df is not None and len(st.session_state.matches_df) > 0:
                 matches_df = st.session_state.matches_df
