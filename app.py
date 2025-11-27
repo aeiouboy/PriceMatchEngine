@@ -214,37 +214,44 @@ def calculate_text_similarity(text1, text2):
     return combined_score
 
 def calculate_weighted_similarity(source_row, target_row):
-    """Calculate weighted similarity based on product attributes"""
-    # Product name is CRITICAL - must match above threshold first
+    """Calculate weighted similarity based on product attributes with strict matching"""
     source_name = get_product_name(source_row).lower()
     target_name = get_product_name(target_row).lower()
     
     if not source_name or not target_name:
         return 0
     
-    # Calculate name similarity as gate
+    # Extract key words from product names for category matching
+    source_words = set(source_name.split())
+    target_words = set(target_name.split())
+    
+    # Check if names have significant keyword overlap (prevents Samsung matching Nintendo)
+    common_words = source_words & target_words
+    if not common_words:
+        # No common words - reject immediately (e.g., Samsung has no words in common with Nintendo)
+        # UNLESS both are very specific branded products that might still match
+        name_sim = calculate_text_similarity(source_name, target_name)
+        if name_sim < 70:  # Require 70%+ name similarity if no common keywords
+            return 0
+    
     name_sim = calculate_text_similarity(source_name, target_name)
     
-    # If product names don't match well enough, reject immediately
-    # This prevents Samsung from matching with Nintendo
-    if name_sim < 50:
+    # If names still don't match above 60%, reject
+    if name_sim < 60:
         return 0
     
-    # Attribute weights (total = 100)
+    # Attribute weights
     weights = {
-        'product_name': 0.40,
-        'brand': 0.25,
-        'model': 0.20,
-        'dimensions': 0.08,
-        'category': 0.04,
-        'material': 0.02,
-        'color': 0.01,
+        'product_name': 0.50,
+        'brand': 0.30,
+        'model': 0.15,
+        'category': 0.05,
     }
     
     total_score = name_sim * weights['product_name']
     weight_applied = weights['product_name']
     
-    # Brand matching (critical for accuracy)
+    # Brand matching - CRITICAL gate
     source_brand = str(source_row.get('brand', '')).lower().strip()
     target_brand = str(target_row.get('brand', '')).lower().strip()
     if source_brand and target_brand:
@@ -252,10 +259,15 @@ def calculate_weighted_similarity(source_row, target_row):
             brand_sim = 100
         else:
             brand_sim = fuzz.token_set_ratio(source_brand, target_brand)
+        
+        # If brands don't match at all, significantly reduce score
+        if brand_sim < 50:
+            brand_sim = max(0, brand_sim - 30)  # Penalize mismatched brands
+        
         total_score += brand_sim * weights['brand']
         weight_applied += weights['brand']
     
-    # Model matching (critical for accuracy)
+    # Model matching
     source_model = str(source_row.get('model', '')).lower().strip()
     target_model = str(target_row.get('model', '')).lower().strip()
     if source_model and target_model:
@@ -265,14 +277,6 @@ def calculate_weighted_similarity(source_row, target_row):
             model_sim = fuzz.token_set_ratio(source_model, target_model)
         total_score += model_sim * weights['model']
         weight_applied += weights['model']
-    
-    # Dimensions matching
-    source_dims = str(source_row.get('dimensions', '')).lower().strip()
-    target_dims = str(target_row.get('dimensions', '')).lower().strip()
-    if source_dims and target_dims:
-        dims_sim = fuzz.token_set_ratio(source_dims, target_dims)
-        total_score += dims_sim * weights['dimensions']
-        weight_applied += weights['dimensions']
     
     # Category matching
     source_cat = str(source_row.get('category', '')).lower().strip()
@@ -285,31 +289,12 @@ def calculate_weighted_similarity(source_row, target_row):
         total_score += cat_sim * weights['category']
         weight_applied += weights['category']
     
-    # Material matching
-    source_mat = str(source_row.get('material', '')).lower().strip()
-    target_mat = str(target_row.get('material', '')).lower().strip()
-    if source_mat and target_mat:
-        mat_sim = fuzz.token_set_ratio(source_mat, target_mat)
-        total_score += mat_sim * weights['material']
-        weight_applied += weights['material']
-    
-    # Color matching
-    source_color = str(source_row.get('color', '')).lower().strip()
-    target_color = str(target_row.get('color', '')).lower().strip()
-    if source_color and target_color:
-        if source_color == target_color:
-            color_sim = 100
-        else:
-            color_sim = fuzz.token_set_ratio(source_color, target_color)
-        total_score += color_sim * weights['color']
-        weight_applied += weights['color']
-    
     # Final score - normalized by applied weights
     if weight_applied > 0:
         final_score = total_score / weight_applied
-        return max(name_sim, final_score)  # At least as good as name match
+        return final_score
     
-    return name_sim
+    return 0
 
 def find_similar_products(source_df, target_df, similarity_threshold=60):
     """Find similar products between two dataframes using weighted attribute matching"""
