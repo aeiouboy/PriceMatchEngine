@@ -1,13 +1,14 @@
 # Product Matching & Price Comparison System
 
 ## Overview
-A Streamlit-based web application that identifies similar products between two datasets and compares their prices. The system uses text similarity algorithms to match products and provides comprehensive price analysis.
+A Streamlit-based web application that identifies similar products between two datasets and compares their prices. The system uses text similarity algorithms to match products and provides comprehensive price analysis. Optimized for Thai retail product data.
 
 ## Current State
 - Fully functional MVP with product matching and price comparison features
 - Sample data available for demonstration
 - CSV and JSON file upload support
 - Manual product entry
+- Support for Thai Baht (฿) currency
 
 ## Project Structure
 ```
@@ -26,24 +27,31 @@ A Streamlit-based web application that identifies similar products between two d
    - Sample data for quick demonstration
    - Manual product entry
 
-2. **Product Matching**:
+2. **Flexible Field Mapping**:
+   - Supports `name` or `product_name` for product names
+   - Supports `current_price` or `price` for pricing
+   - Supports additional fields: `retailer`, `brand`, `model`, `category`, `description`
+
+3. **Product Matching**:
    - Uses RapidFuzz for fuzzy string matching
    - Combines multiple similarity metrics (ratio, partial ratio, token sort, token set)
    - Adjustable similarity threshold (30-100%)
+   - Enhanced matching using brand, model, and category data
 
-3. **Price Comparison**:
-   - Side-by-side price comparison
+4. **Price Comparison**:
+   - Side-by-side price comparison with retailer information
    - Price difference calculation (absolute and percentage)
    - Visual indicators for cheaper/expensive products
+   - Thai Baht (฿) currency display
 
-4. **Analysis Dashboard**:
+5. **Analysis Dashboard**:
    - Summary statistics (matches, avg similarity, avg price diff)
    - Price comparison bar charts
    - Price difference distribution histogram
    - Similarity vs price scatter plot
    - Similarity score distribution pie chart
 
-5. **Export**:
+6. **Export**:
    - Download matches as CSV
    - Download matches as JSON
 
@@ -57,20 +65,36 @@ A Streamlit-based web application that identifies similar products between two d
 ## File Format Requirements
 
 ### CSV Format
-Required columns:
-- `product_name`: Name of the product
-- `price`: Product price (numeric)
+Required columns (any of these):
+- `name` or `product_name`: Name of the product
+- `current_price` or `price`: Product price (numeric)
 
 Optional columns:
 - `description`: Product description for improved matching
+- `retailer`: Store/retailer name
+- `brand`: Product brand
+- `model`: Product model
+- `category`: Product category
 
 ### JSON Format
 JSON files can be structured as:
-- An array of product objects: `[{"product_name": "...", "price": 99.99}, ...]`
+- An array of product objects: `[{"name": "...", "current_price": 99.99}, ...]`
 - An object with a "products" key: `{"products": [...]}`
 - An object with a "data" key: `{"data": [...]}`
 
-Each product object should have `product_name` and `price` fields.
+Example JSON structure:
+```json
+{
+  "name": "กุญแจลูกปืน ISON 877C-50L 50 มม.",
+  "retailer": "HomePro",
+  "current_price": 169,
+  "original_price": 215,
+  "brand": "ISON",
+  "model": "877C-50L",
+  "category": "กุญแจคล้องเดี่ยว",
+  "description": "วัสดุผลิตจากเหล็กคุณภาพสูง"
+}
+```
 
 ## Running the Application
 ```bash
@@ -78,8 +102,12 @@ streamlit run app.py --server.port 5000
 ```
 
 ## Recent Changes
+- 2025-11-27: Added support for flexible field names (name/current_price)
+- 2025-11-27: Added retailer display and Thai Baht currency
+- 2025-11-27: Enhanced matching with brand/model/category data
 - 2025-11-27: Added JSON file format support for uploads and exports
 - 2025-11-27: Initial implementation of product matching system with price comparison
 
 ## User Preferences
-(To be updated based on user feedback)
+- Thai retail product data format
+- Thai Baht (฿) currency display

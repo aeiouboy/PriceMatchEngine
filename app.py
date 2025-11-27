@@ -31,29 +31,39 @@ def find_similar_products(source_df, target_df, similarity_threshold=60):
     matches = []
     
     for idx1, row1 in source_df.iterrows():
-        source_text = f"{row1['product_name']} {row1.get('description', '')}"
+        source_name = get_product_name(row1)
+        source_desc = get_description(row1)
+        source_text = f"{source_name} {source_desc}"
+        source_retailer = get_retailer(row1)
         
         for idx2, row2 in target_df.iterrows():
-            target_text = f"{row2['product_name']} {row2.get('description', '')}"
+            target_name = get_product_name(row2)
+            target_desc = get_description(row2)
+            target_text = f"{target_name} {target_desc}"
+            target_retailer = get_retailer(row2)
             
             similarity = calculate_text_similarity(source_text, target_text)
             
             if similarity >= similarity_threshold:
-                price1 = float(row1['price'])
-                price2 = float(row2['price'])
+                price1 = get_price(row1)
+                price2 = get_price(row2)
                 price_diff = price2 - price1
                 price_diff_pct = ((price2 - price1) / price1 * 100) if price1 > 0 else 0
                 
                 matches.append({
-                    'source_product': row1['product_name'],
+                    'source_product': source_name,
                     'source_price': price1,
-                    'target_product': row2['product_name'],
+                    'source_retailer': source_retailer,
+                    'target_product': target_name,
                     'target_price': price2,
+                    'target_retailer': target_retailer,
                     'similarity_score': round(similarity, 1),
                     'price_difference': round(price_diff, 2),
                     'price_difference_pct': round(price_diff_pct, 1),
-                    'source_description': row1.get('description', ''),
-                    'target_description': row2.get('description', '')
+                    'source_description': source_desc,
+                    'target_description': target_desc,
+                    'source_brand': row1.get('brand', '') if 'brand' in row1.index else '',
+                    'target_brand': row2.get('brand', '') if 'brand' in row2.index else '',
                 })
     
     return pd.DataFrame(matches)
@@ -147,6 +157,65 @@ def parse_file(uploaded_file):
     else:
         return parse_csv(uploaded_file)
 
+def normalize_dataframe(df):
+    """Normalize column names to standard format"""
+    df = df.copy()
+    
+    column_mapping = {
+        'name': 'product_name',
+        'product': 'product_name',
+        'title': 'product_name',
+        'current_price': 'price',
+        'sale_price': 'price',
+        'selling_price': 'price',
+    }
+    
+    for old_col, new_col in column_mapping.items():
+        if old_col in df.columns and new_col not in df.columns:
+            df[new_col] = df[old_col]
+    
+    if 'price' in df.columns:
+        df['price'] = pd.to_numeric(df['price'], errors='coerce').fillna(0)
+    
+    return df
+
+def get_product_name(row):
+    """Get product name from row, checking multiple possible columns"""
+    if 'product_name' in row.index and pd.notna(row.get('product_name')):
+        return str(row['product_name'])
+    if 'name' in row.index and pd.notna(row.get('name')):
+        return str(row['name'])
+    return ''
+
+def get_price(row):
+    """Get price from row, checking multiple possible columns"""
+    for col in ['price', 'current_price', 'sale_price', 'selling_price']:
+        if col in row.index and pd.notna(row.get(col)):
+            try:
+                return float(row[col])
+            except (ValueError, TypeError):
+                continue
+    return 0.0
+
+def get_description(row):
+    """Get description from row"""
+    desc_parts = []
+    if 'description' in row.index and pd.notna(row.get('description')):
+        desc_parts.append(str(row['description']))
+    if 'brand' in row.index and pd.notna(row.get('brand')):
+        desc_parts.append(str(row['brand']))
+    if 'model' in row.index and pd.notna(row.get('model')):
+        desc_parts.append(str(row['model']))
+    if 'category' in row.index and pd.notna(row.get('category')):
+        desc_parts.append(str(row['category']))
+    return ' '.join(desc_parts)
+
+def get_retailer(row):
+    """Get retailer from row"""
+    if 'retailer' in row.index and pd.notna(row.get('retailer')):
+        return str(row['retailer'])
+    return ''
+
 def main():
     st.title("🔍 Product Matching & Price Comparison")
     st.markdown("Compare products across different sources and analyze price differences")
@@ -176,8 +245,8 @@ def main():
         
         elif data_source == "Upload Files (CSV/JSON)":
             st.markdown("**Supported formats:** CSV, JSON")
-            st.markdown("**Required fields:** `product_name`, `price`")
-            st.markdown("**Optional:** `description`")
+            st.markdown("**Required fields:** `name` or `product_name`, `current_price` or `price`")
+            st.markdown("**Optional:** `description`, `brand`, `retailer`, `category`")
             
             source_file = st.file_uploader("Source Products", type=['csv', 'json'], key='source')
             target_file = st.file_uploader("Target Products", type=['csv', 'json'], key='target')
@@ -191,15 +260,32 @@ def main():
                 elif target_error:
                     st.error(f"Target file error: {target_error}")
                 elif source_df is not None and target_df is not None:
-                    required_cols = ['product_name', 'price']
-                    if all(col in source_df.columns for col in required_cols) and \
-                       all(col in target_df.columns for col in required_cols):
+                    name_cols = ['product_name', 'name', 'product', 'title']
+                    price_cols = ['price', 'current_price', 'sale_price', 'selling_price']
+                    
+                    source_has_name = any(col in source_df.columns for col in name_cols)
+                    source_has_price = any(col in source_df.columns for col in price_cols)
+                    target_has_name = any(col in target_df.columns for col in name_cols)
+                    target_has_price = any(col in target_df.columns for col in price_cols)
+                    
+                    if source_has_name and source_has_price and target_has_name and target_has_price:
+                        source_df = normalize_dataframe(source_df)
+                        target_df = normalize_dataframe(target_df)
                         st.session_state.source_df = source_df
                         st.session_state.target_df = target_df
                         st.session_state.matches_df = None
                         st.success("Files uploaded successfully!")
                     else:
-                        st.error("Files must contain 'product_name' and 'price' columns")
+                        missing = []
+                        if not source_has_name:
+                            missing.append("Source: product name field")
+                        if not source_has_price:
+                            missing.append("Source: price field")
+                        if not target_has_name:
+                            missing.append("Target: product name field")
+                        if not target_has_price:
+                            missing.append("Target: price field")
+                        st.error(f"Missing required fields: {', '.join(missing)}")
         
         elif data_source == "Manual Entry":
             st.subheader("Add to Source List")
@@ -314,25 +400,37 @@ def main():
                 )
                 
                 for idx, row in sorted_df.iterrows():
-                    with st.expander(
-                        f"🔗 {row['source_product']} ↔ {row['target_product']} | "
-                        f"Match: {row['similarity_score']}%"
-                    ):
+                    source_retailer = row.get('source_retailer', '') if 'source_retailer' in row.index else ''
+                    target_retailer = row.get('target_retailer', '') if 'target_retailer' in row.index else ''
+                    
+                    expander_title = f"🔗 {row['source_product'][:40]}... ↔ {row['target_product'][:40]}... | Match: {row['similarity_score']}%"
+                    if len(row['source_product']) <= 40 and len(row['target_product']) <= 40:
+                        expander_title = f"🔗 {row['source_product']} ↔ {row['target_product']} | Match: {row['similarity_score']}%"
+                    
+                    with st.expander(expander_title):
                         col1, col2, col3 = st.columns([2, 2, 1])
                         
                         with col1:
                             st.markdown("**Source Product**")
+                            if source_retailer:
+                                st.markdown(f"🏪 *{source_retailer}*")
                             st.write(f"📦 {row['source_product']}")
+                            if 'source_brand' in row.index and row['source_brand']:
+                                st.caption(f"Brand: {row['source_brand']}")
                             if row['source_description']:
-                                st.caption(row['source_description'])
-                            st.metric("Price", f"${row['source_price']:,.2f}")
+                                st.caption(row['source_description'][:100])
+                            st.metric("Price", f"฿{row['source_price']:,.2f}")
                         
                         with col2:
                             st.markdown("**Target Product**")
+                            if target_retailer:
+                                st.markdown(f"🏪 *{target_retailer}*")
                             st.write(f"📦 {row['target_product']}")
+                            if 'target_brand' in row.index and row['target_brand']:
+                                st.caption(f"Brand: {row['target_brand']}")
                             if row['target_description']:
-                                st.caption(row['target_description'])
-                            st.metric("Price", f"${row['target_price']:,.2f}")
+                                st.caption(row['target_description'][:100])
+                            st.metric("Price", f"฿{row['target_price']:,.2f}")
                         
                         with col3:
                             st.markdown("**Comparison**")
@@ -343,18 +441,29 @@ def main():
                             delta_color = "inverse" if row['price_difference'] > 0 else "normal"
                             st.metric(
                                 "Price Diff",
-                                f"${abs(row['price_difference']):,.2f}",
+                                f"฿{abs(row['price_difference']):,.2f}",
                                 delta=f"{row['price_difference_pct']:+.1f}%",
                                 delta_color=delta_color
                             )
                 
                 st.divider()
                 st.subheader("Matches Summary Table")
-                display_df = sorted_df[['source_product', 'source_price', 'target_product', 
-                                       'target_price', 'similarity_score', 'price_difference', 
-                                       'price_difference_pct']].copy()
-                display_df.columns = ['Source Product', 'Source Price', 'Target Product', 
-                                     'Target Price', 'Similarity %', 'Price Diff', 'Price Diff %']
+                
+                display_cols = ['source_product', 'source_price', 'target_product', 'target_price', 
+                               'similarity_score', 'price_difference', 'price_difference_pct']
+                col_names = ['Source Product', 'Source Price (฿)', 'Target Product', 
+                            'Target Price (฿)', 'Similarity %', 'Price Diff (฿)', 'Price Diff %']
+                
+                if 'source_retailer' in sorted_df.columns and sorted_df['source_retailer'].any():
+                    display_cols.insert(1, 'source_retailer')
+                    col_names.insert(1, 'Source Retailer')
+                if 'target_retailer' in sorted_df.columns and sorted_df['target_retailer'].any():
+                    insert_idx = display_cols.index('target_product') + 1
+                    display_cols.insert(insert_idx, 'target_retailer')
+                    col_names.insert(insert_idx, 'Target Retailer')
+                
+                display_df = sorted_df[display_cols].copy()
+                display_df.columns = col_names
                 st.dataframe(display_df, use_container_width=True, hide_index=True)
                 
                 col_csv, col_json = st.columns(2)
@@ -394,7 +503,7 @@ def main():
                 st.metric("Avg Similarity", f"{avg_similarity:.1f}%")
             with col3:
                 avg_price_diff = matches_df['price_difference'].mean()
-                st.metric("Avg Price Diff", f"${avg_price_diff:,.2f}")
+                st.metric("Avg Price Diff", f"฿{avg_price_diff:,.2f}")
             with col4:
                 cheaper_count = len(matches_df[matches_df['price_difference'] < 0])
                 st.metric("Cheaper in Target", cheaper_count)
@@ -438,7 +547,7 @@ def main():
                     color_discrete_sequence=['#2ecc71']
                 )
                 fig.update_layout(
-                    xaxis_title="Price Difference ($)",
+                    xaxis_title="Price Difference (฿)",
                     yaxis_title="Count",
                     height=400
                 )
@@ -503,17 +612,31 @@ def main():
         
         #### CSV Format
         Your CSV files should contain these columns:
-        - `product_name` (required): Name of the product
-        - `price` (required): Product price as a number
+        - `name` or `product_name` (required): Name of the product
+        - `current_price` or `price` (required): Product price as a number
         - `description` (optional): Product description for better matching
+        - `brand` (optional): Product brand
+        - `retailer` (optional): Store/retailer name
+        - `category` (optional): Product category
         
         #### JSON Format
         JSON files can be structured as:
-        - An array of product objects: `[{"product_name": "...", "price": 99.99}, ...]`
+        - An array of product objects: `[{"name": "...", "current_price": 99.99}, ...]`
         - An object with a "products" key: `{"products": [...]}`
         - An object with a "data" key: `{"data": [...]}`
         
-        Each product object should have `product_name` and `price` fields.
+        **Example JSON structure:**
+        ```json
+        {
+          "name": "Product Name",
+          "retailer": "Store Name",
+          "current_price": 169,
+          "original_price": 215,
+          "brand": "Brand Name",
+          "category": "Category",
+          "description": "Product description"
+        }
+        ```
         
         ### Understanding Similarity Scores
         - **80-100%**: Very high match - likely the same product
