@@ -4,6 +4,8 @@ version = "0.1.0"
 description = "Add your description here"
 requires-python = ">=3.11"
 dependencies = [
+    "numpy>=2.3.5",
+    "openai>=2.8.1",
     "pandas>=2.3.3",
     "plotly>=6.5.0",
     "rapidfuzz>=3.14.3",
