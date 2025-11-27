@@ -6,7 +6,8 @@ A Streamlit-based web application that identifies similar products between two d
 ## Current State
 - Fully functional MVP with product matching and price comparison features
 - Sample data available for demonstration
-- CSV upload and manual entry support
+- CSV and JSON file upload support
+- Manual product entry
 
 ## Project Structure
 ```
@@ -21,6 +22,7 @@ A Streamlit-based web application that identifies similar products between two d
 ## Key Features
 1. **Data Input Methods**:
    - CSV file upload (source and target products)
+   - JSON file upload (array or object with products/data key)
    - Sample data for quick demonstration
    - Manual product entry
 
@@ -43,6 +45,7 @@ A Streamlit-based web application that identifies similar products between two d
 
 5. **Export**:
    - Download matches as CSV
+   - Download matches as JSON
 
 ## Dependencies
 - streamlit: Web application framework
@@ -51,7 +54,9 @@ A Streamlit-based web application that identifies similar products between two d
 - rapidfuzz: Fuzzy string matching
 - scikit-learn: TF-IDF vectorization (available for future enhancements)
 
-## CSV Format Requirements
+## File Format Requirements
+
+### CSV Format
 Required columns:
 - `product_name`: Name of the product
 - `price`: Product price (numeric)
@@ -59,12 +64,21 @@ Required columns:
 Optional columns:
 - `description`: Product description for improved matching
 
+### JSON Format
+JSON files can be structured as:
+- An array of product objects: `[{"product_name": "...", "price": 99.99}, ...]`
+- An object with a "products" key: `{"products": [...]}`
+- An object with a "data" key: `{"data": [...]}`
+
+Each product object should have `product_name` and `price` fields.
+
 ## Running the Application
 ```bash
 streamlit run app.py --server.port 5000
 ```
 
 ## Recent Changes
+- 2025-11-27: Added JSON file format support for uploads and exports
 - 2025-11-27: Initial implementation of product matching system with price comparison
 
 ## User Preferences

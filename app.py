@@ -7,6 +7,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 from io import StringIO
+import json
 
 st.set_page_config(
     page_title="Product Matching System",
@@ -118,6 +119,34 @@ def parse_csv(uploaded_file):
     except Exception as e:
         return None, str(e)
 
+def parse_json(uploaded_file):
+    """Parse uploaded JSON file"""
+    try:
+        content = uploaded_file.getvalue().decode('utf-8')
+        data = json.loads(content)
+        if isinstance(data, list):
+            df = pd.DataFrame(data)
+        elif isinstance(data, dict):
+            if 'products' in data:
+                df = pd.DataFrame(data['products'])
+            elif 'data' in data:
+                df = pd.DataFrame(data['data'])
+            else:
+                df = pd.DataFrame([data])
+        else:
+            return None, "Invalid JSON format"
+        return df, None
+    except Exception as e:
+        return None, str(e)
+
+def parse_file(uploaded_file):
+    """Parse uploaded file (CSV or JSON)"""
+    filename = uploaded_file.name.lower()
+    if filename.endswith('.json'):
+        return parse_json(uploaded_file)
+    else:
+        return parse_csv(uploaded_file)
+
 def main():
     st.title("🔍 Product Matching & Price Comparison")
     st.markdown("Compare products across different sources and analyze price differences")
@@ -134,7 +163,7 @@ def main():
         
         data_source = st.radio(
             "Choose data source:",
-            ["Upload CSV Files", "Use Sample Data", "Manual Entry"]
+            ["Upload Files (CSV/JSON)", "Use Sample Data", "Manual Entry"]
         )
         
         if data_source == "Use Sample Data":
@@ -145,22 +174,23 @@ def main():
                 st.session_state.matches_df = None
                 st.success("Sample data loaded!")
         
-        elif data_source == "Upload CSV Files":
-            st.markdown("**Required columns:** `product_name`, `price`")
+        elif data_source == "Upload Files (CSV/JSON)":
+            st.markdown("**Supported formats:** CSV, JSON")
+            st.markdown("**Required fields:** `product_name`, `price`")
             st.markdown("**Optional:** `description`")
             
-            source_file = st.file_uploader("Source Products (CSV)", type=['csv'], key='source')
-            target_file = st.file_uploader("Target Products (CSV)", type=['csv'], key='target')
+            source_file = st.file_uploader("Source Products", type=['csv', 'json'], key='source')
+            target_file = st.file_uploader("Target Products", type=['csv', 'json'], key='target')
             
             if source_file and target_file:
-                source_df, source_error = parse_csv(source_file)
-                target_df, target_error = parse_csv(target_file)
+                source_df, source_error = parse_file(source_file)
+                target_df, target_error = parse_file(target_file)
                 
                 if source_error:
                     st.error(f"Source file error: {source_error}")
                 elif target_error:
                     st.error(f"Target file error: {target_error}")
-                else:
+                elif source_df is not None and target_df is not None:
                     required_cols = ['product_name', 'price']
                     if all(col in source_df.columns for col in required_cols) and \
                        all(col in target_df.columns for col in required_cols):
@@ -169,7 +199,7 @@ def main():
                         st.session_state.matches_df = None
                         st.success("Files uploaded successfully!")
                     else:
-                        st.error("CSV files must contain 'product_name' and 'price' columns")
+                        st.error("Files must contain 'product_name' and 'price' columns")
         
         elif data_source == "Manual Entry":
             st.subheader("Add to Source List")
@@ -327,13 +357,23 @@ def main():
                                      'Target Price', 'Similarity %', 'Price Diff', 'Price Diff %']
                 st.dataframe(display_df, use_container_width=True, hide_index=True)
                 
-                csv = display_df.to_csv(index=False)
-                st.download_button(
-                    label="📥 Download Matches as CSV",
-                    data=csv,
-                    file_name="product_matches.csv",
-                    mime="text/csv"
-                )
+                col_csv, col_json = st.columns(2)
+                with col_csv:
+                    csv = display_df.to_csv(index=False)
+                    st.download_button(
+                        label="📥 Download as CSV",
+                        data=csv,
+                        file_name="product_matches.csv",
+                        mime="text/csv"
+                    )
+                with col_json:
+                    json_data = display_df.to_json(orient='records', indent=2)
+                    st.download_button(
+                        label="📥 Download as JSON",
+                        data=json_data,
+                        file_name="product_matches.json",
+                        mime="application/json"
+                    )
             
             elif st.session_state.matches_df is not None:
                 st.warning("No matches found with the current threshold. Try lowering the similarity threshold.")
@@ -449,7 +489,7 @@ def main():
         st.markdown("""
         ### Getting Started
         1. **Load Data**: Use the sidebar to either:
-           - Upload two CSV files (source and target products)
+           - Upload CSV or JSON files (source and target products)
            - Load sample data for demonstration
            - Manually enter products one by one
         
@@ -459,11 +499,21 @@ def main():
         
         4. **Analyze Results**: Review matches and price comparisons in the Analysis tab
         
-        ### CSV Format
+        ### Supported File Formats
+        
+        #### CSV Format
         Your CSV files should contain these columns:
         - `product_name` (required): Name of the product
         - `price` (required): Product price as a number
         - `description` (optional): Product description for better matching
+        
+        #### JSON Format
+        JSON files can be structured as:
+        - An array of product objects: `[{"product_name": "...", "price": 99.99}, ...]`
+        - An object with a "products" key: `{"products": [...]}`
+        - An object with a "data" key: `{"data": [...]}`
+        
+        Each product object should have `product_name` and `price` fields.
         
         ### Understanding Similarity Scores
         - **80-100%**: Very high match - likely the same product
