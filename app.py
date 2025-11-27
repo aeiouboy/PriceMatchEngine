@@ -363,15 +363,11 @@ def create_sample_data():
             'iPad Pro 12.9 inch',
             'Bose QuietComfort Earbuds'
         ],
-        'description': [
-            'Latest iPhone with A17 Pro chip',
-            'Premium Android smartphone with S Pen',
-            'Wireless noise cancelling headphones',
-            'Apple laptop with M3 chip',
-            'Premium Windows laptop',
-            'Portable gaming console',
-            'Apple tablet with M2 chip',
-            'True wireless earbuds'
+        'brand': [
+            'Apple', 'Samsung', 'Sony', 'Apple', 'Dell', 'Nintendo', 'Apple', 'Bose'
+        ],
+        'category': [
+            'Smartphone', 'Smartphone', 'Headphones', 'Laptop', 'Laptop', 'Gaming Console', 'Tablet', 'Earbuds'
         ],
         'price': [999, 1199, 349, 1999, 1499, 349, 1099, 279],
         'image_url': [
@@ -397,15 +393,11 @@ def create_sample_data():
             'Apple iPad Pro 12.9"',
             'Bose QC Earbuds II'
         ],
-        'description': [
-            'iPhone with titanium design',
-            'Galaxy flagship phone',
-            'Premium wireless headphones',
-            'Professional laptop',
-            'Dell premium ultrabook',
-            'Gaming handheld device',
-            'Professional tablet',
-            'Wireless noise cancelling earbuds'
+        'brand': [
+            'Apple', 'Samsung', 'Sony', 'Apple', 'Dell', 'Nintendo', 'Apple', 'Bose'
+        ],
+        'category': [
+            'Smartphone', 'Smartphone', 'Headphones', 'Laptop', 'Laptop', 'Gaming Console', 'Tablet', 'Earbuds'
         ],
         'price': [1049, 1299, 329, 2199, 1399, 359, 1149, 249],
         'image_url': [
