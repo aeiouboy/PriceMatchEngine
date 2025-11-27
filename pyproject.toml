@@ -4,5 +4,9 @@ version = "0.1.0"
 description = "Add your description here"
 requires-python = ">=3.11"
 dependencies = [
+    "pandas>=2.3.3",
+    "plotly>=6.5.0",
+    "rapidfuzz>=3.14.3",
+    "scikit-learn>=1.7.2",
     "streamlit>=1.51.0",
 ]
