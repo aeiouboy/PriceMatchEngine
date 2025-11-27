@@ -179,9 +179,11 @@ def ai_enhance_matching(source_df, target_df, similarity_threshold=60, progress_
             'source_product': source_name,
             'source_price': price1,
             'source_retailer': get_retailer(source_row),
+            'source_url': get_url(source_row),
             'target_product': target_name,
             'target_price': price2,
             'target_retailer': get_retailer(target_row),
+            'target_url': get_url(target_row),
             'similarity_score': match['confidence'],
             'price_difference': round(price_diff, 2),
             'price_difference_pct': round(price_diff_pct, 1),
@@ -250,9 +252,11 @@ def find_similar_products(source_df, target_df, similarity_threshold=60):
                 'source_product': source_name,
                 'source_price': price1,
                 'source_retailer': source_retailer,
+                'source_url': get_url(row1),
                 'target_product': target_name,
                 'target_price': price2,
                 'target_retailer': target_retailer,
+                'target_url': get_url(row2),
                 'similarity_score': round(best_similarity, 1),
                 'price_difference': round(price_diff, 2),
                 'price_difference_pct': round(price_diff_pct, 1),
@@ -364,6 +368,10 @@ def normalize_dataframe(df):
         'current_price': 'price',
         'sale_price': 'price',
         'selling_price': 'price',
+        'product_url': 'url',
+        'product_link': 'url',
+        'link': 'url',
+        'href': 'url',
     }
     
     for old_col, new_col in column_mapping.items():
@@ -412,6 +420,15 @@ def get_retailer(row):
         return str(row['retailer'])
     return ''
 
+def get_url(row):
+    """Get product URL from row, checking multiple possible columns"""
+    for col in ['url', 'product_url', 'link', 'product_link', 'href']:
+        if col in row.index and pd.notna(row.get(col)):
+            url_str = str(row[col])
+            if url_str and url_str.strip() and url_str.lower().startswith(('http://', 'https://')):
+                return url_str
+    return ''
+
 def main():
     st.title("🔍 Product Matching & Price Comparison")
     st.markdown("Compare products across different sources and analyze price differences")
@@ -444,7 +461,7 @@ def main():
         elif data_source == "Upload Files (CSV/JSON)":
             st.markdown("**Supported formats:** CSV, JSON")
             st.markdown("**Required fields:** `name` or `product_name`, `current_price` or `price`")
-            st.markdown("**Optional:** `description`, `brand`, `retailer`, `category`")
+            st.markdown("**Optional:** `description`, `brand`, `retailer`, `category`, `url` or `link`")
             
             source_file = st.file_uploader("Source Products", type=['csv', 'json'], key='source')
             target_file = st.file_uploader("Target Products", type=['csv', 'json'], key='target')
