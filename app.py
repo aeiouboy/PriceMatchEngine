@@ -53,7 +53,7 @@ def get_openrouter_client():
     return None
 
 def ai_match_products(source_products, target_products, progress_callback=None):
-    """Use AI to find matching products between two lists"""
+    """Use AI to find matching products between two lists (hybrid approach with pre-filtering)"""
     client = get_openrouter_client()
     if not client:
         return None
@@ -70,13 +70,31 @@ def ai_match_products(source_products, target_products, progress_callback=None):
         source_model = source.get('model', '')
         source_category = source.get('category', '')
         source_desc = source.get('description', '')
+        source_text = f"{source_name} {source_brand} {source_model} {source_category} {source_desc}".lower()
         
-        target_list = []
+        # Pre-filter targets using text similarity to speed up AI matching
+        candidates = []
         for i, t in enumerate(target_products):
             t_name = t.get('name', t.get('product_name', ''))
             t_brand = t.get('brand', '')
             t_model = t.get('model', '')
-            target_list.append(f"{i}: {t_name} (Brand: {t_brand}, Model: {t_model})")
+            t_text = f"{t_name} {t_brand} {t_model}".lower()
+            
+            # Quick text similarity check
+            sim = fuzz.token_set_ratio(source_text, t_text)
+            if sim >= 30:  # Keep candidates with at least 30% similarity
+                candidates.append((i, t_name, t_brand, t_model, sim))
+        
+        # If no candidates, skip
+        if not candidates:
+            continue
+        
+        # Sort by similarity and take top 10 candidates to reduce API calls
+        candidates.sort(key=lambda x: x[4], reverse=True)
+        top_candidates = candidates[:10]
+        
+        target_list = [f"{i}: {name} (Brand: {brand}, Model: {model})" 
+                      for i, name, brand, model, _ in top_candidates]
         
         prompt = f"""You are a product matching expert. Find the BEST matching product from the target list for this source product.
 
@@ -88,7 +106,7 @@ SOURCE PRODUCT:
 - Description: {source_desc[:200] if source_desc else 'N/A'}
 
 TARGET PRODUCTS:
-{chr(10).join(target_list[:50])}
+{chr(10).join(target_list)}
 
 INSTRUCTIONS:
 1. Find products that are the SAME or very similar (same brand, model, or equivalent product)
@@ -116,11 +134,13 @@ Return ONLY valid JSON, no other text."""
             result = json.loads(result_text)
             
             if result.get('match_index') is not None and result.get('confidence', 0) >= 60:
+                # Map back to original target index
                 match_idx = int(result['match_index'])
-                if 0 <= match_idx < len(target_products):
+                if 0 <= match_idx < len(top_candidates):
+                    original_idx = top_candidates[match_idx][0]
                     matches.append({
                         'source_idx': idx,
-                        'target_idx': match_idx,
+                        'target_idx': original_idx,
                         'confidence': result.get('confidence', 0),
                         'reason': result.get('reason', '')
                     })
