@@ -308,7 +308,7 @@ def calculate_weighted_similarity(source_row, target_row):
     
     # Normalize by applied weights (in case some attributes are missing)
     if weight_applied > 0:
-        final_score = (total_score / weight_applied) * (weight_applied / 1.0)
+        final_score = total_score / weight_applied
         return final_score
     
     return 0
@@ -778,6 +778,8 @@ def main():
                             if row['source_description']:
                                 st.caption(row['source_description'][:100])
                             st.metric("Price", f"฿{row['source_price']:,.2f}")
+                            if 'source_url' in row.index and row['source_url']:
+                                st.markdown(f"[🔗 View Product]({row['source_url']})")
                         
                         with col2:
                             st.markdown("**Target Product**")
@@ -789,6 +791,8 @@ def main():
                             if row['target_description']:
                                 st.caption(row['target_description'][:100])
                             st.metric("Price", f"฿{row['target_price']:,.2f}")
+                            if 'target_url' in row.index and row['target_url']:
+                                st.markdown(f"[🔗 View Product]({row['target_url']})")
                         
                         with col3:
                             st.markdown("**Comparison**")
@@ -818,10 +822,18 @@ def main():
                 if 'source_retailer' in sorted_df.columns and sorted_df['source_retailer'].any():
                     display_cols.insert(1, 'source_retailer')
                     col_names.insert(1, 'Source Retailer')
+                if 'source_url' in sorted_df.columns and sorted_df['source_url'].any():
+                    insert_idx = display_cols.index('source_price') + 1
+                    display_cols.insert(insert_idx, 'source_url')
+                    col_names.insert(insert_idx, 'Source URL')
                 if 'target_retailer' in sorted_df.columns and sorted_df['target_retailer'].any():
                     insert_idx = display_cols.index('target_product') + 1
                     display_cols.insert(insert_idx, 'target_retailer')
                     col_names.insert(insert_idx, 'Target Retailer')
+                if 'target_url' in sorted_df.columns and sorted_df['target_url'].any():
+                    insert_idx = display_cols.index('target_price') + 1
+                    display_cols.insert(insert_idx, 'target_url')
+                    col_names.insert(insert_idx, 'Target URL')
                 
                 display_df = sorted_df[display_cols].copy()
                 display_df.columns = col_names
