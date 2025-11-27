@@ -201,6 +201,9 @@ def find_similar_products(source_df, target_df, similarity_threshold=60):
         source_text = f"{source_name} {source_desc}"
         source_retailer = get_retailer(row1)
         
+        best_match = None
+        best_similarity = 0
+        
         for idx2, row2 in target_df.iterrows():
             target_name = get_product_name(row2)
             target_desc = get_description(row2)
@@ -209,27 +212,35 @@ def find_similar_products(source_df, target_df, similarity_threshold=60):
             
             similarity = calculate_text_similarity(source_text, target_text)
             
-            if similarity >= similarity_threshold:
-                price1 = get_price(row1)
-                price2 = get_price(row2)
-                price_diff = price2 - price1
-                price_diff_pct = ((price2 - price1) / price1 * 100) if price1 > 0 else 0
-                
-                matches.append({
-                    'source_product': source_name,
-                    'source_price': price1,
-                    'source_retailer': source_retailer,
-                    'target_product': target_name,
-                    'target_price': price2,
-                    'target_retailer': target_retailer,
-                    'similarity_score': round(similarity, 1),
-                    'price_difference': round(price_diff, 2),
-                    'price_difference_pct': round(price_diff_pct, 1),
-                    'source_description': source_desc,
-                    'target_description': target_desc,
-                    'source_brand': row1.get('brand', '') if 'brand' in row1.index else '',
-                    'target_brand': row2.get('brand', '') if 'brand' in row2.index else '',
-                })
+            # Track the best match
+            if similarity > best_similarity:
+                best_similarity = similarity
+                best_match = (idx2, row2, target_name, target_desc, target_retailer)
+        
+        # Use lower threshold for text similarity
+        adjusted_threshold = max(30, similarity_threshold - 20)
+        if best_match and best_similarity >= adjusted_threshold:
+            idx2, row2, target_name, target_desc, target_retailer = best_match
+            price1 = get_price(row1)
+            price2 = get_price(row2)
+            price_diff = price2 - price1
+            price_diff_pct = ((price2 - price1) / price1 * 100) if price1 > 0 else 0
+            
+            matches.append({
+                'source_product': source_name,
+                'source_price': price1,
+                'source_retailer': source_retailer,
+                'target_product': target_name,
+                'target_price': price2,
+                'target_retailer': target_retailer,
+                'similarity_score': round(best_similarity, 1),
+                'price_difference': round(price_diff, 2),
+                'price_difference_pct': round(price_diff_pct, 1),
+                'source_description': source_desc,
+                'target_description': target_desc,
+                'source_brand': row1.get('brand', '') if 'brand' in row1.index else '',
+                'target_brand': row2.get('brand', '') if 'brand' in row2.index else '',
+            })
     
     return pd.DataFrame(matches)
 
