@@ -215,27 +215,34 @@ def calculate_text_similarity(text1, text2):
 
 def calculate_weighted_similarity(source_row, target_row):
     """Calculate weighted similarity based on product attributes"""
-    # Attribute weights (total = 100)
-    weights = {
-        'product_name': 0.30,
-        'brand': 0.25,
-        'model': 0.20,
-        'dimensions': 0.10,
-        'category': 0.08,
-        'material': 0.04,
-        'color': 0.03,
-    }
-    
-    total_score = 0
-    weight_applied = 0
-    
-    # Product name (most important)
+    # Product name is CRITICAL - must match above threshold first
     source_name = get_product_name(source_row).lower()
     target_name = get_product_name(target_row).lower()
-    if source_name and target_name:
-        name_sim = calculate_text_similarity(source_name, target_name)
-        total_score += name_sim * weights['product_name']
-        weight_applied += weights['product_name']
+    
+    if not source_name or not target_name:
+        return 0
+    
+    # Calculate name similarity as gate
+    name_sim = calculate_text_similarity(source_name, target_name)
+    
+    # If product names don't match well enough, reject immediately
+    # This prevents Samsung from matching with Nintendo
+    if name_sim < 50:
+        return 0
+    
+    # Attribute weights (total = 100)
+    weights = {
+        'product_name': 0.40,
+        'brand': 0.25,
+        'model': 0.20,
+        'dimensions': 0.08,
+        'category': 0.04,
+        'material': 0.02,
+        'color': 0.01,
+    }
+    
+    total_score = name_sim * weights['product_name']
+    weight_applied = weights['product_name']
     
     # Brand matching (critical for accuracy)
     source_brand = str(source_row.get('brand', '')).lower().strip()
@@ -297,12 +304,12 @@ def calculate_weighted_similarity(source_row, target_row):
         total_score += color_sim * weights['color']
         weight_applied += weights['color']
     
-    # Normalize by applied weights (in case some attributes are missing)
+    # Final score - normalized by applied weights
     if weight_applied > 0:
         final_score = total_score / weight_applied
-        return final_score
+        return max(name_sim, final_score)  # At least as good as name match
     
-    return 0
+    return name_sim
 
 def find_similar_products(source_df, target_df, similarity_threshold=60):
     """Find similar products between two dataframes using weighted attribute matching"""
