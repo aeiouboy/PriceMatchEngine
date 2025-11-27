@@ -213,14 +213,112 @@ def calculate_text_similarity(text1, text2):
     combined_score = (ratio * 0.2 + partial_ratio * 0.2 + token_sort * 0.3 + token_set * 0.3)
     return combined_score
 
+def calculate_weighted_similarity(source_row, target_row):
+    """Calculate weighted similarity based on product attributes"""
+    # Attribute weights (total = 100)
+    weights = {
+        'product_name': 0.25,
+        'brand': 0.20,
+        'model': 0.20,
+        'dimensions': 0.12,
+        'category': 0.08,
+        'material': 0.05,
+        'color': 0.05,
+        'description': 0.05,
+    }
+    
+    total_score = 0
+    weight_applied = 0
+    
+    # Product name (most important)
+    source_name = get_product_name(source_row).lower()
+    target_name = get_product_name(target_row).lower()
+    if source_name and target_name:
+        name_sim = calculate_text_similarity(source_name, target_name)
+        total_score += name_sim * weights['product_name']
+        weight_applied += weights['product_name']
+    
+    # Brand matching (critical for accuracy)
+    source_brand = str(source_row.get('brand', '')).lower().strip()
+    target_brand = str(target_row.get('brand', '')).lower().strip()
+    if source_brand and target_brand:
+        if source_brand == target_brand:
+            brand_sim = 100
+        else:
+            brand_sim = fuzz.token_set_ratio(source_brand, target_brand)
+        total_score += brand_sim * weights['brand']
+        weight_applied += weights['brand']
+    
+    # Model matching (critical for accuracy)
+    source_model = str(source_row.get('model', '')).lower().strip()
+    target_model = str(target_row.get('model', '')).lower().strip()
+    if source_model and target_model:
+        if source_model == target_model:
+            model_sim = 100
+        else:
+            model_sim = fuzz.token_set_ratio(source_model, target_model)
+        total_score += model_sim * weights['model']
+        weight_applied += weights['model']
+    
+    # Dimensions matching
+    source_dims = str(source_row.get('dimensions', '')).lower().strip()
+    target_dims = str(target_row.get('dimensions', '')).lower().strip()
+    if source_dims and target_dims:
+        dims_sim = fuzz.token_set_ratio(source_dims, target_dims)
+        total_score += dims_sim * weights['dimensions']
+        weight_applied += weights['dimensions']
+    
+    # Category matching
+    source_cat = str(source_row.get('category', '')).lower().strip()
+    target_cat = str(target_row.get('category', '')).lower().strip()
+    if source_cat and target_cat:
+        if source_cat == target_cat:
+            cat_sim = 100
+        else:
+            cat_sim = fuzz.token_set_ratio(source_cat, target_cat)
+        total_score += cat_sim * weights['category']
+        weight_applied += weights['category']
+    
+    # Material matching
+    source_mat = str(source_row.get('material', '')).lower().strip()
+    target_mat = str(target_row.get('material', '')).lower().strip()
+    if source_mat and target_mat:
+        mat_sim = fuzz.token_set_ratio(source_mat, target_mat)
+        total_score += mat_sim * weights['material']
+        weight_applied += weights['material']
+    
+    # Color matching
+    source_color = str(source_row.get('color', '')).lower().strip()
+    target_color = str(target_row.get('color', '')).lower().strip()
+    if source_color and target_color:
+        if source_color == target_color:
+            color_sim = 100
+        else:
+            color_sim = fuzz.token_set_ratio(source_color, target_color)
+        total_score += color_sim * weights['color']
+        weight_applied += weights['color']
+    
+    # Description matching
+    source_desc = get_description(source_row).lower()
+    target_desc = get_description(target_row).lower()
+    if source_desc and target_desc:
+        desc_sim = calculate_text_similarity(source_desc, target_desc)
+        total_score += desc_sim * weights['description']
+        weight_applied += weights['description']
+    
+    # Normalize by applied weights (in case some attributes are missing)
+    if weight_applied > 0:
+        final_score = (total_score / weight_applied) * (weight_applied / 1.0)
+        return final_score
+    
+    return 0
+
 def find_similar_products(source_df, target_df, similarity_threshold=60):
-    """Find similar products between two dataframes"""
+    """Find similar products between two dataframes using weighted attribute matching"""
     matches = []
     
     for idx1, row1 in source_df.iterrows():
         source_name = get_product_name(row1)
-        source_desc = get_description(row1)
-        source_text = f"{source_name} {source_desc}"
         source_retailer = get_retailer(row1)
         
         best_match = None
@@ -228,21 +326,20 @@ def find_similar_products(source_df, target_df, similarity_threshold=60):
         
         for idx2, row2 in target_df.iterrows():
             target_name = get_product_name(row2)
-            target_desc = get_description(row2)
-            target_text = f"{target_name} {target_desc}"
             target_retailer = get_retailer(row2)
             
-            similarity = calculate_text_similarity(source_text, target_text)
+            # Use weighted attribute matching
+            similarity = calculate_weighted_similarity(row1, row2)
             
             # Track the best match
             if similarity > best_similarity:
                 best_similarity = similarity
-                best_match = (idx2, row2, target_name, target_desc, target_retailer)
+                best_match = (idx2, row2, target_name, target_retailer)
         
-        # Use lower threshold for text similarity
+        # Use lower threshold for weighted matching
         adjusted_threshold = max(30, similarity_threshold - 20)
         if best_match and best_similarity >= adjusted_threshold:
-            idx2, row2, target_name, target_desc, target_retailer = best_match
+            idx2, row2, target_name, target_retailer = best_match
             price1 = get_price(row1)
             price2 = get_price(row2)
             price_diff = price2 - price1
@@ -260,8 +357,8 @@ def find_similar_products(source_df, target_df, similarity_threshold=60):
                 'similarity_score': round(best_similarity, 1),
                 'price_difference': round(price_diff, 2),
                 'price_difference_pct': round(price_diff_pct, 1),
-                'source_description': source_desc,
-                'target_description': target_desc,
+                'source_description': get_description(row1),
+                'target_description': get_description(row2),
                 'source_brand': row1.get('brand', '') if 'brand' in row1.index else '',
                 'target_brand': row2.get('brand', '') if 'brand' in row2.index else '',
             })
