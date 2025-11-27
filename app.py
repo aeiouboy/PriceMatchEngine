@@ -71,7 +71,7 @@ Return ONLY valid JSON, no other text."""
 
         try:
             response = client.chat.completions.create(
-                model="google/gemini-2.0-flash-exp:free",
+                model="google/gemini-2.5-flash-lite",
                 messages=[{"role": "user", "content": prompt}],
                 max_tokens=200
             )
