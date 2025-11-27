@@ -214,87 +214,44 @@ def calculate_text_similarity(text1, text2):
     return combined_score
 
 def calculate_weighted_similarity(source_row, target_row):
-    """Calculate weighted similarity based on product attributes with strict matching"""
+    """Calculate product similarity with simple name-based matching"""
     source_name = get_product_name(source_row).lower()
     target_name = get_product_name(target_row).lower()
     
     if not source_name or not target_name:
         return 0
     
-    # Extract key words from product names for category matching
-    source_words = set(source_name.split())
-    target_words = set(target_name.split())
-    
-    # Check if names have significant keyword overlap (prevents Samsung matching Nintendo)
-    common_words = source_words & target_words
-    if not common_words:
-        # No common words - reject immediately (e.g., Samsung has no words in common with Nintendo)
-        # UNLESS both are very specific branded products that might still match
-        name_sim = calculate_text_similarity(source_name, target_name)
-        if name_sim < 70:  # Require 70%+ name similarity if no common keywords
-            return 0
-    
+    # Start with name similarity
     name_sim = calculate_text_similarity(source_name, target_name)
     
-    # If names still don't match above 60%, reject
-    if name_sim < 60:
+    # Only proceed if names are at least 50% similar
+    if name_sim < 50:
         return 0
     
-    # Attribute weights
-    weights = {
-        'product_name': 0.50,
-        'brand': 0.30,
-        'model': 0.15,
-        'category': 0.05,
-    }
-    
-    total_score = name_sim * weights['product_name']
-    weight_applied = weights['product_name']
-    
-    # Brand matching - CRITICAL gate
+    # If brand fields exist, they must match reasonably well
     source_brand = str(source_row.get('brand', '')).lower().strip()
     target_brand = str(target_row.get('brand', '')).lower().strip()
+    
     if source_brand and target_brand:
         if source_brand == target_brand:
-            brand_sim = 100
+            brand_match = True
         else:
             brand_sim = fuzz.token_set_ratio(source_brand, target_brand)
+            brand_match = brand_sim > 60
         
-        # If brands don't match at all, significantly reduce score
-        if brand_sim < 50:
-            brand_sim = max(0, brand_sim - 30)  # Penalize mismatched brands
-        
-        total_score += brand_sim * weights['brand']
-        weight_applied += weights['brand']
+        # If brands don't match, heavily penalize
+        if not brand_match:
+            name_sim = name_sim * 0.4  # Reduce score by 60%
     
-    # Model matching
-    source_model = str(source_row.get('model', '')).lower().strip()
-    target_model = str(target_row.get('model', '')).lower().strip()
-    if source_model and target_model:
-        if source_model == target_model:
-            model_sim = 100
-        else:
-            model_sim = fuzz.token_set_ratio(source_model, target_model)
-        total_score += model_sim * weights['model']
-        weight_applied += weights['model']
-    
-    # Category matching
+    # If category fields exist, they must match
     source_cat = str(source_row.get('category', '')).lower().strip()
     target_cat = str(target_row.get('category', '')).lower().strip()
+    
     if source_cat and target_cat:
-        if source_cat == target_cat:
-            cat_sim = 100
-        else:
-            cat_sim = fuzz.token_set_ratio(source_cat, target_cat)
-        total_score += cat_sim * weights['category']
-        weight_applied += weights['category']
+        if source_cat != target_cat:
+            return 0  # Reject if categories don't match
     
-    # Final score - normalized by applied weights
-    if weight_applied > 0:
-        final_score = total_score / weight_applied
-        return final_score
-    
-    return 0
+    return name_sim
 
 def find_similar_products(source_df, target_df, similarity_threshold=60):
     """Find similar products between two dataframes using weighted attribute matching"""
