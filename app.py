@@ -214,7 +214,7 @@ def calculate_text_similarity(text1, text2):
     return combined_score
 
 def calculate_weighted_similarity(source_row, target_row):
-    """Calculate weighted similarity based on product attributes"""
+    """Calculate weighted similarity based on product attributes including images"""
     # Attribute weights (total = 100)
     weights = {
         'product_name': 0.25,
@@ -224,7 +224,8 @@ def calculate_weighted_similarity(source_row, target_row):
         'category': 0.08,
         'material': 0.05,
         'color': 0.05,
-        'description': 0.05,
+        'description': 0.03,
+        'image': 0.02,
     }
     
     total_score = 0
@@ -306,6 +307,14 @@ def calculate_weighted_similarity(source_row, target_row):
         total_score += desc_sim * weights['description']
         weight_applied += weights['description']
     
+    # Image matching (if both have images)
+    source_img = get_image_url(source_row)
+    target_img = get_image_url(target_row)
+    if source_img and target_img:
+        img_sim = calculate_image_similarity(source_row, target_row)
+        total_score += img_sim * weights['image']
+        weight_applied += weights['image']
+    
     # Normalize by applied weights (in case some attributes are missing)
     if weight_applied > 0:
         final_score = total_score / weight_applied
@@ -350,10 +359,12 @@ def find_similar_products(source_df, target_df, similarity_threshold=60):
                 'source_price': price1,
                 'source_retailer': source_retailer,
                 'source_url': get_url(row1),
+                'source_image_url': get_image_url(row1),
                 'target_product': target_name,
                 'target_price': price2,
                 'target_retailer': target_retailer,
                 'target_url': get_url(row2),
+                'target_image_url': get_image_url(row2),
                 'similarity_score': round(best_similarity, 1),
                 'price_difference': round(price_diff, 2),
                 'price_difference_pct': round(price_diff_pct, 1),
@@ -388,7 +399,17 @@ def create_sample_data():
             'Apple tablet with M2 chip',
             'True wireless earbuds'
         ],
-        'price': [999, 1199, 349, 1999, 1499, 349, 1099, 279]
+        'price': [999, 1199, 349, 1999, 1499, 349, 1099, 279],
+        'image_url': [
+            'https://images.unsplash.com/photo-1592286927505-1def25115558?w=300&h=300&fit=crop',
+            'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=300&h=300&fit=crop',
+            'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=300&fit=crop',
+            'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=300&h=300&fit=crop',
+            'https://images.unsplash.com/photo-1588872657840-790ff3bde172?w=300&h=300&fit=crop',
+            'https://images.unsplash.com/photo-1578303512529-e2e01988b9c1?w=300&h=300&fit=crop',
+            'https://images.unsplash.com/photo-1527689377991-3da12a535268?w=300&h=300&fit=crop',
+            'https://images.unsplash.com/photo-1484704849700-f032a568e944?w=300&h=300&fit=crop'
+        ]
     }
     
     target_data = {
@@ -412,7 +433,17 @@ def create_sample_data():
             'Professional tablet',
             'Wireless noise cancelling earbuds'
         ],
-        'price': [1049, 1299, 329, 2199, 1399, 359, 1149, 249]
+        'price': [1049, 1299, 329, 2199, 1399, 359, 1149, 249],
+        'image_url': [
+            'https://images.unsplash.com/photo-1592286927505-1def25115558?w=300&h=300&fit=crop',
+            'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=300&h=300&fit=crop',
+            'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=300&fit=crop',
+            'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=300&h=300&fit=crop',
+            'https://images.unsplash.com/photo-1588872657840-790ff3bde172?w=300&h=300&fit=crop',
+            'https://images.unsplash.com/photo-1578303512529-e2e01988b9c1?w=300&h=300&fit=crop',
+            'https://images.unsplash.com/photo-1527689377991-3da12a535268?w=300&h=300&fit=crop',
+            'https://images.unsplash.com/photo-1484704849700-f032a568e944?w=300&h=300&fit=crop'
+        ]
     }
     
     return pd.DataFrame(source_data), pd.DataFrame(target_data)
@@ -526,6 +557,65 @@ def get_url(row):
                 return url_str
     return ''
 
+def get_image_url(row):
+    """Get image URL from row, checking multiple possible columns"""
+    for col in ['image_url', 'image', 'image_link', 'photo_url', 'photo', 'picture_url', 'picture']:
+        if col in row.index and pd.notna(row.get(col)):
+            url_str = str(row[col])
+            if url_str and url_str.strip() and url_str.lower().startswith(('http://', 'https://')):
+                return url_str
+    return ''
+
+def calculate_image_similarity(source_row, target_row):
+    """Calculate image similarity using OpenRouter vision API"""
+    source_img = get_image_url(source_row)
+    target_img = get_image_url(target_row)
+    
+    # If either image is missing, return 0
+    if not source_img or not target_img:
+        return 0
+    
+    client = get_openrouter_client()
+    if not client:
+        return 0
+    
+    try:
+        # Use vision API to compare images
+        response = client.chat.completions.create(
+            model="google/gemini-2.5-flash-lite",
+            messages=[
+                {
+                    "role": "user",
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": "Compare these two product images. Return ONLY a JSON with this format: {\"similarity\": <0-100 percentage>, \"reason\": \"<brief explanation>\"}. Consider visual appearance, size, design, and product characteristics."
+                        },
+                        {
+                            "type": "image_url",
+                            "image_url": {"url": source_img}
+                        },
+                        {
+                            "type": "image_url",
+                            "image_url": {"url": target_img}
+                        }
+                    ]
+                }
+            ],
+            max_tokens=100
+        )
+        
+        # Parse response
+        response_text = response.choices[0].message.content.strip()
+        try:
+            result = json.loads(response_text)
+            similarity = float(result.get('similarity', 0))
+            return min(100, max(0, similarity))
+        except (json.JSONDecodeError, ValueError, TypeError):
+            return 0
+    except Exception as e:
+        return 0
+
 def main():
     st.title("🔍 Product Matching & Price Comparison")
     st.markdown("Compare products across different sources and analyze price differences")
@@ -558,7 +648,7 @@ def main():
         elif data_source == "Upload Files (CSV/JSON)":
             st.markdown("**Supported formats:** CSV, JSON")
             st.markdown("**Required fields:** `name` or `product_name`, `current_price` or `price`")
-            st.markdown("**Optional:** `description`, `brand`, `retailer`, `category`, `url` or `link`")
+            st.markdown("**Optional:** `description`, `brand`, `retailer`, `category`, `url` or `link`, `image_url` or `image`")
             
             source_file = st.file_uploader("Source Products", type=['csv', 'json'], key='source')
             target_file = st.file_uploader("Target Products", type=['csv', 'json'], key='target')
@@ -780,6 +870,11 @@ def main():
                             st.metric("Price", f"฿{row['source_price']:,.2f}")
                             if 'source_url' in row.index and row['source_url']:
                                 st.markdown(f"[🔗 View Product]({row['source_url']})")
+                            if 'source_image_url' in row.index and row['source_image_url']:
+                                try:
+                                    st.image(row['source_image_url'], width=150, caption="Product Image")
+                                except:
+                                    pass
                         
                         with col2:
                             st.markdown("**Target Product**")
@@ -793,6 +888,11 @@ def main():
                             st.metric("Price", f"฿{row['target_price']:,.2f}")
                             if 'target_url' in row.index and row['target_url']:
                                 st.markdown(f"[🔗 View Product]({row['target_url']})")
+                            if 'target_image_url' in row.index and row['target_image_url']:
+                                try:
+                                    st.image(row['target_image_url'], width=150, caption="Product Image")
+                                except:
+                                    pass
                         
                         with col3:
                             st.markdown("**Comparison**")
