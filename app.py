@@ -80,18 +80,18 @@ def ai_match_products(source_products, target_products, progress_callback=None):
             t_model = t.get('model', '')
             t_text = f"{t_name} {t_brand} {t_model}".lower()
             
-            # Quick text similarity check
+            # Quick text similarity check - be more strict
             sim = fuzz.token_set_ratio(source_text, t_text)
-            if sim >= 30:  # Keep candidates with at least 30% similarity
+            if sim >= 50:  # Keep candidates with at least 50% similarity
                 candidates.append((i, t_name, t_brand, t_model, sim))
         
         # If no candidates, skip
         if not candidates:
             continue
         
-        # Sort by similarity and take top 10 candidates to reduce API calls
+        # Sort by similarity and take top 5 candidates
         candidates.sort(key=lambda x: x[4], reverse=True)
-        top_candidates = candidates[:10]
+        top_candidates = candidates[:5]
         
         target_list = [f"{i}: {name} (Brand: {brand}, Model: {model})" 
                       for i, name, brand, model, _ in top_candidates]
@@ -109,11 +109,11 @@ TARGET PRODUCTS:
 {chr(10).join(target_list)}
 
 INSTRUCTIONS:
-1. Find products that are the SAME or very similar (same brand, model, or equivalent product)
-2. Consider brand names, model numbers, product specifications
+1. ONLY match if the products are clearly the SAME product (same brand AND same model OR very similar model)
+2. DO NOT match if brands are different
 3. Return JSON with this format: {{"match_index": <number or null>, "confidence": <0-100>, "reason": "<brief explanation>"}}
-4. If no good match exists, set match_index to null and confidence to 0
-5. Only match if confidence is above 60%
+4. If no exact match exists, set match_index to null and confidence to 0
+5. Only return a match_index if confidence is 70% or higher
 
 Return ONLY valid JSON, no other text."""
 
@@ -133,7 +133,7 @@ Return ONLY valid JSON, no other text."""
             
             result = json.loads(result_text)
             
-            if result.get('match_index') is not None and result.get('confidence', 0) >= 60:
+            if result.get('match_index') is not None and result.get('confidence', 0) >= 70:
                 # Map back to original target index
                 match_idx = int(result['match_index'])
                 if 0 <= match_idx < len(top_candidates):
