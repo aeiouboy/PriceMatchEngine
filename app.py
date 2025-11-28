@@ -93,8 +93,9 @@ def ai_match_products(source_products, target_products, progress_callback=None):
         candidates.sort(key=lambda x: x[4], reverse=True)
         top_candidates = candidates[:8]
         
-        target_list = [f"{i}: {name} (Brand: {brand}, Model: {model})" 
-                      for i, name, brand, model, _ in top_candidates]
+        # Use position index (0, 1, 2...) so AI response matches our list
+        target_list = [f"{pos}: {name} (Brand: {brand}, Model: {model})" 
+                      for pos, (i, name, brand, model, _) in enumerate(top_candidates)]
         
         prompt = f"""You are a product matching expert. Find the BEST matching product from the target list for this source product.
 
