@@ -307,64 +307,73 @@ def find_similar_products(source_df, target_df, similarity_threshold=60):
     return pd.DataFrame(matches)
 
 def create_sample_data():
-    """Create sample product data for demonstration"""
+    """Create sample product data using real Thai retail products (Megahome vs Thaiwatsadu)"""
+    
+    # Source: Megahome products
     source_data = {
         'product_name': [
-            'Apple iPhone 15 Pro 256GB',
-            'Samsung Galaxy S24 Ultra',
-            'Sony WH-1000XM5 Headphones',
-            'MacBook Pro 14 inch M3',
-            'Dell XPS 15 Laptop',
-            'Nintendo Switch OLED',
-            'iPad Pro 12.9 inch',
-            'Bose QuietComfort Earbuds'
+            'สีน้ำทาภายนอก NIPPON PAINT WEATHERBONDSHEEN BASE A 9L',
+            'สีรองพื้นปูนใหม่ CAPTAIN SUPER NANO PRIMER 2.5 แกลลอน',
+            'ทินเนอร์ TOA BARCO AAA 2 ลิตร',
+            'น้ำมันสน TOA SHARKS 1 แกลลอน',
+            'สีน้ำทาฝ้า BEGER DELIGHT TITANIUM I-3333 สีขาว 5 แกลลอน',
+            'ประตูห้องน้ำ UPVC ECO-DOOR PB1 70X200 ซม.',
+            'ประตูบานเลื่อน อะลูมิเนียม WINDOW ASIA F10 200X205 ซม.',
+            'สีสเปรย์ BOSNY No.39 สีดำเงา 400 มล.'
         ],
+        'retailer': ['Mega Home'] * 8,
         'brand': [
-            'Apple', 'Samsung', 'Sony', 'Apple', 'Dell', 'Nintendo', 'Apple', 'Bose'
+            'NIPPON PAINT', 'CAPTAIN', 'TOA', 'TOA', 'BEGER', 'ECO-DOOR', 'WINDOW ASIA', 'BOSNY'
         ],
         'category': [
-            'Smartphone', 'Smartphone', 'Headphones', 'Laptop', 'Laptop', 'Gaming Console', 'Tablet', 'Earbuds'
+            'สีทาภายนอก', 'สี', 'ทินเนอร์', 'น้ำมันสน', 'สี', 'ประตูห้องน้ำ', 'ประตู', 'สีสเปรย์'
         ],
-        'price': [999, 1199, 349, 1999, 1499, 349, 1099, 279],
-        'image_url': [
-            'https://images.unsplash.com/photo-1592286927505-1def25115558?w=300&h=300&fit=crop',
-            'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=300&h=300&fit=crop',
-            'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=300&fit=crop',
-            'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=300&h=300&fit=crop',
-            'https://images.unsplash.com/photo-1588872657840-790ff3bde172?w=300&h=300&fit=crop',
-            'https://images.unsplash.com/photo-1578303512529-e2e01988b9c1?w=300&h=300&fit=crop',
-            'https://images.unsplash.com/photo-1527689377991-3da12a535268?w=300&h=300&fit=crop',
-            'https://images.unsplash.com/photo-1484704849700-f032a568e944?w=300&h=300&fit=crop'
+        'price': [2030, 1370, 235, 195, 1540, 1590, 7990, 75],
+        'url': [
+            'https://www.megahome.co.th/p/1170148',
+            'https://www.megahome.co.th/p/1084277',
+            'https://www.megahome.co.th/p/15098',
+            'https://www.megahome.co.th/p/15075',
+            'https://www.megahome.co.th/p/1119436',
+            'https://www.megahome.co.th/p/1242180',
+            'https://www.megahome.co.th/p/1164089',
+            'https://www.megahome.co.th/p/15200'
         ]
     }
     
+    # Target: Thaiwatsadu products (similar but different naming)
     target_data = {
         'product_name': [
-            'iPhone 15 Pro 256GB Black',
-            'Samsung S24 Ultra 512GB',
-            'Sony WH1000XM5 Black',
-            'Apple MacBook Pro 14" M3 Pro',
-            'Dell XPS 15 9530',
-            'Nintendo Switch OLED Model',
-            'Apple iPad Pro 12.9"',
-            'Bose QC Earbuds II'
+            'สีรองพื้นปูนใหม่ NIPPON รุ่น จูเนียร์ 99 ขนาด 17.5 ลิตร สีขาว',
+            'สีรองพื้นกันด่าง CAPTAIN รุ่น NANO PRIMER 2.5 GL',
+            'ทินเนอร์ผสมสี TOA รุ่น BARCO AAA ขนาด 1 แกลลอน',
+            'น้ำมันสน TOA SHARKS ขนาด 1 ปี๊ป',
+            'สีน้ำอะคริลิค BEGER รุ่น DELIGHT ขนาด 5 แกลลอน สีขาว',
+            'ประตู UPVC ECO-DOOR รุ่น PB2 ขนาด 70x200 ซม.',
+            'ประตูบานเลื่อน WINDOW ASIA รุ่น F10 ขนาด 180x205 ซม.',
+            'สีสเปรย์ BOSNY รุ่น No.39 ขนาด 400 CC สีดำ',
+            'คีมล๊อคปากตรง SOLO รุ่น 2000 ขนาด 10 นิ้ว',
+            'กลอนเรียบมนเหล็ก YALE รุ่น BA-90704SNP2 ขนาด 4 นิ้ว'
         ],
+        'retailer': ['Thai Watsadu'] * 10,
         'brand': [
-            'Apple', 'Samsung', 'Sony', 'Apple', 'Dell', 'Nintendo', 'Apple', 'Bose'
+            'NIPPON PAINT', 'CAPTAIN', 'TOA', 'TOA', 'BEGER', 'ECO-DOOR', 'WINDOW ASIA', 'BOSNY', 'SOLO', 'YALE'
         ],
         'category': [
-            'Smartphone', 'Smartphone', 'Headphones', 'Laptop', 'Laptop', 'Gaming Console', 'Tablet', 'Earbuds'
+            'สีรองพื้น', 'สีรองพื้น', 'ทินเนอร์', 'น้ำมันสน', 'สีน้ำ', 'ประตู', 'ประตู', 'สีสเปรย์', 'เครื่องมือช่าง', 'กลอนประตู'
         ],
-        'price': [1049, 1299, 329, 2199, 1399, 359, 1149, 249],
-        'image_url': [
-            'https://images.unsplash.com/photo-1592286927505-1def25115558?w=300&h=300&fit=crop',
-            'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=300&h=300&fit=crop',
-            'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=300&fit=crop',
-            'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=300&h=300&fit=crop',
-            'https://images.unsplash.com/photo-1588872657840-790ff3bde172?w=300&h=300&fit=crop',
-            'https://images.unsplash.com/photo-1578303512529-e2e01988b9c1?w=300&h=300&fit=crop',
-            'https://images.unsplash.com/photo-1527689377991-3da12a535268?w=300&h=300&fit=crop',
-            'https://images.unsplash.com/photo-1484704849700-f032a568e944?w=300&h=300&fit=crop'
+        'price': [1130, 1450, 220, 840, 1680, 1690, 8500, 69, 255, 129],
+        'url': [
+            'https://www.thaiwatsadu.com/th/sku/60193804',
+            'https://www.thaiwatsadu.com/th/sku/60193850',
+            'https://www.thaiwatsadu.com/th/sku/60015098',
+            'https://www.thaiwatsadu.com/th/sku/60015076',
+            'https://www.thaiwatsadu.com/th/sku/60119436',
+            'https://www.thaiwatsadu.com/th/sku/60242180',
+            'https://www.thaiwatsadu.com/th/sku/60164089',
+            'https://www.thaiwatsadu.com/th/sku/60015200',
+            'https://www.thaiwatsadu.com/th/sku/60272160',
+            'https://www.thaiwatsadu.com/th/sku/60245942'
         ]
     }
     
