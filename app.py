@@ -9,59 +9,8 @@ import numpy as np
 from io import StringIO
 import json
 import os
-import re
 from openai import OpenAI
 from datetime import datetime
-
-
-class AttributeExtractor:
-    """Extract product attributes for enhanced AI matching (v2.1)"""
-    
-    PRODUCT_LINES = [
-        'JOTASHIELD FLEX', 'JOTASHIELD AF', 'JOTASHIELD ANTIFADE', 'JOTASHIELD INFINITY',
-        'JOTASHIELD', 'TOUGH SHIELD MAX', 'TOUGH SHIELD',
-        'SUPERMATEX', 'SUPERSHIELD', 'VINILEX', 'SUPER SERVE',
-        'WEATHERBOND', 'WEATHERSHIELD', 'FLEXISEAL', 'QUICK SEALER',
-        'DIAMONDSHIELD', 'POWERPLUS', 'HYDRO QUICK', 'AIR FRESH', 'DELIGHT',
-        'COOL MAX', 'COOL DIAMOND', 'EASY CLEAN', 'BEGERSHIELD',
-    ]
-    
-    @classmethod
-    def extract_size(cls, text):
-        if not text:
-            return None
-        t = str(text).upper()
-        g = re.search(r'(\d+\.?\d*)\s*(GL|แกลลอน|แกลอน|GALLON)', t)
-        if g: return f"{g.group(1)}GL"
-        l = re.search(r'(\d+\.?\d*)\s*(ลิตร|L(?![A-Z])|LT)', t)
-        if l: return f"{l.group(1)}L"
-        if 'ขวดใหญ่' in t: return 'LARGE'
-        if 'ขวดเล็ก' in t: return 'SMALL'
-        k = re.search(r'(\d+\.?\d*)\s*(กก\.|KG)', t)
-        if k: return f"{k.group(1)}KG"
-        return None
-    
-    @classmethod
-    def extract_product_line(cls, text):
-        if not text:
-            return None
-        t = normalize_text(text)
-        for pl in sorted(cls.PRODUCT_LINES, key=len, reverse=True):
-            if pl in t:
-                return pl
-        return None
-    
-    @classmethod
-    def extract_model(cls, text):
-        if not text:
-            return None
-        t = str(text).upper()
-        patterns = [r'\b(P[DBN]\d+)\b', r'\b(M[NRW]\d+)\b', r'\b(AAA|AA)\b',
-                    r'รุ่น\s+([A-Z0-9][A-Z0-9\-]+)']
-        for p in patterns:
-            m = re.search(p, t)
-            if m: return m.group(1)
-        return None
 
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
 RESULTS_DIR = "saved_results"
@@ -242,34 +191,13 @@ def ai_match_products(source_products, target_products, progress_callback=None):
         candidates.sort(key=lambda x: x[5], reverse=True)
         top_candidates = candidates[:15]
         
-        # Extract source attributes for context (v2.1 enhancement)
-        src_size = AttributeExtractor.extract_size(source_name)
-        src_line = AttributeExtractor.extract_product_line(source_name)
-        src_model = AttributeExtractor.extract_model(source_name)
-        
-        # Build target list with extracted attributes
-        target_list = []
-        for pos, (i, name, brand, model, volume, _) in enumerate(top_candidates):
-            t_size = AttributeExtractor.extract_size(name)
-            t_line = AttributeExtractor.extract_product_line(name)
-            t_model = AttributeExtractor.extract_model(name)
-            attrs = []
-            if t_size: attrs.append(f"Size:{t_size}")
-            if t_line: attrs.append(f"Line:{t_line}")
-            if t_model: attrs.append(f"Model:{t_model}")
-            attr_str = f" [{', '.join(attrs)}]" if attrs else ""
-            target_list.append(f"{pos}: {name[:60]}{attr_str}")
-        
-        # Build source context
-        src_attrs = []
-        if src_size: src_attrs.append(f"Size:{src_size}")
-        if src_line: src_attrs.append(f"Line:{src_line}")
-        if src_model: src_attrs.append(f"Model:{src_model}")
-        src_attr_str = f" [{', '.join(src_attrs)}]" if src_attrs else ""
+        # Use position index (0, 1, 2...) so AI response matches our list
+        target_list = [f"{pos}: {name} (Brand: {brand}, Model: {model}, Size: {volume})" 
+                      for pos, (i, name, brand, model, volume, _) in enumerate(top_candidates)]
         
         prompt = f"""Product matcher for Thai retail. Find best product match.
 
-SOURCE: {source_name}{src_attr_str}
+SOURCE: {source_name}
 
 TARGETS:
 {chr(10).join(target_list)}
@@ -278,10 +206,8 @@ MATCHING RULES:
 1. PRODUCT LINE - must match same product line (CRITICAL):
    - JOTASHIELD ≠ JOTASHIELD FLEX ≠ TOUGH SHIELD (different lines!)
    - JOTASHIELD ANTIFADE = JOTASHIELD AF (same)
-   - AIR FRESH = AIRFRESH ≠ DELIGHT (different!)
-   - FLEXISEAL = เฟล็กซี่ซีล ≠ ควิกซิลเลอร์ (different!)
-   - SUPERMATEX ≠ SUPERSHIELD (different!)
-   - COOL MAX ≠ COOL DIAMOND (different!)
+   - AIR FRESH = AIRFRESH ≠ DELIGHT
+   - FLEXISEAL = เฟล็กซี่ซีล ≠ ควิกซิลเลอร์
 
 2. Thai-English = SAME product:
    - วีนิเลกซ์=VINILEX, เวเธอร์บอนด์=WEATHERBOND, โจตาชิลด์=JOTASHIELD
