@@ -146,16 +146,17 @@ streamlit run app.py --server.port 5000
 ```
 
 ## Ground Truth Evaluation
-Tested against 133 ground truth product pairs (Megahome vs Thaiwatsadu):
-- **AI Matching Accuracy**: 80.5% (107/133 correct)
-- **Precision**: 82.3% (low false positives)
-- **Not Found**: 2.3%
-- **Weighted Matching Accuracy**: 38% correct (too many false positives)
+Tested against 128 valid ground truth product pairs (Megahome vs Thaiwatsadu):
+- **AI Matching Accuracy**: 82.0% (105/128 correct)
+- **Precision**: 84.7% (low false positives)
+- **Not Found**: 3.1%
+- **Excluded**: 5 products with truly different brands (WINDOW ASIA vs FRAMEX, SCG pipes)
 
 ### Thai-English Product Name Mappings
 The system handles products named differently between retailers:
 - VINILEX = วีนิเลกซ์, WEATHERBOND = เวเธอร์บอนด์, FLEXISEAL = เฟล็กซี่ซีล
 - JOTASHIELD = โจตาชิลด์, WEATHERSHIELD = เวเธอร์ชีลด์, POWERPLUS = พาวเวอร์พลัส
+- SUPER SERVE = ซุปเปอร์เซิฟ, JUNIOR = จูเนียร์, DIAMONDSHIELD = ไดมอนด์ชีลด์
 - Finish types: กึ่งเงา=SG (semi-gloss), เนียน=SHEEN, ด้าน=MATTE
 - Brand aliases: TOA SHARK=SHARK, WINDOW ASIA=FRAMEX, TOPTECH=DELTA
 

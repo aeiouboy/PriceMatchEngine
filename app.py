@@ -79,6 +79,9 @@ def normalize_text(text):
         'เวเธอร์บอนด์': 'WEATHERBOND',
         'เฟล็กซี่ ซีล': 'FLEXISEAL',
         'เฟล็กซี่ซีล': 'FLEXISEAL',
+        'ซุปเปอร์เซิฟ': 'SUPER SERVE',
+        'จูเนียร์ 99': 'JUNIOR99',
+        'จูเนียร์': 'JUNIOR',
         # JOTUN products
         'โจตาชิลด์': 'JOTASHIELD',
         'โจตาชีลด์': 'JOTASHIELD',
@@ -90,27 +93,25 @@ def normalize_text(text):
         'พาวเวอร์เฟล็ก': 'POWERFLEXX',
         'ไฮโดรไพร์เมอร์': 'HYDRO PRIMER',
         'แอดวานซ์': 'ADVANCE',
+        'อัลติม่า': 'ULTIMA',
         # BEGER products
         'อีซี่คลีน': 'EASY CLEAN',
+        'ไดมอนด์ชีลด์': 'DIAMONDSHIELD',
+        'เบเกอร์ชีลด์': 'BEGERSHIELD',
+        'พียูไฮบริด': 'PU HYBRID',
         # DELTA/TOPTECH products
         'ท็อปเทคโค้ดเฟล็ก': 'TOPTECH COATFLEX',
         'ท็อปเทค': 'TOPTECH',
         # JBP products
         'ฟิวเจอร์ชีลด์': 'FUTURESHIELD',
-        # Finish types (SHEEN = เนียน, but needs mapping both ways)
+        # Finish types
         'กึ่งเงา': 'SEMIGLOSS',
         'เนียน': 'SHEEN',
         'ด้าน': 'MATTE',
-        'SHEEN': 'SHEEN',
-        'SG': 'SEMIGLOSS',
-        'SH': 'SHEEN',
         # Size normalization
         'แกลลอน': 'GAL',
         'แกลอน': 'GAL',
         'ลิตร': 'L',
-        '1 GAL': '1GAL',
-        '2.5 GAL': '2.5GAL',
-        '5 GAL': '5GAL',
         # Other
         'รุ่น': '',
         'ขนาด': '',
