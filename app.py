@@ -52,8 +52,24 @@ def get_openrouter_client():
         )
     return None
 
+def normalize_brand(brand):
+    """Normalize brand names for better matching (handles aliases)"""
+    if not brand:
+        return ''
+    brand = brand.upper().strip()
+    aliases = {
+        'SHARKS': 'SHARK',
+        'TOA SHARKS': 'TOA SHARK',
+        'NIPPON': 'NIPPON PAINT',
+        'BARGO': 'BARCO',
+    }
+    for alias, normalized in aliases.items():
+        if alias in brand:
+            brand = brand.replace(alias, normalized)
+    return brand
+
 def ai_match_products(source_products, target_products, progress_callback=None):
-    """Use AI to find matching products between two lists (hybrid approach with pre-filtering)"""
+    """Use AI to find matching products between two lists (improved hybrid approach)"""
     client = get_openrouter_client()
     if not client:
         return None
@@ -66,57 +82,67 @@ def ai_match_products(source_products, target_products, progress_callback=None):
             progress_callback((idx + 1) / total)
         
         source_name = source.get('name', source.get('product_name', ''))
-        source_brand = source.get('brand', '')
+        source_brand = normalize_brand(source.get('brand', ''))
         source_model = source.get('model', '')
         source_category = source.get('category', '')
         source_desc = source.get('description', '')
-        source_text = f"{source_name} {source_brand} {source_model} {source_category} {source_desc}".lower()
+        source_volume = source.get('volume', '')
+        source_text = f"{source_name} {source_brand} {source_model} {source_category}".lower()
         
-        # Pre-filter targets using text similarity to speed up AI matching
+        # Pre-filter targets - use lower threshold for better recall
         candidates = []
         for i, t in enumerate(target_products):
             t_name = t.get('name', t.get('product_name', ''))
-            t_brand = t.get('brand', '')
+            t_brand = normalize_brand(t.get('brand', ''))
             t_model = t.get('model', '')
+            t_volume = t.get('volume', '')
             t_text = f"{t_name} {t_brand} {t_model}".lower()
             
-            # Quick text similarity check - use low threshold to include more candidates
+            # Quick text similarity check - lower threshold for better recall
             sim = fuzz.token_set_ratio(source_text, t_text)
-            if sim >= 25:  # Keep candidates with at least 25% similarity
-                candidates.append((i, t_name, t_brand, t_model, sim))
+            
+            # Brand boost: if brands match, increase score
+            if source_brand and t_brand and source_brand == t_brand:
+                sim = min(100, sim + 15)
+            
+            if sim >= 20:  # Lower threshold for better recall
+                candidates.append((i, t_name, t_brand, t_model, t_volume, sim))
         
         # If no candidates, skip
         if not candidates:
             continue
         
-        # Sort by similarity and take top 10 candidates
-        candidates.sort(key=lambda x: x[4], reverse=True)
-        top_candidates = candidates[:10]
+        # Sort by similarity and take top 15 candidates (increased from 10)
+        candidates.sort(key=lambda x: x[5], reverse=True)
+        top_candidates = candidates[:15]
         
         # Use position index (0, 1, 2...) so AI response matches our list
-        target_list = [f"{pos}: {name} (Brand: {brand}, Model: {model})" 
-                      for pos, (i, name, brand, model, _) in enumerate(top_candidates)]
+        target_list = [f"{pos}: {name} (Brand: {brand}, Model: {model}, Size: {volume})" 
+                      for pos, (i, name, brand, model, volume, _) in enumerate(top_candidates)]
         
-        prompt = f"""You are a product matching expert. Find the BEST matching product from the target list for this source product.
+        prompt = f"""You are a Thai retail product matching expert. Find the BEST matching product from the target list.
 
 SOURCE PRODUCT:
 - Name: {source_name}
 - Brand: {source_brand}
 - Model: {source_model}
 - Category: {source_category}
-- Description: {source_desc[:200] if source_desc else 'N/A'}
+- Size/Volume: {source_volume}
+- Description: {source_desc[:150] if source_desc else 'N/A'}
 
 TARGET PRODUCTS:
 {chr(10).join(target_list)}
 
-INSTRUCTIONS:
-1. ONLY match if the products are clearly the SAME product (same brand AND same model OR very similar model)
-2. DO NOT match if brands are different
-3. Return JSON with this format: {{"match_index": <number or null>, "confidence": <0-100>, "reason": "<brief explanation>"}}
-4. If no exact match exists, set match_index to null and confidence to 0
-5. Only return a match_index if confidence is 70% or higher
+MATCHING RULES:
+1. Match products that are the SAME item (same brand, same or equivalent model)
+2. Brand names may have slight variations (e.g., SHARKS=SHARK, TOA BARCO=TOA BARGO)
+3. Size/volume should match (e.g., 1 แกลลอน, 5 ลิตร, 11 ลิตร)
+4. Category should be similar (e.g., ทินเนอร์, สีรองพื้น, ประตู)
+5. Return JSON: {{"match_index": <number or null>, "confidence": <0-100>, "reason": "<brief>"}}
+6. If no good match, set match_index to null
+7. Match if confidence >= 60%
 
-Return ONLY valid JSON, no other text."""
+Return ONLY valid JSON."""
 
         try:
             response = client.chat.completions.create(
@@ -134,8 +160,8 @@ Return ONLY valid JSON, no other text."""
             
             result = json.loads(result_text)
             
-            if result.get('match_index') is not None and result.get('confidence', 0) >= 70:
-                # Map back to original target index
+            # Lowered confidence threshold from 70 to 60 for better recall
+            if result.get('match_index') is not None and result.get('confidence', 0) >= 60:
                 match_idx = int(result['match_index'])
                 if 0 <= match_idx < len(top_candidates):
                     original_idx = top_candidates[match_idx][0]

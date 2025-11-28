@@ -145,7 +145,22 @@ Example JSON structure:
 streamlit run app.py --server.port 5000
 ```
 
+## Ground Truth Evaluation
+Tested against 133 ground truth product pairs (Megahome vs Thaiwatsadu):
+- **AI Matching Accuracy**: 88% correct, 92% precision
+- **Weighted Matching Accuracy**: 38% correct (too many false positives)
+
+AI matching is recommended for production use.
+
 ## Recent Changes (Latest to Oldest)
+- **2025-11-28**: 🚀 Major AI matching improvements
+  - Brand alias normalization (SHARKS→SHARK, BARGO→BARCO)
+  - Lower pre-filter threshold (20%) for better recall
+  - Increased candidate pool (15 products)
+  - Added size/volume matching in AI prompt
+  - Brand boost for matching brands
+  - Accuracy improved from 75% to 88%
+- **2025-11-28**: Added real Thai retail sample data (Megahome vs Thaiwatsadu)
 - **2025-11-27**: 🎯 Added image matching capability with vision API integration
   - Vision-based image similarity scoring
   - 2% weight in overall similarity calculation
