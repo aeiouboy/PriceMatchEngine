@@ -1,0 +1,116 @@
+﻿original,final,source,expected
+AI_ERROR_SIZE,NEEDS_REVIEW,ทินเนอร์ TOA BARGO AAA ขวดใหญ่,ทินเนอร์ Barco รุ่น AAA ขนาด ขวดใหญ่
+AI_ERROR_FINISH,GT_FAULT_BRAND_MISMATCH,ประตูห้องน้ำ UPVC ECO-DOOR PD1 70X200 ซม. สีครีมเท,ประตูภายใน UPVC ECO DOOR รุ่น PB1 ขนาด 70 x 200 ซม
+AI_ERROR_FINISH,GT_FAULT_BRAND_MISMATCH,ประตูห้องน้ำ UPVC AZLE TROPICAL 70X200 ซม. สีขาว พ,ประตูภายใน UPVC กระจกลายดอกไม้ พร้อมวงกบ HI DOOR ร
+AI_ERROR_FINISH,GT_FAULT_BRAND_MISMATCH,ประตู UPVC ASARA G925 ดอกซากุระ 70x200 ซม. สีขาว พ,ประตูภายใน UPVC กระจกลายดอกไม้ พร้อมวงกบ HI DOOR ร
+AI_ERROR_FINISH,GT_FAULT_BRAND_MISMATCH,ประตูภายใน UPVC AZLE LT-06 80X200 ซม. สี BROWNIE O,ประตูภายใน UPVC เซาะร่อง CONNEX รุ่น LT13 ขนาด 80 
+AI_ERROR_FINISH,GT_FAULT_BRAND_MISMATCH,สีน้ำทาภายนอก NIPPON PAINT SUPER SERVE BASE A กึ่ง,สีน้ำกึ่งเงา ภายนอก NIPPON รุ่น ซุปเปอร์เซิฟ ขนาด 
+AI_ERROR_FINISH,NEEDS_REVIEW,สีน้ำทาภายนอก TOA SUPERSHIELD ADVANCE BASE A เนียน,สีน้ำกึ่งเงา ภายนอก TOA รุ่น Supershield Advance ข
+AI_ERROR_PRODUCT_LINE,NEEDS_REVIEW,สีน้ำทาภายนอก ชนิดกึ่งเงา TOA SUPERMATEX BASE A 9 ,สีน้ำกึ่งเงาภายนอก ซุปเปอร์เมเทค รุ่น แอดวานซ์ ขนา
+AI_ERROR_FINISH,NEEDS_REVIEW,สีน้ำทาภายนอก NIPPON PAINT WEATHERBONDSHEEN BASE A,สีน้ำภายนอก NIPPON รุ่น เวเธอร์บอนด์ เนียน ขนาด 9 
+AI_ERROR_FINISH,NEEDS_REVIEW,สีน้ำทาภายนอก DULUX INSPIRE BASE B ด้าน 9 ลิตร,สีน้ำภายนอก ชนิดกึ่งเงา DULUX รุ่น INSPIRE ขนาด 9 
+AI_ERROR_FINISH,NEEDS_REVIEW,สีน้ำทาภายนอก ชนิดกึ่งเงา NIPPON PAINT HYBRIDSHIEL,สีน้ำภายนอก ชนิดด้าน NIPPON PAINT รุ่น HYBRIDSHIEL
+AI_ERROR_SIZE,AI_ERROR_BRAND,สีน้ำทาภายนอก ชนิดกึ่งเงา JOTUN TOUGH SHIELD BASE ,สีน้ำภายนอกกึ่งเงา JOTUN รุ่น TOUGH SHIELD ขนาด 2.
+AI_ERROR_SIZE,AI_ERROR_SIZE,สีน้ำทาภายนอก ชนิดกึ่งเงา JOTUN JOTASHIELD ANTIFAD,สีน้ำภายนอกกึ่งเงา JOTUN รุ่น JOTASHIELD AF ขนาด 9
+AI_ERROR_SIZE,AI_ERROR_BRAND,สีน้ำทาภายนอก ชนิดกึ่งเงา JOTUN TOUGH SHIELD BASE ,สีน้ำภายนอกกึ่งเงา JOTUN รุ่น TOUGH SHIELD ขนาด 2.
+AI_ERROR_SIZE,AI_ERROR_BRAND,สีน้ำทาภายนอก ชนิดกึ่งเงา JOTUN TOUGH SHIELD MAX B,สีน้ำภายนอกด้าน JOTUN รุ่น TOUGH SHIELD MAX ขนาด 2
+AI_ERROR_FINISH,NEEDS_REVIEW,สีน้ำทาภายใน ชนิดเนียน TOA ORGANIC CARE BASE A 9 ล,สีน้ำภายใน ชนิดกึ่งเงา TOA รุ่น Organic Care ขนาด 
+AI_ERROR_FINISH,NEEDS_REVIEW,สีน้ำทาภายนอก ชนิดด้าน BEGER COOL DIAMONDSHIELD 15,สีน้ำเนียน ภายนอก 9 ลิตร BEGER รุ่น COOL DIAMONDSH
+AI_ERROR_FINISH,NEEDS_REVIEW,สีน้ำทาภายนอก TOA SUPERSHIELD สีขาว #100 กึ่งเงา 5,สีน้ำเนียน ภายนอก TOA รุ่น Supershield ขนาด 5 แกลล
+AI_ERROR_FINISH,NEEDS_REVIEW,สีน้ำทาภายใน NIPPON PAINT HYBRIDSHIELD BASE A กึ่ง,สีภายในไฮบริดชิลด์กึ่งเงา NIPPON รุ่น HYBRIDSHIELD
+AI_ERROR_SIZE,NEEDS_REVIEW,สีรองพื้นอเนกประสงค์ NIPPON PAINT FLEXISEAL 20 กก.,สีรองพื้นปูนเก่า ผนังภายนอก NIPPON รุ่น เฟล็กซี่ ซ
+AI_ERROR_FINISH,AI_ERROR_SIZE,สีรองพื้นปูนใหม่ TOA HOMECOTE 1000 ด้าน 5 แกลลอน,สีรองพื้นปูนใหม่ HOMECOTE ขนาด 5 แกลอน สี 0000 ขาว
+AI_ERROR_FINISH,NEEDS_REVIEW,สีเคลือบกันสนิม TOA เป็ดหงส์ 2 IN 1 สีดำ M818 1 แก,สีเคลือบกันสนิม ชนิดด้าน MANDARIN รุ่น MD 2IN1 RUS
+AI_ERROR_FINISH,NEEDS_REVIEW,หน้าต่างบานเลื่อน อะลูมิเนียม S-S AZLE 100x100 ซม.,หน้าต่างอะลูมิเนียมบานเลื่อน NK รุ่น 2 บานไม่มีมุ้
+AI_ERROR_FINISH,NEEDS_REVIEW,กาวพลังตะปูสูตรน้ำมัน PATTEX PL60 400 ก. สีน้ำตาล,กาวตะปูสูตรน้ำมัน PATTEX รุ่น PL60 1922470 ขนาด 30
+AI_ERROR_FINISH,NEEDS_REVIEW,ตลับเมตรหุ้มยาง พร้อมตัวล็อก STANLEY 5 ม.,ตลับเมตร STANLEY รุ่น Control Lock STHT37217-30 ขน
+AI_ERROR_FINISH,NEEDS_REVIEW,ถังปูนพลาสติก W.PLASTIC สีดำ,ถังปูนไนล่อนเกรดเอ ช่างมือโปร บุ้งกี๋/ถังปูน/อ่างผ
+AI_ERROR_FINISH,NEEDS_REVIEW,เขาควายทั่วไป SOLEX 1704 SN สีสเตนเลส,มือจับก้านโยกห้องทั่วไปซิงค์พรีเมียมจานสี่เหลี่ยม 
+AI_ERROR_FINISH,NEEDS_REVIEW,กุญแจบานเลื่อน SOLEX 2KLL สีขาว,มือจับบานเลื่อนล็อกอะลูมิเนียม พร้อมกุญแจ SOLEX รุ
+AI_ERROR_FINISH,NEEDS_REVIEW,ลูกบิดทั่วไป SOLEX 9210 SS หัวจัน สีสเตนเลส,ลูกบิดห้องน้ำหัวจันจานใหญ่หนาสเตนเลส 304 SOLEX รุ่
+AI_ERROR_FINISH,NEEDS_REVIEW,"สกรูไดร์วอลล์ BY TORA 6X1"" 100 ชิ้น",สกรูไดร์วอลล์หัวเรียบ (เกลียวหุน) 6 x 1 นิ้ว MR ME
+AI_ERROR_FINISH,NEEDS_REVIEW,สกรูไดร์วอลล์ TF DEXZON 3/4 นิ้ว 25 ชิ้น,สกรูไดร์วอลล์หัวเรียบ (เกลียวหุน) 6 x 3/4 นิ้ว MR 
+AI_ERROR_FINISH,NEEDS_REVIEW,อะไหล่ลูกกลิ้งอะครีลิค MATALL 4 นิ้ว,อะไหล่ลูกกลิ้งทาสี AT INDY รุ่น C30104-10 ขนาด 4 น
+AI_ERROR_FINISH,NEEDS_REVIEW,อะไหล่ลูกกลิ้งทาสี HACHI 4 นิ้ว,อะไหล่ลูกกลิ้งเคมีขนแกะ HACHI ขนาด 4 นิ้ว (แพ็ก 10
+AI_ERROR_FINISH,NEEDS_REVIEW,เลเซอร์ เครื่องวัดระดับเลเซอร์ PUMPKIN 10M อุปรกรณ,เลเซอร์วัดระดับแสงสีเขียว 5 เส้นพร้อมขาตั้งและอุปก
+AI_ERROR_FINISH,NEEDS_REVIEW,แปรงทาวานิช MATALL 2 นิ้ว,แปรงทาวานิช FONKEY ขนาด 2 นิ้ว (6 ซม.)
+AI_ERROR_SIZE,AI_ERROR_SIZE,กล่องเก็บของ ฝาล็อค API 2007 100 ลิตร สีขาว,กล่องอเนกประสงค์พร้อมล้อและฝาล็อก 100 ลิตร MICRON 
+AI_ERROR_SIZE,AI_ERROR_SIZE,ถังน้ำถังน้ำกลมพร้อมฝาล็อค PLIM 79L (20.8gl) สีขาว,ถังน้ำพร้อมฝาหูล๊อคเหล็ก DINO รุ่น BUC-R 22GL ขนาด
+AI_ERROR_FINISH,NEEDS_REVIEW,ทัพพีพลาสติก MYPAN,ทัพพีพลาสติก 8.5 นิ้ว KING FISHER รุ่น SP-302 สีขา
+AI_ERROR_FINISH,NEEDS_REVIEW,"น้ำยาขจัดคราบยาแนวพื้นกระเบื้อง HG 1,000 มล.",น้ำยาขจัดคราบปูนยาแนวคราบสนิม กระเบื้องเซรามิค เอ็
+AI_ERROR_FINISH,NEEDS_REVIEW,น้ำยาทำความสะอาดหินอ่อน HG 500 มล.,น้ำยาขัดห้องน้ำหินอ่อน มาร์เบิล บาธรูม คลีนเนอร์ H
+AI_ERROR_FINISH,NEEDS_REVIEW,น้ำส้มควันไม้ไล่งู ตะขาบชนิดเข้มข้น เคียงมูล 1 ลิต,น้ำส้มควันไม้ ไล่งู ตะขาบ แมงป่อง กิ้งกือ แกลลอน ส
+AI_ERROR_FINISH,NEEDS_REVIEW,อะไหล่ม็อบไมโครไฟเบอร์กลมถังปั่นแห้ง SCOTCH-BRITE ,ผ้าม็อบรีฟิลไมโครไฟเบอร์ SCOTCH BRITE รุ่น XY00383
+AI_ERROR_FINISH,NEEDS_REVIEW,อะไหล่ม็อบไมโครไฟเบอร์ SCOTCH-BRITE UU012646566,อะไหล่ผ้าไม้ถูพื้นสำหรับถัง Compact SCOTCH BRITE ส
+AI_ERROR_FINISH,NEEDS_REVIEW,แปรงขัดพื้น/ผนังห้องน้ำ งานทั่วไป SCOTCH-BRITE สีเ,แปรงขัดพื้นและผนังงานหนัก SCOTCH BRITE รุ่น XN0020
+AI_ERROR_FINISH,NEEDS_REVIEW,เกล็ดขจัดท่อตัน ท่อน้ำทิ้ง LION SUN 1KG,โซดาไฟเกล็ด ขจัดสิ่งอุดตัน ตรา 5 ดาว ขนาด 1 กก. สี
+AI_ERROR_FINISH,NEEDS_REVIEW,กล่องพลาสติกกันน้ำ ELECKTA 2X4 นิ้ว สีขาว,บล็อกกันน้ำ PRI รุ่น SP-201 ขนาด 2 x 4 นิ้ว สีครีม
+AI_ERROR_FINISH,NEEDS_REVIEW,กล่องพลาสติกกันน้ำ ELECKTA 4x4 นิ้ว สีขาว,บล็อกกันน้ำ PRI รุ่น SP-202 ขนาด 4 x 4 นิ้ว สีครีม
+AI_ERROR_FINISH,NEEDS_REVIEW,กล่องเบรกเกอร์ แบบลอย 1 ช่อง T-PLUS HBW/HBC สีขาว,บล็อคพลาสติกลอยเดี่ยว PANASONIC รุ่น HBW 1G สีขาว
+AI_ERROR_FINISH,NEEDS_REVIEW,พรีฟอร์ม BT 35 ตร.มม.,ฟรีฟอร์มรัดสาย SC รุ่น TPF ขนาด 16 ตรม.
+AI_ERROR_FINISH,NEEDS_REVIEW,เซอร์กิตเบรกเกอร์ 32 แอมป์ 1โพล 1 เฟส SCHNEIDER รุ,ลูกย่อยสวิตช์ตัดตอน SQUARE D รุ่น QO132VSC6T 1 Pol
+AI_ERROR_FINISH,NEEDS_REVIEW,หลอด LED LAMPTAN BULB GLOSS 7 วัตต์ DAYLIGHT E27 แ,หลอดไฟ LED 7 วัตต์ Daylight LAMPTAN รุ่น EXC E27
+AI_ERROR_FINISH,NEEDS_REVIEW,เต้ารับคู่ 3 ขา PANASONIC WEGN15929 B สีดำ,เต้ารับกราวด์คู่ 16A CT ELECTRIC รุ่น CPS-116B สีด
+AI_ERROR_FINISH,NEEDS_REVIEW,รางนีออนกันฝน LED LAMPTAN TRI-PROOF SET 1X20 วัตต์,โคมกันน้ำกันฝุ่น IP65 LED-T8 1x20W Daylight LAMPTA
+AI_ERROR_FINISH,NEEDS_REVIEW,รางนีออนกันฝน LED LAMPTAN TRI-PROOF SET 2X20 วัตต์,โคมกันน้ำกันฝุ่น IP65 LED-T8 2x20W Daylight LAMPTA
+AI_ERROR_FINISH,NEEDS_REVIEW,สปอตไลท์ภายนอก LED HI-TEK MILAN 100 วัตต์ DAYLIGHT,โคมสปอตไลท์ มิลาน LED 100W DL HI-TEK รุ่น HFOLFE10
+AI_ERROR_FINISH,NEEDS_REVIEW,สปอตไลท์ภายนอก LED FLOODLIGHT RACER LUNA 50 วัตต์ ,โคมฟลัดไลท์ LED 50W Daylight RACER รุ่น LUNA50W/65
+AI_ERROR_FINISH,NEEDS_REVIEW,สปอตไลท์ SOLAR LAMPTAN ARC 300 วัตต์ DAYLIGHT สีเท,โคมฟลัดไลท์โซลาร์เซลล์ LED 300W Daylight LAMPTAN ร
+AI_ERROR_FINISH,NEEDS_REVIEW,สปอตไลท์ SOLAR PHILIPS BVC080 MN 60 วัตต์ DAYLIGHT,โคมฟลัดไลท์โซลาร์เซลล์ LED 4W Daylight PHILIPS รุ่
+AI_ERROR_FINISH,NEEDS_REVIEW,ไฟถนน SOLAR EVE 201958 200 วัตต์ DAYLIGHT สีดำ,โคมไฟถนนโซลาร์เซลล์พร้อมขาจับ LED 200W Daylight EV
+AI_ERROR_FINISH,NEEDS_REVIEW,ไฟถนน SOLAR EVE 201965 400 วัตต์ DAYLIGHT สีดำ,โคมไฟถนนโซลาร์เซลล์พร้อมขาจับ LED 400W Daylight EV
+AI_ERROR_FINISH,NEEDS_REVIEW,ไฟถนน SOLAR EVE 201972 500 วัตต์ DAYLIGHT สีดำ,โคมไฟถนนโซลาร์เซลล์พร้อมขาจับ LED 500W Daylight EV
+AI_ERROR_FINISH,NEEDS_REVIEW,ไฟสนาม SOLAR EVE 201903 2000 วัตต์ DAYLIGHT สีดำ,"โคมไฟสปอตไลท์ UFO โซลาร์เซลล์พร้อมรีโมต LED 2,000W"
+AI_ERROR_FINISH,NEEDS_REVIEW,ไฟเพดาน LED RACER SUNSHINE 15.6 นิ้ว 36 วัตต์ DAYL,โคมไฟเพดานอะคริลิก LED 36W Daylight RACER รุ่น Sun
+AI_ERROR_FINISH,NEEDS_REVIEW,ไฟเพดาน LED LAMPTAN BOTAN 19 นิ้ว 50 วัตต์ DAYLIGH,โคมไฟเพดานอะคริลิก LED 50W Tri-Color LAMPTAN รุ่น 
+AI_ERROR_FINISH,NEEDS_REVIEW,พัดลมตั้งพื้น 16 นิ้ว SHARP PJ-ST163 สีเทา,พัดลมตั้งพื้น SHARP รุ่น PJ-ST163JP ขนาด 16 นิ้ว ส
+AI_ERROR_FINISH,NEEDS_REVIEW,ดินผสมใบก้ามปู SPRING 5 กก.,ดินผสม SEED UP ขนาด 5.5 กก.
+AI_ERROR_FINISH,NEEDS_REVIEW,สายไมโครดิวส์ PE RAINDROP 100 ม.,ท่อ PE ไชโย รุ่น 398-25 (PN2.5) ขนาด 25 มม. x 100 
+AI_ERROR_FINISH,NEEDS_REVIEW,ท่อสีฟ้า ตราท่อน้ำไทย CLASS 13.5 1/2 นิ้ว 4 ม. สีฟ,ท่อ PVC น้ำไทย ชั้น 13.5 ขนาด 4 ม. x 1/2 นิ้ว สีขา
+AI_ERROR_FINISH,NEEDS_REVIEW,ฝาครอบนั่งร้าน สีเขียว ขนาด 1829x1050 มม.,ฝาครอบนั่งร้าน MAXLIGER รุ่น H1218 ขนาด 1050 x 182
+AI_ERROR_FINISH,NEEDS_REVIEW,มูลี่ประตู รุ่นTK-36 80x200ซม.,มู่ลี่ไวนิล สกรีนเต็มผืน WSP รุ่น TK-36/B-19 ขนาด 
+AI_ERROR_FINISH,NEEDS_REVIEW,POLLO พลาสติก พีวีซีอเนกประสงค์ 135x70Y.x0.07MM. ส,พลาสติกใสกันชื้น 140 ไมครอน ตรา 111 ขนาด 54 นิ้ว x
+AI_ERROR_FINISH,NEEDS_REVIEW,กาวตะปูอเนกประสงค์ ADHESIVE NAIL 300 ML.,กาวตะปู สูตรน้ำมันแห้งเร็ว จระเข้ ขนาด 300 มล. สีน
+AI_ERROR_SIZE,NEEDS_REVIEW,ซีเมนต์กันซึม เฟล็กซ์2 เค+น้ำยาAB 23 กก.,ซีเมนต์ทากันรั่วซึมยืดหยุ่นผสมสองส่วน จระเข้ รุ่น 
+AI_ERROR_FINISH,NEEDS_REVIEW,สกรูยิปซั่ม PAN-3/4-25 3/4นิ้ว 25ตัว,สกรูไดร์วอลล์หัวเรียบ (เกลียวหุน) 6 x 3/4 นิ้ว MR 
+AI_ERROR_FINISH,NEEDS_REVIEW,อะไหล่ขนลูกกลิ้ง 4 นิ้ว C30104 ขาว,อะไหล่ลูกกลิ้งทาสี AT INDY รุ่น C30104-10 ขนาด 4 น
+AI_ERROR_FINISH,NEEDS_REVIEW,อะไหล่ลูกกลิ้งเคมีไมโครไฟเบอร์กลาส HACHI 4 นิ้ว,อะไหล่ลูกกลิ้งทาสีเคมี HACHI ขนาด 4 นิ้วสีดำ - ส้ม
+AI_ERROR_FINISH,NEEDS_REVIEW,เต้ารับคู่ WEG 15829H,เต้ารับคู่ ขากลมแบน มีกราวด์ PANASONIC รุ่น Weg 15
+AI_ERROR_FINISH,NEEDS_REVIEW,ค.ทำน้ำร้อนหม้อต้ม A.O.SMITH รุ่นELJH-50,เครื่องทำน้ำร้อนแบบหม้อต้ม (แนวนอน) AO SMITH รุ่น 
+AI_ERROR_FINISH,AI_ERROR_BRAND,EXTERA ประตู UPVC 80x200 ซม. รุ่น L05-G5C สีเทา (แ,ประตูภายใน UPVC เซาะร่อง CONNEX รุ่น LT13 ขนาด 80 
+AI_ERROR_SIZE,AI_ERROR_SIZE,TOA สีรองพื้นปูนสูตรน้ำ 5 แกลลอน รุ่น ไฮโดรควิก,รองพื้นอเนกประสงค์สูตรน้ำ TOA รุ่น HYDRO QUICK ขนา
+AI_ERROR_SIZE,AI_ERROR_SIZE,TOA สีรองพื้นปูนสูตรน้ำ 2.5 แกลลอน รุ่น ไฮโดรควิก,รองพื้นอเนกประสงค์สูตรน้ำ TOA รุ่น HYDRO QUICK ขนา
+AI_ERROR_SIZE,AI_ERROR_SIZE,NIPPON PAINT VINILEX ALL IN 1 สีน้ำมัน แบบกึ่งเงา ,สีทับหน้าและรองพื้นกันสนิม ชนิดกึ่งเงา NIPPON PAIN
+AI_ERROR_FINISH,NEEDS_REVIEW,DULUX INSPIRE สีน้ำทาภายนอก แบบกึ่งเงา เบส A 2.5 แ,สีน้ำภายนอก ด้าน DULUX รุ่น INSPIRE ขนาด 9 ลิตร สี
+AI_ERROR_SIZE,AI_ERROR_SIZE,NIPPON PAINT สีน้ำภายนอก-ด้าน JUNIOR 5 แกลลอน รุ่น,สีน้ำภายนอก ด้าน NIPPON รุ่น จูเนียร์ 99 ขนาด 17.5
+AI_ERROR_FINISH,NEEDS_REVIEW,สีน้ำนอก-กึ่งเงา 2.5 แกลลอน รุ่น HYBRIDSHIELD สีเบ,สีภายนอกไฮบริดชิลด์กึ่งเงา NIPPON รุ่น HYBRIDSHIEL
+AI_ERROR_SIZE,AI_ERROR_SIZE,DELTA TOPTECH สีรองพื้น อเนกประสงค์ (5 แกลลอน),สีรองพื้นปูนพิเศษ TOPTECH PRIMER รุ่น 15 ลิตร ขนาด
+AI_ERROR_FINISH,AI_ERROR_SIZE,CAPTAIN สีรองพื้นปูนเก่าและใหม่ MARK 5 แกลลอน,สีรองพื้นปูนใหม่กันด่าง และปูนเก่าสภาพดี MARK รุ่น
+AI_ERROR_FINISH,NEEDS_REVIEW,ATARI สายเชื่อม 100 ม. เบอร์ 800 รุ่น 35SQ สีส้ม,สายเชื่อมทองแดง (ตัดขายเป็นเมตร) TOSE TURBO รุ่น 1
+AI_ERROR_FINISH,NEEDS_REVIEW,SONAX น้ำยาอเนกประสงค์ 400 กรัม รุ่น 300 สีส้ม,น้ำมันหล่อลื่น SONAX รุ่น SO-300 ขนาด 400 มล. สีใส
+AI_ERROR_FINISH,NEEDS_REVIEW,ลูกกลิ้งทาสี ขนาด 4 นิ้ว (เฉพาะโฟม),อะไหล่ลูกกลิ้งทาสี AT INDY รุ่น C30104-10 ขนาด 4 น
+AI_ERROR_FINISH,AI_ERROR_SIZE,ICEBASE กระติกเก็บความเย็น 45 ลิตร รุ่น CLP-301 สี,กระติกน้ำแข็งทรงเหลี่ยม 50 ลิตร Denki SN รุ่น 798-
+AI_ERROR_FINISH,NEEDS_REVIEW,ตราจระเข้ กระทะด้ามทรงลึก 35 ซม.,กระทะด้ามหล่อขัดเงา อะลูมิเนียมทรงลึก 35 ซม. จระเข
+AI_ERROR_FINISH,NEEDS_REVIEW,สก๊อตช์-ไบรต์ แปรงขัดโถสุขภัณฑ์ 1 ชิ้น,แปรงล้างห้องน้ำ SCOTCH BRITE รุ่น XT002017710 สีเข
+AI_ERROR_FINISH,NEEDS_REVIEW,ZEBERG กล่องพักสายกันน้ำ 4x4 นิ้ว สีดำ,กล่องพักสายเหลี่ยม TOP ขนาด 4 x 4 นิ้ว สีเหลือง
+AI_ERROR_FINISH,NEEDS_REVIEW,LAMPTAN หลอดไฟ LED 9 วัตต์ รุ่น RGB,หลอดไฟ LED 9 วัตต์ เปลี่ยน 3 แสง LAMPTAN รุ่น COLO
+AI_ERROR_FINISH,NEEDS_REVIEW,LAMPTAN หลอดไฟนีออน LED 18 วัตต์ รุ่น Out Door สีข,หลอดไฟ LED T8 18W LAMPTAN รุ่น Outdoor IP65 แสงไฟส
+AI_ERROR_FINISH,NEEDS_REVIEW,LAMPTAN ดาวน์ไลท์ LED 9 วัตต์ กลม รุ่น Ultra Slim ,โคมดาวน์ไลท์หน้ากลม 5 นิ้ว LED 9W Warm White LAMPT
+AI_ERROR_FINISH,NEEDS_REVIEW,EVE ดาวน์ไลท์ LED 15 วัตต์ ทรงกลม (DAY LIGHT),โคมดาวน์ไลท์หน้ากลม 6 นิ้ว LED 15W Daylight EVE LI
+AI_ERROR_FINISH,NEEDS_REVIEW,LAMPTAN LED Spotlight ปรับองศาได้ 7 วัตต์ 3 แสง แบ,โคมดาวน์ไลท์ฮาโลเจนหน้ากลม 3.5 นิ้ว LED 7W Tri-Col
+AI_ERROR_FINISH,NEEDS_REVIEW,PHILIPS โคมไฟถนน LED 100 วัตต์ รุ่น BRP 121 (Day L,โคมไฟถนนพร้อมขาจับ LED 100W DL PHILIPS รุ่น BRP121
+AI_ERROR_FINISH,NEEDS_REVIEW,WAXY น้ำยาขัดเบาะ 450 ซีซี,น้ำยาบำรุงรักษาเคลือบเงาเครื่องหนัง WAXY UV ขนาด 4
+AI_ERROR_FINISH,NEEDS_REVIEW,HATARI พัดลมสไลด์ 16 นิ้ว รุ่น DH S16M1 สีขาว,พัดลมสไลด์ 16 นิ้ว HATARI รุ่น S16M1 สีเทา
+AI_ERROR_FINISH,NEEDS_REVIEW,HATARI พัดลมอุตสาหกรรมสไลด์ 18 นิ้ว รุ่น IS18M1 สี,พัดลมอุตสาหกรรม HATARI รุ่น IS18M1 ขนาด 18 นิ้ว สี
+AI_ERROR_FINISH,NEEDS_REVIEW,D1 SPEC สเปรย์เคลือบเงา สูตรฟิล์มแก้ว 1 แกลลอน,สเปร์ยเคลือบแก้ว MY CARR SUPPER รุ่น MC-549 ขนาด 6
+AI_ERROR_FINISH,NEEDS_REVIEW,สีน้ำทาภายนอก NIPPON PAINT WEATHERBONDSHEEN BASE A,สีน้ำภายนอก NIPPON รุ่น เวเธอร์บอนด์ เนียน ขนาด 9 
+AI_ERROR_SIZE,AI_ERROR_SIZE,สีน้ำทาภายนอก ชนิดกึ่งเงา JOTUN JOTASHIELD ANTIFAD,สีน้ำภายนอกกึ่งเงา JOTUN รุ่น JOTASHIELD AF ขนาด 9
+AI_ERROR_SIZE,AI_ERROR_SIZE,สีน้ำทาภายนอก ชนิดกึ่งเงา JOTUN JOTASHIELD ANTIFAD,สีน้ำภายนอกกึ่งเงา JOTUN รุ่น JOTASHIELD AF ขนาด 9
+AI_ERROR_FINISH,NEEDS_REVIEW,สีน้ำทาภายนอก ชนิดกึ่งเงา JOTUN TOUGH SHIELD MAX B,สีน้ำภายนอกกึ่งเงา JOTUN รุ่น TOUGH SHIELD MAX ขนา
+AI_ERROR_SIZE,AI_ERROR_BRAND,สีน้ำทาภายนอก ชนิดกึ่งเงา JOTUN TOUGH SHIELD BASE ,สีน้ำภายนอกกึ่งเงา JOTUN รุ่น TOUGH SHIELD ขนาด 2.
+AI_ERROR_SIZE,AI_ERROR_SIZE,สีน้ำทาฝ้า BEGER AIR FRESH PG-1000 ด้าน 9 ลิตร สีข,สีน้ำกึ่งเงา ภายใน 9 ลิตร BEGER รุ่น AIRFRESH GOLD
+AI_ERROR_FINISH,NEEDS_REVIEW,สีน้ำทาภายนอก ชนิดกึ่งเงา BEGER COOL DIAMONDSHIELD,สีน้ำเนียน ภายนอก 9 ลิตร BEGER รุ่น COOL DIAMONDSH
+AI_ERROR_SIZE,AI_ERROR_SIZE,สีรองพื้นปูนอเนกประสงค์ JBP SUPREME PRIMER 2900 15,สีรองพื้นปูนใหม่ JBP รุ่น SUPREME PRIMER ขนาด 2.5 
+AI_ERROR_SIZE,NEEDS_REVIEW,สีรองพื้นอเนกประสงค์ NIPPON PAINT FLEXISEAL 20 กก.,สีรองพื้นปูนเก่า ผนังภายนอก NIPPON รุ่น เฟล็กซี่ ซ
+AI_ERROR_SIZE,AI_ERROR_SIZE,สีเคลือบกันสนิม JBP AAA 2IN1 #G8002 สีดำ 3 ลิตร,สีรองพื้นและทับหน้ากันสนิม JBP รุ่น AAA 2in1 ขนาด 
+AI_ERROR_FINISH,NEEDS_REVIEW,โพลียูรีเทนภายนอก BEGER 1K SUPREME OUTDOOR PM9800 ,โพลียูรีเทน 1K BEGER รุ่น ซูพรีม PG-9900 ขนาด 3 ลิ
