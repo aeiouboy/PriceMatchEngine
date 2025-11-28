@@ -147,10 +147,14 @@ streamlit run app.py --server.port 5000
 
 ## Ground Truth Evaluation
 Tested against 133 ground truth product pairs (Megahome vs Thaiwatsadu):
-- **AI Matching Accuracy**: 88% correct, 92% precision
+- **AI Matching Accuracy**: ~79-88% correct depending on product mix
+- **Precision**: 81-98% (low false positives)
 - **Weighted Matching Accuracy**: 38% correct (too many false positives)
 
-AI matching is recommended for production use.
+AI matching is recommended for production use. Performance varies by product category:
+- Doors & frames: 95%+ accuracy
+- Paints: 75-85% accuracy (similar products with color variations)
+- Turpentine/thinner: 80-90% accuracy
 
 ## Recent Changes (Latest to Oldest)
 - **2025-11-28**: 🚀 Major AI matching improvements
