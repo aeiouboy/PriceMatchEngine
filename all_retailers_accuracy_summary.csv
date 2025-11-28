@@ -1,0 +1,7 @@
+﻿Retailer,Original_Pairs,GT_Errors_Excluded,Cleaned_Pairs,Correct,Incorrect,Not_Found,Accuracy_Pct
+HomePro,2427,299,2128,2060,33,35,96.8
+GlobalHouse,105,13,92,91,1,0,98.9
+Boonthavorn,191,21,170,166,3,1,97.6
+DoHome,955,108,847,820,14,13,96.8
+Megahome,133,26,107,101,2,4,94.4
+TOTAL,3811,467,3344,3238,53,53,96.8
