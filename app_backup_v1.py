@@ -52,114 +52,95 @@ def get_openrouter_client():
         )
     return None
 
-import re
-
-class AttributeExtractor:
-    """Enhanced attribute extraction for Thai retail products (v2.1)"""
-    
-    THAI_ENG_MAPPINGS = {
-        'วีนิเลกซ์': 'VINILEX', 'โจตาชิลด์เฟล็กซ์': 'JOTASHIELD FLEX',
-        'โจตาชิลด์': 'JOTASHIELD', 'โจตาชีลด์': 'JOTASHIELD',
-        'ทัฟชีลด์': 'TOUGH SHIELD', 'ทัฟ ชีลด์': 'TOUGH SHIELD',
-        'ซุปเปอร์เมเทค': 'SUPERMATEX', 'ซุปเปอร์ชิลด์': 'SUPERSHIELD',
-        'เวเธอร์บอนด์': 'WEATHERBOND', 'เวเธอร์ชีลด์': 'WEATHERSHIELD',
-        'เฟล็กซี่ซีล': 'FLEXISEAL', 'เฟล็กซี่ ซีล': 'FLEXISEAL',
-        'ควิกซิลเลอร์': 'QUICK SEALER', 'ควิก ซิลเลอร์': 'QUICK SEALER',
-        'ไดมอนด์ชีลด์': 'DIAMONDSHIELD', 'ซุปเปอร์เซิฟ': 'SUPER SERVE',
-        'พาวเวอร์พลัส': 'POWERPLUS', 'จูเนียร์': 'JUNIOR',
-        'ไฮโดรควิก': 'HYDRO QUICK', 'แอร์เฟรช': 'AIR FRESH',
-        'ดีไลท์': 'DELIGHT', 'บาร์โก้': 'BARCO',
-        'ตรามือ': 'TRAMUE', 'น้ำไทย': 'NAM THAI',
-        'กึ่งเงา': 'SEMIGLOSS', 'เนียน': 'SHEEN', 'ด้าน': 'MATTE',
-        'แกลลอน': 'GAL', 'แกลอน': 'GAL', 'ลิตร': 'L',
-    }
-    
-    BRAND_ALIASES = {
-        'TOA BARGO': 'BARCO', 'TOA BARCO': 'BARCO', 'BARGO': 'BARCO',
-        'TOA SHARK': 'SHARK', 'TOA SHARKS': 'SHARK', 'SHARKS': 'SHARK',
-        'ECO-DOOR': 'ECO DOOR', 'ECODOOR': 'ECO DOOR',
-        'HI-DOOR': 'HI DOOR', 'HIDOOR': 'HI DOOR',
-        'WINDOW ASIA': 'FRAMEX', 'NIPPON PAINT': 'NIPPON',
-    }
-    
-    PRODUCT_LINES = [
-        'JOTASHIELD FLEX', 'JOTASHIELD AF', 'JOTASHIELD ANTIFADE', 'JOTASHIELD INFINITY',
-        'JOTASHIELD', 'TOUGH SHIELD MAX', 'TOUGH SHIELD',
-        'SUPERMATEX', 'SUPERSHIELD', 'VINILEX', 'SUPER SERVE',
-        'WEATHERBOND', 'WEATHERSHIELD', 'FLEXISEAL', 'QUICK SEALER',
-        'DIAMONDSHIELD', 'POWERPLUS', 'HYDRO QUICK', 'AIR FRESH', 'DELIGHT',
-    ]
-    
-    @classmethod
-    def normalize(cls, text):
-        if not text:
-            return ''
-        text = str(text).upper().strip()
-        for thai, eng in cls.THAI_ENG_MAPPINGS.items():
-            text = text.replace(thai.upper(), eng)
-            text = text.replace(thai, eng)
-        for old, new in cls.BRAND_ALIASES.items():
-            text = text.replace(old, new)
-        return text
-    
-    @classmethod
-    def extract_size(cls, text):
-        if not text:
-            return None
-        t = str(text).upper()
-        g = re.search(r'(\d+\.?\d*)\s*(GL|แกลลอน|แกลอน|GALLON)', t)
-        if g: return f"{g.group(1)}GL"
-        l = re.search(r'(\d+\.?\d*)\s*(ลิตร|L(?![A-Z])|LT)', t)
-        if l: return f"{l.group(1)}L"
-        if 'ขวดใหญ่' in t: return 'LARGE'
-        if 'ขวดเล็ก' in t: return 'SMALL'
-        k = re.search(r'(\d+\.?\d*)\s*(กก\.|KG)', t)
-        if k: return f"{k.group(1)}KG"
-        return None
-    
-    @classmethod
-    def extract_product_line(cls, text):
-        if not text:
-            return None
-        t = cls.normalize(text)
-        for pl in sorted(cls.PRODUCT_LINES, key=len, reverse=True):
-            if pl in t:
-                return pl
-        return None
-    
-    @classmethod
-    def extract_model(cls, text):
-        if not text:
-            return None
-        t = str(text).upper()
-        patterns = [r'\b(P[DBN]\d+)\b', r'\b(M[NRW]\d+)\b', r'\b(AAA|AA)\b',
-                    r'รุ่น\s+([A-Z0-9][A-Z0-9\-]+)']
-        for p in patterns:
-            m = re.search(p, t)
-            if m: return m.group(1)
-        return None
-    
-    @classmethod
-    def extract_finish(cls, text):
-        if not text:
-            return None
-        t = str(text).upper()
-        if 'กึ่งเงา' in t or 'SEMI' in t: return 'SEMI_GLOSS'
-        if 'เงา' in t and 'กึ่ง' not in t: return 'GLOSS'
-        if 'ด้าน' in t or 'MATTE' in t: return 'MATTE'
-        if 'เนียน' in t or 'SHEEN' in t: return 'SHEEN'
-        return None
-
 def normalize_text(text):
     """Normalize text for better matching (handles brand aliases, Thai-English mappings)"""
-    return AttributeExtractor.normalize(text)
+    if not text:
+        return ''
+    text = text.upper().strip()
+    
+    # Brand aliases
+    brand_aliases = {
+        'TOA SHARKS': 'SHARK',
+        'TOA SHARK': 'SHARK',
+        'SHARKS': 'SHARK',
+        'TOA BARGO': 'BARCO',
+        'TOA BARCO': 'BARCO',
+        'BARGO': 'BARCO',
+        'ECO-DOOR': 'ECO DOOR',
+        'ECODOOR': 'ECO DOOR',
+        'WINDOW ASIA': 'FRAMEX',
+        'NIPPON PAINT': 'NIPPON',
+    }
+    
+    # Thai-English product name mappings
+    thai_eng_mappings = {
+        # NIPPON products
+        'วีนิเลกซ์': 'VINILEX',
+        'เวเธอร์บอนด์': 'WEATHERBOND',
+        'เฟล็กซี่ ซีล': 'FLEXISEAL',
+        'เฟล็กซี่ซีล': 'FLEXISEAL',
+        'ควิก ซิลเลอร์': 'QUICK SEALER',
+        'ควิกซิลเลอร์': 'QUICK SEALER',
+        'ซุปเปอร์เซิฟ': 'SUPER SERVE',
+        'จูเนียร์ 99': 'JUNIOR99',
+        'จูเนียร์': 'JUNIOR',
+        # JOTUN products - IMPORTANT: Keep product lines distinct
+        'โจตาชิลด์เฟล็กซ์': 'JOTASHIELD FLEX',
+        'โจตาชิลด์ เฟล็กซ์': 'JOTASHIELD FLEX',
+        'โจตาชิลด์': 'JOTASHIELD',
+        'โจตาชีลด์': 'JOTASHIELD',
+        'ทัฟชีลด์': 'TOUGH SHIELD',
+        'ทัฟ ชีลด์': 'TOUGH SHIELD',
+        'อัลตร้าคลีน': 'ULTRA CLEAN',
+        # DULUX products
+        'เวเธอร์ชีลด์': 'WEATHERSHIELD',
+        'เวเธ่อร์ชีลด์': 'WEATHERSHIELD',
+        'พาวเวอร์พลัส': 'POWERPLUS',
+        'พาวเวอร์เฟล็ก': 'POWERFLEXX',
+        'ไฮโดรไพร์เมอร์': 'HYDRO PRIMER',
+        'แอดวานซ์': 'ADVANCE',
+        'อัลติม่า': 'ULTIMA',
+        # BEGER products
+        'อีซี่คลีน': 'EASY CLEAN',
+        'ไดมอนด์ชีลด์': 'DIAMONDSHIELD',
+        'เบเกอร์ชีลด์': 'BEGERSHIELD',
+        'พียูไฮบริด': 'PU HYBRID',
+        'แอร์เฟรช': 'AIR FRESH',
+        'แอร์ เฟรช': 'AIR FRESH',
+        'ดีไลท์': 'DELIGHT',
+        # DELTA/TOPTECH products
+        'ท็อปเทคโค้ดเฟล็ก': 'TOPTECH COATFLEX',
+        'ท็อปเทค': 'TOPTECH',
+        # JBP products
+        'ฟิวเจอร์ชีลด์': 'FUTURESHIELD',
+        # Finish types
+        'กึ่งเงา': 'SEMIGLOSS',
+        'เนียน': 'SHEEN',
+        'ด้าน': 'MATTE',
+        # Size normalization
+        'แกลลอน': 'GAL',
+        'แกลอน': 'GAL',
+        'ลิตร': 'L',
+        # Other
+        'รุ่น': '',
+        'ขนาด': '',
+    }
+    
+    for alias, normalized in brand_aliases.items():
+        text = text.replace(alias, normalized)
+    
+    for thai, eng in thai_eng_mappings.items():
+        text = text.replace(thai.upper(), eng)
+        text = text.replace(thai, eng)
+    
+    return text
 
 def normalize_brand(brand):
     """Normalize brand names for better matching"""
     return normalize_text(brand)
 
 def ai_match_products(source_products, target_products, progress_callback=None):
-    """Use AI to find matching products with enhanced attribute extraction (v2.1)"""
+    """Use AI to find matching products between two lists (improved hybrid approach)"""
     client = get_openrouter_client()
     if not client:
         return None
@@ -173,107 +154,99 @@ def ai_match_products(source_products, target_products, progress_callback=None):
         
         source_name = source.get('name', source.get('product_name', ''))
         source_brand = normalize_brand(source.get('brand', ''))
+        source_model = source.get('model', '')
+        source_category = source.get('category', '')
+        source_desc = source.get('description', '')
+        source_volume = source.get('volume', '')
         
-        # Extract attributes using v2.1 extractor
-        src_norm = AttributeExtractor.normalize(f"{source_name} {source_brand}").lower()
-        src_size = AttributeExtractor.extract_size(source_name)
-        src_line = AttributeExtractor.extract_product_line(source_name)
-        src_model = AttributeExtractor.extract_model(source_name)
+        # Normalize source text for better pre-filtering
+        source_text_norm = normalize_text(f"{source_name} {source_brand} {source_model} {source_category}").lower()
         
-        # Pre-filter with attribute-aware scoring
+        # Pre-filter targets - use lower threshold for better recall
         candidates = []
         for i, t in enumerate(target_products):
             t_name = t.get('name', t.get('product_name', ''))
             t_brand = normalize_brand(t.get('brand', ''))
+            t_model = t.get('model', '')
+            t_volume = t.get('volume', '')
             
-            # Extract target attributes
-            t_norm = AttributeExtractor.normalize(f"{t_name} {t_brand}").lower()
-            t_size = AttributeExtractor.extract_size(t_name)
-            t_line = AttributeExtractor.extract_product_line(t_name)
-            t_model = AttributeExtractor.extract_model(t_name)
+            # Normalize target text
+            t_text_norm = normalize_text(f"{t_name} {t_brand} {t_model}").lower()
             
-            # Base fuzzy score
-            score = fuzz.token_set_ratio(src_norm, t_norm)
+            # Quick text similarity check with normalized text
+            sim = fuzz.token_set_ratio(source_text_norm, t_text_norm)
             
-            # Attribute-aware scoring (v2.1)
-            if src_size and t_size:
-                score += 15 if src_size == t_size else -10
-            if src_line and t_line:
-                score += 15 if src_line == t_line else -15
-            if src_model and t_model:
-                score += 15 if src_model == t_model else -10
+            # Brand boost: if brands match, increase score
             if source_brand and t_brand and source_brand == t_brand:
-                score += 10
+                sim = min(100, sim + 15)
             
-            if score >= 15:  # Lower threshold for better recall
-                candidates.append({
-                    'idx': i, 'name': t_name, 'brand': t_brand,
-                    'score': score, 'size': t_size, 'line': t_line, 'model': t_model
-                })
+            if sim >= 18:  # Lower threshold for better recall
+                candidates.append((i, t_name, t_brand, t_model, t_volume, sim))
         
+        # If no candidates, skip
         if not candidates:
             continue
         
-        # Sort by score and take top 20 candidates
-        candidates.sort(key=lambda x: x['score'], reverse=True)
-        top_candidates = candidates[:20]
+        # Sort by similarity and take top 15 candidates
+        candidates.sort(key=lambda x: x[5], reverse=True)
+        top_candidates = candidates[:15]
         
-        # Build target list with extracted attributes
-        target_list = []
-        for pos, c in enumerate(top_candidates):
-            attrs = []
-            if c['size']: attrs.append(f"Size:{c['size']}")
-            if c['line']: attrs.append(f"Line:{c['line']}")
-            if c['model']: attrs.append(f"Model:{c['model']}")
-            attr_str = ', '.join(attrs) if attrs else '-'
-            target_list.append(f"{pos}: {c['name'][:55]} [{attr_str}]")
+        # Use position index (0, 1, 2...) so AI response matches our list
+        target_list = [f"{pos}: {name} (Brand: {brand}, Model: {model}, Size: {volume})" 
+                      for pos, (i, name, brand, model, volume, _) in enumerate(top_candidates)]
         
-        # Source attributes for prompt
-        src_attrs = []
-        if src_size: src_attrs.append(f"Size:{src_size}")
-        if src_line: src_attrs.append(f"Line:{src_line}")
-        if src_model: src_attrs.append(f"Model:{src_model}")
-        src_attr_str = ', '.join(src_attrs) if src_attrs else 'None detected'
-        
-        prompt = f"""Thai product matcher. Find EXACT SAME product.
+        prompt = f"""Product matcher for Thai retail. Find best product match.
 
 SOURCE: {source_name}
-ATTRS: {src_attr_str}
 
-CANDIDATES:
+TARGETS:
 {chr(10).join(target_list)}
 
-STRICT RULES:
-1. SIZE must match (9L≠2.5GL, ขวดใหญ่≠1แกลอน)
-2. PRODUCT LINE must match (JOTASHIELD≠TOUGH SHIELD, SUPERMATEX≠SUPERSHIELD)
-3. MODEL must match (PD1≠PB1, AAA≠AA)
-4. BRAND must match (ตรามือ≠น้ำไทย, ECO DOOR≠HI DOOR)
+MATCHING RULES:
+1. PRODUCT LINE - must match same product line (CRITICAL):
+   - JOTASHIELD ≠ JOTASHIELD FLEX ≠ TOUGH SHIELD (different lines!)
+   - JOTASHIELD ANTIFADE = JOTASHIELD AF (same)
+   - AIR FRESH = AIRFRESH ≠ DELIGHT
+   - FLEXISEAL = เฟล็กซี่ซีล ≠ ควิกซิลเลอร์
 
-Return null if no exact match. Color/finish can differ.
-{{"match_index": <0-19 or null>, "confidence": <50-100>}}"""
+2. Thai-English = SAME product:
+   - วีนิเลกซ์=VINILEX, เวเธอร์บอนด์=WEATHERBOND, โจตาชิลด์=JOTASHIELD
+   - เฟล็กซี่ซีล=FLEXISEAL, แอร์เฟรช=AIRFRESH, ทัฟชีลด์=TOUGH SHIELD
+
+3. Size can differ - same product line is OK
+4. Finish type can differ - same product is OK
+5. Find BEST available match, not perfect match
+
+Return: {{"match_index": <0-14 or null>, "confidence": <50-100>}}
+JSON only."""
 
         try:
             response = client.chat.completions.create(
                 model="google/gemini-2.5-flash-lite",
                 messages=[{"role": "user", "content": prompt}],
-                max_tokens=80
+                max_tokens=200
             )
             
             result_text = response.choices[0].message.content.strip()
-            if "```" in result_text:
+            if result_text.startswith("```"):
                 result_text = result_text.split("```")[1]
                 if result_text.startswith("json"):
                     result_text = result_text[4:]
-            result_text = re.sub(r'[\x00-\x1f\x7f-\x9f]', '', result_text.strip())
+            result_text = result_text.strip()
+            
+            # Fix common JSON issues
+            import re
+            result_text = re.sub(r'[\x00-\x1f\x7f-\x9f]', '', result_text)
             if not result_text.endswith('}'):
                 result_text = result_text.split('}')[0] + '}'
             
             result = json.loads(result_text)
             
+            # Lowered confidence threshold to 50 for better recall
             if result.get('match_index') is not None and result.get('confidence', 0) >= 50:
                 match_idx = int(result['match_index'])
                 if 0 <= match_idx < len(top_candidates):
-                    original_idx = top_candidates[match_idx]['idx']
+                    original_idx = top_candidates[match_idx][0]
                     matches.append({
                         'source_idx': idx,
                         'target_idx': original_idx,
