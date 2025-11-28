@@ -147,14 +147,17 @@ streamlit run app.py --server.port 5000
 
 ## Ground Truth Evaluation
 Tested against 133 ground truth product pairs (Megahome vs Thaiwatsadu):
-- **AI Matching Accuracy**: ~79-88% correct depending on product mix
-- **Precision**: 81-98% (low false positives)
+- **AI Matching Accuracy**: 77.4% (103/133 correct)
+- **Precision**: 79.8% (low false positives)
+- **Not Found**: 3.0%
 - **Weighted Matching Accuracy**: 38% correct (too many false positives)
 
+Note: 31.5% of ground truth pairs have very different names between retailers (e.g., different brand names for same product like WINDOW ASIA vs FRAMEX), making perfect accuracy impossible with name-based matching.
+
 AI matching is recommended for production use. Performance varies by product category:
-- Doors & frames: 95%+ accuracy
+- Doors & frames (ECO-DOOR): 90%+ accuracy
 - Paints: 75-85% accuracy (similar products with color variations)
-- Turpentine/thinner: 80-90% accuracy
+- Turpentine/thinner (SHARK, BARCO): 80-90% accuracy
 
 ## Recent Changes (Latest to Oldest)
 - **2025-11-28**: 🚀 Major AI matching improvements

@@ -127,7 +127,7 @@ def ai_match_products(source_products, target_products, progress_callback=None):
         if not candidates:
             continue
         
-        # Sort by similarity and take top 15 candidates (increased from 10)
+        # Sort by similarity and take top 15 candidates
         candidates.sort(key=lambda x: x[5], reverse=True)
         top_candidates = candidates[:15]
         
