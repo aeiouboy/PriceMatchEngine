@@ -195,30 +195,44 @@ def ai_match_products(source_products, target_products, progress_callback=None):
         target_list = [f"{pos}: {name} (Brand: {brand}, Model: {model}, Size: {volume})" 
                       for pos, (i, name, brand, model, volume, _) in enumerate(top_candidates)]
         
-        prompt = f"""Product matcher for Thai retail. Find best product match.
+        prompt = f"""Thai retail product matcher. Find the SAME product in targets.
 
 SOURCE: {source_name}
 
 TARGETS:
 {chr(10).join(target_list)}
 
-MATCHING RULES:
-1. PRODUCT LINE - must match same product line (CRITICAL):
-   - JOTASHIELD ≠ JOTASHIELD FLEX ≠ TOUGH SHIELD (different lines!)
-   - JOTASHIELD ANTIFADE = JOTASHIELD AF (same)
-   - AIR FRESH = AIRFRESH ≠ DELIGHT
-   - FLEXISEAL = เฟล็กซี่ซีล ≠ ควิกซิลเลอร์
+=== EXAMPLES ===
+Ex1: SOURCE: สีน้ำภายนอกกึ่งเงา JOTUN TOUGH SHIELD 9 ลิตร
+0: JOTUN TOUGH SHIELD 2.5GL → ❌ WRONG SIZE (9L≠2.5GL)
+1: JOTUN JOTASHIELD 9L → ❌ WRONG LINE (TOUGH SHIELD≠JOTASHIELD)
+2: JOTUN TOUGH SHIELD 9L → ✓ CORRECT
+Answer: {{"match_index":2,"confidence":95,"reason":"same line+size"}}
 
-2. Thai-English = SAME product:
-   - วีนิเลกซ์=VINILEX, เวเธอร์บอนด์=WEATHERBOND, โจตาชิลด์=JOTASHIELD
-   - เฟล็กซี่ซีล=FLEXISEAL, แอร์เฟรช=AIRFRESH, ทัฟชีลด์=TOUGH SHIELD
+Ex2: SOURCE: สีน้ำกึ่งเงาภายนอก TOA SUPERMATEX 9 ลิตร
+0: TOA Supershield 9L → ❌ WRONG LINE (SUPERMATEX≠SUPERSHIELD)
+1: TOA SUPERMATEX 9L → ✓ CORRECT
+Answer: {{"match_index":1,"confidence":95,"reason":"exact match"}}
 
-3. Size can differ - same product line is OK
-4. Finish type can differ - same product is OK
-5. Find BEST available match, not perfect match
+Ex3: SOURCE: สีน้ำภายนอก NIPPON เวเธอร์บอนด์ 9L
+0: NIPPON WEATHERBOND 9L → ✓ (เวเธอร์บอนด์=WEATHERBOND)
+Answer: {{"match_index":0,"confidence":95,"reason":"Thai=English"}}
 
-Return: {{"match_index": <0-14 or null>, "confidence": <50-100>}}
-JSON only."""
+Ex4: SOURCE: TOA SUPERSHIELD กึ่งเงา 5GL
+0: TOA Supershield เนียน 5GL → ✓ (finish differs OK, same product)
+Answer: {{"match_index":0,"confidence":90,"reason":"finish can differ"}}
+
+=== RULES ===
+1. SIZE must match: 9L→9L, 2.5GL→2.5GL, 5GL→5GL (CRITICAL!)
+2. PRODUCT LINE must match exactly:
+   - SUPERMATEX ≠ SUPERSHIELD ≠ SUPERSHIELD ADVANCE
+   - JOTASHIELD ≠ JOTASHIELD FLEX ≠ TOUGH SHIELD
+   - FLEXISEAL ≠ QUICK SEALER (ควิกซิลเลอร์)
+3. Thai=English: วีนิเลกซ์=VINILEX, โจตาชิลด์=JOTASHIELD, เวเธอร์บอนด์=WEATHERBOND
+4. Finish type CAN differ (กึ่งเงา/ด้าน/เนียน OK)
+5. Find BEST match, not perfect match
+
+Return JSON: {{"match_index": <0-14 or null>, "confidence": <50-100>, "reason": "<brief>"}}"""
 
         try:
             response = client.chat.completions.create(
