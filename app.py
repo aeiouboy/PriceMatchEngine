@@ -80,18 +80,18 @@ def ai_match_products(source_products, target_products, progress_callback=None):
             t_model = t.get('model', '')
             t_text = f"{t_name} {t_brand} {t_model}".lower()
             
-            # Quick text similarity check - be more strict
+            # Quick text similarity check
             sim = fuzz.token_set_ratio(source_text, t_text)
-            if sim >= 50:  # Keep candidates with at least 50% similarity
+            if sim >= 40:  # Keep candidates with at least 40% similarity
                 candidates.append((i, t_name, t_brand, t_model, sim))
         
         # If no candidates, skip
         if not candidates:
             continue
         
-        # Sort by similarity and take top 5 candidates
+        # Sort by similarity and take top 8 candidates
         candidates.sort(key=lambda x: x[4], reverse=True)
-        top_candidates = candidates[:5]
+        top_candidates = candidates[:8]
         
         target_list = [f"{i}: {name} (Brand: {brand}, Model: {model})" 
                       for i, name, brand, model, _ in top_candidates]
