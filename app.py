@@ -79,12 +79,18 @@ def normalize_text(text):
         'เวเธอร์บอนด์': 'WEATHERBOND',
         'เฟล็กซี่ ซีล': 'FLEXISEAL',
         'เฟล็กซี่ซีล': 'FLEXISEAL',
+        'ควิก ซิลเลอร์': 'QUICK SEALER',
+        'ควิกซิลเลอร์': 'QUICK SEALER',
         'ซุปเปอร์เซิฟ': 'SUPER SERVE',
         'จูเนียร์ 99': 'JUNIOR99',
         'จูเนียร์': 'JUNIOR',
-        # JOTUN products
+        # JOTUN products - IMPORTANT: Keep product lines distinct
+        'โจตาชิลด์เฟล็กซ์': 'JOTASHIELD FLEX',
+        'โจตาชิลด์ เฟล็กซ์': 'JOTASHIELD FLEX',
         'โจตาชิลด์': 'JOTASHIELD',
         'โจตาชีลด์': 'JOTASHIELD',
+        'ทัฟชีลด์': 'TOUGH SHIELD',
+        'ทัฟ ชีลด์': 'TOUGH SHIELD',
         'อัลตร้าคลีน': 'ULTRA CLEAN',
         # DULUX products
         'เวเธอร์ชีลด์': 'WEATHERSHIELD',
@@ -99,6 +105,9 @@ def normalize_text(text):
         'ไดมอนด์ชีลด์': 'DIAMONDSHIELD',
         'เบเกอร์ชีลด์': 'BEGERSHIELD',
         'พียูไฮบริด': 'PU HYBRID',
+        'แอร์เฟรช': 'AIR FRESH',
+        'แอร์ เฟรช': 'AIR FRESH',
+        'ดีไลท์': 'DELIGHT',
         # DELTA/TOPTECH products
         'ท็อปเทคโค้ดเฟล็ก': 'TOPTECH COATFLEX',
         'ท็อปเทค': 'TOPTECH',
@@ -186,26 +195,29 @@ def ai_match_products(source_products, target_products, progress_callback=None):
         target_list = [f"{pos}: {name} (Brand: {brand}, Model: {model}, Size: {volume})" 
                       for pos, (i, name, brand, model, volume, _) in enumerate(top_candidates)]
         
-        prompt = f"""Product matcher for Thai retail. Find best match.
+        prompt = f"""Product matcher for Thai retail. Find best product match.
 
 SOURCE: {source_name}
 
 TARGETS:
 {chr(10).join(target_list)}
 
-RULES:
-1. Match same product TYPE and BRAND
-2. Thai-English name mappings (SAME product):
-   - วีนิเลกซ์=VINILEX, เวเธอร์บอนด์=WEATHERBOND, เฟล็กซี่ซีล=FLEXISEAL
-   - โจตาชิลด์=JOTASHIELD, เวเธอร์ชีลด์=WEATHERSHIELD, พาวเวอร์พลัส=POWERPLUS
-3. Finish type mappings (MUST match):
-   - กึ่งเงา=SG=semi-gloss, เนียน=SH=SHEEN=sheen, ด้าน=MATTE=matte
-   - SHEEN≠SG (these are DIFFERENT finishes!)
-4. Brand aliases: TOA SHARK=SHARK, TOA BARCO=BARCO, WINDOW ASIA=FRAMEX, TOPTECH=DELTA
-5. Size preference: match similar sizes (2L≈1GL, 9L OK), but product line matters more
-6. BASE A/B/C: prefer matching base
-7. Return: {{"match_index": <0-14 or null>, "confidence": <50-100>}}
+MATCHING RULES:
+1. PRODUCT LINE - must match same product line (CRITICAL):
+   - JOTASHIELD ≠ JOTASHIELD FLEX ≠ TOUGH SHIELD (different lines!)
+   - JOTASHIELD ANTIFADE = JOTASHIELD AF (same)
+   - AIR FRESH = AIRFRESH ≠ DELIGHT
+   - FLEXISEAL = เฟล็กซี่ซีล ≠ ควิกซิลเลอร์
 
+2. Thai-English = SAME product:
+   - วีนิเลกซ์=VINILEX, เวเธอร์บอนด์=WEATHERBOND, โจตาชิลด์=JOTASHIELD
+   - เฟล็กซี่ซีล=FLEXISEAL, แอร์เฟรช=AIRFRESH, ทัฟชีลด์=TOUGH SHIELD
+
+3. Size can differ - same product line is OK
+4. Finish type can differ - same product is OK
+5. Find BEST available match, not perfect match
+
+Return: {{"match_index": <0-14 or null>, "confidence": <50-100>}}
 JSON only."""
 
         try:
