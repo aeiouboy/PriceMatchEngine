@@ -53,11 +53,13 @@ def get_openrouter_client():
     return None
 
 def normalize_text(text):
-    """Normalize text for better matching (handles brand aliases and variations)"""
+    """Normalize text for better matching (handles brand aliases, Thai-English mappings)"""
     if not text:
         return ''
     text = text.upper().strip()
-    aliases = {
+    
+    # Brand aliases
+    brand_aliases = {
         'TOA SHARKS': 'SHARK',
         'TOA SHARK': 'SHARK',
         'SHARKS': 'SHARK',
@@ -67,12 +69,60 @@ def normalize_text(text):
         'ECO-DOOR': 'ECO DOOR',
         'ECODOOR': 'ECO DOOR',
         'WINDOW ASIA': 'FRAMEX',
-        '1 แกลลอน': 'กระป๋อง',
-        '1 ปี๊ป': 'ปิ๊ป',
-        '1 ปิ๊ป': 'ปิ๊ป',
+        'NIPPON PAINT': 'NIPPON',
     }
-    for alias, normalized in aliases.items():
+    
+    # Thai-English product name mappings
+    thai_eng_mappings = {
+        # NIPPON products
+        'วีนิเลกซ์': 'VINILEX',
+        'เวเธอร์บอนด์': 'WEATHERBOND',
+        'เฟล็กซี่ ซีล': 'FLEXISEAL',
+        'เฟล็กซี่ซีล': 'FLEXISEAL',
+        # JOTUN products
+        'โจตาชิลด์': 'JOTASHIELD',
+        'โจตาชีลด์': 'JOTASHIELD',
+        'อัลตร้าคลีน': 'ULTRA CLEAN',
+        # DULUX products
+        'เวเธอร์ชีลด์': 'WEATHERSHIELD',
+        'เวเธ่อร์ชีลด์': 'WEATHERSHIELD',
+        'พาวเวอร์พลัส': 'POWERPLUS',
+        'พาวเวอร์เฟล็ก': 'POWERFLEXX',
+        'ไฮโดรไพร์เมอร์': 'HYDRO PRIMER',
+        'แอดวานซ์': 'ADVANCE',
+        # BEGER products
+        'อีซี่คลีน': 'EASY CLEAN',
+        # DELTA/TOPTECH products
+        'ท็อปเทคโค้ดเฟล็ก': 'TOPTECH COATFLEX',
+        'ท็อปเทค': 'TOPTECH',
+        # JBP products
+        'ฟิวเจอร์ชีลด์': 'FUTURESHIELD',
+        # Finish types (SHEEN = เนียน, but needs mapping both ways)
+        'กึ่งเงา': 'SEMIGLOSS',
+        'เนียน': 'SHEEN',
+        'ด้าน': 'MATTE',
+        'SHEEN': 'SHEEN',
+        'SG': 'SEMIGLOSS',
+        'SH': 'SHEEN',
+        # Size normalization
+        'แกลลอน': 'GAL',
+        'แกลอน': 'GAL',
+        'ลิตร': 'L',
+        '1 GAL': '1GAL',
+        '2.5 GAL': '2.5GAL',
+        '5 GAL': '5GAL',
+        # Other
+        'รุ่น': '',
+        'ขนาด': '',
+    }
+    
+    for alias, normalized in brand_aliases.items():
         text = text.replace(alias, normalized)
+    
+    for thai, eng in thai_eng_mappings.items():
+        text = text.replace(thai.upper(), eng)
+        text = text.replace(thai, eng)
+    
     return text
 
 def normalize_brand(brand):
@@ -144,12 +194,18 @@ TARGETS:
 
 RULES:
 1. Match same product TYPE and BRAND
-2. Brand aliases: TOA SHARK=SHARK, TOA BARCO=BARCO, ECO-DOOR=ECO DOOR
-3. Size can vary (1L vs 5L OK if same product line)
-4. For paints with BASE A/B/C: prefer matching base, but OK if not available
-5. Return: {{"match_index": <0-14 or null>, "confidence": <50-100>}}
+2. Thai-English name mappings (SAME product):
+   - วีนิเลกซ์=VINILEX, เวเธอร์บอนด์=WEATHERBOND, เฟล็กซี่ซีล=FLEXISEAL
+   - โจตาชิลด์=JOTASHIELD, เวเธอร์ชีลด์=WEATHERSHIELD, พาวเวอร์พลัส=POWERPLUS
+3. Finish type mappings (MUST match):
+   - กึ่งเงา=SG=semi-gloss, เนียน=SH=SHEEN=sheen, ด้าน=MATTE=matte
+   - SHEEN≠SG (these are DIFFERENT finishes!)
+4. Brand aliases: TOA SHARK=SHARK, TOA BARCO=BARCO, WINDOW ASIA=FRAMEX, TOPTECH=DELTA
+5. Size preference: match similar sizes (2L≈1GL, 9L OK), but product line matters more
+6. BASE A/B/C: prefer matching base
+7. Return: {{"match_index": <0-14 or null>, "confidence": <50-100>}}
 
-JSON only, no explanation."""
+JSON only."""
 
         try:
             response = client.chat.completions.create(

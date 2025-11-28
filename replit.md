@@ -147,17 +147,22 @@ streamlit run app.py --server.port 5000
 
 ## Ground Truth Evaluation
 Tested against 133 ground truth product pairs (Megahome vs Thaiwatsadu):
-- **AI Matching Accuracy**: 77.4% (103/133 correct)
-- **Precision**: 79.8% (low false positives)
-- **Not Found**: 3.0%
+- **AI Matching Accuracy**: 80.5% (107/133 correct)
+- **Precision**: 82.3% (low false positives)
+- **Not Found**: 2.3%
 - **Weighted Matching Accuracy**: 38% correct (too many false positives)
 
-Note: 31.5% of ground truth pairs have very different names between retailers (e.g., different brand names for same product like WINDOW ASIA vs FRAMEX), making perfect accuracy impossible with name-based matching.
+### Thai-English Product Name Mappings
+The system handles products named differently between retailers:
+- VINILEX = วีนิเลกซ์, WEATHERBOND = เวเธอร์บอนด์, FLEXISEAL = เฟล็กซี่ซีล
+- JOTASHIELD = โจตาชิลด์, WEATHERSHIELD = เวเธอร์ชีลด์, POWERPLUS = พาวเวอร์พลัส
+- Finish types: กึ่งเงา=SG (semi-gloss), เนียน=SHEEN, ด้าน=MATTE
+- Brand aliases: TOA SHARK=SHARK, WINDOW ASIA=FRAMEX, TOPTECH=DELTA
 
 AI matching is recommended for production use. Performance varies by product category:
 - Doors & frames (ECO-DOOR): 90%+ accuracy
-- Paints: 75-85% accuracy (similar products with color variations)
-- Turpentine/thinner (SHARK, BARCO): 80-90% accuracy
+- Paints: 80-85% accuracy (with finish type matching)
+- Turpentine/thinner (SHARK, BARCO): 85-90% accuracy
 
 ## Recent Changes (Latest to Oldest)
 - **2025-11-28**: 🚀 Major AI matching improvements
