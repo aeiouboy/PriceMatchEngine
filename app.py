@@ -215,42 +215,40 @@ def calculate_text_similarity(text1, text2):
     return combined_score
 
 def calculate_weighted_similarity(source_row, target_row):
-    """Calculate product similarity with simple name-based matching"""
+    """Calculate product similarity - flexible for real-world data"""
     source_name = get_product_name(source_row).lower()
     target_name = get_product_name(target_row).lower()
     
     if not source_name or not target_name:
         return 0
     
-    # Start with name similarity
+    # Calculate name similarity using multiple methods
     name_sim = calculate_text_similarity(source_name, target_name)
     
-    # Only proceed if names are at least 50% similar
-    if name_sim < 50:
+    # Minimum threshold - but lower to allow more variation
+    if name_sim < 40:
         return 0
     
-    # If brand fields exist, they must match reasonably well
+    # Bonus points for matching brand (not penalty for mismatch)
     source_brand = str(source_row.get('brand', '')).lower().strip()
     target_brand = str(target_row.get('brand', '')).lower().strip()
     
     if source_brand and target_brand:
         if source_brand == target_brand:
-            brand_match = True
+            name_sim = min(100, name_sim + 10)  # Bonus for same brand
         else:
             brand_sim = fuzz.token_set_ratio(source_brand, target_brand)
-            brand_match = brand_sim > 60
-        
-        # If brands don't match, heavily penalize
-        if not brand_match:
-            name_sim = name_sim * 0.4  # Reduce score by 60%
+            if brand_sim > 70:
+                name_sim = min(100, name_sim + 5)  # Small bonus for similar brand
     
-    # If category fields exist, they must match
+    # Bonus for matching category (not penalty for mismatch)
     source_cat = str(source_row.get('category', '')).lower().strip()
     target_cat = str(target_row.get('category', '')).lower().strip()
     
     if source_cat and target_cat:
-        if source_cat != target_cat:
-            return 0  # Reject if categories don't match
+        cat_sim = fuzz.token_set_ratio(source_cat, target_cat)
+        if cat_sim > 70:
+            name_sim = min(100, name_sim + 5)  # Bonus for similar category
     
     return name_sim
 
