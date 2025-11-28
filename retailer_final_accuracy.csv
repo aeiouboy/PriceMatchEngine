@@ -1,0 +1,5 @@
+name,original_total,excluded,cleaned_total,correct,incorrect,not_found,accuracy
+HomePro,2427,299,2128,2060,33,35,96.80451127819549
+GlobalHouse,105,13,92,91,1,0,98.91304347826087
+Boonthavorn,191,21,170,166,3,1,97.6470588235294
+DoHome,955,108,847,820,14,13,96.81227863046045
