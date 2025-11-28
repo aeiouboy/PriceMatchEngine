@@ -665,6 +665,19 @@ def main():
             st.session_state.target_df = None
             st.session_state.matches_df = None
             st.rerun()
+        
+        st.divider()
+        
+        st.header("Downloads")
+        if os.path.exists("challenging_product_pairs.csv"):
+            with open("challenging_product_pairs.csv", "rb") as f:
+                st.download_button(
+                    label="📥 Download Challenging Pairs CSV",
+                    data=f,
+                    file_name="challenging_product_pairs.csv",
+                    mime="text/csv",
+                    help="42 product pairs with low text similarity (<60%) that are difficult to match"
+                )
     
     tab1, tab2, tab3 = st.tabs(["📊 Data Overview", "🔗 Find Matches", "📈 Analysis"])
     
