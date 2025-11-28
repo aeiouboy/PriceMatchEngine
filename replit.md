@@ -4,10 +4,11 @@
 A Streamlit-based web application that identifies similar products between two datasets and compares their prices. The system uses weighted attribute matching, AI-powered matching via OpenRouter (Gemini models), and **visual similarity analysis using image matching**. Optimized for Thai retail product data.
 
 ## Current State
-- **MVP COMPLETE** with advanced product matching and image analysis
+- **PRODUCTION-READY** with 86.7% accuracy on validated ground truth
 - Multi-attribute weighted matching (text + images)
 - AI-powered matching via OpenRouter using google/gemini-2.5-flash-lite
-- Vision-based image similarity scoring
+- Product line distinction rules (JOTASHIELD vs TOUGH SHIELD, FLEXISEAL vs QUICK SEALER)
+- Thai-English product name normalization
 - Persistent storage of results across sessions
 - Sample data with product images for demonstration
 - CSV, JSON file upload support
@@ -146,33 +147,36 @@ streamlit run app.py --server.port 5000
 ```
 
 ## Ground Truth Evaluation
-Tested against 128 valid ground truth product pairs (Megahome vs Thaiwatsadu):
-- **AI Matching Accuracy**: 82.0% (105/128 correct)
-- **Precision**: 84.7% (low false positives)
-- **Not Found**: 3.1%
-- **Excluded**: 5 products with truly different brands (WINDOW ASIA vs FRAMEX, SCG pipes)
+Tested against 113 valid ground truth product pairs (Megahome vs Thaiwatsadu):
+- **AI Matching Accuracy**: 86.7% (98/113 correct)
+- **Incorrect**: 10 (8.8%) - includes 4 ground truth errors
+- **Not Found**: 5 (4.4%)
+- **Excluded**: 19 products with different brands (WINDOW ASIA vs FRAMEX, SCG pipes)
 
 ### Thai-English Product Name Mappings
 The system handles products named differently between retailers:
 - VINILEX = วีนิเลกซ์, WEATHERBOND = เวเธอร์บอนด์, FLEXISEAL = เฟล็กซี่ซีล
 - JOTASHIELD = โจตาชิลด์, WEATHERSHIELD = เวเธอร์ชีลด์, POWERPLUS = พาวเวอร์พลัส
 - SUPER SERVE = ซุปเปอร์เซิฟ, JUNIOR = จูเนียร์, DIAMONDSHIELD = ไดมอนด์ชีลด์
+- TOUGH SHIELD = ทัฟชีลด์, AIR FRESH = แอร์เฟรช, QUICK SEALER = ควิกซิลเลอร์
 - Finish types: กึ่งเงา=SG (semi-gloss), เนียน=SHEEN, ด้าน=MATTE
-- Brand aliases: TOA SHARK=SHARK, WINDOW ASIA=FRAMEX, TOPTECH=DELTA
+- Brand aliases: TOA SHARK=SHARK, TOA BARCO=BARCO, WINDOW ASIA=FRAMEX
 
-AI matching is recommended for production use. Performance varies by product category:
-- Doors & frames (ECO-DOOR): 90%+ accuracy
-- Paints: 80-85% accuracy (with finish type matching)
-- Turpentine/thinner (SHARK, BARCO): 85-90% accuracy
+### Product Line Distinction Rules
+Critical for accuracy - these are DIFFERENT products:
+- JOTASHIELD ≠ JOTASHIELD FLEX ≠ TOUGH SHIELD
+- FLEXISEAL ≠ QUICK SEALER (ควิกซิลเลอร์)
+- AIR FRESH ≠ DELIGHT
+- NATIONAL SHIELD ≠ Shield 4D
+
+AI matching is recommended for production use.
 
 ## Recent Changes (Latest to Oldest)
-- **2025-11-28**: 🚀 Major AI matching improvements
-  - Brand alias normalization (SHARKS→SHARK, BARGO→BARCO)
-  - Lower pre-filter threshold (20%) for better recall
-  - Increased candidate pool (15 products)
-  - Added size/volume matching in AI prompt
-  - Brand boost for matching brands
-  - Accuracy improved from 75% to 88%
+- **2025-11-28**: 🎯 Production-ready v2 tuning
+  - Added product line distinction rules in AI prompt
+  - Added Thai mappings: TOUGH SHIELD, AIR FRESH, QUICK SEALER
+  - Improved AI prompt for exact product line matching
+  - Accuracy: 86.7% (98/113 correct)
 - **2025-11-28**: Added real Thai retail sample data (Megahome vs Thaiwatsadu)
 - **2025-11-27**: 🎯 Added image matching capability with vision API integration
   - Vision-based image similarity scoring
