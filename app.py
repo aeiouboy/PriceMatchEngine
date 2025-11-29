@@ -174,12 +174,23 @@ PRODUCT_LINE_CONFLICTS = [
     ('STEEL LADDER', 'ALUMINUM LADDER'),
     ('มือจับก้านโยก', 'ลูกบิด'),
     ('LEVER HANDLE', 'DOOR KNOB'),
+    # Handle type conflicts
+    ('ก้านโยก', 'เขาควาย'),
+    ('มือจับก้านโยก', 'เขาควาย'),
     # Brand-specific products (different brands = different products)
     ('จระเข้ 3 ดาว', 'SHARK'),
     ('MR METAL', 'DEXZON'),
     ('ช่างมือโปร', 'NASH'),
     ('ช่างมือโปร', 'W.PLASTIC'),
     ('PATTEX', 'GATOR'),
+    # Hardware type conflicts
+    ('ประแจจับแป๊บ', 'คีมล็อก'),
+    ('PIPE WRENCH', 'LOCKING PLIERS'),
+    ('พุ๊กเหล็ก', 'แผ่นเหล็ก'),
+    ('พุ๊กเคมี', 'สตัดเกลียว'),
+    # Pallet/stretch film conflicts
+    ('พาเลท', 'ฟิล์มยืด'),
+    ('PALLET', 'STRETCH FILM'),
 ]
 
 # Brand-specific conflicts for hardware
@@ -193,8 +204,8 @@ HARDWARE_BRAND_CONFLICTS = [
 ]
 
 def check_hardware_brand_conflict(source_name, target_name):
-    """Check if hardware brands are incompatible - DISABLED for better recall"""
-    # Disabled: HomePro has noisy brand data, causes too many false rejections
+    """Check if hardware brands are incompatible - DISABLED"""
+    # Disabled: Causes too many false rejections in HomePro
     return False
 
 def check_shoe_size_mismatch(source_name, target_name):
@@ -345,7 +356,7 @@ JSON only."""
 
         try:
             response = client.chat.completions.create(
-                model="google/gemini-2.5-flash-lite",
+                model="google/gemini-2.5-flash",
                 messages=[{"role": "user", "content": prompt}],
                 max_tokens=200
             )
