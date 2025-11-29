@@ -189,7 +189,58 @@ PRODUCT_LINE_CONFLICTS = [
     ('ช่างมือโปร', 'W.PLASTIC'),
     ('PATTEX', 'GATOR'),
     ('SONAX', 'NEOBOND'),
+    # Formula type conflicts - CRITICAL for glue/adhesive
+    ('สูตรน้ำมัน', 'สูตรน้ำ'),
+    ('OIL BASED', 'WATER BASED'),
+    ('OIL-BASED', 'WATER-BASED'),
+    # Bundled vs single item conflicts
+    ('พร้อมสกรู', 'ไม่มีสกรู'),
+    ('พร้อมถาด', 'ไม่มีถาด'),
+    # Door brand conflicts
+    ('SCP', 'YALE'),
+    ('HI DOOR', 'ECO DOOR'),
+    ('HI DOOR', 'ECO-DOOR'),
+    # Thinner type conflicts - CRITICAL
+    ('ทินเนอร์ 21', 'ทินเนอร์ AAA'),
+    ('ทินเนอร์ 71', 'ทินเนอร์ AAA'),
+    ('TOA 21', 'BARCO'),
+    ('TOA 71', 'BARCO'),
+    ('TOA 21', 'BARGO'),
+    ('TOA 71', 'BARGO'),
 ]
+
+# Size/packaging patterns that should match same product
+SIZE_EQUIVALENTS = {
+    'ขวดใหญ่': ['ขวดใหญ่', 'LARGE BOTTLE', '1 L', '1 ลิตร', '2 L', '2 ลิตร'],
+    'ปิ๊ป': ['ปิ๊ป', 'ปี๊ป', 'TIN', '11 กก', '11 ลิตร', '11 L'],
+    'กระป๋อง': ['กระป๋อง', 'CAN', '2.3 กก'],
+    '1 แกลลอน': ['1 แกลลอน', '1 แกลอน', '1 GAL', '3.785 L'],
+    '5 แกลลอน': ['5 แกลลอน', '5 แกลอน', '5 GAL', '18.9 L'],
+}
+
+def check_size_mismatch(source_name, target_name):
+    """Check if sizes are incompatible (e.g., ขวดใหญ่ vs ปิ๊ป)"""
+    source_upper = source_name.upper()
+    target_upper = target_name.upper()
+    
+    # Size conflict pairs that should NOT match
+    size_conflicts = [
+        ('ขวดใหญ่', 'ปิ๊ป'),
+        ('ขวดใหญ่', 'ปี๊ป'),
+        ('LARGE BOTTLE', 'TIN'),
+        ('กระป๋อง', 'ปิ๊ป'),
+        ('กระป๋อง', 'ปี๊ป'),
+        ('1 แกลลอน', '11 กก'),
+        ('1 แกลอน', '11 กก'),
+        ('1 แกลลอน', '11 ลิตร'),
+        ('1 แกลอน', '11 ลิตร'),
+    ]
+    
+    for size1, size2 in size_conflicts:
+        if (size1 in source_upper and size2 in target_upper) or \
+           (size2 in source_upper and size1 in target_upper):
+            return True
+    return False
 
 def check_product_line_conflict(source_name, target_name):
     """Check if source and target have a product line conflict"""
@@ -256,6 +307,9 @@ def ai_match_products(source_products, target_products, progress_callback=None):
                 # PRE-FILTER: Skip candidates with product line conflicts
                 if check_product_line_conflict(source_name, t_name):
                     continue
+                # PRE-FILTER: Skip candidates with size mismatches
+                if check_size_mismatch(source_name, t_name):
+                    continue
                 candidates.append((i, t_name, t_brand, t_model, t_volume, sim))
         
         # If no candidates, skip
@@ -270,31 +324,43 @@ def ai_match_products(source_products, target_products, progress_callback=None):
         target_list = [f"{pos}: {name} (Brand: {brand}, Model: {model}, Size: {volume})" 
                       for pos, (i, name, brand, model, volume, _) in enumerate(top_candidates)]
         
-        prompt = f"""Product matcher for Thai retail. Find best product match.
+        prompt = f"""Product matcher for Thai retail. Find EXACT product match.
 
 SOURCE: {source_name}
 
 TARGETS:
 {chr(10).join(target_list)}
 
-CRITICAL MATCHING RULES:
-1. BRAND must match (or be equivalent):
-   - BARCO=TOA BARCO=BARGO, SHARK=TOA SHARK=SHARKS
-   - Different brands like จระเข้ 3 ดาว ≠ SHARK, MR METAL ≠ DEXZON, SP ≠ NASH/MATALL
+CRITICAL MATCHING RULES (STRICT):
+
+1. BRAND must match exactly:
+   - BARCO=TOA BARCO=BARGO (same), SHARK=TOA SHARK (same)
+   - SCP ≠ YALE, HI DOOR ≠ ECO DOOR (different brands!)
    - ช่างมือโปร ≠ NASH ≠ W.PLASTIC (different brands!)
 
-2. PRODUCT TYPE must match exactly:
-   - บันไดเหล็ก ≠ บันไดอะลูมิเนียม (different material)
-   - ประแจ ≠ คีม, มือจับก้านโยก ≠ ลูกบิด (different product types)
-   - วู้ดฟิลเลอร์ ≠ พัตตี้, น้ำมันหล่อลื่น ≠ ซิลิโคน
+2. MODEL NUMBER must match:
+   - Door models: PB1 ≠ PD1 ≠ PE2 ≠ PX1 ≠ PX2 (each is DIFFERENT)
+   - MN002 ≠ MWR002, LT13 ≠ LT06 (model numbers matter!)
 
-3. PRODUCT LINE must match:
-   - TOUGH SHIELD ≠ JOTASHIELD, AIR FRESH ≠ BEGERSHIELD
-   - SUPERMATEX ≠ SUPERSHIELD, FLEXISEAL ≠ QUICK SEALER
+3. SIZE/PACKAGING matters for chemicals:
+   - ขวดใหญ่ ≠ ปิ๊ป (different sizes - NOT interchangeable!)
+   - 1 แกลลอน ≠ 11 ลิตร (different quantities)
 
-4. Thai-English names are SAME: วีนิเลกซ์=VINILEX, โจตาชิลด์=JOTASHIELD
+4. FORMULA TYPE must match:
+   - สูตรน้ำมัน ≠ สูตรน้ำ (oil-based ≠ water-based)
+   - กาวตะปูน้ำมัน ≠ กาวตะปูน้ำ (different formulas!)
 
-5. Size can vary. Return NULL if no good match exists.
+5. BUNDLED vs SINGLE items:
+   - พุ๊ก+สกรู ≠ พุ๊กเปล่า (with screw ≠ without screw)
+   - ลูกกลิ้ง+ถาด ≠ ลูกกลิ้งเดี่ยว (with tray ≠ without tray)
+
+6. THINNER types are DIFFERENT:
+   - ทินเนอร์ 21 ≠ ทินเนอร์ AAA ≠ ทินเนอร์ 71 (each is unique)
+   - BARCO AAA ≠ TOA 21 (different products!)
+
+7. Thai-English are SAME: วีนิเลกซ์=VINILEX, โจตาชิลด์=JOTASHIELD
+
+Return NULL if no EXACT match. Only match if SAME product.
 
 Return: {{"match_index": <0-14 or null>, "confidence": <50-100>}}
 JSON only."""
@@ -331,6 +397,11 @@ JSON only."""
                     # POST-MATCH VALIDATION: Check for product line conflicts
                     if check_product_line_conflict(source_name, target_name):
                         # Reject this match - product line conflict detected
+                        continue
+                    
+                    # POST-MATCH VALIDATION: Check for size mismatches
+                    if check_size_mismatch(source_name, target_name):
+                        # Reject this match - size mismatch detected
                         continue
                     
                     matches.append({
