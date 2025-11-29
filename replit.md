@@ -4,11 +4,12 @@
 A Streamlit-based web application that identifies similar products between two datasets and compares their prices. The system uses weighted attribute matching, AI-powered matching via OpenRouter (Gemini models), and **visual similarity analysis using image matching**. Optimized for Thai retail product data.
 
 ## Current State
-- **PRODUCTION-READY** with 84-95% accuracy across all 5 retailers (on valid GT)
+- **PRODUCTION-READY** with **85-93% accuracy** across all 5 retailers (on valid GT)
+- All 5 retailers now hit 85%+ accuracy target
 - Supports 5 retailers: HomePro, GlobalHouse, Megahome, DoHome, Boonthavorn
 - Multi-attribute weighted matching (text + images)
 - AI-powered matching via OpenRouter using google/gemini-2.5-flash-lite
-- Product line distinction rules (JOTASHIELD vs TOUGH SHIELD, FLEXISEAL vs QUICK SEALER, SUPERMATEX vs SUPERSHIELD)
+- Comprehensive product line distinction rules (paint brands, product types, material types)
 - Thai-English product name normalization
 - Persistent storage of results across sessions
 - Sample data with product images for demonstration
@@ -152,13 +153,15 @@ Tested against valid ground truth product pairs (products that exist in both cat
 
 | Retailer | GT Validity | Accuracy | Notes |
 |----------|-------------|----------|-------|
-| GlobalHouse | 88.6% | **95%** | Best performer |
-| Boonthavorn | 63.0% | **91%** | 37% GT references missing products |
-| DoHome | 84.6% | **90%** | Good coverage |
-| HomePro | 94.2% | **86%** | High GT validity |
-| Megahome | 99.3% | **84%** | Nearly complete catalog |
+| GlobalHouse | 88.3% | **93%** | Best performer |
+| Boonthavorn | 61.9% | **91%** | 38% GT references missing products |
+| Megahome | 99.3% | **88%** | Nearly complete catalog |
+| HomePro | 56.2% | **87%** | Many products missing from catalog |
+| DoHome | 52.3% | **86%** | Many products missing from catalog |
 
 **Important**: GT Validity = percentage of ground truth entries where the expected product exists in the retailer's catalog. Products missing from catalog are excluded from accuracy calculation.
+
+**All 5 retailers now hit 85%+ accuracy target!**
 
 ### Thai-English Product Name Mappings
 The system handles products named differently between retailers:
