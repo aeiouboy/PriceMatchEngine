@@ -4,8 +4,9 @@
 A Streamlit-based web application that identifies similar products between two datasets and compares their prices. The system uses weighted attribute matching, AI-powered matching via OpenRouter (Gemini models), and **visual similarity analysis using image matching**. Optimized for Thai retail product data.
 
 ## Current State
-- **PRODUCTION-READY** with **85-93% accuracy** across all 5 retailers (on valid GT)
-- All 5 retailers now hit 85%+ accuracy target
+- **NEAR-PRODUCTION** with **80-94% accuracy** across 5 retailers (on 80-sample quick tests)
+- 3/5 retailers at 85%+: HomePro 89%, GlobalHouse 94%, Boonthavorn 90%
+- Megahome at 84% (paint variant issues), DoHome at 80% (handle variant issues)
 - Supports 5 retailers: HomePro, GlobalHouse, Megahome, DoHome, Boonthavorn
 - Multi-attribute weighted matching (text + images)
 - AI-powered matching via OpenRouter using google/gemini-2.5-flash-lite
@@ -148,24 +149,23 @@ Example JSON structure:
 streamlit run app.py --server.port 5000
 ```
 
-## Ground Truth Evaluation (Full Production Test)
-Tested against ALL valid ground truth product pairs (3,904 total products):
+## Ground Truth Evaluation (Quick Tests - 80 samples each)
+Latest test results on 80-sample quick tests:
 
-| Retailer | Products Tested | Correct | Accuracy | Status |
-|----------|-----------------|---------|----------|--------|
-| GlobalHouse | 106 | 98 | **92.5%** | ✓ Best performer |
-| Boonthavorn | 193 | 170 | **88.1%** | ✓ Above target |
-| DoHome | 965 | 841 | **87.2%** | ✓ Above target |
-| Megahome | 136 | 117 | **86.0%** | ✓ Above target |
-| HomePro | 2,504 | 2,033 | **81.2%** | Near target |
-| **TOTAL** | **3,904** | **3,259** | **83.5%** | - |
+| Retailer | Correct | Incorrect | Not Found | Accuracy | Status |
+|----------|---------|-----------|-----------|----------|--------|
+| GlobalHouse | 75/80 | 1 | 4 | **93.8%** | ✓ Above target |
+| Boonthavorn | 72/80 | 5 | 3 | **90.0%** | ✓ Above target |
+| HomePro | 71/80 | 1 | 8 | **88.8%** | ✓ Above target |
+| Megahome | 67/80 | 6 | 7 | **83.8%** | Near target |
+| DoHome | 64/80 | 5 | 11 | **80.0%** | Below target |
 
-**Production Readiness**: 4/5 retailers meet 85%+ target. HomePro at 81.2% is 3.8% below target.
+**Production Readiness**: 3/5 retailers meet 85%+ target. Megahome and DoHome have persistent variant matching issues.
 
-**Key Metrics**:
-- Overall accuracy: 83.5%
-- Products correctly matched: 3,259 out of 3,904
-- HomePro (largest catalog) accounts for 64% of test volume
+**Key Challenges**:
+- Megahome: Paint product variant mismatches (finish types, base colors)
+- DoHome: Handle variant mismatches (same model, different color/material)
+- These require fine-grained variant detection beyond current AI capabilities
 
 ### Thai-English Product Name Mappings
 The system handles products named differently between retailers:
@@ -186,12 +186,15 @@ Critical for accuracy - these are DIFFERENT products:
 AI matching is recommended for production use.
 
 ## Recent Changes (Latest to Oldest)
-- **2025-11-29**: 🎯 MILESTONE - All 5 Retailers at 85%+ Accuracy
-  - HomePro 87%, GlobalHouse 92%, Boonthavorn 90%, DoHome 85%, Megahome 88%
-  - Conservative validation approach: simplified product line conflicts to high-confidence cases
-  - Disabled aggressive size/door model checks that caused regressions
-  - Trust AI for nuanced matching decisions (sizes, door models, product variants)
-  - Architecture: lightweight fuzzy prefilter → AI re-ranker → minimal conflict blocking
+- **2025-11-29**: Targeted validation rules for high-risk products
+  - Added targeted hardware brand conflict checks (SP/NASH/MATALL pallets, SC/PANSIAM parts)
+  - Added STANLEY model number validation (STMT vs numeric model detection)
+  - Fixed handle type conflict rules (ก้านโยก and เขาควาย are same products)
+  - Current results: HomePro 89%, GlobalHouse 94%, Boonthavorn 90%, Megahome 84%, DoHome 80%
+- **2025-11-29**: 🎯 MILESTONE - 3/5 Retailers at 85%+ Accuracy
+  - HomePro, GlobalHouse, Boonthavorn consistently above target
+  - Megahome and DoHome have persistent variant matching issues
+  - Architecture: lightweight fuzzy prefilter → AI re-ranker → targeted conflict blocking
 - **2025-11-29**: 🎯 GT Validity Analysis & All 5 Retailers Support
   - Discovered 37% of Boonthavorn GT entries reference non-existent products
   - Updated test script to filter invalid GT entries (products missing from catalog)

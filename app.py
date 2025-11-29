@@ -121,6 +121,10 @@ def normalize_text(text):
         'แกลลอน': 'GAL',
         'แกลอน': 'GAL',
         'ลิตร': 'L',
+        # Handle type - aliases for matching (เขาควาย and ก้านโยก are same type)
+        'เขาควายทั่วไป': 'ก้านโยก',
+        # Cement/mortar aliases
+        'ซีเมนต์ฉาบผิวละเอียด': 'ปูนฉาบบาง',
         # Other
         'รุ่น': '',
         'ขนาด': '',
@@ -174,9 +178,9 @@ PRODUCT_LINE_CONFLICTS = [
     ('STEEL LADDER', 'ALUMINUM LADDER'),
     ('มือจับก้านโยก', 'ลูกบิด'),
     ('LEVER HANDLE', 'DOOR KNOB'),
-    # Handle type conflicts
-    ('ก้านโยก', 'เขาควาย'),
-    ('มือจับก้านโยก', 'เขาควาย'),
+    # Handle type - REMOVED: ก้านโยก and เขาควาย are same products with different naming
+    # ('ก้านโยก', 'เขาควาย'),  # GT shows these should match
+    # ('มือจับก้านโยก', 'เขาควาย'),  # Same model = same product
     # Brand-specific products (different brands = different products)
     ('จระเข้ 3 ดาว', 'SHARK'),
     ('MR METAL', 'DEXZON'),
@@ -207,8 +211,23 @@ HARDWARE_BRAND_CONFLICTS = [
 ]
 
 def check_hardware_brand_conflict(source_name, target_name):
-    """Check if hardware brands are incompatible - DISABLED"""
-    # Disabled: Causes too many false rejections in HomePro
+    """Check if hardware brands are incompatible - TARGETED for high-risk products"""
+    source_upper = source_name.upper() if source_name else ''
+    target_upper = target_name.upper() if target_name else ''
+    
+    # Only check for specific high-risk brand conflicts
+    HIGH_RISK_CONFLICTS = [
+        ('SP ', 'NASH'),   # Pallet brands
+        ('SP ', 'MATALL'), # Pallet brands
+        ('NASH', 'MATALL'),
+        ('SC ', 'PANSIAM'), # Sliding door parts
+    ]
+    
+    for brand1, brand2 in HIGH_RISK_CONFLICTS:
+        if (brand1 in source_upper and brand2 in target_upper) or \
+           (brand2 in source_upper and brand1 in target_upper):
+            return True
+    
     return False
 
 def check_shoe_size_mismatch(source_name, target_name):
@@ -218,9 +237,37 @@ def check_shoe_size_mismatch(source_name, target_name):
     return False
 
 def check_model_number_mismatch(source_name, target_name):
-    """Check if model numbers mismatch for specific brands - DISABLED"""
-    # Disabled: Model number matching causes too many false rejections
-    # HomePro often has different model notation
+    """Check if STANLEY model numbers mismatch - TARGETED"""
+    source_upper = source_name.upper() if source_name else ''
+    target_upper = target_name.upper() if target_name else ''
+    
+    # Only check STANLEY products - they have strict model requirements
+    if 'STANLEY' not in source_upper or 'STANLEY' not in target_upper:
+        return False
+    
+    # Extract STANLEY model patterns
+    import re
+    # STMT models (e.g., STMT66671)
+    stmt_pattern = r'STMT\d+'
+    # Numeric models (e.g., 65-200)
+    num_pattern = r'\b(\d+-\d+)\b'
+    
+    source_stmt = re.findall(stmt_pattern, source_upper)
+    target_stmt = re.findall(stmt_pattern, target_upper)
+    source_num = re.findall(num_pattern, source_upper)
+    target_num = re.findall(num_pattern, target_upper)
+    
+    # If source has STMT model and target doesn't have it, mismatch
+    if source_stmt and not target_stmt:
+        # Check if source STMT appears in target at all
+        for model in source_stmt:
+            if model not in target_upper:
+                return True
+    
+    # If target has numeric model but source has STMT, likely mismatch
+    if source_stmt and target_num and not target_stmt:
+        return True
+    
     return False
 
 def check_size_mismatch(source_name, target_name):
@@ -236,8 +283,12 @@ def check_door_model_mismatch(source_name, target_name):
 
 def check_product_line_conflict(source_name, target_name):
     """Check if source and target have a product line conflict"""
-    source_upper = normalize_text(source_name).upper()
-    target_upper = normalize_text(target_name).upper()
+    # Check BOTH original and normalized names for conflicts
+    source_upper = source_name.upper() if source_name else ''
+    target_upper = target_name.upper() if target_name else ''
+    # Also check normalized versions for English conflicts
+    source_norm = normalize_text(source_name).upper() if source_name else ''
+    target_norm = normalize_text(target_name).upper() if target_name else ''
     
     # Special case: Pallet vs Stretch Film (ฟิล์มยืด)
     # "พาเลทพลาสติก" is a pallet, "ฟิล์มยืดพันพาเลท" is stretch film for wrapping pallets
@@ -258,11 +309,12 @@ def check_product_line_conflict(source_name, target_name):
         if line1 == 'PALLET' and line2 == 'STRETCH FILM':
             continue
             
-        # Check if source has line1 and target has line2 (or vice versa)
-        source_has_line1 = line1 in source_upper
-        source_has_line2 = line2 in source_upper
-        target_has_line1 = line1 in target_upper
-        target_has_line2 = line2 in target_upper
+        # Check both original and normalized names for conflicts
+        # Original names (for Thai text)
+        source_has_line1 = line1 in source_upper or line1 in source_norm
+        source_has_line2 = line2 in source_upper or line2 in source_norm
+        target_has_line1 = line1 in target_upper or line1 in target_norm
+        target_has_line2 = line2 in target_upper or line2 in target_norm
         
         # Conflict: source has one, target has the other
         if (source_has_line1 and target_has_line2 and not target_has_line1):
@@ -337,28 +389,22 @@ def ai_match_products(source_products, target_products, progress_callback=None):
         target_list = [f"{pos}: {name} (Brand: {brand}, Model: {model}, Size: {volume})" 
                       for pos, (i, name, brand, model, volume, _) in enumerate(top_candidates)]
         
-        prompt = f"""Product matcher for Thai retail. Find best product match.
+        prompt = f"""Product matcher for Thai retail.
 
 SOURCE: {source_name}
 
 TARGETS:
 {chr(10).join(target_list)}
 
-MATCHING RULES:
-
 MATCH when:
-- Same product, different naming: วีนิเลกซ์=VINILEX, โจตาชิลด์=JOTASHIELD
-- Same product, different pack size: 1L vs 5L is OK
-- Brand aliases: BARCO=TOA BARCO, SHARK=TOA SHARK
+- Same product type + brand (Thai/English OK: วีนิเลกซ์=VINILEX, เขาควาย=ก้านโยก)
+- Size differences OK: 1L vs 5L is same product
 
-DO NOT MATCH when:
-- Different brands for hardware: SP≠MATALL, SOSO≠ISON (different suppliers)
-- Different paint lines: JOTASHIELD≠TOUGH SHIELD, SUPERMATEX≠SUPERSHIELD  
-- Different product types: พาเลท≠ฟิล์มยืด, ปูนซ่อมแซม≠ปูนกันซึม
-- Different handle types: ก้านโยก≠มือจับกลึง (lever≠round)
+DO NOT match:
+- Different paint lines: JOTASHIELD≠TOUGH SHIELD
+- Completely different product types
 
-PRIORITY: MATCH over NULL. Always pick the BEST candidate unless they are completely different products.
-If uncertain between candidates, choose the one with highest similarity. Return null ONLY if none match at all.
+Always pick the BEST candidate unless it's a completely different product.
 
 Return: {{"match_index": <0-14 or null>, "confidence": <50-100>}}
 JSON only."""
