@@ -148,20 +148,24 @@ Example JSON structure:
 streamlit run app.py --server.port 5000
 ```
 
-## Ground Truth Evaluation
-Tested against valid ground truth product pairs (products that exist in both catalogs):
+## Ground Truth Evaluation (Full Production Test)
+Tested against ALL valid ground truth product pairs (3,904 total products):
 
-| Retailer | GT Validity | Accuracy | Notes |
-|----------|-------------|----------|-------|
-| GlobalHouse | 92.5% | **92%** | Best performer |
-| Boonthavorn | 54.5% | **90%** | 45% GT references missing products |
-| Megahome | 99.3% | **88%** | Nearly complete catalog |
-| HomePro | 94.2% | **87%** | Improved catalog coverage |
-| DoHome | 35.5% | **85%** | Many products missing from catalog |
+| Retailer | Products Tested | Correct | Accuracy | Status |
+|----------|-----------------|---------|----------|--------|
+| GlobalHouse | 106 | 98 | **92.5%** | ✓ Best performer |
+| Boonthavorn | 193 | 170 | **88.1%** | ✓ Above target |
+| DoHome | 965 | 841 | **87.2%** | ✓ Above target |
+| Megahome | 136 | 117 | **86.0%** | ✓ Above target |
+| HomePro | 2,504 | 2,033 | **81.2%** | Near target |
+| **TOTAL** | **3,904** | **3,259** | **83.5%** | - |
 
-**Important**: GT Validity = percentage of ground truth entries where the expected product exists in the retailer's catalog. Products missing from catalog are excluded from accuracy calculation.
+**Production Readiness**: 4/5 retailers meet 85%+ target. HomePro at 81.2% is 3.8% below target.
 
-**ALL 5 RETAILERS NOW HIT 85%+ ACCURACY TARGET!**
+**Key Metrics**:
+- Overall accuracy: 83.5%
+- Products correctly matched: 3,259 out of 3,904
+- HomePro (largest catalog) accounts for 64% of test volume
 
 ### Thai-English Product Name Mappings
 The system handles products named differently between retailers:
