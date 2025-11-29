@@ -139,6 +139,40 @@ def normalize_brand(brand):
     """Normalize brand names for better matching"""
     return normalize_text(brand)
 
+# Product line conflict matrix - these should NEVER be matched together
+PRODUCT_LINE_CONFLICTS = [
+    ('TOUGH SHIELD', 'JOTASHIELD'),
+    ('TOUGH SHIELD', 'JOTASHIELD FLEX'),
+    ('JOTASHIELD', 'JOTASHIELD FLEX'),
+    ('SUPERMATEX', 'SUPERSHIELD'),
+    ('SUPERMATEX', 'SUPERSHIELD ADVANCE'),
+    ('SUPERSHIELD', 'SUPERSHIELD ADVANCE'),
+    ('AIR FRESH', 'DELIGHT'),
+    ('AIRFRESH', 'DELIGHT'),
+    ('FLEXISEAL', 'QUICK SEALER'),
+    ('COOL DIAMOND', 'NANO SHIELD'),
+]
+
+def check_product_line_conflict(source_name, target_name):
+    """Check if source and target have a product line conflict"""
+    source_upper = normalize_text(source_name).upper()
+    target_upper = normalize_text(target_name).upper()
+    
+    for line1, line2 in PRODUCT_LINE_CONFLICTS:
+        # Check if source has line1 and target has line2 (or vice versa)
+        source_has_line1 = line1 in source_upper
+        source_has_line2 = line2 in source_upper
+        target_has_line1 = line1 in target_upper
+        target_has_line2 = line2 in target_upper
+        
+        # Conflict: source has one, target has the other
+        if (source_has_line1 and target_has_line2 and not target_has_line1):
+            return True
+        if (source_has_line2 and target_has_line1 and not target_has_line2):
+            return True
+    
+    return False
+
 def ai_match_products(source_products, target_products, progress_callback=None):
     """Use AI to find matching products between two lists (improved hybrid approach)"""
     client = get_openrouter_client()
@@ -181,6 +215,9 @@ def ai_match_products(source_products, target_products, progress_callback=None):
                 sim = min(100, sim + 15)
             
             if sim >= 18:  # Lower threshold for better recall
+                # PRE-FILTER: Skip candidates with product line conflicts
+                if check_product_line_conflict(source_name, t_name):
+                    continue
                 candidates.append((i, t_name, t_brand, t_model, t_volume, sim))
         
         # If no candidates, skip
@@ -203,21 +240,20 @@ TARGETS:
 {chr(10).join(target_list)}
 
 MATCHING RULES:
-1. PRODUCT LINE - must match same product line (CRITICAL):
-   - SUPERMATEX ≠ SUPERSHIELD ≠ SUPERSHIELD ADVANCE (different products!)
-   - JOTASHIELD ≠ JOTASHIELD FLEX ≠ TOUGH SHIELD (different lines!)
-   - JOTASHIELD ANTIFADE = JOTASHIELD AF (same)
-   - AIR FRESH = AIRFRESH ≠ DELIGHT
-   - FLEXISEAL = เฟล็กซี่ซีล ≠ ควิกซิลเลอร์
+1. NEVER MATCH DIFFERENT PRODUCT LINES (CRITICAL - reject if wrong line):
+   - TOUGH SHIELD ≠ JOTASHIELD (NEVER match these together!)
+   - JOTASHIELD ≠ JOTASHIELD FLEX (different products)
+   - SUPERMATEX ≠ SUPERSHIELD ≠ SUPERSHIELD ADVANCE
+   - AIR FRESH ≠ DELIGHT, FLEXISEAL ≠ QUICK SEALER
 
-2. Thai-English = SAME product:
+2. Thai-English names are SAME product:
    - วีนิเลกซ์=VINILEX, เวเธอร์บอนด์=WEATHERBOND, โจตาชิลด์=JOTASHIELD
    - เฟล็กซี่ซีล=FLEXISEAL, แอร์เฟรช=AIRFRESH, ทัฟชีลด์=TOUGH SHIELD
    - ซุปเปอร์เมเทค=SUPERMATEX, ซุปเปอร์ชิลด์=SUPERSHIELD
 
-3. Size can differ - same product line is OK
-4. Finish type can differ - same product is OK
-5. Find BEST available match, not perfect match
+3. Size can vary - prefer closest size (1 gal ≈ 3.78L)
+4. Finish type (เนียน/กึ่งเงา/ด้าน) can differ
+5. Find BEST match from available options
 
 Return: {{"match_index": <0-14 or null>, "confidence": <50-100>}}
 JSON only."""
@@ -249,6 +285,13 @@ JSON only."""
                 match_idx = int(result['match_index'])
                 if 0 <= match_idx < len(top_candidates):
                     original_idx = top_candidates[match_idx][0]
+                    target_name = top_candidates[match_idx][1]
+                    
+                    # POST-MATCH VALIDATION: Check for product line conflicts
+                    if check_product_line_conflict(source_name, target_name):
+                        # Reject this match - product line conflict detected
+                        continue
+                    
                     matches.append({
                         'source_idx': idx,
                         'target_idx': original_idx,
