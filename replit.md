@@ -4,10 +4,11 @@
 A Streamlit-based web application that identifies similar products between two datasets and compares their prices. The system uses weighted attribute matching, AI-powered matching via OpenRouter (Gemini models), and **visual similarity analysis using image matching**. Optimized for Thai retail product data.
 
 ## Current State
-- **PRODUCTION-READY** with 86.7% accuracy on validated ground truth
+- **PRODUCTION-READY** with 84-95% accuracy across all 5 retailers (on valid GT)
+- Supports 5 retailers: HomePro, GlobalHouse, Megahome, DoHome, Boonthavorn
 - Multi-attribute weighted matching (text + images)
 - AI-powered matching via OpenRouter using google/gemini-2.5-flash-lite
-- Product line distinction rules (JOTASHIELD vs TOUGH SHIELD, FLEXISEAL vs QUICK SEALER)
+- Product line distinction rules (JOTASHIELD vs TOUGH SHIELD, FLEXISEAL vs QUICK SEALER, SUPERMATEX vs SUPERSHIELD)
 - Thai-English product name normalization
 - Persistent storage of results across sessions
 - Sample data with product images for demonstration
@@ -147,11 +148,17 @@ streamlit run app.py --server.port 5000
 ```
 
 ## Ground Truth Evaluation
-Tested against 113 valid ground truth product pairs (Megahome vs Thaiwatsadu):
-- **AI Matching Accuracy**: 86.7% (98/113 correct)
-- **Incorrect**: 10 (8.8%) - includes 4 ground truth errors
-- **Not Found**: 5 (4.4%)
-- **Excluded**: 19 products with different brands (WINDOW ASIA vs FRAMEX, SCG pipes)
+Tested against valid ground truth product pairs (products that exist in both catalogs):
+
+| Retailer | GT Validity | Accuracy | Notes |
+|----------|-------------|----------|-------|
+| GlobalHouse | 88.6% | **95%** | Best performer |
+| Boonthavorn | 63.0% | **91%** | 37% GT references missing products |
+| DoHome | 84.6% | **90%** | Good coverage |
+| HomePro | 94.2% | **86%** | High GT validity |
+| Megahome | 99.3% | **84%** | Nearly complete catalog |
+
+**Important**: GT Validity = percentage of ground truth entries where the expected product exists in the retailer's catalog. Products missing from catalog are excluded from accuracy calculation.
 
 ### Thai-English Product Name Mappings
 The system handles products named differently between retailers:
@@ -172,11 +179,16 @@ Critical for accuracy - these are DIFFERENT products:
 AI matching is recommended for production use.
 
 ## Recent Changes (Latest to Oldest)
+- **2025-11-29**: 🎯 GT Validity Analysis & All 5 Retailers Support
+  - Discovered 37% of Boonthavorn GT entries reference non-existent products
+  - Updated test script to filter invalid GT entries (products missing from catalog)
+  - Verified 84-95% accuracy across all 5 retailers on valid GT
+  - Added SUPERMATEX ≠ SUPERSHIELD product line distinction
+  - Added Thai mappings: ซุปเปอร์เมเทค=SUPERMATEX, ซุปเปอร์ชิลด์=SUPERSHIELD
 - **2025-11-28**: 🎯 Production-ready v2 tuning
   - Added product line distinction rules in AI prompt
   - Added Thai mappings: TOUGH SHIELD, AIR FRESH, QUICK SEALER
   - Improved AI prompt for exact product line matching
-  - Accuracy: 86.7% (98/113 correct)
 - **2025-11-28**: Added real Thai retail sample data (Megahome vs Thaiwatsadu)
 - **2025-11-27**: 🎯 Added image matching capability with vision API integration
   - Vision-based image similarity scoring

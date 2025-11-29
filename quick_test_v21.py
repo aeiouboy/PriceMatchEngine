@@ -182,10 +182,11 @@ def main():
     
     print(f"\n{'='*50}")
     print(f"Results for {retailer}:")
+    print(f"  Valid GT tested: {total} (excluded {invalid_gt_count} missing from catalog)")
     print(f"  Correct:    {correct}/{total} ({correct/total*100:.1f}%)")
     print(f"  Incorrect:  {incorrect}/{total} ({incorrect/total*100:.1f}%)")
     print(f"  Not Found:  {not_found}/{total} ({not_found/total*100:.1f}%)")
-    print(f"  Accuracy:   {correct/total*100:.1f}%")
+    print(f"  Accuracy:   {correct/total*100:.1f}% (on valid GT only)")
 
 if __name__ == "__main__":
     main()
