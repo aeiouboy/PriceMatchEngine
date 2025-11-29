@@ -191,6 +191,9 @@ PRODUCT_LINE_CONFLICTS = [
     # Pallet/stretch film conflicts
     ('พาเลท', 'ฟิล์มยืด'),
     ('PALLET', 'STRETCH FILM'),
+    # Hardware supplier brand conflicts
+    ('SP ', 'MATALL'),
+    ('SOSO', 'ISON'),
 ]
 
 # Brand-specific conflicts for hardware
@@ -236,7 +239,25 @@ def check_product_line_conflict(source_name, target_name):
     source_upper = normalize_text(source_name).upper()
     target_upper = normalize_text(target_name).upper()
     
+    # Special case: Pallet vs Stretch Film (ฟิล์มยืด)
+    # "พาเลทพลาสติก" is a pallet, "ฟิล์มยืดพันพาเลท" is stretch film for wrapping pallets
+    source_is_pallet = 'พาเลท' in source_upper and 'ฟิล์มยืด' not in source_upper
+    target_is_film = 'ฟิล์มยืด' in target_upper
+    if source_is_pallet and target_is_film:
+        return True
+    
+    target_is_pallet = 'พาเลท' in target_upper and 'ฟิล์มยืด' not in target_upper
+    source_is_film = 'ฟิล์มยืด' in source_upper
+    if target_is_pallet and source_is_film:
+        return True
+    
     for line1, line2 in PRODUCT_LINE_CONFLICTS:
+        # Skip pallet/film as it's handled above
+        if line1 == 'พาเลท' and line2 == 'ฟิล์มยืด':
+            continue
+        if line1 == 'PALLET' and line2 == 'STRETCH FILM':
+            continue
+            
         # Check if source has line1 and target has line2 (or vice versa)
         source_has_line1 = line1 in source_upper
         source_has_line2 = line2 in source_upper
@@ -323,33 +344,21 @@ SOURCE: {source_name}
 TARGETS:
 {chr(10).join(target_list)}
 
-CRITICAL MATCHING RULES:
+MATCHING RULES:
 
-1. BRAND must match (or be equivalent):
-   - BARCO=TOA BARCO=BARGO, SHARK=TOA SHARK (same brand)
-   - Different brands = NO MATCH: SOSO ≠ ISON, SP ≠ MATALL, SPOA ≠ KING LAIKER
-   - ช่างมือโปร ≠ NASH, MR METAL ≠ DEXZON, REDHAND ≠ KVB
+MATCH when:
+- Same product, different naming: วีนิเลกซ์=VINILEX, โจตาชิลด์=JOTASHIELD
+- Same product, different pack size: 1L vs 5L is OK
+- Brand aliases: BARCO=TOA BARCO, SHARK=TOA SHARK
 
-2. PRODUCT LINE must match exactly:
-   - TOUGH SHIELD ≠ JOTASHIELD, AIR FRESH ≠ BEGERSHIELD
-   - SUPERMATEX ≠ SUPERSHIELD, FLEXISEAL ≠ QUICK SEALER
+DO NOT MATCH when:
+- Different brands for hardware: SP≠MATALL, SOSO≠ISON (different suppliers)
+- Different paint lines: JOTASHIELD≠TOUGH SHIELD, SUPERMATEX≠SUPERSHIELD  
+- Different product types: พาเลท≠ฟิล์มยืด, ปูนซ่อมแซม≠ปูนกันซึม
+- Different handle types: ก้านโยก≠มือจับกลึง (lever≠round)
 
-3. MODEL NUMBER matters for tools/hardware:
-   - Different STANLEY model = NO MATCH (STMT66671 ≠ 65-200)
-   - Different door model = NO MATCH
-
-4. SIZE/เบอร์ must match for shoes:
-   - เบอร์ 9.5 ≠ เบอร์ 10.5, เบอร์ 39 ≠ เบอร์ 41 = NO MATCH
-
-5. Product TYPE must match:
-   - พุ๊กเหล็ก ≠ แผ่นเหล็ก ≠ ข้อต่อ (anchor ≠ plate ≠ connector)
-   - พาเลท ≠ ฟิล์มยืด (pallet ≠ stretch film)
-   - ประแจจับแป๊บ ≠ คีมล็อก (pipe wrench ≠ locking pliers)
-
-6. Thai-English names are SAME: วีนิเลกซ์=VINILEX, โจตาชิลด์=JOTASHIELD
-
-Paint/chemical sizes CAN vary. Match same base product even with different pack sizes.
-Return NULL if brand or product type differs. Match if SAME base product.
+PRIORITY: MATCH over NULL. Always pick the BEST candidate unless they are completely different products.
+If uncertain between candidates, choose the one with highest similarity. Return null ONLY if none match at all.
 
 Return: {{"match_index": <0-14 or null>, "confidence": <50-100>}}
 JSON only."""
