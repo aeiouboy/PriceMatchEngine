@@ -110,21 +110,36 @@ def main():
             twd_url_map[i] = url.strip()
     
     competitor_url_map = {}
+    competitor_urls = set()
     for i, p in enumerate(competitor_products):
         url = p.get('url', p.get('product_url', p.get('link', '')))
         if url:
             competitor_url_map[i] = url.strip()
+            competitor_urls.add(url.strip())
     
-    # Filter to GT products
+    # Filter to valid GT products (where target exists in catalog)
+    valid_gt_count = 0
+    invalid_gt_count = 0
+    for twd_url, comp_url in gt.items():
+        if comp_url in competitor_urls:
+            valid_gt_count += 1
+        else:
+            invalid_gt_count += 1
+    
+    print(f"GT Validity: {valid_gt_count}/{len(gt)} ({valid_gt_count/len(gt)*100:.1f}%) - {invalid_gt_count} invalid entries excluded")
+    
     filtered_twd = []
     filtered_indices = []
     for i, p in enumerate(twd_products):
         url = twd_url_map.get(i, '')
         if url in gt:
-            filtered_twd.append(p)
-            filtered_indices.append(i)
-            if len(filtered_twd) >= limit:
-                break
+            expected_url = gt[url]
+            # Only include if target product exists in catalog
+            if expected_url in competitor_urls:
+                filtered_twd.append(p)
+                filtered_indices.append(i)
+                if len(filtered_twd) >= limit:
+                    break
     
     print(f"Testing {len(filtered_twd)} products...")
     
