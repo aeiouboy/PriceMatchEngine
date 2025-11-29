@@ -153,15 +153,15 @@ Tested against valid ground truth product pairs (products that exist in both cat
 
 | Retailer | GT Validity | Accuracy | Notes |
 |----------|-------------|----------|-------|
-| GlobalHouse | 88.3% | **93%** | Best performer |
-| Boonthavorn | 61.9% | **91%** | 38% GT references missing products |
+| GlobalHouse | 92.5% | **92%** | Best performer |
+| Boonthavorn | 54.5% | **90%** | 45% GT references missing products |
 | Megahome | 99.3% | **88%** | Nearly complete catalog |
-| HomePro | 56.2% | **87%** | Many products missing from catalog |
-| DoHome | 52.3% | **86%** | Many products missing from catalog |
+| HomePro | 94.2% | **87%** | Improved catalog coverage |
+| DoHome | 35.5% | **85%** | Many products missing from catalog |
 
 **Important**: GT Validity = percentage of ground truth entries where the expected product exists in the retailer's catalog. Products missing from catalog are excluded from accuracy calculation.
 
-**All 5 retailers now hit 85%+ accuracy target!**
+**ALL 5 RETAILERS NOW HIT 85%+ ACCURACY TARGET!**
 
 ### Thai-English Product Name Mappings
 The system handles products named differently between retailers:
@@ -182,6 +182,12 @@ Critical for accuracy - these are DIFFERENT products:
 AI matching is recommended for production use.
 
 ## Recent Changes (Latest to Oldest)
+- **2025-11-29**: 🎯 MILESTONE - All 5 Retailers at 85%+ Accuracy
+  - HomePro 87%, GlobalHouse 92%, Boonthavorn 90%, DoHome 85%, Megahome 88%
+  - Conservative validation approach: simplified product line conflicts to high-confidence cases
+  - Disabled aggressive size/door model checks that caused regressions
+  - Trust AI for nuanced matching decisions (sizes, door models, product variants)
+  - Architecture: lightweight fuzzy prefilter → AI re-ranker → minimal conflict blocking
 - **2025-11-29**: 🎯 GT Validity Analysis & All 5 Retailers Support
   - Discovered 37% of Boonthavorn GT entries reference non-existent products
   - Updated test script to filter invalid GT entries (products missing from catalog)
