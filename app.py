@@ -141,16 +141,33 @@ def normalize_brand(brand):
 
 # Product line conflict matrix - these should NEVER be matched together
 PRODUCT_LINE_CONFLICTS = [
+    # JOTUN product lines - CRITICAL
     ('TOUGH SHIELD', 'JOTASHIELD'),
     ('TOUGH SHIELD', 'JOTASHIELD FLEX'),
     ('JOTASHIELD', 'JOTASHIELD FLEX'),
+    # JBP vs JOTUN - different brands!
+    ('FUTURESHIELD', 'JOTASHIELD'),
+    ('FUTURESHIELD', 'JOTASHIELD FLEX'),
+    ('FUTURESHIELD', 'TOUGH SHIELD'),
+    # TOA product lines
     ('SUPERMATEX', 'SUPERSHIELD'),
     ('SUPERMATEX', 'SUPERSHIELD ADVANCE'),
     ('SUPERSHIELD', 'SUPERSHIELD ADVANCE'),
+    # BEGER product lines - CRITICAL
     ('AIR FRESH', 'DELIGHT'),
     ('AIRFRESH', 'DELIGHT'),
-    ('FLEXISEAL', 'QUICK SEALER'),
+    ('AIR FRESH', 'BEGERSHIELD'),
+    ('AIRFRESH', 'BEGERSHIELD'),
+    ('AIR FRESH', 'EASY CLEAN'),
+    ('COOL DIAMOND', 'NANO1 SHIELD'),
     ('COOL DIAMOND', 'NANO SHIELD'),
+    ('COOL DIAMOND', 'BEGERSHIELD'),
+    # NIPPON product lines
+    ('FLEXISEAL', 'QUICK SEALER'),
+    ('VINILEX', 'WEATHERBOND'),
+    # Chemical products - different types!
+    ('น้ำมันสน', 'ทินเนอร์'),
+    ('TURPENTINE', 'THINNER'),
 ]
 
 def check_product_line_conflict(source_name, target_name):
@@ -240,20 +257,20 @@ TARGETS:
 {chr(10).join(target_list)}
 
 MATCHING RULES:
-1. NEVER MATCH DIFFERENT PRODUCT LINES (CRITICAL - reject if wrong line):
-   - TOUGH SHIELD ≠ JOTASHIELD (NEVER match these together!)
-   - JOTASHIELD ≠ JOTASHIELD FLEX (different products)
+1. NEVER MATCH DIFFERENT PRODUCT LINES:
+   - TOUGH SHIELD ≠ JOTASHIELD ≠ JOTASHIELD FLEX
+   - FUTURESHIELD ≠ JOTASHIELD (different brands: JBP vs JOTUN)
+   - AIR FRESH ≠ BEGERSHIELD ≠ EASY CLEAN ≠ DELIGHT
    - SUPERMATEX ≠ SUPERSHIELD ≠ SUPERSHIELD ADVANCE
-   - AIR FRESH ≠ DELIGHT, FLEXISEAL ≠ QUICK SEALER
+   - FLEXISEAL ≠ QUICK SEALER
 
-2. Thai-English names are SAME product:
+2. Brand aliases (same brand): BARCO=TOA BARCO=BARGO, SHARK=TOA SHARK=SHARKS
+
+3. Thai-English names are SAME product:
    - วีนิเลกซ์=VINILEX, เวเธอร์บอนด์=WEATHERBOND, โจตาชิลด์=JOTASHIELD
-   - เฟล็กซี่ซีล=FLEXISEAL, แอร์เฟรช=AIRFRESH, ทัฟชีลด์=TOUGH SHIELD
-   - ซุปเปอร์เมเทค=SUPERMATEX, ซุปเปอร์ชิลด์=SUPERSHIELD
+   - เฟล็กซี่ซีล=FLEXISEAL, แอร์เฟรช=AIR FRESH, ทัฟชีลด์=TOUGH SHIELD
 
-3. Size can vary - prefer closest size (1 gal ≈ 3.78L)
-4. Finish type (เนียน/กึ่งเงา/ด้าน) can differ
-5. Find BEST match from available options
+4. Size can vary (1 gal ≈ 3.78L). Finish type (เนียน/กึ่งเงา/ด้าน) can differ.
 
 Return: {{"match_index": <0-14 or null>, "confidence": <50-100>}}
 JSON only."""
