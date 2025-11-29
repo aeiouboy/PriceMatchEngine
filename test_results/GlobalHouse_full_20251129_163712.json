@@ -1,0 +1,10 @@
+{
+  "retailer": "GlobalHouse",
+  "timestamp": "2025-11-29T16:37:12.039894",
+  "total_tested": 106,
+  "correct": 0,
+  "incorrect": 0,
+  "not_found": 106,
+  "accuracy": 0.0,
+  "wrong_matches_sample": []
+}
