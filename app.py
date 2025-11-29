@@ -182,6 +182,33 @@ PRODUCT_LINE_CONFLICTS = [
     ('PATTEX', 'GATOR'),
 ]
 
+# Brand-specific conflicts for hardware
+HARDWARE_BRAND_CONFLICTS = [
+    ('SOSO', 'ISON'),
+    ('SP', 'MATALL'),
+    ('SPOA', 'KING LAIKER'),
+    ('REDHAND', 'KVB'),
+    ('MR METAL', 'U-HENG'),
+    ('MR METAL', 'DEXZON'),
+]
+
+def check_hardware_brand_conflict(source_name, target_name):
+    """Check if hardware brands are incompatible - DISABLED for better recall"""
+    # Disabled: HomePro has noisy brand data, causes too many false rejections
+    return False
+
+def check_shoe_size_mismatch(source_name, target_name):
+    """Check if shoe sizes mismatch (เบอร์) - DISABLED for better recall"""
+    # Disabled: Shoe size matching causes too many false rejections
+    # Let AI handle shoe matching
+    return False
+
+def check_model_number_mismatch(source_name, target_name):
+    """Check if model numbers mismatch for specific brands - DISABLED"""
+    # Disabled: Model number matching causes too many false rejections
+    # HomePro often has different model notation
+    return False
+
 def check_size_mismatch(source_name, target_name):
     """Check if sizes are incompatible - CONSERVATIVE version"""
     # Disabled: Let AI handle size matching, as our rules cause too many false positives
@@ -288,23 +315,30 @@ TARGETS:
 CRITICAL MATCHING RULES:
 
 1. BRAND must match (or be equivalent):
-   - BARCO=TOA BARCO=BARGO (same), SHARK=TOA SHARK (same)
-   - Different brands like จระเข้ 3 ดาว ≠ SHARK, MR METAL ≠ DEXZON
-   - ช่างมือโปร ≠ NASH ≠ W.PLASTIC (different brands!)
+   - BARCO=TOA BARCO=BARGO, SHARK=TOA SHARK (same brand)
+   - Different brands = NO MATCH: SOSO ≠ ISON, SP ≠ MATALL, SPOA ≠ KING LAIKER
+   - ช่างมือโปร ≠ NASH, MR METAL ≠ DEXZON, REDHAND ≠ KVB
 
-2. PRODUCT LINE must match:
+2. PRODUCT LINE must match exactly:
    - TOUGH SHIELD ≠ JOTASHIELD, AIR FRESH ≠ BEGERSHIELD
    - SUPERMATEX ≠ SUPERSHIELD, FLEXISEAL ≠ QUICK SEALER
 
-3. MODEL NUMBER matters for doors:
-   - PB1, PD1, PE2, PX1, PX2 are DIFFERENT models
-   - MN002 ≠ MWR002 (different model numbers)
+3. MODEL NUMBER matters for tools/hardware:
+   - Different STANLEY model = NO MATCH (STMT66671 ≠ 65-200)
+   - Different door model = NO MATCH
 
-4. Thai-English names are SAME: วีนิเลกซ์=VINILEX, โจตาชิลด์=JOTASHIELD
+4. SIZE/เบอร์ must match for shoes:
+   - เบอร์ 9.5 ≠ เบอร์ 10.5, เบอร์ 39 ≠ เบอร์ 41 = NO MATCH
 
-5. Size can vary slightly. Match same product, different sizes is OK.
+5. Product TYPE must match:
+   - พุ๊กเหล็ก ≠ แผ่นเหล็ก ≠ ข้อต่อ (anchor ≠ plate ≠ connector)
+   - พาเลท ≠ ฟิล์มยืด (pallet ≠ stretch film)
+   - ประแจจับแป๊บ ≠ คีมล็อก (pipe wrench ≠ locking pliers)
 
-Return NULL if no good match. Match if SAME base product.
+6. Thai-English names are SAME: วีนิเลกซ์=VINILEX, โจตาชิลด์=JOTASHIELD
+
+Paint/chemical sizes CAN vary. Match same base product even with different pack sizes.
+Return NULL if brand or product type differs. Match if SAME base product.
 
 Return: {{"match_index": <0-14 or null>, "confidence": <50-100>}}
 JSON only."""
@@ -341,6 +375,21 @@ JSON only."""
                     # POST-MATCH VALIDATION: Check for product line conflicts
                     if check_product_line_conflict(source_name, target_name):
                         # Reject this match - product line conflict detected
+                        continue
+                    
+                    # POST-MATCH VALIDATION: Check for hardware brand conflicts
+                    if check_hardware_brand_conflict(source_name, target_name):
+                        # Reject this match - brand conflict detected
+                        continue
+                    
+                    # POST-MATCH VALIDATION: Check for shoe size mismatches
+                    if check_shoe_size_mismatch(source_name, target_name):
+                        # Reject this match - shoe size mismatch detected
+                        continue
+                    
+                    # POST-MATCH VALIDATION: Check for STANLEY model mismatches
+                    if check_model_number_mismatch(source_name, target_name):
+                        # Reject this match - model number mismatch detected
                         continue
                     
                     # POST-MATCH VALIDATION: Check for size mismatches
