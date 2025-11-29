@@ -168,6 +168,27 @@ PRODUCT_LINE_CONFLICTS = [
     # Chemical products - different types!
     ('น้ำมันสน', 'ทินเนอร์'),
     ('TURPENTINE', 'THINNER'),
+    ('น้ำมันหล่อลื่น', 'ซิลิโคน'),
+    ('LUBRICANT', 'SILICONE'),
+    # Product type conflicts
+    ('วู้ดฟิลเลอร์', 'พัตตี้'),
+    ('WOOD FILLER', 'PUTTY'),
+    ('บันไดเหล็ก', 'บันไดอะลูมิเนียม'),
+    ('STEEL LADDER', 'ALUMINUM LADDER'),
+    ('ประแจ', 'คีม'),
+    ('WRENCH', 'PLIERS'),
+    ('มือจับก้านโยก', 'ลูกบิด'),
+    ('LEVER HANDLE', 'DOOR KNOB'),
+    ('กระติก', 'ถังแช่'),
+    # Brand-specific products (different brands = different products)
+    ('จระเข้ 3 ดาว', 'SHARK'),
+    ('MR METAL', 'DEXZON'),
+    ('HI-TOP', 'EUROX'),
+    ('AT INDY', 'NASH'),
+    ('ช่างมือโปร', 'NASH'),
+    ('ช่างมือโปร', 'W.PLASTIC'),
+    ('PATTEX', 'GATOR'),
+    ('SONAX', 'NEOBOND'),
 ]
 
 def check_product_line_conflict(source_name, target_name):
@@ -256,21 +277,24 @@ SOURCE: {source_name}
 TARGETS:
 {chr(10).join(target_list)}
 
-MATCHING RULES:
-1. NEVER MATCH DIFFERENT PRODUCT LINES:
-   - TOUGH SHIELD ≠ JOTASHIELD ≠ JOTASHIELD FLEX
-   - FUTURESHIELD ≠ JOTASHIELD (different brands: JBP vs JOTUN)
-   - AIR FRESH ≠ BEGERSHIELD ≠ EASY CLEAN ≠ DELIGHT
-   - SUPERMATEX ≠ SUPERSHIELD ≠ SUPERSHIELD ADVANCE
-   - FLEXISEAL ≠ QUICK SEALER
+CRITICAL MATCHING RULES:
+1. BRAND must match (or be equivalent):
+   - BARCO=TOA BARCO=BARGO, SHARK=TOA SHARK=SHARKS
+   - Different brands like จระเข้ 3 ดาว ≠ SHARK, MR METAL ≠ DEXZON, SP ≠ NASH/MATALL
+   - ช่างมือโปร ≠ NASH ≠ W.PLASTIC (different brands!)
 
-2. Brand aliases (same brand): BARCO=TOA BARCO=BARGO, SHARK=TOA SHARK=SHARKS
+2. PRODUCT TYPE must match exactly:
+   - บันไดเหล็ก ≠ บันไดอะลูมิเนียม (different material)
+   - ประแจ ≠ คีม, มือจับก้านโยก ≠ ลูกบิด (different product types)
+   - วู้ดฟิลเลอร์ ≠ พัตตี้, น้ำมันหล่อลื่น ≠ ซิลิโคน
 
-3. Thai-English names are SAME product:
-   - วีนิเลกซ์=VINILEX, เวเธอร์บอนด์=WEATHERBOND, โจตาชิลด์=JOTASHIELD
-   - เฟล็กซี่ซีล=FLEXISEAL, แอร์เฟรช=AIR FRESH, ทัฟชีลด์=TOUGH SHIELD
+3. PRODUCT LINE must match:
+   - TOUGH SHIELD ≠ JOTASHIELD, AIR FRESH ≠ BEGERSHIELD
+   - SUPERMATEX ≠ SUPERSHIELD, FLEXISEAL ≠ QUICK SEALER
 
-4. Size can vary (1 gal ≈ 3.78L). Finish type (เนียน/กึ่งเงา/ด้าน) can differ.
+4. Thai-English names are SAME: วีนิเลกซ์=VINILEX, โจตาชิลด์=JOTASHIELD
+
+5. Size can vary. Return NULL if no good match exists.
 
 Return: {{"match_index": <0-14 or null>, "confidence": <50-100>}}
 JSON only."""
