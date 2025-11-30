@@ -205,14 +205,22 @@ PRODUCT_LINE_CONFLICTS = [
     ('SOSO', 'ISON'),
 ]
 
-# Brand-specific conflicts for hardware
+# Brand-specific conflicts for hardware - CONSERVATIVE: only high-confidence
 HARDWARE_BRAND_CONFLICTS = [
     ('SOSO', 'ISON'),
     ('SP', 'MATALL'),
     ('SPOA', 'KING LAIKER'),
+    ('หัวสิงห์', 'KING LAIKER'),
     ('REDHAND', 'KVB'),
     ('MR METAL', 'U-HENG'),
     ('MR METAL', 'DEXZON'),
+    ('PUMPKIN', 'SUMO'),
+]
+
+# Product line conflicts for household items - CONSERVATIVE
+HOUSEHOLD_PRODUCT_CONFLICTS = [
+    # Tape products - different types
+    ('กาวย่น', 'ยางละลาย'),
 ]
 
 def check_hardware_brand_conflict(source_name, target_name):
@@ -226,6 +234,11 @@ def check_hardware_brand_conflict(source_name, target_name):
         ('SP ', 'MATALL'), # Pallet brands
         ('NASH', 'MATALL'),
         ('SC ', 'PANSIAM'), # Sliding door parts
+        ('REDHAND', 'KVB'), # Safety helmet brands
+        ('SPOA', 'KING LAIKER'), # Fishing line brands
+        ('หัวสิงห์', 'KING LAIKER'),
+        ('PUMPKIN', 'SUMO'), # Cutting disc brands
+        ('SMARTER', 'DETTOL'), # Cleaning brands
     ]
     
     for brand1, brand2 in HIGH_RISK_CONFLICTS:
@@ -233,6 +246,11 @@ def check_hardware_brand_conflict(source_name, target_name):
            (brand2 in source_upper and brand1 in target_upper):
             return True
     
+    return False
+
+def check_household_product_conflict(source_name, target_name):
+    """Check if household products have type/line conflicts - DISABLED"""
+    # Disabled: Household product matching causes too many false rejections
     return False
 
 def check_shoe_size_mismatch(source_name, target_name):
@@ -300,6 +318,27 @@ def check_door_model_mismatch(source_name, target_name):
     """Check if door model numbers don't match - DISABLED, let AI handle"""
     # Disabled: Door model matching is too nuanced for rule-based filtering
     # The GT shows PB1 can match PD1, so rule-based blocking causes issues
+    return False
+
+def check_cleaning_product_brand_mismatch(source_name, target_name):
+    """Check if cleaning product brands mismatch - DISABLED: too aggressive"""
+    # Disabled: Cleaning brand matching causes too many false rejections
+    return False
+
+def check_scent_variant_mismatch(source_name, target_name):
+    """Check if scent/fragrance variants mismatch - DISABLED: too aggressive"""
+    # Disabled: Scent matching causes too many false rejections
+    # The GT often accepts different scent variants as valid matches
+    return False
+
+def check_lighting_wattage_mismatch(source_name, target_name):
+    """Check if LED wattage significantly mismatches - DISABLED: too aggressive"""
+    # Disabled: Wattage matching causes too many false rejections
+    return False
+
+def check_electrical_brand_mismatch(source_name, target_name):
+    """Check if electrical product brands mismatch - DISABLED: too aggressive"""
+    # Disabled: Electrical brand matching causes too many false rejections
     return False
 
 def check_product_line_conflict(source_name, target_name):
@@ -502,6 +541,31 @@ JSON only."""
                     # POST-MATCH VALIDATION: Check for handle variant mismatches
                     if check_handle_variant_mismatch(source_name, target_name):
                         # Reject this match - handle variant mismatch detected
+                        continue
+                    
+                    # POST-MATCH VALIDATION: Check for cleaning product brand conflicts
+                    if check_cleaning_product_brand_mismatch(source_name, target_name):
+                        # Reject this match - cleaning brand mismatch detected
+                        continue
+                    
+                    # POST-MATCH VALIDATION: Check for scent variant mismatches
+                    if check_scent_variant_mismatch(source_name, target_name):
+                        # Reject this match - scent mismatch detected
+                        continue
+                    
+                    # POST-MATCH VALIDATION: Check for lighting wattage mismatches
+                    if check_lighting_wattage_mismatch(source_name, target_name):
+                        # Reject this match - wattage mismatch detected
+                        continue
+                    
+                    # POST-MATCH VALIDATION: Check for electrical brand mismatches
+                    if check_electrical_brand_mismatch(source_name, target_name):
+                        # Reject this match - electrical brand mismatch detected
+                        continue
+                    
+                    # POST-MATCH VALIDATION: Check for household product conflicts
+                    if check_household_product_conflict(source_name, target_name):
+                        # Reject this match - household product type conflict
                         continue
                     
                     matches.append({
