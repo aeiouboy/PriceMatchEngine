@@ -149,23 +149,35 @@ Example JSON structure:
 streamlit run app.py --server.port 5000
 ```
 
-## Ground Truth Evaluation (Quick Tests - 80 samples each)
-Latest test results on 80-sample quick tests:
+## Ground Truth Evaluation (100-sample tests)
+Latest test results on 100-sample tests:
 
 | Retailer | Correct | Incorrect | Not Found | Accuracy | Status |
 |----------|---------|-----------|-----------|----------|--------|
-| GlobalHouse | 75/80 | 1 | 4 | **93.8%** | ✓ Above target |
-| Boonthavorn | 72/80 | 5 | 3 | **90.0%** | ✓ Above target |
-| HomePro | 71/80 | 1 | 8 | **88.8%** | ✓ Above target |
-| Megahome | 67/80 | 6 | 7 | **83.8%** | Near target |
-| DoHome | 64/80 | 5 | 11 | **80.0%** | Below target |
+| GlobalHouse | 94/100 | 2 | 4 | **94.0%** | ✓ Above target |
+| Boonthavorn | 93/100 | 2 | 5 | **93.0%** | ✓ Above target |
+| HomePro | 88/100 | 2 | 10 | **88.0%** | ✓ Above target |
+| Megahome | 83/100 | 9 | 8 | **83.0%** | Near target |
+| DoHome | 82/100 | 6 | 12 | **82.0%** | Near target |
 
-**Production Readiness**: 3/5 retailers meet 85%+ target. Megahome and DoHome have persistent variant matching issues.
+**Production Readiness**: 3/5 retailers consistently meet 85%+ target.
 
-**Key Challenges**:
-- Megahome: Paint product variant mismatches (finish types, base colors)
-- DoHome: Handle variant mismatches (same model, different color/material)
-- These require fine-grained variant detection beyond current AI capabilities
+**Megahome Blockers (83% accuracy)**:
+- GT expects exact finish type matches: กึ่งเงา (SG/semi-gloss) vs เนียน (SHEEN)
+- AI cannot reliably distinguish between paint finish types in Thai text
+- Product line confusion: WEATHERBOND≠SUPERCOT treated as same line by AI
+- Rule-based attempts to enforce finish matching increased "Not Found" rate
+
+**DoHome Blockers (82% accuracy)**:
+- Catalog gap: TWD has SN (silver) handle variants, DoHome only has BLACK
+- GT expects matches to URLs that don't exist in DoHome catalog
+- Handle model confusion: 812 SN vs 8121 SS (similar numbers, different products)
+- No way to match correctly when correct variant doesn't exist
+
+**Recommendations for 85%+ on all retailers**:
+1. Redefine GT "correct" to accept best-available variant (same model, different color/finish)
+2. Add curated variant dictionaries for approved finish/color substitutions
+3. Or: Add structured metadata (finish type, color tags) for AI disambiguation
 
 ### Thai-English Product Name Mappings
 The system handles products named differently between retailers:
