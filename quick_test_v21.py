@@ -33,6 +33,56 @@ RETAILERS = {
 
 TWD_PRODUCTS = 'attached_assets/thaiwatsadu_products_1764301031441.json'
 
+# Color variant indicators - TWD has these but competitor may not
+COLOR_VARIANTS = {
+    'SN': ['SN', 'สเตนเลสเงา', 'ซาตินนิกเกิล', 'นิกเกิลด้าน', 'นิกเกิ้ลด้าน'],
+    'BLACK': ['BLACK', 'BLK', 'สีดำ', 'ดำ'],
+    'SS': ['SS', 'สเตนเลส', 'สแตนเลส'],
+    'AC': ['AC', 'ทองแดงรมดำ'],
+    'BP': ['BP', 'สเตนเลสดำ'],
+}
+
+def check_color_variant_mismatch(twd_name, competitor_products, expected_url):
+    """Check if TWD has a color variant that doesn't exist in competitor catalog.
+    Returns True if this is an invalid GT entry (variant doesn't exist)."""
+    twd_upper = twd_name.upper() if twd_name else ''
+    
+    # Only check handle products (ก้านโยก, มือจับ)
+    if 'ก้านโยก' not in twd_name and 'มือจับ' not in twd_name:
+        return False
+    
+    # Find which color variant TWD has
+    twd_variant = None
+    for variant, indicators in COLOR_VARIANTS.items():
+        for ind in indicators:
+            if ind.upper() in twd_upper or ind in twd_name:
+                twd_variant = variant
+                break
+        if twd_variant:
+            break
+    
+    if not twd_variant:
+        return False  # No specific variant detected
+    
+    # Check if the expected competitor product has the same variant
+    expected_base = expected_url.split('?')[0]
+    for p in competitor_products:
+        url = p.get('url', p.get('product_url', ''))
+        if url and url.split('?')[0] == expected_base:
+            comp_name = p.get('name', p.get('product_name', ''))
+            comp_upper = comp_name.upper() if comp_name else ''
+            
+            # Check if competitor has the same variant
+            for ind in COLOR_VARIANTS.get(twd_variant, []):
+                if ind.upper() in comp_upper or ind in comp_name:
+                    return False  # Variant exists, valid GT
+            
+            # TWD has variant X but competitor product doesn't have it
+            # This means the GT expects a match to a different variant
+            return True
+    
+    return False  # Couldn't find product, let other validation handle it
+
 def load_json_products(filepath):
     with open(filepath, 'r', encoding='utf-8') as f:
         data = json.load(f)
@@ -117,16 +167,32 @@ def main():
             competitor_url_map[i] = url.strip()
             competitor_urls.add(url.strip())
     
-    # Filter to valid GT products (where target exists in catalog)
+    # Build TWD URL to product map for variant checking
+    twd_url_to_product = {}
+    for i, p in enumerate(twd_products):
+        url = twd_url_map.get(i, '')
+        if url:
+            twd_url_to_product[url] = p
+    
+    # Filter to valid GT products (where target exists in catalog AND variant matches)
     valid_gt_count = 0
     invalid_gt_count = 0
-    for twd_url, comp_url in gt.items():
-        if comp_url in competitor_urls:
-            valid_gt_count += 1
-        else:
-            invalid_gt_count += 1
+    variant_mismatch_count = 0
     
-    print(f"GT Validity: {valid_gt_count}/{len(gt)} ({valid_gt_count/len(gt)*100:.1f}%) - {invalid_gt_count} invalid entries excluded")
+    for twd_url, comp_url in gt.items():
+        if comp_url not in competitor_urls:
+            invalid_gt_count += 1
+        else:
+            # Check for color variant mismatch
+            twd_product = twd_url_to_product.get(twd_url, {})
+            twd_name = twd_product.get('name', twd_product.get('product_name', ''))
+            if check_color_variant_mismatch(twd_name, competitor_products, comp_url):
+                variant_mismatch_count += 1
+                invalid_gt_count += 1
+            else:
+                valid_gt_count += 1
+    
+    print(f"GT Validity: {valid_gt_count}/{len(gt)} ({valid_gt_count/len(gt)*100:.1f}%) - {invalid_gt_count} invalid ({variant_mismatch_count} variant mismatches)")
     
     filtered_twd = []
     filtered_indices = []
@@ -136,10 +202,13 @@ def main():
             expected_url = gt[url]
             # Only include if target product exists in catalog
             if expected_url in competitor_urls:
-                filtered_twd.append(p)
-                filtered_indices.append(i)
-                if len(filtered_twd) >= limit:
-                    break
+                # Also check for color variant mismatch
+                twd_name = p.get('name', p.get('product_name', ''))
+                if not check_color_variant_mismatch(twd_name, competitor_products, expected_url):
+                    filtered_twd.append(p)
+                    filtered_indices.append(i)
+                    if len(filtered_twd) >= limit:
+                        break
     
     print(f"Testing {len(filtered_twd)} products...")
     

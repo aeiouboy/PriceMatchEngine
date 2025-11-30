@@ -170,6 +170,11 @@ PRODUCT_LINE_CONFLICTS = [
     # NIPPON product lines
     ('FLEXISEAL', 'QUICK SEALER'),
     ('VINILEX', 'WEATHERBOND'),
+    ('WEATHERBONDFLEX', 'WEATHERBONDSHEEN'),  # Different finish lines
+    ('WEATHERBOND FLEX', 'WEATHERBOND SHEEN'),
+    # DULUX product lines - different paint lines
+    ('WEATHERSHIELD', 'SUPERCOT'),
+    ('SUPERCOTE', 'WEATHERSHIELD'),
     # Chemical products - different types!
     ('น้ำมันสน', 'ทินเนอร์'),
     ('TURPENTINE', 'THINNER'),
