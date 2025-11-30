@@ -275,6 +275,22 @@ def check_size_mismatch(source_name, target_name):
     # Disabled: Let AI handle size matching, as our rules cause too many false positives
     return False
 
+def check_paint_finish_mismatch(source_name, target_name):
+    """Check if paint finish types mismatch - DISABLED: causes too many false rejections"""
+    # Disabled: Paint finish matching is too nuanced for rule-based filtering
+    # The AI should handle finish type distinctions in the prompt
+    return False
+
+def check_paint_base_mismatch(source_name, target_name):
+    """Check if paint BASE colors mismatch - DISABLED: causes too many false rejections"""
+    # Disabled: Paint base matching can block correct matches when GT allows flexibility
+    return False
+
+def check_handle_variant_mismatch(source_name, target_name):
+    """Check if handle color/material variants mismatch - DISABLED: GT allows color flexibility"""
+    # Disabled: GT often expects color-different handles to match (same model, diff color OK)
+    return False
+
 def check_door_model_mismatch(source_name, target_name):
     """Check if door model numbers don't match - DISABLED, let AI handle"""
     # Disabled: Door model matching is too nuanced for rule-based filtering
@@ -398,11 +414,11 @@ TARGETS:
 
 MATCH when:
 - Same product type + brand (Thai/English OK: วีนิเลกซ์=VINILEX, เขาควาย=ก้านโยก)
-- Size differences OK: 1L vs 5L is same product
+- Size/color variants OK: 1L vs 5L, SN vs BLACK = same product
 
 DO NOT match:
-- Different paint lines: JOTASHIELD≠TOUGH SHIELD
-- Completely different product types
+- Different product lines: JOTASHIELD≠TOUGH SHIELD, WEATHERBOND≠SUPERCOT
+- Completely different products
 
 Always pick the BEST candidate unless it's a completely different product.
 
@@ -466,6 +482,21 @@ JSON only."""
                     # POST-MATCH VALIDATION: Check for door model mismatches
                     if check_door_model_mismatch(source_name, target_name):
                         # Reject this match - door model mismatch detected
+                        continue
+                    
+                    # POST-MATCH VALIDATION: Check for paint finish mismatches
+                    if check_paint_finish_mismatch(source_name, target_name):
+                        # Reject this match - paint finish mismatch detected
+                        continue
+                    
+                    # POST-MATCH VALIDATION: Check for paint BASE mismatches
+                    if check_paint_base_mismatch(source_name, target_name):
+                        # Reject this match - paint BASE mismatch detected
+                        continue
+                    
+                    # POST-MATCH VALIDATION: Check for handle variant mismatches
+                    if check_handle_variant_mismatch(source_name, target_name):
+                        # Reject this match - handle variant mismatch detected
                         continue
                     
                     matches.append({
