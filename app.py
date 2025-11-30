@@ -228,17 +228,12 @@ def check_hardware_brand_conflict(source_name, target_name):
     source_upper = source_name.upper() if source_name else ''
     target_upper = target_name.upper() if target_name else ''
     
-    # Only check for specific high-risk brand conflicts
+    # Only check for specific high-risk brand conflicts - VERY CONSERVATIVE
     HIGH_RISK_CONFLICTS = [
         ('SP ', 'NASH'),   # Pallet brands
         ('SP ', 'MATALL'), # Pallet brands
         ('NASH', 'MATALL'),
         ('SC ', 'PANSIAM'), # Sliding door parts
-        ('REDHAND', 'KVB'), # Safety helmet brands
-        ('SPOA', 'KING LAIKER'), # Fishing line brands
-        ('หัวสิงห์', 'KING LAIKER'),
-        ('PUMPKIN', 'SUMO'), # Cutting disc brands
-        ('SMARTER', 'DETTOL'), # Cleaning brands
     ]
     
     for brand1, brand2 in HIGH_RISK_CONFLICTS:
@@ -246,6 +241,17 @@ def check_hardware_brand_conflict(source_name, target_name):
            (brand2 in source_upper and brand1 in target_upper):
             return True
     
+    return False
+
+def check_plumbing_brand_conflict(source_name, target_name):
+    """Check if plumbing brands are incompatible - DISABLED: causes too many false rejections"""
+    # Disabled: Plumbing brand matching is too nuanced for rule-based filtering
+    # Let AI handle brand distinctions
+    return False
+
+def check_pipe_class_mismatch(source_name, target_name):
+    """Check if PVC pipe classes mismatch - DISABLED: causes too many false rejections"""
+    # Disabled: Pipe class matching causes too many false rejections
     return False
 
 def check_household_product_conflict(source_name, target_name):
@@ -506,6 +512,16 @@ JSON only."""
                     # POST-MATCH VALIDATION: Check for hardware brand conflicts
                     if check_hardware_brand_conflict(source_name, target_name):
                         # Reject this match - brand conflict detected
+                        continue
+                    
+                    # POST-MATCH VALIDATION: Check for plumbing brand conflicts
+                    if check_plumbing_brand_conflict(source_name, target_name):
+                        # Reject this match - plumbing brand conflict detected
+                        continue
+                    
+                    # POST-MATCH VALIDATION: Check for pipe class mismatches
+                    if check_pipe_class_mismatch(source_name, target_name):
+                        # Reject this match - pipe class mismatch detected
                         continue
                     
                     # POST-MATCH VALIDATION: Check for shoe size mismatches
