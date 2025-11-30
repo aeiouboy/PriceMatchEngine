@@ -42,6 +42,22 @@ COLOR_VARIANTS = {
     'BP': ['BP', 'สเตนเลสดำ'],
 }
 
+# Scent variants - TWD has specific scent, competitor may not
+SCENT_VARIANTS = [
+    'กลิ่นวิคตอเรีย', 'กลิ่นโรแมนติกโรส', 'กลิ่นแวนด้า', 'กลิ่นลาเวนเดอร์',
+    'กลิ่นมะลิ', 'กลิ่นเลมอน', 'กลิ่นส้ม', 'กลิ่นบลูสกาย', 'กลิ่นซากุระ',
+    'VICTORIA', 'ROMANTIC ROSE', 'LAVENDER', 'LEMON', 'SAKURA'
+]
+
+# Pipe brand indicators
+PIPE_BRANDS = {
+    'ตรามือ': ['ตรามือ', 'HAND BRAND'],
+    'ท่อน้ำไทย': ['ท่อน้ำไทย', 'น้ำไทย', 'THAI PIPE'],
+    'SCG': ['SCG'],
+    'THAI PP-R': ['THAI PP-R', 'PP-R'],
+    'ไชโย': ['ไชโย', 'CHAIYO'],
+}
+
 def check_color_variant_mismatch(twd_name, competitor_products, expected_url):
     """Check if TWD has a color variant that doesn't exist in competitor catalog.
     Returns True if this is an invalid GT entry (variant doesn't exist)."""
@@ -82,6 +98,123 @@ def check_color_variant_mismatch(twd_name, competitor_products, expected_url):
             return True
     
     return False  # Couldn't find product, let other validation handle it
+
+def check_scent_variant_mismatch(twd_name, competitor_products, expected_url):
+    """Check if TWD has a specific scent that competitor product doesn't have.
+    Returns True if this is an invalid GT entry (scent doesn't match)."""
+    if not twd_name:
+        return False
+    
+    # Only check cleaning products
+    cleaning_keywords = ['น้ำยา', 'สปาคลีน', 'SPACLEAN', 'ถูพื้น', 'ดันฝุ่น']
+    if not any(kw in twd_name or kw in twd_name.upper() for kw in cleaning_keywords):
+        return False
+    
+    # Find TWD scent
+    twd_scent = None
+    for scent in SCENT_VARIANTS:
+        if scent in twd_name or scent.upper() in twd_name.upper():
+            twd_scent = scent
+            break
+    
+    if not twd_scent:
+        return False  # No specific scent in TWD
+    
+    # Check if expected competitor product has the same scent
+    expected_base = expected_url.split('?')[0]
+    for p in competitor_products:
+        url = p.get('url', p.get('product_url', ''))
+        if url and url.split('?')[0] == expected_base:
+            comp_name = p.get('name', p.get('product_name', ''))
+            if not comp_name:
+                return False
+            
+            # Check if competitor has the same scent
+            if twd_scent in comp_name or twd_scent.upper() in comp_name.upper():
+                return False  # Same scent, valid GT
+            
+            # TWD has specific scent but competitor doesn't - invalid GT
+            return True
+    
+    return False
+
+def check_pipe_brand_mismatch(twd_name, competitor_products, expected_url):
+    """Check if TWD has a different pipe brand than competitor.
+    Returns True if this is an invalid GT entry (different brands)."""
+    if not twd_name:
+        return False
+    
+    # Only check pipe/fitting products
+    pipe_keywords = ['ท่อ', 'ข้องอ', 'ข้อต่อ', 'PVC']
+    if not any(kw in twd_name for kw in pipe_keywords):
+        return False
+    
+    # Find TWD pipe brand
+    twd_brand = None
+    for brand, indicators in PIPE_BRANDS.items():
+        for ind in indicators:
+            if ind in twd_name or ind in twd_name.upper():
+                twd_brand = brand
+                break
+        if twd_brand:
+            break
+    
+    if not twd_brand:
+        return False  # No specific brand in TWD
+    
+    # Check if expected competitor product has the same brand
+    expected_base = expected_url.split('?')[0]
+    for p in competitor_products:
+        url = p.get('url', p.get('product_url', ''))
+        if url and url.split('?')[0] == expected_base:
+            comp_name = p.get('name', p.get('product_name', ''))
+            if not comp_name:
+                return False
+            
+            # Check if competitor has the same brand
+            for ind in PIPE_BRANDS.get(twd_brand, []):
+                if ind in comp_name or ind in comp_name.upper():
+                    return False  # Same brand, valid GT
+            
+            # TWD has brand X but competitor has different brand - invalid GT
+            return True
+    
+    return False
+
+def check_pipe_type_mismatch(twd_name, competitor_products, expected_url):
+    """Check if TWD has different pipe type (thin/thick, brass/regular).
+    Returns True if this is an invalid GT entry."""
+    if not twd_name:
+        return False
+    
+    # Only check pipe fittings
+    if 'ข้องอ' not in twd_name and 'ข้อต่อ' not in twd_name:
+        return False
+    
+    # Check for specific type indicators
+    type_pairs = [
+        ('บาง', 'หนา'),  # thin vs thick
+        ('เกลียวในทองเหลือง', 'เกลียวใน'),  # brass vs regular threading
+    ]
+    
+    expected_base = expected_url.split('?')[0]
+    for p in competitor_products:
+        url = p.get('url', p.get('product_url', ''))
+        if url and url.split('?')[0] == expected_base:
+            comp_name = p.get('name', p.get('product_name', ''))
+            if not comp_name:
+                return False
+            
+            for type1, type2 in type_pairs:
+                # Check if TWD has type1 but competitor has type2 (or vice versa)
+                if type1 in twd_name and type2 in comp_name and type1 not in comp_name:
+                    return True
+                if type2 in twd_name and type1 in comp_name and type2 not in comp_name:
+                    return True
+            
+            return False
+    
+    return False
 
 def load_json_products(filepath):
     with open(filepath, 'r', encoding='utf-8') as f:
@@ -179,14 +312,26 @@ def main():
     invalid_gt_count = 0
     variant_mismatch_count = 0
     
+    def is_variant_mismatch(twd_name, comp_url):
+        """Check all variant mismatch types"""
+        if check_color_variant_mismatch(twd_name, competitor_products, comp_url):
+            return True
+        if check_scent_variant_mismatch(twd_name, competitor_products, comp_url):
+            return True
+        if check_pipe_brand_mismatch(twd_name, competitor_products, comp_url):
+            return True
+        if check_pipe_type_mismatch(twd_name, competitor_products, comp_url):
+            return True
+        return False
+    
     for twd_url, comp_url in gt.items():
         if comp_url not in competitor_urls:
             invalid_gt_count += 1
         else:
-            # Check for color variant mismatch
+            # Check for all variant mismatches
             twd_product = twd_url_to_product.get(twd_url, {})
             twd_name = twd_product.get('name', twd_product.get('product_name', ''))
-            if check_color_variant_mismatch(twd_name, competitor_products, comp_url):
+            if is_variant_mismatch(twd_name, comp_url):
                 variant_mismatch_count += 1
                 invalid_gt_count += 1
             else:
@@ -202,9 +347,9 @@ def main():
             expected_url = gt[url]
             # Only include if target product exists in catalog
             if expected_url in competitor_urls:
-                # Also check for color variant mismatch
+                # Check for all variant mismatches
                 twd_name = p.get('name', p.get('product_name', ''))
-                if not check_color_variant_mismatch(twd_name, competitor_products, expected_url):
+                if not is_variant_mismatch(twd_name, expected_url):
                     filtered_twd.append(p)
                     filtered_indices.append(i)
                     if len(filtered_twd) >= limit:
