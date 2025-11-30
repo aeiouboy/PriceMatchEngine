@@ -35,25 +35,31 @@ TWD_PRODUCTS = 'attached_assets/thaiwatsadu_products_1764301031441.json'
 
 # Color variant indicators - TWD has these but competitor may not
 COLOR_VARIANTS = {
-    'SN': ['SN', 'สเตนเลสเงา', 'ซาตินนิกเกิล', 'นิกเกิลด้าน', 'นิกเกิ้ลด้าน'],
+    'SN': ['SN', 'สเตนเลสเงา', 'ซาตินนิกเกิล', 'นิกเกิลด้าน', 'นิกเกิ้ลด้าน', 'ซาติน', 'สีซาติน', 'SATIN'],
     'BLACK': ['BLACK', 'BLK', 'สีดำ', 'ดำ'],
     'SS': ['SS', 'สเตนเลส', 'สแตนเลส'],
     'AC': ['AC', 'ทองแดงรมดำ'],
     'BP': ['BP', 'สเตนเลสดำ'],
 }
 
-# Scent variants - TWD has specific scent, competitor may not
-SCENT_VARIANTS = [
-    'กลิ่นวิคตอเรีย', 'กลิ่นโรแมนติกโรส', 'กลิ่นแวนด้า', 'กลิ่นลาเวนเดอร์',
-    'กลิ่นมะลิ', 'กลิ่นเลมอน', 'กลิ่นส้ม', 'กลิ่นบลูสกาย', 'กลิ่นซากุระ',
-    'VICTORIA', 'ROMANTIC ROSE', 'LAVENDER', 'LEMON', 'SAKURA'
-]
+# Scent variants - Thai to English mappings (same scent = valid match)
+SCENT_MAPPINGS = {
+    'กลิ่นวิคตอเรีย': ['VICTORIA', 'วิคตอเรีย'],
+    'กลิ่นโรแมนติกโรส': ['ROMANTIC ROSE', 'โรแมนติกโรส'],
+    'กลิ่นแวนด้า': ['VANDA', 'แวนด้า'],
+    'กลิ่นลาเวนเดอร์': ['LAVENDER', 'ลาเวนเดอร์'],
+    'กลิ่นมะลิ': ['JASMINE', 'มะลิ'],
+    'กลิ่นเลมอน': ['LEMON', 'เลมอน'],
+    'กลิ่นส้ม': ['ORANGE', 'ส้ม'],
+    'กลิ่นบลูสกาย': ['BLUE SKY', 'บลูสกาย'],
+    'กลิ่นซากุระ': ['SAKURA', 'ซากุระ'],
+}
 
-# Pipe brand indicators
+# Pipe brand indicators - include all equivalent names
 PIPE_BRANDS = {
-    'ตรามือ': ['ตรามือ', 'HAND BRAND'],
+    'ตรามือ': ['ตรามือ', 'HAND BRAND', 'HAND'],
     'ท่อน้ำไทย': ['ท่อน้ำไทย', 'น้ำไทย', 'THAI PIPE'],
-    'SCG': ['SCG'],
+    'SCG': ['SCG', 'ตราช้าง', 'ช้าง', 'NPI', 'ตราช้างNPI'],  # SCG = Siam Cement = ช้าง
     'THAI PP-R': ['THAI PP-R', 'PP-R'],
     'ไชโย': ['ไชโย', 'CHAIYO'],
 }
@@ -101,7 +107,8 @@ def check_color_variant_mismatch(twd_name, competitor_products, expected_url):
 
 def check_scent_variant_mismatch(twd_name, competitor_products, expected_url):
     """Check if TWD has a specific scent that competitor product doesn't have.
-    Returns True if this is an invalid GT entry (scent doesn't match)."""
+    Returns True only if TWD has one scent and competitor has a DIFFERENT scent.
+    Thai/English equivalents (กลิ่นวิคตอเรีย=VICTORIA) are NOT mismatches."""
     if not twd_name:
         return False
     
@@ -110,17 +117,20 @@ def check_scent_variant_mismatch(twd_name, competitor_products, expected_url):
     if not any(kw in twd_name or kw in twd_name.upper() for kw in cleaning_keywords):
         return False
     
-    # Find TWD scent
-    twd_scent = None
-    for scent in SCENT_VARIANTS:
-        if scent in twd_name or scent.upper() in twd_name.upper():
-            twd_scent = scent
+    # Find TWD scent and its equivalent terms
+    twd_scent_key = None
+    for scent_thai, equivalents in SCENT_MAPPINGS.items():
+        if scent_thai in twd_name:
+            twd_scent_key = scent_thai
             break
     
-    if not twd_scent:
+    if not twd_scent_key:
         return False  # No specific scent in TWD
     
-    # Check if expected competitor product has the same scent
+    # Get all equivalent terms for this scent
+    scent_terms = [twd_scent_key] + SCENT_MAPPINGS.get(twd_scent_key, [])
+    
+    # Check if expected competitor product has ANY equivalent scent term
     expected_base = expected_url.split('?')[0]
     for p in competitor_products:
         url = p.get('url', p.get('product_url', ''))
@@ -129,12 +139,23 @@ def check_scent_variant_mismatch(twd_name, competitor_products, expected_url):
             if not comp_name:
                 return False
             
-            # Check if competitor has the same scent
-            if twd_scent in comp_name or twd_scent.upper() in comp_name.upper():
-                return False  # Same scent, valid GT
+            comp_upper = comp_name.upper()
             
-            # TWD has specific scent but competitor doesn't - invalid GT
-            return True
+            # Check if competitor has any equivalent scent term
+            for term in scent_terms:
+                if term in comp_name or term.upper() in comp_upper:
+                    return False  # Same scent (Thai or English), valid GT
+            
+            # Check if competitor has a DIFFERENT scent (not just missing scent info)
+            for other_key, other_terms in SCENT_MAPPINGS.items():
+                if other_key != twd_scent_key:
+                    for term in [other_key] + other_terms:
+                        if term in comp_name or term.upper() in comp_upper:
+                            # Competitor has a different scent - this IS a mismatch
+                            return True
+            
+            # Competitor doesn't mention any scent - could be generic, don't filter
+            return False
     
     return False
 
@@ -313,15 +334,19 @@ def main():
     variant_mismatch_count = 0
     
     def is_variant_mismatch(twd_name, comp_url):
-        """Check all variant mismatch types"""
+        """Check all variant mismatch types - CONSERVATIVE approach"""
+        # Color variant check for handles - well-validated
         if check_color_variant_mismatch(twd_name, competitor_products, comp_url):
             return True
+        # Scent variant check - now handles Thai/English equivalents
         if check_scent_variant_mismatch(twd_name, competitor_products, comp_url):
             return True
-        if check_pipe_brand_mismatch(twd_name, competitor_products, comp_url):
-            return True
-        if check_pipe_type_mismatch(twd_name, competitor_products, comp_url):
-            return True
+        # DISABLED: Pipe brand/type checks are too aggressive
+        # GT may legitimately map products from different manufacturers when interchangeable
+        # if check_pipe_brand_mismatch(twd_name, competitor_products, comp_url):
+        #     return True
+        # if check_pipe_type_mismatch(twd_name, competitor_products, comp_url):
+        #     return True
         return False
     
     for twd_url, comp_url in gt.items():

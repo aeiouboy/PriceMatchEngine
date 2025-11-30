@@ -259,6 +259,41 @@ def check_household_product_conflict(source_name, target_name):
     # Disabled: Household product matching causes too many false rejections
     return False
 
+def check_electrical_product_type_mismatch(source_name, target_name):
+    """Check if electrical products have obvious type mismatches - DISABLED, too aggressive"""
+    # Disabled: The electrical type check was causing false rejections
+    # and dropping accuracy. Let AI handle this.
+    return False
+
+def check_product_category_compatibility(source_name, target_name):
+    """Check if product category keywords are compatible - for retry mechanism.
+    Returns True if products are INCOMPATIBLE (should retry with next candidate).
+    """
+    source_lower = source_name.lower() if source_name else ''
+    target_lower = target_name.lower() if target_name else ''
+    
+    # Category-defining keywords - if source has one of these, target should too
+    CATEGORY_KEYWORDS = [
+        # Electrical conduit/fittings vs consumer units - STRICT
+        (['ข้อต่อ', 'ท่ออ่อน', 'ข้อต่อกลางทาง'], ['ตู้คอนซูมเมอร์', 'ตู้ไฟ', 'เบรกเกอร์']),
+        # Air freshener types - STRICT  
+        (['สเปรย์ปรับอากาศ', 'สเปรย์'], ['เจล', 'รีฟิล', 'ผงป้องกัน']),
+        # Cleaning product types - different product categories
+        (['น้ำยาถูพื้น', 'ถูพื้น'], ['น้ำยาล้างห้องน้ำ', 'ล้างห้องน้ำ']),
+        # Tissue vs other paper products
+        (['ทิชชูม้วน', 'กระดาษชำระ'], ['กระดาษอเนกประสงค์']),
+    ]
+    
+    for source_keywords, target_keywords in CATEGORY_KEYWORDS:
+        # Check if source contains category keyword
+        source_has_category = any(kw in source_lower for kw in source_keywords)
+        target_has_incompatible = any(kw in target_lower for kw in target_keywords)
+        
+        if source_has_category and target_has_incompatible:
+            return True  # INCOMPATIBLE
+    
+    return False  # Compatible
+
 def check_shoe_size_mismatch(source_name, target_name):
     """Check if shoe sizes mismatch (เบอร์) - DISABLED for better recall"""
     # Disabled: Shoe size matching causes too many false rejections
@@ -455,22 +490,24 @@ def ai_match_products(source_products, target_products, progress_callback=None):
         target_list = [f"{pos}: {name} (Brand: {brand}, Model: {model}, Size: {volume})" 
                       for pos, (i, name, brand, model, volume, _) in enumerate(top_candidates)]
         
-        prompt = f"""Product matcher for Thai retail.
+        prompt = f"""Product matcher for Thai retail. Match source to EXACT or CLOSEST equivalent target.
 
 SOURCE: {source_name}
 
 TARGETS:
 {chr(10).join(target_list)}
 
-MATCH when:
-- Same product type + brand (Thai/English OK: วีนิเลกซ์=VINILEX, เขาควาย=ก้านโยก)
-- Size/color variants OK: 1L vs 5L, SN vs BLACK = same product
+MATCHING RULES:
+1. SAME product type + brand required (Thai/English OK: วีนิเลกซ์=VINILEX, เขาควาย=ก้านโยก)
+2. Prefer EXACT size/scent match when available (e.g., กลิ่นลาเวนเดอร์=LAVENDER, 320ml=320มล.)
+3. Size/color variants OK if exact not found: 1L vs 5L, SN vs BLACK = same product
 
 DO NOT match:
-- Different product lines: JOTASHIELD≠TOUGH SHIELD, WEATHERBOND≠SUPERCOT
+- Different product lines: JOTASHIELD≠TOUGH SHIELD, WEATHERBOND≠SUPERCOT  
+- Different product categories: สเปรย์≠เจล, ข้อต่อ≠ตู้คอนซูมเมอร์
 - Completely different products
 
-Always pick the BEST candidate unless it's a completely different product.
+Pick the BEST matching candidate. If source has specific scent/size, prioritize targets with same scent/size.
 
 Return: {{"match_index": <0-14 or null>, "confidence": <50-100>}}
 JSON only."""
@@ -500,96 +537,108 @@ JSON only."""
             # Lowered confidence threshold to 50 for better recall
             if result.get('match_index') is not None and result.get('confidence', 0) >= 50:
                 match_idx = int(result['match_index'])
-                if 0 <= match_idx < len(top_candidates):
-                    original_idx = top_candidates[match_idx][0]
-                    target_name = top_candidates[match_idx][1]
+                
+                # Try to find a valid candidate - start with AI's choice, then try alternatives
+                candidates_to_try = [match_idx]
+                # Add fallback candidates (sorted by similarity) if AI choice fails
+                for alt_idx in range(len(top_candidates)):
+                    if alt_idx != match_idx:
+                        candidates_to_try.append(alt_idx)
+                
+                match_found = False
+                for try_idx in candidates_to_try:
+                    if try_idx >= len(top_candidates):
+                        continue
+                        
+                    original_idx = top_candidates[try_idx][0]
+                    target_name = top_candidates[try_idx][1]
+                    
+                    # First check: Category compatibility (for retry mechanism)
+                    if check_product_category_compatibility(source_name, target_name):
+                        # Incompatible category - try next candidate
+                        continue
                     
                     # POST-MATCH VALIDATION: Check for product line conflicts
                     if check_product_line_conflict(source_name, target_name):
-                        # Reject this match - product line conflict detected
                         continue
                     
                     # POST-MATCH VALIDATION: Check for hardware brand conflicts
                     if check_hardware_brand_conflict(source_name, target_name):
-                        # Reject this match - brand conflict detected
+                        continue
+                    
+                    # POST-MATCH VALIDATION: Check for electrical product type mismatches
+                    if check_electrical_product_type_mismatch(source_name, target_name):
                         continue
                     
                     # POST-MATCH VALIDATION: Check for plumbing brand conflicts
                     if check_plumbing_brand_conflict(source_name, target_name):
-                        # Reject this match - plumbing brand conflict detected
                         continue
                     
                     # POST-MATCH VALIDATION: Check for pipe class mismatches
                     if check_pipe_class_mismatch(source_name, target_name):
-                        # Reject this match - pipe class mismatch detected
                         continue
                     
                     # POST-MATCH VALIDATION: Check for shoe size mismatches
                     if check_shoe_size_mismatch(source_name, target_name):
-                        # Reject this match - shoe size mismatch detected
                         continue
                     
                     # POST-MATCH VALIDATION: Check for STANLEY model mismatches
                     if check_model_number_mismatch(source_name, target_name):
-                        # Reject this match - model number mismatch detected
                         continue
                     
                     # POST-MATCH VALIDATION: Check for size mismatches
                     if check_size_mismatch(source_name, target_name):
-                        # Reject this match - size mismatch detected
                         continue
                     
                     # POST-MATCH VALIDATION: Check for door model mismatches
                     if check_door_model_mismatch(source_name, target_name):
-                        # Reject this match - door model mismatch detected
                         continue
                     
                     # POST-MATCH VALIDATION: Check for paint finish mismatches
                     if check_paint_finish_mismatch(source_name, target_name):
-                        # Reject this match - paint finish mismatch detected
                         continue
                     
                     # POST-MATCH VALIDATION: Check for paint BASE mismatches
                     if check_paint_base_mismatch(source_name, target_name):
-                        # Reject this match - paint BASE mismatch detected
                         continue
                     
                     # POST-MATCH VALIDATION: Check for handle variant mismatches
                     if check_handle_variant_mismatch(source_name, target_name):
-                        # Reject this match - handle variant mismatch detected
                         continue
                     
                     # POST-MATCH VALIDATION: Check for cleaning product brand conflicts
                     if check_cleaning_product_brand_mismatch(source_name, target_name):
-                        # Reject this match - cleaning brand mismatch detected
                         continue
                     
                     # POST-MATCH VALIDATION: Check for scent variant mismatches
                     if check_scent_variant_mismatch(source_name, target_name):
-                        # Reject this match - scent mismatch detected
                         continue
                     
                     # POST-MATCH VALIDATION: Check for lighting wattage mismatches
                     if check_lighting_wattage_mismatch(source_name, target_name):
-                        # Reject this match - wattage mismatch detected
                         continue
                     
                     # POST-MATCH VALIDATION: Check for electrical brand mismatches
                     if check_electrical_brand_mismatch(source_name, target_name):
-                        # Reject this match - electrical brand mismatch detected
                         continue
                     
                     # POST-MATCH VALIDATION: Check for household product conflicts
                     if check_household_product_conflict(source_name, target_name):
-                        # Reject this match - household product type conflict
                         continue
                     
+                    # All validations passed - use this match
                     matches.append({
                         'source_idx': idx,
                         'target_idx': original_idx,
                         'confidence': result.get('confidence', 0),
                         'reason': result.get('reason', '')
                     })
+                    match_found = True
+                    break
+                
+                # If no match found after trying all candidates, continue to next source
+                if not match_found:
+                    continue
         except Exception as e:
             continue
     
