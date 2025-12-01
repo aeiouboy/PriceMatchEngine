@@ -11,6 +11,7 @@ import json
 import os
 from openai import OpenAI
 from datetime import datetime
+from functools import lru_cache
 
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
 RESULTS_DIR = "saved_results"
@@ -52,6 +53,7 @@ def get_openrouter_client():
         )
     return None
 
+@lru_cache(maxsize=10000)
 def normalize_text(text):
     """Normalize text for better matching (handles brand aliases, Thai-English mappings)"""
     if not text:
@@ -265,6 +267,7 @@ def check_electrical_product_type_mismatch(source_name, target_name):
     # and dropping accuracy. Let AI handle this.
     return False
 
+@lru_cache(maxsize=50000)
 def check_product_category_compatibility(source_name, target_name):
     """Check if product category keywords are compatible - for retry mechanism.
     Returns True if products are INCOMPATIBLE (should retry with next candidate).
@@ -334,11 +337,13 @@ def check_model_number_mismatch(source_name, target_name):
     
     return False
 
+@lru_cache(maxsize=50000)
 def check_size_mismatch(source_name, target_name):
     """Check if sizes are incompatible - CONSERVATIVE version"""
     # Disabled: Let AI handle size matching, as our rules cause too many false positives
     return False
 
+@lru_cache(maxsize=50000)
 def check_paint_finish_mismatch(source_name, target_name):
     """Check if paint finish types mismatch - DISABLED: causes too many false rejections"""
     # Disabled: Paint finish matching is too nuanced for rule-based filtering
@@ -355,6 +360,7 @@ def check_handle_variant_mismatch(source_name, target_name):
     # Disabled: GT often expects color-different handles to match (same model, diff color OK)
     return False
 
+@lru_cache(maxsize=50000)
 def check_door_model_mismatch(source_name, target_name):
     """Check if door model numbers don't match - DISABLED, let AI handle"""
     # Disabled: Door model matching is too nuanced for rule-based filtering
@@ -382,6 +388,7 @@ def check_electrical_brand_mismatch(source_name, target_name):
     # Disabled: Electrical brand matching causes too many false rejections
     return False
 
+@lru_cache(maxsize=50000)
 def check_product_line_conflict(source_name, target_name):
     """Check if source and target have a product line conflict"""
     # Check BOTH original and normalized names for conflicts
