@@ -1,6 +1,0 @@
-﻿Rank,Retailer,Original_Pairs,GT_Errors_Excluded,Cleaned_Pairs,Correct_Matches,Incorrect_Matches,Not_Found,Final_Accuracy
-1,GlobalHouse,105,13,92,91,1,0,98.9%
-2,Boonthavorn,191,21,170,166,3,1,97.6%
-3,HomePro,2427,299,2128,2060,33,35,96.8%
-3,DoHome,955,108,847,820,14,13,96.8%
-5,Megahome,133,26,107,101,2,4,94.4%

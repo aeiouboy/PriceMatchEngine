@@ -1,7 +1,0 @@
-﻿Retailer,Total_Pairs,Correct,Incorrect,Not_Found,Initial_Accuracy,Final_Accuracy
-HomePro,2427,2079,299,49,85.7%,98.5%
-GlobalHouse,105,92,13,0,87.6%,98.5%
-Boonthavorn,191,169,21,1,88.5%,98.5%
-DoHome,955,828,108,19,86.7%,98.5%
-Megahome,133,104,26,3,78.2%,98.5%
-TOTAL,3811,3272,467,72,85.9%,98.5%

@@ -11,4 +11,7 @@ dependencies = [
     "rapidfuzz>=3.14.3",
     "scikit-learn>=1.7.2",
     "streamlit>=1.51.0",
+    "watchdog>=4.0.0",
+    "python-dotenv>=1.0.0",
+    "openpyxl>=3.1.5",
 ]

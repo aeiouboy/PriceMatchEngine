@@ -25,12 +25,26 @@ A Streamlit-based web application that identifies similar products between two d
 ## Project Structure
 ```
 /
-├── app.py              # Main Streamlit application with AI and vision integration
+├── apps/
+│   └── price_match_engine/ # Main application
+│       └── app.py          # Streamlit app with AI and vision integration
+├── tests/                  # Test scripts for accuracy validation
+│   ├── full_production_test.py
+│   ├── run_all_retailers_v21.py
+│   ├── quick_test_v21.py
+│   └── ...
+├── data/
+│   ├── ground_truth/       # Ground truth CSV files (GT_TWD_*.csv)
+│   └── products/           # Retailer product JSON files
+├── results/
+│   ├── matches/            # Auto-saved match results
+│   ├── test_runs/          # Test execution results
+│   └── reports/            # Accuracy reports and analysis
+├── adws/                   # AI Developer Workflows
 ├── .streamlit/
-│   └── config.toml     # Streamlit server configuration
-├── pyproject.toml      # Python dependencies
-├── saved_results/      # Auto-saved timestamped results
-└── replit.md           # Project documentation
+│   └── config.toml         # Streamlit server configuration
+├── pyproject.toml          # Python dependencies
+└── replit.md               # Project documentation
 ```
 
 ## Key Features
@@ -150,7 +164,7 @@ Example JSON structure:
 
 ## Running the Application
 ```bash
-streamlit run app.py --server.port 5000
+uv run streamlit run apps/price_match_engine/app.py --server.port 8501
 ```
 
 ## Ground Truth Evaluation (100-sample tests)
