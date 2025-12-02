@@ -109,12 +109,18 @@ def normalize_text(text):
     
     return text
 
-def extract_brand(product_name, explicit_brand=''):
-    """Extract brand from product name"""
+def extract_brand(product_name, explicit_brand='', product_url=''):
+    """Extract brand from product name or URL"""
     if explicit_brand:
         return explicit_brand.upper().strip()
     
+    if product_url:
+        brand_from_url = extract_brand_from_url(product_url)
+        if brand_from_url:
+            return brand_from_url
+    
     known_brands = [
+        'LUZINO', 'GIANT KINGKONG', 'FONTE',
         'TOA', 'BEGER', 'JOTUN', 'NIPPON', 'DULUX', 'CAPTAIN', 'JBP',
         'SHARK', 'BARCO', 'DELTA', 'CHAMPION', 'DAVIES',
         'SCG', 'CPAC', 'TPI', 'ELEPHANT', 'จระเข้',
@@ -124,12 +130,62 @@ def extract_brand(product_name, explicit_brand=''):
         'MITSUBISHI', 'HITACHI', 'TOSHIBA', 'SAMSUNG', 'LG',
         'ECO DOOR', 'BATHIC', 'MASTERWOOD', 'UPVC',
         '3M', 'SCOTCH', 'BESBOND', 'DUNLOP', 'BOSNY',
+        'API', 'BF', 'JCJ', 'KING', 'LE', 'CLOSE',
+        'MAX LIGHT', 'KECH', 'MATALL', 'STACKO', 'FURDINI',
+        'SPRING', 'WAVE', 'ANYHOME', 'HACHI', 'SOMIC',
+        'NASH', 'MODERN', 'FOTINI', 'SAKURA', 'AT.INDY',
+        'NL HOME', 'SUPER',
     ]
     
     name_upper = product_name.upper() if product_name else ''
-    for brand in known_brands:
+    for brand in sorted(known_brands, key=len, reverse=True):
         if brand in name_upper:
             return brand
+    
+    return ''
+
+def extract_brand_from_url(url):
+    """Extract brand from product URL"""
+    if not url:
+        return ''
+    url_lower = str(url).lower()
+    
+    if 'boonthavorn.com/' in url_lower:
+        match = re.search(r'boonthavorn\.com/([a-zA-Z0-9-]+)', url_lower)
+        if match:
+            slug = match.group(1).split('-')[0]
+            url_brands = {
+                'max': 'MAX LIGHT', 'lamptan': 'LAMPTAN', 'anyhome': 'ANYHOME',
+                'at': 'AT.INDY', 'hachi': 'HACHI', 'somic': 'SOMIC',
+                'bf': 'BF', 'le': 'LE', 'super': 'SUPER', 'king': 'KING',
+                'nl': 'NL HOME', 'sakura': 'SAKURA', 'toa': 'TOA',
+                'jupiter': 'JUPITER', 'jorakay': 'JORAKAY', 'mex': 'MEX',
+                'yale': 'YALE', 'hitachi': 'HITACHI', 'mitsubishi': 'MITSUBISHI',
+                'panasonic': 'PANASONIC', 'hafele': 'HAFELE', 'scg': 'SCG',
+            }
+            return url_brands.get(slug, '')
+    
+    if 'homepro.co.th/' in url_lower:
+        match = re.search(r'homepro\.co\.th/[^/]+/([a-zA-Z0-9-]+)', url_lower)
+        if match:
+            slug = match.group(1).split('-')[0].lower()
+            url_brands = {
+                'kech': 'KECH', 'matall': 'MATALL', 'stacko': 'STACKO',
+                'furdini': 'FURDINI', 'spring': 'SPRING', 'wave': 'WAVE',
+            }
+            return url_brands.get(slug, 'HOMEPRO')
+        return 'HOMEPRO'
+    
+    if 'dohome.co.th/' in url_lower:
+        if 'nash' in url_lower: return 'NASH'
+        if 'eve' in url_lower: return 'EVE'
+        if 'lamptan' in url_lower: return 'LAMPTAN'
+        if 'modern' in url_lower: return 'MODERN'
+        if 'fotini' in url_lower: return 'FOTINI'
+        return 'DOHOME'
+    
+    if 'globalhouse.co.th/' in url_lower:
+        return 'GLOBALHOUSE'
     
     return ''
 
@@ -370,10 +426,10 @@ def ai_find_house_brand_alternatives(source_products, target_products, price_tol
         candidates = []
         for i, t in enumerate(target_products):
             t_name = t.get('name', t.get('product_name', ''))
-            t_brand = extract_brand(t_name, t.get('brand', ''))
+            t_url = t.get('url', t.get('product_url', t.get('link', '')))
+            t_brand = extract_brand(t_name, t.get('brand', ''), t_url)
             t_category = extract_category(t_name)
             t_price = float(t.get('current_price', t.get('price', 0)) or 0)
-            t_url = t.get('url', t.get('product_url', t.get('link', '')))
             
             if t_price <= 0:
                 continue

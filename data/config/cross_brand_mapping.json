@@ -1,25 +1,99 @@
 {
   "HomePro": {
-    "LUZINO": ["KECH", "LAMPTAN"],
-    "FONTE": ["SPRING", "WAVE"],
-    "GIANT KINGKONG": ["MATALL", "STACKO"]
+    "API": [
+      "HOMEPRO"
+    ],
+    "BF": [
+      "HOMEPRO"
+    ],
+    "CLOSE": [
+      "HOMEPRO"
+    ],
+    "FONTE": [
+      "HOMEPRO"
+    ],
+    "GIANT KINGKONG": [
+      "HOMEPRO"
+    ],
+    "JCJ": [
+      "HOMEPRO"
+    ],
+    "KING": [
+      "HOMEPRO"
+    ],
+    "LE": [
+      "HOMEPRO"
+    ],
+    "LUZINO": [
+      "HOMEPRO"
+    ]
   },
   "DoHome": {
-    "LUZINO": ["LAMPTAN", "MODERN"],
-    "FONTE": ["ดูโฮม", "DE'COS"],
-    "GIANT KINGKONG": ["HITACHI", "HYUNDAI"]
+    "API": [
+      "DOHOME",
+      "EVE"
+    ],
+    "BF": [
+      "NASH"
+    ],
+    "GIANT KINGKONG": [
+      "DOHOME",
+      "NASH",
+      "EVE"
+    ],
+    "JCJ": [
+      "DOHOME"
+    ],
+    "LE": [
+      "DOHOME"
+    ],
+    "LUZINO": [
+      "DOHOME",
+      "MODERN",
+      "EVE"
+    ]
   },
   "GlobalHouse": {
-    "LUZINO": ["LAMPTAN", "EVE"],
-    "FONTE": ["ANYHOME"]
+    "API": [
+      "GLOBALHOUSE"
+    ],
+    "BF": [
+      "GLOBALHOUSE"
+    ],
+    "CLOSE": [
+      "GLOBALHOUSE"
+    ],
+    "FONTE": [
+      "GLOBALHOUSE"
+    ],
+    "GIANT KINGKONG": [
+      "GLOBALHOUSE"
+    ],
+    "JCJ": [
+      "GLOBALHOUSE"
+    ],
+    "KING": [
+      "GLOBALHOUSE"
+    ],
+    "LUZINO": [
+      "GLOBALHOUSE"
+    ]
   },
   "Boonthavorn": {
-    "LUZINO": ["MAX LIGHT"],
-    "FONTE": ["ANYHOME"],
-    "GIANT KINGKONG": ["HACHI", "AT.INDY"]
-  },
-  "Megahome": {
-    "LUZINO": ["LAMPTAN"],
-    "FONTE": ["ANYHOME"]
+    "FONTE": [
+      "HOMEMART",
+      "ANYHOME",
+      "SAKURA"
+    ],
+    "GIANT KINGKONG": [
+      "BF",
+      "SOMIC",
+      "INDY"
+    ],
+    "LUZINO": [
+      "MAX LIGHT",
+      "LE",
+      "YJ"
+    ]
   }
 }
