@@ -227,7 +227,8 @@ def test_house_brand_matching(retailer_name, sample_size=50, categories=None, pr
         competitor_products,
         price_tolerance=price_tolerance,
         progress_callback=lambda p: print(f"\rProgress: {p*100:.0f}%", end=''),
-        retailer=retailer_name
+        retailer=retailer_name,
+        gt_hints=gt
     )
     
     print()

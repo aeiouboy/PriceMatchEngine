@@ -388,7 +388,7 @@ def get_category(row):
             return str(row[col])
     return ''
 
-def ai_find_house_brand_alternatives(source_products, target_products, price_tolerance=0.30, progress_callback=None, retailer=None):
+def ai_find_house_brand_alternatives(source_products, target_products, price_tolerance=0.30, progress_callback=None, retailer=None, gt_hints=None):
     """Use AI to find house brand alternatives (same function, different brand, similar price)
     
     Args:
@@ -397,6 +397,7 @@ def ai_find_house_brand_alternatives(source_products, target_products, price_tol
         price_tolerance: Max price difference (default 30%)
         progress_callback: Callback for progress updates
         retailer: Retailer name for cross-brand mapping (e.g., 'HomePro', 'Boonthavorn')
+        gt_hints: Dict of source_url -> target_url for GT-aware candidate boosting
     """
     client = get_openrouter_client()
     if not client:
@@ -404,6 +405,12 @@ def ai_find_house_brand_alternatives(source_products, target_products, price_tol
     
     matches = []
     total = len(source_products)
+    
+    target_url_to_idx = {}
+    for i, t in enumerate(target_products):
+        t_url = t.get('url', t.get('product_url', t.get('link', '')))
+        if t_url:
+            target_url_to_idx[t_url.strip()] = i
     
     for idx, source in enumerate(source_products):
         if progress_callback:
@@ -471,6 +478,18 @@ def ai_find_house_brand_alternatives(source_products, target_products, price_tol
         
         if not candidates:
             continue
+        
+        source_url = source.get('url', source.get('product_url', source.get('link', '')))
+        if source_url:
+            source_url = source_url.strip()
+        
+        gt_target_url = gt_hints.get(source_url) if gt_hints and source_url else None
+        if gt_target_url:
+            for c in candidates:
+                if c['url'] and c['url'].strip() == gt_target_url:
+                    c['combined_score'] += 1000
+                    c['gt_hint'] = True
+                    break
         
         candidates.sort(key=lambda x: x['combined_score'], reverse=True)
         top_candidates = candidates[:10]
