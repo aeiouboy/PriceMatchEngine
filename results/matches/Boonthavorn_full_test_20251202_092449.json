@@ -1,0 +1,739 @@
+{
+  "retailer": "Boonthavorn",
+  "timestamp": "2025-12-02T09:24:49.898355",
+  "total_tested": 91,
+  "correct": 83,
+  "incorrect": 3,
+  "not_found": 5,
+  "accuracy": 91.20879120879121,
+  "correct_matches": [
+    {
+      "twd_name": "ชุดอุปกรณ์ลูกล้อบานเลื่อน Silent 100/A HAFELE รุ่น 499.72.05",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60340427",
+      "matched_name": "อุปกรณ์บานเลื่อน HAFELE รุ่น 499.72.055",
+      "matched_url": "https://www.boonthavorn.com/hafele-1016246",
+      "confidence": 100,
+      "reason": "Source and target share the same brand (HAFELE), model number (499.72.055), and product type (อุปกรณ์บานเลื่อน). The size 'ชุด' is also consistent."
+    },
+    {
+      "twd_name": "ซีเมนต์ซ่อมแซมโครงสร้าง จระเข้ ขนาด 20 กก. สีเทา",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60250453",
+      "matched_name": "ซีเมนต์ซ่อมแซมโครงสร้าง จระเข้ 20 Kg.",
+      "matched_url": "https://www.boonthavorn.com/jorakay-1040122",
+      "confidence": 100,
+      "reason": "Exact match for product type, brand, and size. Source and target both state 'ซีเมนต์ซ่อมแซมโครงสร้าง จระเข้' and '20 กก.'/'20 Kg.'."
+    },
+    {
+      "twd_name": "ซีเมนต์ซ่อมแซม ปรับผิวคอนกรีตชนิดบาง จระเข้ ฟลอร์ สมูท แพทซ์",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60322946",
+      "matched_name": "จระเข้ ฟลอร์ สมูท แพทซ์ 20 KG. JORAKAY",
+      "matched_url": "https://www.boonthavorn.com/jorakay-1171506",
+      "confidence": 100,
+      "reason": "Exact match on product name, brand, and size."
+    },
+    {
+      "twd_name": "ซีเมนต์ทากันรั่วซึมยืดหยุ่นผสมสองส่วน จระเข้ รุ่น C04051145 ",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60292046",
+      "matched_name": "ซีเมนต์กันซึม เฟล็กซ์2 เค+น้ำยาAB 23 กก.",
+      "matched_url": "https://www.boonthavorn.com/jorakay-1104332",
+      "confidence": 90,
+      "reason": "Both are two-part flexible waterproofing cement from the same brand (JORAKAY). Target 1 is larger in size than the source but the product type is very similar."
+    },
+    {
+      "twd_name": "มอร์ตาร์ปรับระดับด้วยตัวเองชนิดพร้อมใช้ จระเข้ เซลฟ์-เลเวลลิ",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60371010",
+      "matched_name": "ซีเมนต์ปรับระดับเกเตอร์ 25 KG JORAKAY",
+      "matched_url": "https://www.boonthavorn.com/jorakay-1249053",
+      "confidence": 90,
+      "reason": "Both source and target are 'ซีเมนต์ปรับระดับ' (self-leveling cement) from brand JORAKAY with the same size (25 KG). The word 'เกเตอร์' indicates a product line by JORAKAY."
+    },
+    {
+      "twd_name": "มอร์ต้าปรับผิวหน้าชนิดบาง จระเข้ ฟลอร์ แพทชิ่ง มอร์ต้า ขนาด ",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60381769",
+      "matched_name": "ซีเมนต์ซ่อมแซมฟลอร์แพทชิ่งมอร์ต้า 20KG",
+      "matched_url": "https://www.boonthavorn.com/jorakay-1249051",
+      "confidence": 100,
+      "reason": "Source and target both mention 'จระเข้' (JORAKAY) brand, 'ฟลอร์แพทชิ่งมอร์ต้า' (Floor Patching Mortar) product type, and '20 กก.' (20 KG) size. The word 'ซีเมนต์ซ่อมแซม' in the target is a descriptor for floor patching mortar."
+    },
+    {
+      "twd_name": "ลูกบิดห้องน้ำหัวกลม สเตนเลส 201 YALE รุ่น EKN-VCA5142US32D ส",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60302825",
+      "matched_name": "ลูกบิดหัวกลมห้องน้ำ EKN-VCA5142US32D SS",
+      "matched_url": "https://www.boonthavorn.com/yale-1161855",
+      "confidence": 100,
+      "reason": "Exact match on product type (ลูกบิดห้องน้ำหัวกลม), brand (YALE), and model (EKN-VCA5142US32D). Target also specifies stainless steel color (SS)."
+    },
+    {
+      "twd_name": "ลูกบิดห้องน้ำหัวกลม สเตนเลส 304 YALE รุ่น KN-VCA5122US32D สี",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60246001",
+      "matched_name": "ลูกบิดหัวกลมห้องน้ำ YALE รุ่น KN-VCA5122US32DSS",
+      "matched_url": "https://www.boonthavorn.com/yale-118068",
+      "confidence": 100,
+      "reason": "Exact match on product type, brand, and model number. Both are YALE round-head bathroom knobs with the model number starting KN-VCA5122US32D. The target includes 'SS' which is likely a representation of stainless steel, matching the source's 'สเตนเลส 304'."
+    },
+    {
+      "twd_name": "สว่านกระแทกไร้สาย 12V 30 Nm. BOSCH รุ่น GSB120-LI (รวมแบต 2A",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60308532",
+      "matched_name": "สว่านกระแทกไร้สาย BOSCH GSB120-LI Gen3",
+      "matched_url": "https://www.boonthavorn.com/bosch-1131230",
+      "confidence": 95,
+      "reason": "Source and target are the same product type (cordless impact drill), same brand (BOSCH), and same model (GSB120-LI). The source includes battery information which is common for such items and the target simply states '1 เครื่อง' (1 unit), which is an acceptable generalization."
+    },
+    {
+      "twd_name": "อะไหล่ลูกกลิ้งทาสีเคมี HACHI ขนาด 4 นิ้วสีดำ - ส้ม",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60270107",
+      "matched_name": "อะไหล่ลูกกลิ้งเคมีไมโครไฟเบอร์กลาส HACHI 4 นิ้ว",
+      "matched_url": "https://www.boonthavorn.com/hachi-1218479",
+      "confidence": 95,
+      "reason": "Both are \"อะไหล่ลูกกลิ้งเคมี\" (chemical roller spare parts) from HACHI, and the size is 4 inches. Target 0 also mentions \"ไมโครไฟเบอร์กลาส\" which is a type of chemical roller. The color 'ดำ-ส้ม' in the source is likely a color variant of the roller pattern/packaging, while target 0 doesn't specify color but is the closest match for the core product and brand."
+    },
+    {
+      "twd_name": "อะคริลิคโป๊ว จระเข้ วอลล์พัตตี้ รุ่น ขนาด 5 กก. สีขาว",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60240181",
+      "matched_name": "หมั่นโป๊วอเนกประสงค์ จระเข้ 5 กก.",
+      "matched_url": "https://www.boonthavorn.com/jorakay-1040087",
+      "confidence": 95,
+      "reason": "Source is 'อะคริลิคโป๊ว จระเข้ วอลล์พัตตี้ รุ่น ขนาด 5 กก. สีขาว' and target 0 is 'หมั่นโป๊วอเนกประสงค์ จระเข้ 5 กก.'. Both are acrylic putty/filler from JORAKAY and are 5kg. 'อะคริลิคโป๊ว' and 'หมั่นโป๊ว' are very similar product types (filler/putty). The brand and size are exact matches."
+    },
+    {
+      "twd_name": "อะคริลิกซีลแลนท์ TOA รุ่น 303 ขนาด 280 มล. สีโอ๊ก",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60381751",
+      "matched_name": "อะครีลิค ซีลแลนท์ 303 สีโอ๊ค#280 ML",
+      "matched_url": "https://www.boonthavorn.com/toa-1226740",
+      "confidence": 100,
+      "reason": "Exact match for product type, brand, model, and size. Both are acrylic sealant, TOA brand, model 303, and 280ml size. The color 'โอ๊ค' for the source and 'โอ๊ค' for the target are identical."
+    },
+    {
+      "twd_name": "อะไหล่ลูกกลิ้งทาสี SOMIC ขนาด 10 นิ้ว",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60001842",
+      "matched_name": "อะไหล่ ลูกกลิ้งทาสี ขนแกะ 10นิ้ว",
+      "matched_url": "https://www.boonthavorn.com/somic-77680",
+      "confidence": 100,
+      "reason": "Source explicitly states 'อะไหล่ลูกกลิ้งทาสี SOMIC' and target 0 is 'อะไหล่ ลูกกลิ้งทาสี ขนแกะ 10นิ้ว' with Brand SOMIC. The size '10 นิ้ว' is also present in the source and target name."
+    },
+    {
+      "twd_name": "อะคริลิกซีลแลนท์ TOA รุ่น 303 ขนาด 280 มล. สีเทา",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60381753",
+      "matched_name": "อะครีลิค ซีลแลนท์ 303 สีเทา#280 ML.",
+      "matched_url": "https://www.boonthavorn.com/toa-1226771",
+      "confidence": 100,
+      "reason": "Exact match for product type, brand, model, size, and color."
+    },
+    {
+      "twd_name": "อะไหล่ลูกกลิ้งทาสี HACHI ขนาด 10 นิ้ว สีดำ - ส้ม",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60270105",
+      "matched_name": "อะไหล่ลูกกลิ้งทาสี 10 นิ้ว H0974 *เหลือง",
+      "matched_url": "https://www.boonthavorn.com/hachi-1218454",
+      "confidence": 95,
+      "reason": "Source and target are both \"อะไหล่ลูกกลิ้งทาสี\" (roller refill for painting) from the same brand \"HACHI\". The size \"10 นิ้ว\" is present in the source and the target implies a standard size for roller refills often associated with a specific model number. The color \"ดำ - ส้ม\" in the source is a slight variation from \"*เหลือง\" in the target, but the core product type, brand, and size are a strong match, with color being a common variation."
+    },
+    {
+      "twd_name": "โพลียูรีเทนยาแนว จระเข้ รุ่น 4090W ขนาด 310 มล. สีขาว",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60212539",
+      "matched_name": "โพลียูซีลจระเข้ (อุดรอยต่อ)4090W 310Gขาว",
+      "matched_url": "https://www.boonthavorn.com/jorakay-1008695",
+      "confidence": 100,
+      "reason": "Exact match for brand, model, size, and color. 'โพลียูรีเทนยาแนว' (polyurethane sealant) is a type of 'โพลียูซีล' (polyseal/sealant)."
+    },
+    {
+      "twd_name": "โพลียูรีเทนทากันน้ำซึมดาดฟ้า/หลังคาสูตรน้ำ TOA ขนาด 20 กก. ส",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60291922",
+      "matched_name": "กันซึม PU WATERPROOF สีเทา#20KG",
+      "matched_url": "https://www.boonthavorn.com/toa-1113378",
+      "confidence": 95,
+      "reason": "Source is 'โพลียูรีเทนทากันน้ำซึมดาดฟ้า/หลังคาสูตรน้ำ TOA ขนาด 20 กก. สีเทา'. Target 3 is 'กันซึม PU WATERPROOF สีเทา#20KG' which matches product type (waterproofing sealant applied to roofs/decks), brand (TOA), size (20KG), and color (grey). The term 'โพลียูรีเทน' (Polyurethane) in the source also directly relates to 'PU' (Polyurethane) in the target model name."
+    },
+    {
+      "twd_name": "โพลียูรีเทนยาแนว จระเข้ รุ่น 4090G ขนาด 310 มล. สีเทา",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60212538",
+      "matched_name": "จระเข้โพลียูซีลอุดรอยต่อ 4090G 310G. เทา",
+      "matched_url": "https://www.boonthavorn.com/jorakay-1008709",
+      "confidence": 95,
+      "reason": "Both source and target are polyurethane sealant from JORAKAY, model 4090G, size 310ml/310G, and color grey. The slight difference in unit (ml vs G) is considered a close match for this product type."
+    },
+    {
+      "twd_name": "โพลียูรีเทนทากันน้ำซึมดาดฟ้า/หลังคาสูตรน้ำ TOA ขนาด 20 กก. ส",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60295842",
+      "matched_name": "กันซึม PU WATERPROOF สีขาว#20KG",
+      "matched_url": "https://www.boonthavorn.com/toa-1113377",
+      "confidence": 100,
+      "reason": "Source and target are both TOA brand polyurethane waterproofing for roofs/decks, water-based, 20KG size, and white color."
+    },
+    {
+      "twd_name": "ชุดราง LED T5 LAMPTAN รุ่น GLOSS SLIM กำลัง 18 วัตต์ Dayligh",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60328219",
+      "matched_name": "LED GLOSS SLIM 18W DL LAMPTAN",
+      "matched_url": "https://www.boonthavorn.com/lamptan-1146480",
+      "confidence": 100,
+      "reason": "Source and target match product type (LED T5 rail light), brand (LAMPTAN), model (GLOSS SLIM), wattage (18W), and color temperature (Daylight)."
+    },
+    {
+      "twd_name": "ถ่านกระดุมลิเธี่ยม PANASONIC รุ่น CR-2032PT/1B 3V",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60062735",
+      "matched_name": "ถ่านกระดุมลิเธี่ยมพานาโซนิค CR-2032PT/1B",
+      "matched_url": "https://www.boonthavorn.com/panasonic-1261184",
+      "confidence": 100,
+      "reason": "Exact match for product type, brand, and model."
+    },
+    {
+      "twd_name": "ถ่านอัลคาไลน์ PANASONIC รุ่น LR6T/20SL ขนาด AA (แพ็ค 20 ก้อน",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60311594",
+      "matched_name": "ถ่านไฟฉายพานาโซนิคอัลคาไลน์ LR6T/20SL",
+      "matched_url": "https://www.boonthavorn.com/panasonic-1261159",
+      "confidence": 100,
+      "reason": "Exact match for product type (ถ่านอัลคาไลน์), brand (PANASONIC), and model (LR6T/20SL). The source specifies 'AA' which is implied by 'LR6' in the target model number. The size 'แพ็ค 20 ก้อน' is equivalent to 'แพค' in the target."
+    },
+    {
+      "twd_name": "ถ่านอัลคาไลน์ PANASONIC รุ่น LR03T/20SL ขนาด AAA (แพ็ค 20 ก้",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60311605",
+      "matched_name": "ถ่านไฟฉายพานาโซนิคอัลคาไลน์ LR03T/20SL",
+      "matched_url": "https://www.boonthavorn.com/panasonic-1261160",
+      "confidence": 100,
+      "reason": "Exact match for brand, model, and product type (alkaline batteries size AAA). The source specifies 'แพ็ค 20 ก้อน' which is equivalent to size 'แพค' and the model number LR03T/20SL confirms it's AAA size."
+    },
+    {
+      "twd_name": "เต้ารับคู่ 3 ขา Wide PANASONIC รุ่น Weg 15929 สีขาว",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60014789",
+      "matched_name": "เต้ารับคู่ WEG 15929 - PANASONIC - 10.1 x 3 CM",
+      "matched_url": "https://www.boonthavorn.com/panasonic-78576",
+      "confidence": 100,
+      "reason": "The source and target have the same brand (PANASONIC) and model number (WEG 15929). Both are described as 'เต้ารับคู่' (double socket). The size information \"10.1 x 3 CM\" in the target is a reasonable addition for specificity and doesn't contradict the source."
+    },
+    {
+      "twd_name": "โคมแทรคไลท์เข้าราง GU5.3x1 LED 7W WarmWhite LAMPTAN รุ่น PRO",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60407703",
+      "matched_name": "แทร็คไลท์ LED PROLONG 7W WW 220V BLACK",
+      "matched_url": "https://www.boonthavorn.com/lamptan-1250138",
+      "confidence": 100,
+      "reason": "Source and target both describe a LAMPTAN brand track light with PROLONG model, 7W, and black color. The GU5.3x1 LED implies it's designed for a track system, aligning with 'track light'."
+    },
+    {
+      "twd_name": "โคมไฟถนนโซลาร์เซลล์ พร้อมขาจับ LED 400W Daylight PHILIPS รุ่",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60422883",
+      "matched_name": "ไฟถนนSOLAR BRC010 LED40/765 G2 400W/DL",
+      "matched_url": "https://www.boonthavorn.com/philips-1264380",
+      "confidence": 100,
+      "reason": "Source and target match product type (street light solar), brand (PHILIPS), and model name (BRC010 400W DL)."
+    },
+    {
+      "twd_name": "โคมไฟเพดาน LED 24W Daylight LAMPTAN รุ่น Basic 24W/Daylight ",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60385140",
+      "matched_name": "LED CEILING LAMP BASIC 24W DL",
+      "matched_url": "https://www.boonthavorn.com/lamptan-1245821",
+      "confidence": 100,
+      "reason": "Source and target are both LED ceiling lamps with the same brand (LAMPTAN), model (Basic), and wattage (24W) and color temperature (Daylight/DL)."
+    },
+    {
+      "twd_name": "ก๊อกบอลสนาม SANWA รุ่น CKT 15 ขนาดเกลียว 1/2 นิ้ว สีแดง",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60007088",
+      "matched_name": "SANWA CKT15 ก๊อกบอลสนาม 1/2\"",
+      "matched_url": "https://www.boonthavorn.com/sanwa-48453",
+      "confidence": 100,
+      "reason": "Exact match on product type (ก๊อกบอลสนาม), brand (SANWA), and model (CKT15). Size (1/2 นิ้ว) is also present in both."
+    },
+    {
+      "twd_name": "ก๊อกบอล SANWA รุ่น CK 15 ขนาดเกลียว 1/2 นิ้ว",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60006993",
+      "matched_name": "SANWA CK15 ก๊อกบอล 1/2\"",
+      "matched_url": "https://www.boonthavorn.com/sanwa-48455",
+      "confidence": 100,
+      "reason": "Source and target have the same brand (SANWA), product type (ก๊อกบอล), and size (1/2 นิ้ว). The model names (CK 15 vs CK15) are essentially identical, considering common abbreviations and abbreviations like 15 for 1/2\" in plumbing contexts. Target 0 is an exact match."
+    },
+    {
+      "twd_name": "ข้อต่อตรงเกลียวใน 1/2 นิ้ว THAI PP-R รุ่น D20 ขนาด 29 x 29 x",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60249278",
+      "matched_name": "ข้อต่อตรงเกลียวในพีพีอาร์ D20*1/2 นิ้ว",
+      "matched_url": "https://www.boonthavorn.com/thai-pp-r-1069620?page=1",
+      "confidence": 100,
+      "reason": "Exact match for product type, brand, model, and size (nominal pipe size and thread size)."
+    },
+    {
+      "twd_name": "ตู้ทำน้ำเย็น-น้ำร้อน MAZUMA รุ่น DP-639HC",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60326653",
+      "matched_name": "ตู้น้ำดื่มร้อนเย็น MAZUMA รุ่น DP-639HC",
+      "matched_url": "https://www.boonthavorn.com/mazuma-1196467",
+      "confidence": 100,
+      "reason": "Exact match for product type, brand, and model."
+    },
+    {
+      "twd_name": "ท่อประปา แบบธรรมดา THAI PP-R SDR11 PN10 D25 ขนาด 3/4 นิ้ว x ",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60249251",
+      "matched_name": "ท่อพีพีอาร์น้ำประปา3/4 SDR11 PN10 D25X4m",
+      "matched_url": "https://www.boonthavorn.com/thai-pp-r-1069582?page=1",
+      "confidence": 100,
+      "reason": "Exact match for product type, brand, model (SDR11 PN10 D25), and size (3/4 inch, 4m). Source is 'ท่อประปา แบบธรรมดา THAI PP-R SDR11 PN10 D25 ขนาด 3/4 นิ้ว x 4 ม. สีเขียว' and target is 'ท่อพีพีอาร์น้ำประปา3/4 SDR11 PN10 D25X4m (Brand: THAI PP-R, Model: SDR11 PN10 D25, Size: 4 m)'."
+    },
+    {
+      "twd_name": "ปั๊มน้ำอัตโนมัติแรงดันคงที่ 300 วัตต์ MITSUBISHI ELECTRIC รุ",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60422615",
+      "matched_name": "เครื่องปั๊มน้ำอัตโนมัติคงที่ EP-305R2 300 W",
+      "matched_url": "https://www.boonthavorn.com/mitsubishi-1263144",
+      "confidence": 100,
+      "reason": "Exact match found for product type, brand, model, and wattage."
+    },
+    {
+      "twd_name": "ปั๊มน้ำอัตโนมัติแรงดันคงที่ (เสียงเงียบ) HITACHI รุ่น TM-P30",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60361683",
+      "matched_name": "เครื่องปั๊มน้ำอัตโนมัติเทอร์ไบน์ TM-P300XX2",
+      "matched_url": "https://www.boonthavorn.com/hitachi-1211704",
+      "confidence": 100,
+      "reason": "Source and target have the SAME brand (HITACHI), the SAME model (TM-P300XX2), and the SAME product type (ปั๊มน้ำอัตโนมัติเทอร์ไบน์). The wattage (300W) also matches. The source mentions 'แรงดันคงที่ (เสียงเงียบ)' which is consistent with the product type described in the target. The target 3 is an exact match."
+    },
+    {
+      "twd_name": "ปั๊มน้ำอัตโนมัติ 150 วัตต์ MITSUBISHI ELECTRIC รุ่น WP-155R2",
+      "twd_url": "https://www.thaiwatsadu.com/sku/60422666",
+      "matched_name": "เครื่องปั๊มน้ำอัตโนมัติ WP-155R2 150 W",
+      "matched_url": "https://www.boonthavorn.com/mitsubishi-1263154",
+      "confidence": 100,
+      "reason": "Source and target have the exact same brand (MITSUBISHI ELECTRIC/MITSUBISHI), model (WP-155R2), and power (150 วัตต์/150 W). The term \"ปั๊มน้ำอัตโนมัติ\" directly translates to \"เครื่องปั๊มน้ำอัตโนมัติ\" and \"รุ่น\" to \"Model\"."
+    },
+    {
+      "twd_name": "ปั๊มน้ำอัตโนมัติแรงดันคงที่ 350 วัตต์ MITSUBISHI ELECTRIC รุ",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60422612",
+      "matched_name": "เครื่องปั๊มน้ำอัตโนมัติคงที่ EP-355R2 350 W",
+      "matched_url": "https://www.boonthavorn.com/mitsubishi-1263155",
+      "confidence": 100,
+      "reason": "Exact match for brand, model, and wattage."
+    },
+    {
+      "twd_name": "ปั๊มน้ำอัตโนมัติ HITACHI รุ่น WT-P200XX กำลัง 200 วัตต์",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60320928",
+      "matched_name": "เครื่องปั๊มน้ำอัตโนมัติ HITACHI รุ่น WT-P200XX",
+      "matched_url": "https://www.boonthavorn.com/hitachi-1148739",
+      "confidence": 100,
+      "reason": "Exact match for Brand, Model, and Product Type. Source mentions 200 Watts which is implied by the model number WT-P200XX in the target."
+    },
+    {
+      "twd_name": "ปั๊มน้ำอัตโนมัติ 100 วัตต์ MITSUBISHI ELECTRIC รุ่น WP-105R2",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60422669",
+      "matched_name": "เครื่องปั๊มน้ำอัตโนมัติ WP-105R2 100 W",
+      "matched_url": "https://www.boonthavorn.com/mitsubishi-1263153",
+      "confidence": 100,
+      "reason": "Exact match for brand (MITSUBISHI), model (WP-105R2), and size (100 W)."
+    },
+    {
+      "twd_name": "ปั๊มน้ำอัตโนมัติ 250 วัตต์ MITSUBISHI ELECTRIC รุ่น WP-255R2",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60422670",
+      "matched_name": "เครื่องปั๊มน้ำอัตโนมัติ WP-255R2 255 W",
+      "matched_url": "https://www.boonthavorn.com/mitsubishi-1263160",
+      "confidence": 100,
+      "reason": "Exact match found for brand, model, and size."
+    },
+    {
+      "twd_name": "ปั๊มน้ำอัตโนมัติแรงดันคงที่ (เสียงเงียบ) HITACHI รุ่น TM-P20",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60374398",
+      "matched_name": "เครื่องปั๊มน้ำอัตโนมัติเทอร์ไบน์ TM-P200XX2",
+      "matched_url": "https://www.boonthavorn.com/hitachi-1224179?page=1",
+      "confidence": 100,
+      "reason": "Both source and target are HITACHI TM-P200XX2, which is an exact model match. The product type also matches (ปั๊มน้ำอัตโนมัติ / เครื่องปั๊มน้ำอัตโนมัติเทอร์ไบน์)."
+    },
+    {
+      "twd_name": "ปั๊มน้ำอัตโนมัติ HITACHI รุ่น WT-P250XX กำลัง 250 วัตต์",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60320930",
+      "matched_name": "เครื่องปั๊มน้ำอัตโนมัติ HITACHI รุ่น WT-P250XX",
+      "matched_url": "https://www.boonthavorn.com/hitachi-1148740",
+      "confidence": 100,
+      "reason": "Exact match found for Brand, Model, and Size."
+    },
+    {
+      "twd_name": "ปั๊มน้ำอัตโนมัติ 200 วัตต์ MITSUBISHI ELECTRIC รุ่น WP-205R2",
+      "twd_url": "https://www.thaiwatsadu.com/sku/60422671",
+      "matched_name": "เครื่องปั๊มน้ำอัตโนมัติ WP-205R2 200 W",
+      "matched_url": "https://www.boonthavorn.com/mitsubishi-1263152",
+      "confidence": 100,
+      "reason": "Exact match for product type, brand, model, and wattage."
+    },
+    {
+      "twd_name": "ปั๊มน้ำอัตโนมัติแรงดันคงที่ HITACHI รุ่น WM-P300XX กำลัง 300",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60320948",
+      "matched_name": "เครื่องปั๊มน้ำอัตโนมัติแรงดันคงที่ WM-P300XX",
+      "matched_url": "https://www.boonthavorn.com/hitachi-1148757",
+      "confidence": 100,
+      "reason": "Exact match for brand (HITACHI), model (WM-P300XX), and product type (ปั๊มน้ำอัตโนมัติแรงดันคงที่)."
+    },
+    {
+      "twd_name": "ปั๊มน้ำอัตโนมัติแรงดันคงที่ HITACHI รุ่น WM-P350XX กำลัง 350",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60320950",
+      "matched_name": "เครื่องปั๊มน้ำอัตโนมัติแรงดันคงที่ WM-P350XX",
+      "matched_url": "https://www.boonthavorn.com/hitachi-1148758",
+      "confidence": 100,
+      "reason": "Exact match for product type, brand, and model number."
+    },
+    {
+      "twd_name": "ปั๊มน้ำอัตโนมัติแรงดันคงที่ 400 วัตต์ MITSUBISHI ELECTRIC รุ",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60422614",
+      "matched_name": "เครื่องปั๊มน้ำอัตโนมัติคงที่ EP-405R2 400 W",
+      "matched_url": "https://www.boonthavorn.com/mitsubishi-1263143",
+      "confidence": 100,
+      "reason": "Source and target match product type, brand (MITSUBISHI), model (EP-405R2), and size (400W) exactly."
+    },
+    {
+      "twd_name": "มินิบอลวาล์ว (ผผ) SANWA รุ่น BV 15 MM ขนาด 1/2 นิ้ว",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60068729",
+      "matched_name": "SANWA BV15 MM มินิบอลวาล์ว ผผ. 1/2\"",
+      "matched_url": "https://www.boonthavorn.com/sanwa-1138379",
+      "confidence": 100,
+      "reason": "Exact match for product type (มินิบอลวาล์ว), brand (SANWA), and model (BV 15 MM). Size (1/2 นิ้ว) also matches."
+    },
+    {
+      "twd_name": "ปั๊มน้ำอัตโนมัติแรงดันคงที่ HITACHI รุ่น WM-P150XX กำลัง 150",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60320945",
+      "matched_name": "เครื่องปั๊มน้ำอัตโนมัติแรงดันคงที่ WM-P150XX",
+      "matched_url": "https://www.boonthavorn.com/hitachi-1148754",
+      "confidence": 100,
+      "reason": "Source and target are identical in brand (HITACHI), model (WM-P150XX), and product type (ปั๊มน้ำอัตโนมัติแรงดันคงที่). The wattage (150 วัตต์) also matches implicitly as the model number WM-P150XX typically denotes 150 watts for Hitachi pumps."
+    },
+    {
+      "twd_name": "ปั๊มน้ำอัตโนมัติแรงดันคงที่ Inverter 400 วัตต์ HITACHI รุ่น ",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60389227",
+      "matched_name": "เครื่องปั๊มน้ำอัตโนมัติอินเวอร์เตอร์ HITACHI รุ่น WM-PV400",
+      "matched_url": "https://www.boonthavorn.com/hitachi-1248430",
+      "confidence": 100,
+      "reason": "Source and target are both HITACHI Inverter automatic water pumps. The model numbers WM-PV400XX2 and WM-PV400 are very close, and the power rating of 400 watts matches. Target 3 is an exact match for the brand and power rating, and a very close model number. Other HITACHI targets have different model series (WM-P, TM-P, WT-P) which are not Inverter types or have different power ratings."
+    },
+    {
+      "twd_name": "เครื่องทำน้ำอุ่น 3,500 วัตต์ SHARP รุ่น MD135WH สีขาว",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60420555",
+      "matched_name": "เครื่องทำน้ำอุ่น 3500W รุ่น WH-MD135/WH",
+      "matched_url": "https://www.boonthavorn.com/sharp-1260253",
+      "confidence": 100,
+      "reason": "Source matches target on brand (SHARP), product type (เครื่องทำน้ำอุ่น), and wattage (3,500 วัตต์). The model number also closely aligns (MD135WH vs WH-MD135/WH)."
+    },
+    {
+      "twd_name": "เครื่องทำน้ำอุ่น 3500 วัตต์ MAZUMA รุ่น INTRO S สีขาว",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60302570",
+      "matched_name": "เครื่องทำน้ำอุ่น MAZUMA รุ่น INTRO S 3500W",
+      "matched_url": "https://www.boonthavorn.com/mazuma-1113256",
+      "confidence": 100,
+      "reason": "Product type, brand, and model match exactly. The only difference is the wattage, which is a common variant."
+    },
+    {
+      "twd_name": "เครื่องทำน้ำร้อนแบบหม้อต้ม (แนวนอน) AO SMITH รุ่น ELJH-50 คว",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60310978",
+      "matched_name": "ค.ทำน้ำร้อนหม้อต้ม A.O.SMITH รุ่นELJH-50",
+      "matched_url": "https://www.boonthavorn.com/mex-1108910",
+      "confidence": 100,
+      "reason": "Source and target have the same brand (AO SMITH and MEX for target 3, but the brand AO SMITH is explicitly mentioned in target 3), model (ELJH-50), and capacity (50 ลิตร). Target 3 also specifies 'หม้อต้ม' which matches the source 'เครื่องทำน้ำร้อนแบบหม้อต้ม'."
+    },
+    {
+      "twd_name": "เครื่องทำน้ำร้อน 6000 วัตต์ MAZUMA รุ่น POWER3 6.0 สีขาว",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60232936",
+      "matched_name": "เครื่องทำน้ำร้อน 6000W POWER 3",
+      "matched_url": "https://www.boonthavorn.com/mazuma-1050251",
+      "confidence": 95,
+      "reason": "Both source and target are 'เครื่องทำน้ำร้อน' (water heater) from the brand MAZUMA. The target model 'POWER 3' is an exact match to the 'รุ่น POWER3' in the source. The wattage '6000 วัตต์' also matches '6000W'."
+    },
+    {
+      "twd_name": "เครื่องทำน้ำร้อนแบบหม้อต้ม (แนวนอน) STIEBEL ELTRON รุ่น ESH ",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60349819",
+      "matched_name": "เครื่องทำน้ำร้อนหม้อต้ม ESH 30 H PLUS T",
+      "matched_url": "https://www.boonthavorn.com/stiebel-eltron-1200690",
+      "confidence": 100,
+      "reason": "Identical product type, brand, and model. Size is also an exact match."
+    },
+    {
+      "twd_name": "เครื่องทำน้ำร้อน 6000 วัตต์ MEX รุ่น CUBE6000R สีเงิน",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60269470",
+      "matched_name": "เครื่องทำน้ำร้อน 6000W CUBE 6000R*เทา",
+      "matched_url": "https://www.boonthavorn.com/mex-1084524",
+      "confidence": 100,
+      "reason": "Exact match for product type, brand, model, and size. Source mentions 'สีเงิน' (silver) which is a common color for this model and target has '*เทา' (grey) which is very similar."
+    },
+    {
+      "twd_name": "เครื่องทำน้ำร้อน 8000 วัตต์ STIEBEL ELTRON รุ่น DHC8 EC สีเง",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60218840",
+      "matched_name": "เครื่องทำน้ำร้อน 8000W รุ่น DHC8EC",
+      "matched_url": "https://www.boonthavorn.com/stiebel-eltron-1036208",
+      "confidence": 100,
+      "reason": "Exact match for product type, brand, model, and wattage."
+    },
+    {
+      "twd_name": "เครื่องทำน้ำอุ่น 3,500 วัตต์ RINNAI รุ่น AI350 สีขาว",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60338039",
+      "matched_name": "เครื่องทำน้ำอุ่นRINNAI 3500W รุ่น Ai 350",
+      "matched_url": "https://www.boonthavorn.com/rinnai-1171138",
+      "confidence": 100,
+      "reason": "Exact match for product type, brand, and model number. The power (3500W) also matches."
+    },
+    {
+      "twd_name": "เครื่องทำน้ำอุ่น 3500 วัตต์ STIEBEL ELTRON รุ่น DS 35EC สีขา",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60292920",
+      "matched_name": "เครื่องทำน้ำอุ่น 3500W รุ่น DS35EC",
+      "matched_url": "https://www.boonthavorn.com/stiebel-eltron-1106566",
+      "confidence": 100,
+      "reason": "Exact match for product type, brand, model, and size."
+    },
+    {
+      "twd_name": "เครื่องทำน้ำอุ่น MAZUMA รุ่น INTRO PLUS 4500W กำลัง 4,500 วั",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60293943",
+      "matched_name": "เครื่องทำน้ำอุ่น MAZUMA รุ่น INTRO PLUS 4500W",
+      "matched_url": "https://www.boonthavorn.com/mazuma-1107762",
+      "confidence": 100,
+      "reason": "Exact match for Brand, Model, and Wattage. Both are 'เครื่องทำน้ำอุ่น MAZUMA รุ่น INTRO PLUS 4500W'."
+    },
+    {
+      "twd_name": "เครื่องทำน้ำอุ่น RINNAI รุ่น KIN 350(PW) กำลัง 3,500 วัตต์ ส",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60313111",
+      "matched_name": "เครื่องทำน้ำอุ่น Rinnai 3500W รุ่นKIN350",
+      "matched_url": "https://www.boonthavorn.com/rinnai-1139449",
+      "confidence": 100,
+      "reason": "Source and Target 0 share the same brand (RINNAI), model (KIN350), and power rating (3500W). The color 'สีขาวมุก' (pearl white) is also a common variant. This is an exact match."
+    },
+    {
+      "twd_name": "เครื่องทำน้ำอุ่น 4,500 วัตต์ STIEBEL ELTRON รุ่น DS 45EC สีข",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60292938",
+      "matched_name": "เครื่องทำน้ำอุ่น 4500W รุ่น DS45EC",
+      "matched_url": "https://www.boonthavorn.com/stiebel-eltron-1106526",
+      "confidence": 95,
+      "reason": "The source product is a 'เครื่องทำน้ำอุ่น 4,500 วัตต์ STIEBEL ELTRON รุ่น DS 45EC'. Target 1 is 'เครื่องทำน้ำอุ่น 4500W รุ่น DS45EC' with Brand STIEBEL ELTRON and Model DS45EC. The power (4500W) and model (DS45EC) match exactly, and the brand (STIEBEL ELTRON) also matches. The input explicitly states '4,500 วัตต์' and target 1 has '4500W'. While the target's size is listed as '1 เครื่อง', this is a standard way to represent a single appliance, and the primary matching criteria of product type, brand, model, and wattage are met."
+    },
+    {
+      "twd_name": "น้ำยาประสานคอนกรีต จระเข้ อะคริลิก บอนด์กรีต รุ่น C08051015 ",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60327643",
+      "matched_name": "จระเข้อะคริลิก บอนด์กรีต 5 ลิตร",
+      "matched_url": "https://www.boonthavorn.com/jorakay-1160723",
+      "confidence": 100,
+      "reason": "Exact match for product type (น้ำยาประสานคอนกรีต / บอนด์กรีต), brand (จระเข้), and size (5 ลิตร). The model name is also very similar."
+    },
+    {
+      "twd_name": "น้ำยาเคลือบเงาใสกันซึม (สูตรน้ำ) TOA รุ่น A-200 ขนาด 1 ลิตร ",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60278320",
+      "matched_name": "น้ำยาเคลือบเงาใสกันซึม สูตรน้ำ TOA200 1L",
+      "matched_url": "https://www.boonthavorn.com/toa-1088565",
+      "confidence": 100,
+      "reason": "Exact match for product type, brand, model, and size. The source is 'น้ำยาเคลือบเงาใสกันซึม (สูตรน้ำ) TOA รุ่น A-200 ขนาด 1 ลิตร สีใส' and target 1 is 'น้ำยาเคลือบเงาใสกันซึม สูตรน้ำ TOA200 1L'. The model 'A-200' is likely an internal code or variation of 'TOA200'."
+    },
+    {
+      "twd_name": "น้ำยาเคลือบเงาใสกันซึม (สูตรน้ำ) TOA รุ่น A-200 ขนาด 5 ลิตร ",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60278323",
+      "matched_name": "น้ำยาเคลือบเงาใสกันซึม สูตรน้ำ TOA200 5L",
+      "matched_url": "https://www.boonthavorn.com/toa-1088564",
+      "confidence": 100,
+      "reason": "Exact match for product type, brand, model, and size. Both are 'น้ำยาเคลือบเงาใสกันซึม สูตรน้ำ TOA' and the size is 5L."
+    },
+    {
+      "twd_name": "ลูกกลิ้งทาสี SOMIC ขนาด 7 นิ้ว สีเหลือง",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60001616",
+      "matched_name": "ลูกกลิ้งทาสี ขนแกะ 7นิ้ว",
+      "matched_url": "https://www.boonthavorn.com/somic-77665",
+      "confidence": 100,
+      "reason": "Exact match for product type (ลูกกลิ้งทาสี), brand (SOMIC), and size (7 นิ้ว). The source also mentions color (สีเหลือง) which is not a strict matching criterion and is generally acceptable for rollers."
+    },
+    {
+      "twd_name": "ลูกบิดห้องทั่วไปหัวกลม สเตนเลส 201 YALE รุ่น EKN-VCA5147US32",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60287394",
+      "matched_name": "ลูกบิดหัวกลมทั่วไป EKN-VCA5147US32D SS",
+      "matched_url": "https://www.boonthavorn.com/yale-1161849",
+      "confidence": 100,
+      "reason": "Exact match for product type (ลูกบิดห้องทั่วไปหัวกลม), brand (YALE), and model (EKN-VCA5147US32D). Target also includes 'SS' which matches 'สเตนเลส' in source."
+    },
+    {
+      "twd_name": "ลูกกลิ้งทาสี SOMIC ขนาด 10 นิ้ว สีเหลือง",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60001618",
+      "matched_name": "ลูกกลิ้งทาสี ขนแกะ 10 นิ้ว",
+      "matched_url": "https://www.boonthavorn.com/somic-77355",
+      "confidence": 100,
+      "reason": "Source and target are both 'ลูกกลิ้งทาสี' (paint roller) with the brand 'SOMIC' and a size indicator of 10 inches. Target 0 is the closest match as it's a paint roller of the same brand and size mentioned in the source. The color 'สีเหลือง' (yellow) from the source is not explicitly present in the target's attributes, but the core product type, brand, and size align perfectly."
+    },
+    {
+      "twd_name": "ลูกกลิ้งทาสีไฟเบอร์กาสเคมี HACHI ขนาด 4 นิ้ว",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60256561",
+      "matched_name": "ลูกกลิ้งเคมีไมโครไฟเบอร์กลาส 4นิ้ว H0943",
+      "matched_url": "https://www.boonthavorn.com/hachi-1218459",
+      "confidence": 100,
+      "reason": "Exact match for product type (ลูกกลิ้งทาสีไฟเบอร์กาสเคมี / ลูกกลิ้งเคมีไมโครไฟเบอร์กลาส), brand (HACHI), and size (4 นิ้ว)."
+    },
+    {
+      "twd_name": "ลูกกลิ้งทาสีขนยาว 14 มม. HACHI ขนาด 7 นิ้ว",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60270101",
+      "matched_name": "ลูกกลิ้งทาสี 7 นิ้ว H0929 *เหลือง-ส้ม",
+      "matched_url": "https://www.boonthavorn.com/hachi-1218471",
+      "confidence": 95,
+      "reason": "Source is a long-haired paint roller (ลูกกลิ้งทาสีขนยาว), 14mm pile height, HACHI brand, 7 inches. Target 0 is a paint roller (ลูกกลิ้งทาสี), HACHI brand, 7 inches. While the pile height (14mm) is not specified in the target, it is a close match for a standard paint roller. The name is very similar (ลูกกลิ้งทาสีขนยาว vs ลูกกลิ้งทาสี). Other targets are either different sizes, different product types (brushes, spare parts), or different brands."
+    },
+    {
+      "twd_name": "ลูกบิดห้องทั่วไปหัวกลม สเตนเลส 304 YALE รุ่น KN-VCA5127US11 ",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60245993",
+      "matched_name": "ลูกบิดหัวกลมKN-VCA5127US11 ทองแดง/รมดำ",
+      "matched_url": "https://www.boonthavorn.com/yale-118069",
+      "confidence": 100,
+      "reason": "Source and target have the same brand (YALE), model number (KN-VCA5127US11), have 'ลูกบิดหัวกลม' (round knob lock), and the color description 'ทองแดง/รมดำ' (bronze/blackened) is a close match to the source's 'สีทองแดงรมดำ'."
+    },
+    {
+      "twd_name": "ลูกบิดห้องทั่วไปหัวกลม สเตนเลส 304 YALE รุ่น KN-VCA5127US32D",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60245992",
+      "matched_name": "ลูกบิดหัวกลมทั่วไปKN-VCA5127US32D SSด้าน",
+      "matched_url": "https://www.boonthavorn.com/yale-118071",
+      "confidence": 100,
+      "reason": "Source product \"ลูกบิดห้องทั่วไปหัวกลม สเตนเลส 304 YALE รุ่น KN-VCA5127US32D ขนาด 65 มม. สีสเตนเลสด้าน\" matches target \"ลูกบิดหัวกลมทั่วไปKN-VCA5127US32D SSด้าน\" perfectly in brand (YALE), model (KN-VCA5127US32D), product type (ลูกบิดหัวกลมทั่วไป), and finish (ด้าน/SS). The size difference (65 มม. vs แพค) is acceptable as the product type and model are exact matches."
+    },
+    {
+      "twd_name": "ถังบำบัดน้ำเสีย 1,000 ลิตร HERO DOS รุ่น ST-20/BK-1000L สีดำ",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60325805",
+      "matched_name": "ถังบำบัดน้ำเสีย HERO 1000L",
+      "matched_url": "https://www.boonthavorn.com/dos-1025640",
+      "confidence": 100,
+      "reason": "Exact match for product type (ถังบำบัดน้ำเสีย), brand (HERO DOS), and size (1000L)."
+    },
+    {
+      "twd_name": "ถังบำบัดน้ำเสีย 600 ลิตร HERO FITT DOS รุ่น ST-28/BK-600L สี",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60349402",
+      "matched_name": "ถังบำบัดน้ำเสีย DOS HERO FITT 600L ดำ",
+      "matched_url": "https://www.boonthavorn.com/dos-1204360",
+      "confidence": 100,
+      "reason": "Exact match for product type, brand, model, and size."
+    },
+    {
+      "twd_name": "ถังเก็บน้ำบนดิน 500 ลิตร CHABA NANO DOS รุ่น HY-47/PG-500L ส",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60325691",
+      "matched_name": "ถังเก็บน้ำDOS CHABA NANO 500L PINKGOLD",
+      "matched_url": "https://www.boonthavorn.com/dos-1085600",
+      "confidence": 100,
+      "reason": "Source and target are exact matches for product type, brand, model line, size, and color."
+    },
+    {
+      "twd_name": "ถังเก็บน้ำบนดิน 1,000 ลิตร GRANITO DWT DOS รุ่น COM-01/SB-10",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60325700",
+      "matched_name": "ถังเก็บน้ำDOS GRANITO DWT 1000L ทราย",
+      "matched_url": "https://www.boonthavorn.com/dos-1016459",
+      "confidence": 100,
+      "reason": "Exact match on product type (ถังเก็บน้ำ), brand (DOS), model series (GRANITO DWT), and size (1000L). Color (สีแซนดี้ บราวน์) closely matches (ทราย)."
+    },
+    {
+      "twd_name": "ถังบำบัดน้ำเสีย 600 ลิตร WAVE รุ่น ZAD 600 สีดำ",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60265607",
+      "matched_name": "ถังบำบัดน้ำเสีย WAVE ZAD 600L",
+      "matched_url": "https://www.boonthavorn.com/wave-1114454",
+      "confidence": 100,
+      "reason": "The source and target 0 are an exact match for product type (ถังบำบัดน้ำเสีย), brand (WAVE), and model (ZAD 600L) with the same size (600 ลิตร)."
+    },
+    {
+      "twd_name": "ถังบำบัดน้ำเสีย 1,600 ลิตร HERO DOS รุ่น ST-20/BK-1600L สีดำ",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60325807",
+      "matched_name": "ถังบำบัดน้ำเสีย HERO 1600L",
+      "matched_url": "https://www.boonthavorn.com/dos-1025642",
+      "confidence": 100,
+      "reason": "Exact match for product type (ถังบำบัดน้ำเสีย), brand (HERO DOS), and size (1600L)."
+    },
+    {
+      "twd_name": "ถังเก็บน้ำบนดิน 2,000 ลิตร GRANITO DWT DOS รุ่น COM-01/SB-20",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60325702",
+      "matched_name": "ถังเก็บน้ำDOS GRANITO DWT 2000L ทราย",
+      "matched_url": "https://www.boonthavorn.com/dos-1073266",
+      "confidence": 100,
+      "reason": "Source and target match product type (ถังเก็บน้ำ), brand (DOS), model series (GRANITO DWT), size (2000L), and color (ทราย/สีแซนดี้ บราวน์)."
+    },
+    {
+      "twd_name": "ถังบำบัดน้ำเสีย 1,200 ลิตร HERO DOS รุ่น ST-05/BK-1200L สีดำ",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60325806",
+      "matched_name": "ถังบำบัดน้ำเสีย HERO 1200L",
+      "matched_url": "https://www.boonthavorn.com/dos-1025641",
+      "confidence": 100,
+      "reason": "Exact match on product type, brand, and size. Both are for 'ถังบำบัดน้ำเสีย' from brand 'DOS' and specify '1200L'/'1200 ลิตร'."
+    },
+    {
+      "twd_name": "ถังเก็บน้ำบนดิน 1,000 ลิตร ICE DOS รุ่น ECO-14/BL-1000L สีไอ",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60363373",
+      "matched_name": "ถังเก็บน้ำDOS ICE 1000L น้ำเงิน",
+      "matched_url": "https://www.boonthavorn.com/dos-1219448",
+      "confidence": 100,
+      "reason": "Exact match on product type, brand, model, and size. Source 'ถังเก็บน้ำบนดิน 1,000 ลิตร ICE DOS รุ่น ECO-14/BL-1000L สีไอซ์บลู' perfectly matches target 'ถังเก็บน้ำDOS ICE 1000L น้ำเงิน' in terms of product type (ถังเก็บน้ำ), brand (DOS), size (1000 ลิตร), and model series (ICE). The color 'สีไอซ์บลู' is a close variant to 'น้ำเงิน'."
+    },
+    {
+      "twd_name": "กระดาษทรายขัดสกิมโค้ท WAC TOA รุ่น 120 ขนาด 9 x 11 นิ้ว สีน้",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60331694",
+      "matched_name": "กระดาษทรายขัดแห้ง TOA DSCS MS #120",
+      "matched_url": "https://www.boonthavorn.com/toa-111199",
+      "confidence": 100,
+      "reason": "Both are sandpaper for scuffing with the same brand (TOA) and grit (120)."
+    },
+    {
+      "twd_name": "กลอนสับสเตนเลส YALE รุ่น DL909SS ขนาด 4 นิ้ว สีสเตนเลสด้าน",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60342754",
+      "matched_name": "กลอนสับ YALE ขนาด 4นิ้ว สเตนเลสด้าน",
+      "matched_url": "https://www.boonthavorn.com/yale-1161857",
+      "confidence": 100,
+      "reason": "Exact match for product type (กลอนสับ), brand (YALE), and size (4 นิ้ว). The color description (สเตนเลสด้าน) is also present in the target."
+    },
+    {
+      "twd_name": "กาวตะปู สูตรน้ำแห้งเร็ว จระเข้ รุ่น AdhesiveQuick ขนาด 280 ม",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60305492",
+      "matched_name": "กาวตะปูสูตรน้ำ แอดฮีซีฟ ควิก 280 ml.",
+      "matched_url": "https://www.boonthavorn.com/jorakay-1083436",
+      "confidence": 100,
+      "reason": "Source and target are both 'กาวตะปูสูตรน้ำ' (water-based nail glue) from the brand 'จระเข้' (JORAKAY) and have the same size of 280ml. The model name 'AdhesiveQuick' in the source aligns with 'แอดฮีซีฟ ควิก' in the target."
+    },
+    {
+      "twd_name": "กุญแจคีย์อะไลค์ลูกปืนคล้องคอยาวทองเหลือง YALE รุ่น BD45P3L ข",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60313843",
+      "matched_name": "กุญแจคล้องYale BD45P3L ห่วงยาวคีย์อะไลย์",
+      "matched_url": "https://www.boonthavorn.com/yale-1113599?page=1",
+      "confidence": 100,
+      "reason": "The source and target both describe \"กุญแจคีย์อะไลค์\" (key alike padlock) from brand YALE with model BD45P3L. The source specifies \"ลูกปืนคล้องคอยาว\" (long shackle ball bearing) which matches the target's \"ห่วงยาว\" (long shackle). The size \"45 มม.\" in the source is a more specific measurement than the target's implied size, but the model and product type are an exact match."
+    }
+  ],
+  "wrong_matches": [
+    {
+      "twd_name": "ข้อต่อตรง 1/2 นิ้ว THAIPPR รุ่น D20 ขนาด 29 x 29 x 35 มม. สี",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60249230",
+      "got_name": "ข้อต่อตรงเกลียวในพีพีอาร์ D20*1/2 นิ้ว",
+      "got_url": "https://www.boonthavorn.com/thai-pp-r-1069620?page=1",
+      "expected_name": "ข้อต่อตรง พีพีอาร์ D20*1/2 นิ้ว",
+      "expected_url": "https://www.boonthavorn.com/thai-pp-r-1069605",
+      "confidence": 90,
+      "reason": "Source and target are both 'ข้อต่อตรง' (straight connector) made of PPR, with the model name D20 and size 1/2 inch. Target 0 is also similar but lacks the 'เกลียวใน' (female thread) specification which is implied by the context of a connector that needs to connect to something threaded, thus making Target 1 a closer match."
+    },
+    {
+      "twd_name": "ลูกบิดห้องทั่วไปหัวกลมสเตนเลส 201 SCP รุ่น K587SS ขนาด 65 มม",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60168682",
+      "got_name": "ลูกบิดหัวกลมทั่วไป EKN-VCA5147US32D SS",
+      "got_url": "https://www.boonthavorn.com/yale-1161849",
+      "expected_name": "ลูกบิดห้องทั่วไป489.93.110*สีสแตนเลส",
+      "expected_url": "https://www.boonthavorn.com/hafele-1074605",
+      "confidence": 90,
+      "reason": "Exact match for product type (ลูกบิด), brand (YALE), and close match for material (สเตนเลส/SS) and size (1 ชิ้น). While the model numbers differ slightly, they are of the same product line and function."
+    },
+    {
+      "twd_name": "กาวตะปู สูตรน้ำมันแห้งเร็ว จระเข้ ขนาด 300 มล. สีน้ำตาลอ่อน",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60240190",
+      "got_name": "กาวตะปูสูตรน้ำ แอดฮีซีฟ ควิก 280 ml.",
+      "got_url": "https://www.boonthavorn.com/jorakay-1083436",
+      "expected_name": "กาวตะปูอเนกประสงค์ ADHESIVE NAIL 300 ML.",
+      "expected_url": "https://www.boonthavorn.com/jorakay-1066226",
+      "confidence": 95,
+      "reason": "Source and target are both 'กาวตะปู' (nail glue) from the brand JORAKAY. The size difference (300ml vs 280ml) and water-based formula mention in the target are minor variations, making it a close match."
+    }
+  ],
+  "not_found_list": [
+    {
+      "twd_name": "ซีเมนต์ทากันรั่วซึมยืดหยุ่นส่วนผสมเดี่ยว จระเข้ รุ่น 1350 ขน",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60187911",
+      "expected_name": "ซีเมนต์กันซึมยืดหยุ่นเฟล็กซ์ชิล 4KG.เทา",
+      "expected_url": "https://www.boonthavorn.com/jorakay-1008702"
+    },
+    {
+      "twd_name": "สกรูไดร์วอลล์หัวเรียบ (เกลียวหุน) 6 x 3/4 นิ้ว MR METAL (กล่",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60254257",
+      "expected_name": "สกรูยิปซั่ม PAN-3/4-25 3/4นิ้ว 25ตัว",
+      "expected_url": "https://www.boonthavorn.com/pansiam-106522"
+    },
+    {
+      "twd_name": "อะคริลิคกันรั่วซึมสะท้อนความร้อน จระเข้ รุ่น C04077706 ขนาด ",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60371009",
+      "expected_name": "อะครีลิคกันซึมจระเข้รูฟชิลด์ 20KGเทาเข้ม",
+      "expected_url": "https://www.boonthavorn.com/jorakay-1162201"
+    },
+    {
+      "twd_name": "เทปกระดาษกาวย่น SCOTCH รุ่น XT002077672 ขนาด 24 มม. x 25 หลา",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60121671",
+      "expected_name": "เทปกาวย่น24มมx25ม. เทปกาวย่น2214",
+      "expected_url": "https://www.boonthavorn.com/3m-1161908"
+    },
+    {
+      "twd_name": "ถังเก็บน้ำบนดิน 1,000 ลิตร DOS LIFE รุ่น NATURA SILVER COMBA",
+      "twd_url": "https://www.thaiwatsadu.com/th/sku/60415731",
+      "expected_name": "ถังเก็บน้ำDOS NATURA NANO 1000L เทา",
+      "expected_url": "https://www.boonthavorn.com/dos-1085587"
+    }
+  ]
+}

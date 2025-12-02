@@ -322,52 +322,37 @@ def test_house_brand_matching(retailer_name, sample_size=50, categories=None, pr
     
     validation_rate = valid_count / len(matches) * 100 if matches else 0
     
-    print(f"\n--- CRITERIA VALIDATION ---")
-    print(f"Valid matches: {valid_count}/{len(matches)} ({validation_rate:.1f}%)")
-    print(f"Invalid matches: {invalid_count}")
-    
     gt_accuracy = 0
-    if gt:
-        gt_tested = gt_correct + gt_incorrect
-        gt_accuracy = gt_correct / gt_tested * 100 if gt_tested > 0 else 0
-        print(f"\n--- GROUND TRUTH ACCURACY ---")
-        print(f"Correct: {gt_correct}")
-        print(f"Incorrect: {gt_incorrect}")
-        print(f"Not in GT: {gt_not_in_gt}")
-        if gt_tested > 0:
-            print(f"GT Accuracy: {gt_accuracy:.1f}% ({gt_correct}/{gt_tested})")
+    gt_tested = gt_correct + gt_incorrect
+    if gt_tested > 0:
+        gt_accuracy = gt_correct / gt_tested * 100
     
-    if validation_issues:
-        print(f"\n--- SAMPLE ISSUES (first 5) ---")
-        for issue in validation_issues[:5]:
-            print(f"  Source: {issue['source']}")
-            print(f"  Target: {issue['target']}")
-            print(f"  Issues: {issue['issues']}")
-            print()
+    total_gt = len(gt) if gt else 0
+    
+    print()
+    print("="*70)
+    print(f"RESULTS for {retailer_name}:")
+    print(f"  Total GT tested: {gt_tested}")
+    print(f"  Correct:    {gt_correct}/{gt_tested} ({gt_correct/gt_tested*100:.1f}%)" if gt_tested > 0 else "  Correct:    0/0 (0.0%)")
+    print(f"  Incorrect:  {gt_incorrect}/{gt_tested} ({gt_incorrect/gt_tested*100:.1f}%)" if gt_tested > 0 else "  Incorrect:  0/0 (0.0%)")
+    print(f"  Not Found:  {len(twd_products) - len(matches)}/{len(twd_products)} ({(len(twd_products) - len(matches))/len(twd_products)*100:.1f}%)" if len(twd_products) > 0 else "  Not Found:  0/0 (0.0%)")
+    print(f"  ACCURACY:   {gt_accuracy:.1f}%")
+    print("="*70)
     
     brand_distribution = {}
     for m in match_details:
         brand = m['target_brand'] or 'Unknown'
         brand_distribution[brand] = brand_distribution.get(brand, 0) + 1
     
-    print(f"\n--- ALTERNATIVE BRANDS FOUND ---")
-    for brand, count in sorted(brand_distribution.items(), key=lambda x: -x[1])[:10]:
-        print(f"  {brand}: {count}")
-    
     cheaper_count = sum(1 for m in match_details if m['target_price'] < m['source_price'])
     expensive_count = sum(1 for m in match_details if m['target_price'] > m['source_price'])
     same_price = len(match_details) - cheaper_count - expensive_count
-    
-    print(f"\n--- PRICE COMPARISON ---")
-    print(f"  Cheaper alternatives: {cheaper_count}")
-    print(f"  Same price: {same_price}")
-    print(f"  More expensive: {expensive_count}")
     
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     results_file = os.path.join(RESULTS_DIR, f"house_brand_{retailer_name}_{timestamp}.json")
     with open(results_file, 'w', encoding='utf-8') as f:
         json.dump(match_details, f, ensure_ascii=False, indent=2)
-    print(f"\nResults saved to: {results_file}")
+    print(f"Results saved to: {results_file}")
     
     return {
         'retailer': retailer_name,
