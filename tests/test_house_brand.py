@@ -29,23 +29,28 @@ from app import (
 RETAILERS = {
     'HomePro': {
         'products': 'data/products/homepro.json',
-        'gt': 'data/ground_truth/GT_HB_HP.csv'
+        'gt': 'data/ground_truth/GT_HB_HP.csv',
+        'input': 'data/house_brand_inputs/twd_hp_input.json'
     },
     'GlobalHouse': {
         'products': 'data/products/globalhouse.json',
-        'gt': 'data/ground_truth/GT_HB_GB.csv'
+        'gt': 'data/ground_truth/GT_HB_GB.csv',
+        'input': 'data/house_brand_inputs/twd_gb_input.json'
     },
     'Boonthavorn': {
         'products': 'data/products/boonthavorn.json',
-        'gt': 'data/ground_truth/GT_HB_BN.csv'
+        'gt': 'data/ground_truth/GT_HB_BN.csv',
+        'input': 'data/house_brand_inputs/twd_bn_input.json'
     },
     'DoHome': {
         'products': 'data/products/dohome.json',
-        'gt': 'data/ground_truth/GT_HB_DM.csv'
+        'gt': 'data/ground_truth/GT_HB_DM.csv',
+        'input': 'data/house_brand_inputs/twd_dh_input.json'
     },
     'Megahome': {
         'products': 'data/products/megahome.json',
-        'gt': 'data/ground_truth/GT_HB_MG.csv'
+        'gt': 'data/ground_truth/GT_HB_MG.csv',
+        'input': None
     }
 }
 
@@ -184,7 +189,14 @@ def test_house_brand_matching(retailer_name, sample_size=50, categories=None, pr
     
     config = RETAILERS[retailer_name]
     
-    twd_products = load_json_products(TWD_PRODUCTS)
+    input_file = config.get('input')
+    if input_file and os.path.exists(input_file):
+        twd_products = load_json_products(input_file)
+        print(f"Using retailer-specific input: {input_file}")
+    else:
+        twd_products = load_json_products(TWD_PRODUCTS)
+        print(f"Using full TWD catalog: {TWD_PRODUCTS}")
+    
     competitor_products = load_json_products(config['products'])
     
     gt = None
@@ -410,15 +422,15 @@ def test_all_retailers(sample_size=30, categories=None, price_tolerance=0.30):
     
     return results
 
-def quick_test(sample_size=10):
+def quick_test(sample_size=20):
     """Quick test with small sample for development"""
     print("QUICK TEST - House Brand Matching")
-    print("Testing paint products only with 10 samples")
+    print(f"Testing with {sample_size} samples from retailer-specific input files")
     
     return test_house_brand_matching(
         'HomePro',
         sample_size=sample_size,
-        categories=['สี', 'PAINT', 'สีทา', 'สีน้ำ'],
+        categories=None,
         price_tolerance=0.30
     )
 
