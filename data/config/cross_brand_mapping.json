@@ -1,0 +1,25 @@
+{
+  "HomePro": {
+    "LUZINO": ["KECH", "LAMPTAN"],
+    "FONTE": ["SPRING", "WAVE"],
+    "GIANT KINGKONG": ["MATALL", "STACKO"]
+  },
+  "DoHome": {
+    "LUZINO": ["LAMPTAN", "MODERN"],
+    "FONTE": ["ดูโฮม", "DE'COS"],
+    "GIANT KINGKONG": ["HITACHI", "HYUNDAI"]
+  },
+  "GlobalHouse": {
+    "LUZINO": ["LAMPTAN", "EVE"],
+    "FONTE": ["ANYHOME"]
+  },
+  "Boonthavorn": {
+    "LUZINO": ["MAX LIGHT"],
+    "FONTE": ["ANYHOME"],
+    "GIANT KINGKONG": ["HACHI", "AT.INDY"]
+  },
+  "Megahome": {
+    "LUZINO": ["LAMPTAN"],
+    "FONTE": ["ANYHOME"]
+  }
+}

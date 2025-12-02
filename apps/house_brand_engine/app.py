@@ -20,6 +20,26 @@ RESULTS_DIR = "results/house_brand_matches"
 os.makedirs(RESULTS_DIR, exist_ok=True)
 
 PRICE_TOLERANCE = 0.30
+CROSS_BRAND_MAPPING_FILE = "data/config/cross_brand_mapping.json"
+
+def load_cross_brand_mapping():
+    """Load cross-brand mapping from config file"""
+    try:
+        if os.path.exists(CROSS_BRAND_MAPPING_FILE):
+            with open(CROSS_BRAND_MAPPING_FILE, 'r', encoding='utf-8') as f:
+                return json.load(f)
+    except Exception:
+        pass
+    return {}
+
+CROSS_BRAND_MAPPING = load_cross_brand_mapping()
+
+def get_preferred_brands(source_brand, retailer):
+    """Get preferred target brands for a source brand at a specific retailer"""
+    if not retailer or retailer not in CROSS_BRAND_MAPPING:
+        return []
+    retailer_mapping = CROSS_BRAND_MAPPING.get(retailer, {})
+    return retailer_mapping.get(source_brand, [])
 
 def save_results(matches_df):
     """Save results to a JSON file with timestamp"""
@@ -312,8 +332,16 @@ def get_category(row):
             return str(row[col])
     return ''
 
-def ai_find_house_brand_alternatives(source_products, target_products, price_tolerance=0.30, progress_callback=None):
-    """Use AI to find house brand alternatives (same function, different brand, similar price)"""
+def ai_find_house_brand_alternatives(source_products, target_products, price_tolerance=0.30, progress_callback=None, retailer=None):
+    """Use AI to find house brand alternatives (same function, different brand, similar price)
+    
+    Args:
+        source_products: List of source products (TWD)
+        target_products: List of target products (competitor)
+        price_tolerance: Max price difference (default 30%)
+        progress_callback: Callback for progress updates
+        retailer: Retailer name for cross-brand mapping (e.g., 'HomePro', 'Boonthavorn')
+    """
     client = get_openrouter_client()
     if not client:
         return None
@@ -330,6 +358,8 @@ def ai_find_house_brand_alternatives(source_products, target_products, price_tol
         source_category = extract_category(source_name)
         source_price = float(source.get('current_price', source.get('price', 0)) or 0)
         source_specs = extract_size_specs(source_name)
+        
+        preferred_brands = get_preferred_brands(source_brand, retailer) if retailer else []
         
         if source_price <= 0:
             continue
@@ -359,9 +389,16 @@ def ai_find_house_brand_alternatives(source_products, target_products, price_tol
             source_text_norm = normalize_text(source_name).lower()
             text_sim = fuzz.token_set_ratio(source_text_norm, t_text_norm)
             
-            combined_score = spec_score * 0.6 + text_sim * 0.4
+            brand_boost = 0
+            if preferred_brands and t_brand:
+                if t_brand in preferred_brands:
+                    brand_boost = 30
+                elif any(pb.upper() in t_brand.upper() or t_brand.upper() in pb.upper() for pb in preferred_brands):
+                    brand_boost = 20
             
-            if text_sim >= 20 or spec_score >= 50:
+            combined_score = spec_score * 0.5 + text_sim * 0.3 + brand_boost
+            
+            if text_sim >= 20 or spec_score >= 50 or brand_boost > 0:
                 candidates.append({
                     'idx': i,
                     'name': t_name,
@@ -372,6 +409,7 @@ def ai_find_house_brand_alternatives(source_products, target_products, price_tol
                     'specs': t_specs,
                     'spec_score': spec_score,
                     'text_sim': text_sim,
+                    'brand_boost': brand_boost,
                     'combined_score': combined_score
                 })
         

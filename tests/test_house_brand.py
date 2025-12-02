@@ -220,13 +220,14 @@ def test_house_brand_matching(retailer_name, sample_size=50, categories=None, pr
         twd_products = random.sample(twd_products, sample_size)
         print(f"Sampled {sample_size} TWD products for testing")
     
-    print(f"\nRunning AI house brand matching (tolerance: {price_tolerance*100:.0f}%)...")
+    print(f"\nRunning AI house brand matching (tolerance: {price_tolerance*100:.0f}%, retailer: {retailer_name})...")
     
     matches = ai_find_house_brand_alternatives(
         twd_products,
         competitor_products,
         price_tolerance=price_tolerance,
-        progress_callback=lambda p: print(f"\rProgress: {p*100:.0f}%", end='')
+        progress_callback=lambda p: print(f"\rProgress: {p*100:.0f}%", end=''),
+        retailer=retailer_name
     )
     
     print()
