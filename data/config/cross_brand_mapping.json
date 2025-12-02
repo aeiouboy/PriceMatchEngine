@@ -1,99 +1,27 @@
 {
   "HomePro": {
-    "API": [
-      "HOMEPRO"
-    ],
-    "BF": [
-      "HOMEPRO"
-    ],
-    "CLOSE": [
-      "HOMEPRO"
-    ],
-    "FONTE": [
-      "HOMEPRO"
-    ],
-    "GIANT KINGKONG": [
-      "HOMEPRO"
-    ],
-    "JCJ": [
-      "HOMEPRO"
-    ],
-    "KING": [
-      "HOMEPRO"
-    ],
-    "LE": [
-      "HOMEPRO"
-    ],
-    "LUZINO": [
-      "HOMEPRO"
-    ]
+    "LUZINO": ["CARINI", "LE", "MODERN", "EVE", "PHILIPS"],
+    "GIANT KINGKONG": ["MATALL", "LE", "ACCO", "HACHI", "KING"],
+    "KASSA": ["PLIM", "ACCO", "LE", "JCJ", "CLOSE"],
+    "FONTE": ["SPRING", "ARAI", "SAKURA"],
+    "BF": ["MATALL"]
   },
   "DoHome": {
-    "API": [
-      "DOHOME",
-      "EVE"
-    ],
-    "BF": [
-      "NASH"
-    ],
-    "GIANT KINGKONG": [
-      "DOHOME",
-      "NASH",
-      "EVE"
-    ],
-    "JCJ": [
-      "DOHOME"
-    ],
-    "LE": [
-      "DOHOME"
-    ],
-    "LUZINO": [
-      "DOHOME",
-      "MODERN",
-      "EVE"
-    ]
+    "LUZINO": ["LE", "LAMPTAN"],
+    "GIANT KINGKONG": ["NASH", "MODERN", "LE"],
+    "KASSA": ["JCJ", "LE", "MODERN", "API", "KING"],
+    "ZAGIO": ["KING"]
   },
   "GlobalHouse": {
-    "API": [
-      "GLOBALHOUSE"
-    ],
-    "BF": [
-      "GLOBALHOUSE"
-    ],
-    "CLOSE": [
-      "GLOBALHOUSE"
-    ],
-    "FONTE": [
-      "GLOBALHOUSE"
-    ],
-    "GIANT KINGKONG": [
-      "GLOBALHOUSE"
-    ],
-    "JCJ": [
-      "GLOBALHOUSE"
-    ],
-    "KING": [
-      "GLOBALHOUSE"
-    ],
-    "LUZINO": [
-      "GLOBALHOUSE"
-    ]
+    "LUZINO": ["LE"],
+    "GIANT KINGKONG": ["LE"],
+    "KASSA": ["JCJ", "LE", "API", "HACHI", "CLOSE"],
+    "ZAGIO": ["CLOSE"]
   },
   "Boonthavorn": {
-    "FONTE": [
-      "HOMEMART",
-      "ANYHOME",
-      "SAKURA"
-    ],
-    "GIANT KINGKONG": [
-      "BF",
-      "SOMIC",
-      "INDY"
-    ],
-    "LUZINO": [
-      "MAX LIGHT",
-      "LE",
-      "YJ"
-    ]
+    "LUZINO": ["MAX LIGHT", "LE"],
+    "ZAGIO": ["KING"],
+    "GIANT KINGKONG": ["BF", "SOMIC", "INDY", "HACHI"],
+    "FONTE": ["HOMEMART", "ANYHOME", "SAKURA"]
   }
 }
