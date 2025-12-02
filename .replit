@@ -20,6 +20,10 @@ author = "agent"
 task = "workflow.run"
 args = "Start application"
 
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "House Brand Matcher"
+
 [[workflows.workflow]]
 name = "Start application"
 author = "agent"
@@ -28,6 +32,18 @@ author = "agent"
 task = "shell.exec"
 args = "uv run streamlit run apps/price_match_engine/app.py --server.port 8501"
 waitForPort = 8501
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[workflows.workflow]]
+name = "House Brand Matcher"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "uv run streamlit run apps/house_brand_engine/app.py --server.port 5000"
+waitForPort = 5000
 
 [workflows.workflow.metadata]
 outputType = "webview"

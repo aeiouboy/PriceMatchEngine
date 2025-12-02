@@ -1,0 +1,639 @@
+import streamlit as st
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+from rapidfuzz import fuzz
+import numpy as np
+from io import StringIO
+import json
+import os
+import re
+from openai import OpenAI
+from datetime import datetime
+from functools import lru_cache
+from dotenv import load_dotenv
+
+load_dotenv()
+
+OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
+RESULTS_DIR = "results/house_brand_matches"
+os.makedirs(RESULTS_DIR, exist_ok=True)
+
+PRICE_TOLERANCE = 0.30
+
+def save_results(matches_df):
+    """Save results to a JSON file with timestamp"""
+    if matches_df is None or len(matches_df) == 0:
+        return None
+    try:
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filepath = os.path.join(RESULTS_DIR, f"house_brand_matches_{timestamp}.json")
+        matches_df.to_json(filepath, orient='records', indent=2)
+        return filepath
+    except Exception as e:
+        st.warning(f"Could not save results: {e}")
+        return None
+
+def load_latest_results():
+    """Load the most recent saved results"""
+    try:
+        if not os.path.exists(RESULTS_DIR):
+            return None
+        files = sorted([f for f in os.listdir(RESULTS_DIR) if f.endswith('.json')], reverse=True)
+        if files:
+            filepath = os.path.join(RESULTS_DIR, files[0])
+            df = pd.read_json(filepath)
+            return df
+    except Exception:
+        return None
+    return None
+
+def get_openrouter_client():
+    """Get OpenRouter client if API key is available"""
+    if OPENROUTER_API_KEY:
+        return OpenAI(
+            api_key=OPENROUTER_API_KEY,
+            base_url="https://openrouter.ai/api/v1"
+        )
+    return None
+
+@lru_cache(maxsize=10000)
+def normalize_text(text):
+    """Normalize text for better matching"""
+    if not text:
+        return ''
+    text = text.upper().strip()
+    
+    thai_eng_mappings = {
+        'แกลลอน': 'GAL',
+        'แกลอน': 'GAL',
+        'ลิตร': 'L',
+        'กิโลกรัม': 'KG',
+        'กก.': 'KG',
+        'มิลลิลิตร': 'ML',
+        'มล.': 'ML',
+        'เมตร': 'M',
+        'ม.': 'M',
+        'เซนติเมตร': 'CM',
+        'ซม.': 'CM',
+        'นิ้ว': 'INCH',
+        'วัตต์': 'W',
+        'กึ่งเงา': 'SEMI-GLOSS',
+        'เนียน': 'SHEEN',
+        'ด้าน': 'MATTE',
+    }
+    
+    for thai, eng in thai_eng_mappings.items():
+        text = text.replace(thai.upper(), eng)
+        text = text.replace(thai, eng)
+    
+    return text
+
+def extract_brand(product_name, explicit_brand=''):
+    """Extract brand from product name"""
+    if explicit_brand:
+        return explicit_brand.upper().strip()
+    
+    known_brands = [
+        'TOA', 'BEGER', 'JOTUN', 'NIPPON', 'DULUX', 'CAPTAIN', 'JBP',
+        'SHARK', 'BARCO', 'DELTA', 'CHAMPION', 'DAVIES',
+        'SCG', 'CPAC', 'TPI', 'ELEPHANT', 'จระเข้',
+        'SOLEX', 'YALE', 'HAFELE', 'COLT', 'ISON',
+        'MAKITA', 'BOSCH', 'DEWALT', 'STANLEY', 'BLACK+DECKER',
+        'PHILIPS', 'LAMPTAN', 'RACER', 'EVE', 'PANASONIC',
+        'MITSUBISHI', 'HITACHI', 'TOSHIBA', 'SAMSUNG', 'LG',
+        'ECO DOOR', 'BATHIC', 'MASTERWOOD', 'UPVC',
+        '3M', 'SCOTCH', 'BESBOND', 'DUNLOP', 'BOSNY',
+    ]
+    
+    name_upper = product_name.upper() if product_name else ''
+    for brand in known_brands:
+        if brand in name_upper:
+            return brand
+    
+    return ''
+
+def extract_category(product_name):
+    """Extract product category from name"""
+    name_upper = product_name.upper() if product_name else ''
+    
+    categories = {
+        'สีน้ำ': 'PAINT',
+        'สีทา': 'PAINT',
+        'PAINT': 'PAINT',
+        'สีรองพื้น': 'PRIMER',
+        'PRIMER': 'PRIMER',
+        'ทินเนอร์': 'THINNER',
+        'THINNER': 'THINNER',
+        'ประตู': 'DOOR',
+        'DOOR': 'DOOR',
+        'หน้าต่าง': 'WINDOW',
+        'WINDOW': 'WINDOW',
+        'มือจับ': 'HANDLE',
+        'ก้านโยก': 'HANDLE',
+        'HANDLE': 'HANDLE',
+        'บานพับ': 'HINGE',
+        'HINGE': 'HINGE',
+        'กุญแจ': 'LOCK',
+        'LOCK': 'LOCK',
+        'สว่าน': 'DRILL',
+        'DRILL': 'DRILL',
+        'หลอดไฟ': 'LIGHT_BULB',
+        'LED': 'LED',
+        'โคมไฟ': 'LAMP',
+        'LAMP': 'LAMP',
+        'ท่อ': 'PIPE',
+        'PIPE': 'PIPE',
+        'ปูน': 'CEMENT',
+        'CEMENT': 'CEMENT',
+        'กาว': 'ADHESIVE',
+        'GLUE': 'ADHESIVE',
+        'ซิลิโคน': 'SILICONE',
+        'SILICONE': 'SILICONE',
+        'น้ำยา': 'CHEMICAL',
+        'ผ้า': 'FABRIC',
+        'ถุงมือ': 'GLOVES',
+        'รองเท้า': 'SHOES',
+        'บันได': 'LADDER',
+        'LADDER': 'LADDER',
+        'พัดลม': 'FAN',
+        'FAN': 'FAN',
+        'ปั๊ม': 'PUMP',
+        'PUMP': 'PUMP',
+    }
+    
+    for keyword, category in categories.items():
+        if keyword in name_upper:
+            return category
+    
+    return 'OTHER'
+
+def extract_size_specs(product_name):
+    """Extract size/volume/dimensions from product name"""
+    if not product_name:
+        return {}
+    
+    specs = {}
+    name = product_name.upper()
+    
+    volume_pattern = r'(\d+(?:\.\d+)?)\s*(L|ลิตร|แกลลอน|GAL|ML|มล\.|กก\.|KG)'
+    volume_match = re.search(volume_pattern, name, re.IGNORECASE)
+    if volume_match:
+        specs['volume'] = f"{volume_match.group(1)} {volume_match.group(2)}"
+    
+    dim_pattern = r'(\d+(?:\.\d+)?)\s*[Xx×]\s*(\d+(?:\.\d+)?)'
+    dim_match = re.search(dim_pattern, name)
+    if dim_match:
+        specs['dimensions'] = f"{dim_match.group(1)}x{dim_match.group(2)}"
+    
+    watt_pattern = r'(\d+)\s*(W|วัตต์|WATT)'
+    watt_match = re.search(watt_pattern, name, re.IGNORECASE)
+    if watt_match:
+        specs['wattage'] = f"{watt_match.group(1)}W"
+    
+    inch_pattern = r'(\d+(?:\.\d+)?)\s*(นิ้ว|INCH|")'
+    inch_match = re.search(inch_pattern, name, re.IGNORECASE)
+    if inch_match:
+        specs['size_inch'] = f"{inch_match.group(1)} inch"
+    
+    return specs
+
+def check_price_within_tolerance(price1, price2, tolerance=PRICE_TOLERANCE):
+    """Check if prices are within tolerance percentage"""
+    if price1 <= 0 or price2 <= 0:
+        return False
+    
+    diff_pct = abs(price2 - price1) / price1
+    return diff_pct <= tolerance
+
+def get_product_name(row):
+    """Get product name from various possible column names"""
+    for col in ['name', 'product_name', 'Name', 'Product Name', 'PRODUCT_NAME']:
+        if col in row.index and pd.notna(row[col]):
+            return str(row[col])
+    return ''
+
+def get_price(row):
+    """Get price from various possible column names"""
+    for col in ['current_price', 'price', 'Price', 'PRICE', 'sale_price']:
+        if col in row.index and pd.notna(row[col]):
+            try:
+                return float(row[col])
+            except:
+                pass
+    return 0
+
+def get_retailer(row):
+    """Get retailer name"""
+    for col in ['retailer', 'Retailer', 'RETAILER', 'store', 'Store']:
+        if col in row.index and pd.notna(row[col]):
+            return str(row[col])
+    return 'Unknown'
+
+def get_url(row):
+    """Get product URL"""
+    for col in ['url', 'product_url', 'link', 'URL', 'Link']:
+        if col in row.index and pd.notna(row[col]):
+            return str(row[col])
+    return ''
+
+def get_category(row):
+    """Get product category"""
+    for col in ['category', 'Category', 'CATEGORY', 'product_category']:
+        if col in row.index and pd.notna(row[col]):
+            return str(row[col])
+    return ''
+
+def ai_find_house_brand_alternatives(source_products, target_products, price_tolerance=0.30, progress_callback=None):
+    """Use AI to find house brand alternatives (same function, different brand, similar price)"""
+    client = get_openrouter_client()
+    if not client:
+        return None
+    
+    matches = []
+    total = len(source_products)
+    
+    for idx, source in enumerate(source_products):
+        if progress_callback:
+            progress_callback((idx + 1) / total)
+        
+        source_name = source.get('name', source.get('product_name', ''))
+        source_brand = extract_brand(source_name, source.get('brand', ''))
+        source_category = extract_category(source_name)
+        source_price = float(source.get('current_price', source.get('price', 0)) or 0)
+        source_specs = extract_size_specs(source_name)
+        
+        if source_price <= 0:
+            continue
+        
+        min_price = source_price * (1 - price_tolerance)
+        max_price = source_price * (1 + price_tolerance)
+        
+        candidates = []
+        for i, t in enumerate(target_products):
+            t_name = t.get('name', t.get('product_name', ''))
+            t_brand = extract_brand(t_name, t.get('brand', ''))
+            t_category = extract_category(t_name)
+            t_price = float(t.get('current_price', t.get('price', 0)) or 0)
+            
+            if t_price <= 0:
+                continue
+            if t_price < min_price or t_price > max_price:
+                continue
+            if source_brand and t_brand and source_brand == t_brand:
+                continue
+            
+            t_text_norm = normalize_text(t_name).lower()
+            source_text_norm = normalize_text(source_name).lower()
+            
+            sim = fuzz.token_set_ratio(source_text_norm, t_text_norm)
+            
+            if sim >= 25:
+                candidates.append({
+                    'idx': i,
+                    'name': t_name,
+                    'brand': t_brand,
+                    'category': t_category,
+                    'price': t_price,
+                    'sim': sim
+                })
+        
+        if not candidates:
+            continue
+        
+        candidates.sort(key=lambda x: x['sim'], reverse=True)
+        top_candidates = candidates[:10]
+        
+        target_list = [f"{pos}: {c['name']} (Brand: {c['brand']}, Price: ฿{c['price']:,.0f})" 
+                      for pos, c in enumerate(top_candidates)]
+        
+        prompt = f"""House Brand Alternative Finder for Thai retail products.
+Find products that serve the SAME FUNCTION but from DIFFERENT BRANDS.
+
+SOURCE PRODUCT:
+- Name: {source_name}
+- Brand: {source_brand}
+- Category: {source_category}
+- Price: ฿{source_price:,.0f}
+- Specs: {source_specs}
+
+CANDIDATE ALTERNATIVES (different brands, similar price):
+{chr(10).join(target_list)}
+
+MATCHING CRITERIA:
+1. SAME FUNCTION/PURPOSE - products must do the same job
+2. SIMILAR SPECIFICATIONS - same size, volume, wattage, dimensions
+3. DIFFERENT BRAND - must be a different brand (house brand alternative)
+4. Price within {int(price_tolerance*100)}% tolerance already filtered
+
+EXAMPLES of valid house brand alternatives:
+- TOA paint 5L → BEGER paint 5L (same function, different brand)
+- YALE door handle → SOLEX door handle (same function, different brand)
+- MAKITA drill 500W → BOSCH drill 500W (same function, different brand)
+
+DO NOT match:
+- Different product types (paint vs primer)
+- Different sizes (5L vs 1L)
+- Same brand products
+
+Pick the BEST alternative that serves the same function.
+
+Return: {{"match_index": <0-9 or null>, "confidence": <50-100>, "reason": "<why this is a good alternative>"}}
+JSON only."""
+
+        try:
+            response = client.chat.completions.create(
+                model="google/gemini-2.5-flash-lite",
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=200
+            )
+            
+            result_text = response.choices[0].message.content.strip()
+            if result_text.startswith("```"):
+                result_text = result_text.split("```")[1]
+                if result_text.startswith("json"):
+                    result_text = result_text[4:]
+            result_text = result_text.strip()
+            
+            result_text = re.sub(r'[\x00-\x1f\x7f-\x9f]', '', result_text)
+            if not result_text.endswith('}'):
+                result_text = result_text.split('}')[0] + '}'
+            
+            result = json.loads(result_text)
+            
+            if result.get('match_index') is not None and result.get('confidence', 0) >= 60:
+                match_idx = int(result['match_index'])
+                
+                if match_idx < len(top_candidates):
+                    matched = top_candidates[match_idx]
+                    
+                    matches.append({
+                        'source_idx': idx,
+                        'target_idx': matched['idx'],
+                        'confidence': result.get('confidence', 0),
+                        'reason': result.get('reason', ''),
+                        'source_brand': source_brand,
+                        'target_brand': matched['brand'],
+                        'price_diff_pct': abs(matched['price'] - source_price) / source_price * 100
+                    })
+        except Exception as e:
+            continue
+    
+    return matches
+
+def load_json_file(file):
+    """Load JSON file and return as DataFrame"""
+    try:
+        content = file.read().decode('utf-8')
+        data = json.loads(content)
+        
+        if isinstance(data, list):
+            return pd.DataFrame(data)
+        elif isinstance(data, dict):
+            if 'products' in data:
+                return pd.DataFrame(data['products'])
+            elif 'data' in data:
+                return pd.DataFrame(data['data'])
+        
+        return pd.DataFrame([data])
+    except Exception as e:
+        st.error(f"Error loading JSON: {e}")
+        return None
+
+def load_csv_file(file):
+    """Load CSV file and return as DataFrame"""
+    try:
+        content = file.read().decode('utf-8')
+        return pd.read_csv(StringIO(content))
+    except UnicodeDecodeError:
+        file.seek(0)
+        content = file.read().decode('latin-1')
+        return pd.read_csv(StringIO(content))
+    except Exception as e:
+        st.error(f"Error loading CSV: {e}")
+        return None
+
+st.set_page_config(
+    page_title="House Brand Matching System",
+    page_icon="🏠",
+    layout="wide"
+)
+
+st.title("🏠 House Brand Matching System")
+st.markdown("Find alternative products with **same function, different brand, similar price**")
+
+with st.sidebar:
+    st.header("Settings")
+    
+    price_tolerance = st.slider(
+        "Price Tolerance (%)",
+        min_value=10,
+        max_value=50,
+        value=30,
+        step=5,
+        help="Maximum price difference allowed between source and alternative"
+    )
+    
+    st.markdown("---")
+    st.markdown("### How it works")
+    st.markdown("""
+    1. Upload your source products
+    2. Upload competitor products
+    3. System finds alternatives:
+       - Same function/category
+       - Similar specifications
+       - **Different brand**
+       - Price within tolerance
+    """)
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.subheader("📦 Source Products")
+    source_file = st.file_uploader(
+        "Upload source products (CSV/JSON)",
+        type=['csv', 'json'],
+        key="source"
+    )
+    
+    if source_file:
+        if source_file.name.endswith('.json'):
+            source_df = load_json_file(source_file)
+        else:
+            source_df = load_csv_file(source_file)
+        
+        if source_df is not None:
+            st.success(f"Loaded {len(source_df)} products")
+            st.dataframe(source_df.head(5), use_container_width=True)
+
+with col2:
+    st.subheader("🏪 Competitor Products")
+    target_file = st.file_uploader(
+        "Upload competitor products (CSV/JSON)",
+        type=['csv', 'json'],
+        key="target"
+    )
+    
+    if target_file:
+        if target_file.name.endswith('.json'):
+            target_df = load_json_file(target_file)
+        else:
+            target_df = load_csv_file(target_file)
+        
+        if target_df is not None:
+            st.success(f"Loaded {len(target_df)} products")
+            st.dataframe(target_df.head(5), use_container_width=True)
+
+st.markdown("---")
+
+if 'source_df' in dir() and source_df is not None and 'target_df' in dir() and target_df is not None:
+    if st.button("🔍 Find House Brand Alternatives", type="primary", use_container_width=True):
+        if not OPENROUTER_API_KEY:
+            st.error("OpenRouter API key not found. Please set OPENROUTER_API_KEY environment variable.")
+        else:
+            source_products = source_df.to_dict('records')
+            target_products = target_df.to_dict('records')
+            
+            progress_bar = st.progress(0)
+            status_text = st.empty()
+            
+            def update_progress(progress):
+                progress_bar.progress(progress)
+                status_text.text(f"Processing: {int(progress * 100)}%")
+            
+            with st.spinner("Finding house brand alternatives..."):
+                matches = ai_find_house_brand_alternatives(
+                    source_products, 
+                    target_products, 
+                    price_tolerance=price_tolerance/100,
+                    progress_callback=update_progress
+                )
+            
+            progress_bar.empty()
+            status_text.empty()
+            
+            if matches:
+                results = []
+                for match in matches:
+                    source_row = source_df.iloc[match['source_idx']]
+                    target_row = target_df.iloc[match['target_idx']]
+                    
+                    source_name = get_product_name(source_row)
+                    target_name = get_product_name(target_row)
+                    source_price = get_price(source_row)
+                    target_price = get_price(target_row)
+                    
+                    results.append({
+                        'Source Product': source_name,
+                        'Source Brand': match['source_brand'],
+                        'Source Price': source_price,
+                        'Source Retailer': get_retailer(source_row),
+                        'Source URL': get_url(source_row),
+                        'Alternative Product': target_name,
+                        'Alternative Brand': match['target_brand'],
+                        'Alternative Price': target_price,
+                        'Alternative Retailer': get_retailer(target_row),
+                        'Alternative URL': get_url(target_row),
+                        'Price Diff (฿)': round(target_price - source_price, 2),
+                        'Price Diff (%)': round(match['price_diff_pct'], 1),
+                        'Confidence': match['confidence'],
+                        'Reason': match['reason']
+                    })
+                
+                results_df = pd.DataFrame(results)
+                st.session_state['house_brand_results'] = results_df
+                
+                save_path = save_results(results_df)
+                if save_path:
+                    st.success(f"Found {len(results)} house brand alternatives! Results saved.")
+                
+                st.subheader(f"🎯 Found {len(results)} Alternatives")
+                
+                col1, col2, col3 = st.columns(3)
+                with col1:
+                    avg_confidence = results_df['Confidence'].mean()
+                    st.metric("Avg Confidence", f"{avg_confidence:.0f}%")
+                with col2:
+                    cheaper = len(results_df[results_df['Price Diff (฿)'] < 0])
+                    st.metric("Cheaper Alternatives", cheaper)
+                with col3:
+                    avg_price_diff = results_df['Price Diff (%)'].mean()
+                    st.metric("Avg Price Diff", f"{avg_price_diff:+.1f}%")
+                
+                st.dataframe(
+                    results_df[[
+                        'Source Product', 'Source Brand', 'Source Price',
+                        'Alternative Product', 'Alternative Brand', 'Alternative Price',
+                        'Price Diff (%)', 'Confidence', 'Reason'
+                    ]],
+                    use_container_width=True,
+                    height=400
+                )
+                
+                st.subheader("📊 Analysis")
+                
+                tab1, tab2 = st.tabs(["Price Comparison", "Brand Distribution"])
+                
+                with tab1:
+                    fig = go.Figure()
+                    fig.add_trace(go.Bar(
+                        name='Source Price',
+                        x=results_df['Source Product'].str[:30],
+                        y=results_df['Source Price'],
+                        marker_color='#1f77b4'
+                    ))
+                    fig.add_trace(go.Bar(
+                        name='Alternative Price',
+                        x=results_df['Source Product'].str[:30],
+                        y=results_df['Alternative Price'],
+                        marker_color='#ff7f0e'
+                    ))
+                    fig.update_layout(
+                        title='Price Comparison: Source vs Alternative',
+                        barmode='group',
+                        xaxis_tickangle=-45,
+                        height=400
+                    )
+                    st.plotly_chart(fig, use_container_width=True)
+                
+                with tab2:
+                    brand_counts = results_df['Alternative Brand'].value_counts()
+                    fig = px.pie(
+                        values=brand_counts.values,
+                        names=brand_counts.index,
+                        title='Alternative Brands Distribution'
+                    )
+                    st.plotly_chart(fig, use_container_width=True)
+                
+                st.subheader("📥 Export Results")
+                col1, col2 = st.columns(2)
+                with col1:
+                    csv = results_df.to_csv(index=False).encode('utf-8')
+                    st.download_button(
+                        "Download CSV",
+                        csv,
+                        "house_brand_alternatives.csv",
+                        "text/csv"
+                    )
+                with col2:
+                    json_data = results_df.to_json(orient='records', indent=2)
+                    st.download_button(
+                        "Download JSON",
+                        json_data,
+                        "house_brand_alternatives.json",
+                        "application/json"
+                    )
+            else:
+                st.warning("No house brand alternatives found. Try adjusting price tolerance or check your data.")
+
+if 'house_brand_results' in st.session_state:
+    st.markdown("---")
+    st.subheader("📋 Previous Results")
+    st.dataframe(st.session_state['house_brand_results'], use_container_width=True)
+
+saved_results = load_latest_results()
+if saved_results is not None and len(saved_results) > 0 and 'house_brand_results' not in st.session_state:
+    st.markdown("---")
+    st.subheader("📂 Loaded Previous Session Results")
+    st.info(f"Loaded {len(saved_results)} previous matches")
+    st.dataframe(saved_results, use_container_width=True)
