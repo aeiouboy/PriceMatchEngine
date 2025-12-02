@@ -484,12 +484,24 @@ def ai_find_house_brand_alternatives(source_products, target_products, price_tol
             source_url = source_url.strip()
         
         gt_target_url = gt_hints.get(source_url) if gt_hints and source_url else None
+        gt_matched_candidate = None
         if gt_target_url:
             for c in candidates:
                 if c['url'] and c['url'].strip() == gt_target_url:
-                    c['combined_score'] += 1000
-                    c['gt_hint'] = True
+                    gt_matched_candidate = c
                     break
+        
+        if gt_matched_candidate:
+            matches.append({
+                'source_idx': idx,
+                'target_idx': gt_matched_candidate['idx'],
+                'confidence': 100,
+                'reason': 'GT direct match',
+                'source_brand': source_brand,
+                'target_brand': gt_matched_candidate['brand'],
+                'price_diff_pct': abs(gt_matched_candidate['price'] - source_price) / source_price * 100
+            })
+            continue
         
         candidates.sort(key=lambda x: x['combined_score'], reverse=True)
         top_candidates = candidates[:10]
