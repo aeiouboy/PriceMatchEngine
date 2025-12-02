@@ -1,0 +1,80 @@
+[
+  {
+    "source_name": "วงกบประตู UPVC ECO DOOR รุ่น UR-100 ขนาด 80 x 200 ซม. สีขาว",
+    "source_brand": "ECO DOOR",
+    "source_price": 790.0,
+    "target_name": "วงกบประตู PVC AZLE 80X200 ซม. สีครีม",
+    "target_brand": "AZLE",
+    "target_price": 750.0,
+    "price_diff_pct": 5.063291139240507,
+    "confidence": 90,
+    "reason": "Product 4 (AZLE) is a UPVC door frame with the same dimensions (80x200 cm) and a very similar price to the source product (ECO DOOR). It serves the exact same function as a door frame and meets the criteria of being a different brand.",
+    "issues": [],
+    "valid": true
+  },
+  {
+    "source_name": "ที่คว่ำแก้วพลาสติกพร้อมฝาปิด 1 ชั้น GWARE รุ่น SHC-442AB ขนาด 40.5 x 31.5 x 16.5 ซม. สีขาว",
+    "source_brand": "GWARE",
+    "source_price": 169.0,
+    "target_name": "ชั้นคว่ำจานพลาสติกมีฝาครอบ JCJ NEW2401 สีขาว",
+    "target_brand": "JCJ",
+    "target_price": 189.0,
+    "price_diff_pct": 11.834319526627219,
+    "confidence": 85,
+    "reason": "Both products are designed for organizing and drying dishes/glasses and include a cover. While the source product specifies glasses, the candidate is a general dish rack, which can also hold glasses and serves a very similar primary function of storage and drying with a lid. The dimensions are not identical but the general purpose is the closest match among the candidates.",
+    "issues": [],
+    "valid": true
+  },
+  {
+    "source_name": "ถังขยะมีล้อและที่เหยียบ GIANT KINGKONG รุ่น YY-120C-YL ความจุ 120 ลิตร สีเหลือง",
+    "source_brand": "GIANT KINGKONG",
+    "source_price": 1180.0,
+    "target_name": "ถังขยะเหลี่ยม ฝาเปิด-ปิด มีล้อ ACCO 120L สีเหลือง",
+    "target_brand": "ACCO",
+    "target_price": 1490.0,
+    "price_diff_pct": 26.27118644067797,
+    "confidence": 95,
+    "reason": "The ACCO 120L trash can with a lid and wheels serves the same function as the GIANT KINGKONG trash can. It also matches the volume specification of 120 liters and is from a different brand (ACCO vs. GIANT KINGKONG). While the price is slightly higher, it's within the acceptable tolerance.",
+    "issues": [],
+    "valid": true
+  },
+  {
+    "source_name": "อะคริลิคโป๊ว TOA 302 รุ่น Acrylic Sealant ขนาด 1 กก. สีขาว",
+    "source_brand": "TOA",
+    "source_price": 288.0,
+    "target_name": "อะคริลิกอุดโป๊วยืดหยุ่นสูง SISTA 1 กก. สีขาว",
+    "target_brand": "SISTA",
+    "target_price": 289.0,
+    "price_diff_pct": 0.3472222222222222,
+    "confidence": 95,
+    "reason": "Both products are acrylic sealants (อะคริลิกโป๊ว / อะคริลิกอุดโป๊วยืดหยุ่นสูง) and are used for filling gaps and sealing. They have the same volume (1 กก.) and color (สีขาว), and the price is very close. The brand is different (SISTA vs TOA).",
+    "issues": [],
+    "valid": true
+  },
+  {
+    "source_name": "ประตูภายในไม้สน WINDOORS รุ่น CE-04 ขนาด 80 x 200 ซม. สีธรรมชาติ (ไม่เจาะลูกบิด)",
+    "source_brand": "WINDOORS",
+    "source_price": 1890.0,
+    "target_name": "ประตูไม้สนนิวซีแลนด์ MODERN DOORS CE-04 80X200 ซม. สีธรรมชาติ ไม่เจาะลูกบิด",
+    "target_brand": "MODERN DOORS",
+    "target_price": 1890.0,
+    "price_diff_pct": 0.0,
+    "confidence": 95,
+    "reason": "This product is a direct alternative from a different brand (MODERN DOORS vs WINDOORS). It has the same model name (CE-04), material (สน - pine wood), dimensions (80x200 cm), color (สีธรรมชาติ - natural color), and importantly, it is unset for a doorknob (ไม่เจาะลูกบิด), matching the source product's specification. The price is identical, indicating a very close substitute.",
+    "issues": [],
+    "valid": true
+  },
+  {
+    "source_name": "ล้อยางแบบแป้นหมุนได้ไม่มีเบรค SC ขนาด 4 นิ้ว (10ซม.) สีดำ",
+    "source_brand": "SC",
+    "source_price": 123.0,
+    "target_name": "ลูกล้อยาง LEON แป้นหมุน ไม่มีเบรก 4 นิ้ว สีดำ",
+    "target_brand": "LEON",
+    "target_price": 159.0,
+    "price_diff_pct": 29.268292682926827,
+    "confidence": 95,
+    "reason": "Both the source product and the candidate alternative are caster wheels with a 4-inch size and a swivel plate without brakes. They serve the same function of allowing a piece of furniture or equipment to roll and be moved easily. Candidate 0 is from a different brand (LEON) than the source product (SC), meeting the criteria for a house brand alternative.",
+    "issues": [],
+    "valid": true
+  }
+]
