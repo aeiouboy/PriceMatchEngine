@@ -1,79 +1,346 @@
 {
   "HomePro": {
-    "CALINA": ["FURDINI", "PROMA"],
-    "FONTE": ["SPRING", "GARTENE", "ARAI", "SAKURA", "BENETTA"],
-    "GIANT KINGKONG": ["DEXZON", "MATALL", "LE", "PACK IN", "BIH", "ACCO"],
-    "GIANT KINGKONG PRO": ["MATALL", "TARA", "HACHI", "WAVE"],
-    "GIANTTECH": ["MATALL", "COLT", "ROWEL"],
-    "KARTEN": ["DEXZON", "EUROX", "MATALL"],
-    "KASSA": ["FURDINI", "CROBERN", "SB FURNITURE"],
-    "KASSA HOME": ["STACKO", "PLIM", "ACCO", "KECH", "ME LIVING", "FURDINI", "JCJ", "LE"],
-    "KASSA HOTEL": ["STACKO", "PLIM", "ACCO"],
-    "LIAO": ["ACCO", "KECH", "BE WISH"],
-    "LUZINO": ["CARINI", "LE", "SUMO", "EGLO", "TOSHINO", "EVE", "PHILIPS", "LAMPTAN"],
-    "TSS/GIANT KINGKONG": ["DEXZON", "BY TORA"],
-    "ZAGIO": ["MITSUMARU", "OZZIE", "NIKKO", "AIKO"],
-    "BAGGAGIO": ["FURDINI", "MATALL"],
-    "MONET": ["FURDINI", "CARINI"],
-    "MURANO": ["SPRING", "FURDINI"],
-    "SANDI": ["MATALL", "ACCO"]
+    "GIANT KINGKONG": [
+      "DEXZON",
+      "MATALL",
+      "PACK IN",
+      "HOME LIVING STYLE",
+      "BIH",
+      "ELEKTRA",
+      "ACCO",
+      "JOY BICYCLE",
+      "ELECKTA",
+      "SCG",
+      "FITT",
+      "BY TORA",
+      "KINGORIGIN",
+      "BT",
+      "AZLE",
+      "HAFELE",
+      "VECO",
+      "YAMADA",
+      "FONKEY",
+      "MARATHON",
+      "ID",
+      "SOKAWA",
+      "QITONG",
+      "PUMPKIN",
+      "KENDO",
+      "SCOTCH",
+      "COLT",
+      "RIGHT",
+      "CHOCHAMNAUY",
+      "HACHI",
+      "GATEMAN",
+      "COLT LITE",
+      "LEON",
+      "PPM",
+      "D FISH",
+      "INGCO"
+    ],
+    "LUZINO": [
+      "CARINI",
+      "ELECKTA",
+      "SUMO",
+      "EGLO",
+      "L&E",
+      "CT ELECTRIC",
+      "TOSHINO",
+      "EVE",
+      "RACER",
+      "PHILIPS",
+      "HATASHI",
+      "ELEKTRA",
+      "LAMPTAN"
+    ],
+    "KASSA HOME": [
+      "STACKO",
+      "PLIM",
+      "KECH",
+      "ACCO",
+      "ME LIVING",
+      "FURDINI",
+      "JCJ",
+      "COLOR KIT",
+      "DKW",
+      "MZG",
+      "CSP",
+      "POLY-BRITE",
+      "NEOFLAM",
+      "HANSEN",
+      "PENGUIN",
+      "MEYER",
+      "SEAGULL",
+      "G-WARE",
+      "EKONO",
+      "KEYWAY",
+      "ROCKET",
+      "PIONEER",
+      "MONARCH",
+      "LOCKNLOCK",
+      "THAI SUN SPORT",
+      "HOME LIVING",
+      "GURALLA",
+      "OCEAN",
+      "QUALITY WOOD",
+      "BE MAN",
+      "HL"
+    ],
+    "LIAO": [
+      "ACCO",
+      "KECH",
+      "BE WISH"
+    ],
+    "FONTE": [
+      "SPRING",
+      "GARTENE",
+      "TRUPER",
+      "ARAI METAL",
+      "BENETTA",
+      "IVY",
+      "SAKURA",
+      "ME LIVING",
+      "SPRING STELLA",
+      "FURDINI",
+      "SPRING NELLY"
+    ],
+    "KARTEN": [
+      "DEXZON",
+      "EUROX",
+      "MATALL",
+      "JP"
+    ],
+    "KASSA": [
+      "FURDINI",
+      "CROBERN",
+      "SB FURNITURE",
+      "EAZYSOFA",
+      "QLINE",
+      "SERA",
+      "LOOMS",
+      "YKS",
+      "SURE",
+      "PARAZZO",
+      "ECO-DOOR"
+    ],
+    "GIANT KINGKONG PRO": [
+      "MATALL",
+      "TARA",
+      "HACHI",
+      "WAVE",
+      "MC",
+      "MATALL PRO",
+      "KENDO",
+      "SANKI"
+    ],
+    "CALINA": [
+      "FURDINI",
+      "PROMA"
+    ],
+    "GIANTTECH": [
+      "MATALL",
+      "COLT",
+      "ROWEL",
+      "DONGCHENG",
+      "MATALL PRO"
+    ],
+    "TSS/GIANT KINGKONG": [
+      "DEXZON",
+      "BY TORA"
+    ],
+    "ZAGIO": [
+      "MITSUMARU",
+      "OZZIE",
+      "NIKKO",
+      "AIKO"
+    ]
   },
   "DoHome": {
-    "GIANT KINGKONG": ["NASH", "FINEXT", "MODERN", "ALUGUARD", "DE'COS", "TURBO MAN"],
-    "GIANT KINGKONG PRO": ["NASH", "MARINE", "SANKI", "SUMO"],
-    "GIANTTECH": ["NASH"],
-    "KASSA": ["FINEXT", "YESMOULDING", "MARINE"],
-    "KASSA HOME": ["DE'COS", "DECOS", "HAPPY COOK", "OPPA", "JCJ", "LE", "JCP"],
-    "KASSA HOTEL": ["DE'COS", "DECOS"],
-    "LIAO": ["SAMOR"],
-    "LUZINO": ["POWER MAX", "DE'COS", "DECOS", "FINEXT", "LUCKY MISU", "LE", "LAMPTAN"],
-    "SANDI": ["DECOS"],
-    "ZAGIO": ["FINEXT", "KING", "MEX"],
-    "CALINA": ["DE'COS", "DECOS"],
-    "FONTE": ["MARINE", "FINEXT"],
-    "BAGGAGIO": ["NASH", "FINEXT"],
-    "MONET": ["POWER MAX", "DE'COS"],
-    "MURANO": ["DE'COS", "DECOS"],
-    "KARTEN": ["NASH", "FINEXT"],
-    "TSS/GIANT KINGKONG": ["NASH"]
+    "GIANT KINGKONG": [
+      "NASH",
+      "FINEXT",
+      "NO BRANDS",
+      "MODERN",
+      "ALUGUARD",
+      "DE'COS",
+      "TURBO MAN",
+      "BESBOND",
+      "X 1 PLUS",
+      "TF",
+      "DOUBLE A",
+      "SMART OFFICE",
+      "NYC",
+      "DECOS",
+      "TINY",
+      "MEGALEC",
+      "DR.FIXIT",
+      "3M",
+      "GTECH",
+      "YOSHINO"
+    ],
+    "LUZINO": [
+      "POWER MAX",
+      "DECOS",
+      "DE'COS",
+      "FINEXT",
+      "LUCKY MITSU",
+      "ZEBERG",
+      "LAMPTAN",
+      "FOTINI",
+      "HEAP"
+    ],
+    "KASSA HOME": [
+      "DE'COS",
+      "DECOS",
+      "HAPPY COOK",
+      "NO BRANDS",
+      "OPPA",
+      "JCJ",
+      "JCP",
+      "PP",
+      "DOKLEAN",
+      "POP",
+      "OCEAN",
+      "DOUBLE LOCK",
+      "MODERN",
+      "เพชรสยาม",
+      "API",
+      "ดูโฮม",
+      "PIONEER",
+      "HOY",
+      "SUMO-WOODTOP",
+      "OCTOPUS",
+      "WHIZ",
+      "KING STELLA",
+      "TSP",
+      "SWANA",
+      "FINEXT"
+    ],
+    "LIAO": [
+      "SAMOR"
+    ],
+    "GIANT KINGKONG PRO": [
+      "NASH",
+      "MARINE",
+      "SANKI",
+      "SUMO",
+      "EUROX"
+    ],
+    "GIANTTECH": [
+      "NASH"
+    ],
+    "KASSA": [
+      "FINEXT",
+      "YESMOULDING",
+      "MARINE"
+    ],
+    "ZAGIO": [
+      "FINEXT",
+      "KING",
+      "MEX"
+    ],
+    "KASSA HOTEL": [
+      "DE'COS",
+      "DECOS"
+    ],
+    "SANDI": [
+      "DECOS"
+    ]
   },
   "GlobalHouse": {
-    "CALINA": ["DELICATO", "SMITH"],
-    "FONTE": ["POLLO", "SUMMER SET", "TUF", "TREE'O"],
-    "GIANT KINGKONG": ["PROTX", "HUMMER", "NINO WORLD", "LE", "SMITH", "FIX-XY"],
-    "GIANT KINGKONG PRO": ["HUMMER"],
-    "KARTEN": ["VAVO", "OO POWER", "TUF", "GROSNA"],
-    "KASSA": ["PULITO", "SMITH"],
-    "KASSA HOME": ["HAWDD", "GOME", "SANE", "JCJ", "DELICATO", "SAKU", "DAVINCI", "HUMMER", "LE"],
-    "KASSA HOTEL": ["HAWDD", "GOME", "SANE"],
-    "LUZINO": ["RACER", "LE", "LAMPTAN"],
-    "MURANO": ["SPRING"],
-    "ZAGIO": ["CLOSE"],
-    "BAGGAGIO": ["HUMMER", "PROTX"],
-    "GIANTTECH": ["HUMMER", "PROTX"],
-    "LIAO": ["SANE", "JCJ"],
-    "MONET": ["DELICATO"],
-    "SANDI": ["HUMMER"],
-    "FONTE": ["POLLO", "SUMMER SET", "TUF"],
-    "TSS/GIANT KINGKONG": ["PROTX", "HUMMER"]
+    "LUZINO": [
+      "RACER",
+      "GATA"
+    ],
+    "KASSA HOME": [
+      "HAWDD",
+      "GOME",
+      "SANE",
+      "JCJ",
+      "DELICATO",
+      "SAKU",
+      "DAVINCI",
+      "HUMMER",
+      "ICLEAN",
+      "EKO",
+      "API",
+      "NIBIRU",
+      "CLOSE",
+      "PRIME",
+      "SUPERCAT",
+      "ADAMAS",
+      "TRUFFLE"
+    ],
+    "GIANT KINGKONG": [
+      "PROTX",
+      "HUMMER",
+      "NINO WORLD",
+      "ปืนใหญ่",
+      "ICLEAN",
+      "SMITH",
+      "FIX-XY",
+      "TORSTEN",
+      "TUF",
+      "SEALTEX"
+    ],
+    "FONTE": [
+      "POLLO",
+      "SUMMER SET",
+      "TUF",
+      "TREE’O"
+    ],
+    "KARTEN": [
+      "VAVO",
+      "OO POWER",
+      "TUF",
+      "GROSNA"
+    ],
+    "CALINA": [
+      "DELICATO",
+      "SMITH"
+    ],
+    "KASSA": [
+      "PULITO",
+      "SMITH"
+    ],
+    "GIANT KINGKONG PRO": [
+      "HUMMER"
+    ],
+    "ZAGIO": [
+      "CLOSE"
+    ],
+    "MURANO": [
+      "TRUFFLE"
+    ]
   },
   "Boonthavorn": {
-    "BAGGAGIO": ["MAX LIGHT", "LE"],
-    "CALINA": ["MAX LIGHT", "LE"],
-    "FONTE": ["HOMEMART", "ANYHOME", "SAKURA"],
-    "GIANT KINGKONG": ["SOMIC", "INDY", "HACHI", "LE", "AT INDY"],
-    "GIANT KINGKONG PRO": ["BF"],
-    "GIANTTECH": ["LE"],
-    "KARTEN": ["MAX LIGHT", "LE"],
-    "KASSA": ["LE"],
-    "KASSA HOME": ["LE", "ANYHOME"],
-    "KASSA HOTEL": ["LE", "ANYHOME"],
-    "LIAO": ["LE"],
-    "LUZINO": ["MAX LIGHT", "LE"],
-    "MONET": ["MAX LIGHT", "LE"],
-    "MURANO": ["MAX LIGHT", "LE"],
-    "SANDI": ["LE"],
-    "TSS/GIANT KINGKONG": ["SOMIC", "INDY"],
-    "ZAGIO": ["ANYHOME", "KING"]
+    "LUZINO": [
+      "MAX LIGHT",
+      "L&E",
+      "LIGHTMOST"
+    ],
+    "FONTE": [
+      "ANYHOME",
+      "SAKURA"
+    ],
+    "GIANT KINGKONG": [
+      "SOMIC",
+      "HACHI",
+      "SCG",
+      "BIH",
+      "HAFELE"
+    ],
+    "GIANTTECH": [
+      "YALE"
+    ],
+    "GIANT KINGKONG PRO": [
+      "NL HOME",
+      "COTTO FIX",
+      "BF"
+    ],
+    "ZAGIO": [
+      "KING",
+      "ANYHOME"
+    ]
   }
 }
