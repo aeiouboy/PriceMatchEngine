@@ -15,8 +15,19 @@ import json
 import sys
 import os
 from datetime import datetime
+from urllib.parse import urlparse
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'apps', 'house_brand_engine'))
+
+def normalize_url(url):
+    """Normalize URL by removing query parameters and trailing slashes for comparison"""
+    if not url:
+        return ''
+    parsed = urlparse(url.strip())
+    # Return just the base path without query parameters
+    base_url = f"{parsed.scheme}://{parsed.netloc}{parsed.path}"
+    return base_url.rstrip('/')
+
 from app import (
     ai_find_house_brand_alternatives,
     ai_extract_product_type,
@@ -124,7 +135,8 @@ def load_ground_truth(filepath):
         twd_url = str(row.get(twd_col, '')).strip()
         comp_url = str(row.get(comp_col, '')).strip()
         if twd_url and comp_url and twd_url.startswith('http') and comp_url.startswith('http'):
-            gt_dict[twd_url] = comp_url
+            # Normalize URLs for comparison (remove tracking parameters)
+            gt_dict[normalize_url(twd_url)] = normalize_url(comp_url)
 
     return gt_dict
 
@@ -212,17 +224,17 @@ def test_house_brand_matching(retailer_name, sample_size=50, categories=None, pr
             for p in competitor_products:
                 url = p.get('url', p.get('product_url', p.get('link', '')))
                 if url:
-                    comp_url_to_product[url.strip()] = p
+                    comp_url_to_product[normalize_url(url)] = p
 
             twd_url_to_product = {}
             for p in twd_products:
                 url = p.get('url', p.get('product_url', p.get('link', '')))
                 if url:
-                    twd_url_to_product[url.strip()] = p
+                    twd_url_to_product[normalize_url(url)] = p
 
             for twd_url, comp_url in gt.items():
-                twd_prod = twd_url_to_product.get(twd_url)
-                comp_prod = comp_url_to_product.get(comp_url)
+                twd_prod = twd_url_to_product.get(normalize_url(twd_url))
+                comp_prod = comp_url_to_product.get(normalize_url(comp_url))
 
                 if not comp_prod or not twd_prod:
                     continue
@@ -280,13 +292,13 @@ def test_house_brand_matching(retailer_name, sample_size=50, categories=None, pr
     for i, p in enumerate(twd_products):
         url = p.get('url', p.get('product_url', p.get('link', '')))
         if url:
-            twd_url_map[i] = url.strip()
+            twd_url_map[i] = normalize_url(url)
 
     competitor_url_map = {}
     for i, p in enumerate(competitor_products):
         url = p.get('url', p.get('product_url', p.get('link', '')))
         if url:
-            competitor_url_map[i] = url.strip()
+            competitor_url_map[i] = normalize_url(url)
 
     valid_count = 0
     invalid_count = 0

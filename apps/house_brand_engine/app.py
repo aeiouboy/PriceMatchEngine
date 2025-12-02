@@ -957,10 +957,17 @@ If source has a spec, candidate should match closely:
 **COMMON REJECTION EXAMPLES:**
 - ไม่มีเบรก ≠ มีเบรก (brake mismatch)
 - อะไหล่ลูกกลิ้ง ≠ ลูกกลิ้งทาสี (refill vs full)
-- โคมไฟกิ่ง ≠ ไฟผนัง ≠ ไฟสนาม (different lamp types)
+- โคมไฟกิ่ง ≠ ไฟผนัง ≠ ไฟสนาม ≠ ไฟหัวเสา (different lamp types)
 - 4 ชั้น ≠ 5 ชั้น, 9 เส้น ≠ 6 เส้น (count mismatch)
 - 1/2 นิ้ว ≠ 5/8 นิ้ว (size mismatch)
 - ห้องทั่วไป ≠ ห้องน้ำ (room type mismatch)
+- รถเข็น 2 ล้อ ≠ รถเข็น 4 ล้อ (wheel count matters!)
+- รถเข็นของตลาด ≠ รถเข็นของ (market cart vs general trolley)
+- แปรงทาวานิช ≠ แปรงทาสี/น้ำมัน (varnish vs paint/oil brush)
+- เก้าอี้พับชายหาด ≠ เก้าอี้จัดเลี้ยง ≠ เก้าอี้พักผ่อน (different chair types)
+- ปืนยิงยาแนว ≠ ปืนยิงซิลิโคน (caulk gun vs silicone gun)
+- สกรูหัวเรียบ ≠ สกรูหัวเวเฟอร์ (flat head vs wafer head screw)
+- บานพับผีเสื้อ ≠ บานพับหัวตัด (butterfly vs flat head hinge)
 
 **DECISION:**
 - Select candidate with HIGHEST SpecMatch% that passes type check
@@ -972,7 +979,7 @@ JSON only. Return null if no reasonable match."""
 
         try:
             response = client.chat.completions.create(
-                model="google/gemini-2.5-flash-lite",
+                model="google/gemini-2.5-flash",
                 messages=[{"role": "user", "content": prompt}],
                 max_tokens=200
             )
