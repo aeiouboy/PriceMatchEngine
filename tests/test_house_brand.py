@@ -168,14 +168,32 @@ def validate_house_brand_match(source, target, price_tolerance=0.30):
     
     return issues
 
-def test_house_brand_matching(retailer_name, sample_size=50, categories=None, price_tolerance=0.30):
-    """Test house brand matching for a single retailer"""
+def test_house_brand_matching(retailer_name, sample_size=50, categories=None, price_tolerance=0.30, use_gt=True):
+    """Test house brand matching for a single retailer
+    
+    Args:
+        retailer_name: Name of the competitor retailer
+        sample_size: Number of products to sample (None = all)
+        categories: List of categories to filter (None = all)
+        price_tolerance: Max price difference (0.30 = 30%)
+        use_gt: Whether to validate against ground truth file
+    """
     print(f"\n{'='*70}")
     print(f"HOUSE BRAND TEST: TWD → {retailer_name}")
     print(f"{'='*70}")
     
+    config = RETAILERS[retailer_name]
+    
     twd_products = load_json_products(TWD_PRODUCTS)
-    competitor_products = load_json_products(RETAILERS[retailer_name])
+    competitor_products = load_json_products(config['products'])
+    
+    gt = None
+    if use_gt:
+        gt = load_ground_truth(config['gt'])
+        if gt:
+            print(f"Loaded {len(gt)} GT entries for house brand validation")
+        else:
+            print("No GT file found - using criteria-based validation only")
     
     print(f"Loaded {len(twd_products)} TWD products, {len(competitor_products)} {retailer_name} products")
     
@@ -215,10 +233,26 @@ def test_house_brand_matching(retailer_name, sample_size=50, categories=None, pr
     
     print(f"\nFound {len(matches)} potential house brand alternatives")
     
+    twd_url_map = {}
+    for i, p in enumerate(twd_products):
+        url = p.get('url', p.get('product_url', p.get('link', '')))
+        if url:
+            twd_url_map[i] = url.strip()
+    
+    competitor_url_map = {}
+    for i, p in enumerate(competitor_products):
+        url = p.get('url', p.get('product_url', p.get('link', '')))
+        if url:
+            competitor_url_map[i] = url.strip()
+    
     valid_count = 0
     invalid_count = 0
     validation_issues = []
     match_details = []
+    
+    gt_correct = 0
+    gt_incorrect = 0
+    gt_not_in_gt = 0
     
     for match in matches:
         source = twd_products[match['source_idx']]
@@ -228,21 +262,39 @@ def test_house_brand_matching(retailer_name, sample_size=50, categories=None, pr
         target_name = target.get('name', target.get('product_name', ''))
         source_price = float(source.get('current_price', source.get('price', 0)) or 0)
         target_price = float(target.get('current_price', target.get('price', 0)) or 0)
+        source_url = twd_url_map.get(match['source_idx'], '')
+        target_url = competitor_url_map.get(match['target_idx'], '')
         
         issues = validate_house_brand_match(source, target, price_tolerance)
+        
+        gt_status = 'NOT_IN_GT'
+        if gt and source_url:
+            expected_url = gt.get(source_url)
+            if expected_url:
+                if expected_url == target_url:
+                    gt_status = 'CORRECT'
+                    gt_correct += 1
+                else:
+                    gt_status = 'INCORRECT'
+                    gt_incorrect += 1
+            else:
+                gt_not_in_gt += 1
         
         match_detail = {
             'source_name': source_name,
             'source_brand': match.get('source_brand', ''),
             'source_price': source_price,
+            'source_url': source_url,
             'target_name': target_name,
             'target_brand': match.get('target_brand', ''),
             'target_price': target_price,
+            'target_url': target_url,
             'price_diff_pct': match.get('price_diff_pct', 0),
             'confidence': match.get('confidence', 0),
             'reason': match.get('reason', ''),
             'issues': issues,
-            'valid': len(issues) == 0
+            'valid': len(issues) == 0,
+            'gt_status': gt_status
         }
         match_details.append(match_detail)
         
@@ -258,9 +310,20 @@ def test_house_brand_matching(retailer_name, sample_size=50, categories=None, pr
     
     validation_rate = valid_count / len(matches) * 100 if matches else 0
     
-    print(f"\n--- VALIDATION RESULTS ---")
+    print(f"\n--- CRITERIA VALIDATION ---")
     print(f"Valid matches: {valid_count}/{len(matches)} ({validation_rate:.1f}%)")
     print(f"Invalid matches: {invalid_count}")
+    
+    gt_accuracy = 0
+    if gt:
+        gt_tested = gt_correct + gt_incorrect
+        gt_accuracy = gt_correct / gt_tested * 100 if gt_tested > 0 else 0
+        print(f"\n--- GROUND TRUTH ACCURACY ---")
+        print(f"Correct: {gt_correct}")
+        print(f"Incorrect: {gt_incorrect}")
+        print(f"Not in GT: {gt_not_in_gt}")
+        if gt_tested > 0:
+            print(f"GT Accuracy: {gt_accuracy:.1f}% ({gt_correct}/{gt_tested})")
     
     if validation_issues:
         print(f"\n--- SAMPLE ISSUES (first 5) ---")
@@ -303,7 +366,11 @@ def test_house_brand_matching(retailer_name, sample_size=50, categories=None, pr
         'invalid_matches': invalid_count,
         'validation_rate': validation_rate,
         'cheaper_count': cheaper_count,
-        'brand_distribution': brand_distribution
+        'brand_distribution': brand_distribution,
+        'gt_correct': gt_correct,
+        'gt_incorrect': gt_incorrect,
+        'gt_not_in_gt': gt_not_in_gt,
+        'gt_accuracy': gt_accuracy
     }
 
 def test_all_retailers(sample_size=30, categories=None, price_tolerance=0.30):
@@ -333,11 +400,13 @@ def test_all_retailers(sample_size=30, categories=None, price_tolerance=0.30):
     print("\n" + "="*70)
     print("SUMMARY - HOUSE BRAND MATCHING RESULTS")
     print("="*70)
-    print(f"{'Retailer':<15} {'Matches':<10} {'Valid':<10} {'Rate':<10}")
-    print("-"*45)
+    print(f"{'Retailer':<15} {'Matches':<10} {'Valid':<10} {'Val Rate':<12} {'GT Acc':<10}")
+    print("-"*60)
     
     for r in results:
-        print(f"{r['retailer']:<15} {r['matches_found']:<10} {r['valid_matches']:<10} {r['validation_rate']:.1f}%")
+        gt_tested = r.get('gt_correct', 0) + r.get('gt_incorrect', 0)
+        gt_acc_str = f"{r['gt_accuracy']:.1f}%" if gt_tested > 0 else "N/A"
+        print(f"{r['retailer']:<15} {r['matches_found']:<10} {r['valid_matches']:<10} {r['validation_rate']:.1f}%{'':<6} {gt_acc_str}")
     
     return results
 
