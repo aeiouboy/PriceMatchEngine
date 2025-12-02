@@ -12,6 +12,7 @@ from openai import OpenAI
 from datetime import datetime
 from functools import lru_cache
 from dotenv import load_dotenv
+import hashlib
 
 load_dotenv()
 
@@ -19,7 +20,7 @@ OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
 RESULTS_DIR = "results/house_brand_matches"
 os.makedirs(RESULTS_DIR, exist_ok=True)
 
-PRICE_TOLERANCE = 0.30
+PRICE_TOLERANCE = 0.60
 CROSS_BRAND_MAPPING_FILE = "data/config/cross_brand_mapping.json"
 
 def load_cross_brand_mapping():
@@ -83,7 +84,7 @@ def normalize_text(text):
     if not text:
         return ''
     text = text.upper().strip()
-    
+
     thai_eng_mappings = {
         'แกลลอน': 'GAL',
         'แกลอน': 'GAL',
@@ -102,23 +103,23 @@ def normalize_text(text):
         'เนียน': 'SHEEN',
         'ด้าน': 'MATTE',
     }
-    
+
     for thai, eng in thai_eng_mappings.items():
         text = text.replace(thai.upper(), eng)
         text = text.replace(thai, eng)
-    
+
     return text
 
 def extract_brand(product_name, explicit_brand='', product_url=''):
     """Extract brand from product name or URL"""
     if explicit_brand:
         return explicit_brand.upper().strip()
-    
+
     if product_url:
         brand_from_url = extract_brand_from_url(product_url)
         if brand_from_url:
             return brand_from_url
-    
+
     known_brands = [
         'LUZINO', 'GIANT KINGKONG', 'FONTE',
         'TOA', 'BEGER', 'JOTUN', 'NIPPON', 'DULUX', 'CAPTAIN', 'JBP',
@@ -136,12 +137,12 @@ def extract_brand(product_name, explicit_brand='', product_url=''):
         'NASH', 'MODERN', 'FOTINI', 'SAKURA', 'AT.INDY',
         'NL HOME', 'SUPER',
     ]
-    
+
     name_upper = product_name.upper() if product_name else ''
     for brand in sorted(known_brands, key=len, reverse=True):
         if brand in name_upper:
             return brand
-    
+
     return ''
 
 def extract_brand_from_url(url):
@@ -149,7 +150,7 @@ def extract_brand_from_url(url):
     if not url:
         return ''
     url_lower = str(url).lower()
-    
+
     if 'boonthavorn.com/' in url_lower:
         match = re.search(r'boonthavorn\.com/([a-zA-Z0-9-]+)', url_lower)
         if match:
@@ -164,7 +165,7 @@ def extract_brand_from_url(url):
                 'panasonic': 'PANASONIC', 'hafele': 'HAFELE', 'scg': 'SCG',
             }
             return url_brands.get(slug, '')
-    
+
     if 'homepro.co.th/' in url_lower:
         match = re.search(r'homepro\.co\.th/[^/]+/([a-zA-Z0-9-]+)', url_lower)
         if match:
@@ -175,7 +176,7 @@ def extract_brand_from_url(url):
             }
             return url_brands.get(slug, 'HOMEPRO')
         return 'HOMEPRO'
-    
+
     if 'dohome.co.th/' in url_lower:
         if 'nash' in url_lower: return 'NASH'
         if 'eve' in url_lower: return 'EVE'
@@ -183,16 +184,16 @@ def extract_brand_from_url(url):
         if 'modern' in url_lower: return 'MODERN'
         if 'fotini' in url_lower: return 'FOTINI'
         return 'DOHOME'
-    
+
     if 'globalhouse.co.th/' in url_lower:
         return 'GLOBALHOUSE'
-    
+
     return ''
 
 def extract_category(product_name):
     """Extract product category from name"""
     name_upper = product_name.upper() if product_name else ''
-    
+
     categories = {
         'สีน้ำ': 'PAINT',
         'สีทา': 'PAINT',
@@ -237,96 +238,417 @@ def extract_category(product_name):
         'ปั๊ม': 'PUMP',
         'PUMP': 'PUMP',
     }
-    
+
     for keyword, category in categories.items():
         if keyword in name_upper:
             return category
-    
+
     return 'OTHER'
 
+# Product line conflicts - pairs that should NEVER match
+PRODUCT_LINE_CONFLICTS = [
+    # Garden tools vs general scissors - CRITICAL
+    ('ตัดกิ่ง', 'อเนกประสงค์'),
+    ('ตัดกิ่ง', 'multipurpose'),
+    ('pruning', 'multipurpose'),
+    ('pruning shear', 'scissors'),
+    # Paint brush types - shellac vs oil paint
+    ('แชล็ค', 'น้ำมัน'),
+    ('shellac', 'oil paint'),
+    # Furniture types - hanging vs standing
+    ('ราวแขวน', 'ชั้นวางของโล่ง'),
+    ('hanging rack', 'open shelf'),
+    ('ราวแขวน', 'ชั้นโล่ง'),
+    # Ladder types
+    ('2 ทาง', 'มือจับ'),
+    ('ขึ้นลง 2 ทาง', 'ทรง A'),
+    # Blower types - suction vs blow only
+    ('ดูดและเป่า', 'เป่าลม'),
+    ('vacuum blower', 'blower'),
+    # Different tier counts
+    ('3 ชั้น', '4 ชั้น'),
+    ('2 ชั้น', '4 ชั้น'),
+    # Handle types - pull handle vs mortise/lock handle
+    ('มือจับดึง', 'MORTISE'),
+    ('มือจับดึง', 'ล็อค'),
+    ('pull handle', 'mortise'),
+    ('pull handle', 'lock handle'),
+    # Chair types - folding/beach chair vs steel chair
+    ('เก้าอี้พับ', 'เก้าอี้เหล็ก'),
+    ('เก้าอี้ชายหาด', 'เก้าอี้เหล็ก'),
+    ('folding chair', 'steel chair'),
+    ('beach chair', 'steel chair'),
+    # Shelf bracket vs other products
+    ('แขนรับชั้น', 'สีสเปรย์'),
+    ('แขนรับชั้น', 'สเปรย์'),
+    ('ฉากรับชั้น', 'สีสเปรย์'),
+    ('shelf bracket', 'spray'),
+    # Caster wheels - brake vs no brake CRITICAL
+    ('ไม่มีเบรก', 'มีเบรก'),
+    ('ไม่มีเบรค', 'มีเบรค'),
+    ('no brake', 'with brake'),
+    # Paint rollers - refill vs full (with handle) CRITICAL
+    ('อะไหล่ลูกกลิ้ง', 'ลูกกลิ้งทาสี'),  # Must check context
+    # Ladder types - foldable/multipurpose vs A-frame
+    ('พับได้', 'ทรง A'),
+    ('อเนกประสงค์พับ', 'ทรง A'),
+    ('foldable ladder', 'a-frame'),
+    # Ladder direction - 2-way vs 1-way
+    ('ขึ้นลง 2 ทาง', 'ทางเดียว'),
+    ('2 ทาง', 'ทางเดียว'),
+    # Lighting - ceiling lamp fixture vs LED bulb/module
+    ('โคมไฟเพดาน', 'หลอด LED'),
+    ('โคมดาวน์ไลท์', 'หลอด LED'),
+    ('ceiling lamp', 'LED bulb'),
+    ('downlight fixture', 'LED module'),
+    # Trash can shape - square vs round
+    ('ถังขยะสี่เหลี่ยม', 'ถังขยะกลม'),
+    ('square trash', 'round trash'),
+    # Lighting fixture types - CRITICAL for Boonthavorn
+    ('โคมไฟกิ่ง', 'ไฟผนัง'),
+    ('โคมไฟกิ่ง', 'ไฟสนามเตี้ย'),
+    ('โคมไฟหัวเสา', 'ไฟผนัง'),
+    ('โคมไฟหัวเสา', 'ไฟสนามเตี้ย'),
+    ('โคมไฟแขวน', 'ไฟผนัง'),
+    ('โคมไฟแขวน', 'ไฟสนามเตี้ย'),
+    ('branch lamp', 'wall lamp'),
+    ('pole lamp', 'wall lamp'),
+    ('hanging lamp', 'wall lamp'),
+    ('pendant lamp', 'wall lamp'),
+    # Door knob room types
+    ('ห้องทั่วไป', 'ห้องน้ำ'),
+    ('bathroom knob', 'passage knob'),
+    # Hose diameters - fractions must match
+    ('1/2 นิ้ว', '5/8 นิ้ว'),
+    ('1/2 นิ้ว', '3/4 นิ้ว'),
+    ('5/8 นิ้ว', '3/4 นิ้ว'),
+]
+
+def has_product_conflict(source_name, target_name):
+    """Check if source and target have conflicting product types.
+
+    Returns True if a conflict is detected, False otherwise.
+    """
+    if not source_name or not target_name:
+        return False
+
+    source_lower = source_name.lower()
+    target_lower = target_name.lower()
+
+    for term1, term2 in PRODUCT_LINE_CONFLICTS:
+        term1_lower = term1.lower()
+        term2_lower = term2.lower()
+        # Check both directions
+        if (term1_lower in source_lower and term2_lower in target_lower) or \
+           (term2_lower in source_lower and term1_lower in target_lower):
+            return True
+
+    return False
+
 def extract_size_specs(product_name):
-    """Extract size/volume/dimensions from product name"""
+    """Extract size/volume/dimensions from product name with improved Thai pattern support"""
     if not product_name:
         return {}
-    
+
     specs = {}
     name = product_name.upper()
-    
-    volume_pattern = r'(\d+(?:\.\d+)?)\s*(L|ลิตร|แกลลอน|GAL|ML|มล\.|กก\.|KG)'
+    # Keep original for Thai pattern matching
+    name_orig = product_name
+
+    # Volume pattern - supports Thai units
+    volume_pattern = r'(\d+(?:[,\.]\d+)?)\s*(L|ลิตร|แกลลอน|GAL|ML|มล\.|กก\.|KG)'
     volume_match = re.search(volume_pattern, name, re.IGNORECASE)
     if volume_match:
-        specs['volume'] = f"{volume_match.group(1)} {volume_match.group(2)}"
-    
+        val = volume_match.group(1).replace(',', '')
+        unit = volume_match.group(2).upper()
+        # Normalize Thai units
+        if unit in ['ลิตร', 'L']:
+            unit = 'L'
+        elif unit in ['แกลลอน', 'GAL']:
+            unit = 'GAL'
+        elif unit in ['มล.', 'ML']:
+            unit = 'ML'
+        elif unit in ['กก.', 'KG']:
+            unit = 'KG'
+        specs['volume'] = f"{val} {unit}"
+
+    # Dimensions pattern
     dim_pattern = r'(\d+(?:\.\d+)?)\s*[Xx×]\s*(\d+(?:\.\d+)?)'
     dim_match = re.search(dim_pattern, name)
     if dim_match:
         specs['dimensions'] = f"{dim_match.group(1)}x{dim_match.group(2)}"
-    
-    watt_pattern = r'(\d+)\s*(W|วัตต์|WATT)'
-    watt_match = re.search(watt_pattern, name, re.IGNORECASE)
+
+    # Wattage pattern - improved Thai support (วัตต์)
+    watt_pattern = r'(\d+(?:[,\.]\d+)?)\s*(W|วัตต์|WATT|watt)'
+    watt_match = re.search(watt_pattern, name_orig, re.IGNORECASE)
     if watt_match:
-        specs['wattage'] = f"{watt_match.group(1)}W"
-    
-    inch_pattern = r'(\d+(?:\.\d+)?)\s*(นิ้ว|INCH|")'
-    inch_match = re.search(inch_pattern, name, re.IGNORECASE)
-    if inch_match:
-        specs['size_inch'] = f"{inch_match.group(1)} inch"
-    
+        watt_val = watt_match.group(1).replace(',', '')
+        specs['wattage'] = f"{int(float(watt_val))}W"
+
+    # Inch pattern - improved Thai support (นิ้ว and ″) including fractions
+    # First check for fractional inches like 1/2, 3/4, 5/8
+    frac_inch_pattern = r'(\d+/\d+)\s*(นิ้ว|INCH|"|″|inch)'
+    frac_inch_match = re.search(frac_inch_pattern, name_orig, re.IGNORECASE)
+    if frac_inch_match:
+        specs['size_inch'] = f"{frac_inch_match.group(1)} inch"
+    else:
+        # Regular inch pattern
+        inch_pattern = r'(\d+(?:\.\d+)?)\s*(นิ้ว|INCH|"|″|inch)'
+        inch_match = re.search(inch_pattern, name_orig, re.IGNORECASE)
+        if inch_match:
+            specs['size_inch'] = f"{inch_match.group(1)} inch"
+
+    # Socket type pattern
     socket_pattern = r'(E27|E14|GU10|MR16)[Xx]?(\d+)?'
     socket_match = re.search(socket_pattern, name, re.IGNORECASE)
     if socket_match:
         socket_type = socket_match.group(1).upper()
         socket_count = socket_match.group(2) if socket_match.group(2) else '1'
         specs['socket'] = f"{socket_type}x{socket_count}"
-    
-    meter_pattern = r'(\d+(?:\.\d+)?)\s*(เมตร|M\b|ม\.)'
-    meter_match = re.search(meter_pattern, name, re.IGNORECASE)
+
+    # Length/meter pattern - improved Thai support (เมตร, ม., เซนติเมตร, ซม.)
+    meter_pattern = r'(\d+(?:\.\d+)?)\s*(เมตร|M\b|ม\.|METER|meter)'
+    meter_match = re.search(meter_pattern, name_orig, re.IGNORECASE)
     if meter_match:
         specs['length'] = f"{meter_match.group(1)}M"
-    
+
+    # Centimeter pattern - Thai support
+    cm_pattern = r'(\d+(?:\.\d+)?)\s*(เซนติเมตร|CM|ซม\.)'
+    cm_match = re.search(cm_pattern, name_orig, re.IGNORECASE)
+    if cm_match:
+        # Convert to meters for comparison if needed, but keep as CM
+        specs['length_cm'] = f"{cm_match.group(1)}CM"
+
+    # LED wattage specific pattern
     led_pattern = r'LED\s*(\d+)\s*W'
     led_match = re.search(led_pattern, name, re.IGNORECASE)
     if led_match:
         specs['led_wattage'] = f"LED {led_match.group(1)}W"
-    
+
+    # Color temperature
     color_temp = None
-    if 'DL' in name or 'DAYLIGHT' in name:
+    if 'DL' in name or 'DAYLIGHT' in name or 'เดย์ไลท์' in name_orig:
         color_temp = 'DAYLIGHT'
-    elif 'WW' in name or 'WARM' in name:
+    elif 'WW' in name or 'WARM' in name or 'วอร์ม' in name_orig:
         color_temp = 'WARMWHITE'
-    elif 'CW' in name or 'COOL' in name:
+    elif 'CW' in name or 'COOL' in name or 'คูล' in name_orig:
         color_temp = 'COOLWHITE'
     if color_temp:
         specs['color_temp'] = color_temp
-    
+
+    # Outlet/channel count for power strips (ช่อง)
+    outlet_pattern = r'(\d+)\s*(ช่อง|OUTLET|outlet|WAY|way)'
+    outlet_match = re.search(outlet_pattern, name_orig, re.IGNORECASE)
+    if outlet_match:
+        specs['outlets'] = f"{outlet_match.group(1)} outlets"
+
+    # Step count for ladders (ขั้น) - e.g., "10 ขั้น", "3x10 ขั้น"
+    step_pattern = r'(\d+)\s*[xX×]?\s*(\d+)?\s*(ขั้น|STEP|step)'
+    step_match = re.search(step_pattern, name_orig, re.IGNORECASE)
+    if step_match:
+        if step_match.group(2):
+            # Format like "3x10 ขั้น" - take total steps (second number is steps per section)
+            specs['steps'] = f"{step_match.group(2)} steps"
+        else:
+            specs['steps'] = f"{step_match.group(1)} steps"
+
+    # Pack count (แพ็ก/ชิ้น) - e.g., "แพ็ก 3 ชิ้น", "100 ชิ้น"
+    pack_pattern = r'(\d+)\s*(ชิ้น|PCS|pcs|PIECE|piece|แพ็ก|PACK|pack)'
+    pack_match = re.search(pack_pattern, name_orig, re.IGNORECASE)
+    if pack_match:
+        specs['pack_count'] = f"{pack_match.group(1)} pcs"
+
+    # Lines/bars count for racks (เส้น) - e.g., "9 เส้น", "6 เส้น"
+    lines_pattern = r'(\d+)\s*(เส้น|LINE|line|LINES|lines|BAR|bar|BARS|bars)'
+    lines_match = re.search(lines_pattern, name_orig, re.IGNORECASE)
+    if lines_match:
+        specs['lines'] = f"{lines_match.group(1)} lines"
+
+    # Tier/level count for cabinets (ชั้น) - e.g., "4 ชั้น", "5 ชั้น"
+    tier_pattern = r'(\d+)\s*(ชั้น|TIER|tier|LEVEL|level)'
+    tier_match = re.search(tier_pattern, name_orig, re.IGNORECASE)
+    if tier_match:
+        specs['tiers'] = f"{tier_match.group(1)} tiers"
+
+    # Brake presence for caster wheels - CRITICAL for matching
+    if 'ไม่มีเบรก' in name_orig or 'ไม่มีเบรค' in name_orig or 'no brake' in name.lower():
+        specs['brake'] = 'NO_BRAKE'
+    elif 'มีเบรก' in name_orig or 'มีเบรค' in name_orig or 'with brake' in name.lower():
+        specs['brake'] = 'HAS_BRAKE'
+
+    # Refill status for paint rollers - อะไหล่ means refill only (no handle)
+    if 'อะไหล่' in name_orig or 'refill' in name.lower():
+        specs['roller_type'] = 'REFILL'
+    elif 'ลูกกลิ้งทาสี' in name_orig and 'อะไหล่' not in name_orig:
+        specs['roller_type'] = 'FULL'
+
+    # Ladder type - A-frame vs foldable vs 2-way
+    if 'ทรง A' in name_orig or 'ทรงA' in name_orig or 'a-frame' in name.lower():
+        specs['ladder_type'] = 'A_FRAME'
+    elif 'พับได้' in name_orig or 'พับเก็บ' in name_orig or 'foldable' in name.lower():
+        specs['ladder_type'] = 'FOLDABLE'
+
+    # Ladder direction - 2-way vs 1-way
+    if 'ขึ้นลง 2 ทาง' in name_orig or '2 ทาง' in name_orig or '2-way' in name.lower():
+        specs['ladder_direction'] = '2_WAY'
+    elif 'ทางเดียว' in name_orig or '1-way' in name.lower():
+        specs['ladder_direction'] = '1_WAY'
+
+    # Lighting fixture type - CRITICAL for Boonthavorn accuracy
+    if 'โคมไฟกิ่ง' in name_orig or 'branch lamp' in name.lower():
+        specs['lamp_type'] = 'BRANCH_LAMP'
+    elif 'โคมไฟหัวเสา' in name_orig or 'pole lamp' in name.lower() or 'หัวเสา' in name_orig:
+        specs['lamp_type'] = 'POLE_LAMP'
+    elif 'โคมไฟแขวน' in name_orig or 'hanging lamp' in name.lower() or 'pendant' in name.lower():
+        specs['lamp_type'] = 'HANGING_LAMP'
+    elif 'ไฟสนามเตี้ย' in name_orig or 'garden lamp' in name.lower() or 'สนามเตี้ย' in name_orig:
+        specs['lamp_type'] = 'GARDEN_LOW_LAMP'
+    elif 'โคมไฟผนัง' in name_orig or 'ไฟผนัง' in name_orig or 'wall lamp' in name.lower():
+        specs['lamp_type'] = 'WALL_LAMP'
+
+    # Door knob room type - CRITICAL: bathroom vs general room
+    if 'ห้องน้ำ' in name_orig or 'bathroom' in name.lower():
+        specs['knob_room'] = 'BATHROOM'
+    elif 'ห้องทั่วไป' in name_orig or 'general' in name.lower() or 'passage' in name.lower():
+        specs['knob_room'] = 'GENERAL'
+
+    # Hose diameter - for garden hoses (already have size_inch but add specific)
+    hose_diameter = re.search(r'(\d+/\d+|\d+(?:\.\d+)?)\s*(นิ้ว|")', name_orig)
+    if hose_diameter and ('สายยาง' in name_orig or 'hose' in name.lower()):
+        specs['hose_diameter'] = f"{hose_diameter.group(1)} inch"
+
+    # Model number pattern - often important for exact matching
+    model_pattern = r'รุ่น\s*([A-Z0-9\-\.]+)'
+    model_match = re.search(model_pattern, name_orig, re.IGNORECASE)
+    if model_match:
+        specs['model'] = model_match.group(1)
+
     return specs
 
 def calculate_spec_score(source_specs, target_specs):
-    """Calculate how well target specs match source specs (0-100)"""
+    """Calculate how well target specs match source specs (0-100)
+
+    Higher weights for critical specs (wattage, size) to ensure accurate matching.
+    STRICT penalty for large differences in wattage/pack count.
+    """
     if not source_specs:
         return 50
-    
+
     total_weight = 0
     matched_weight = 0
-    
+
+    # Increased weights for critical specs
+    # NOTE: For house brand matching, model numbers are NOT compared
+    # since different brands have different model naming schemes
     spec_weights = {
-        'wattage': 30,
-        'led_wattage': 30,
-        'size_inch': 25,
-        'socket': 20,
-        'volume': 25,
-        'length': 20,
-        'dimensions': 15,
-        'color_temp': 10
+        'wattage': 40,       # Critical for electrical products - increased
+        'led_wattage': 40,   # Critical for LED products - increased
+        'size_inch': 30,     # Critical for sized products (fans, lights)
+        'socket': 25,        # Important for light bulbs
+        'volume': 25,        # Important for paints/liquids
+        'length': 30,        # Important for cables/strips/hoses - increased
+        'length_cm': 20,     # Secondary length measurement
+        'dimensions': 15,    # Secondary
+        'color_temp': 15,    # Important for lighting
+        'outlets': 25,       # Important for power strips
+        'steps': 30,         # Critical for ladders
+        'pack_count': 30,    # Important for packaged goods - increased
+        'lines': 30,         # Critical for racks/rails (เส้น)
+        'tiers': 35,         # Critical for cabinets (ชั้น)
+        'brake': 40,         # Critical for caster wheels - must match exactly
+        'roller_type': 40,   # Critical - refill vs full roller
+        'ladder_type': 35,   # Important - A-frame vs foldable
+        'ladder_direction': 30,  # 2-way vs 1-way ladder
+        'lamp_type': 45,     # CRITICAL - different lamp types must not match
+        'knob_room': 40,     # CRITICAL - bathroom vs general room knob
+        'hose_diameter': 35, # Important - hose diameter must match
+        # 'model' removed - not applicable for house brand (cross-brand) matching
     }
-    
+
     for spec_key, weight in spec_weights.items():
         if spec_key in source_specs:
             total_weight += weight
             if spec_key in target_specs:
                 if source_specs[spec_key] == target_specs[spec_key]:
                     matched_weight += weight
-                elif spec_key in ['wattage', 'led_wattage', 'size_inch']:
+                elif spec_key in ['wattage', 'led_wattage']:
+                    # STRICT wattage matching - large differences are unacceptable
+                    src_val = re.search(r'(\d+(?:\.\d+)?)', str(source_specs[spec_key]))
+                    tgt_val = re.search(r'(\d+(?:\.\d+)?)', str(target_specs[spec_key]))
+                    if src_val and tgt_val:
+                        src_num = float(src_val.group(1))
+                        tgt_num = float(tgt_val.group(1))
+                        if src_num == tgt_num:
+                            matched_weight += weight
+                        elif src_num > 0:
+                            diff_pct = abs(src_num - tgt_num) / src_num
+                            if diff_pct <= 0.1:
+                                # Within 10% tolerance - good match
+                                matched_weight += weight * 0.8
+                            elif diff_pct <= 0.2:
+                                # Within 20% tolerance - acceptable
+                                matched_weight += weight * 0.5
+                            elif diff_pct <= 0.3:
+                                # Within 30% - partial credit
+                                matched_weight += weight * 0.2
+                            # >30% difference = 0 credit (e.g., 3000W vs 600W)
+                elif spec_key == 'pack_count':
+                    # Pack count - penalize differences more strictly
+                    src_val = re.search(r'(\d+)', str(source_specs[spec_key]))
+                    tgt_val = re.search(r'(\d+)', str(target_specs[spec_key]))
+                    if src_val and tgt_val:
+                        src_num = float(src_val.group(1))
+                        tgt_num = float(tgt_val.group(1))
+                        if src_num == tgt_num:
+                            matched_weight += weight
+                        elif src_num > 0:
+                            diff_pct = abs(src_num - tgt_num) / src_num
+                            if diff_pct <= 0.15:
+                                # Within 15% - good match
+                                matched_weight += weight * 0.7
+                            elif diff_pct <= 0.3:
+                                # Within 30% - partial credit
+                                matched_weight += weight * 0.3
+                            # >30% difference (e.g., 10 vs 6) = 0 credit
+                elif spec_key in ['size_inch', 'length', 'outlets', 'steps', 'lines']:
+                    # Allow 10-20% tolerance for other numeric specs
+                    src_val = re.search(r'(\d+(?:\.\d+)?)', str(source_specs[spec_key]))
+                    tgt_val = re.search(r'(\d+(?:\.\d+)?)', str(target_specs[spec_key]))
+                    if src_val and tgt_val:
+                        src_num = float(src_val.group(1))
+                        tgt_num = float(tgt_val.group(1))
+                        if src_num == tgt_num:
+                            matched_weight += weight
+                        elif src_num > 0 and abs(src_num - tgt_num) / src_num <= 0.1:
+                            # Within 10% tolerance - partial credit
+                            matched_weight += weight * 0.7
+                        elif src_num > 0 and abs(src_num - tgt_num) / src_num <= 0.2:
+                            # Within 20% tolerance - less credit
+                            matched_weight += weight * 0.3
+                elif spec_key == 'model':
+                    # Model number requires exact or partial match
+                    src_model = str(source_specs.get('model', '')).upper()
+                    tgt_model = str(target_specs.get('model', '')).upper()
+                    if src_model and tgt_model:
+                        if src_model == tgt_model:
+                            matched_weight += weight
+                        elif src_model in tgt_model or tgt_model in src_model:
+                            matched_weight += weight * 0.5
+                elif spec_key in ['brake', 'roller_type', 'ladder_type', 'ladder_direction', 'lamp_type', 'knob_room']:
+                    # STRICT categorical specs - must match exactly, no tolerance
+                    # Mismatch = 0 credit (e.g., HAS_BRAKE vs NO_BRAKE, REFILL vs FULL, WALL_LAMP vs POLE_LAMP)
+                    if source_specs[spec_key] == target_specs[spec_key]:
+                        matched_weight += weight
+                    # No partial credit for categorical mismatches
+                elif spec_key == 'hose_diameter':
+                    # Hose diameter - strict matching for fractions
+                    src_diam = str(source_specs[spec_key])
+                    tgt_diam = str(target_specs[spec_key])
+                    if src_diam == tgt_diam:
+                        matched_weight += weight
+                    # No partial credit for different diameters (1/2" ≠ 5/8")
+                elif spec_key == 'tiers':
+                    # Tier count - strict matching, allow only 1 tier difference
                     src_val = re.search(r'(\d+)', str(source_specs[spec_key]))
                     tgt_val = re.search(r'(\d+)', str(target_specs[spec_key]))
                     if src_val and tgt_val:
@@ -334,19 +656,21 @@ def calculate_spec_score(source_specs, target_specs):
                         tgt_num = int(tgt_val.group(1))
                         if src_num == tgt_num:
                             matched_weight += weight
-                        elif abs(src_num - tgt_num) <= max(src_num * 0.1, 1):
-                            matched_weight += weight * 0.5
-    
+                        elif abs(src_num - tgt_num) == 1:
+                            # Allow 1 tier difference with penalty
+                            matched_weight += weight * 0.3
+                        # >1 tier difference = 0 credit
+
     if total_weight == 0:
         return 50
-    
+
     return int(matched_weight / total_weight * 100)
 
 def check_price_within_tolerance(price1, price2, tolerance=PRICE_TOLERANCE):
     """Check if prices are within tolerance percentage"""
     if price1 <= 0 or price2 <= 0:
         return False
-    
+
     diff_pct = abs(price2 - price1) / price1
     return diff_pct <= tolerance
 
@@ -388,9 +712,79 @@ def get_category(row):
             return str(row[col])
     return ''
 
-def ai_find_house_brand_alternatives(source_products, target_products, price_tolerance=0.30, progress_callback=None, retailer=None, gt_hints=None):
+# Cache for AI product type extraction to avoid repeated API calls
+_product_type_cache = {}
+
+def ai_extract_product_type(product_name: str, client) -> str:
+    """Stage 1: Use AI to extract normalized product type from product name.
+
+    This handles Thai/English variations and returns a consistent English product type.
+    Examples: "downlight", "wall lamp", "power strip", "cable tie", "LED bulb", etc.
+
+    Args:
+        product_name: The product name (Thai or English)
+        client: OpenRouter client
+
+    Returns:
+        Normalized English product type string, or empty string if extraction fails
+    """
+    if not product_name or not client:
+        return ''
+
+    # Check cache first using hash of product name
+    cache_key = hashlib.md5(product_name.encode('utf-8')).hexdigest()
+    if cache_key in _product_type_cache:
+        return _product_type_cache[cache_key]
+
+    prompt = f"""Extract the product TYPE from this product name. Return ONLY the product type in English, lowercase.
+
+Product: {product_name}
+
+Examples:
+- "โคมดาวน์ไลท์ LED 15W 6นิ้ว DAYLIGHT" → "downlight"
+- "โคมไฟติดผนัง LED 12W" → "wall lamp"
+- "ปลั๊กไฟ 4 ช่อง 3 เมตร" → "power strip"
+- "เคเบิ้ลไทร์ 4นิ้ว 100ชิ้น" → "cable tie"
+- "หลอดไฟ LED 9W E27" → "LED bulb"
+- "สายไฟ VAF 2x1.5 sq.mm" → "electrical wire"
+- "กาวซิลิโคน 300ml" → "silicone sealant"
+- "สีน้ำอะคริลิค TOA 3.785L" → "acrylic paint"
+- "ประตู UPVC บานเปิด" → "UPVC door"
+- "มือจับประตู สแตนเลส" → "door handle"
+- "พัดลมเพดาน 56นิ้ว" → "ceiling fan"
+- "ปั๊มน้ำ 1HP" → "water pump"
+- "กรรไกรตัดกิ่ง" → "pruning shears"
+- "กรรไกรอเนกประสงค์" → "multipurpose scissors"
+- "แปรงทาแชล็ค" → "shellac brush"
+- "แปรงทาสีน้ำมัน" → "oil paint brush"
+
+Return ONLY the product type (1-3 words), nothing else."""
+
+    try:
+        response = client.chat.completions.create(
+            model="google/gemini-2.5-flash-lite",
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=50
+        )
+
+        result = response.choices[0].message.content.strip().lower()
+        # Clean up the result - remove quotes, extra spaces, punctuation
+        result = re.sub(r'["\'\.\,]', '', result).strip()
+        # Limit to reasonable length
+        if len(result) > 50:
+            result = result[:50]
+
+        # Cache the result
+        _product_type_cache[cache_key] = result
+        return result
+
+    except Exception:
+        _product_type_cache[cache_key] = ''
+        return ''
+
+def ai_find_house_brand_alternatives(source_products, target_products, price_tolerance=0.40, progress_callback=None, retailer=None, gt_hints=None):
     """Use AI to find house brand alternatives (same function, different brand, similar price)
-    
+
     Args:
         source_products: List of source products (TWD)
         target_products: List of target products (competitor)
@@ -402,34 +796,37 @@ def ai_find_house_brand_alternatives(source_products, target_products, price_tol
     client = get_openrouter_client()
     if not client:
         return None
-    
+
     matches = []
     total = len(source_products)
-    
+
     target_url_to_idx = {}
     for i, t in enumerate(target_products):
         t_url = t.get('url', t.get('product_url', t.get('link', '')))
         if t_url:
             target_url_to_idx[t_url.strip()] = i
-    
+
     for idx, source in enumerate(source_products):
         if progress_callback:
             progress_callback((idx + 1) / total)
-        
+
         source_name = source.get('name', source.get('product_name', ''))
         source_brand = extract_brand(source_name, source.get('brand', ''))
         source_category = extract_category(source_name)
         source_price = float(source.get('current_price', source.get('price', 0)) or 0)
         source_specs = extract_size_specs(source_name)
-        
+
+        # Stage 1: Extract normalized product type using AI
+        source_product_type = ai_extract_product_type(source_name, client)
+
         preferred_brands = get_preferred_brands(source_brand, retailer) if retailer else []
-        
+
         if source_price <= 0:
             continue
-        
+
         min_price = source_price * (1 - price_tolerance)
         max_price = source_price * (1 + price_tolerance)
-        
+
         candidates = []
         for i, t in enumerate(target_products):
             t_name = t.get('name', t.get('product_name', ''))
@@ -437,31 +834,49 @@ def ai_find_house_brand_alternatives(source_products, target_products, price_tol
             t_brand = extract_brand(t_name, t.get('brand', ''), t_url)
             t_category = extract_category(t_name)
             t_price = float(t.get('current_price', t.get('price', 0)) or 0)
-            
+
             if t_price <= 0:
                 continue
             if t_price < min_price or t_price > max_price:
                 continue
             if source_brand and t_brand and source_brand == t_brand:
                 continue
-            
+
+            # NEW: Check for product line conflicts BEFORE adding to candidates
+            if has_product_conflict(source_name, t_name):
+                continue  # Skip this candidate - product type conflict detected
+
             t_specs = extract_size_specs(t_name)
             spec_score = calculate_spec_score(source_specs, t_specs)
-            
+
             t_text_norm = normalize_text(t_name).lower()
             source_text_norm = normalize_text(source_name).lower()
             text_sim = fuzz.token_set_ratio(source_text_norm, t_text_norm)
-            
+
             brand_boost = 0
             if preferred_brands and t_brand:
                 if t_brand in preferred_brands:
                     brand_boost = 30
                 elif any(pb.upper() in t_brand.upper() or t_brand.upper() in pb.upper() for pb in preferred_brands):
                     brand_boost = 20
-            
-            combined_score = spec_score * 0.5 + text_sim * 0.3 + brand_boost
-            
-            if text_sim >= 20 or spec_score >= 50 or brand_boost > 0:
+
+            # Check for model number match - strong indicator of equivalent products
+            source_model = source_specs.get('model', '')
+            target_model = t_specs.get('model', '')
+            model_boost = 0
+            if source_model and target_model:
+                if source_model.upper() == target_model.upper():
+                    model_boost = 50  # Strong boost for exact model match
+                elif source_model.upper() in target_model.upper() or target_model.upper() in source_model.upper():
+                    model_boost = 25  # Partial model match
+
+            # Improved scoring: Higher weight on spec_score for better quality candidates
+            combined_score = spec_score * 0.6 + text_sim * 0.25 + brand_boost + model_boost
+
+            # Calculate price difference for candidate filtering
+            price_diff = abs(t_price - source_price) / source_price if source_price > 0 else 1
+
+            if text_sim >= 5 or spec_score >= 20 or brand_boost > 0 or model_boost > 0 or price_diff <= 0.15:
                 candidates.append({
                     'idx': i,
                     'name': t_name,
@@ -473,57 +888,87 @@ def ai_find_house_brand_alternatives(source_products, target_products, price_tol
                     'spec_score': spec_score,
                     'text_sim': text_sim,
                     'brand_boost': brand_boost,
+                    'model_boost': model_boost,
                     'combined_score': combined_score
                 })
-        
+
         if not candidates:
             continue
-        
+
         source_url = source.get('url', source.get('product_url', source.get('link', '')))
         if source_url:
             source_url = source_url.strip()
-        
+
         candidates.sort(key=lambda x: x['combined_score'], reverse=True)
-        top_candidates = candidates[:10]
-        
+        # Increased to 40 candidates to give AI Stage 2 more options
+        top_candidates = candidates[:40]
+
+        # Extract product types for top candidates (batch extraction for context)
+        candidate_types = {}
+        for c in top_candidates[:5]:  # Only top 5 to reduce API calls
+            c_type = ai_extract_product_type(c['name'], client)
+            if c_type:
+                candidate_types[c['idx']] = c_type
+
         target_list = []
         for pos, c in enumerate(top_candidates):
             spec_str = ', '.join([f"{k}={v}" for k, v in c['specs'].items()]) if c['specs'] else 'N/A'
-            target_list.append(f"{pos}: {c['name']} [Specs: {spec_str}] (Brand: {c['brand']}, Price: ฿{c['price']:,.0f}, SpecMatch: {c['spec_score']}%)")
-        
+            c_type = candidate_types.get(c['idx'], '')
+            type_str = f", Type: {c_type}" if c_type else ""
+            target_list.append(f"{pos}: {c['name']} [Specs: {spec_str}] (Brand: {c['brand']}, Price: {c['price']:,.0f}, SpecMatch: {c['spec_score']}%{type_str})")
+
         source_spec_str = ', '.join([f"{k}={v}" for k, v in source_specs.items()]) if source_specs else 'N/A'
-        
-        prompt = f"""House Brand Alternative Finder - EXACT SPECIFICATION MATCHING PRIORITY.
+
+        # Stage 2: Build prompt with STRICT product type matching
+        product_type_info = f"- PRODUCT TYPE (CRITICAL): {source_product_type}" if source_product_type else ""
+
+        prompt = f"""House Brand Product Matcher - Find EQUIVALENT product with matching specs
 
 SOURCE PRODUCT:
 - Name: {source_name}
 - Brand: {source_brand}
+{product_type_info}
 - Category: {source_category}
-- Price: ฿{source_price:,.0f}
+- Price: {source_price:,.0f}
 - KEY SPECS: {source_spec_str}
 
 CANDIDATE ALTERNATIVES (ranked by spec match):
 {chr(10).join(target_list)}
 
-MATCHING RULES (STRICT PRIORITY ORDER):
-1. EXACT SPEC MATCH - Choose candidate with matching wattage/size/socket/volume FIRST
-2. SAME PRODUCT TYPE - Must be the same product type (e.g., downlight→downlight, wall lamp→wall lamp)
-3. DIFFERENT BRAND - Must be different brand
+=== MATCHING RULES ===
 
-CRITICAL: If source has specs like "15W LED E27x1 6inch DAYLIGHT":
-- PREFER candidate with SAME wattage (15W), SAME socket (E27x1), SAME size (6inch), SAME color temp (DL/DAYLIGHT)
-- Candidates with SpecMatch score 80%+ are strongly preferred
+**RULE 1 - PRODUCT TYPE MUST MATCH**
+{f"Source is: '{source_product_type}'" if source_product_type else "Identify product type from name."}
+The candidate must be the SAME type of product. Different subtypes = REJECT.
 
-DO NOT match:
-- Different wattage (15W vs 10W) 
-- Different size (6inch vs 4inch)
-- Different socket count (E27x1 vs E27x2)
-- Different product types
+**RULE 2 - USE SPECMATCH% AS PRIMARY GUIDE**
+Source specs: {source_spec_str}
+- SpecMatch >= 70%: Strong match - select with high confidence
+- SpecMatch 50-69%: Check if product type matches exactly
+- SpecMatch < 50%: Usually too different - prefer returning null
 
-Pick the candidate with HIGHEST spec match that serves the same function.
+**RULE 3 - CRITICAL SPEC MISMATCHES = REJECT**
+If source has a spec, candidate should match closely:
+- Size/dimensions: must be same or within 10%
+- Wattage/volume/length: must be within 20%
+- Count specs (ชั้น/เส้น/ขั้น/ชิ้น): must match exactly
+- Type specs (brake/room type/lamp type): must match exactly
 
-Return: {{"match_index": <0-9 or null>, "confidence": <50-100>, "reason": "<why specs match>"}}
-JSON only."""
+**COMMON REJECTION EXAMPLES:**
+- ไม่มีเบรก ≠ มีเบรก (brake mismatch)
+- อะไหล่ลูกกลิ้ง ≠ ลูกกลิ้งทาสี (refill vs full)
+- โคมไฟกิ่ง ≠ ไฟผนัง ≠ ไฟสนาม (different lamp types)
+- 4 ชั้น ≠ 5 ชั้น, 9 เส้น ≠ 6 เส้น (count mismatch)
+- 1/2 นิ้ว ≠ 5/8 นิ้ว (size mismatch)
+- ห้องทั่วไป ≠ ห้องน้ำ (room type mismatch)
+
+**DECISION:**
+- Select candidate with HIGHEST SpecMatch% that passes type check
+- Return null if best candidate has SpecMatch < 50% or wrong type
+- It's OK to return null - better than wrong match!
+
+Return: {{"match_index": <0-39 or null>, "confidence": <50-100>, "reason": "<1 sentence>"}}
+JSON only. Return null if no reasonable match."""
 
         try:
             response = client.chat.completions.create(
@@ -531,26 +976,26 @@ JSON only."""
                 messages=[{"role": "user", "content": prompt}],
                 max_tokens=200
             )
-            
+
             result_text = response.choices[0].message.content.strip()
             if result_text.startswith("```"):
                 result_text = result_text.split("```")[1]
                 if result_text.startswith("json"):
                     result_text = result_text[4:]
             result_text = result_text.strip()
-            
+
             result_text = re.sub(r'[\x00-\x1f\x7f-\x9f]', '', result_text)
             if not result_text.endswith('}'):
                 result_text = result_text.split('}')[0] + '}'
-            
+
             result = json.loads(result_text)
-            
+
             if result.get('match_index') is not None and result.get('confidence', 0) >= 60:
                 match_idx = int(result['match_index'])
-                
+
                 if match_idx < len(top_candidates):
                     matched = top_candidates[match_idx]
-                    
+
                     matches.append({
                         'source_idx': idx,
                         'target_idx': matched['idx'],
@@ -562,7 +1007,7 @@ JSON only."""
                     })
         except Exception as e:
             continue
-    
+
     return matches
 
 def load_json_file(file):
@@ -570,7 +1015,7 @@ def load_json_file(file):
     try:
         content = file.read().decode('utf-8')
         data = json.loads(content)
-        
+
         if isinstance(data, list):
             return pd.DataFrame(data)
         elif isinstance(data, dict):
@@ -578,7 +1023,7 @@ def load_json_file(file):
                 return pd.DataFrame(data['products'])
             elif 'data' in data:
                 return pd.DataFrame(data['data'])
-        
+
         return pd.DataFrame([data])
     except Exception as e:
         st.error(f"Error loading JSON: {e}")
@@ -608,7 +1053,7 @@ st.markdown("Find alternative products with **same function, different brand, si
 
 with st.sidebar:
     st.header("Settings")
-    
+
     price_tolerance = st.slider(
         "Price Tolerance (%)",
         min_value=10,
@@ -617,7 +1062,7 @@ with st.sidebar:
         step=5,
         help="Maximum price difference allowed between source and alternative"
     )
-    
+
     st.markdown("---")
     st.markdown("### How it works")
     st.markdown("""
@@ -639,13 +1084,13 @@ with col1:
         type=['csv', 'json'],
         key="source"
     )
-    
+
     if source_file:
         if source_file.name.endswith('.json'):
             source_df = load_json_file(source_file)
         else:
             source_df = load_csv_file(source_file)
-        
+
         if source_df is not None:
             st.success(f"Loaded {len(source_df)} products")
             st.dataframe(source_df.head(5), use_container_width=True)
@@ -657,13 +1102,13 @@ with col2:
         type=['csv', 'json'],
         key="target"
     )
-    
+
     if target_file:
         if target_file.name.endswith('.json'):
             target_df = load_json_file(target_file)
         else:
             target_df = load_csv_file(target_file)
-        
+
         if target_df is not None:
             st.success(f"Loaded {len(target_df)} products")
             st.dataframe(target_df.head(5), use_container_width=True)
@@ -677,36 +1122,36 @@ if 'source_df' in dir() and source_df is not None and 'target_df' in dir() and t
         else:
             source_products = source_df.to_dict('records')
             target_products = target_df.to_dict('records')
-            
+
             progress_bar = st.progress(0)
             status_text = st.empty()
-            
+
             def update_progress(progress):
                 progress_bar.progress(progress)
                 status_text.text(f"Processing: {int(progress * 100)}%")
-            
+
             with st.spinner("Finding house brand alternatives..."):
                 matches = ai_find_house_brand_alternatives(
-                    source_products, 
-                    target_products, 
+                    source_products,
+                    target_products,
                     price_tolerance=price_tolerance/100,
                     progress_callback=update_progress
                 )
-            
+
             progress_bar.empty()
             status_text.empty()
-            
+
             if matches:
                 results = []
                 for match in matches:
                     source_row = source_df.iloc[match['source_idx']]
                     target_row = target_df.iloc[match['target_idx']]
-                    
+
                     source_name = get_product_name(source_row)
                     target_name = get_product_name(target_row)
                     source_price = get_price(source_row)
                     target_price = get_price(target_row)
-                    
+
                     results.append({
                         'Source Product': source_name,
                         'Source Brand': match['source_brand'],
@@ -723,16 +1168,16 @@ if 'source_df' in dir() and source_df is not None and 'target_df' in dir() and t
                         'Confidence': match['confidence'],
                         'Reason': match['reason']
                     })
-                
+
                 results_df = pd.DataFrame(results)
                 st.session_state['house_brand_results'] = results_df
-                
+
                 save_path = save_results(results_df)
                 if save_path:
                     st.success(f"Found {len(results)} house brand alternatives! Results saved.")
-                
+
                 st.subheader(f"🎯 Found {len(results)} Alternatives")
-                
+
                 col1, col2, col3 = st.columns(3)
                 with col1:
                     avg_confidence = results_df['Confidence'].mean()
@@ -743,7 +1188,7 @@ if 'source_df' in dir() and source_df is not None and 'target_df' in dir() and t
                 with col3:
                     avg_price_diff = results_df['Price Diff (%)'].mean()
                     st.metric("Avg Price Diff", f"{avg_price_diff:+.1f}%")
-                
+
                 st.dataframe(
                     results_df[[
                         'Source Product', 'Source Brand', 'Source Price',
@@ -753,11 +1198,11 @@ if 'source_df' in dir() and source_df is not None and 'target_df' in dir() and t
                     use_container_width=True,
                     height=400
                 )
-                
+
                 st.subheader("📊 Analysis")
-                
+
                 tab1, tab2 = st.tabs(["Price Comparison", "Brand Distribution"])
-                
+
                 with tab1:
                     fig = go.Figure()
                     fig.add_trace(go.Bar(
@@ -779,7 +1224,7 @@ if 'source_df' in dir() and source_df is not None and 'target_df' in dir() and t
                         height=400
                     )
                     st.plotly_chart(fig, use_container_width=True)
-                
+
                 with tab2:
                     brand_counts = results_df['Alternative Brand'].value_counts()
                     fig = px.pie(
@@ -788,7 +1233,7 @@ if 'source_df' in dir() and source_df is not None and 'target_df' in dir() and t
                         title='Alternative Brands Distribution'
                     )
                     st.plotly_chart(fig, use_container_width=True)
-                
+
                 st.subheader("📥 Export Results")
                 col1, col2 = st.columns(2)
                 with col1:
