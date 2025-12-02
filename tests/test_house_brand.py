@@ -225,15 +225,9 @@ def test_house_brand_matching(retailer_name, sample_size=50, categories=None, pr
                 if not comp_prod or not twd_prod:
                     continue
                 
-                twd_price = float(twd_prod.get('current_price', twd_prod.get('price', 0)) or 0)
-                comp_price = float(comp_prod.get('current_price', comp_prod.get('price', 0)) or 0)
-                
-                if twd_price > 0 and comp_price > 0:
-                    price_diff = abs(comp_price - twd_price) / twd_price
-                    if price_diff <= price_tolerance:
-                        gt_matchable[twd_url] = comp_url
+                gt_matchable[twd_url] = comp_url
             
-            print(f"  - Matchable GT entries (in catalog & price OK): {len(gt_matchable)}/{len(gt)}")
+            print(f"  - Matchable GT entries (target exists in catalog): {len(gt_matchable)}/{len(gt)}")
         else:
             print("No GT file found - using criteria-based validation only")
     
