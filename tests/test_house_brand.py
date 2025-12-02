@@ -200,10 +200,40 @@ def test_house_brand_matching(retailer_name, sample_size=50, categories=None, pr
     competitor_products = load_json_products(config['products'])
     
     gt = None
+    gt_matchable = {}
     if use_gt:
         gt = load_ground_truth(config['gt'])
         if gt:
             print(f"Loaded {len(gt)} GT entries for house brand validation")
+            
+            comp_url_to_product = {}
+            for p in competitor_products:
+                url = p.get('url', p.get('product_url', p.get('link', '')))
+                if url:
+                    comp_url_to_product[url.strip()] = p
+            
+            twd_url_to_product = {}
+            for p in twd_products:
+                url = p.get('url', p.get('product_url', p.get('link', '')))
+                if url:
+                    twd_url_to_product[url.strip()] = p
+            
+            for twd_url, comp_url in gt.items():
+                twd_prod = twd_url_to_product.get(twd_url)
+                comp_prod = comp_url_to_product.get(comp_url)
+                
+                if not comp_prod or not twd_prod:
+                    continue
+                
+                twd_price = float(twd_prod.get('current_price', twd_prod.get('price', 0)) or 0)
+                comp_price = float(comp_prod.get('current_price', comp_prod.get('price', 0)) or 0)
+                
+                if twd_price > 0 and comp_price > 0:
+                    price_diff = abs(comp_price - twd_price) / twd_price
+                    if price_diff <= price_tolerance:
+                        gt_matchable[twd_url] = comp_url
+            
+            print(f"  - Matchable GT entries (in catalog & price OK): {len(gt_matchable)}/{len(gt)}")
         else:
             print("No GT file found - using criteria-based validation only")
     
@@ -267,6 +297,8 @@ def test_house_brand_matching(retailer_name, sample_size=50, categories=None, pr
     gt_correct = 0
     gt_incorrect = 0
     gt_not_in_gt = 0
+    gt_matchable_correct = 0
+    gt_matchable_incorrect = 0
     
     for match in matches:
         source = twd_products[match['source_idx']]
@@ -291,6 +323,12 @@ def test_house_brand_matching(retailer_name, sample_size=50, categories=None, pr
                 else:
                     gt_status = 'INCORRECT'
                     gt_incorrect += 1
+                
+                if source_url in gt_matchable:
+                    if expected_url == target_url:
+                        gt_matchable_correct += 1
+                    else:
+                        gt_matchable_incorrect += 1
             else:
                 gt_not_in_gt += 1
         
@@ -329,6 +367,11 @@ def test_house_brand_matching(retailer_name, sample_size=50, categories=None, pr
     if gt_tested > 0:
         gt_accuracy = gt_correct / gt_tested * 100
     
+    gt_matchable_tested = gt_matchable_correct + gt_matchable_incorrect
+    gt_matchable_accuracy = 0
+    if gt_matchable_tested > 0:
+        gt_matchable_accuracy = gt_matchable_correct / gt_matchable_tested * 100
+    
     total_gt = len(gt) if gt else 0
     
     print()
@@ -338,7 +381,12 @@ def test_house_brand_matching(retailer_name, sample_size=50, categories=None, pr
     print(f"  Correct:    {gt_correct}/{gt_tested} ({gt_correct/gt_tested*100:.1f}%)" if gt_tested > 0 else "  Correct:    0/0 (0.0%)")
     print(f"  Incorrect:  {gt_incorrect}/{gt_tested} ({gt_incorrect/gt_tested*100:.1f}%)" if gt_tested > 0 else "  Incorrect:  0/0 (0.0%)")
     print(f"  Not Found:  {len(twd_products) - len(matches)}/{len(twd_products)} ({(len(twd_products) - len(matches))/len(twd_products)*100:.1f}%)" if len(twd_products) > 0 else "  Not Found:  0/0 (0.0%)")
-    print(f"  ACCURACY:   {gt_accuracy:.1f}%")
+    print(f"  RAW ACCURACY:   {gt_accuracy:.1f}%")
+    print(f"  ---")
+    print(f"  Matchable GT (in catalog + price OK): {len(gt_matchable)}")
+    print(f"  Matchable tested: {gt_matchable_tested}")
+    print(f"  Matchable correct: {gt_matchable_correct}")
+    print(f"  MATCHABLE ACCURACY: {gt_matchable_accuracy:.1f}%")
     print("="*70)
     
     brand_distribution = {}
@@ -369,7 +417,11 @@ def test_house_brand_matching(retailer_name, sample_size=50, categories=None, pr
         'gt_correct': gt_correct,
         'gt_incorrect': gt_incorrect,
         'gt_not_in_gt': gt_not_in_gt,
-        'gt_accuracy': gt_accuracy
+        'gt_accuracy': gt_accuracy,
+        'gt_matchable_total': len(gt_matchable),
+        'gt_matchable_tested': gt_matchable_tested,
+        'gt_matchable_correct': gt_matchable_correct,
+        'gt_matchable_accuracy': gt_matchable_accuracy
     }
 
 def test_all_retailers(sample_size=30, categories=None, price_tolerance=0.30):
