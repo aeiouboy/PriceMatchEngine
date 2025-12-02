@@ -34,7 +34,7 @@ RETAILERS = {
     }
 }
 
-TWD_PRODUCTS = 'data/products/twdxdohome_yee.xlsx'
+TWD_PRODUCTS = 'data/products/thaiwatsadu.json'
 
 def load_json_products(filepath):
     """Load products from JSON or Excel file"""
