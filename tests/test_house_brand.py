@@ -27,16 +27,99 @@ from app import (
 )
 
 RETAILERS = {
-    'HomePro': 'data/products/homepro.json',
-    'GlobalHouse': 'data/products/globalhouse.json',
-    'Boonthavorn': 'data/products/boonthavorn.json',
-    'DoHome': 'data/products/dohome.json',
-    'Megahome': 'data/products/megahome.json'
+    'HomePro': {
+        'products': 'data/products/homepro.json',
+        'gt': 'data/ground_truth/GT_HB_HP.csv'
+    },
+    'GlobalHouse': {
+        'products': 'data/products/globalhouse.json',
+        'gt': 'data/ground_truth/GT_HB_GB.csv'
+    },
+    'Boonthavorn': {
+        'products': 'data/products/boonthavorn.json',
+        'gt': 'data/ground_truth/GT_HB_BN.csv'
+    },
+    'DoHome': {
+        'products': 'data/products/dohome.json',
+        'gt': 'data/ground_truth/GT_HB_DM.csv'
+    },
+    'Megahome': {
+        'products': 'data/products/megahome.json',
+        'gt': 'data/ground_truth/GT_HB_MG.csv'
+    }
 }
 
 TWD_PRODUCTS = 'data/products/thaiwatsadu.json'
 RESULTS_DIR = 'results/house_brand_tests'
 os.makedirs(RESULTS_DIR, exist_ok=True)
+
+def load_ground_truth(filepath):
+    """Load house brand ground truth file
+    
+    Expected GT format (CSV):
+    - twd_url: ThaiWatsadu product URL
+    - competitor_url: Expected house brand alternative URL
+    - (optional) twd_name, competitor_name for reference
+    """
+    if not os.path.exists(filepath):
+        print(f"GT file not found: {filepath}")
+        return None
+    
+    for encoding in ['utf-8', 'latin-1', 'cp1252']:
+        try:
+            gt_df = pd.read_csv(filepath, encoding=encoding)
+            break
+        except UnicodeDecodeError:
+            continue
+    else:
+        print(f"Could not read GT file: {filepath}")
+        return None
+    
+    cols = gt_df.columns.tolist()
+    twd_col = None
+    comp_col = None
+    
+    for col in cols:
+        col_lower = col.lower()
+        if 'thaiwatsadu' in col_lower and 'link' in col_lower:
+            twd_col = col
+        elif 'twd' in col_lower and 'url' in col_lower:
+            twd_col = col
+        elif 'source' in col_lower and 'url' in col_lower:
+            twd_col = col
+    
+    for col in cols:
+        col_lower = col.lower()
+        if any(r in col_lower for r in ['homepro', 'globalhouse', 'dohome', 'megahome', 'boonthavorn']):
+            if 'link' in col_lower or 'url' in col_lower:
+                comp_col = col
+        elif 'competitor' in col_lower or 'alternative' in col_lower or 'target' in col_lower:
+            if 'url' in col_lower or 'link' in col_lower:
+                comp_col = col
+    
+    if not twd_col or not comp_col:
+        for col in cols:
+            col_lower = col.lower()
+            if 'url' in col_lower or 'link' in col_lower:
+                if not twd_col:
+                    twd_col = col
+                elif not comp_col:
+                    comp_col = col
+    
+    if not twd_col or not comp_col:
+        print(f"Could not identify URL columns in GT file. Columns: {cols}")
+        return None
+    
+    print(f"GT columns: TWD={twd_col}, Competitor={comp_col}")
+    
+    gt_dict = {}
+    for _, row in gt_df.iterrows():
+        twd_url = str(row.get(twd_col, '')).strip()
+        comp_url = str(row.get(comp_col, '')).strip()
+        if twd_url and comp_url and twd_url.startswith('http') and comp_url.startswith('http'):
+            gt_dict[twd_url] = comp_url
+    
+    return gt_dict
 
 def load_json_products(filepath):
     """Load products from JSON file"""
