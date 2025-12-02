@@ -196,7 +196,75 @@ def extract_size_specs(product_name):
     if inch_match:
         specs['size_inch'] = f"{inch_match.group(1)} inch"
     
+    socket_pattern = r'(E27|E14|GU10|MR16)[Xx]?(\d+)?'
+    socket_match = re.search(socket_pattern, name, re.IGNORECASE)
+    if socket_match:
+        socket_type = socket_match.group(1).upper()
+        socket_count = socket_match.group(2) if socket_match.group(2) else '1'
+        specs['socket'] = f"{socket_type}x{socket_count}"
+    
+    meter_pattern = r'(\d+(?:\.\d+)?)\s*(เมตร|M\b|ม\.)'
+    meter_match = re.search(meter_pattern, name, re.IGNORECASE)
+    if meter_match:
+        specs['length'] = f"{meter_match.group(1)}M"
+    
+    led_pattern = r'LED\s*(\d+)\s*W'
+    led_match = re.search(led_pattern, name, re.IGNORECASE)
+    if led_match:
+        specs['led_wattage'] = f"LED {led_match.group(1)}W"
+    
+    color_temp = None
+    if 'DL' in name or 'DAYLIGHT' in name:
+        color_temp = 'DAYLIGHT'
+    elif 'WW' in name or 'WARM' in name:
+        color_temp = 'WARMWHITE'
+    elif 'CW' in name or 'COOL' in name:
+        color_temp = 'COOLWHITE'
+    if color_temp:
+        specs['color_temp'] = color_temp
+    
     return specs
+
+def calculate_spec_score(source_specs, target_specs):
+    """Calculate how well target specs match source specs (0-100)"""
+    if not source_specs:
+        return 50
+    
+    total_weight = 0
+    matched_weight = 0
+    
+    spec_weights = {
+        'wattage': 30,
+        'led_wattage': 30,
+        'size_inch': 25,
+        'socket': 20,
+        'volume': 25,
+        'length': 20,
+        'dimensions': 15,
+        'color_temp': 10
+    }
+    
+    for spec_key, weight in spec_weights.items():
+        if spec_key in source_specs:
+            total_weight += weight
+            if spec_key in target_specs:
+                if source_specs[spec_key] == target_specs[spec_key]:
+                    matched_weight += weight
+                elif spec_key in ['wattage', 'led_wattage', 'size_inch']:
+                    src_val = re.search(r'(\d+)', str(source_specs[spec_key]))
+                    tgt_val = re.search(r'(\d+)', str(target_specs[spec_key]))
+                    if src_val and tgt_val:
+                        src_num = int(src_val.group(1))
+                        tgt_num = int(tgt_val.group(1))
+                        if src_num == tgt_num:
+                            matched_weight += weight
+                        elif abs(src_num - tgt_num) <= max(src_num * 0.1, 1):
+                            matched_weight += weight * 0.5
+    
+    if total_weight == 0:
+        return 50
+    
+    return int(matched_weight / total_weight * 100)
 
 def check_price_within_tolerance(price1, price2, tolerance=PRICE_TOLERANCE):
     """Check if prices are within tolerance percentage"""
@@ -275,6 +343,7 @@ def ai_find_house_brand_alternatives(source_products, target_products, price_tol
             t_brand = extract_brand(t_name, t.get('brand', ''))
             t_category = extract_category(t_name)
             t_price = float(t.get('current_price', t.get('price', 0)) or 0)
+            t_url = t.get('url', t.get('product_url', t.get('link', '')))
             
             if t_price <= 0:
                 continue
@@ -283,62 +352,72 @@ def ai_find_house_brand_alternatives(source_products, target_products, price_tol
             if source_brand and t_brand and source_brand == t_brand:
                 continue
             
+            t_specs = extract_size_specs(t_name)
+            spec_score = calculate_spec_score(source_specs, t_specs)
+            
             t_text_norm = normalize_text(t_name).lower()
             source_text_norm = normalize_text(source_name).lower()
+            text_sim = fuzz.token_set_ratio(source_text_norm, t_text_norm)
             
-            sim = fuzz.token_set_ratio(source_text_norm, t_text_norm)
+            combined_score = spec_score * 0.6 + text_sim * 0.4
             
-            if sim >= 25:
+            if text_sim >= 20 or spec_score >= 50:
                 candidates.append({
                     'idx': i,
                     'name': t_name,
                     'brand': t_brand,
                     'category': t_category,
                     'price': t_price,
-                    'sim': sim
+                    'url': t_url,
+                    'specs': t_specs,
+                    'spec_score': spec_score,
+                    'text_sim': text_sim,
+                    'combined_score': combined_score
                 })
         
         if not candidates:
             continue
         
-        candidates.sort(key=lambda x: x['sim'], reverse=True)
+        candidates.sort(key=lambda x: x['combined_score'], reverse=True)
         top_candidates = candidates[:10]
         
-        target_list = [f"{pos}: {c['name']} (Brand: {c['brand']}, Price: ฿{c['price']:,.0f})" 
-                      for pos, c in enumerate(top_candidates)]
+        target_list = []
+        for pos, c in enumerate(top_candidates):
+            spec_str = ', '.join([f"{k}={v}" for k, v in c['specs'].items()]) if c['specs'] else 'N/A'
+            target_list.append(f"{pos}: {c['name']} [Specs: {spec_str}] (Brand: {c['brand']}, Price: ฿{c['price']:,.0f}, SpecMatch: {c['spec_score']}%)")
         
-        prompt = f"""House Brand Alternative Finder for Thai retail products.
-Find products that serve the SAME FUNCTION but from DIFFERENT BRANDS.
+        source_spec_str = ', '.join([f"{k}={v}" for k, v in source_specs.items()]) if source_specs else 'N/A'
+        
+        prompt = f"""House Brand Alternative Finder - EXACT SPECIFICATION MATCHING PRIORITY.
 
 SOURCE PRODUCT:
 - Name: {source_name}
 - Brand: {source_brand}
 - Category: {source_category}
 - Price: ฿{source_price:,.0f}
-- Specs: {source_specs}
+- KEY SPECS: {source_spec_str}
 
-CANDIDATE ALTERNATIVES (different brands, similar price):
+CANDIDATE ALTERNATIVES (ranked by spec match):
 {chr(10).join(target_list)}
 
-MATCHING CRITERIA:
-1. SAME FUNCTION/PURPOSE - products must do the same job
-2. SIMILAR SPECIFICATIONS - same size, volume, wattage, dimensions
-3. DIFFERENT BRAND - must be a different brand (house brand alternative)
-4. Price within {int(price_tolerance*100)}% tolerance already filtered
+MATCHING RULES (STRICT PRIORITY ORDER):
+1. EXACT SPEC MATCH - Choose candidate with matching wattage/size/socket/volume FIRST
+2. SAME PRODUCT TYPE - Must be the same product type (e.g., downlight→downlight, wall lamp→wall lamp)
+3. DIFFERENT BRAND - Must be different brand
 
-EXAMPLES of valid house brand alternatives:
-- TOA paint 5L → BEGER paint 5L (same function, different brand)
-- YALE door handle → SOLEX door handle (same function, different brand)
-- MAKITA drill 500W → BOSCH drill 500W (same function, different brand)
+CRITICAL: If source has specs like "15W LED E27x1 6inch DAYLIGHT":
+- PREFER candidate with SAME wattage (15W), SAME socket (E27x1), SAME size (6inch), SAME color temp (DL/DAYLIGHT)
+- Candidates with SpecMatch score 80%+ are strongly preferred
 
 DO NOT match:
-- Different product types (paint vs primer)
-- Different sizes (5L vs 1L)
-- Same brand products
+- Different wattage (15W vs 10W) 
+- Different size (6inch vs 4inch)
+- Different socket count (E27x1 vs E27x2)
+- Different product types
 
-Pick the BEST alternative that serves the same function.
+Pick the candidate with HIGHEST spec match that serves the same function.
 
-Return: {{"match_index": <0-9 or null>, "confidence": <50-100>, "reason": "<why this is a good alternative>"}}
+Return: {{"match_index": <0-9 or null>, "confidence": <50-100>, "reason": "<why specs match>"}}
 JSON only."""
 
         try:
