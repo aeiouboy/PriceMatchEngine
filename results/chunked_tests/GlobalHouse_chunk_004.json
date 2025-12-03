@@ -1,0 +1,70 @@
+{
+  "retailer": "GlobalHouse",
+  "chunk": 4,
+  "start_idx": 45,
+  "end_idx": 60,
+  "products_tested": 15,
+  "matches_found": 4,
+  "correct": 2,
+  "incorrect": 0,
+  "accuracy": 100.0,
+  "timestamp": "2025-12-03T03:48:41.531123",
+  "matches": [
+    {
+      "chunk": 4,
+      "source_idx": 46,
+      "source_name": "เช็ควาล์วสปริงทองเหลือง KARTEN รุ่น HN3037-1 ขนาด 1 นิ้ว สีทองเหลือง",
+      "source_brand": "KARTEN",
+      "source_url": "https://www.thaiwatsadu.com/sku/60350467",
+      "target_name": "VAVO เช็ควาล์วสปริงทองเหลือง 3/4 รุ่น YF-4054-2",
+      "target_brand": "VAVO",
+      "target_url": "https://globalhouse.co.th/product/VAVO-%E0%B9%80%E0%B8%8A%E0%B9%87%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A5%E0%B9%8C%E0%B8%A7%E0%B8%AA%E0%B8%9B%E0%B8%A3%E0%B8%B4%E0%B8%87%E0%B8%97%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%87-34-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-YF40542-i.1903300130262",
+      "expected_url": "",
+      "confidence": 70,
+      "reason": "Candidate 2 is the only other check valve. Although there's no spec match on size, the product type is a direct match, indicating it's a potential alternative.",
+      "gt_status": "NO_GT"
+    },
+    {
+      "chunk": 4,
+      "source_idx": 47,
+      "source_name": "ประตูน้ำ KARTEN รุ่น HN3042-1 ขนาด 1 นิ้ว สีแดง",
+      "source_brand": "KARTEN",
+      "source_url": "https://www.thaiwatsadu.com/sku/60350473",
+      "target_name": "GROSNA ประตูน้ำทองเหลือง 1 รุ่น YF-4056-3",
+      "target_brand": "GROSNA",
+      "target_url": "https://globalhouse.co.th/product/GROSNA-%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%95%E0%B8%B9%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%97%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%87-1-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-YF40563-i.1903300134139",
+      "expected_url": "",
+      "confidence": 60,
+      "reason": "Candidate is a gate valve with a matching product type ('water gate' vs 'gate valve') and a close price point, despite having 0% spec match on 'size_inch' and 'model'.",
+      "gt_status": "NO_GT"
+    },
+    {
+      "chunk": 4,
+      "source_idx": 50,
+      "source_name": "ม่านม้วนสลับทึบโปร่ง Zebra KASSA HOME รุ่น SV-DN-NR-17-1319-701 ขนาด 70 x 160 ซม. สีน้ำตาล",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60282613",
+      "target_name": "DAVINCI ม่านม้วนปรับแสง BC-003L-B164-70WBB ขนาด 70x160ซม.สีขาว-เบจ-น้ำตาล",
+      "target_brand": "DAVINCI",
+      "target_url": "https://globalhouse.co.th/product/DAVINCI-%E0%B8%A1%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B8%A1%E0%B9%89%E0%B8%A7%E0%B8%99%E0%B8%9B%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B9%81%E0%B8%AA%E0%B8%87-BC003LB16470WBB-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-70x160%E0%B8%8B%E0%B8%A1.%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7%E0%B9%80%E0%B8%9A%E0%B8%88%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%95%E0%B8%B2%E0%B8%A5-i.5922005540204",
+      "expected_url": "https://globalhouse.co.th/product/DAVINCI-%E0%B8%A1%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B8%A1%E0%B9%89%E0%B8%A7%E0%B8%99%E0%B8%9B%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B9%81%E0%B8%AA%E0%B8%87-BC003LB16470WBB-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-70x160%E0%B8%8B%E0%B8%A1.%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7%E0%B9%80%E0%B8%9A%E0%B8%88%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%95%E0%B8%B2%E0%B8%A5-i.5922005540204",
+      "confidence": 100,
+      "reason": "The candidate is a roller blind with identical dimensions and product type as the source product.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 4,
+      "source_idx": 58,
+      "source_name": "ยางกวาดน้ำ24นิ้ว ด้ามอะลูมิเนียมยาว150ซม.KASSA HOME ขนาด 60 x 7 x 160ซม. สีเทา",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60230628",
+      "target_name": "SUPERCAT ยางไล่น้ำหน้ากว้าง 24 นิ้ว ด้ามอลูมิเนียม",
+      "target_brand": "SUPERCAT",
+      "target_url": "https://globalhouse.co.th/product/SUPERCAT-%E0%B8%A2%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%A7%E0%B8%B2%E0%B8%94%E0%B8%99%E0%B9%89%E0%B8%B3-%E0%B8%94%E0%B9%89%E0%B8%B2%E0%B8%A1%E0%B8%AD%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-24-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-i.8859238901946",
+      "expected_url": "https://globalhouse.co.th/product/SUPERCAT-%E0%B8%A2%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%A7%E0%B8%B2%E0%B8%94%E0%B8%99%E0%B9%89%E0%B8%B3-%E0%B8%94%E0%B9%89%E0%B8%B2%E0%B8%A1%E0%B8%AD%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-24-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-i.8859238901946",
+      "confidence": 75,
+      "reason": "Candidate 0 has the highest SpecMatch for a similar product type ('wiper' is close to 'window squeegee') and matches the critical 'size_inch' spec.",
+      "gt_status": "CORRECT"
+    }
+  ]
+}

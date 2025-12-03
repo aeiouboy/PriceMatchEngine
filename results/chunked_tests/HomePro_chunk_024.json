@@ -1,0 +1,56 @@
+{
+  "retailer": "HomePro",
+  "chunk": 24,
+  "start_idx": 345,
+  "end_idx": 360,
+  "products_tested": 15,
+  "matches_found": 3,
+  "correct": 3,
+  "incorrect": 0,
+  "accuracy": 100.0,
+  "timestamp": "2025-12-03T04:31:20.540685",
+  "matches": [
+    {
+      "chunk": 24,
+      "source_idx": 349,
+      "source_name": "โฟมแผ่น 1/2 นิ้ว GIANT KINGKONG ขนาด 60 x 120 ซม. สีขาว",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60175574",
+      "target_name": "โฟมแผ่น PACK IN 1/2 นิ้วX60 ซม.X1.2 ม. สีขาว",
+      "target_brand": "PACK IN",
+      "target_url": "https://www.homepro.co.th/p/1192467",
+      "expected_url": "https://www.homepro.co.th/p/1192467",
+      "confidence": 70,
+      "reason": "The candidate is also a foam sheet with a good spec match for size and common dimensions. The length conversion from meter to cm aligns with the source's length.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 24,
+      "source_idx": 352,
+      "source_name": "โต๊ะรีดผ้า 6 ระดับ บอร์ดกว้าง ลายดอท KASSA HOME รุ่น DOT No.2 สีเทา - เบจ",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60381416",
+      "target_name": "โต๊ะรีดผ้าแบบยืน 6 ระดับ ธรรมดา PLIM GEO สีเทา",
+      "target_brand": "PLIM",
+      "target_url": "https://www.homepro.co.th/p/1266790",
+      "expected_url": "https://www.homepro.co.th/p/1266790",
+      "confidence": 70,
+      "reason": "The candidate is the same product type (ironing board) with the highest spec match percentage among the valid alternatives.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 24,
+      "source_idx": 357,
+      "source_name": "ตู้บานเปิดอเนกประสงค์ 3 ชั้น KASSA HOME รุ่น SPP-Color Vid-3 ขนาด 69 x 50 x 121 ซม. สีเทา - ขาว",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60330525",
+      "target_name": "ตู้บานเปิด 3 ชั้น ME LIVING VID-3 70x50x121 ซม. สีเทา",
+      "target_brand": "ME LIVING",
+      "target_url": "https://www.homepro.co.th/p/1173626",
+      "expected_url": "https://www.homepro.co.th/p/1173626",
+      "confidence": 90,
+      "reason": "The candidate is a cabinet with identical tiers and length, and very similar dimensions (within 10%) to the source product, resulting in a high SpecMatch percentage.",
+      "gt_status": "CORRECT"
+    }
+  ]
+}

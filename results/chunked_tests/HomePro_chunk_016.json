@@ -1,0 +1,70 @@
+{
+  "retailer": "HomePro",
+  "chunk": 16,
+  "start_idx": 225,
+  "end_idx": 240,
+  "products_tested": 15,
+  "matches_found": 4,
+  "correct": 1,
+  "incorrect": 3,
+  "accuracy": 25.0,
+  "timestamp": "2025-12-03T04:25:09.197937",
+  "matches": [
+    {
+      "chunk": 16,
+      "source_idx": 227,
+      "source_name": "ถังขยะขาเหยียบแบบสี่เหลี่ยม Soft Closed KASSA HOME รุ่น 12L-97895-002 ความจุ 12 ลิตร สีเงิน",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60290165",
+      "target_name": "ถังขยะเหยียบกลม ACCO SILVEY 12 ลิตร สีเงิน",
+      "target_brand": "ACCO",
+      "target_url": "https://www.homepro.co.th/p/1220492",
+      "expected_url": "https://www.homepro.co.th/p/1040980",
+      "confidence": 100,
+      "reason": "The candidate is a trash bin with the exact same volume (12 L) as the source product, resulting in a perfect spec match.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 16,
+      "source_idx": 233,
+      "source_name": "โคมไฟแขวนเหล็ก E27x1 LUZINO รุ่น YD-DT1504M(BK) สีดำ",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60263453",
+      "target_name": "ไฟช่อ CARINI P180420-BLACK โลหะ MODERN สีดำ/ROSEGOLD 1 หัว",
+      "target_brand": "CARINI",
+      "target_url": "https://www.homepro.co.th/p/1140822",
+      "expected_url": "https://www.homepro.co.th/p/1180630",
+      "confidence": 60,
+      "reason": "The candidate is also a 'pendant light' but lacks specific matching specifications from the source product, resulting in a low SpecMatch.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 16,
+      "source_idx": 234,
+      "source_name": "เก้าอี้พักผ่อน KASSA รุ่น A1797-2 สีน้ำเงิน",
+      "source_brand": "KASSA",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60351431",
+      "target_name": "เก้าอี้พักผ่อน FURDINI SIMPLY สีเทา",
+      "target_brand": "FURDINI",
+      "target_url": "https://www.homepro.co.th/p/1136010",
+      "expected_url": "https://www.homepro.co.th/p/1187435",
+      "confidence": 60,
+      "reason": "The candidate is a 'recliner chair' and the source is a 'lounge chair', which are similar types of chairs. While the brands and specific models differ, it's the closest functional match.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 16,
+      "source_idx": 235,
+      "source_name": "เกรียงโป๊วสีเหล็กด้ามพลาสติก GIANT KINGKONG PRO รุ่น H36-4 ขนาด 4 นิ้ว สีน้ำเงิน",
+      "source_brand": "GIANT KINGKONG PRO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60292791",
+      "target_name": "เกรียงโป๊วสี MATALL 4 นิ้ว",
+      "target_brand": "MATALL",
+      "target_url": "https://www.homepro.co.th/p/1167192",
+      "expected_url": "https://www.homepro.co.th/p/1167192",
+      "confidence": 95,
+      "reason": "The candidate is also a putty knife with the exact same size, making it a strong spec match.",
+      "gt_status": "CORRECT"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "retailer": "Boonthavorn",
+  "chunk": 3,
+  "start_idx": 30,
+  "end_idx": 45,
+  "products_tested": 15,
+  "matches_found": 3,
+  "correct": 1,
+  "incorrect": 2,
+  "accuracy": 33.33333333333333,
+  "timestamp": "2025-12-03T03:44:10.682148",
+  "matches": [
+    {
+      "chunk": 3,
+      "source_idx": 30,
+      "source_name": "โคมไฟแขวนแก้ว Mamo G E27x3 LUZINO รุ่น HH150 สีดำ",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60365506",
+      "target_name": "ไฟแขวน MD54158C-3A BK *ดำ E27x3 40W",
+      "target_brand": "LIGHTMOST",
+      "target_url": "https://www.boonthavorn.com/lightmost-1208338",
+      "expected_url": "https://www.boonthavorn.com/lightmost-1208338",
+      "confidence": 75,
+      "reason": "The candidate is a pendant light with matching dimensions and socket type, making it the closest functional equivalent despite a lower SpecMatch%.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 3,
+      "source_idx": 33,
+      "source_name": "โคมแทรคไลท์เข้าราง E27x1 PAR30 LUZINO รุ่น LP03-WH สีขาว",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60320102",
+      "target_name": "แท็คไลท์ YD-WA8004 ดำ E27x1",
+      "target_brand": "MAX LIGHT",
+      "target_url": "https://www.boonthavorn.com/max-light-1101335",
+      "expected_url": "https://www.boonthavorn.com/max-light-1101349",
+      "confidence": 90,
+      "reason": "Candidate 0 is a track light, matching the critical product type. It shares the exact dimensions and socket type with the source, resulting in a high SpecMatch percentage of 61%.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 3,
+      "source_idx": 37,
+      "source_name": "บานซิงค์คู่ ZAGIO รุ่น MAX21 #3876 ขนาด 84 x 10 x 64 ซม. สีขาว",
+      "source_brand": "ZAGIO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60327394",
+      "target_name": "บานซิงค์คู่ SUPER ลายเกล็ด L2 สีขาว",
+      "target_brand": "SUPER",
+      "target_url": "https://www.boonthavorn.com/super-1105766",
+      "expected_url": "https://www.boonthavorn.com/king-1028712",
+      "confidence": 70,
+      "reason": "Candidate 3 and 4 are both 'sink cabinet' type, matching the source product, and are the best available type match.",
+      "gt_status": "INCORRECT"
+    }
+  ]
+}

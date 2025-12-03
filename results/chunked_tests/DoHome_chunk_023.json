@@ -1,0 +1,56 @@
+{
+  "retailer": "DoHome",
+  "chunk": 23,
+  "start_idx": 330,
+  "end_idx": 339,
+  "products_tested": 9,
+  "matches_found": 3,
+  "correct": 2,
+  "incorrect": 1,
+  "accuracy": 66.66666666666666,
+  "timestamp": "2025-12-03T04:10:46.472960",
+  "matches": [
+    {
+      "chunk": 23,
+      "source_idx": 332,
+      "source_name": "แอลโบลท์เกลียวหุน 5/8 นิ้ว x 400 มม. GIANT KINGKONG รุ่น LB5840 (แพ็ก 1 ชุด)",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60398206",
+      "target_name": "สกรูตัวแอล 5/8 นิ้ว x 30 ซม. | ดูโฮมออนไลน์",
+      "target_brand": "NASH",
+      "target_url": "https://www.dohome.co.th/th/l-type-screw-5-8-inch-x-30-cm-10202380.html",
+      "expected_url": "https://www.dohome.co.th/th/l-type-screw-5-8-inch-x-40-cm-10202381.html",
+      "confidence": 90,
+      "reason": "The candidate has the exact size_inch and is an L-screw, which is a very close product type to a bolt. The length differs but is not a critical spec for an equivalent product in this context.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 23,
+      "source_idx": 333,
+      "source_name": "ฟิล์มยืดพันพาเลท 15 ไมครอน GIANT KINGKONG รุ่น MH50-300-15 สีใส",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60260200",
+      "target_name": "DECOS ฟิล์มยืดพันพาเลท 15 ไมคอน ยาว 300 ม. สีใส",
+      "target_brand": "DE'COS",
+      "target_url": "https://www.dohome.co.th/th/stretch-film-15-micron-300-m-clear-10236866.html",
+      "expected_url": "https://www.dohome.co.th/th/stretch-film-15-micron-300-m-clear-10236866.html",
+      "confidence": 70,
+      "reason": "Candidate 0 is a pallet wrap film and has a 50% spec match, sharing 'length=300M' with the source implicitly, which is the closest match to the source's '15 ไมครอน' (thickness) and '300' (length part of model).",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 23,
+      "source_idx": 338,
+      "source_name": "ชั้นวางของพลาสติกอเนกประสงค์ 4 ชั้น KASSA HOME รุ่น PSM-1314 ขนาด 40 x 51 x 94.7 ซม. สีขาว",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60372961",
+      "target_name": "ชั้นตะกร้าเหลี่ยม 4 ชั้น รุ่น BK-135",
+      "target_brand": "NO BRANDS",
+      "target_url": "https://www.dohome.co.th/th/4-tier-square-basket-shelf-no-bk-135-10395719.html",
+      "expected_url": "https://www.dohome.co.th/th/4-tier-square-basket-shelf-no-bk-135-10395719.html",
+      "confidence": 75,
+      "reason": "The candidate is a 'shelf' product and shares the '4 tiers' spec with the source 'plastic shelf', making it the closest match despite not being explicitly 'plastic'.",
+      "gt_status": "CORRECT"
+    }
+  ]
+}

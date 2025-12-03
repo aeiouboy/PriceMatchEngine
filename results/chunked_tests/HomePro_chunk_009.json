@@ -1,0 +1,42 @@
+{
+  "retailer": "HomePro",
+  "chunk": 9,
+  "start_idx": 120,
+  "end_idx": 135,
+  "products_tested": 15,
+  "matches_found": 2,
+  "correct": 0,
+  "incorrect": 2,
+  "accuracy": 0.0,
+  "timestamp": "2025-12-03T04:18:05.283863",
+  "matches": [
+    {
+      "chunk": 9,
+      "source_idx": 124,
+      "source_name": "มีดอเนกประสงค์ 6.5 นิ้ว Rio KASSA HOME รุ่น 0806-110 สีดำ",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60275723",
+      "target_name": "มีดหั่น KOM KOM ด้ามไม้ 6.5 นิ้ว",
+      "target_brand": "KOM KOM",
+      "target_url": "https://www.homepro.co.th/p/1012708",
+      "expected_url": "https://www.homepro.co.th/p/1278356",
+      "confidence": 100,
+      "reason": "Candidate 1 is a utility knife with the exact same size spec (6.5 inches) and a 100% spec match, making it the most equivalent product.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 9,
+      "source_idx": 130,
+      "source_name": "กระทะย่างเหล็กหล่อเคลือบอีนาเมล 24 ซม. Mason KASSA HOME รุ่น 5TYG24-NPP สีขาว",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60395552",
+      "target_name": "กระทะย่างสีเหลี่ยม 24 ซม. SEAGULL กลาดิเอเตอร์ ไฟว์จีเอ็กซ์ อินดักชัน",
+      "target_brand": "SEAGULL",
+      "target_url": "https://www.homepro.co.th/p/1176766",
+      "expected_url": "https://www.homepro.co.th/p/1226015",
+      "confidence": 95,
+      "reason": "Candidate 2 is a grill pan with the exact same length as the source product, making it a strong match despite being a different brand. Candidates 0 and 1 are ceramic grill pans, which is a subtype and thus less ideal.",
+      "gt_status": "INCORRECT"
+    }
+  ]
+}

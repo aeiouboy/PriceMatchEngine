@@ -1,0 +1,42 @@
+{
+  "retailer": "DoHome",
+  "chunk": 8,
+  "start_idx": 105,
+  "end_idx": 120,
+  "products_tested": 15,
+  "matches_found": 2,
+  "correct": 2,
+  "incorrect": 0,
+  "accuracy": 100.0,
+  "timestamp": "2025-12-03T03:57:12.203419",
+  "matches": [
+    {
+      "chunk": 8,
+      "source_idx": 115,
+      "source_name": "ปืนยิงกาวซิลิโคน 9 นิ้ว GIANT KINGKONG รุ่น XY-103 สีแดง",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60404588",
+      "target_name": "NASH ปืนยิงกาวซิลิโคน 9 นิ้ว รุ่น DT0524-48",
+      "target_brand": "NASH",
+      "target_url": "https://www.dohome.co.th/th/nash-silicone-gun-9-inch-no-dt0524-48-10308445.html",
+      "expected_url": "https://www.dohome.co.th/th/nash-silicone-gun-9-inch-no-dt0524-48-10308445.html",
+      "confidence": 100,
+      "reason": "Candidate 0 is the exact same product type (silicone gun) and has 100% spec match on size.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 8,
+      "source_idx": 117,
+      "source_name": "แอลโบลท์เกลียวหุน 3/4 นิ้ว x 400 มม. GIANT KINGKONG รุ่น LB3440 (แพ็ก 1 ชุด)",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60398210",
+      "target_name": "สกรูตัวแอล 3/4 นิ้ว x 40 ซม. | ดูโฮมออนไลน์",
+      "target_brand": "NASH",
+      "target_url": "https://www.dohome.co.th/th/l-type-screw-3-4-inch-x-40-cm-10202385.html",
+      "expected_url": "https://www.dohome.co.th/th/l-type-screw-3-4-inch-x-40-cm-10202385.html",
+      "confidence": 90,
+      "reason": "Candidate 1 is an l-screw which is functionally a bolt and has the same size_inch (3/4 inch) and a matching length (400mm vs 40cm).",
+      "gt_status": "CORRECT"
+    }
+  ]
+}

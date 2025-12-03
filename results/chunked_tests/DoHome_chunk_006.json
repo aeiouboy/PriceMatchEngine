@@ -1,0 +1,70 @@
+{
+  "retailer": "DoHome",
+  "chunk": 6,
+  "start_idx": 75,
+  "end_idx": 90,
+  "products_tested": 15,
+  "matches_found": 4,
+  "correct": 2,
+  "incorrect": 1,
+  "accuracy": 66.66666666666666,
+  "timestamp": "2025-12-03T03:55:28.720375",
+  "matches": [
+    {
+      "chunk": 6,
+      "source_idx": 80,
+      "source_name": "ไม้บัวล่าง KASSA DUKE รุ่น INT001-06 BW1601 ขนาด 1 x 290 x 9 ซม. สีขาว",
+      "source_brand": "KASSA",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60259491",
+      "target_name": "ไม้บัวบนเอสทีลีน รุ่น BB004-07 สีไม้พะยุง",
+      "target_brand": "YESMOULDING",
+      "target_url": "https://www.dohome.co.th/th/lotus-wood-on-estylene-model-bb004-07-rosewood-color-10335735.html",
+      "expected_url": "https://www.dohome.co.th/th/finext-under-cornice-wood-ethylene-4-inchx2-9m-no-jc157-w1-10185905.html",
+      "confidence": 75,
+      "reason": "Candidate is the same product type (baseboard molding) as the source, despite minimal spec overlap.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 6,
+      "source_idx": 82,
+      "source_name": "ลังโปร่งทรงเตี้ย พร้อมหูจับ KASSA HOME รุ่น STW-DD สีดำ",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60251504",
+      "target_name": "POP ลังพลาสติกโปร่ง รุ่น DD สีดำ",
+      "target_brand": "POP",
+      "target_url": "https://www.dohome.co.th/th/transparent-plastic-crate-pop-dd-black-10359228.html",
+      "expected_url": "https://www.dohome.co.th/th/transparent-plastic-crate-pop-dd-black-10359228.html",
+      "confidence": 70,
+      "reason": "The candidate has the same product type (storage box), a matching model prefix ('DD' vs 'STW-DD'), and a 50% spec match, making it the best available equivalent.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 6,
+      "source_idx": 84,
+      "source_name": "แปรงทาสีน้ำมันขนสัตว์ด้ามไม้ GIANT KINGKONG รุ่น PB-037-4 ขนาด 4.0 นิ้ว",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60271289",
+      "target_name": "NASH แปรงทาสี 4 นิ้ว รุ่น NM001",
+      "target_brand": "NASH",
+      "target_url": "https://www.dohome.co.th/th/nash-paint-brush-4-inch-no-nm001-10224013.html",
+      "expected_url": "https://www.dohome.co.th/th/nash-paint-brush-4-inch-no-nm001-10224013.html",
+      "confidence": 95,
+      "reason": "The candidate is the same product type (paint brush) and has a 100% spec match on size.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 6,
+      "source_idx": 86,
+      "source_name": "ตะกร้าล้อลากสูงหูหิ้ว มีล้อ Summer25 KASSA HOME รุ่น 5025 ขนาด 50 x 37 x 64 ซม. สีครีม",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/sku/60425028",
+      "target_name": "DECOS ตะกร้าพลาสติกล้อลาก รุ่น 61468 สีขาว หูเทา",
+      "target_brand": "DECOS",
+      "target_url": "https://www.dohome.co.th/th/decos-plastic-basket-with-wheels-model-61468-white-grey-handle-10415580.html",
+      "expected_url": "",
+      "confidence": 75,
+      "reason": "Candidate 2 is a 'plastic basket' which is a very close product type to 'trolley basket' and it has a matching brand 'DECOS' vs brand 'KASSA HOME' in the source which is acceptable for a house brand match. Though no specs are available for the candidate, its product type and brand proximity make it the best available match.",
+      "gt_status": "NO_GT"
+    }
+  ]
+}

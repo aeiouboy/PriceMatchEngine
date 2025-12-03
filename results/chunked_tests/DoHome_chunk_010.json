@@ -1,0 +1,56 @@
+{
+  "retailer": "DoHome",
+  "chunk": 10,
+  "start_idx": 135,
+  "end_idx": 150,
+  "products_tested": 15,
+  "matches_found": 3,
+  "correct": 2,
+  "incorrect": 1,
+  "accuracy": 66.66666666666666,
+  "timestamp": "2025-12-03T03:58:43.007070",
+  "matches": [
+    {
+      "chunk": 10,
+      "source_idx": 141,
+      "source_name": "ชุดคลุมอาบน้ำ KASSA HOTEL ขนาดฟรีไซส์ สีขาว",
+      "source_brand": "KASSA HOTEL",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60275958",
+      "target_name": "DECOS เสื้อคลุมอาบน้ำ Size S สีขาว",
+      "target_brand": "DE'COS",
+      "target_url": "https://www.dohome.co.th/th/decos-bathrobe-size-s-white-10302288.html",
+      "expected_url": "https://www.dohome.co.th/th/decos-bathrobe-size-s-white-10302288.html",
+      "confidence": 90,
+      "reason": "The candidate is the same product type (bathrobe) as the source product and has a 50% spec match, which is the highest among relevant candidates.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 10,
+      "source_idx": 147,
+      "source_name": "ไม้เช็ดกระจกหัวฟองน้ำและยางรีดน้ำ 12 นิ้ว ด้ามยาว 83-135 ซม. KASSA HOME สีเทา",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60330894",
+      "target_name": "OPPA ไม้เช็ดกระจกพร้อมฟองน้ำ 12 นิ้ว ด้ามอลูมิเนียม ปรับ 2 ระดับ",
+      "target_brand": "OPPA",
+      "target_url": "https://www.dohome.co.th/th/oppa-sponge-mop-for-cleaning-glass-extendable-2-levels-size-12-inch-10247349.html",
+      "expected_url": "https://www.dohome.co.th/th/oppa-sponge-mop-for-cleaning-glass-extendable-2-levels-size-12-inch-10247349.html",
+      "confidence": 70,
+      "reason": "The candidate is the same product type (window squeegee) and has a matching 'size_inch' spec of 12 inches, aligning with the source product. Although the length_cm is not specified, it's the closest match available.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 10,
+      "source_idx": 149,
+      "source_name": "รถเข็นปูนล้อเดี่ยวตัน 13 นิ้ว GIANT KINGKONG รุ่น HB-6200 ขนาด 60 ลิตร รับน้ำหนัก 130 กก. สีแดง",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60328859",
+      "target_name": "NASH รถเข็นปูน ล้อลมเดี่ยว 13 นิ้ว สีเหลือง (80 กิโลกรัม)",
+      "target_brand": "NASH",
+      "target_url": "https://www.dohome.co.th/th/nash-cement-trolley-single-air-wheel-13-inches-yellow-80-kg-10383677.html",
+      "expected_url": "https://www.dohome.co.th/th/nash-cement-trolley-single-air-wheel-15-inches-orange-130-kg-10383616.html",
+      "confidence": 60,
+      "reason": "The candidate is also a wheelbarrow with a matching 13-inch wheel size, though the volume is not specified and the brand differs.",
+      "gt_status": "INCORRECT"
+    }
+  ]
+}

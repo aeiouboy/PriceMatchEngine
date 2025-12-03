@@ -1,0 +1,56 @@
+{
+  "retailer": "HomePro",
+  "chunk": 3,
+  "start_idx": 30,
+  "end_idx": 45,
+  "products_tested": 15,
+  "matches_found": 3,
+  "correct": 2,
+  "incorrect": 1,
+  "accuracy": 66.66666666666666,
+  "timestamp": "2025-12-03T04:13:26.890198",
+  "matches": [
+    {
+      "chunk": 3,
+      "source_idx": 34,
+      "source_name": "ปากกาตรวจสอบกระแสไฟ 90 - 1,000 โวลต์ GIANT KINGKONG PRO รุ่น KKP1000M สีน้ำเงิน - ดำ",
+      "source_brand": "GIANT KINGKONG PRO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60334764",
+      "target_name": "ปากกาเช็คกระแสไฟ HACHI",
+      "target_brand": "HACHI",
+      "target_url": "https://www.homepro.co.th/p/1149017",
+      "expected_url": "https://www.homepro.co.th/p/1149017",
+      "confidence": 70,
+      "reason": "The candidate is the only product of the same type ('current tester pen' is close enough to 'voltage tester pen') but lacks detailed specifications for a higher spec match.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 3,
+      "source_idx": 38,
+      "source_name": "ไม้แขวนเสื้อหัวเหล็ก ตัวเคลือบ PVC Sandee KASSA HOME รุ่น LMS1172-2.2 (แพ็ก 6 ชิ้น) สีเขียว",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60372118",
+      "target_name": "ไม้แขวนเสื้อ PLIM H-059 สีขาว แพ็ก 6 ชิ้น",
+      "target_brand": "PLIM",
+      "target_url": "https://www.homepro.co.th/p/1249480",
+      "expected_url": "https://www.homepro.co.th/p/1221406",
+      "confidence": 95,
+      "reason": "The candidate is a 'clothes hanger' which is equivalent to 'hanger' and has the exact same pack count spec.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 3,
+      "source_idx": 44,
+      "source_name": "เหล็กเพลทสี่เหลี่ยมหนา 6 มม. (เจาะรู 1.2ซม.) GIANT KINGKONG รุ่น HSD-1050-50 ขนาด 4 x 4 นิ้ว",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60315066",
+      "target_name": "แผ่นเหล็กเพลทเหลี่ยม (เจาะรู 3/8 นิ้ว) BIH 4X4X1/4 นิ้ว",
+      "target_brand": "BIH",
+      "target_url": "https://www.homepro.co.th/p/1144388",
+      "expected_url": "https://www.homepro.co.th/p/1144388",
+      "confidence": 75,
+      "reason": "The candidate has the exact same product type 'steel plate' and matching dimensions (4x4), but the size_inch and length_cm specifications differ, resulting in a lower but acceptable SpecMatch%.",
+      "gt_status": "CORRECT"
+    }
+  ]
+}

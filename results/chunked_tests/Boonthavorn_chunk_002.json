@@ -1,0 +1,56 @@
+{
+  "retailer": "Boonthavorn",
+  "chunk": 2,
+  "start_idx": 15,
+  "end_idx": 30,
+  "products_tested": 15,
+  "matches_found": 3,
+  "correct": 1,
+  "incorrect": 1,
+  "accuracy": 50.0,
+  "timestamp": "2025-12-03T03:43:31.397051",
+  "matches": [
+    {
+      "chunk": 2,
+      "source_idx": 16,
+      "source_name": "โคมไฟผนังภายนอกอะลูมิเนียม E27x1 LUZINO รุ่น 2763-E27 สีดำ - ใส",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60406672",
+      "target_name": "ไฟผนัง MAX LIGHT/8031-90-Black IP56 E27x1",
+      "target_brand": "MAX LIGHT",
+      "target_url": "https://www.boonthavorn.com/max-light-1060790",
+      "expected_url": "https://www.boonthavorn.com/max-light-1060790",
+      "confidence": 77,
+      "reason": "The candidate is an outdoor wall lamp and has a high spec match percentage of 77%, with matching dimensions, socket type, and lamp type.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 2,
+      "source_idx": 20,
+      "source_name": "โคมไฟผนังภายนอกอลูมิเนียม E27x1 LUZINO รุ่น PHOEBE 2197/1(GY) สีเทา",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60257199",
+      "target_name": "ไฟผนัง O-001 E27x1 MAX 60W IP44",
+      "target_brand": "MAX LIGHT",
+      "target_url": "https://www.boonthavorn.com/max-light-1249472",
+      "expected_url": "https://www.boonthavorn.com/max-light-1257089",
+      "confidence": 90,
+      "reason": "Candidate 0 has the highest spec match (77%) and the product type 'wall light' is an acceptable synonym for 'outdoor wall lamp'. The key specs like dimensions, socket, and lamp_type are a strong match.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 2,
+      "source_idx": 21,
+      "source_name": "โคมดาวน์ไลท์หน้ากลม 6 นิ้ว LED 15W Daylight LUZINO รุ่น PN-JYX0101-15W/DL สีขาว",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/product/%E0%B9%82%E0%B8%84%E0%B8%A1%E0%B8%94%E0%B8%B2%E0%B8%A7%E0%B8%99%E0%B9%8C%E0%B9%84%E0%B8%A5%E0%B8%97%E0%B9%8C%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B8%81%E0%B8%A5%E0%B8%A1-6-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-LED-15W-Daylight-LUZINO-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-PN-JYX0101-15W%7CDL-%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7-60308454",
+      "target_name": "ดาวน์ไลท์ LED GL-DL-W15-PR 6500K DL",
+      "target_brand": "MAX LIGHT",
+      "target_url": "https://www.boonthavorn.com/max-light-1144016",
+      "expected_url": "",
+      "confidence": 70,
+      "reason": "The candidate is also a downlight and matches the critical 'color_temp' spec with 'DAYLIGHT'.",
+      "gt_status": "NO_GT"
+    }
+  ]
+}

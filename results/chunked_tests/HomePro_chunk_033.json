@@ -1,0 +1,70 @@
+{
+  "retailer": "HomePro",
+  "chunk": 33,
+  "start_idx": 480,
+  "end_idx": 492,
+  "products_tested": 12,
+  "matches_found": 4,
+  "correct": 1,
+  "incorrect": 3,
+  "accuracy": 25.0,
+  "timestamp": "2025-12-03T04:38:07.423864",
+  "matches": [
+    {
+      "chunk": 33,
+      "source_idx": 480,
+      "source_name": "จักรยานเด็ก GIANT KINGKONG รุ่น KD2021BK ขนาด 20 นิ้ว สีดำ",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60374209",
+      "target_name": "จักรยานเด็ก 20 นิ้ว QITONG TN24Q22 สีชมพู",
+      "target_brand": "QITONG",
+      "target_url": "https://www.homepro.co.th/p/1285365",
+      "expected_url": "https://www.homepro.co.th/p/1188025",
+      "confidence": 95,
+      "reason": "The candidate is also a childrens bicycle with a matching 20-inch size, resulting in a 100% spec match.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 33,
+      "source_idx": 485,
+      "source_name": "ตู้ลิ้นชักอเนกประสงค์ท็อปไม้ 5 ชั้น (โครงทึบ) KASSA HOME รุ่น UDC-A05AB5 ขนาด 63 x 40 x 112 ซม.",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60372921",
+      "target_name": "ตู้ลิ้นชัก 5 ชั้น STACKO MAX(L) 58.5x41x109 ซม. สีใส",
+      "target_brand": "STACKO",
+      "target_url": "https://www.homepro.co.th/p/1150070",
+      "expected_url": "https://www.homepro.co.th/p/1102787",
+      "confidence": 70,
+      "reason": "The candidate is a drawer cabinet with 5-tiers, dimensions 58.5x41, and length 109CM, which is a close match to the source storage cabinet's 5 tiers, dimensions 63x40, and length 112CM.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 33,
+      "source_idx": 489,
+      "source_name": "สกรูปลายสว่านหัวเรียบ (เกลียวหุน) 8 x 2 1/2 นิ้ว GIANT KINGKONG รุ่น SDF-8212 (แพ็ก 100 ตัว)",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60305626",
+      "target_name": "สกรูปลายสว่าน TF DEXZON 8x2-1/2 นิ้ว 100 ชิ้น",
+      "target_brand": "DEXZON",
+      "target_url": "https://www.homepro.co.th/p/1184365",
+      "expected_url": "https://www.homepro.co.th/p/1184365",
+      "confidence": 100,
+      "reason": "Candidate 0 is an exact match for product type (self-drilling screw) and all key specifications (dimensions and size_inch), with a 100% SpecMatch score.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 33,
+      "source_idx": 491,
+      "source_name": "ประตูภายใน UPVC พร้อมวงกบ KASSA รุ่น BT-002 ขนาด 70 x 200 ซม. สีขาว (ไม่เจาะลูกบิด)",
+      "source_brand": "KASSA",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60392591",
+      "target_name": "ประตู UPVC ASARA G925 ดอกซากุระ 70x200 ซม. สีขาว พร้อมวงกบ ไม่เจาะลูกบิด",
+      "target_brand": "ASARA",
+      "target_url": "https://www.homepro.co.th/p/1157824",
+      "expected_url": "https://www.homepro.co.th/p/1093233",
+      "confidence": 95,
+      "reason": "The candidate is an UPVC door with matching dimensions (70x200), and similar features to the source product (white, no pre-drilled knob hole), making it the closest equivalent despite the brand difference.",
+      "gt_status": "INCORRECT"
+    }
+  ]
+}

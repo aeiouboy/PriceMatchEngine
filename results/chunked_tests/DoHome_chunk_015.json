@@ -1,0 +1,56 @@
+{
+  "retailer": "DoHome",
+  "chunk": 15,
+  "start_idx": 210,
+  "end_idx": 225,
+  "products_tested": 15,
+  "matches_found": 3,
+  "correct": 2,
+  "incorrect": 1,
+  "accuracy": 66.66666666666666,
+  "timestamp": "2025-12-03T04:03:50.662989",
+  "matches": [
+    {
+      "chunk": 15,
+      "source_idx": 212,
+      "source_name": "กล่องอเนกประสงค์ พร้อมล้อและฝาล็อก 50 ลิตร Fiona KASSA HOME รุ่น JCJ-5116 ขนาด 62.3 x 41.7 x 30 ซม.",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60345868",
+      "target_name": "DECOS กล่องพลาสติกมีล้อ 50 ลิตร รุ่น 5116 สีขาว",
+      "target_brand": "DE'COS",
+      "target_url": "https://www.dohome.co.th/th/jcj-rolling-plastic-box-50-l-no-5116-white-10325992.html",
+      "expected_url": "https://www.dohome.co.th/th/jcj-rolling-plastic-box-50-l-no-5116-white-10325992.html",
+      "confidence": 60,
+      "reason": "Candidate 0 is the highest spec match at 41%, sharing volume and model with the source. The product type 'plastic box' is considered an acceptable equivalent to 'storage box'.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 15,
+      "source_idx": 215,
+      "source_name": "ยางกวาดน้ำ24นิ้ว ด้ามอะลูมิเนียมยาว150ซม.KASSA HOME ขนาด 60 x 7 x 160ซม. สีเทา",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60230628",
+      "target_name": "OPPA ยางรีดน้ำ ด้ามอลูมิเนียม 24 นิ้ว",
+      "target_brand": "OPPA",
+      "target_url": "https://www.dohome.co.th/th/oppa-bubber-wiper-with-aluminium-handle-24-inch-10240884.html",
+      "expected_url": "https://www.dohome.co.th/th/oppa-bubber-wiper-with-aluminium-handle-24-inch-10240884.html",
+      "confidence": 70,
+      "reason": "The candidate has the highest SpecMatch percentage at 46% and appears to be the correct product type (squeegee, which is a common translation/interpretation for 'wiper blade' in household cleaning tools). It matches the critical spec of 'size_inch=24 inch'.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 15,
+      "source_idx": 222,
+      "source_name": "พัดลมเพดานเหล็ก Luzino รุ่น TW-348-BK-WC ขนาด 48 นิ้ว สีดำ",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60371070",
+      "target_name": "FINEXT พัดลมเพดาน 48 นิ้ว รุ่น F348-WH-WC",
+      "target_brand": "FINEXT",
+      "target_url": "https://www.dohome.co.th/th/finext-ceiling-fan-48-inch-no-f348-wh-wc-10203272.html",
+      "expected_url": "https://www.dohome.co.th/th/lucky-misu-ceiling-fan-48-inches-black-10306707.html",
+      "confidence": 100,
+      "reason": "Candidate 0 is the exact same product type (ceiling fan) and has a 100% spec match for the critical 'size_inch' spec (48 inch).",
+      "gt_status": "INCORRECT"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "timestamp": "2025-12-03T03:33:05.264127",
+  "sample_size": 50,
+  "results": [
+    {
+      "retailer": "Boonthavorn",
+      "correct": 9,
+      "total": 15,
+      "accuracy": 60.0,
+      "not_found": 34,
+      "status": "completed"
+    },
+    {
+      "retailer": "GlobalHouse",
+      "correct": 15,
+      "total": 17,
+      "accuracy": 88.2,
+      "not_found": 25,
+      "status": "completed"
+    },
+    {
+      "retailer": "DoHome",
+      "correct": 7,
+      "total": 11,
+      "accuracy": 63.6,
+      "not_found": 35,
+      "status": "completed"
+    },
+    {
+      "retailer": "HomePro",
+      "correct": 16,
+      "total": 20,
+      "accuracy": 80.0,
+      "not_found": 30,
+      "status": "completed"
+    }
+  ],
+  "overall": {
+    "total_correct": 47,
+    "total_tested": 63,
+    "accuracy": 74.60317460317461
+  }
+}

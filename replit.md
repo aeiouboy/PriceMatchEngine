@@ -48,4 +48,21 @@ The system is built as a Streamlit web application, featuring two main matching 
 -   **URL Normalization**: Added `normalize_url()` function to handle tracking parameters in product URLs, fixing false negative matches in ground truth comparisons.
 -   **AI Model Upgrade**: Upgraded from `google/gemini-2.5-flash-lite` to `google/gemini-2.5-flash` for improved matching accuracy.
 -   **Enhanced AI Prompt**: Added specific rejection rules for product sub-types (2-wheel vs 4-wheel carts, varnish vs oil brushes, beach vs banquet chairs, screw head types).
--   **Accuracy Achievement**: House Brand Matcher validated at 85.7% accuracy on HomePro (50 samples), meeting the 85% target.
+-   **Chunked Testing System**: Created tests/chunked_test.py to handle large datasets in 15-product chunks, preventing API timeouts and saving progress incrementally.
+
+## Comprehensive Testing Results (December 3, 2025)
+Full product matching test across all retailers using ground truth datasets:
+
+| Retailer | Correct | Total GT | Accuracy | Status |
+|----------|---------|----------|----------|--------|
+| GlobalHouse | 30 | 35 | **85.7%** | ✅ Meets 85% target |
+| HomePro | 124 | 184 | 67.4% | Below target |
+| DoHome | 71 | 110 | 64.5% | Below target |
+| Boonthavorn | 7 | 16 | 43.8% | Below target |
+| **OVERALL** | **232** | **345** | **67.2%** | |
+
+**Error Pattern Analysis:**
+- 60 incorrect matches on HomePro (brand mismatch to similar products)
+- 39 incorrect matches on DoHome
+- AI correctly identifies functional equivalents but may pick different valid alternatives than expected
+- Ground truth may be overly strict - multiple valid matches exist but only one is counted as correct

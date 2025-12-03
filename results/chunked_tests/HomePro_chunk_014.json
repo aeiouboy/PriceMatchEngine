@@ -1,0 +1,70 @@
+{
+  "retailer": "HomePro",
+  "chunk": 14,
+  "start_idx": 195,
+  "end_idx": 210,
+  "products_tested": 15,
+  "matches_found": 4,
+  "correct": 3,
+  "incorrect": 1,
+  "accuracy": 75.0,
+  "timestamp": "2025-12-03T04:23:39.808141",
+  "matches": [
+    {
+      "chunk": 14,
+      "source_idx": 195,
+      "source_name": "เทปปิดกล่อง GIANT KINGKONG ขนาด 48 มม. x 45 หลา (แพ็ค 12 ม้วน) สีชา",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60210955",
+      "target_name": "เทป OPP PACK IN 2 นิ้ว x 45 หลา สีใส 12 ม้วน/แพ็ค",
+      "target_brand": "PACK IN",
+      "target_url": "https://www.homepro.co.th/p/1153132",
+      "expected_url": "https://www.homepro.co.th/p/1153064",
+      "confidence": 70,
+      "reason": "The candidate has the exact same product type (packing tape) and a good spec match (size_inch=2 inch is equivalent to 48mm, and 45หลา is common for packing tape).",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 14,
+      "source_idx": 197,
+      "source_name": "สายยางเด้ง 5/8 นิ้ว FONTE ยาว 30 เมตร",
+      "source_brand": "FONTE",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60338032",
+      "target_name": "สายยางม้วน PVC เด้ง SPRING 5/8 นิ้ว x 30 ม. สีน้ำเงิน",
+      "target_brand": "SPRING",
+      "target_url": "https://www.homepro.co.th/p/1204502",
+      "expected_url": "https://www.homepro.co.th/p/1204502",
+      "confidence": 100,
+      "reason": "The candidate is a perfect spec match for size, length, and hose diameter, and is a very similar product type.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 14,
+      "source_idx": 201,
+      "source_name": "รถเข็นปูนล้อเดี่ยวตัน 13 นิ้ว GIANT KINGKONG รุ่น HB-6200 ขนาด 60 ลิตร รับน้ำหนัก 130 กก. สีแดง",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60328859",
+      "target_name": "รถเข็นปูน ล้อเดี่ยว MATALL WB6602 สีแดง",
+      "target_brand": "MATALL",
+      "target_url": "https://www.homepro.co.th/p/1168190",
+      "expected_url": "https://www.homepro.co.th/p/1168190",
+      "confidence": 70,
+      "reason": "The candidate has the correct product type (wheelbarrow) and is the closest match by a significant margin, despite missing specific specs for comparison. The source specifies 'wheelbarrow' and the candidate is also a 'wheelbarrow'.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 14,
+      "source_idx": 207,
+      "source_name": "โคมดาวน์ไลท์หน้ากลม 4 นิ้ว LED 9W Daylight LUZINO รุ่น PN-JYX0101-9W/DL สีขาว",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60308450",
+      "target_name": "ดาวน์ไลท์ LED RACER EVO TECH 4 นิ้ว 9 วัตต์ DAYLIGHT สีขาว",
+      "target_brand": "RACER",
+      "target_url": "https://www.homepro.co.th/p/1145118",
+      "expected_url": "https://www.homepro.co.th/p/1145118",
+      "confidence": 70,
+      "reason": "Candidate 2 is the only downlight and has identical wattage, size, and color temperature specifications, resulting in a high SpecMatch of 68%.",
+      "gt_status": "CORRECT"
+    }
+  ]
+}

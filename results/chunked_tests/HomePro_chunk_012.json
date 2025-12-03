@@ -1,0 +1,56 @@
+{
+  "retailer": "HomePro",
+  "chunk": 12,
+  "start_idx": 165,
+  "end_idx": 180,
+  "products_tested": 15,
+  "matches_found": 3,
+  "correct": 2,
+  "incorrect": 1,
+  "accuracy": 66.66666666666666,
+  "timestamp": "2025-12-03T04:20:59.963784",
+  "matches": [
+    {
+      "chunk": 12,
+      "source_idx": 169,
+      "source_name": "ตู้ลิ้นชักอเนกประสงค์ 4 ชั้น (โครงทึบ) KASSA HOME รุ่น API-1800M4 ขนาด 58 x 40 x 93.5 ซม. สีขาว-เทา",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60332254",
+      "target_name": "ตู้ลิ้นชัก 4 ชั้นทึบ STACKO MORI 40x59x90.8 ซม. สีขาว",
+      "target_brand": "STACKO",
+      "target_url": "https://www.homepro.co.th/p/1104652",
+      "expected_url": "https://www.homepro.co.th/p/1104652",
+      "confidence": 70,
+      "reason": "The candidate is a chest of drawers with 4 tiers and similar dimensions (40x59 vs 58x40, and 90.8cm vs 93.5cm length), offering a good spec match despite Brand and dimensions difference.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 12,
+      "source_idx": 173,
+      "source_name": "ตู้ลิ้นชักอเนกประสงค์ท็อปไม้ 4 ชั้น (โครงทึบ) KASSA HOME รุ่น UDC-A05AB4 ขนาด 63 x 40 x 90 ซม.",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60372918",
+      "target_name": "ตู้ลิ้นชัก 4 ชั้นทึบ STACKO MORI 40x59x90.8 ซม. สีขาว",
+      "target_brand": "STACKO",
+      "target_url": "https://www.homepro.co.th/p/1104652",
+      "expected_url": "https://www.homepro.co.th/p/1102758",
+      "confidence": 70,
+      "reason": "Candidate 2 is a drawer cabinet with 4 tiers and similar dimensions (40x59 vs 63x40) and length (90.8cm vs 90cm) to the source product, making it the best available match despite the dimension difference.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 12,
+      "source_idx": 179,
+      "source_name": "อุปกรณ์ปรับระดับกระเบื้อง GIANT KINGKONG PRO รุ่น ZPQ-01 (แพ็ค 50 ชิ้น) สีดำ - น้ำเงิน",
+      "source_brand": "GIANT KINGKONG PRO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60326647",
+      "target_name": "ชุดอุปกรณ์ปรับระดับกระเบื้อง TARA H15N แบบหมุน",
+      "target_brand": "TARA",
+      "target_url": "https://www.homepro.co.th/p/1218486",
+      "expected_url": "https://www.homepro.co.th/p/1218486",
+      "confidence": 90,
+      "reason": "Candidate 1 is a 'tile leveling kit' which is the closest product type match to 'tile leveler', although it lacks specific specs found in the source.",
+      "gt_status": "CORRECT"
+    }
+  ]
+}

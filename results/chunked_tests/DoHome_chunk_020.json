@@ -1,0 +1,70 @@
+{
+  "retailer": "DoHome",
+  "chunk": 20,
+  "start_idx": 285,
+  "end_idx": 300,
+  "products_tested": 15,
+  "matches_found": 4,
+  "correct": 3,
+  "incorrect": 1,
+  "accuracy": 75.0,
+  "timestamp": "2025-12-03T04:08:27.793278",
+  "matches": [
+    {
+      "chunk": 20,
+      "source_idx": 288,
+      "source_name": "โพลียูรีเทนยาแนว GIANT KINGKONG ขนาด 600 มล. สีขาว",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60398260",
+      "target_name": "SIKA กาวโพลียูรีเทน 600 มล. รุ่น FLEX-740 สีขาว",
+      "target_brand": "SIKA",
+      "target_url": "https://www.dohome.co.th/th/sika-polyurethane-glue-600-white-10249593.html",
+      "expected_url": "https://www.dohome.co.th/th/besbond-polyurethane-glue-600ml-white-10405383.html",
+      "confidence": 95,
+      "reason": "The candidate is a polyurethane adhesive/sealant with the same volume (600ml) and color (white) as the source, making it a strong equivalent, despite being listed as 'adhesive' vs 'sealant'.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 20,
+      "source_idx": 291,
+      "source_name": "กล่องปิกนิกพร้อมฝาล็อก KASSA HOME รุ่น JCJ-2552B ขนาด 8.5 ลิตร สีขาว - เทา",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60239752",
+      "target_name": "JCJ กล่องพลาสติก ปิคนิค 8.5 ลิตร รุ่น 2552",
+      "target_brand": "JCJ",
+      "target_url": "https://www.dohome.co.th/th/jcj-plastic-picnic-box-85-liters-no-2009-10395874.html",
+      "expected_url": "https://www.dohome.co.th/th/jcj-plastic-picnic-box-85-liters-no-2009-10395874.html",
+      "confidence": 100,
+      "reason": "Candidate 0 has the same product type, volume, and model number (discounting minor variation in model name) as the source, resulting in a perfect spec match.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 20,
+      "source_idx": 293,
+      "source_name": "ผ้าไมโครไฟเบอร์ GIANT KINGKONG รุ่น 40 x 40 (แพ็ค 4 ผืน) สีฟ้า",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60252438",
+      "target_name": "X1-PLUS ผ้าไมโครไฟเบอร์ 40x40 ซม. สีน้ำเงิน",
+      "target_brand": "X 1 PLUS",
+      "target_url": "https://www.dohome.co.th/th/x1-plus-microfiber-cloth-40x40cm-blue-10399594.html",
+      "expected_url": "https://www.dohome.co.th/th/x1-plus-microfiber-cloth-40x40cm-blue-10399594.html",
+      "confidence": 100,
+      "reason": "Candidate 0 has identical product type and key specifications (dimensions) to the source product, resulting in a 100% SpecMatch.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 20,
+      "source_idx": 294,
+      "source_name": "โคมดาวน์ไลท์หน้ากลม 4 นิ้ว E27x1 D-Brite LUZINO รุ่น A4002-WH สีขาว",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60240336",
+      "target_name": "POWER MAX โคมดาวน์ไลท์ 4 นิ้ว แบบฝัง หน้ากลม สีขาว",
+      "target_brand": "POWER MAX",
+      "target_url": "https://www.dohome.co.th/th/finext-downlight-4-inch-circle-white-10234509.html",
+      "expected_url": "https://www.dohome.co.th/th/finext-downlight-4-inch-circle-white-10234509.html",
+      "confidence": 70,
+      "reason": "The candidate is also a downlight, matches the critical 'size_inch=4 inch' spec, and has the highest SpecMatch% among relevant products.",
+      "gt_status": "CORRECT"
+    }
+  ]
+}

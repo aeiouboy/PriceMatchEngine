@@ -1,0 +1,56 @@
+{
+  "retailer": "HomePro",
+  "chunk": 7,
+  "start_idx": 90,
+  "end_idx": 105,
+  "products_tested": 15,
+  "matches_found": 3,
+  "correct": 3,
+  "incorrect": 0,
+  "accuracy": 100.0,
+  "timestamp": "2025-12-03T04:16:29.109530",
+  "matches": [
+    {
+      "chunk": 7,
+      "source_idx": 94,
+      "source_name": "แปรงทาสีขนสัตว์ ด้ามพลาสติก GIANT KINGKONG รุ่น BPB07 ขนาด 3 นิ้ว สีน้ำตาล",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60342250",
+      "target_name": "แปรงทาสีด้ามไม้ขลิบแดง FITT 3 นิ้ว",
+      "target_brand": "FITT",
+      "target_url": "https://www.homepro.co.th/p/1152414",
+      "expected_url": "https://www.homepro.co.th/p/1152414",
+      "confidence": 85,
+      "reason": "Candidate 8 is the only other paint brush with the same size (3 inch) as the source product, making it the best alternative despite the brand and handle material difference.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 7,
+      "source_idx": 96,
+      "source_name": "ตาข่ายกรองแสง 50% (ม้วน) FONTE รุ่น SH-01 (ทอ 1 เข็ม) ขนาด 2 x 100 เมตร สีดำ",
+      "source_brand": "FONTE",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60215920",
+      "target_name": "สแลนม้วนกรองแสง 50 เปอร์เซ็นต์ ทอ 1 เข็ม GARTENE 2 ม.X100 หลา สีดำ",
+      "target_brand": "GARTENE",
+      "target_url": "https://www.homepro.co.th/p/1137193",
+      "expected_url": "https://www.homepro.co.th/p/1137193",
+      "confidence": 75,
+      "reason": "Candidate 9 is also sunshade netting with a similar name 'สแลนม้วนกรองแสง' and matches the 50% shade and 1-needle weave, but has a different length unit (yard vs meter) leading to a length mismatch.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 7,
+      "source_idx": 104,
+      "source_name": "ไม้กวาดไนล่อนพร้อมที่โกยผง KASSA HOME รุ่น CLS117026 สีเทา",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60312718",
+      "target_name": "ชุดไม้กวาดพร้อมที่โกยผง ด้ามสเตนเลส ACCO XG-2066 12 นิ้ว สีครีม",
+      "target_brand": "ACCO",
+      "target_url": "https://www.homepro.co.th/p/1016460",
+      "expected_url": "https://www.homepro.co.th/p/1016460",
+      "confidence": 70,
+      "reason": "The candidate is a broom and dustpan set and has a 50% spec match, making it the closest available option in terms of product type and listed specifications. Although the current candidates lack model number matches, product type is the most critical spec match for these candidates.",
+      "gt_status": "CORRECT"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "retailer": "DoHome",
+  "chunk": 18,
+  "start_idx": 255,
+  "end_idx": 270,
+  "products_tested": 15,
+  "matches_found": 4,
+  "correct": 3,
+  "incorrect": 1,
+  "accuracy": 75.0,
+  "timestamp": "2025-12-03T04:06:50.443630",
+  "matches": [
+    {
+      "chunk": 18,
+      "source_idx": 255,
+      "source_name": "โคมไฟเพดาน LED 48 วัตต์ Tri-Color LUZINO รุ่น 20055 สีขาว",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60351171",
+      "target_name": "HI-TEK โคมไฟเพดาน LED 48 วัตต์ มาลัย (3 แสง)",
+      "target_brand": "HI-TEK",
+      "target_url": "https://www.dohome.co.th/th/hi-tek-led-ceiling-lamp-48-watts-malai-pattern-10391437.html",
+      "expected_url": "https://www.dohome.co.th/th/decos-ceiling-lamp-led-50w-no-verbena-3-color-lights-10402175.html",
+      "confidence": 95,
+      "reason": "The candidate is a ceiling lamp with matching wattage (48W) to the source product, resulting in a high SpecMatch of 100%.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 18,
+      "source_idx": 259,
+      "source_name": "บันไดอลูมิเนียมทรง A ขึ้นลง 2 ทาง 8 ขั้น GIANT KINGKONG PRO รุ่น LDA2008D สีเงิน",
+      "source_brand": "GIANT KINGKONG PRO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60263923",
+      "target_name": "NASH บันไดมิเนียม 2 x 8 ขั้น รุ่น AO54-208",
+      "target_brand": "NASH",
+      "target_url": "https://www.dohome.co.th/th/nash-aluminium-ladder-2-x-8-step-no-ao54-208-10142432.html",
+      "expected_url": "https://www.dohome.co.th/th/nash-aluminium-ladder-2-x-8-step-no-ao54-208-10142432.html",
+      "confidence": 80,
+      "reason": "Candidate 0 is an aluminum ladder with 8 steps, matching the critical product type and step count of the source product.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 18,
+      "source_idx": 261,
+      "source_name": "ผ้าไมโครไฟเบอร์ GIANT KINGKONG รุ่น 40 x 40 (แพ็ค 4 ผืน) สีเทา",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60252437",
+      "target_name": "X1-PLUS ผ้าไมโครไฟเบอร์ 40x40 ซม. สีน้ำเงิน",
+      "target_brand": "X 1 PLUS",
+      "target_url": "https://www.dohome.co.th/th/x1-plus-microfiber-cloth-40x40cm-blue-10399594.html",
+      "expected_url": "https://www.dohome.co.th/th/x1-plus-microfiber-cloth-40x40cm-blue-10399594.html",
+      "confidence": 100,
+      "reason": "The candidate is a microfiber cloth with matching dimensions of 40x40 and a 100% SpecMatch to the source product.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 18,
+      "source_idx": 264,
+      "source_name": "กระดาษ A4 GIANT KINGKONG รุ่น CopyPaperA4 70g 500s ขนาด A4 (แพ็ก 500 แผ่น) สีขาว",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60255007",
+      "target_name": "DOUBLE A กระดาษถ่ายเอกสาร A4 70 แกรม 500 แผ่น",
+      "target_brand": "DOUBLE A",
+      "target_url": "https://www.dohome.co.th/th/double-a-copy-paper-a4-70-gsm-500-sheets-10262796.html",
+      "expected_url": "https://www.dohome.co.th/th/double-a-copy-paper-a4-70-gsm-500-sheets-10262796.html",
+      "confidence": 75,
+      "reason": "Candidate 21 is also copy paper and has comparable specs (A4, 70gsm, 500 sheets), despite a lower SpecMatch% due to no model in its listed specs, making it the only viable alternative. Other candidates are completely different product types.",
+      "gt_status": "CORRECT"
+    }
+  ]
+}

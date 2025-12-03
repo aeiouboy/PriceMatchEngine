@@ -1,0 +1,28 @@
+{
+  "retailer": "Boonthavorn",
+  "chunk": 1,
+  "start_idx": 0,
+  "end_idx": 15,
+  "products_tested": 15,
+  "matches_found": 1,
+  "correct": 0,
+  "incorrect": 1,
+  "accuracy": 0.0,
+  "timestamp": "2025-12-03T03:42:49.898375",
+  "matches": [
+    {
+      "chunk": 1,
+      "source_idx": 7,
+      "source_name": "อะไหล่ลูกกลิ้งทาสีขนขาวแถบเหลือง GIANT KINGKONG รุ่น PR-004YSC ขนาด 4 นิ้ว สีขาว",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60304673",
+      "target_name": "อะไหล่ขนลูกกลิ้ง 4 นิ้ว C30104 ขาว",
+      "target_brand": "AT.INDY",
+      "target_url": "https://www.boonthavorn.com/at-indy-115259",
+      "expected_url": "https://www.boonthavorn.com/indy-1140736",
+      "confidence": 95,
+      "reason": "The candidate is a 'roller brush replacement parts' which is equivalent to 'paint roller spare part' and has identical 'size_inch' and 'roller_type' specifications, resulting in a 100% spec match.",
+      "gt_status": "INCORRECT"
+    }
+  ]
+}
