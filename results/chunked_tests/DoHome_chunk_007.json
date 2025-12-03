@@ -4,11 +4,12 @@
   "start_idx": 90,
   "end_idx": 105,
   "products_tested": 15,
-  "matches_found": 7,
+  "matches_found": 6,
   "correct": 5,
-  "incorrect": 1,
-  "accuracy": 83.33333333333334,
-  "timestamp": "2025-12-03T10:40:14.165821",
+  "incorrect": 0,
+  "gt_missing": 0,
+  "accuracy": 100.0,
+  "timestamp": "2025-12-03T14:28:56.235830",
   "matches": [
     {
       "chunk": 7,
@@ -21,7 +22,7 @@
       "target_url": "https://www.dohome.co.th/th/power-max-led-downlight-12w-square-dhp011-warm-white-10268581.html",
       "expected_url": "https://www.dohome.co.th/th/power-max-led-downlight-12w-square-dhp011-warm-white-10268581.html",
       "confidence": 75,
-      "reason": "The candidate is a downlight, from a preferred brand (POWER MAX), has the same wattage (12W), and color temperature (WARMWHITE). While the exact size (5 inch) isn't matched explicitly, the overall specifications are the closest. It is still a face-square (หน้าเหลี่ยม) type of downlight, as is the source product.",
+      "reason": "The candidate is a downlight, from a preferred brand, and matches the wattage and color temperature with a good SpecMatch percentage.",
       "gt_status": "CORRECT"
     },
     {
@@ -34,8 +35,8 @@
       "target_brand": "DECOS",
       "target_url": "https://www.dohome.co.th/th/decos-1-bulb-outdoor-wall-lamp-square-shape-e27-socket-model-gris-grey-10417411.html",
       "expected_url": "https://www.dohome.co.th/th/decos-1-bulb-outdoor-wall-lamp-square-shape-e27-socket-model-gris-grey-10417411.html",
-      "confidence": 70,
-      "reason": "Candidate 0 is a wall lamp from a preferred brand (DECOS) with the same socket type (E27x1) as the source product, making it the closest match.",
+      "confidence": 75,
+      "reason": "The candidate has the highest SpecMatch%, is a preferred brand, and perfectly matches the critical 'lamp type' and 'socket' specifications of the source product. Although price differs, all critical specs align.",
       "gt_status": "CORRECT"
     },
     {
@@ -48,23 +49,9 @@
       "target_brand": "POWER MAX",
       "target_url": "https://www.dohome.co.th/th/power-max-led-downlight-15w-square-dhp012-day-linght-10268582.html",
       "expected_url": "https://www.dohome.co.th/th/power-max-led-downlight-15w-square-dhp012-day-linght-10268582.html",
-      "confidence": 85,
-      "reason": "The candidate is the same product type (downlight), has the highest spec match (wattage, color temperature), and is from the most preferred brand (POWER MAX).",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 7,
-      "source_idx": 97,
-      "source_name": "กล่องอเนกประสงค์ พร้อมล้อและฝาล็อก 75 ลิตร Fiona KASSA HOME รุ่น JCJ-5114 ขนาด 67 x 46.2 x 35.1 ซม.",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60277742",
-      "target_name": "DECOS กล่องพลาสติกมีล้อ 85 ลิตร รุ่น 5115",
-      "target_brand": "DE'COS",
-      "target_url": "https://www.dohome.co.th/th/jcj-square-rolling-plastic-box-85-l-5115-10335532.html",
-      "expected_url": "https://www.dohome.co.th/th/jcj-square-plastic-box-70-l-no-5117-10365718.html",
       "confidence": 75,
-      "reason": "The candidate has a preferred brand, the same product type (plastic box/storage box), and a similar volume (85L vs 75L), which is within an acceptable range for an equivalent product.",
-      "gt_status": "INCORRECT"
+      "reason": "The candidate is the same product type (downlight), has the preferred brand POWER MAX, matches the wattage (15W), and color temperature (DAYLIGHT). While the size isn't explicitly stated, these are the critical matching specs.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 7,
@@ -76,8 +63,8 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/nash-plastic-tools-box-16-5-inch-no-mj20148-10223196.html",
       "expected_url": "https://www.dohome.co.th/th/nash-plastic-tools-box-16-5-inch-no-mj20148-10223196.html",
-      "confidence": 85,
-      "reason": "The candidate is the correct product type (plastic tool box), has a similar size (16.5 inch vs 16 inch), and is from a preferred brand (NASH).",
+      "confidence": 90,
+      "reason": "Candidate is the closest product type (plastic tool box) with a good spec match (16.5 inch vs 16 inch) and is from a preferred brand (NASH).",
       "gt_status": "CORRECT"
     },
     {
@@ -90,8 +77,8 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/nash-aluminium-ladder-2-way-4-step-no-lfd88al-10142444.html",
       "expected_url": "https://www.dohome.co.th/th/nash-aluminium-ladder-2-way-4-step-no-lfd88al-10142444.html",
-      "confidence": 75,
-      "reason": "The candidate is an aluminum ladder from a preferred brand (NASH) with the exact same number of steps and ladder direction as the source product.",
+      "confidence": 85,
+      "reason": "The candidate is the same product type (a-frame ladder), has the exact same number of steps and ladder direction, and is from a preferred brand (NASH) with a high spec match percentage.",
       "gt_status": "CORRECT"
     },
     {
@@ -104,8 +91,8 @@
       "target_brand": "HAPPY COOK",
       "target_url": "https://www.dohome.co.th/th/vegetable-cutter-no-112368-10314920.html",
       "expected_url": "",
-      "confidence": 70,
-      "reason": "Candidate 1 has a matching product type (fruit and vegetable grater / peeler) and is from a preferred brand (HAPPY COOK).",
+      "confidence": 90,
+      "reason": "Candidate 1 (อุปกรณ์ขูดผักผลไม้ รุ่น 112368) is a fruit and vegetable grater from a preferred brand (HAPPY COOK) and has the highest SpecMatch% among relevant candidates.",
       "gt_status": "NO_GT"
     }
   ]

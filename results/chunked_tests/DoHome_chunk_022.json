@@ -4,24 +4,39 @@
   "start_idx": 315,
   "end_idx": 330,
   "products_tested": 15,
-  "matches_found": 8,
-  "correct": 7,
+  "matches_found": 9,
+  "correct": 8,
   "incorrect": 1,
-  "accuracy": 87.5,
-  "timestamp": "2025-12-03T10:51:53.493822",
+  "gt_missing": 0,
+  "accuracy": 88.88888888888889,
+  "timestamp": "2025-12-03T14:45:03.892770",
   "matches": [
     {
       "chunk": 22,
-      "source_idx": 317,
-      "source_name": "ฟิล์มยืด 20 ไมครอน GIANT KINGKONG ขนาด 25 ซม. x 200 เมตร สีใส",
+      "source_idx": 315,
+      "source_name": "โคมดาวน์ไลท์หน้ากลม 7 นิ้ว LED 18W Warm White LUZINO รุ่น PN-JYX0101-18W/WW สีขาว",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60308457",
+      "target_name": "POWER MAX ดาวน์ไลท์ LED 18 วัตต์ หน้ากลม รุ่น DHP006 (WARM WHITE)",
+      "target_brand": "POWER MAX",
+      "target_url": "https://www.dohome.co.th/th/power-max-led-downlight-18w-circle-dhp006-warm-white-10268573.html",
+      "expected_url": "https://www.dohome.co.th/th/power-max-led-downlight-18w-circle-dhp006-warm-white-10268573.html",
+      "confidence": 85,
+      "reason": "The candidate is a downlight, has the same wattage and color temperature, and is from a highly preferred brand (POWER MAX).",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 22,
+      "source_idx": 316,
+      "source_name": "ลูกกลิ้งทาสี GIANT KINGKONG รุ่น PR-007 ขนาด 7 นิ้ว",
       "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60366774",
-      "target_name": "ฟิล์มยืดอเนกประสงค์ 20 ไมครอน 30 ซม. x 200 เมตร",
-      "target_brand": "NYC",
-      "target_url": "https://www.dohome.co.th/th/cling-film-20-micron-30-cm-x-200-m-10310432.html",
-      "expected_url": "https://www.dohome.co.th/th/cling-film-20-micron-30-cm-x-200-m-10310432.html",
-      "confidence": 60,
-      "reason": "The candidate is a stretch film with the same length, but a larger width. The brand is not preferred.",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60271295",
+      "target_name": "NASH ลูกกลิ้งทาสี 7 นิ้ว รุ่น RTS-007",
+      "target_brand": "NASH",
+      "target_url": "https://www.dohome.co.th/th/nash-paint-roller7-inch-no-rts-007-10185194.html",
+      "expected_url": "https://www.dohome.co.th/th/nash-paint-roller7-inch-no-rts-007-10185194.html",
+      "confidence": 95,
+      "reason": "The candidate is a paint roller of the preferred brand NASH, matching the critical 'size_inch' and 'roller_type' specs with 100% SpecMatch.",
       "gt_status": "CORRECT"
     },
     {
@@ -34,8 +49,8 @@
       "target_brand": "JCP",
       "target_url": "https://www.dohome.co.th/th/jcp-plastic-rack-4-layers-no-5974-10309925.html",
       "expected_url": "https://www.dohome.co.th/th/jcp-plastic-rack-4-layers-no-5974-10309925.html",
-      "confidence": 75,
-      "reason": "The candidate is a plastic shelf with 4 tiers and matching model number '5974', resulting in a 50% SpecMatch, and its brand JCP is preferred. Although the brand is not a top preferred one, given the strong spec match it is the best option.",
+      "confidence": 70,
+      "reason": "Candidate 0 has a 50% spec match, matching the product type 'plastic shelf' and '4 tiers' and 'model 5974'. Although the brand is not a top preferred brand, it is a stronger match in terms of specs and type than any other candidate, and the brand is partially similar to the source model identifier. There is no other candidate that is a plastic shelf.",
       "gt_status": "CORRECT"
     },
     {
@@ -44,12 +59,12 @@
       "source_name": "บัวพื้นโพลีสไตรีน TIMELESS KASSA รุ่น 581-21076 ขนาด 1.5 x 290 x 8 ซม. สีแบล็กโอ๊ก",
       "source_brand": "KASSA",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60328500",
-      "target_name": "FINEXT ไม้บัวล่างเอทิลีน 4 นิ้ว x 2.9 เมตร รุ่น 157-19CM",
+      "target_name": "FINEXT ไม้บัวล่างเอทิลีน 3 นิ้ว x 2.9 เมตร รุ่น JC13-W1",
       "target_brand": "FINEXT",
-      "target_url": "https://www.dohome.co.th/th/finext-under-cornice-wood-ethylene-4-inchx2-9m-no-157-19cm-10310029.html",
+      "target_url": "https://www.dohome.co.th/th/finext-under-cornice-wood-ethylene-3-inchx2-9m-no-jc13-w1-10185896.html",
       "expected_url": "https://www.dohome.co.th/th/finext-under-cornice-wood-ethylene-4-inchx2-9m-no-jc157-372-10185907.html",
-      "confidence": 80,
-      "reason": "Candidate 2 is a PREFERRED brand (FINEXT) and is a baseboard type product, although the spec match is low due to differing length units and values. However, it's the closest product type match among preferred brands.",
+      "confidence": 60,
+      "reason": "Candidate 4 is a 'baseboard molding' which is a highly similar product type to 'baseboard', is from the preferred brand FINEXT, and has a similar product description although specific dimension specs are not a strong match.",
       "gt_status": "INCORRECT"
     },
     {
@@ -62,8 +77,8 @@
       "target_brand": "DECOS",
       "target_url": "https://www.dohome.co.th/th/jcj-plastic-box-100-l-no-5119a-white-10318582.html",
       "expected_url": "https://www.dohome.co.th/th/jcj-plastic-box-100-l-no-5119a-white-10318582.html",
-      "confidence": 60,
-      "reason": "The candidate has the highest spec match (41%) with the same volume and a preferred brand (DECOS), and it is also a plastic box which is a very close product type to storage box. The model number 5119 is similar to the source model JCJ-5119.",
+      "confidence": 75,
+      "reason": "Candidate 0 (and 1) has the highest spec match (41%) among preferred brands, matching volume and a similar model number, and is the correct product type. The model number 5119 is very similar to JCJ-5119 in the source, indicating a high likelihood of being the same product despite the small difference in the prefix.",
       "gt_status": "CORRECT"
     },
     {
@@ -77,7 +92,7 @@
       "target_url": "https://www.dohome.co.th/th/2-ply-corrugated-paper-width-48x80-m-weight-30-kg-10364692.html",
       "expected_url": "https://www.dohome.co.th/th/2-ply-corrugated-paper-width-48x80-m-weight-30-kg-10364692.html",
       "confidence": 95,
-      "reason": "The candidate is a perfect spec match for corrugated paper, matching size, length, and tiers. Although the brand is not preferred, the spec match is 100% and product type is identical, making it the best equivalent.",
+      "reason": "The candidate is the same product type (corrugated paper/cardboard) and has a 100% spec match, despite not being a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -90,8 +105,8 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/l-type-screw-1-2-inch-x-40-cm-10202377.html",
       "expected_url": "https://www.dohome.co.th/th/l-type-screw-1-2-inch-x-40-cm-10202377.html",
-      "confidence": 95,
-      "reason": "The candidate 'สกรูตัวแอล 1/2 นิ้ว x 40 ซม. | NASH' is an L-bolt (สกรูตัวแอล), matches the critical product type 'l-bolt', has the exact size_inch and length, and is from the preferred brand NASH.",
+      "confidence": 100,
+      "reason": "Candidate is an L-bolt (สกรูตัวแอล), which is a type of bolt, matches the size, and has the correct length, matching the source product closely in type and critical specifications. It's also from a preferred brand (NASH).",
       "gt_status": "CORRECT"
     },
     {
@@ -105,7 +120,7 @@
       "target_url": "https://www.dohome.co.th/th/oppa-bubber-wiper-with-aluminium-handle-18-inch-10240882.html",
       "expected_url": "https://www.dohome.co.th/th/oppa-bubber-wiper-with-aluminium-handle-18-inch-10240882.html",
       "confidence": 75,
-      "reason": "The candidate has the highest spec match (42%) and is a preferred brand (OPPA) with the correct product type and matching 'size_inch' spec.",
+      "reason": "Candidate 0 is a preferred brand 'OPPA' and has the highest SpecMatch% among candidates that are also 'squeegee' type. While the source states 'wiper', the closest equivalent in the candidates is 'squeegee', which is functionally similar. The size (18 inch) matches, but the length (120cm) is not specified.",
       "gt_status": "CORRECT"
     },
     {
@@ -118,8 +133,8 @@
       "target_brand": "POWER MAX",
       "target_url": "https://www.dohome.co.th/th/powermax-track-light-2m-no-lumos-white-10400227.html",
       "expected_url": "https://www.dohome.co.th/th/powermax-track-light-2m-no-lumos-white-10400227.html",
-      "confidence": 90,
-      "reason": "Candidate 5 is a track light rail from the preferred brand POWER MAX, and its length of 2m is equivalent to the source's 200cm, making it the best functional equivalent despite spec match percentage.",
+      "confidence": 85,
+      "reason": "Candidate is the correct product type (track light rail), matches the length spec closely (2M vs 200CM), and is from a preferred brand (POWER MAX).",
       "gt_status": "CORRECT"
     }
   ]

@@ -4,39 +4,26 @@
   "start_idx": 255,
   "end_idx": 270,
   "products_tested": 15,
-  "matches_found": 9,
-  "correct": 7,
-  "incorrect": 1,
-  "accuracy": 87.5,
-  "timestamp": "2025-12-03T10:48:37.047487",
+  "matches_found": 8,
+  "correct": 6,
+  "incorrect": 0,
+  "gt_missing": 0,
+  "accuracy": 100.0,
+  "timestamp": "2025-12-03T14:40:53.687695",
   "matches": [
     {
       "chunk": 18,
-      "source_idx": 255,
-      "source_name": "โคมไฟเพดาน LED 48 วัตต์ Tri-Color LUZINO รุ่น 20055 สีขาว",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60351171",
-      "target_name": "HI-TEK โคมไฟเพดาน LED 48 วัตต์ มาลัย (3 แสง)",
-      "target_brand": "HI-TEK",
-      "target_url": "https://www.dohome.co.th/th/hi-tek-led-ceiling-lamp-48-watts-malai-pattern-10391437.html",
-      "expected_url": "https://www.dohome.co.th/th/decos-ceiling-lamp-led-50w-no-verbena-3-color-lights-10402175.html",
+      "source_idx": 258,
+      "source_name": "พรมดักฝุ่น ขอบยาง KASSA HOME รุ่น CM3221_4060GY ขนาด 40 x 60 ซม. สีเทา",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/sku/60304123",
+      "target_name": "DECOS พรมใยมะพร้าว 40x60 ซม. รุ่น 03-3 สีน้ำตาล",
+      "target_brand": "DE'COS",
+      "target_url": "https://www.dohome.co.th/th/decos-coconut-fiber-carpet-40x60cm-03-3-brown-10397046.html",
+      "expected_url": "",
       "confidence": 95,
-      "reason": "Candidate 0 is a ceiling lamp with the exact same wattage (48W) and is multi-color, matching the critical specifications of the source product, making it the best functional equivalent despite a non-preferred brand.",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 18,
-      "source_idx": 259,
-      "source_name": "บันไดอลูมิเนียมทรง A ขึ้นลง 2 ทาง 8 ขั้น GIANT KINGKONG PRO รุ่น LDA2008D สีเงิน",
-      "source_brand": "GIANT KINGKONG PRO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60263923",
-      "target_name": "NASH บันไดมิเนียม 2 x 8 ขั้น รุ่น AO54-208",
-      "target_brand": "NASH",
-      "target_url": "https://www.dohome.co.th/th/nash-aluminium-ladder-2-x-8-step-no-ao54-208-10142432.html",
-      "expected_url": "https://www.dohome.co.th/th/nash-aluminium-ladder-2-x-8-step-no-ao54-208-10142432.html",
-      "confidence": 75,
-      "reason": "Candidate 0 is a preferred brand (NASH) and has a significant spec match of 31%, including the exact number of steps and it is an A-frame ladder, which is the closest match among the available options.",
-      "gt_status": "CORRECT"
+      "reason": "Candidate 0 is a KASSA HOME preferred brand (DECOS), which is a dust mat, and has exact dimension match (40x60 cm) with the source product.",
+      "gt_status": "NO_GT"
     },
     {
       "chunk": 18,
@@ -48,8 +35,8 @@
       "target_brand": "FINEXT",
       "target_url": "https://www.dohome.co.th/th/finext-steamer-3-level-no-fn-st01-10378093.html",
       "expected_url": "https://www.dohome.co.th/th/finext-steamer-3-level-no-fn-st01-10378093.html",
-      "confidence": 60,
-      "reason": "Candidate 0 is an electric steamer from a preferred brand, and while its volume is larger (12L vs 9L), it is the closest functional match under Preferred Brands.",
+      "confidence": 75,
+      "reason": "The candidate is an electric steamer from a preferred brand (FINEXT) and has a similar function to the source product, despite a higher volume.",
       "gt_status": "CORRECT"
     },
     {
@@ -63,7 +50,7 @@
       "target_url": "https://www.dohome.co.th/th/x1-plus-microfiber-cloth-40x40cm-blue-10399594.html",
       "expected_url": "https://www.dohome.co.th/th/x1-plus-microfiber-cloth-40x40cm-blue-10399594.html",
       "confidence": 95,
-      "reason": "The candidate is a microfiber cloth with matching dimensions (40x40 cm) and has a 100% spec match. Although not a top preferred brand, it's the only direct microfiber cloth match.",
+      "reason": "The candidate is a microfiber cloth, has identical dimensions (40x40), and a 100% spec match, making it a strong equivalent despite being a non-preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -77,7 +64,7 @@
       "target_url": "https://www.dohome.co.th/th/decos-waterproof-mattress-protector-6x6-5-inch-10302226.html",
       "expected_url": "https://www.dohome.co.th/th/decos-waterproof-mattress-protector-6x6-5-inch-10302226.html",
       "confidence": 75,
-      "reason": "Candidate 20 is a mattress protector from a preferred brand (DECOS), matching the critical product type of the source. While the dimensions are different, it is the only candidate that is the same product type.",
+      "reason": "Candidate is the same product type ('ผ้ารองกันเปื้อน' which is equivalent to 'sheet protector') and from a preferred brand DECOS, with a 50% spec match including identifiers and similar dimensions although not exact.",
       "gt_status": "CORRECT"
     },
     {
@@ -90,8 +77,8 @@
       "target_brand": "DE'COS",
       "target_url": "https://www.dohome.co.th/th/finext-chromium-coated-steel-shelf-4-layers-size-90x45x160-cm-10239736.html",
       "expected_url": "https://www.dohome.co.th/th/finext-chromium-coated-steel-shelf-4-layers-size-90x45x160-cm-10239736.html",
-      "confidence": 100,
-      "reason": "The candidate is a perfect spec match for dimensions, length, and tiers, and is from the highest preferred brand DE'COS, with a product type match of shelving unit.",
+      "confidence": 95,
+      "reason": "Candidate 0 is a perfect spec match for dimensions, tiers, and length, and is from a preferred brand (DE'COS) with the correct product type.",
       "gt_status": "CORRECT"
     },
     {
@@ -104,8 +91,8 @@
       "target_brand": "TINY",
       "target_url": "https://www.dohome.co.th/th/tiny-digital-scale-30-kg-no-jc41-30-10264344.html",
       "expected_url": "https://www.dohome.co.th/th/tiny-digital-scale-30-kg-no-jc41-30-10264344.html",
-      "confidence": 100,
-      "reason": "Candidate 0 is a digital scale with the exact matching volume and is the only alternative of the correct product type.",
+      "confidence": 95,
+      "reason": "Candidate 0 is a digital scale with the exact volume specification, matching the product type and key spec of the source product.",
       "gt_status": "CORRECT"
     },
     {
@@ -118,8 +105,8 @@
       "target_brand": "DECOS",
       "target_url": "https://www.dohome.co.th/th/decos-plastic-basket-with-wheels-model-61468-white-grey-handle-10415580.html",
       "expected_url": "",
-      "confidence": 75,
-      "reason": "Candidate is a trolley basket from a preferred brand (DECOS) with a matching product type, but the model number and dimensions do not match the source product.",
+      "confidence": 70,
+      "reason": "The candidate is a 'trolley basket' with a preferred brand (DECOS) and model number, making it the most suitable match despite a low SpecMatch score due to missing dimension data in the candidate's specs.",
       "gt_status": "NO_GT"
     },
     {
@@ -132,8 +119,8 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/trolley-300-kg-10066705.html",
       "expected_url": "https://www.dohome.co.th/th/trolley-300-kg-10066705.html",
-      "confidence": 70,
-      "reason": "The candidate NASH รถเข็น อเนกประสงค์ (300 กก.) is a 'trolley', which is a close product type match to 'flat trolley', has the same volume as the source, is from the highly preferred brand NASH, and has the highest SpecMatch% among relevant candidates.",
+      "confidence": 75,
+      "reason": "The candidate is a NASH brand trolley with a matching volume spec of 300 KG, and it is the highest SpecMatch for the correct product type among preferred brands.",
       "gt_status": "CORRECT"
     }
   ]

@@ -4,11 +4,12 @@
   "start_idx": 330,
   "end_idx": 345,
   "products_tested": 15,
-  "matches_found": 10,
-  "correct": 4,
-  "incorrect": 6,
-  "accuracy": 40.0,
-  "timestamp": "2025-12-03T10:21:25.741765",
+  "matches_found": 8,
+  "correct": 5,
+  "incorrect": 3,
+  "gt_missing": 0,
+  "accuracy": 62.5,
+  "timestamp": "2025-12-03T17:01:41.468708",
   "matches": [
     {
       "chunk": 23,
@@ -20,22 +21,8 @@
       "target_brand": "DEXZON",
       "target_url": "https://www.homepro.co.th/p/1176083",
       "expected_url": "https://www.homepro.co.th/p/1185016",
-      "confidence": 100,
-      "reason": "Candidate 0 is a self-drilling screw, matching the source product type, has identical specs (dimensions and pack count), and is from the highest preferred brand (DEXZON).",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 23,
-      "source_idx": 332,
-      "source_name": "สายยางเด้ง 5/8 นิ้ว FONTE ยาว 15 เมตร",
-      "source_brand": "FONTE",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60338031",
-      "target_name": "สายยางเด้ง GARTENE 5/8 นิ้วX20 ม. สีฟ้า",
-      "target_brand": "GARTENE",
-      "target_url": "https://www.homepro.co.th/p/1132429",
-      "expected_url": "https://www.homepro.co.th/p/1132427",
-      "confidence": 75,
-      "reason": "Candidate 1 (GARTENE) is a preferred brand and the best product type match (garden hose) with the same diameter. Length is slightly different but acceptable.",
+      "confidence": 95,
+      "reason": "The candidate is a self-drilling screw from a preferred brand with 100% spec match, including dimensions and size.",
       "gt_status": "INCORRECT"
     },
     {
@@ -48,8 +35,8 @@
       "target_brand": "KECH",
       "target_url": "https://www.homepro.co.th/p/1030366",
       "expected_url": "https://www.homepro.co.th/p/1030366",
-      "confidence": 100,
-      "reason": "Candidate 0 is a perfect spec match for length_cm and product type, and matches a preferred brand (KECH) over the source brand.",
+      "confidence": 95,
+      "reason": "Candidate 0 is the exact product type (dish rack) with 100% spec match on length and falls under a preferred brand (KECH) ranked 3rd.",
       "gt_status": "CORRECT"
     },
     {
@@ -62,8 +49,8 @@
       "target_brand": "BY TORA",
       "target_url": "https://www.homepro.co.th/p/1076795",
       "expected_url": "https://www.homepro.co.th/p/1076795",
-      "confidence": 75,
-      "reason": "Candidate is the same product type (dry chemical fire extinguisher), matches the model '4A5B' and a similar weight, though the brand is not preferred.",
+      "confidence": 80,
+      "reason": "The candidate has the exact same product type 'ถังดับเพลิงผงเคมีแห้ง' (dry chemical fire extinguisher), the same model '4A5B', and exact same weight '15 ปอนด์' as the source product. Although the brand is not preferred, the critical specs match perfectly.",
       "gt_status": "CORRECT"
     },
     {
@@ -77,7 +64,7 @@
       "target_url": "https://www.homepro.co.th/p/1147572",
       "expected_url": "https://www.homepro.co.th/p/1192960",
       "confidence": 75,
-      "reason": "Candidate 27 is the only alternative product of type 'picnic stove' and is from a preferred brand (AIKO), although it lacks some specific model information for a perfect spec match.",
+      "reason": "Candidate 27 is a preferred brand (AIKO) and the correct product type (picnic stove), despite having 0% spec match, making it the only viable option among the given candidates.",
       "gt_status": "INCORRECT"
     },
     {
@@ -90,8 +77,8 @@
       "target_brand": "ACCO",
       "target_url": "https://www.homepro.co.th/p/191609",
       "expected_url": "https://www.homepro.co.th/p/191609",
-      "confidence": 80,
-      "reason": "The candidate ACCO trash bags (PREFERRED#4) are the correct product type, have matching dimensions, and a good SpecMatch percentage. The pack count is slightly different (8 vs 7-9) but acceptable.",
+      "confidence": 75,
+      "reason": "Candidate 2 is a trash bag with good spec match for dimensions and size, and is from a preferred brand (ACCO).",
       "gt_status": "CORRECT"
     },
     {
@@ -105,7 +92,7 @@
       "target_url": "https://www.homepro.co.th/p/1173468",
       "expected_url": "https://www.homepro.co.th/p/1121822",
       "confidence": 95,
-      "reason": "The candidate 'ผ้าใบรุ่นประหยัด SPRING 72 นิ้วX40 หลา สีฟ้า' is a plastic sheet roll from the top preferred brand SPRING, with a 100% spec match in size and a slightly lower price than the source.",
+      "reason": "Candidate 0 is a plastic tarp roll of the preferred brand SPRING with exact size and a very high spec match.",
       "gt_status": "INCORRECT"
     },
     {
@@ -114,27 +101,13 @@
       "source_name": "สแควร์บ๊อกซ์ ตื้น GIANT KINGKONG รุ่น 52151-1/2 0.8 มม. ขนาด 4 x 4 นิ้ว สีเงิน",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60279432",
-      "target_name": "กล่องลอย CT ELECTRIC 4x4 นิ้ว สีขาว",
-      "target_brand": "CT ELECTRIC",
-      "target_url": "https://www.homepro.co.th/p/1201060",
+      "target_name": "สแคว์บ๊อกตื้น ELECKTA 4X4 นิ้ว",
+      "target_brand": "ELECKTA",
+      "target_url": "https://www.homepro.co.th/p/1056287",
       "expected_url": "https://www.homepro.co.th/p/1056287",
       "confidence": 95,
-      "reason": "Candidate 2 is the best match as it is an 'electrical box' with 100% spec match, despite not being a preferred brand. Candidate 0 has 100% spec match but the product type is 'shallow box' which does not perfectly align with 'electrical box' from Source Product given the context of other candidates.",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 23,
-      "source_idx": 343,
-      "source_name": "จักรยานเด็ก 20 นิ้ว GIANT KINGKONG รุ่น KD2001WH สีขาว",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60377239",
-      "target_name": "จักรยานเสือภูเขา 20 นิ้ว JOY BICYCLE VIPER สีน้ำเงิน",
-      "target_brand": "JOY BICYCLE",
-      "target_url": "https://www.homepro.co.th/p/1188025",
-      "expected_url": "https://www.homepro.co.th/p/1285365",
-      "confidence": 70,
-      "reason": "The candidate has the exact same product type (bicycle) and matches the critical size_inch spec (20 inch) at a high SpecMatch percentage. Although not a preferred brand, it is the only true bicycle match.",
-      "gt_status": "INCORRECT"
+      "reason": "The candidate has a 100% spec match, exact product type (shallow box is a sub-type of square box), and matching dimensions. While not a preferred brand, it's the closest match available.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 23,
@@ -147,7 +120,7 @@
       "target_url": "https://www.homepro.co.th/p/1276400",
       "expected_url": "https://www.homepro.co.th/p/1276400",
       "confidence": 95,
-      "reason": "Candidate 0 is a STACKO (preferred brand) shelving unit with identical dimensions, length, and number of tiers as the source product, resulting in a 100% spec match.",
+      "reason": "The candidate is a preferred brand and has an exact match in product type, dimensions, tiers, and length to the source product.",
       "gt_status": "CORRECT"
     }
   ]

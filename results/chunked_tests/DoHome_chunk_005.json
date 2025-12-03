@@ -4,11 +4,12 @@
   "start_idx": 60,
   "end_idx": 75,
   "products_tested": 15,
-  "matches_found": 7,
-  "correct": 5,
-  "incorrect": 1,
-  "accuracy": 83.33333333333334,
-  "timestamp": "2025-12-03T10:38:54.422194",
+  "matches_found": 6,
+  "correct": 4,
+  "incorrect": 0,
+  "gt_missing": 1,
+  "accuracy": 100.0,
+  "timestamp": "2025-12-03T14:26:58.202263",
   "matches": [
     {
       "chunk": 5,
@@ -20,8 +21,8 @@
       "target_brand": "DE'COS",
       "target_url": "https://www.dohome.co.th/th/towel-30x60-inch-white-10207776.html",
       "expected_url": "https://www.dohome.co.th/th/towel-30x60-inch-white-10207776.html",
-      "confidence": 95,
-      "reason": "The candidate is a preferred brand (DE'COS) and perfectly matches the critical product type (hotel towel vs bath towel) and key dimensions (30x60, 60 inch) with a 100% SpecMatch.",
+      "confidence": 100,
+      "reason": "The candidate is a preferred brand (DE'COS) and perfectly matches the product type (towel) and all key specifications (dimensions and size).",
       "gt_status": "CORRECT"
     },
     {
@@ -35,7 +36,7 @@
       "target_url": "https://www.dohome.co.th/th/aluguard-door-rubber-seal-9x6-mm-6-m-brown-10383374.html",
       "expected_url": "https://www.dohome.co.th/th/aluguard-door-rubber-seal-9x6-mm-6-m-brown-10383374.html",
       "confidence": 95,
-      "reason": "Candidate is the same product type (door seal is a type of window/door seal), same length (6M), and is from a preferred brand (ALUGUARD) with 100% spec match.",
+      "reason": "The candidate is a door seal with the exact same length as the source product and is from a preferred brand (ALUGUARD), confirming an excellent spec match and product type alignment.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,8 +50,22 @@
       "target_url": "https://www.dohome.co.th/th/heap-downlight-4-inch-square-black-10204672.html",
       "expected_url": "https://www.dohome.co.th/th/heap-downlight-4-inch-square-black-10204672.html",
       "confidence": 85,
-      "reason": "Candidate 1 (POWER MAX) is a preferred brand (PREFERRED#1), has a high SpecMatch% (45%), and is the correct product type (downlight) with matching size and description of surface mount square (กล่องเหลี่ยม).",
+      "reason": "The candidate is from the top preferred brand 'POWER MAX', has the exact product type 'downlight' (matching 'surface mount downlight' closely), and a good spec match for 'size_inch' at 45%.",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 5,
+      "source_idx": 66,
+      "source_name": "ตู้ลิ้นชักอเนกประสงค์ท็อปไม้ 4 ชั้น KASSA HOME รุ่น UDC-A05AB4 ขนาด 63 x 40 x 90 ซม. สีพาสเทล",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60409844",
+      "target_name": "JCP ตู้ลิ้นชักพลาสติก 4 ชั้น รุ่น 5834",
+      "target_brand": "JCP",
+      "target_url": "https://www.dohome.co.th/th/jcp-plastic-drawer-cabinet-4-layers-no-5834-10345681.html",
+      "expected_url": "https://www.dohome.co.th/en/drawer-cabinet-4-layers-sumo-woodtop-plastel-10271531.html",
+      "confidence": 70,
+      "reason": "The candidate has the exact product type and tiers match, and is a preferred brand.",
+      "gt_status": "GT_MISSING"
     },
     {
       "chunk": 5,
@@ -63,35 +78,7 @@
       "target_url": "https://www.dohome.co.th/th/sanki-aluminum-ladder-with-tray-7-steps-10391218.html",
       "expected_url": "https://www.dohome.co.th/th/sanki-aluminum-ladder-with-tray-7-steps-10391218.html",
       "confidence": 60,
-      "reason": "Candidate 1 (SANKI) and Candidate 2 (SANKI) both have the critical spec of 7 steps matching the source, and SANKI is a preferred brand. Candidate 1 is chosen over candidate 0 (NASH) due to matching the important 'steps' spec more closely, even though NASH is a higher preferred brand.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 5,
-      "source_idx": 71,
-      "source_name": "บัวพื้นโพลีสไตรีน TIMELESS KASSA รุ่น 581-E136 ขนาด 1.5 x 290 x 8 ซม. สีไม้พะยูง",
-      "source_brand": "KASSA",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60328497",
-      "target_name": "FINEXT ไม้บัวล่างเอทิลีน 4 นิ้ว x 2.9 เมตร รุ่น 157-19CM",
-      "target_brand": "FINEXT",
-      "target_url": "https://www.dohome.co.th/th/finext-under-cornice-wood-ethylene-4-inchx2-9m-no-157-19cm-10310029.html",
-      "expected_url": "https://www.dohome.co.th/th/finext-under-cornice-wood-ethylene-4-inchx2-9m-no-jc157-372-10185907.html",
-      "confidence": 70,
-      "reason": "Candidate is a FINEXT branded baseboard, which is a preferred brand, and has relevant dimensional specs although not an exact match.",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 5,
-      "source_idx": 72,
-      "source_name": "บานซิงค์เดี่ยว ZAGIO รุ่น CRYSTAL Z ขนาด 45.5 x 65.5 ซม. สีขาว",
-      "source_brand": "ZAGIO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60316357",
-      "target_name": "บานซิงค์เดี่ยว ABS รุ่น นีโอ สีงา",
-      "target_brand": "KING",
-      "target_url": "https://www.dohome.co.th/th/single-door-cabinet-for-kitchen-abs-no-neo-ivory-10014369.html",
-      "expected_url": "https://www.dohome.co.th/th/single-door-cabinet-for-kitchen-abs-no-neo-ivory-10014369.html",
-      "confidence": 85,
-      "reason": "Candidate 0 is a 'sink cabinet' which matches the source product type, and its brand KING is a preferred brand.",
+      "reason": "The source is an 'a-frame ladder' with 7 steps. Candidate 0 and 1 are also 'ladder' type with 7 steps and a preferred brand, with 31% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -105,7 +92,7 @@
       "target_url": "https://www.dohome.co.th/th/decos-coconut-fiber-carpet-40x60cm-03-3-brown-10397046.html",
       "expected_url": "",
       "confidence": 75,
-      "reason": "Candidate is the correct product type (doormat) and is from a preferred brand (DE'COS), despite a low SpecMatch indicating dimensional differences.",
+      "reason": "Candidate is the correct product type (dust mat) and from a highly preferred brand (DE'COS), although dimensions are reversed (40x60 vs 60x40).",
       "gt_status": "NO_GT"
     }
   ]

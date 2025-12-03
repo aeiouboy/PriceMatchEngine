@@ -4,11 +4,12 @@
   "start_idx": 375,
   "end_idx": 390,
   "products_tested": 15,
-  "matches_found": 10,
+  "matches_found": 9,
   "correct": 8,
-  "incorrect": 2,
-  "accuracy": 80.0,
-  "timestamp": "2025-12-03T10:23:53.826199",
+  "incorrect": 1,
+  "gt_missing": 0,
+  "accuracy": 88.88888888888889,
+  "timestamp": "2025-12-03T17:04:57.998705",
   "matches": [
     {
       "chunk": 26,
@@ -20,8 +21,8 @@
       "target_brand": "NEOFLAM",
       "target_url": "https://www.homepro.co.th/p/1240600",
       "expected_url": "https://www.homepro.co.th/p/1240600",
-      "confidence": 85,
-      "reason": "Candidate 1 (NEOFLAM BROTE) is a 'pot' which matches the source product type 'ceramic pot' (a type of pot), has the correct length of 24 cm, and is not a preferred brand but is the closest type match.",
+      "confidence": 95,
+      "reason": "Candidate 1 is a pot with the exact same length as the source, and its product type 'pot with lid' is very close to the source's 'pot'.",
       "gt_status": "CORRECT"
     },
     {
@@ -35,7 +36,7 @@
       "target_url": "https://www.homepro.co.th/p/1247818",
       "expected_url": "https://www.homepro.co.th/p/1247818",
       "confidence": 70,
-      "reason": "Candidate is the same product type (grass trimmer) and a preferred brand (MATALL) with the highest spec match percentage among relevant alternatives.",
+      "reason": "The candidate is the same product type (brush cutter) and is from a preferred brand (MATALL) with the highest SpecMatch% among relevant alternatives.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,7 +50,7 @@
       "target_url": "https://www.homepro.co.th/p/1263081",
       "expected_url": "https://www.homepro.co.th/p/1263081",
       "confidence": 75,
-      "reason": "The candidate is a shoe box from a preferred brand with identical dimensions and length, and a high spec match. The 'outlets' (12) may correspond to 6 tiers, making it a strong potential match.",
+      "reason": "The candidate is a shoe box from the preferred brand STACKO with highly similar dimensions (53x34x99cm) matching the source's dimensions (53x34x99cm) although the tier count (6 vs 12 outlets) is not an exact match.",
       "gt_status": "CORRECT"
     },
     {
@@ -63,22 +64,8 @@
       "target_url": "https://www.homepro.co.th/p/1154352",
       "expected_url": "https://www.homepro.co.th/p/1154352",
       "confidence": 80,
-      "reason": "The candidate is also a cable tie and matches the key spec '16 inch' and '100 pcs', though the 'dimensions' spec is not fully captured.",
+      "reason": "The candidate is also a cable tie with matching size and pack count, though from a non-preferred brand.",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 26,
-      "source_idx": 380,
-      "source_name": "บันไดอะลูมิเนียมอเนกประสงค์ทรง A/I GIANT KINGKONG PRO รุ่น LDA2106 ขนาด 6 x 5 ขั้น สีเงิน",
-      "source_brand": "GIANT KINGKONG PRO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60289703",
-      "target_name": "บันไดอะลูมิเนียมทรง A มีมือจับ MATALL 5 ขั้น",
-      "target_brand": "MATALL",
-      "target_url": "https://www.homepro.co.th/p/1102878",
-      "expected_url": "https://www.homepro.co.th/p/195811",
-      "confidence": 85,
-      "reason": "The candidate is the same product type ('a-frame ladder'), has the same number of steps (5 steps), is from the highest preferred brand (MATALL), and has the highest SpecMatch% among viable candidates.",
-      "gt_status": "INCORRECT"
     },
     {
       "chunk": 26,
@@ -91,21 +78,21 @@
       "target_url": "https://www.homepro.co.th/p/194752",
       "expected_url": "https://www.homepro.co.th/p/194752",
       "confidence": 75,
-      "reason": "The candidate is the same product type (box), has the exact same dimensions as the source, and is from a preferred brand (PACK IN).",
+      "reason": "The candidate is the correct product type (box) and brand (PACK IN) is preferred. It has a high SpecMatch of 63%, matching dimensions and length.",
       "gt_status": "CORRECT"
     },
     {
       "chunk": 26,
-      "source_idx": 384,
-      "source_name": "ปืนยิงยาแนวไส้กรอก GIANT KINGKONG รุ่น XY-501-9 ขนาด 9 นิ้ว สีเงิน",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60269861",
-      "target_name": "ปืนยิงซิลิโคนแบบเหล็ก DEXZON แกนคู่ 9 นิ้ว สีแดง",
-      "target_brand": "DEXZON",
-      "target_url": "https://www.homepro.co.th/p/1157496",
-      "expected_url": "https://www.homepro.co.th/p/1157195",
-      "confidence": 95,
-      "reason": "The candidate is a DEXZON brand silicone gun (equivalent to caulking gun) with a matching 9-inch size and 100% spec match, making it the best preferred alternative.",
+      "source_idx": 383,
+      "source_name": "บันไดอลูมิเนียมทรง A ขึ้นลง 2 ทาง 8 ขั้น GIANT KINGKONG PRO รุ่น LDA2008D สีเงิน",
+      "source_brand": "GIANT KINGKONG PRO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60263923",
+      "target_name": "บันไดอะลูมิเนียมมีถาด MATALL 8 ขั้น",
+      "target_brand": "MATALL",
+      "target_url": "https://www.homepro.co.th/p/1157325",
+      "expected_url": "https://www.homepro.co.th/p/1227723",
+      "confidence": 70,
+      "reason": "Candidate 0 is a MATALL (preferred brand) aluminum ladder with 8 steps, matching the critical 'steps' spec and product type of the source. While it lacks details like 'A-FRAME' and '2-WAY', it's the closest match.",
       "gt_status": "INCORRECT"
     },
     {
@@ -119,7 +106,7 @@
       "target_url": "https://www.homepro.co.th/p/1167138",
       "expected_url": "https://www.homepro.co.th/p/1167138",
       "confidence": 95,
-      "reason": "The candidate is a 'putty knife' of the preferred brand MATALL, with an exact match in size (3 inches) and a high SpecMatch% of 100%.",
+      "reason": "The candidate has the exact same product type (putty knife/steel trowel is functionally equivalent), matching size, and is from the highest preferred brand (MATALL).",
       "gt_status": "CORRECT"
     },
     {
@@ -132,8 +119,8 @@
       "target_brand": "SUMO",
       "target_url": "https://www.homepro.co.th/p/1140156",
       "expected_url": "https://www.homepro.co.th/p/1140156",
-      "confidence": 70,
-      "reason": "The candidate is a preferred brand (SUMO) and the product type 'เพาเวอร์ปลั๊ก 3 ตัวเมีย 1ตัวผู้' (power plug 3 female 1 male) is closely related to the source's 'เต้ารับสามทางต้วเมียต่อกลาง' (three-way female connector) as both are electrical connectors with female ends. Although the exact model and input current '16A' are not explicitly matched in the candidate's parsed specs, the shared brand SUMO and the functional similarity make it the best available match.",
+      "confidence": 75,
+      "reason": "Candidate 10 is the only 'socket' product (implied by 'เพาเวอร์ปลั๊ก') and is from a preferred brand (SUMO), making it the closest available alternative despite the lower SpecMatch% due to limited common specs.",
       "gt_status": "CORRECT"
     },
     {
@@ -147,7 +134,7 @@
       "target_url": "https://www.homepro.co.th/p/1021279",
       "expected_url": "https://www.homepro.co.th/p/1021279",
       "confidence": 90,
-      "reason": "Candidate 0 is a measuring wheel, matching the product type, and is from a preferred brand with a 50% spec match.",
+      "reason": "Candidate 0 is the only 'measuring wheel' product type, matching the source. It also has a preferred brand.",
       "gt_status": "CORRECT"
     }
   ]

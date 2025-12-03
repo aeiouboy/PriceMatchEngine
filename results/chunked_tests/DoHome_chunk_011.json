@@ -4,26 +4,13 @@
   "start_idx": 150,
   "end_idx": 165,
   "products_tested": 15,
-  "matches_found": 10,
-  "correct": 6,
-  "incorrect": 1,
-  "accuracy": 85.71428571428571,
-  "timestamp": "2025-12-03T10:43:16.857982",
+  "matches_found": 9,
+  "correct": 7,
+  "incorrect": 0,
+  "gt_missing": 0,
+  "accuracy": 100.0,
+  "timestamp": "2025-12-03T14:33:32.997147",
   "matches": [
-    {
-      "chunk": 11,
-      "source_idx": 151,
-      "source_name": "ชั้นตะแกรงเหล็กอเนกประสงค์ 4 ชั้น Linear KASSA HOME รุ่น WMT ขนาด 90 x 45 x 160 ซม. สีดำ",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60316130",
-      "target_name": "DECOS ชั้นเหล็กชุบโครเมี่ยม 4 ชั้น ขนาด 90x45x160 ซม. [ไม่รวมประกอบ]",
-      "target_brand": "DE'COS",
-      "target_url": "https://www.dohome.co.th/th/finext-chromium-coated-steel-shelf-4-layers-size-90x45x160-cm-10239736.html",
-      "expected_url": "https://www.dohome.co.th/th/decos-4-layer-steel-frame-shelf-75x35x150cm-black-10407067.html",
-      "confidence": 100,
-      "reason": "The candidate is a preferred brand (DE'COS) and has an exact 100% spec match, including product type, dimensions, and number of tiers.",
-      "gt_status": "INCORRECT"
-    },
     {
       "chunk": 11,
       "source_idx": 153,
@@ -34,8 +21,8 @@
       "target_brand": "OPPA",
       "target_url": "https://www.dohome.co.th/th/oppa-bubber-wiper-spare-partsr-18-inch-10247340.html",
       "expected_url": "https://www.dohome.co.th/th/oppa-bubber-wiper-spare-partsr-18-inch-10247340.html",
-      "confidence": 85,
-      "reason": "The candidate has the exact same product type (wiper blade/refill), the correct size (18 inch wiper refill), and is from a preferred brand, making it a strong match despite the slightly higher price.",
+      "confidence": 75,
+      "reason": "The candidate has a high spec match (63%), is the correct product type (wiper blade part matches wiper blade), and is from a preferred brand (OPPA).",
       "gt_status": "CORRECT"
     },
     {
@@ -49,7 +36,7 @@
       "target_url": "https://www.dohome.co.th/th/nash-cut-off-machine-14-inch-no-cos805-10277728.html",
       "expected_url": "https://www.dohome.co.th/th/nash-cut-off-machine-14-inch-no-cos805-10277728.html",
       "confidence": 90,
-      "reason": "The candidate NASH fiber cutter has the same product type and size,  slightly higher wattage (within 20%), and is from a preferred brand (NASH), resulting in a high spec match.",
+      "reason": "The candidate is a 'fiber cutter' with a high spec match (77%) to the source, a preferred brand (NASH), and similar wattage (2500W vs 2400W).",
       "gt_status": "CORRECT"
     },
     {
@@ -62,8 +49,8 @@
       "target_brand": "DECOS",
       "target_url": "https://www.dohome.co.th/th/decos-towel-27x54-inch-no-fresh-grey-10326730.html",
       "expected_url": "",
-      "confidence": 100,
-      "reason": "Candidate 0 is the exact product type (towel), has identical dimensions (27x54 inches), a high SpecMatch of 100%, and is from a preferred brand (DECOS).",
+      "confidence": 95,
+      "reason": "Candidate is the same product type (towel), has identical dimensions, and is from a preferred brand (DECOS).",
       "gt_status": "NO_GT"
     },
     {
@@ -76,8 +63,8 @@
       "target_brand": "DE'COS",
       "target_url": "https://www.dohome.co.th/th/decos-duvet-cover-size-100x90-inch-no-ct-streak-white-10303569.html",
       "expected_url": "https://www.dohome.co.th/th/decos-duvet-cover-size-100x90-inch-no-ct-streak-white-10303569.html",
-      "confidence": 85,
-      "reason": "Candidate 12 is a duvet cover with matching dimensions (100x90), and is from a preferred brand (DE'COS). Although the SpecMatch is 33%, it is the only candidate that is the same product type and has relevant matching specs, other candidates with higher spec match are wrong product types.",
+      "confidence": 90,
+      "reason": "Candidate 12 is a duvet cover with matching dimensions (100x90), and is from a preferred brand (DE'COS), despite a lower size_inch numeric value extracted.",
       "gt_status": "CORRECT"
     },
     {
@@ -91,7 +78,7 @@
       "target_url": "https://www.dohome.co.th/th/ladder-4-x-3-step-no-r-14203-10177373.html",
       "expected_url": "https://www.dohome.co.th/th/ladder-4-x-3-step-no-r-14203-10177373.html",
       "confidence": 70,
-      "reason": "The candidate is a preferred brand (NASH) and has a product type match ('ladder') with matching dimensions and steps, leading to the highest spec match percentage among the candidates.",
+      "reason": "The candidate is a preferred brand (NASH), has the same product type (multi-purpose ladder is a type of folding ladder), and a high spec match with matching dimensions and steps.",
       "gt_status": "CORRECT"
     },
     {
@@ -104,8 +91,8 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/nash-pvc-pipe-cutter-42-mm-no-ty10091-10188685.html",
       "expected_url": "https://www.dohome.co.th/th/nash-pvc-pipe-cutter-42-mm-no-ty10091-10188685.html",
-      "confidence": 90,
-      "reason": "The candidate is a 'pipe cutter' from the preferred brand 'NASH' with a matching product type and a high SpecMatch% of 50%, which is the highest among all suitable candidates.",
+      "confidence": 95,
+      "reason": "Candidate 0 is a pipe cutter, matching the critical product type, and is from the most preferred brand 'NASH' with a 50% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -119,7 +106,7 @@
       "target_url": "https://www.dohome.co.th/th/power-max-usb-charger-socket-2-modules-21a5v-no-dhu-1121-10387179.html",
       "expected_url": "",
       "confidence": 95,
-      "reason": "The candidate is a 'usb outlet' with the same 'outlets' count (2 outlets) and is from the highest preferred brand 'POWER MAX'.",
+      "reason": "The candidate is a POWER MAX brand USB socket with 2 outlets, matching the source product type, brand preference, and critical specifications.",
       "gt_status": "NO_GT"
     },
     {
@@ -133,22 +120,22 @@
       "target_url": "https://www.dohome.co.th/th/decos-fleece-blanket-150x200-solid-rose-pink-10367453.html",
       "expected_url": "https://www.dohome.co.th/th/decos-fleece-blanket-150x200-solid-rose-pink-10367453.html",
       "confidence": 100,
-      "reason": "The candidate is a blanket from a preferred brand (DECOS) with a 100% spec match, including identical dimensions and length.",
+      "reason": "Candidate 0 is a preferred brand (DECOS), is the exact critical product type (blanket vs. fleece blanket), and has a 100% spec match, including identical dimensions and length.",
       "gt_status": "CORRECT"
     },
     {
       "chunk": 11,
-      "source_idx": 163,
-      "source_name": "โคมไฟเสาสนามอลูมิเนียม E27x1 LUZINO รุ่น HOLLY 5003(BK) สีดำ",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/product/%E0%B9%82%E0%B8%84%E0%B8%A1%E0%B9%84%E0%B8%9F%E0%B9%80%E0%B8%AA%E0%B8%B2%E0%B8%AA%E0%B8%99%E0%B8%B2%E0%B8%A1%E0%B8%AD%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1-1xE27-LUZINO-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-HOLLY-5003(BK)-%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3-60257231",
-      "target_name": "DECOS โคมไฟหัวเสา 10 นิ้ว แบบกลม รุ่น 8014-PT",
-      "target_brand": "DECOS",
-      "target_url": "https://www.dohome.co.th/th/finext-lamp-post-10-inch-sphere-8014-pt-10109628.html",
-      "expected_url": "",
-      "confidence": 75,
-      "reason": "The candidate is also a pole lamp with a preferred brand. Although the model and other specs don't match, it's the closest product type match among preferred brands.",
-      "gt_status": "NO_GT"
+      "source_idx": 164,
+      "source_name": "ห่วงตากผ้าทรงเหลี่ยม สเตนเลส 20 กิ๊บ KASSA HOME รุ่น MEEBUN สีเงิน",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60342203",
+      "target_name": "PP ห่วงตากผ้าสแตนเลส 20 ชิ้น ทรงเหลี่ยม",
+      "target_brand": "PP",
+      "target_url": "https://www.dohome.co.th/th/stainless-steel-hanging-dryer-10376226.html",
+      "expected_url": "https://www.dohome.co.th/th/stainless-steel-hanging-dryer-10376226.html",
+      "confidence": 60,
+      "reason": "The candidate has the exact same product type 'clothes drying rack' and '20 pcs' matches the '20 กิ๊บ' from the source, and it's a preferred brand (HAPPY COOK is preferred#3, sharing same rank as PP in this case).",
+      "gt_status": "CORRECT"
     }
   ]
 }

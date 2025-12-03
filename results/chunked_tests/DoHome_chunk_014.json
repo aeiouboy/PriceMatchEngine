@@ -4,11 +4,12 @@
   "start_idx": 195,
   "end_idx": 210,
   "products_tested": 15,
-  "matches_found": 6,
-  "correct": 3,
+  "matches_found": 8,
+  "correct": 5,
   "incorrect": 2,
-  "accuracy": 60.0,
-  "timestamp": "2025-12-03T10:45:35.028480",
+  "gt_missing": 0,
+  "accuracy": 71.42857142857143,
+  "timestamp": "2025-12-03T14:36:23.180812",
   "matches": [
     {
       "chunk": 14,
@@ -20,8 +21,8 @@
       "target_brand": "DECOS",
       "target_url": "https://www.dohome.co.th/th/finext-lamp-post-10-inch-sphere-8014-pt-10109628.html",
       "expected_url": "https://www.dohome.co.th/th/finext-lamp-post-fn2093-pt-10139005.html",
-      "confidence": 60,
-      "reason": "The candidate 'DECOS โคมไฟหัวเสา 10 นิ้ว แบบกลม รุ่น 8014-PT' is a preferred brand (DECOS), matches the critical product type 'pillar lamp' (post lamp is equivalent to pillar lamp), and has a 40% spec match, which is the highest among relevant candidates.",
+      "confidence": 65,
+      "reason": "The candidate has the highest SpecMatch% among relevant products and is a preferred brand (DECOS) with the matching product type (outdoor post lamp).",
       "gt_status": "INCORRECT"
     },
     {
@@ -35,8 +36,36 @@
       "target_url": "https://www.dohome.co.th/th/nash-stainless-door-knob-no-587ss-l-et-10260692.html",
       "expected_url": "",
       "confidence": 75,
-      "reason": "The candidate is the correct product type (door knob) and from a preferred brand (NASH). Although the model number doesn't match exactly, door knobs for general rooms often have similar functionality across brands for basic models.",
+      "reason": "The candidate has the exact same product type 'door knob' and is from the highest preferred brand 'NASH'. While the SpecMatch is 0% due to no shared specific keywords, Brand and Product Type are strong indicators.",
       "gt_status": "NO_GT"
+    },
+    {
+      "chunk": 14,
+      "source_idx": 197,
+      "source_name": "เจโบลท์เกลียวหุน 3/4 นิ้ว x 600 มม. GIANT KINGKONG รุ่น JB3460 (แพ็ก 1 ชุด)",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60398199",
+      "target_name": "สกรูตัวเจ 3/4 นิ้ว x 60 ซม. | NASH",
+      "target_brand": "NASH",
+      "target_url": "https://www.dohome.co.th/th/j-type-screw-3-4-inch-x-60-cm-10201453.html",
+      "expected_url": "https://www.dohome.co.th/th/j-type-screw-3-4-inch-x-60-cm-10201453.html",
+      "confidence": 95,
+      "reason": "The candidate 'สกรูตัวเจ 3/4 นิ้ว x 60 ซม. | NASH' is a J-screw (similar to J-bolt), has matching size (3/4 inch) and length (60 cm) and is from a preferred brand (NASH). While the product type is slightly different (J-screw vs J-bolt), it's the closest functional equivalent available.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 14,
+      "source_idx": 200,
+      "source_name": "แอลโบลท์เกลียวหุน 3/4 นิ้ว x 300 มม. GIANT KINGKONG รุ่น LB3430 (แพ็ก 1 ชุด)",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60398209",
+      "target_name": "สกรูตัวแอล 3/4 นิ้ว x 30 ซม.",
+      "target_brand": "NASH",
+      "target_url": "https://www.dohome.co.th/th/l-type-screw-3-4-inch-x-30-cm-10202384.html",
+      "expected_url": "https://www.dohome.co.th/th/l-type-screw-3-4-inch-x-30-cm-10202384.html",
+      "confidence": 95,
+      "reason": "Candidate 0 has a 100% spec match, is an 'l-screw' which is a very close product type to 'l-bolt', and is from the highest preferred brand (NASH).",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 14,
@@ -49,7 +78,7 @@
       "target_url": "https://www.dohome.co.th/th/kings-stella-glass-cleaner-5200-ml-10044863.html",
       "expected_url": "https://www.dohome.co.th/th/kings-stella-glass-cleaner-5200-ml-10044863.html",
       "confidence": 95,
-      "reason": "The candidate is a glass cleaner with matching volume and 100% spec match, even though the brand is not preferred. All preferred brand candidates are not glass cleaners.",
+      "reason": "Candidate 0 is a perfect spec match for volume and product type, although not a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -62,8 +91,8 @@
       "target_brand": "DECOS",
       "target_url": "https://www.dohome.co.th/th/decos-1-bulb-outdoor-wall-lamp-square-shape-e27-socket-model-gris-grey-10417411.html",
       "expected_url": "https://www.dohome.co.th/th/finext-outdoor-wall-lamp-6336-black-10216410.html",
-      "confidence": 75,
-      "reason": "The candidate is a preferred brand (DECOS), has the highest spec match (63%) among wall lamps, and shares the critical 'socket=E27x1' spec.",
+      "confidence": 70,
+      "reason": "The candidate is a wall lamp from a preferred brand (DECOS) with the highest SpecMatch (63%) for the critical 'socket' and 'lamp_type' specifications matching the source.",
       "gt_status": "INCORRECT"
     },
     {
@@ -76,8 +105,8 @@
       "target_brand": "SUMO-WOODTOP",
       "target_url": "https://www.dohome.co.th/th/drawer-cabinet-5-layers-sumo-woodtop-plastel-10271532.html",
       "expected_url": "https://www.dohome.co.th/th/drawer-cabinet-5-layers-sumo-woodtop-plastel-10271532.html",
-      "confidence": 75,
-      "reason": "The candidate is a 5-tier drawer cabinet, matching the critical 'tiers' spec and product type of the source, with a decent SpecMatch percentage.",
+      "confidence": 60,
+      "reason": "Candidate 0 is a 5-tier drawer cabinet with a SpecMatch of 50%, matching the critical 'tiers' spec and product type of the source, but the dimensions are not specified for comparison.",
       "gt_status": "CORRECT"
     },
     {
@@ -91,7 +120,7 @@
       "target_url": "https://www.dohome.co.th/th/synthetic-pillow-no-joy-pillow-10325006.html",
       "expected_url": "https://www.dohome.co.th/th/synthetic-pillow-no-joy-pillow-10325006.html",
       "confidence": 75,
-      "reason": "Candidate 15 is a pillow from a preferred brand (DE'COS) but lacks detailed dimension specs for a strong match, while candidate 18 is also a pillow from a preferred brand but also lacks detailed dimension information. Candidate 15 is slightly more specific by including 'Joy Pillow'.",
+      "reason": "The candidate has a preferred brand, the correct product type (pillow), but does not specify dimensions.",
       "gt_status": "CORRECT"
     }
   ]

@@ -5,38 +5,39 @@
   "end_idx": 480,
   "products_tested": 15,
   "matches_found": 9,
-  "correct": 5,
-  "incorrect": 4,
-  "accuracy": 55.55555555555556,
-  "timestamp": "2025-12-03T10:28:43.500052",
+  "correct": 6,
+  "incorrect": 3,
+  "gt_missing": 0,
+  "accuracy": 66.66666666666666,
+  "timestamp": "2025-12-03T16:36:39.335168",
   "matches": [
-    {
-      "chunk": 32,
-      "source_idx": 465,
-      "source_name": "พรมอัดลอน 2 มม. (ตัดขายเป็นเมตร) GIANT KINGKONG รุ่น Green 02-25M หน้ากว้าง 2 เมตร สีเขียว",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60369968",
-      "target_name": "พรมอัดลอน (ตัดขายเป็นเมตร) HOME LIVING STYLE X103 หน้ากว้าง 2 ม. สีเขียว",
-      "target_brand": "HOME LIVING STYLE",
-      "target_url": "https://www.homepro.co.th/p/1105491",
-      "expected_url": "https://www.homepro.co.th/p/1105491",
-      "confidence": 65,
-      "reason": "The candidate has the exact product type (carpet) and is from a preferred brand (HOME LIVING STYLE), though the specific model and exact length differ.",
-      "gt_status": "CORRECT"
-    },
     {
       "chunk": 32,
       "source_idx": 466,
       "source_name": "ลูกบิดห้องน้ำหัวกลมจานใหญ่สเตนเลส GIANT KINGKONG รุ่น 587BK-SS (D) ขนาด 75 มม. สีเงิน",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60318386",
-      "target_name": "ลูกบิดห้องน้ำ COLT LITE K5791BKSS หัวจัน สีสเตนเลส",
-      "target_brand": "COLT LITE",
-      "target_url": "https://www.homepro.co.th/p/1181331",
+      "target_name": "ลูกบิดห้องน้ำ หัวกลม ISON 8711 สีสเตนเลส",
+      "target_brand": "ISON",
+      "target_url": "https://www.homepro.co.th/p/1267661",
       "expected_url": "https://www.homepro.co.th/p/1180889",
-      "confidence": 75,
-      "reason": "Candidate 0 is the highest spec match that is also a door knob, which is the critical product type.",
+      "confidence": 80,
+      "reason": "Candidate 3 is an exact product type match ('door knob') and has the same critical spec 'knob_room=BATHROOM'. While not a preferred brand, it's the highest spec match candidate that isn't significantly more expensive than the source.",
       "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 32,
+      "source_idx": 468,
+      "source_name": "แกลลอนน้ำทรงเหลี่ยม PETG แบบมีก๊อก KASSA HOME รุ่น RT033 ขนาด 8 ลิตร สีใส",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60283471",
+      "target_name": "ถังน้ำดื่ม PET เกรด A HOME LIVING FLORAL 8 ลิตร",
+      "target_brand": "HOME LIVING",
+      "target_url": "https://www.homepro.co.th/p/1066288",
+      "expected_url": "https://www.homepro.co.th/p/1066288",
+      "confidence": 95,
+      "reason": "Candidate 0 is a strong match, having the same volume (8L) and is a 'pet water tank' which is functionally equivalent to the source 'water jug'. Although not a preferred brand, it's the closest spec match for the critical product type.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 32,
@@ -49,7 +50,7 @@
       "target_url": "https://www.homepro.co.th/p/1153937",
       "expected_url": "https://www.homepro.co.th/p/1153937",
       "confidence": 75,
-      "reason": "Candidate 2 is the exact product type (reflective vest is a traffic vest) and from the highest preferred brand (DEXZON).",
+      "reason": "Candidate 2 is a reflective safety vest of a preferred brand, matching the source product type, although specific dimensions are not provided.",
       "gt_status": "CORRECT"
     },
     {
@@ -63,7 +64,7 @@
       "target_url": "https://www.homepro.co.th/p/1120065",
       "expected_url": "https://www.homepro.co.th/p/1156107",
       "confidence": 85,
-      "reason": "Candidate 4 has a strong spec match (82%) including volume and length, and is a preferred brand (ME LIVING) despite dimensional differences being slightly outside 10% for one dimension, it is the best match available.",
+      "reason": "Candidate 4 (ME LIVING) matches the critical specs of volume and length exactly, and is a preferred brand (though lower priority than STACKO), with a similar price point. The dimensions are within an acceptable range for a utilitarian item like a storage box.",
       "gt_status": "INCORRECT"
     },
     {
@@ -76,23 +77,9 @@
       "target_brand": "PACK IN",
       "target_url": "https://www.homepro.co.th/p/1166605",
       "expected_url": "https://www.homepro.co.th/p/1166605",
-      "confidence": 95,
-      "reason": "The candidate is the same product type (corrugated paper), has a very high spec match (92%), and is from a preferred brand (PACK IN).",
+      "confidence": 90,
+      "reason": "The candidate is a preferred brand (PACK IN) and has a high spec match (90%), with identical size, length, and tiers, and the correct product type (corrugated paper is a close subtype of corrugated cardboard).",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 32,
-      "source_idx": 473,
-      "source_name": "แปรงทาแชล็คด้ามพลาสติก GIANT KINGKONG รุ่น BPB14 ขนาด 4 นิ้ว สีน้ำตาล",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60342282",
-      "target_name": "แปรงทาวานิช MATALL 4 นิ้ว",
-      "target_brand": "MATALL",
-      "target_url": "https://www.homepro.co.th/p/1185611",
-      "expected_url": "https://www.homepro.co.th/p/1234363",
-      "confidence": 85,
-      "reason": "The candidate has the exact same size and is a varnish brush, which is very similar to a shellac brush, from a preferred brand.",
-      "gt_status": "INCORRECT"
     },
     {
       "chunk": 32,
@@ -104,8 +91,8 @@
       "target_brand": "ACCO",
       "target_url": "https://www.homepro.co.th/p/1135630",
       "expected_url": "https://www.homepro.co.th/p/1135630",
-      "confidence": 75,
-      "reason": "The candidate is also a foot pedal bin, has a very similar volume (12L vs 12.4L), and is from a preferred brand (ACCO).",
+      "confidence": 70,
+      "reason": "Candidate 29 is a trash can from a preferred brand (ACCO), and its volume (12L) is very close to the source's (12.4L), making it the best available match despite a 0% SpecMatch from the automated calculation due to different model numbers and identifiers being weighted higher than actual product type and primary specs.",
       "gt_status": "CORRECT"
     },
     {
@@ -119,7 +106,21 @@
       "target_url": "https://www.homepro.co.th/p/1184120",
       "expected_url": "https://www.homepro.co.th/p/1184120",
       "confidence": 95,
-      "reason": "The candidate is a self-drilling screw of the preferred brand DEXZON with identical dimensions (10x1 inch).",
+      "reason": "The candidate is a self-drilling screw of the preferred brand DEXZON with matching dimensions (10x1 inch).",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 32,
+      "source_idx": 476,
+      "source_name": "สายยางใยเชือก 1/2 นิ้ว พร้อมโรล FONTE รุ่น MG1512 ยาว 16 เมตร",
+      "source_brand": "FONTE",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60324353",
+      "target_name": "สายยางโรล SPRING RL12 GN15 1/2 นิ้วX15 ม. สีเขียว/เทา",
+      "target_brand": "SPRING",
+      "target_url": "https://www.homepro.co.th/p/1226525",
+      "expected_url": "https://www.homepro.co.th/p/1226525",
+      "confidence": 85,
+      "reason": "Candidate 0 is a garden hose from the preferred brand SPRING, with a good spec match (81%) for size and hose diameter, and a similar length.",
       "gt_status": "CORRECT"
     },
     {
@@ -133,7 +134,7 @@
       "target_url": "https://www.homepro.co.th/p/1174556",
       "expected_url": "https://www.homepro.co.th/p/1176083",
       "confidence": 95,
-      "reason": "Highest SpecMatch% (100%) and preferred brand (DEXZON) with matching product type and dimensions, although pack count differs.",
+      "reason": "Candidate 0 is the correct product type (self-drilling screw) and has a 100% spec match, with the same 'dimensions' and 'size_inch' as the source. It is also from the most preferred brand DEXZON.",
       "gt_status": "INCORRECT"
     }
   ]

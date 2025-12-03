@@ -5,10 +5,11 @@
   "end_idx": 195,
   "products_tested": 15,
   "matches_found": 5,
-  "correct": 4,
+  "correct": 3,
   "incorrect": 0,
+  "gt_missing": 1,
   "accuracy": 100.0,
-  "timestamp": "2025-12-03T10:44:50.184640",
+  "timestamp": "2025-12-03T14:35:29.735784",
   "matches": [
     {
       "chunk": 13,
@@ -20,8 +21,8 @@
       "target_brand": "POWER MAX",
       "target_url": "https://www.dohome.co.th/th/power-max-led-downlight-15w-square-dhp012-warm-white-10268583.html",
       "expected_url": "https://www.dohome.co.th/th/power-max-led-downlight-15w-square-dhp012-warm-white-10268583.html",
-      "confidence": 85,
-      "reason": "The candidate is a downlight with the same wattage (15W) and color temperature (Warm White) as the source, and is from the highest preferred brand (POWER MAX).",
+      "confidence": 90,
+      "reason": "Candidate 0 is a downlight, matches critical product type, has an exact wattage match (15W), a warm white color temperature match, is a preferred brand (POWER MAX), and has the highest SpecMatch% while maintaining similar price.",
       "gt_status": "CORRECT"
     },
     {
@@ -35,22 +36,22 @@
       "target_url": "https://www.dohome.co.th/th/nash-paint-brush-2-inch-no-nm002-10224018.html",
       "expected_url": "https://www.dohome.co.th/th/nash-paint-brush-2-inch-no-nm002-10224018.html",
       "confidence": 95,
-      "reason": "The candidate is a paint brush of the preferred brand NASH, with a matching size of 2.0 inches, and a 100% spec match.",
+      "reason": "The candidate is a NASH synthetic bristle brush of the same 2.0 inch size, matching the critical product type and size specification of the source. Although the model number differs, this is a common occurrence in house brand equivalents where the manufacturer might rebrand an existing product.",
       "gt_status": "CORRECT"
     },
     {
       "chunk": 13,
-      "source_idx": 190,
-      "source_name": "บัวพื้นโพลีสไตรีน TIMELESS KASSA รุ่น 581-5420 ขนาด 1.5 x 290 x 8 ซม. สีไม้สัก",
+      "source_idx": 192,
+      "source_name": "แผ่นผนัง PVC KASSA รุ่น 30V101 ขนาด 30 x 297 x 0.75 ซม. สีไลท์วอนัท",
       "source_brand": "KASSA",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60328494",
-      "target_name": "FINEXT ไม้บัวล่างเอทิลีน 4 นิ้ว x 2.9 เมตร รุ่น JC157-29",
-      "target_brand": "FINEXT",
-      "target_url": "https://www.dohome.co.th/th/finext-under-cornice-wood-ethylene-4-inchx2-9m-no-jc157-29-10185908.html",
-      "expected_url": "https://www.dohome.co.th/th/finext-under-cornice-wood-ethylene-4-inchx2-9m-no-jc157-29-10185908.html",
-      "confidence": 80,
-      "reason": "Candidate 4 is a baseboard from the preferred brand FINEXT, sharing the same product type as the source product.",
-      "gt_status": "CORRECT"
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60303955",
+      "target_name": "MARINE แผ่นฝ้า PVC 30x297x0.7 ซม. สีน้ำตาลแก่",
+      "target_brand": "MARINE",
+      "target_url": "https://www.dohome.co.th/th/finext-pvc-frosted-sheet-30x297x07-cm-dark-brown-10391963.html",
+      "expected_url": "https://www.dohome.co.th/en/finext-pvc-ceiling-board-30x297x07-cm-brown-bark-10391902.html",
+      "confidence": 60,
+      "reason": "The candidate has the correct brand and product type with a good SpecMatch score for dimensions, showing a slight difference in thickness (0.75cm vs 0.7cm).",
+      "gt_status": "GT_MISSING"
     },
     {
       "chunk": 13,
@@ -63,7 +64,7 @@
       "target_url": "https://www.dohome.co.th/th/mex-ventilation-cover-6-inch-mar150wh-10328262.html",
       "expected_url": "https://www.dohome.co.th/th/mex-ventilation-cover-6-inch-mar150wh-10328262.html",
       "confidence": 95,
-      "reason": "The candidate 'MEX ฝาครอบระบายอากาศ 6 นิ้ว รุ่น MAR150WH' is the same product type (vent cover) and has an exact size match (6 inch) with a preferred brand, despite a wattage spec that is not present in the source.",
+      "reason": "The candidate is a vent cover with the exact same size as the source product and is from a preferred brand (MEX).",
       "gt_status": "CORRECT"
     },
     {
@@ -76,8 +77,8 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/nash-aluminium-extension-ladder-ladder-12-step-no-r-11712-10177342.html",
       "expected_url": "",
-      "confidence": 75,
-      "reason": "Highest spec match (steps) found among preferred brands, and the product type is an exact match (ladder).",
+      "confidence": 70,
+      "reason": "Candidate 0 is a Nash brand ladder with 12 steps, matching the critical product type and step count of the source product, and Nash is the most preferred brand.",
       "gt_status": "NO_GT"
     }
   ]

@@ -577,6 +577,17 @@ def has_product_conflict(source_name, target_name):
             # Exact wheel size must match for bicycles (12", 14", 16", 20", 24", 26")
             if source_size != target_size:
                 return True
+        # Bicycle color conflict - color is important for kids bikes
+        bike_colors = ['ดำ', 'ชมพู', 'แดง', 'น้ำเงิน', 'เขียว', 'ขาว', 'เหลือง', 'ส้ม']
+        source_color = None
+        target_color = None
+        for color in bike_colors:
+            if color in source_lower:
+                source_color = color
+            if color in target_lower:
+                target_color = color
+        if source_color and target_color and source_color != target_color:
+            return True
     
     # Shade net color conflict - green vs black are different products
     shade_keywords = ['ตาข่ายกรองแสง', 'สแลน', 'shade net', 'sunshade']
@@ -626,6 +637,10 @@ def has_product_conflict(source_name, target_name):
     if source_socket_count and target_socket_count:
         if source_socket_count.group(1) != target_socket_count.group(1):
             return True
+    # If source has E27x2+ but target doesn't have xN pattern, likely incompatible
+    if source_socket_count and not target_socket_count:
+        if int(source_socket_count.group(1)) > 1:
+            return True
 
     # Hose diameter conflict - CRITICAL: 1/2" vs 5/8" vs 3/4" are incompatible
     hose_keywords = ['สายยาง', 'hose', 'ยางรด']
@@ -639,6 +654,17 @@ def has_product_conflict(source_name, target_name):
         if source_frac and target_frac:
             if source_frac.group(1) != target_frac.group(1):
                 return True
+        # Hose length conflict - length must be within 15%
+        length_pattern = r'(\d+)\s*(?:เมตร|ม\.|m\b|meter)'
+        source_len = re.search(length_pattern, source_name, re.IGNORECASE)
+        target_len = re.search(length_pattern, target_name, re.IGNORECASE)
+        if source_len and target_len:
+            s_len = int(source_len.group(1))
+            t_len = int(target_len.group(1))
+            if max(s_len, t_len) > 0:
+                ratio = min(s_len, t_len) / max(s_len, t_len)
+                if ratio < 0.85:
+                    return True
 
     # Downlight shape conflict - square vs round face
     downlight_keywords = ['ดาวน์ไลท์', 'downlight']
@@ -685,11 +711,22 @@ def has_product_conflict(source_name, target_name):
     is_target_brush = any(kw in target_lower for kw in brush_keywords)
     if is_source_brush and is_target_brush:
         # Check for natural bristle indicators (oil paint brushes use natural bristle)
-        natural_keywords = ['ขนสัตว์', 'natural', 'น้ำมัน']
+        natural_keywords = ['ขนสัตว์', 'natural', 'น้ำมัน', 'ขนหมู']
+        synthetic_keywords = ['สังเคราะห์', 'synthetic', 'ไนล่อน', 'nylon']
         source_natural = any(kw in source_lower for kw in natural_keywords)
         target_natural = any(kw in target_lower for kw in natural_keywords)
+        source_synthetic = any(kw in source_lower for kw in synthetic_keywords)
+        target_synthetic = any(kw in target_lower for kw in synthetic_keywords)
+        # Synthetic and natural don't mix
+        if (source_synthetic and target_natural) or (source_natural and target_synthetic):
+            return True
         # If source is natural but target is not, it's a conflict
         if source_natural and not target_natural:
+            return True
+        # Shellac brush vs regular paint brush conflict
+        source_shellac = 'แชล็ค' in source_lower or 'shellac' in source_lower
+        target_shellac = 'แชล็ค' in target_lower or 'shellac' in target_lower
+        if source_shellac != target_shellac:
             return True
         # Paint brush size conflict - size must match exactly
         inch_pattern = r'(\d+(?:\.\d+)?)\s*(?:นิ้ว|inch|"|″)'
@@ -701,6 +738,18 @@ def has_product_conflict(source_name, target_name):
             # Brush sizes must be within 0.5 inch
             if abs(source_size - target_size) > 0.5:
                 return True
+
+    # Storage container type conflict - open crate vs solid box (only for specific container types)
+    crate_keywords = ['ลังโปร่ง', 'ลังทึบ']
+    is_source_crate = any(kw in source_lower for kw in crate_keywords)
+    is_target_crate = any(kw in target_lower for kw in crate_keywords)
+    if is_source_crate or is_target_crate:
+        source_open = 'โปร่ง' in source_lower
+        target_open = 'โปร่ง' in target_lower
+        source_solid = 'ทึบ' in source_lower
+        target_solid = 'ทึบ' in target_lower
+        if (source_open and target_solid) or (source_solid and target_open):
+            return True
 
     return False
 

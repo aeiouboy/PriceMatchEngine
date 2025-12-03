@@ -4,11 +4,12 @@
   "start_idx": 435,
   "end_idx": 450,
   "products_tested": 15,
-  "matches_found": 9,
-  "correct": 5,
-  "incorrect": 4,
-  "accuracy": 55.55555555555556,
-  "timestamp": "2025-12-03T10:27:06.639882",
+  "matches_found": 8,
+  "correct": 7,
+  "incorrect": 1,
+  "gt_missing": 0,
+  "accuracy": 87.5,
+  "timestamp": "2025-12-03T17:08:36.829621",
   "matches": [
     {
       "chunk": 30,
@@ -16,13 +17,13 @@
       "source_name": "ผ้าเช็ดอเนกประสงค์แบบกล่อง KASSA HOME ขนาด 20 x 20 ซม. (กล่อง 20 แผ่น) สีเทา",
       "source_brand": "KASSA HOME",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60394647",
-      "target_name": "กล่องทิชชู่ ฝาไม้ไผ่ KECH สีขาว",
-      "target_brand": "KECH",
-      "target_url": "https://www.homepro.co.th/p/1170736",
+      "target_name": "ผ้าไมโครไฟเบอร์แบบกล่อง ACCO 22x22 ซม. สีเทา",
+      "target_brand": "ACCO",
+      "target_url": "https://www.homepro.co.th/p/1182203",
       "expected_url": "https://www.homepro.co.th/p/1182203",
       "confidence": 75,
-      "reason": "The candidate is a tissue box from a preferred brand (KECH) and shares the same product type as the source despite spec differences.",
-      "gt_status": "INCORRECT"
+      "reason": "The candidate has the correct product type (disposable wipes, inferred from microfiber cloth), is a preferred brand (ACCO), and has a similar dimension of 22x22cm compared to the source's 20x20cm, resulting in a reasonable spec match for a generic wipe product.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 30,
@@ -34,8 +35,8 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/1179052",
       "expected_url": "https://www.homepro.co.th/p/1179052",
-      "confidence": 90,
-      "reason": "The candidate is a cosmetic organizer from a preferred brand with very close dimensions (30x17.5 vs 29.5x17.5) and matching length (36CM).",
+      "confidence": 95,
+      "reason": "Candidate 0 is the highest preferred brand (STACKO) and has the highest SpecMatch% (75%) with very similar dimensions and matching product type (cosmetic organizer vs makeup organizer), making it the closest equivalent product.",
       "gt_status": "CORRECT"
     },
     {
@@ -44,13 +45,13 @@
       "source_name": "ลูกกลิ้งทาสี GIANT KINGKONG รุ่น PR-004 ขนาด 4 นิ้ว",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60271294",
-      "target_name": "ลูกกลิ้งทาสี MATALL R03 4 นิ้ว",
+      "target_name": "ลูกกลิ้งทาสี MATALL 4 นิ้ว",
       "target_brand": "MATALL",
-      "target_url": "https://www.homepro.co.th/p/1188985",
+      "target_url": "https://www.homepro.co.th/p/1181374",
       "expected_url": "https://www.homepro.co.th/p/1181374",
       "confidence": 95,
-      "reason": "Candidate 2 is a paint roller of the preferred brand MATALL, matching the size and roller type perfectly.",
-      "gt_status": "INCORRECT"
+      "reason": "The candidate is an exact product type match (paint roller) with 100% spec match, preferred brand (MATALL), and the same size (4 inch).",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 30,
@@ -62,23 +63,9 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/1141879",
       "expected_url": "https://www.homepro.co.th/p/1141879",
-      "confidence": 85,
-      "reason": "Candidate is a storage box with wheels and similar volume (100L vs 104L) from a preferred brand (STACKO).",
+      "confidence": 75,
+      "reason": "Candidate is the closest product type (storage box) from a preferred brand (STACKO) with a similar volume, though the SpecMatch is not explicitly high due to lack of shared 'model' spec.",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 30,
-      "source_idx": 439,
-      "source_name": "บานพับประตูสเตนเลสหัวตัด GIANT KINGKONG รุ่น 4320 ขนาด 4 x 3 นิ้ว x 1.95 มม. (แพ็ก 3 ชิ้น) สีสเตนเลส",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60262683",
-      "target_name": "บานพับ 4x3 นิ้ว x 1.8 มม. ISON J211413 สีสเตนเลส (แพ็ก 3 ชิ้น)",
-      "target_brand": "ISON",
-      "target_url": "https://www.homepro.co.th/p/1266754",
-      "expected_url": "https://www.homepro.co.th/p/1176591",
-      "confidence": 95,
-      "reason": "The candidate 'บานพับ 4x3 นิ้ว x 1.8 มม. ISON J211413 สีสเตนเลส (แพ็ก 3 ชิ้น)' is a 'door hinge' with a 100% spec match, exact dimensions and pack count, making it the best equivalent product.",
-      "gt_status": "INCORRECT"
     },
     {
       "chunk": 30,
@@ -90,22 +77,8 @@
       "target_brand": "JOY BICYCLE",
       "target_url": "https://www.homepro.co.th/p/1230068",
       "expected_url": "https://www.homepro.co.th/p/1230068",
-      "confidence": 85,
-      "reason": "The candidate is a bicycle with matching size_inch (24 inch) and is of a preferred brand (JOY BICYCLE (PREFERRED#8)) with 100% spec match.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 30,
-      "source_idx": 441,
-      "source_name": "ชั้นวางพลาสติก 2 ชั้น แบบเข้ามุม Circle KASSA HOME รุ่น API-10302-2 ขนาด 41.3 x 27 x 36.5 ซม. สีขาว",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60404704",
-      "target_name": "ชั้นเข้ามุมพลาสติก 2 ชั้น CSP 247-2 สีขาว",
-      "target_brand": "CSP",
-      "target_url": "https://www.homepro.co.th/p/292319",
-      "expected_url": "https://www.homepro.co.th/p/292319",
-      "confidence": 60,
-      "reason": "The candidate has the correct product type, number of tiers, and a SpecMatch of 50%, making it the best available equivalent despite the brand not being a top preferred one.",
+      "confidence": 90,
+      "reason": "The candidate has a 100% spec match in size and is the correct product type (bicycle).",
       "gt_status": "CORRECT"
     },
     {
@@ -118,8 +91,8 @@
       "target_brand": "JCJ",
       "target_url": "https://www.homepro.co.th/p/205254",
       "expected_url": "https://www.homepro.co.th/p/268493",
-      "confidence": 85,
-      "reason": "The candidate is a storage box with the exact same volume (30 L) as the source product, making it a strong spec match, despite a lower preferred brand ranking.",
+      "confidence": 95,
+      "reason": "The candidate is a storage box with the exact same volume (30 L) as the source product, making it a strong spec match. While the brand is not preferred, the high spec match makes it the best available option.",
       "gt_status": "INCORRECT"
     },
     {
@@ -132,8 +105,22 @@
       "target_brand": "JCJ",
       "target_url": "https://www.homepro.co.th/p/205254",
       "expected_url": "https://www.homepro.co.th/p/205254",
+      "confidence": 60,
+      "reason": "Candidate 2 is the same product type ('storage box') and the model number 'JCJ 5112' is a strong identifier match, despite a slight difference in volume (30L vs 25L). The dimensions are also quite close, making it the closest available alternative given the constraints.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 30,
+      "source_idx": 446,
+      "source_name": "กันชนแม่เหล็กใหญ่ GIANT KINGKONG รุ่น CL.3130 ขนาด 58 x 25.5 x 15 มม. สีขาว",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60282479",
+      "target_name": "กันชนแม่เหล็ก DEXZON SM-10 สีน้ำตาล แพ็ก 2 ชิ้น",
+      "target_brand": "DEXZON",
+      "target_url": "https://www.homepro.co.th/p/1178617",
+      "expected_url": "https://www.homepro.co.th/p/1178617",
       "confidence": 70,
-      "reason": "Candidate 2 is the best match as it is the correct product type (storage box) and has a matching model number 'JCJ 5112' with the source product, despite a small difference in volume and dimensions.",
+      "reason": "The candidate is the same product type (magnetic bumper) and from a highly preferred brand (DEXZON). Although exact dimensions aren't specified for the candidate, it's the only magnetic bumper available.",
       "gt_status": "CORRECT"
     }
   ]

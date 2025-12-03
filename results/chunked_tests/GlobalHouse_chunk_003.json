@@ -4,25 +4,26 @@
   "start_idx": 30,
   "end_idx": 45,
   "products_tested": 15,
-  "matches_found": 2,
-  "correct": 0,
+  "matches_found": 3,
+  "correct": 2,
   "incorrect": 0,
-  "accuracy": 0,
-  "timestamp": "2025-12-03T10:31:22.089584",
+  "gt_missing": 0,
+  "accuracy": 100.0,
+  "timestamp": "2025-12-03T14:17:34.781229",
   "matches": [
     {
       "chunk": 3,
-      "source_idx": 34,
-      "source_name": "เหล็กฉากเจาะรู หนา 2 มม. GIANT KINGKONG รุ่น FWIRBK20 ขนาด 1 1/2 x 1 1/2 นิ้ว ยาว 3 เมตร สีดำ",
+      "source_idx": 32,
+      "source_name": "คลิ๊ปเหล็กล็อคสายพลาสติก PP,HD GIANT KINGKONG ขนาด แพ็ก 1 กก.",
       "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/sku/60420130",
-      "target_name": "เหล็กฉากเจาะรูหนา 2 มม. ขนาด 1.1/2 x 1.1/2 นิ้ว ยาว 3 เมตร สีเทา",
-      "target_brand": "ปืนใหญ่",
-      "target_url": "https://globalhouse.co.th/product/%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B9%87%E0%B8%81%E0%B8%89%E0%B8%B2%E0%B8%81%E0%B9%80%E0%B8%88%E0%B8%B2%E0%B8%B0%E0%B8%A3%E0%B8%B9%E0%B8%AB%E0%B8%99%E0%B8%B2-2-%E0%B8%A1%E0%B8%A1.-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-1.12-x-1.12-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-%E0%B8%A2%E0%B8%B2%E0%B8%A7-3-%E0%B9%80%E0%B8%A1%E0%B8%95%E0%B8%A3-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%97%E0%B8%B2-i.8722006760031",
-      "expected_url": "",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60175579",
+      "target_name": "SMITH คลิ๊บเหล็กสำหรับสายรัดสายพลาสติก (แพ็ค 1 กก.)",
+      "target_brand": "SMITH",
+      "target_url": "https://globalhouse.co.th/product/SMITH-%E0%B8%84%E0%B8%A5%E0%B8%B4%E0%B9%8A%E0%B8%9A%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B9%87%E0%B8%81%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B8%A3%E0%B8%B1%E0%B8%94%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B8%9E%E0%B8%A5%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B8%B4%E0%B8%81-%E0%B9%81%E0%B8%9E%E0%B9%87%E0%B8%84-1-%E0%B8%81%E0%B8%81.-i.7061804053772",
+      "expected_url": "https://globalhouse.co.th/product/SMITH-%E0%B8%84%E0%B8%A5%E0%B8%B4%E0%B9%8A%E0%B8%9A%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B9%87%E0%B8%81%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B8%A3%E0%B8%B1%E0%B8%94%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B8%9E%E0%B8%A5%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B8%B4%E0%B8%81-%E0%B9%81%E0%B8%9E%E0%B9%87%E0%B8%84-1-%E0%B8%81%E0%B8%81.-i.7061804053772",
       "confidence": 85,
-      "reason": "Candidate 0 has the highest SpecMatch (85%) and perfectly matches the product type 'angle steel' (Angle Iron is a subtype). Although the brand is not preferred, it is the best available match.",
-      "gt_status": "NO_GT"
+      "reason": "The candidate has a perfect spec match (volume 1 KG) and the product type 'strap clip' is a very close match to 'plastic cable clip', making it the best alternative despite being a lower preferred brand.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 3,
@@ -34,9 +35,23 @@
       "target_brand": "SMITH",
       "target_url": "https://globalhouse.co.th/product/SMITH-%E0%B9%80%E0%B8%81%E0%B9%89%E0%B8%B2%E0%B8%AD%E0%B8%B5%E0%B9%89%E0%B8%AA%E0%B8%B3%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%87%E0%B8%B2%E0%B8%99-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-MANDY-%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7%E0%B9%80%E0%B8%97%E0%B8%B2-i.5722007590043",
       "expected_url": "",
-      "confidence": 70,
-      "reason": "The candidate is the correct product type (office chair) and is from a preferred brand (SMITH) with a 50% spec match (model number 'MANDY' is a different model than 'QT-501BG').",
+      "confidence": 75,
+      "reason": "The candidate has the exact product type and is from a preferred brand, making it the best available match despite a 50% spec match.",
       "gt_status": "NO_GT"
+    },
+    {
+      "chunk": 3,
+      "source_idx": 41,
+      "source_name": "ล้อยางอะไหล่ GIANT KINGKONG รุ่น 4000-125 ขนาด 12.5 ซม. สีดำ",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60139042",
+      "target_name": "KAMPER ล้ออะไหล่ แม็กซ์ 6นิ้ว (150มม) รุ่น 4000-150",
+      "target_brand": "KAMPER",
+      "target_url": "https://globalhouse.co.th/product/KAMPER-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%AD%E0%B8%B0%E0%B9%84%E0%B8%AB%E0%B8%A5%E0%B9%88-%E0%B9%81%E0%B8%A1%E0%B9%87%E0%B8%81%E0%B8%8B%E0%B9%8C-6%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-150%E0%B8%A1%E0%B8%A1-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-4000150-i.6020003000757",
+      "expected_url": "https://globalhouse.co.th/product/KAMPER-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%AD%E0%B8%B0%E0%B9%84%E0%B8%AB%E0%B8%A5%E0%B9%88-%E0%B9%81%E0%B8%A1%E0%B9%87%E0%B8%81%E0%B8%8B%E0%B9%8C-6%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-150%E0%B8%A1%E0%B8%A1-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-4000150-i.6020003000757",
+      "confidence": 70,
+      "reason": "The candidate is also a 'spare tire' type and has a high SpecMatch% of 66% with matching 'roller_type' and a similar model number series, differing only in size.",
+      "gt_status": "CORRECT"
     }
   ]
 }

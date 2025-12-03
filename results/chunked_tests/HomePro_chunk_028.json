@@ -4,11 +4,12 @@
   "start_idx": 405,
   "end_idx": 420,
   "products_tested": 15,
-  "matches_found": 9,
+  "matches_found": 7,
   "correct": 6,
-  "incorrect": 3,
-  "accuracy": 66.66666666666666,
-  "timestamp": "2025-12-03T10:25:33.060724",
+  "incorrect": 1,
+  "gt_missing": 0,
+  "accuracy": 85.71428571428571,
+  "timestamp": "2025-12-03T17:06:41.577969",
   "matches": [
     {
       "chunk": 28,
@@ -21,36 +22,8 @@
       "target_url": "https://www.homepro.co.th/p/1259491",
       "expected_url": "https://www.homepro.co.th/p/1259491",
       "confidence": 95,
-      "reason": "The candidate has the exact product type 'wardrobe', matches the length spec (90CM), and is from a highly preferred brand (FURDINI) with 100% SpecMatch.",
+      "reason": "The candidate is a wardrobe from a preferred brand (FURDINI) and has a 100% spec match, including length and product type.",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 28,
-      "source_idx": 407,
-      "source_name": "โคมไฟผนังภายนอกอลูมิเนียม E27x2 LUZINO รุ่น SOPHIE 2013S/2(GY) สีเทา",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60257189",
-      "target_name": "ไฟกิ่งภายนอก CARINI HL042A สีดำ",
-      "target_brand": "CARINI",
-      "target_url": "https://www.homepro.co.th/p/267461",
-      "expected_url": "https://www.homepro.co.th/p/1003063",
-      "confidence": 70,
-      "reason": "Candidate 2 is the only outdoor wall lamp in a preferred brand (CARINI) and accurately matches the product type despite having no explicit spec matches.",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 28,
-      "source_idx": 408,
-      "source_name": "สายรัดสายไฟ GIANT KINGKONG รุ่น HT-4.8 x 250 ขนาด 4.8 x 250 10 นิ้ว (แพ็ค 100 ชิ้น) สีดำ",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60166217",
-      "target_name": "เคเบิ้ลไทร์ ELEKTRA 10 นิ้ว สีขาว (100 เส้น)",
-      "target_brand": "ELEKTRA",
-      "target_url": "https://www.homepro.co.th/p/1146963",
-      "expected_url": "https://www.homepro.co.th/p/1091950",
-      "confidence": 60,
-      "reason": "The candidate has a matching product type (cable tie) and partially matching dimensions (10 inch) and pack count (100 pieces), making it the closest alternative despite being a non-preferred brand.",
-      "gt_status": "INCORRECT"
     },
     {
       "chunk": 28,
@@ -63,7 +36,7 @@
       "target_url": "https://www.homepro.co.th/p/1167727",
       "expected_url": "https://www.homepro.co.th/p/1167727",
       "confidence": 95,
-      "reason": "The candidate is a cord reel from a preferred brand with identical length and number of outlets, resulting in a 100% spec match.",
+      "reason": "Candidate 0 is a cable reel with matching length, outlets, and is from a preferred brand (ELECKTA) with 100% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -77,7 +50,7 @@
       "target_url": "https://www.homepro.co.th/p/1167130",
       "expected_url": "https://www.homepro.co.th/p/1167130",
       "confidence": 95,
-      "reason": "The candidate is a putty knife of the same size (5 inches) as the source, from the most preferred brand (MATALL).",
+      "reason": "Candidate is the same product type (steel trowel vs plastic handle putty knife, which is a type of trowel) and size as the source, and is from a preferred brand (MATALL).",
       "gt_status": "CORRECT"
     },
     {
@@ -90,8 +63,8 @@
       "target_brand": "KECH",
       "target_url": "https://www.homepro.co.th/p/1201175",
       "expected_url": "https://www.homepro.co.th/p/194804",
-      "confidence": 70,
-      "reason": "The candidate is a dish rack, a preferred brand (KECH), and shares the key spec of 2 tiers with a good spec match percentage. Although length is not specified, it's the best available match.",
+      "confidence": 75,
+      "reason": "The candidate has the exact same product type, number of tiers, and is from a preferred brand (KECH) with a good spec match percentage. Although the length is not available, it is the best available match.",
       "gt_status": "INCORRECT"
     },
     {
@@ -105,7 +78,7 @@
       "target_url": "https://www.homepro.co.th/p/1245333",
       "expected_url": "https://www.homepro.co.th/p/1245333",
       "confidence": 75,
-      "reason": "Candidate 20 is a sofa set from the preferred brand SPRING, despite the 0% spec match, it is the only candidate that matches the product type.",
+      "reason": "The candidate is a sofa set from a preferred brand (SPRING) and is the closest product type match, despite the 0% spec match on other attributes.",
       "gt_status": "CORRECT"
     },
     {
@@ -119,7 +92,7 @@
       "target_url": "https://www.homepro.co.th/p/1249480",
       "expected_url": "https://www.homepro.co.th/p/1249480",
       "confidence": 75,
-      "reason": "The candidate has the exact same product type, a preferred brand (PLIM), and a similar pack count, making it the best available match despite the slightly different quantity.",
+      "reason": "Candidate 1 (PLIM) is the correct product type (hanger), a preferred brand, and has the highest spec match at 30% for count, though the pack count is different (6 pcs vs 5 pcs).",
       "gt_status": "CORRECT"
     },
     {
@@ -133,7 +106,7 @@
       "target_url": "https://www.homepro.co.th/p/1172299",
       "expected_url": "https://www.homepro.co.th/p/1172299",
       "confidence": 75,
-      "reason": "Candidate 31 is the only product identified as a 'fence' and is from the preferred brand 'SPRING', despite having 0% spec match on other details, which is a common issue for such products.",
+      "reason": "Candidate 31 is a 'fence' type product, matching the source product type, and is from a preferred brand (SPRING), although its SpecMatch% is low due to different specific specs, it's the only fence among preferred brands.",
       "gt_status": "CORRECT"
     }
   ]

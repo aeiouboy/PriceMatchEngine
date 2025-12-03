@@ -4,11 +4,12 @@
   "start_idx": 105,
   "end_idx": 120,
   "products_tested": 15,
-  "matches_found": 8,
+  "matches_found": 7,
   "correct": 4,
-  "incorrect": 3,
-  "accuracy": 57.14285714285714,
-  "timestamp": "2025-12-03T10:40:57.405429",
+  "incorrect": 0,
+  "gt_missing": 2,
+  "accuracy": 100.0,
+  "timestamp": "2025-12-03T14:29:51.595508",
   "matches": [
     {
       "chunk": 8,
@@ -21,7 +22,7 @@
       "target_url": "https://www.dohome.co.th/th/decos-slipper-size-38-39-no-rbc-rabbit-charcoal-10386953.html",
       "expected_url": "https://www.dohome.co.th/th/decos-slipper-size-38-39-no-rbc-rabbit-charcoal-10386953.html",
       "confidence": 75,
-      "reason": "The candidate is the same product type (slippers) and from the top preferred brand DE'COS, although the spec match is 0% based on extracted specs from the candidate's name.",
+      "reason": "The candidate product is of the correct product type (slippers) and is from a highly preferred brand (DE'COS). Although the SpecMatch is 0%, the product type and brand alignment make it the best available option, as direct spec matches for slippers are rare.",
       "gt_status": "CORRECT"
     },
     {
@@ -35,7 +36,7 @@
       "target_url": "https://www.dohome.co.th/th/nash-wire-rope-tensioner-1-2-inch-10069950.html",
       "expected_url": "",
       "confidence": 95,
-      "reason": "The candidate is also a 'turnbuckle' from a preferred brand ('NASH') and matches the critical size spec of 1/2 inch with 100% SpecMatch.",
+      "reason": "The candidate is the same product type (turnbuckle), has the exact size, and is from the preferred brand NASH with a 100% spec match.",
       "gt_status": "NO_GT"
     },
     {
@@ -44,13 +45,13 @@
       "source_name": "ชุดเต้ารับคู่ มีกราวด์+ม่านนิรภัย LUZINO รุ่น MLS79-VE3-PC สีดำ",
       "source_brand": "LUZINO",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60401421",
-      "target_name": "BTICINO ปลั๊กฝังคู่ 3 ขา รุ่น AE2125DB สีขาว",
-      "target_brand": "BTICINO",
-      "target_url": "https://www.dohome.co.th/th/bticino-dual-3-p-plug-ae2125db-white-10367480.html",
+      "target_name": "PANASONIC ปลั๊กกราวด์เดี่ยว มีม่านนิรภัย รุ่น WEG1181K",
+      "target_brand": "PANASONIC",
+      "target_url": "https://www.dohome.co.th/th/panasonic-single-ground-plug-with-safety-shutter-no-weg1181k-10239669.html",
       "expected_url": "https://www.dohome.co.th/th/eve-grounding-lamp-socket-set-2-slots-no-570085-10312129.html",
       "confidence": 60,
-      "reason": "The candidate is a power outlet with similar functionality (3-pin embedded plug) and is the closest product type match among the alternatives, although the brand is not preferred.",
-      "gt_status": "INCORRECT"
+      "reason": "The candidate has the correct product type (power outlet) and mentions 'มีม่านนิรภัย' (with safety shutter) matching a key feature of the source product, despite being a different brand.",
+      "gt_status": "GT_MISSING"
     },
     {
       "chunk": 8,
@@ -63,21 +64,21 @@
       "target_url": "https://www.dohome.co.th/th/stanley-tape-measure-5-m-no-30-496n-10270497.html",
       "expected_url": "https://www.dohome.co.th/th/nash-tape-measure-5-m-no-abs055-19nc-10312463.html",
       "confidence": 100,
-      "reason": "The candidate is the same product type (tape measure) with an exact match in the critical 'length' specification and a 100% SpecMatch.",
-      "gt_status": "INCORRECT"
+      "reason": "The candidate is a measuring tape with the exact matching length spec (5M) and is the only alternative of the correct product type.",
+      "gt_status": "GT_MISSING"
     },
     {
       "chunk": 8,
-      "source_idx": 113,
-      "source_name": "เทปกาวบิวทิล GIANT KINGKONG รุ่น BRT15-30010 ขนาด 1.5 มม. x 30 ซม. x 10 เมตร สีดำ",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60329754",
-      "target_name": "NASH แผ่นปิดรอยต่อ จัมโบ้ 30 ซม. x 10 ม.",
-      "target_brand": "NASH",
-      "target_url": "https://www.dohome.co.th/th/nash-jumbo-flashing-tape-30-cm-x-10-m-10262345.html",
-      "expected_url": "https://www.dohome.co.th/th/nash-jumbo-flashing-tape-30-cm-x-10-m-10262345.html",
-      "confidence": 70,
-      "reason": "Candidate has the highest spec match (75%) among preferred brands, and its product type 'joint tape' is closely related to 'butyl tape', indicating it's a suitable equivalent.",
+      "source_idx": 114,
+      "source_name": "ชั้นวางของพลาสติกอเนกประสงค์ 3 ชั้น KASSA HOME รุ่น Circle API-10301M3 ขนาด 43 x 30 x 59 ซม. สีขาว",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60357772",
+      "target_name": "PIONEER ชั้นวางของพลาสติก 3 ชั้น รุ่น PN8018L/3 สีขาว",
+      "target_brand": "PIONEER",
+      "target_url": "https://www.dohome.co.th/th/pioneer-plastics-shelf-3-levels-no-pn8018l3-white-10268698.html",
+      "expected_url": "https://www.dohome.co.th/th/pioneer-plastics-shelf-3-levels-no-pn8018l3-white-10268698.html",
+      "confidence": 75,
+      "reason": "The candidate is a plastic shelf, has 3 tiers, matching the critical product type and 'tiers' spec from the source. Although the brand is not preferred, it is the best match available.",
       "gt_status": "CORRECT"
     },
     {
@@ -91,7 +92,7 @@
       "target_url": "https://www.dohome.co.th/th/nash-silicone-gun-9-inch-no-dt0524-48-10308445.html",
       "expected_url": "https://www.dohome.co.th/th/nash-silicone-gun-9-inch-no-dt0524-48-10308445.html",
       "confidence": 100,
-      "reason": "The candidate is a glue gun of the same size (9 inch) and from the top preferred brand NASH, with a 100% spec match.",
+      "reason": "Candidate 0 is a glue gun of the preferred brand NASH, matching the size and product type exactly.",
       "gt_status": "CORRECT"
     },
     {
@@ -104,23 +105,9 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/trolley-300-kg-10066705.html",
       "expected_url": "https://www.dohome.co.th/th/trolley-300-kg-10066705.html",
-      "confidence": 65,
-      "reason": "Candidate 2 is a 'trolley' which is a close match to 'flat cart', has the same 'volume' spec, and is from the highest preferred brand NASH.",
+      "confidence": 60,
+      "reason": "The candidate NASH trolley matches on product type and a critical spec (volume=300 KG) and is a preferred brand (NASH).",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 8,
-      "source_idx": 119,
-      "source_name": "ชั้นวางของสเตนเลสอเนกประสงค์แบบตั้งพื้น 2 ชั้น (ใหญ่) Daniel KASSA HOME รุ่น KS-106-HD32 ขนาด 60 ซม.",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60345870",
-      "target_name": "API ชั้นวางของ 2 ชั้น รุ่น SNOWY",
-      "target_brand": "API",
-      "target_url": "https://www.dohome.co.th/th/api-2-tier-shelf-no-snowy-10404584.html",
-      "expected_url": "https://www.dohome.co.th/th/vrh-dish-shelf-2-levels-no-hwhoy-hw16a-10315630.html",
-      "confidence": 75,
-      "reason": "The candidate is also a 2-tier shelf and matches the product type and tier count exactly. While the brand is not preferred, it is the best spec match among alternatives.",
-      "gt_status": "INCORRECT"
     }
   ]
 }

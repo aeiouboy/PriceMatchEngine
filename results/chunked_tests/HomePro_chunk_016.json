@@ -4,11 +4,12 @@
   "start_idx": 225,
   "end_idx": 240,
   "products_tested": 15,
-  "matches_found": 9,
-  "correct": 4,
-  "incorrect": 5,
-  "accuracy": 44.44444444444444,
-  "timestamp": "2025-12-03T10:15:24.873741",
+  "matches_found": 5,
+  "correct": 3,
+  "incorrect": 2,
+  "gt_missing": 0,
+  "accuracy": 60.0,
+  "timestamp": "2025-12-03T16:54:16.981045",
   "matches": [
     {
       "chunk": 16,
@@ -20,8 +21,8 @@
       "target_brand": "PLIM",
       "target_url": "https://www.homepro.co.th/p/1249480",
       "expected_url": "https://www.homepro.co.th/p/196167",
-      "confidence": 75,
-      "reason": "Candidate 19 is a clothes hanger, matching the product type, and belongs to the preferred brand PLIM. Although the pack count is different (6 pcs vs 24 pcs), it's the closest available alternative for a clothes hanger among the preferred brands.",
+      "confidence": 85,
+      "reason": "The candidate has a product type match (clothes hanger), belongs to a preferred brand (PLIM), and has a similar pack count although not exact. Other candidates are entirely different product types.",
       "gt_status": "INCORRECT"
     },
     {
@@ -34,8 +35,8 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/1150070",
       "expected_url": "https://www.homepro.co.th/p/1102787",
-      "confidence": 75,
-      "reason": "Candidate 10 (STACKO) is a preferred brand and has the closest dimensions and exact tier count (5) to the source product, making it the best alternative despite a lower SpecMatch% due to brand preference.",
+      "confidence": 65,
+      "reason": "The candidate 'ตู้ลิ้นชัก 5 ชั้น STACKO MAX(L)' is a 5-tier storage cabinet from the top preferred brand STACKO, with dimensions (58.5x41) very close to the source (58x40) and has a similar length (109 cm vs 114.5 cm).",
       "gt_status": "INCORRECT"
     },
     {
@@ -44,41 +45,13 @@
       "source_name": "ถังขยะขาเหยียบแบบสี่เหลี่ยม Soft Closed KASSA HOME รุ่น 12L-97895-002 ความจุ 12 ลิตร สีเงิน",
       "source_brand": "KASSA HOME",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60290165",
-      "target_name": "ถังขยะเหยียบกลม ACCO SILVEY 12 ลิตร สีเงิน",
+      "target_name": "ถังขยะเหยียบ ACCO EK9366MT ขนาด 12L สีเงิน",
       "target_brand": "ACCO",
-      "target_url": "https://www.homepro.co.th/p/1220492",
+      "target_url": "https://www.homepro.co.th/p/1040980",
       "expected_url": "https://www.homepro.co.th/p/1040980",
-      "confidence": 90,
-      "reason": "The candidate is a preferred brand (ACCO), has the exact matching volume (12L), and is the correct product type (trash can).",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 16,
-      "source_idx": 228,
-      "source_name": "ม้านั่งในสวน FONTE รุ่น 145.773 สีดำ",
-      "source_brand": "FONTE",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60383499",
-      "target_name": "ม้านั่งสนาม SPRING EVELYN PALM สี BRONZE",
-      "target_brand": "SPRING",
-      "target_url": "https://www.homepro.co.th/p/1182193",
-      "expected_url": "https://www.homepro.co.th/p/1182193",
-      "confidence": 70,
-      "reason": "The candidate has the correct product type 'bench' (matches 'garden bench') and is from the highest preferred brand 'SPRING', with a 50% spec match.",
+      "confidence": 95,
+      "reason": "The candidate is the same product type (trash can) and an exact spec match for volume from a preferred brand, ACCO.",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 16,
-      "source_idx": 229,
-      "source_name": "ราวแขวนตั้งพื้น 9 เส้น 1.2 ม. เหล็กเกล็ดเงิน KASSA HOME รุ่น AT2022005 สีดำเกล็ดเงิน",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60366679",
-      "target_name": "ราวตากผ้าเหล็กมีล้อ 6 เส้น PLIM 1.2 ม. สีขาว",
-      "target_brand": "PLIM",
-      "target_url": "https://www.homepro.co.th/p/1133439",
-      "expected_url": "https://www.homepro.co.th/p/1133475",
-      "confidence": 60,
-      "reason": "The candidate is a PLIM clothes drying rack with matching length (1.2M), although it has fewer lines (6 vs 9) than the source product.",
-      "gt_status": "INCORRECT"
     },
     {
       "chunk": 16,
@@ -91,21 +64,7 @@
       "target_url": "https://www.homepro.co.th/p/1043119",
       "expected_url": "https://www.homepro.co.th/p/1043119",
       "confidence": 95,
-      "reason": "Highest spec match (100%) and correct product type (trash can) with preferred brand.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 16,
-      "source_idx": 234,
-      "source_name": "เก้าอี้พักผ่อน KASSA รุ่น A1797-2 สีน้ำเงิน",
-      "source_brand": "KASSA",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60351431",
-      "target_name": "เก้าอี้พักผ่อน EAZYSOFA RKSOFA สีน้ำเงิน",
-      "target_brand": "EAZYSOFA",
-      "target_url": "https://www.homepro.co.th/p/1187435",
-      "expected_url": "https://www.homepro.co.th/p/1187435",
-      "confidence": 75,
-      "reason": "The candidate has a matching product type (sofa chair is a subtype of lounge chair), is from a preferred brand, and has the same color. Candidate 0 is described as 'recliner' which is too specific compared to 'lounge chair'.",
+      "reason": "The candidate ACCO trash can perfectly matches the critical product type and volume, and includes the 'SOFT CLOSED' identifier, despite being a different model and brand. While ACCO is a preferred brand, the other top candidate is identical.",
       "gt_status": "CORRECT"
     },
     {
@@ -119,22 +78,8 @@
       "target_url": "https://www.homepro.co.th/p/1167192",
       "expected_url": "https://www.homepro.co.th/p/1167192",
       "confidence": 95,
-      "reason": "The candidate 'เกรียงโป๊วสี MATALL 4 นิ้ว' is a steel trowel (putty knife in a broader sense) with the exact same size and is from a preferred brand (MATALL).",
+      "reason": "The candidate has the exact product type (putty knife) and size (4 inch) as the source, is from the most preferred brand (MATALL), and has a 100% spec match.",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 16,
-      "source_idx": 236,
-      "source_name": "แปรงทาสีขนสังเคราะห์ด้ามพลาสติก GIANT KINGKONG รุ่น FD04 ขนาด 2.5 นิ้ว",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60245645",
-      "target_name": "แปรงทาสีขนหมู MATALL PB037 2 นิ้ว",
-      "target_brand": "MATALL",
-      "target_url": "https://www.homepro.co.th/p/1189195",
-      "expected_url": "https://www.homepro.co.th/p/1180902",
-      "confidence": 75,
-      "reason": "Candidate is a preferred brand (MATALL) and the correct product type (paint brush), with a similar size (2 inch vs 2.5 inch) to the source.",
-      "gt_status": "INCORRECT"
     }
   ]
 }

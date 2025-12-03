@@ -4,40 +4,13 @@
   "start_idx": 345,
   "end_idx": 360,
   "products_tested": 15,
-  "matches_found": 10,
-  "correct": 7,
-  "incorrect": 3,
-  "accuracy": 70.0,
-  "timestamp": "2025-12-03T10:22:14.778832",
+  "matches_found": 8,
+  "correct": 6,
+  "incorrect": 2,
+  "gt_missing": 0,
+  "accuracy": 75.0,
+  "timestamp": "2025-12-03T17:02:55.591644",
   "matches": [
-    {
-      "chunk": 24,
-      "source_idx": 345,
-      "source_name": "โคมดาวน์ไลท์ติดลอยกลม 4 นิ้ว E27x1 LUZINO รุ่น MZY401-WH สีขาว",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60320166",
-      "target_name": "ดาวน์ไลท์ CARINI LD0140 4 นิ้ว สีขาว กลม",
-      "target_brand": "CARINI",
-      "target_url": "https://www.homepro.co.th/p/1052627",
-      "expected_url": "https://www.homepro.co.th/p/1061675",
-      "confidence": 70,
-      "reason": "Candidate 0 is a 'ดาวน์ไลท์' (downlight) with the same size (4 inch) and a preferred brand (CARINI). While the socket spec is missing, it's the closest product type match within preferred brands with a reasonable spec match percentage.",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 24,
-      "source_idx": 347,
-      "source_name": "โคมแทรคไลท์เข้ารางแปดเหลี่ยม GU5.3x1 LUZINO รุ่น CS15-BK สีดำ",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60392232",
-      "target_name": "แทรคไลท์ ติดราง GU5.3 CARINI CS15 สีดำ",
-      "target_brand": "CARINI",
-      "target_url": "https://www.homepro.co.th/p/1091353",
-      "expected_url": "https://www.homepro.co.th/p/1091353",
-      "confidence": 85,
-      "reason": "The candidate is a 'track light' from the preferred brand CARINI, matching the critical product type and several key identifiers (GU5, CS15).",
-      "gt_status": "CORRECT"
-    },
     {
       "chunk": 24,
       "source_idx": 348,
@@ -48,8 +21,8 @@
       "target_brand": "PACK IN",
       "target_url": "https://www.homepro.co.th/p/195910",
       "expected_url": "https://www.homepro.co.th/p/195910",
-      "confidence": 65,
-      "reason": "The candidate is the correct product type (pallet wrap film) and a preferred brand, but the length differs significantly (300M vs 220M).",
+      "confidence": 75,
+      "reason": "The candidate has the correct product type (pallet wrap film) and is a preferred brand (PACK IN). While the length differs (300m vs 220m), it's the closest available alternative for the primary function.",
       "gt_status": "CORRECT"
     },
     {
@@ -62,8 +35,8 @@
       "target_brand": "PACK IN",
       "target_url": "https://www.homepro.co.th/p/1192467",
       "expected_url": "https://www.homepro.co.th/p/1192467",
-      "confidence": 90,
-      "reason": "The candidate has the same product type (foam sheet), a preferred brand (PACK IN), and very similar key specs (size_inch=1/2 inch) and dimensions as the source product, even though the length_cm is slightly different (60cm vs 120cm). While the candidate says 1.2M and 60CM, the 1/2 inch thickness is accurate.",
+      "confidence": 95,
+      "reason": "Candidate 8 is the only 'foam sheet' and a preferred brand (PACK IN) that matches the critical 'size_inch' spec of 1/2 inch and has similar length specifications (60cm vs 120cm, 1.2m vs 1.2m).",
       "gt_status": "CORRECT"
     },
     {
@@ -72,12 +45,12 @@
       "source_name": "ราวแขวนตั้งพื้นทรงกางปีก 1.44 ม. สเตนเลส KASSA HOME รุ่น YLT-0503A ขนาด 144 x 60.5 x (95-110) ซม.",
       "source_brand": "KASSA HOME",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60279408",
-      "target_name": "ราวตากผ้าเหล็กมีล้อ 8 เส้น PLIM 1.5 ม. สีขาว",
+      "target_name": "ราวพาดผ้ามีปีก 143x60x97-140cm",
       "target_brand": "PLIM",
-      "target_url": "https://www.homepro.co.th/p/1133475",
+      "target_url": "https://www.homepro.co.th/p/1041376",
       "expected_url": "https://www.homepro.co.th/p/1145251",
-      "confidence": 70,
-      "reason": "The candidate is a PLIM brand drying rack with a good spec match in length and is a preferred brand.",
+      "confidence": 75,
+      "reason": "The candidate has the correct product type, a preferred brand, similar dimensions (143x60 vs 144x60.5), and a similar length of 1.40M vs 1.44M.",
       "gt_status": "INCORRECT"
     },
     {
@@ -90,8 +63,8 @@
       "target_brand": "PLIM",
       "target_url": "https://www.homepro.co.th/p/1266790",
       "expected_url": "https://www.homepro.co.th/p/1266790",
-      "confidence": 75,
-      "reason": "The candidate has the correct product type, the second preferred brand, and a 50% spec match.",
+      "confidence": 70,
+      "reason": "Highest SpecMatch (50%) and brand (PLIM) is a preferred brand (PREFERRED#2); product type is an exact match.",
       "gt_status": "CORRECT"
     },
     {
@@ -104,22 +77,22 @@
       "target_brand": "DEXZON",
       "target_url": "https://www.homepro.co.th/p/1174146",
       "expected_url": "https://www.homepro.co.th/p/1174146",
-      "confidence": 100,
-      "reason": "Candidate is an exact product type match ('screw' detected as 'drywall screw') with identical dimensions and is from the highest preferred brand DEXZON, achieving 100% spec match.",
+      "confidence": 95,
+      "reason": "The candidate is a drywall screw of the preferred brand DEXZON with matching dimensions (6x1-1/4 inch) and a high spec match percentage.",
       "gt_status": "CORRECT"
     },
     {
       "chunk": 24,
-      "source_idx": 354,
-      "source_name": "โคมแทรคไลท์เข้ารางกลม GU5.3x1 LUZINO รุ่น CS13-WH สีขาว",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60392229",
-      "target_name": "แทรคไลท์ ติดผนัง GU5.3 CARINI CS13SBK สีดำ",
-      "target_brand": "CARINI",
-      "target_url": "https://www.homepro.co.th/p/1223428",
-      "expected_url": "https://www.homepro.co.th/p/1223428",
-      "confidence": 70,
-      "reason": "The candidate is a track light, a preferred brand (CARINI), and shares the 'GU5' identifier, despite a lower SpecMatch score due to missing volume/dimensions, it's the only type match.",
+      "source_idx": 356,
+      "source_name": "ตะกร้าผ้าเหลี่ยมหวายเทียม Rattania KASSA HOME รุ่น ZY2726 ขนาด 36 x 36 x 40 ซม. สีน้ำตาล",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60375571",
+      "target_name": "ตะกร้าผ้าเหลี่ยม MONARCH 36x36x40 ซม. สีน้ำตาล",
+      "target_brand": "MONARCH",
+      "target_url": "https://www.homepro.co.th/p/1114713",
+      "expected_url": "https://www.homepro.co.th/p/1114713",
+      "confidence": 95,
+      "reason": "The candidate is a laundry basket with 100% spec match, exact dimensions and length, and is the highest ranked alternative overall.",
       "gt_status": "CORRECT"
     },
     {
@@ -133,7 +106,7 @@
       "target_url": "https://www.homepro.co.th/p/1184047",
       "expected_url": "https://www.homepro.co.th/p/1173626",
       "confidence": 95,
-      "reason": "The candidate is a preferred brand (ME LIVING), has an 84% spec match including matching product type, tiers, length, and similar dimensions (70x50 vs 69x50).",
+      "reason": "Candidate 0 is the highest preferred brand (ME LIVING) with the highest SpecMatch (84%) and perfectly matches the product type and critical specs like tiers and length.",
       "gt_status": "INCORRECT"
     },
     {
@@ -146,8 +119,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1243765",
       "expected_url": "https://www.homepro.co.th/p/1243765",
-      "confidence": 95,
-      "reason": "The candidate is a tape measure with the exact same length (8M) and is from a highly preferred brand (MATALL).",
+      "confidence": 98,
+      "reason": "The candidate is a 'measuring tape' with the identical length of 8M and is from the highly preferred brand MATALL, showing a 100% spec match.",
       "gt_status": "CORRECT"
     }
   ]

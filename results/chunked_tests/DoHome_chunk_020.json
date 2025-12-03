@@ -4,24 +4,39 @@
   "start_idx": 285,
   "end_idx": 300,
   "products_tested": 15,
-  "matches_found": 5,
-  "correct": 5,
+  "matches_found": 6,
+  "correct": 6,
   "incorrect": 0,
+  "gt_missing": 0,
   "accuracy": 100.0,
-  "timestamp": "2025-12-03T10:50:07.473097",
+  "timestamp": "2025-12-03T14:43:03.438976",
   "matches": [
     {
       "chunk": 20,
-      "source_idx": 288,
-      "source_name": "โพลียูรีเทนยาแนว GIANT KINGKONG ขนาด 600 มล. สีขาว",
+      "source_idx": 289,
+      "source_name": "ชั้นวางของพลาสติกอเนกประสงค์ 2 ชั้น KASSA HOME รุ่น Circle API-10301M2 ขนาด 43 x 30 x 36.5 ซม. สีขาว",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60357771",
+      "target_name": "API ชั้นวางของ 2 ชั้น รุ่น SNOWY",
+      "target_brand": "API",
+      "target_url": "https://www.dohome.co.th/th/api-2-tier-shelf-no-snowy-10404584.html",
+      "expected_url": "https://www.dohome.co.th/th/api-2-tier-shelf-no-snowy-10404584.html",
+      "confidence": 75,
+      "reason": "The candidate is a shelf, has 2 tiers like the source, and is the highest spec match among shelves, with a price close to the source.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 20,
+      "source_idx": 290,
+      "source_name": "แอลโบลท์เกลียวหุน 5/8 นิ้ว x 300 มม. GIANT KINGKONG รุ่น LB5830 (แพ็ก 1 ชุด)",
       "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60398260",
-      "target_name": "BESBOND กาวโพลียูรีเทน 600 มล. สีขาว",
-      "target_brand": "BESBOND",
-      "target_url": "https://www.dohome.co.th/th/besbond-polyurethane-glue-600ml-white-10405383.html",
-      "expected_url": "https://www.dohome.co.th/th/besbond-polyurethane-glue-600ml-white-10405383.html",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60398205",
+      "target_name": "สกรูตัวแอล 5/8 นิ้ว x 30 ซม. | ดูโฮมออนไลน์",
+      "target_brand": "NASH",
+      "target_url": "https://www.dohome.co.th/th/l-type-screw-5-8-inch-x-30-cm-10202380.html",
+      "expected_url": "https://www.dohome.co.th/th/l-type-screw-5-8-inch-x-30-cm-10202380.html",
       "confidence": 95,
-      "reason": "The candidate 'BESBOND กาวโพลียูรีเทน 600 มล. สีขาว' has an exact spec match (volume 600 ML) and is a 'polyurethane glue', which is a very close product type to 'polyurethane sealant'. It is also a preferred brand according to the ranking.",
+      "reason": "The source product is an 'l bolt' and candidate 3 is an 'l-screw' (a similar product type), has an identical size ('5/8 inch'), and a closely matching length ('300mm' vs '30cm'), and is from a preferred brand (NASH).",
       "gt_status": "CORRECT"
     },
     {
@@ -35,7 +50,7 @@
       "target_url": "https://www.dohome.co.th/th/jcj-plastic-picnic-box-85-liters-no-2009-10395874.html",
       "expected_url": "https://www.dohome.co.th/th/jcj-plastic-picnic-box-85-liters-no-2009-10395874.html",
       "confidence": 95,
-      "reason": "Candidate 0 is a picnic box with the exact same volume (8.5 L) and its model (2552) is part of source's model (JCJ-2552B) under a preferred brand (JCJ).",
+      "reason": "The candidate is an exact match for product type, volume, and has a strong model number identifier match. It is also from a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,7 +64,7 @@
       "target_url": "https://www.dohome.co.th/th/x1-plus-microfiber-cloth-40x40cm-blue-10399594.html",
       "expected_url": "https://www.dohome.co.th/th/x1-plus-microfiber-cloth-40x40cm-blue-10399594.html",
       "confidence": 95,
-      "reason": "The candidate is a microfiber cloth with matching dimensions (40x40 cm) and has a 100% spec match, even though it's not a preferred brand, it's the closest equivalent.",
+      "reason": "Candidate 0 is a microfiber cloth with matching dimensions (40x40) and is from a preferred brand (X1-PLUS, PREFERRED#9), offering a strong spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -62,8 +77,8 @@
       "target_brand": "POWER MAX",
       "target_url": "https://www.dohome.co.th/th/finext-downlight-4-inch-circle-white-10234509.html",
       "expected_url": "https://www.dohome.co.th/th/finext-downlight-4-inch-circle-white-10234509.html",
-      "confidence": 90,
-      "reason": "The candidate has the highest SpecMatch% among preferred brands, and the product type and size are an exact match for the source downlight.",
+      "confidence": 75,
+      "reason": "The candidate is a preferred brand and is the only downlight with a matching size and type.",
       "gt_status": "CORRECT"
     },
     {
@@ -76,8 +91,8 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/nash-paint-roller-extension-handle-1-2-10285698.html",
       "expected_url": "https://www.dohome.co.th/th/nash-paint-roller-extension-handle-1-2-10285698.html",
-      "confidence": 95,
-      "reason": "The source and candidate are both 'paint roller extension pole' with matching length 2M, and the candidate is from the highly preferred brand NASH.",
+      "confidence": 100,
+      "reason": "Candidate 0 is a perfect spec and type match for the source product, and comes from the highest preferred brand NASH.",
       "gt_status": "CORRECT"
     }
   ]

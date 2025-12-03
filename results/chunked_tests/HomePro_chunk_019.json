@@ -4,11 +4,12 @@
   "start_idx": 270,
   "end_idx": 285,
   "products_tested": 15,
-  "matches_found": 8,
-  "correct": 6,
-  "incorrect": 2,
-  "accuracy": 75.0,
-  "timestamp": "2025-12-03T10:17:52.077577",
+  "matches_found": 6,
+  "correct": 5,
+  "incorrect": 1,
+  "gt_missing": 0,
+  "accuracy": 83.33333333333334,
+  "timestamp": "2025-12-03T16:57:16.569714",
   "matches": [
     {
       "chunk": 19,
@@ -20,8 +21,8 @@
       "target_brand": "CARINI",
       "target_url": "https://www.homepro.co.th/p/1004031",
       "expected_url": "https://www.homepro.co.th/p/1004031",
-      "confidence": 85,
-      "reason": "The candidate has the correct product type (POLE_LAMP) and is from the most preferred brand (CARINI), with the highest SpecMatch for relevant specs among preferred brands.",
+      "confidence": 70,
+      "reason": "Candidate 0 is a preferred brand (CARINI), matches the critical product type 'post light' and has the highest SpecMatch% among relevant alternatives with similar product types. Although the SpecMatch% is below 50%, the product type and brand preference make it the best available option for a 'post light'.",
       "gt_status": "CORRECT"
     },
     {
@@ -35,21 +36,7 @@
       "target_url": "https://www.homepro.co.th/p/1167597",
       "expected_url": "https://www.homepro.co.th/p/1167597",
       "confidence": 95,
-      "reason": "Candidate is the same product type (ceiling fan) with the same size (52 inch) and is from a preferred brand (CARINI).",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 19,
-      "source_idx": 274,
-      "source_name": "แปรงทาสีขนสัตว์ เกรด A ด้ามพลาสติก GIANT KINGKONG รุ่น C303AP6 ขนาด 4 นิ้ว สีน้ำตาล",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60342293",
-      "target_name": "แปรงทาสีด้ามพลาสติกขนสังคราะห์ดำ MATALL 4 นิ้ว",
-      "target_brand": "MATALL",
-      "target_url": "https://www.homepro.co.th/p/1234363",
-      "expected_url": "https://www.homepro.co.th/p/1234363",
-      "confidence": 95,
-      "reason": "The candidate is a paint brush of the same size and is from a preferred brand (MATALL) with 100% spec match.",
+      "reason": "The candidate is a preferred brand (CARINI), has an exact product type match (ceiling fan), and an exact size match (52 inch).",
       "gt_status": "CORRECT"
     },
     {
@@ -63,7 +50,7 @@
       "target_url": "https://www.homepro.co.th/p/1144390",
       "expected_url": "https://www.homepro.co.th/p/1144390",
       "confidence": 90,
-      "reason": "Candidate 1 (BIH) is a 'steel plate' like the source, is a preferred brand (BIH), and has the highest SpecMatch% among relevant candidates.",
+      "reason": "The candidate has the exact same product type (steel plate), a highly preferred brand (BIH), and a high spec match with matching 'size_inch' and 'dimensions' specs, making it the closest equivalent product.",
       "gt_status": "CORRECT"
     },
     {
@@ -76,23 +63,9 @@
       "target_brand": "FURDINI",
       "target_url": "https://www.homepro.co.th/p/1231109",
       "expected_url": "https://www.homepro.co.th/p/1231109",
-      "confidence": 75,
-      "reason": "The candidate is a 'safe' product, matching the critical product type of the source. It is also from a preferred brand (FURDINI, PREFERRED#1), despite a low SpecMatch% due to limited common extracted specs.",
+      "confidence": 90,
+      "reason": "The candidate is a 'safe' product, matching the critical product type of the source. It is also from a highly preferred brand (FURDINI) and is a safe, making it the best available match despite a 0% spec match on other details.",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 19,
-      "source_idx": 280,
-      "source_name": "โคมดาวน์ไลท์ติดลอยกลม 4 นิ้ว E27x1 LUZINO รุ่น MZY401-BK สีดำ",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60320165",
-      "target_name": "ดาวน์ไลท์ CARINI LD0140 4 นิ้ว สีขาว กลม",
-      "target_brand": "CARINI",
-      "target_url": "https://www.homepro.co.th/p/1052627",
-      "expected_url": "https://www.homepro.co.th/p/1081378",
-      "confidence": 70,
-      "reason": "The candidate is a downlight with a matching size (4 inch) and is from a preferred brand (CARINI).",
-      "gt_status": "INCORRECT"
     },
     {
       "chunk": 19,
@@ -105,7 +78,7 @@
       "target_url": "https://www.homepro.co.th/p/1249480",
       "expected_url": "https://www.homepro.co.th/p/1221434",
       "confidence": 95,
-      "reason": "The candidate is a hanger from a preferred brand (PLIM) and has 100% spec match, including pack count.",
+      "reason": "The candidate is the same product type, matches the critical pack count spec, and is from a preferred brand.",
       "gt_status": "INCORRECT"
     },
     {
@@ -118,8 +91,8 @@
       "target_brand": "COLOR KIT",
       "target_url": "https://www.homepro.co.th/p/1012656",
       "expected_url": "https://www.homepro.co.th/p/1012656",
-      "confidence": 95,
-      "reason": "The candidate is a mortar and pestle with a very close size specification (7.5 inch vs 7.6 inch) and a high spec match percentage.",
+      "confidence": 90,
+      "reason": "Highest spec match (83%) and exact product type match (mortar and pestle) with size within 10% of source. Preferred brand, though lower rank, solidifies the choice.",
       "gt_status": "CORRECT"
     }
   ]

@@ -4,26 +4,13 @@
   "start_idx": 210,
   "end_idx": 225,
   "products_tested": 15,
-  "matches_found": 6,
-  "correct": 6,
+  "matches_found": 4,
+  "correct": 4,
   "incorrect": 0,
+  "gt_missing": 0,
   "accuracy": 100.0,
-  "timestamp": "2025-12-03T12:24:08.589377",
+  "timestamp": "2025-12-03T16:53:17.126232",
   "matches": [
-    {
-      "chunk": 15,
-      "source_idx": 210,
-      "source_name": "โคมไฟหัวเสาภายนอก E27x1 LUZINO รุ่น JEWEL P08(BK) สีดำ",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60252719",
-      "target_name": "ไฟหัวเสา CARINI HK-K2013 สีขาว/ดำ",
-      "target_brand": "CARINI",
-      "target_url": "https://www.homepro.co.th/p/1262899",
-      "expected_url": "https://www.homepro.co.th/p/1262899",
-      "confidence": 75,
-      "reason": "Candidate 0 is a 'post lamp' matching the source product type, has an E27 socket (implied by lamp type, though not explicitly in specs), is from the preferred brand CARINI, and has the highest SpecMatch% among relevant alternatives.",
-      "gt_status": "CORRECT"
-    },
     {
       "chunk": 15,
       "source_idx": 214,
@@ -35,7 +22,7 @@
       "target_url": "https://www.homepro.co.th/p/1251658",
       "expected_url": "https://www.homepro.co.th/p/1251658",
       "confidence": 85,
-      "reason": "Candidate 0 is a scaffolding caster with a brake from a highly preferred brand (DEXZON) and has the highest SpecMatch% among relevant candidates.",
+      "reason": "Candidate 0 is the closest match with 'scaffolding caster' type, 'HAS_BRAKE' and is the most preferred brand DEXZON. The size difference (20cm vs 8 inch which is ~20.32cm) is acceptable, and has a good SpecMatch%.",
       "gt_status": "CORRECT"
     },
     {
@@ -48,22 +35,8 @@
       "target_brand": "ME LIVING",
       "target_url": "https://www.homepro.co.th/p/1230386",
       "expected_url": "https://www.homepro.co.th/p/1230386",
-      "confidence": 95,
-      "reason": "Candidate 0 is a storage box with the exact same volume (235 L) as the source, and is from a preferred brand (ME LIVING).",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 15,
-      "source_idx": 217,
-      "source_name": "บันไดอลูมิเนียมเอนกประสงค์ 3 x 10 ขั้น GIANT KINGKONG PRO รุ่น LZ3210B สีเงิน",
-      "source_brand": "GIANT KINGKONG PRO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60229676",
-      "target_name": "บันไดอะลูมิเนียม ทรง A-SLIDE MATALL R13810 10 ขั้น",
-      "target_brand": "MATALL",
-      "target_url": "https://www.homepro.co.th/p/1227724",
-      "expected_url": "https://www.homepro.co.th/p/1227724",
-      "confidence": 75,
-      "reason": "The candidate has the highest spec match (66%), is a preferred brand (MATALL), and has the same number of steps (10) as the source, despite being a different ladder type (A-Frame vs multi-purpose).",
+      "confidence": 100,
+      "reason": "Candidate 0 is the exact product type and matches the critical volume spec of 235 L. It's also from a preferred brand (ME LIVING).",
       "gt_status": "CORRECT"
     },
     {
@@ -76,8 +49,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1162955",
       "expected_url": "https://www.homepro.co.th/p/1162955",
-      "confidence": 90,
-      "reason": "The candidate is a 'pvc pipe cutter' which closely matches the critical product type 'pipe cutter' of the source. It also belongs to the top preferred brand 'MATALL' and has a 50% spec match, which is the highest among relevant alternatives.",
+      "confidence": 70,
+      "reason": "The candidate is the same product type (pipe cutter) and is from the most preferred brand (MATALL).",
       "gt_status": "CORRECT"
     },
     {
@@ -91,7 +64,7 @@
       "target_url": "https://www.homepro.co.th/p/1220492",
       "expected_url": "https://www.homepro.co.th/p/1220492",
       "confidence": 95,
-      "reason": "Candidate 0 is a preferred brand (ACCO), has the exact same product type (trash can), and has the same volume as the source product.",
+      "reason": "The candidate is the same product type (trash can), has the exact same volume (12 L), and is from a preferred brand (ACCO) with 100% spec match.",
       "gt_status": "CORRECT"
     }
   ]

@@ -4,11 +4,12 @@
   "start_idx": 360,
   "end_idx": 375,
   "products_tested": 15,
-  "matches_found": 9,
+  "matches_found": 8,
   "correct": 7,
-  "incorrect": 2,
-  "accuracy": 77.77777777777779,
-  "timestamp": "2025-12-03T10:23:04.159760",
+  "incorrect": 1,
+  "gt_missing": 0,
+  "accuracy": 87.5,
+  "timestamp": "2025-12-03T17:04:01.602603",
   "matches": [
     {
       "chunk": 25,
@@ -21,7 +22,7 @@
       "target_url": "https://www.homepro.co.th/p/1176875",
       "expected_url": "https://www.homepro.co.th/p/1176875",
       "confidence": 95,
-      "reason": "Candidate 1 (ELECKTA) is an exact product type match, has critical specs matching (wattage, length, outlets), and is a preferred brand (PREFERRED#2) with high SpecMatch% (89%). It also includes the 'กันไฟดูด' (anti-shock) feature like the source product, unlike Candidate 0.",
+      "reason": "Candidate 1 has an 89% spec match, is of a preferred brand (ELECKTA), and matches the critical product type 'extension cord reel' with an added 'breaker' feature which complements the source product's 'เบรกเกอร์กันไฟดูด' (leakage circuit breaker) feature. Candidate 0 also has a high spec match and preferred brand but lacks the 'breaker' feature.",
       "gt_status": "CORRECT"
     },
     {
@@ -35,21 +36,7 @@
       "target_url": "https://www.homepro.co.th/p/1262922",
       "expected_url": "https://www.homepro.co.th/p/1262922",
       "confidence": 95,
-      "reason": "The candidate is a water tank with the exact same volume (1000 L) and is from a preferred brand (WAVE), making it a strong equivalent.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 25,
-      "source_idx": 364,
-      "source_name": "คีมปากจิ้งจก GIANT KINGKONG PRO รุ่น PL 2003 ขนาด 8 นิ้ว สีน้ำเงิน - เทา",
-      "source_brand": "GIANT KINGKONG PRO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60268410",
-      "target_name": "คีมปากจระเข้ MATALL PRO GS249003 8 นิ้ว",
-      "target_brand": "MATALL PRO",
-      "target_url": "https://www.homepro.co.th/p/1261430",
-      "expected_url": "https://www.homepro.co.th/p/1261430",
-      "confidence": 85,
-      "reason": "The candidate is a preferred brand (MATALL PRO), has a 100% spec match for size, and the product type ('alligator pliers') is a subtype of 'pliers'.",
+      "reason": "Candidate 0 is a 'water tank' with identical volume and is from a preferred brand (WAVE) with 100% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -62,8 +49,8 @@
       "target_brand": "SPRING NELLY",
       "target_url": "https://www.homepro.co.th/p/1290037",
       "expected_url": "https://www.homepro.co.th/p/1290037",
-      "confidence": 75,
-      "reason": "The candidate is a 'steel chair' from the most preferred brand, which is the closest product type match among the preferred brands, despite having a lower SpecMatch% than the source.",
+      "confidence": 60,
+      "reason": "Candidate is the same product type ('chair') and from the highest preferred brand (SPRING) with a 50% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -76,8 +63,8 @@
       "target_brand": "ELEKTRA",
       "target_url": "https://www.homepro.co.th/p/1146963",
       "expected_url": "https://www.homepro.co.th/p/1146963",
-      "confidence": 60,
-      "reason": "The candidate is also a 'cable tie' and matches the size and pack count specs, though the brand is not preferred.",
+      "confidence": 70,
+      "reason": "The candidate is the correct product type (cable tie) and has a similar size and pack count to the source product, making it the best available match despite not being a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -91,7 +78,7 @@
       "target_url": "https://www.homepro.co.th/p/1188985",
       "expected_url": "https://www.homepro.co.th/p/1188985",
       "confidence": 95,
-      "reason": "The candidate has a 100% spec match, is a 'paint roller' type, and is from a preferred brand (MATALL).",
+      "reason": "The candidate is a paint roller of the preferred brand MATALL, with identical size (4 inch) and roller type (FULL), resulting in a 100% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -100,13 +87,13 @@
       "source_name": "สกรูปลายสว่านหัวเวเฟอร์ (เกลียวหุน) 8 x 1 นิ้ว GIANT KINGKONG รุ่น WF81-100 (แพ็ก 100 ตัว)",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60274475",
-      "target_name": "สกรูปลายสว่าน TF DEXZON 8x1 นิ้ว 30 ชิ้น",
-      "target_brand": "DEXZON",
-      "target_url": "https://www.homepro.co.th/p/1184139",
+      "target_name": "สกรูปลายสว่านหัวเวเฟอร์ BY TORA 8x1 นิ้ว 100 ชิ้น",
+      "target_brand": "BY TORA",
+      "target_url": "https://www.homepro.co.th/p/1018052",
       "expected_url": "https://www.homepro.co.th/p/1018052",
       "confidence": 95,
-      "reason": "The best match is a DEXZON self-drilling screw with identical dimensions (8x1 inch) and the highest preferred brand ranking, despite a smaller pack count.",
-      "gt_status": "INCORRECT"
+      "reason": "The source product is a self-drilling screw with dimensions 8x1 inch and 100 pieces per pack. Candidate 7 is also a self-drilling screw with the exact same dimensions and pack count, achieving a 100% spec match. Although not a preferred brand, it's the best match for all critical specifications, particularly the pack count which is a core feature.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 25,
@@ -119,7 +106,7 @@
       "target_url": "https://www.homepro.co.th/p/1170703",
       "expected_url": "https://www.homepro.co.th/p/1099181",
       "confidence": 75,
-      "reason": "Candidate 0 is the only outdoor wall lamp candidate, has the highest SpecMatch% among relevant types, and is from a highly preferred brand (CARINI).",
+      "reason": "The candidate is the correct product type (exterior wall light/wall lamp), has a high spec match (40%), and is from a highly preferred brand (CARINI).",
       "gt_status": "INCORRECT"
     },
     {
@@ -133,7 +120,7 @@
       "target_url": "https://www.homepro.co.th/p/1185611",
       "expected_url": "https://www.homepro.co.th/p/1185611",
       "confidence": 95,
-      "reason": "The candidate is a varnish brush with the same size (4 inch) and is from a preferred brand (MATALL) with 100% spec match for critical attributes.",
+      "reason": "The candidate is a varnish brush with the exact same size and is from a preferred brand (MATALL).",
       "gt_status": "CORRECT"
     }
   ]

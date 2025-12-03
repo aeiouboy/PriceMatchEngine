@@ -4,26 +4,13 @@
   "start_idx": 60,
   "end_idx": 75,
   "products_tested": 15,
-  "matches_found": 10,
+  "matches_found": 9,
   "correct": 7,
-  "incorrect": 3,
-  "accuracy": 70.0,
-  "timestamp": "2025-12-03T12:03:22.320359",
+  "incorrect": 2,
+  "gt_missing": 0,
+  "accuracy": 77.77777777777779,
+  "timestamp": "2025-12-03T16:44:21.267953",
   "matches": [
-    {
-      "chunk": 5,
-      "source_idx": 61,
-      "source_name": "ก๊อกบอลสนาม 2 ทาง เกลียว 1/2 x 3/4 นิ้ว KARTEN รุ่น HN3093-G สีเขียว",
-      "source_brand": "KARTEN",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60412367",
-      "target_name": "ประตูน้ำทองเหลือง SANWA 3/4 นิ้ว",
-      "target_brand": "SANWA",
-      "target_url": "https://www.homepro.co.th/p/8794",
-      "expected_url": "https://www.homepro.co.th/p/1254301",
-      "confidence": 60,
-      "reason": "Candidate 5 is a ball valve (ประตูน้ำทองเหลือง - brass stopcock/ball valve) with the correct 3/4 inch size, matching the product type and size, although not a preferred brand.",
-      "gt_status": "INCORRECT"
-    },
     {
       "chunk": 5,
       "source_idx": 62,
@@ -35,7 +22,7 @@
       "target_url": "https://www.homepro.co.th/p/1230402",
       "expected_url": "https://www.homepro.co.th/p/1230402",
       "confidence": 95,
-      "reason": "The candidate is a storage box with the exact same volume (340 L) and is from a preferred brand (ME LIVING). Although the model number is different, the core specifications align perfectly.",
+      "reason": "The candidate is a storage box with the exact same volume (340 L) and is from a preferred brand (ME LIVING). Although the model number is different, the critical specs align perfectly.",
       "gt_status": "CORRECT"
     },
     {
@@ -48,9 +35,23 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1227723",
       "expected_url": "https://www.homepro.co.th/p/1157325",
-      "confidence": 90,
-      "reason": "Candidate 0 is a MATALL (PREFERRED#1) a-frame ladder with 8 steps, matching the critical 'steps' and 'ladder_type' specs of the source product. The Brand and SpecMatch% (68%) make it the best equivalent.",
+      "confidence": 85,
+      "reason": "Candidate 0 is a preferred brand (MATALL) with 8 steps and A-frame ladder type, matching the critical specs of the source product.",
       "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 5,
+      "source_idx": 64,
+      "source_name": "พรมอัดเรียบ 2 มม.(ตัดขายเป็นเมตร) GIANT KINGKONG รุ่น XW05-25M ขนาด 2 เมตร สีเทา - ดำ",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60223670",
+      "target_name": "พรมอัดเรียบ (ตัดขายเป็นเมตร) HOME LIVING STYLE XW05 หน้ากว้าง 2 ม. สีเทา",
+      "target_brand": "HOME LIVING STYLE",
+      "target_url": "https://www.homepro.co.th/p/1105472",
+      "expected_url": "https://www.homepro.co.th/p/1105472",
+      "confidence": 70,
+      "reason": "The candidate has the correct product type (carpet) and is from a preferred brand (HOME LIVING STYLE). Although the length and model number are not a direct match, the product description suggests it's a similar 'cut by meter' carpet with a 2-meter width, making it the closest available alternative despite some spec differences.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 5,
@@ -62,23 +63,9 @@
       "target_brand": "FONKEY",
       "target_url": "https://www.homepro.co.th/p/1158408",
       "expected_url": "https://www.homepro.co.th/p/1189195",
-      "confidence": 75,
-      "reason": "Candidate 12 is a paint brush of the same size, which is the closest product type match among the available candidates, despite not being a preferred brand.",
+      "confidence": 85,
+      "reason": "Candidate 12 is a paint brush of the same size as the source product, making it a good functional match despite being a different brand.",
       "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 5,
-      "source_idx": 66,
-      "source_name": "รถเข็นท้องแบนพื้นเหล็ก 4 ล้อด้ามจับพับเก็บได้ GIANT KINGKONG รุ่น TT0150CA ขนาด 150 กก. สีน้ำเงิน",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60259408",
-      "target_name": "รถเข็นอเนกประสงค์ 4 ล้อ MATALL 85-180 120 กก.",
-      "target_brand": "MATALL",
-      "target_url": "https://www.homepro.co.th/p/1062117",
-      "expected_url": "https://www.homepro.co.th/p/1062117",
-      "confidence": 60,
-      "reason": "The candidate is a flatbed cart, matching the product type, and is from a preferred brand (MATALL) with a convertible volume, although slightly lower than the source. The other candidates are incorrect product types or have 0% spec match.",
-      "gt_status": "CORRECT"
     },
     {
       "chunk": 5,
@@ -91,7 +78,7 @@
       "target_url": "https://www.homepro.co.th/p/1266790",
       "expected_url": "https://www.homepro.co.th/p/1266790",
       "confidence": 75,
-      "reason": "Candidate 0 is an ironing board from a preferred brand (PLIM) and has an identical product type match, with a model identifier match (6 ระดับ).",
+      "reason": "Candidate 0 is the same product type (ironing board) and from a preferred brand (PLIM) with a 50% spec match, making it the best available equivalent despite the identifier mismatch.",
       "gt_status": "CORRECT"
     },
     {
@@ -104,8 +91,8 @@
       "target_brand": "DEXZON",
       "target_url": "https://www.homepro.co.th/p/1182020",
       "expected_url": "https://www.homepro.co.th/p/1182020",
-      "confidence": 90,
-      "reason": "Candidate 1 (DEXZON) is the only alternative that is also 'rubber leg caps', has matching dimensions (1x2 inch) and is from a PREFERRED brand, despite the difference in pack count.",
+      "confidence": 95,
+      "reason": "The candidate has the correct product type (table leg protector, which is a leg cap), exact dimensions (1x2 inch), and is from a preferred brand (DEXZON). The pack count differs (4 pcs vs 2 pcs), leading to a slightly lower SpecMatch but it is the closest equivalent.",
       "gt_status": "CORRECT"
     },
     {
@@ -118,8 +105,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1227700",
       "expected_url": "https://www.homepro.co.th/p/1227700",
-      "confidence": 95,
-      "reason": "The best match is MATALL R12206HT, which is the same product type (a-frame ladder), has the exact same number of steps (6 steps), and is from the most preferred brand (MATALL).",
+      "confidence": 90,
+      "reason": "The candidate is the same product type, a preferred brand, and has a high spec match percentage with the exact number of steps.",
       "gt_status": "CORRECT"
     },
     {
@@ -133,7 +120,7 @@
       "target_url": "https://www.homepro.co.th/p/1144461",
       "expected_url": "https://www.homepro.co.th/p/1144461",
       "confidence": 75,
-      "reason": "The candidate is also a 'steel plate' type, has matching dimensions of 6x6, and is from a preferred brand (BIH). Although the hole size differs (3/8 inch vs 1.5 cm), the primary product type and overall dimensions align best among the candidates.",
+      "reason": "Candidate 4 is also a steel plate with matching dimensions and a preferred brand (BIH). However, the drilled hole size is different (3/8 inch vs 1.5 cm).",
       "gt_status": "CORRECT"
     },
     {
@@ -147,7 +134,7 @@
       "target_url": "https://www.homepro.co.th/p/1172052",
       "expected_url": "https://www.homepro.co.th/p/1172052",
       "confidence": 75,
-      "reason": "The candidate has the correct product type (อุปกรณ์จัดเก็บเครื่องสำอาง is functionally a makeup organizer), is a preferred brand (STACKO), and has a reasonable spec match on dimensions (18x9.5 is close to 18x9) and length (21cm is close to 21.5cm), despite the low calculated SpecMatch%.",
+      "reason": "The candidate has the correct product type (makeup organizer), a preferred brand (STACKO), and a similar length of 21cm compared to the source's 21.5cm, although with fewer tiers.",
       "gt_status": "CORRECT"
     }
   ]

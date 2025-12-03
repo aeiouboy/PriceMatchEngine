@@ -4,12 +4,41 @@
   "start_idx": 30,
   "end_idx": 45,
   "products_tested": 15,
-  "matches_found": 2,
-  "correct": 1,
-  "incorrect": 1,
+  "matches_found": 4,
+  "correct": 2,
+  "incorrect": 2,
+  "gt_missing": 0,
   "accuracy": 50.0,
-  "timestamp": "2025-12-03T12:01:45.634948",
+  "timestamp": "2025-12-03T16:42:31.229821",
   "matches": [
+    {
+      "chunk": 3,
+      "source_idx": 31,
+      "source_name": "กระทะด้ามสเตนเลสทรงตื้น 24 ซม. Plata KASSA HOME รุ่น CC-0022 สีเงิน",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60299411",
+      "target_name": "กระทะตื้น 24 ซม. TEFAL EVERYDAY COOKING",
+      "target_brand": "TEFAL",
+      "target_url": "https://www.homepro.co.th/p/1118583",
+      "expected_url": "https://www.homepro.co.th/p/1114764",
+      "confidence": 90,
+      "reason": "The candidate is a frying pan, which is a very close product type to a shallow pan, and has a 100% spec match for length.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 3,
+      "source_idx": 33,
+      "source_name": "ตู้ลิ้นชักอเนกประสงค์ 4 ชั้น Rattan KASSA HOME รุ่น API-1077M4 ขนาด 40 ซม. สีขาว - เทา",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60313209",
+      "target_name": "ตู้ลิ้นชักหวาย 4 ชั้น ME LIVING 42x49x110 ซม. สีชมพู",
+      "target_brand": "ME LIVING",
+      "target_url": "https://www.homepro.co.th/p/1248873",
+      "expected_url": "https://www.homepro.co.th/p/1248873",
+      "confidence": 63,
+      "reason": "The candidate has the highest spec match (63%), is a preferred brand (ME LIVING), and its product type 'wicker drawer cabinet' is a subtype of the source's 'storage cabinet', both are 4 tiers.",
+      "gt_status": "CORRECT"
+    },
     {
       "chunk": 3,
       "source_idx": 36,
@@ -21,7 +50,7 @@
       "target_url": "https://www.homepro.co.th/p/1147572",
       "expected_url": "https://www.homepro.co.th/p/1147572",
       "confidence": 90,
-      "reason": "The candidate is a 'picnic stove' with a preferred brand (AIKO) and has a SpecMatch of 50%, which is the highest among relevant options after filtering for product type.",
+      "reason": "Candidate 0 is the only 'picnic stove' type, matching the source product type, and is from a preferred brand (AIKO).",
       "gt_status": "CORRECT"
     },
     {
@@ -34,8 +63,8 @@
       "target_brand": "PLIM",
       "target_url": "https://www.homepro.co.th/p/1249480",
       "expected_url": "https://www.homepro.co.th/p/1221406",
-      "confidence": 100,
-      "reason": "The candidate is a clothes hanger, has the same pack count (6 pcs), and is from a preferred brand (PLIM).",
+      "confidence": 95,
+      "reason": "Candidate 0 is a hanger, matches source pack_count, and is from a preferred brand (PLIM) with 100% spec match.",
       "gt_status": "INCORRECT"
     }
   ]

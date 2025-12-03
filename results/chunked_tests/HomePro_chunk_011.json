@@ -4,11 +4,12 @@
   "start_idx": 150,
   "end_idx": 165,
   "products_tested": 15,
-  "matches_found": 4,
+  "matches_found": 5,
   "correct": 3,
-  "incorrect": 1,
-  "accuracy": 75.0,
-  "timestamp": "2025-12-03T12:19:43.987911",
+  "incorrect": 2,
+  "gt_missing": 0,
+  "accuracy": 60.0,
+  "timestamp": "2025-12-03T16:49:33.338580",
   "matches": [
     {
       "chunk": 11,
@@ -21,8 +22,22 @@
       "target_url": "https://www.homepro.co.th/p/1167863",
       "expected_url": "https://www.homepro.co.th/p/1167863",
       "confidence": 90,
-      "reason": "The candidate is the same product type (cable reel), from a preferred brand (ELECKTA), and has the highest SpecMatch (57%) with matching length (20M) and number of outlets (4).",
+      "reason": "Candidate 0 is the highest spec match at 57%, is the correct product type 'cable reel', and is from the preferred brand ELECKTA.",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 11,
+      "source_idx": 151,
+      "source_name": "ตาข่ายกรองแสง 80% (ม้วน) FONTE รุ่น FE-5 (ถัก 3 เข็ม) ขนาด 2 x 50 เมตร สีดำ",
+      "source_brand": "FONTE",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60268738",
+      "target_name": "สแลนม้วนกรองแสง 50 เปอร์เซ็นต์ ทอ 1 เข็ม GARTENE 2 ม.X100 หลา สีดำ",
+      "target_brand": "GARTENE",
+      "target_url": "https://www.homepro.co.th/p/1137193",
+      "expected_url": "https://www.homepro.co.th/p/1170827",
+      "confidence": 75,
+      "reason": "The candidate is a sun shade net (sunshade screen) from a preferred brand (GARTENE) and, while its dimensions don't fully match the source, it is the only candidate of the correct product type.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 11,
@@ -34,8 +49,8 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/1150070",
       "expected_url": "https://www.homepro.co.th/p/1138783",
-      "confidence": 75,
-      "reason": "The candidate has the highest SpecMatch% among preferred brands and is the correct product type (drawer cabinet is a sub-type of storage cabinet), with matching tiers, and dimensions within an acceptable range.",
+      "confidence": 65,
+      "reason": "The candidate has the highest spec match percentage among preferred brands for a 5-tier cabinet, with dimensions relatively close to the source.",
       "gt_status": "INCORRECT"
     },
     {
@@ -49,7 +64,7 @@
       "target_url": "https://www.homepro.co.th/p/1181331",
       "expected_url": "https://www.homepro.co.th/p/1181331",
       "confidence": 95,
-      "reason": "The candidate has the most similar model number (K5791BKSS vs 5791BK-SS) and the product type and key spec (knob_room=BATHROOM) match exactly. Although not a preferred brand, it's the closest spec match.",
+      "reason": "Candidate is the same product type, has a 100% spec match, and features a model identifier similar to the source product.",
       "gt_status": "CORRECT"
     },
     {
@@ -62,8 +77,8 @@
       "target_brand": "DEXZON",
       "target_url": "https://www.homepro.co.th/p/1168235",
       "expected_url": "https://www.homepro.co.th/p/1168235",
-      "confidence": 100,
-      "reason": "Candidate 0 is a rope product, exactly matching the source's critical product type. It matches all key specifications (length=140M) and is from the highest preferred brand (DEXZON), resulting in a 100% spec match.",
+      "confidence": 95,
+      "reason": "Candidate is the same product type (rope), matches the critical length spec of 140M, and is from DEXZON, a highly preferred brand with 100% SpecMatch.",
       "gt_status": "CORRECT"
     }
   ]

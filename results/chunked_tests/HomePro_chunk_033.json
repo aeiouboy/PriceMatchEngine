@@ -4,40 +4,13 @@
   "start_idx": 480,
   "end_idx": 492,
   "products_tested": 12,
-  "matches_found": 7,
-  "correct": 3,
-  "incorrect": 4,
-  "accuracy": 42.857142857142854,
-  "timestamp": "2025-12-03T10:29:23.362727",
+  "matches_found": 4,
+  "correct": 2,
+  "incorrect": 2,
+  "gt_missing": 0,
+  "accuracy": 50.0,
+  "timestamp": "2025-12-03T16:37:22.607717",
   "matches": [
-    {
-      "chunk": 33,
-      "source_idx": 480,
-      "source_name": "จักรยานเด็ก GIANT KINGKONG รุ่น KD2021BK ขนาด 20 นิ้ว สีดำ",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60374209",
-      "target_name": "จักรยานเด็ก 20 นิ้ว QITONG TN24Q22 สีชมพู",
-      "target_brand": "QITONG",
-      "target_url": "https://www.homepro.co.th/p/1285365",
-      "expected_url": "https://www.homepro.co.th/p/1188025",
-      "confidence": 90,
-      "reason": "The candidate is a children's bicycle with the same size (20 inch) and product type, making it a strong equivalent.",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 33,
-      "source_idx": 484,
-      "source_name": "แปรงทาแชล็คด้ามพลาสติก GIANT KINGKONG รุ่น BPB11 ขนาด 2 นิ้ว สีน้ำตาล",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60342279",
-      "target_name": "แปรงทาวานิช MATALL 2 นิ้ว",
-      "target_brand": "MATALL",
-      "target_url": "https://www.homepro.co.th/p/1185567",
-      "expected_url": "https://www.homepro.co.th/p/1234359",
-      "confidence": 85,
-      "reason": "Candidate is a varnish brush with the correct size and a preferred brand, making it the closest functional equivalent to a shellac brush among the options.",
-      "gt_status": "INCORRECT"
-    },
     {
       "chunk": 33,
       "source_idx": 485,
@@ -49,7 +22,7 @@
       "target_url": "https://www.homepro.co.th/p/1150070",
       "expected_url": "https://www.homepro.co.th/p/1102787",
       "confidence": 75,
-      "reason": "The candidate has the highest SpecMatch% among preferred brands and matches the critical '5 tiers' specification, dimensions are within 10% tolerance, and product type is 'drawer cabinet', which is a subtype of 'cabinet'.",
+      "reason": "Candidate 4 is from the most preferred brand (STACKO), has an exact match on tiers and a close match on dimensions (58.5x41 vs 63x40) and length (109CM vs 112CM), and the product types are both cabinets.",
       "gt_status": "INCORRECT"
     },
     {
@@ -62,22 +35,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1165025",
       "expected_url": "https://www.homepro.co.th/p/1165025",
-      "confidence": 85,
-      "reason": "The candidate is the same product type (tool set) and from the top preferred brand MATALL, with a high spec match percentage of 70% based on item count, which is a close match to the source product's 61 pieces.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 33,
-      "source_idx": 489,
-      "source_name": "สกรูปลายสว่านหัวเรียบ (เกลียวหุน) 8 x 2 1/2 นิ้ว GIANT KINGKONG รุ่น SDF-8212 (แพ็ก 100 ตัว)",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60305626",
-      "target_name": "สกรูปลายสว่าน TF DEXZON 8x2-1/2 นิ้ว 100 ชิ้น",
-      "target_brand": "DEXZON",
-      "target_url": "https://www.homepro.co.th/p/1184365",
-      "expected_url": "https://www.homepro.co.th/p/1184365",
-      "confidence": 95,
-      "reason": "The candidate is a self-drilling screw from the top preferred brand DEXZON with an exact 100% spec match in dimensions (8x2 1/2 inch).",
+      "confidence": 75,
+      "reason": "The candidate 'ชุดเครื่องมือช่าง MATALL 62 ชิ้น/ชุด' is a tool set, matching the product type of the source 'tool kit'. It is from a PREFERRED brand (MATALL) and has a high SpecMatch (70%) due to a similar pack count (62 pcs vs 61 pcs).",
       "gt_status": "CORRECT"
     },
     {
@@ -91,7 +50,7 @@
       "target_url": "https://www.homepro.co.th/p/195633",
       "expected_url": "https://www.homepro.co.th/p/195633",
       "confidence": 100,
-      "reason": "Candidate 0 is the exact product type and has 100% spec match with the same dimensions and length, and is from a preferred brand (PACK IN).",
+      "reason": "The candidate is the same product type (bubble wrap) and has 100% spec match (dimensions, length), and its brand 'PACK IN' is a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -100,12 +59,12 @@
       "source_name": "ประตูภายใน UPVC พร้อมวงกบ KASSA รุ่น BT-002 ขนาด 70 x 200 ซม. สีขาว (ไม่เจาะลูกบิด)",
       "source_brand": "KASSA",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60392591",
-      "target_name": "ประตู UPVC ASARA G925 ดอกซากุระ 70x200 ซม. สีขาว พร้อมวงกบ ไม่เจาะลูกบิด",
-      "target_brand": "ASARA",
-      "target_url": "https://www.homepro.co.th/p/1157824",
+      "target_name": "ประตูห้องน้ำ UPVC ECO-DOOR PG2 70X200 ซม. สีขาว เจาะลูกบิด",
+      "target_brand": "ECO-DOOR",
+      "target_url": "https://www.homepro.co.th/p/1200647",
       "expected_url": "https://www.homepro.co.th/p/1093233",
-      "confidence": 89,
-      "reason": "The candidate has the correct product type (UPVC door with frame, not drilled for knob) and matches the dimensions exactly.",
+      "confidence": 85,
+      "reason": "The candidate is a UPVC door with matching dimensions (70x200cm), although it specifies 'bathroom' and 'เจาะลูกบิด' (with knob hole) while the source is 'ไม่เจาะลูกบิด' (without knob hole).",
       "gt_status": "INCORRECT"
     }
   ]

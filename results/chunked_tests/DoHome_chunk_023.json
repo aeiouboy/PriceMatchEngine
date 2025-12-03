@@ -4,12 +4,27 @@
   "start_idx": 330,
   "end_idx": 339,
   "products_tested": 9,
-  "matches_found": 3,
-  "correct": 1,
+  "matches_found": 4,
+  "correct": 2,
   "incorrect": 2,
-  "accuracy": 33.33333333333333,
-  "timestamp": "2025-12-03T10:52:44.720470",
+  "gt_missing": 0,
+  "accuracy": 50.0,
+  "timestamp": "2025-12-03T14:46:00.605660",
   "matches": [
+    {
+      "chunk": 23,
+      "source_idx": 332,
+      "source_name": "แอลโบลท์เกลียวหุน 5/8 นิ้ว x 400 มม. GIANT KINGKONG รุ่น LB5840 (แพ็ก 1 ชุด)",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60398206",
+      "target_name": "สกรูตัวแอล 5/8 นิ้ว x 40 ซม. | NASH",
+      "target_brand": "NASH",
+      "target_url": "https://www.dohome.co.th/th/l-type-screw-5-8-inch-x-40-cm-10202381.html",
+      "expected_url": "https://www.dohome.co.th/th/l-type-screw-5-8-inch-x-40-cm-10202381.html",
+      "confidence": 95,
+      "reason": "Candidate 2 is an L-screw of the same size (5/8 inch) and similar length (40cm vs 400mm) from a preferred brand, making it the best equivalent.",
+      "gt_status": "CORRECT"
+    },
     {
       "chunk": 23,
       "source_idx": 333,
@@ -20,8 +35,8 @@
       "target_brand": "DE'COS",
       "target_url": "https://www.dohome.co.th/th/stretch-film-15-micron-300-m-clear-10236866.html",
       "expected_url": "https://www.dohome.co.th/th/stretch-film-15-micron-300-m-clear-10236866.html",
-      "confidence": 75,
-      "reason": "Candidate is the same product type (ฟิล์มยืดพันพาเลท) with matching length and preferred brand.",
+      "confidence": 70,
+      "reason": "The candidate has the exact matching product type (stretch film) and length (300M) and is from a preferred brand (DE'COS).",
       "gt_status": "CORRECT"
     },
     {
@@ -35,7 +50,7 @@
       "target_url": "https://www.dohome.co.th/th/finext-ceiling-fan-48-inch-no-f348-wh-wc-10203272.html",
       "expected_url": "https://www.dohome.co.th/th/lucky-misu-ceiling-fan-56-inch-black-10306779.html",
       "confidence": 75,
-      "reason": "The candidate is a ceiling fan with a preferred brand (FINEXT) and has a similar product type, although the size is smaller (48 inches vs 56 inches).",
+      "reason": "Candidate 13 is the only ceiling fan among all candidates and is a preferred brand (FINEXT), although the size is slightly different (48 inch vs 56 inch).",
       "gt_status": "INCORRECT"
     },
     {
@@ -48,8 +63,8 @@
       "target_brand": "JCP",
       "target_url": "https://www.dohome.co.th/th/jcp-plastic-rack-4-layers-no-5974-10309925.html",
       "expected_url": "https://www.dohome.co.th/th/4-tier-square-basket-shelf-no-bk-135-10395719.html",
-      "confidence": 70,
-      "reason": "Candidate 0 is a plastic shelf with 4 tiers, matching the critical product type and tier count of the source, and is from a moderately preferred brand (JCP).",
+      "confidence": 60,
+      "reason": "The candidate is a plastic shelf with 4 tiers, matching the source product's type and tier count, and has a preferred brand of JCP with the highest spec match among relevant alternatives.",
       "gt_status": "INCORRECT"
     }
   ]

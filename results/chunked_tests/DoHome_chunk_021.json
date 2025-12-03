@@ -4,11 +4,12 @@
   "start_idx": 300,
   "end_idx": 315,
   "products_tested": 15,
-  "matches_found": 9,
-  "correct": 6,
-  "incorrect": 3,
-  "accuracy": 66.66666666666666,
-  "timestamp": "2025-12-03T10:50:56.058438",
+  "matches_found": 8,
+  "correct": 5,
+  "incorrect": 2,
+  "gt_missing": 1,
+  "accuracy": 71.42857142857143,
+  "timestamp": "2025-12-03T14:44:10.459209",
   "matches": [
     {
       "chunk": 21,
@@ -21,7 +22,7 @@
       "target_url": "https://www.dohome.co.th/th/nash-paint-roller4-inch-no-rts-004-10185189.html",
       "expected_url": "https://www.dohome.co.th/th/nash-paint-roller4-inch-no-rts-004-10185189.html",
       "confidence": 95,
-      "reason": "Candidate 1 (NASH) is a paint roller of the same size and type with a preferred brand and 100% spec match.",
+      "reason": "The candidate is a preferred brand (NASH) paint roller of the same size and type, with a 100% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -35,7 +36,7 @@
       "target_url": "https://www.dohome.co.th/th/jcj-dish-drying-rack-storage-box-set-no-no-2400-white-10318971.html",
       "expected_url": "https://www.dohome.co.th/th/jcj-dish-drying-rack-storage-box-set-no-no-2400-white-10318971.html",
       "confidence": 75,
-      "reason": "Candidate 10 is the same product type (dish rack), is a preferred brand (DECOS), and has a matching model number (NO.2400 vs JCJ-2400, which are similar for 'model' spec).",
+      "reason": "Candidate 11 is a DECOS brand dish drying rack, which is a preferred brand and the correct product type. Although the SpecMatch is 0%, the model number NO.2400 is a close match to JCJ-2400 from the source product.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,22 +50,8 @@
       "target_url": "https://www.dohome.co.th/th/colt-lite-hinges-stainless-steel-4x3-inches-model-747-10341631.html",
       "expected_url": "https://www.dohome.co.th/th/nash-stainless-steel-hinges-268ss-10220072.html",
       "confidence": 85,
-      "reason": "Candidate 0 is a door hinge with identical dimensions and pack count to the source product, and a high spec match. Candidate 1 also matches but is more expensive. Other candidates have incorrect product types.",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 21,
-      "source_idx": 304,
-      "source_name": "เครื่องซีลปากถุง GIANT KINGKONG รุ่น PFS-300I ขนาด 12 นิ้ว 320 วัตต์",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60326461",
-      "target_name": "เครื่องรีดปากถุง อลูมิเนียม 12 นิ้ว รุ่น PCS300A",
-      "target_brand": "MEGALEC",
-      "target_url": "https://www.dohome.co.th/th/aluminum-bag-rolling-machine-12-inches-no-pcs300a-10302488.html",
-      "expected_url": "https://www.dohome.co.th/th/aluminum-bag-rolling-machine-12-inches-no-pcs300a-10302488.html",
-      "confidence": 90,
-      "reason": "Candidate is the same product type 'bag sealer' and has the highest SpecMatch at 44% with matching size_inch (12 inch).",
-      "gt_status": "CORRECT"
+      "reason": "The candidate is a door hinge with the exact same dimensions (4x3 inches) and pack count (3 pieces) as the source, achieving a high SpecMatch of 70%.",
+      "gt_status": "GT_MISSING"
     },
     {
       "chunk": 21,
@@ -76,8 +63,8 @@
       "target_brand": "FINEXT",
       "target_url": "https://www.dohome.co.th/th/finext-ceiling-fan-48-inch-no-f348-wh-wc-10203272.html",
       "expected_url": "https://www.dohome.co.th/th/finext-ceiling-fan-48-inch-no-f348-wh-wc-10203272.html",
-      "confidence": 100,
-      "reason": "The candidate is a ceiling fan with matching size (48 inch) and is from a preferred brand (FINEXT) with 100% spec match.",
+      "confidence": 95,
+      "reason": "The candidate is a ceiling fan with a 48-inch size, matching the source product exactly. It is also from a preferred brand, FINEXT.",
       "gt_status": "CORRECT"
     },
     {
@@ -90,8 +77,8 @@
       "target_brand": "DECOS",
       "target_url": "https://www.dohome.co.th/th/decos-1-bulb-outdoor-wall-lamp-square-shape-e27-socket-model-gris-grey-10417411.html",
       "expected_url": "https://www.dohome.co.th/th/decos-outdoor-wall-lamp-pp-cylinder-1-bulb-2039-black-10384418.html",
-      "confidence": 75,
-      "reason": "The candidate has the highest spec match (63%), is the correct product type (wall lamp), and is from a preferred brand (DECOS PREFERRED#2). It also matches the E27x1 socket.",
+      "confidence": 65,
+      "reason": "The candidate is a wall lamp with the same E27x1 socket and is from a preferred brand (DECOS), with the highest SpecMatch% among available options.",
       "gt_status": "INCORRECT"
     },
     {
@@ -105,7 +92,7 @@
       "target_url": "https://www.dohome.co.th/th/whiz-floor-cleaner-5200-ml-pink-10160079.html",
       "expected_url": "https://www.dohome.co.th/th/whiz-floor-cleaner-5200-ml-pink-10160079.html",
       "confidence": 95,
-      "reason": "The candidate is a floor cleaner with the exact same volume (5200 ML) and a very similar price point, indicating a strong specification match, despite not being a preferred brand.",
+      "reason": "The candidate is a floor cleaner with the exact same volume as the source product, and a high SpecMatch% at a slightly lower price. Although not a preferred brand, it's the closest spec match for now.",
       "gt_status": "CORRECT"
     },
     {
@@ -119,7 +106,7 @@
       "target_url": "https://www.dohome.co.th/th/nash-traffic-cones-70-cm-no7091-10234547.html",
       "expected_url": "https://www.dohome.co.th/th/nash-traffic-cones-70-cm-no7091-10234547.html",
       "confidence": 95,
-      "reason": "The candidate is a traffic cone from the preferred brand NASH, matching the length, and has a 100% spec match.",
+      "reason": "The candidate is a NASH traffic cone of the same length (70 cm), matching the product type and a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -128,12 +115,12 @@
       "source_name": "ไม้บัวล่าง KASSA WOODLOOK รุ่น 903-0896T ขนาด 1.2 x 290 x 9 ซม. สีไลท์โอ๊ก",
       "source_brand": "KASSA",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60311777",
-      "target_name": "FINEXT ไม้บัวล่างเอทิลีน 3 นิ้ว x 2.9 เมตร รุ่น JC13-W1",
+      "target_name": "FINEXT ไม้บัวล่างเอทิลีน 4 นิ้ว x 2.9 เมตร รุ่น JC157-W1",
       "target_brand": "FINEXT",
-      "target_url": "https://www.dohome.co.th/th/finext-under-cornice-wood-ethylene-3-inchx2-9m-no-jc13-w1-10185896.html",
+      "target_url": "https://www.dohome.co.th/th/finext-under-cornice-wood-ethylene-4-inchx2-9m-no-jc157-w1-10185905.html",
       "expected_url": "https://www.dohome.co.th/th/finext-under-cornice-wood-ethylene-4-inchx2-9m-no-jc422-730-10223048.html",
-      "confidence": 80,
-      "reason": "Candidate 1 is the correct product type (baseboard molding) and is from the preferred brand FINEXT, despite a low SpecMatch% due to missing detailed spec extraction for subtle differences.",
+      "confidence": 65,
+      "reason": "The candidate has a matching product type (baseboard molding) and is from a preferred brand (FINEXT). While the numerical specs differ, it's the closest available alternative given the strict product type matching rule.",
       "gt_status": "INCORRECT"
     }
   ]

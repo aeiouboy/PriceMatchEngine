@@ -4,40 +4,13 @@
   "start_idx": 120,
   "end_idx": 135,
   "products_tested": 15,
-  "matches_found": 6,
-  "correct": 4,
+  "matches_found": 5,
+  "correct": 3,
   "incorrect": 2,
-  "accuracy": 66.66666666666666,
-  "timestamp": "2025-12-03T12:07:43.837433",
+  "gt_missing": 0,
+  "accuracy": 60.0,
+  "timestamp": "2025-12-03T16:47:28.020695",
   "matches": [
-    {
-      "chunk": 9,
-      "source_idx": 120,
-      "source_name": "โคมไฟหัวเสาภายนอก E27x1 LUZINO RARE HOUSE รุ่น 0288-PF-B(BK) สีดำ",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60272336",
-      "target_name": "ไฟหัวเสา CARINI C036/250 สีทองรมดำ",
-      "target_brand": "CARINI",
-      "target_url": "https://www.homepro.co.th/p/1004031",
-      "expected_url": "https://www.homepro.co.th/p/1032598",
-      "confidence": 60,
-      "reason": "The candidate has a very high spec match (40%) and is from the most preferred brand (CARINI), with the correct product type (POLE_LAMP).",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 9,
-      "source_idx": 121,
-      "source_name": "ลังโปร่งทรงเตี้ย พร้อมหูจับ KASSA HOME รุ่น STW-DD สีดำ",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60251504",
-      "target_name": "ตะกร้าผ้าเหลี่ยมเตี้ย PLIM SAAN SIZE S สีน้ำตาล",
-      "target_brand": "PLIM",
-      "target_url": "https://www.homepro.co.th/p/1238135",
-      "expected_url": "https://www.homepro.co.th/p/1012200",
-      "confidence": 70,
-      "reason": "The candidate has the correct product type, a preferred brand, and the highest spec match among valid options.",
-      "gt_status": "INCORRECT"
-    },
     {
       "chunk": 9,
       "source_idx": 127,
@@ -49,8 +22,22 @@
       "target_url": "https://www.homepro.co.th/p/1173468",
       "expected_url": "https://www.homepro.co.th/p/1173468",
       "confidence": 95,
-      "reason": "The candidate is a preferred brand (SPRING) with 100% spec match, exact product type (canvas is a type of tarp), and is a good price alternative.",
+      "reason": "Candidate 0 is a preferred brand (SPRING) with 100% spec match for size and is a 'canvas roll', which is a very close product type to 'plastic sheet'.",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 9,
+      "source_idx": 128,
+      "source_name": "ชุดไม้กวาดพร้อมที่โกยผงด้ามสแตนเลสแบบยาว LIAO รุ่น C130024 ขนาด 85 ซม. สีแดง - เทา",
+      "source_brand": "LIAO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60284486",
+      "target_name": "ชุดไม้กวาดพร้อมที่โกยผง ด้ามสเตนเลส ACCO XG-2066 12 นิ้ว สีครีม",
+      "target_brand": "ACCO",
+      "target_url": "https://www.homepro.co.th/p/1016460",
+      "expected_url": "https://www.homepro.co.th/p/1083202",
+      "confidence": 70,
+      "reason": "The candidate is a broom and dustpan set (matching product type) and is from a preferred brand (ACCO), although the size spec does not directly match the source's length.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 9,
@@ -62,8 +49,8 @@
       "target_brand": "CARINI",
       "target_url": "https://www.homepro.co.th/p/1170703",
       "expected_url": "https://www.homepro.co.th/p/1170703",
-      "confidence": 85,
-      "reason": "Candidate 0 is a CARINI brand (preferred #1) and a wall lamp, matching the critical product type and having the highest spec match among wall lamps.",
+      "confidence": 75,
+      "reason": "The candidate is a PREFERRED brand (CARINI), matches the critical PRODUCT TYPE 'wall lamp', and has a high SpecMatch% of 40% with similar lamp_type.",
       "gt_status": "CORRECT"
     },
     {
@@ -77,22 +64,22 @@
       "target_url": "https://www.homepro.co.th/p/242081",
       "expected_url": "https://www.homepro.co.th/p/242081",
       "confidence": 95,
-      "reason": "The candidate is a 'trash can', which perfectly matches the 'dustbin' type of the source product, and has 100% spec match for volume.",
+      "reason": "The candidate is also a dustbin (trash can) with the exact same volume (9 L), making it an excellent functional match. While not a preferred brand, the spec match is perfect.",
       "gt_status": "CORRECT"
     },
     {
       "chunk": 9,
-      "source_idx": 133,
-      "source_name": "แปรงทาแชล็คด้ามพลาสติก GIANT KINGKONG รุ่น BPB10 ขนาด 1.5 นิ้ว สีน้ำตาล",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60342261",
-      "target_name": "แปรงทาสีด้ามพลาสติกขนสังคราะห์ดำ MATALL 1.5 นิ้ว",
-      "target_brand": "MATALL",
-      "target_url": "https://www.homepro.co.th/p/1234375",
-      "expected_url": "https://www.homepro.co.th/p/1234375",
+      "source_idx": 132,
+      "source_name": "ตาข่ายกรองแสง 80% (ม้วน) FONTE รุ่น SH-11 (ทอ 1 เข็ม) ขนาด 2 x 100 เมตร สีดำ",
+      "source_brand": "FONTE",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60215930",
+      "target_name": "สแลนม้วนกรองแสง 50 เปอร์เซ็นต์ ทอ 1 เข็ม GARTENE 2 ม.X100 หลา สีดำ",
+      "target_brand": "GARTENE",
+      "target_url": "https://www.homepro.co.th/p/1137193",
+      "expected_url": "https://www.homepro.co.th/p/1137659",
       "confidence": 75,
-      "reason": "Candidate is a paint brush (similar to shellac brush) from a preferred brand (MATALL) with 100% spec match for size.",
-      "gt_status": "CORRECT"
+      "reason": "Candidate 25 is a 'shade net' from a preferred brand (GARTENE) and has partially matching dimensions and 'ทอ 1 เข็ม' feature, though the length is different.",
+      "gt_status": "INCORRECT"
     }
   ]
 }

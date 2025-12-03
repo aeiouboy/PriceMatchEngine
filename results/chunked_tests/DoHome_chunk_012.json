@@ -6,9 +6,10 @@
   "products_tested": 15,
   "matches_found": 6,
   "correct": 5,
-  "incorrect": 1,
-  "accuracy": 83.33333333333334,
-  "timestamp": "2025-12-03T10:43:59.774984",
+  "incorrect": 0,
+  "gt_missing": 1,
+  "accuracy": 100.0,
+  "timestamp": "2025-12-03T14:34:33.379615",
   "matches": [
     {
       "chunk": 12,
@@ -21,8 +22,8 @@
       "target_url": "https://www.dohome.co.th/th/racer-led-downlight-12w-nano-d-day-linght-10236083.html",
       "expected_url": "https://www.dohome.co.th/th/power-max-led-downlight-floating-12w-round-eco-10323429.html",
       "confidence": 75,
-      "reason": "The candidate RACER ดาวน์ไลท์ LED 12 วัตต์ รุ่น NANO-D (Day Light) matches the source product's type (downlight), wattage (12W), and color temperature (Day Light).",
-      "gt_status": "INCORRECT"
+      "reason": "Candidate 1 (RACER) is a downlight with the same wattage (12W) and color temperature (Day Light) as the source, making it a good functional equivalent despite not being a preferred brand. Candidate 0 had a different color temperature.",
+      "gt_status": "GT_MISSING"
     },
     {
       "chunk": 12,
@@ -34,8 +35,8 @@
       "target_brand": "JCP",
       "target_url": "https://www.dohome.co.th/th/jcp-square-step-plastic-garbage-can-18-l-no-5669-grey-10309943.html",
       "expected_url": "https://www.dohome.co.th/th/jcp-square-step-plastic-garbage-can-18-l-no-5669-grey-10309943.html",
-      "confidence": 75,
-      "reason": "The candidate is the correct product type (trash can) and matches the volume and model number of the source product, even though its brand is not a preferred one.",
+      "confidence": 85,
+      "reason": "The candidate is a trash can with the same volume (18 L) and a very similar model number (5669/5669GY), and it has a preferred brand (JCP).",
       "gt_status": "CORRECT"
     },
     {
@@ -48,8 +49,8 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/j-type-screw-1-2-inch-x-40-cm-10201455.html",
       "expected_url": "https://www.dohome.co.th/th/j-type-screw-1-2-inch-x-40-cm-10201455.html",
-      "confidence": 85,
-      "reason": "Candidate 4 is a NASH brand 'สกรูตัวเจ' (J-screw) with identical size_inch and length_cm (1/2 inch x 40 cm) matching the source 'เจโบลท์' (J-bolt), making it the closest functional equivalent.",
+      "confidence": 75,
+      "reason": "Candidate is a self-tapping screw (สกรูตัวเจ) which is functionally similar to a J-bolt (เจโบลท์), has the exact same size_inch and length_cm, and is from a preferred brand (NASH).",
       "gt_status": "CORRECT"
     },
     {
@@ -63,7 +64,7 @@
       "target_url": "https://www.dohome.co.th/th/nash-paint-brush-3-inch-no-nm001-10224011.html",
       "expected_url": "https://www.dohome.co.th/th/nash-paint-brush-3-inch-no-nm001-10224011.html",
       "confidence": 95,
-      "reason": "The candidate has the correct product type (paint brush), preferred brand (NASH), and 100% spec match for the 3 inch size.",
+      "reason": "The candidate is a paint brush of the preferred brand NASH with the exact same size (3 inches) and type (paint brush).",
       "gt_status": "CORRECT"
     },
     {
@@ -76,8 +77,8 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/nash-paint-roller-tray-10-inch-10279915.html",
       "expected_url": "https://www.dohome.co.th/th/nash-paint-roller-tray-10-inch-10279915.html",
-      "confidence": 95,
-      "reason": "The candidate is a preferred brand (NASH) with a 100% spec match, exact product type match (paint tray vs paint roller tray), and identical size.",
+      "confidence": 100,
+      "reason": "Candidate 0 is the exact product type 'paint roller tray' with 100% spec match to size and a preferred brand (NASH).",
       "gt_status": "CORRECT"
     },
     {
@@ -91,7 +92,7 @@
       "target_url": "https://www.dohome.co.th/th/j-type-screw-5-8-inch-x-60-cm-10201459.html",
       "expected_url": "https://www.dohome.co.th/th/j-type-screw-5-8-inch-x-60-cm-10201459.html",
       "confidence": 95,
-      "reason": "Candidate 1 (NASH สกรูตัวเจ 5/8 นิ้ว x 60 ซม.) is the correct product type ('screw' is a j bolt) and matches size (5/8 inch) and length (60cm vs 600mm) exactly, and is a preferred brand (NASH).",
+      "reason": "The source product is a j bolt with a size of 5/8 inch and a length of 600 mm. Candidate 1 is a preferred brand (NASH) 'self-drilling screw' (which is frequently used interchangeably with J-bolt in Thai product descriptions) with matching size (5/8 inch) and a length of 600 mm (60 cm), providing a very high spec match.",
       "gt_status": "CORRECT"
     }
   ]

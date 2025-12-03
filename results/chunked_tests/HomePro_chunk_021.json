@@ -4,11 +4,12 @@
   "start_idx": 300,
   "end_idx": 315,
   "products_tested": 15,
-  "matches_found": 6,
-  "correct": 4,
+  "matches_found": 4,
+  "correct": 2,
   "incorrect": 2,
-  "accuracy": 66.66666666666666,
-  "timestamp": "2025-12-03T10:19:47.940892",
+  "gt_missing": 0,
+  "accuracy": 50.0,
+  "timestamp": "2025-12-03T16:59:35.378891",
   "matches": [
     {
       "chunk": 21,
@@ -21,7 +22,7 @@
       "target_url": "https://www.homepro.co.th/p/183697",
       "expected_url": "https://www.homepro.co.th/p/192205",
       "confidence": 95,
-      "reason": "The candidate is a dish rack with 2 tiers, matching the critical product type and 'tiers' spec, and is from a preferred brand (KECH).",
+      "reason": "Candidate 0 is a KECH (PREFERRED#3) 2-tier dish rack with 100% spec match, making it the best equivalent for the KASSA HOME 2-tier dish rack.",
       "gt_status": "INCORRECT"
     },
     {
@@ -34,37 +35,23 @@
       "target_brand": "PACK IN",
       "target_url": "https://www.homepro.co.th/p/194751",
       "expected_url": "https://www.homepro.co.th/p/194751",
-      "confidence": 85,
-      "reason": "The candidate is the same product type (box), has a preferred brand (PACK IN), and a high spec match for dimensions and length.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 21,
-      "source_idx": 311,
-      "source_name": "ครกหิน 5.2 นิ้ว พร้อมสาก KASSA HOME รุ่น 5RYQ1308-1 สีเทาเข้ม",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60395549",
-      "target_name": "ครกหินพร้อมสาก COLOR KIT 6 นิ้ว",
-      "target_brand": "COLOR KIT",
-      "target_url": "https://www.homepro.co.th/p/1170031",
-      "expected_url": "https://www.homepro.co.th/p/1170031",
-      "confidence": 75,
-      "reason": "The candidate has the correct product type (mortar and pestle) and a high match in preferred brand ranking, although the size is slightly different (6 inch vs 5.2 inch).",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 21,
-      "source_idx": 312,
-      "source_name": "โหลแก้วทรงกลมฝาสปริง KASSA HOME รุ่น 6504 ความจุ 1,000 มล. สีใส",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60346068",
-      "target_name": "ขวดโหลแก้วกลม ไซส์ L ฝาสปริงสีขาว ขอบยางสีส้ม",
-      "target_brand": "KECH",
-      "target_url": "https://www.homepro.co.th/p/242882",
-      "expected_url": "https://www.homepro.co.th/p/242882",
       "confidence": 70,
-      "reason": "Candidate 6 is a glass jar like the source, and is from a preferred brand (KECH). Although it lacks detailed spec match, it is the only candidate that matches the product type.",
+      "reason": "The candidate is a cardboard box with matching dimensions and length, and is from a preferred brand (PACK IN).",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 21,
+      "source_idx": 310,
+      "source_name": "โคมไฟกิ่งภายนอก E27x1 LUZINO ROSTELLUM รุ่น 0316-WD(BK) สีดำ",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60272317",
+      "target_name": "ไฟกิ่งภายนอก CARINI BO-G3101/2 สีดำ",
+      "target_brand": "CARINI",
+      "target_url": "https://www.homepro.co.th/p/1003063",
+      "expected_url": "https://www.homepro.co.th/p/1200198",
+      "confidence": 80,
+      "reason": "The candidate has the exact same product type (outdoor wall lamp) and is from a preferred brand (CARINI). While the SpecMatch is 0%, the product type and brand preference make it the best available equivalent given the limited spec details on the candidate.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 21,
@@ -76,23 +63,9 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1167023",
       "expected_url": "https://www.homepro.co.th/p/1167023",
-      "confidence": 95,
-      "reason": "The candidate is from the top preferred brand 'MATALL', has an exact match on size (1.5 inch), and the product type 'putty knife' is a very close equivalent to 'steel trowel' in this context.",
+      "confidence": 100,
+      "reason": "Candidate 0 is the exact same product type (steel trowel) with a 100% spec match on size and is from the highest preferred brand MATALL.",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 21,
-      "source_idx": 314,
-      "source_name": "โคมไฟหัวเสาภายนอก E27x1 LUZINO รุ่น JEWEL P10(WH) สีขาว",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60252744",
-      "target_name": "ไฟหัวเสา CARINI HK-K2013 สีขาว/ดำ",
-      "target_brand": "CARINI",
-      "target_url": "https://www.homepro.co.th/p/1262899",
-      "expected_url": "https://www.homepro.co.th/p/151407",
-      "confidence": 85,
-      "reason": "Candidate 0 is a CARINI brand, which is the most preferred brand, and has the same product type (POLE_LAMP) with 40% spec match.",
-      "gt_status": "INCORRECT"
     }
   ]
 }

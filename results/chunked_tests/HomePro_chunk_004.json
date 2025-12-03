@@ -7,8 +7,9 @@
   "matches_found": 6,
   "correct": 4,
   "incorrect": 2,
+  "gt_missing": 0,
   "accuracy": 66.66666666666666,
-  "timestamp": "2025-12-03T12:02:34.350556",
+  "timestamp": "2025-12-03T16:43:26.849363",
   "matches": [
     {
       "chunk": 4,
@@ -20,8 +21,8 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/1235138",
       "expected_url": "https://www.homepro.co.th/p/1235138",
-      "confidence": 70,
-      "reason": "The candidate is the same product type (cable management box), made by a preferred brand (STACKO), and has a 41% spec match, which is the highest among all candidates for this critical product type.",
+      "confidence": 75,
+      "reason": "The candidate is from the highest preferred brand (STACKO), has a relevant product type (storage box, which often serves as a cable organizer), and a reasonable spec match for dimensions.",
       "gt_status": "CORRECT"
     },
     {
@@ -34,8 +35,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1247818",
       "expected_url": "https://www.homepro.co.th/p/1245097",
-      "confidence": 75,
-      "reason": "The candidate has the correct PRODUCT TYPE (grass trimmer is a type of lawn mower) and a preferred brand (MATALL) with a reasonable spec match percentage.",
+      "confidence": 70,
+      "reason": "The candidate is a MATALL grass trimmer, matching the preferred brand and product type, although it is a brush cutter subtype.",
       "gt_status": "INCORRECT"
     },
     {
@@ -48,8 +49,8 @@
       "target_brand": "DEXZON",
       "target_url": "https://www.homepro.co.th/p/1251658",
       "expected_url": "https://www.homepro.co.th/p/1144449",
-      "confidence": 90,
-      "reason": "Candidate 0 is a DEXZON brand (preferred #1) scaffolding castor with brake, matching the critical product type and the 'HAS_BRAKE' spec of the source, and a similar size (8 inch vs 16 cm).",
+      "confidence": 85,
+      "reason": "Candidate is the same product type (scaffold caster), has the 'HAS_BRAKE' spec, and is from the highest preferred brand DEXZON, despite a size difference within acceptable range. Other candidates do not match type.",
       "gt_status": "INCORRECT"
     },
     {
@@ -63,7 +64,7 @@
       "target_url": "https://www.homepro.co.th/p/1092152",
       "expected_url": "https://www.homepro.co.th/p/1092152",
       "confidence": 85,
-      "reason": "The candidate has a PREFERRED brand (TARA), the exact product type 'tile leveler pliers', and is a highly relevant alternative to the source product.",
+      "reason": "The candidate is the same product type (tile leveling pliers) and is from a preferred brand (TARA), even though its key specs have no direct overlap with the source at this time. It doesn't have dimensional specs for comparison, and other options diverge significantly in type.",
       "gt_status": "CORRECT"
     },
     {
@@ -76,8 +77,8 @@
       "target_brand": "SB FURNITURE",
       "target_url": "https://www.homepro.co.th/p/1223708",
       "expected_url": "https://www.homepro.co.th/p/1223708",
-      "confidence": 90,
-      "reason": "The candidate is a dining chair, matching the critical product type, and is from a preferred brand (SB FURNITURE) with a high spec match percentage.",
+      "confidence": 70,
+      "reason": "The candidate has the exact product type 'dining chair' and is from a preferred brand (SB FURNITURE), matching the source product closely in function despite differing models.",
       "gt_status": "CORRECT"
     },
     {
@@ -91,7 +92,7 @@
       "target_url": "https://www.homepro.co.th/p/1028878",
       "expected_url": "https://www.homepro.co.th/p/1028878",
       "confidence": 95,
-      "reason": "The candidate is a MATALL brand trolley, which is a preferred brand, and it is a 4-wheel trolley with a matching volume of 150 KG. The product type 'trolley' perfectly matches the source's 'plastic trolley'.",
+      "reason": "The candidate is a hand trolley from a preferred brand (MATALL, PREFERRED#2) with identical volume (150 KG) and perfect product type match.",
       "gt_status": "CORRECT"
     }
   ]

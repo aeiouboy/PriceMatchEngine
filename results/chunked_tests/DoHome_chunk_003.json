@@ -4,12 +4,41 @@
   "start_idx": 30,
   "end_idx": 45,
   "products_tested": 15,
-  "matches_found": 5,
-  "correct": 4,
-  "incorrect": 1,
-  "accuracy": 80.0,
-  "timestamp": "2025-12-03T10:37:27.987781",
+  "matches_found": 7,
+  "correct": 5,
+  "incorrect": 0,
+  "gt_missing": 0,
+  "accuracy": 100.0,
+  "timestamp": "2025-12-03T14:24:18.022589",
   "matches": [
+    {
+      "chunk": 3,
+      "source_idx": 30,
+      "source_name": "ฟิล์มยืดพันพาเลท 20 ไมครอน GIANT KINGKONG รุ่น MH50-300-20 ขนาด 0.5 x 300 เมตร สีใส",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/product/60358587",
+      "target_name": "DECOS ฟิล์มยืดพันพาเลท 20 ไมคอน ยาว 300 เมตร สีใส",
+      "target_brand": "DECOS",
+      "target_url": "https://www.dohome.co.th/th/stretch-film-20-micron-300-m-clear-10236868.html",
+      "expected_url": "",
+      "confidence": 90,
+      "reason": "The candidate has the highest SpecMatch%, is a preferred brand, and is the correct product type (stretch film) with matching length.",
+      "gt_status": "NO_GT"
+    },
+    {
+      "chunk": 3,
+      "source_idx": 33,
+      "source_name": "โคมไฟเสาสนาม E27x1 LUZINO รุ่น GD-ABZ11-E27-600 สีดำ - ใส",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/sku/60402140",
+      "target_name": "DECOS โคมไฟสนาม 60 ซม. อลูมิเนียม รุ่น WAFFLE สีดำ",
+      "target_brand": "DECOS",
+      "target_url": "https://www.dohome.co.th/th/decos-outdoor-lamp-60-cm-aluminum-model-waffle-black-10412789.html",
+      "expected_url": "",
+      "confidence": 70,
+      "reason": "The candidate is a garden light of a preferred brand (DECOS) but the spec match is low at 0% due to missing socket type.",
+      "gt_status": "NO_GT"
+    },
     {
       "chunk": 3,
       "source_idx": 35,
@@ -20,8 +49,8 @@
       "target_brand": "POWER MAX",
       "target_url": "https://www.dohome.co.th/th/powermax-track-light-2m-no-lumos-black-10400229.html",
       "expected_url": "https://www.dohome.co.th/th/powermax-track-light-2m-no-lumos-black-10400229.html",
-      "confidence": 75,
-      "reason": "Candidate is the correct product type (track light rail), has a preferred brand (POWER MAX), and a similar length specification although the specmatch is 0% when considering the provided spec string format, it is a conceptual match.",
+      "confidence": 95,
+      "reason": "The candidate has the correct product type, is from the preferred brand POWER MAX, and has a similar length (2m vs 200cm, which are equivalent).",
       "gt_status": "CORRECT"
     },
     {
@@ -34,8 +63,8 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/trolley-150-kg-10066707.html",
       "expected_url": "https://www.dohome.co.th/th/trolley-150-kg-10066707.html",
-      "confidence": 75,
-      "reason": "The candidate NASH trolley matches the product type and the critical 'volume' spec of 150 KG, and is a preferred brand.",
+      "confidence": 65,
+      "reason": "The candidate is a 'cart' which is a close match to 'flat cart' and shares the critical 'volume=150 KG' spec with the source product. It is also from the most preferred brand, NASH.",
       "gt_status": "CORRECT"
     },
     {
@@ -48,23 +77,9 @@
       "target_brand": "JCJ",
       "target_url": "https://www.dohome.co.th/th/jcj-square-plastic-box-70-l-no-5117-10365718.html",
       "expected_url": "https://www.dohome.co.th/th/jcj-square-plastic-box-70-l-no-5117-10365718.html",
-      "confidence": 75,
-      "reason": "The candidate is from a preferred brand, JCJ, and has a matching product type ('plastic box' vs 'storage box') and the exact same volume (70 L) and model number (5117). The price difference is modest (319 vs 258).",
+      "confidence": 100,
+      "reason": "The candidate is a preferred brand (JCJ), has the exact same volume (70 L), and the source product name mentions 'JCJ-5117' and the candidate model is '5117', indicating a precise model match. The product types also align as both are storage boxes.",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 3,
-      "source_idx": 40,
-      "source_name": "ไม้บัวล่าง KASSA WOODLOOK รุ่น 903-73461T ขนาด 1.2 x 290 x 9 ซม. สีคลาสสิกเกรย์",
-      "source_brand": "KASSA",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60311768",
-      "target_name": "FINEXT ไม้บัวล่างเอทิลีน 3 นิ้ว x 2.9 เมตร รุ่น JC13-W1",
-      "target_brand": "FINEXT",
-      "target_url": "https://www.dohome.co.th/th/finext-under-cornice-wood-ethylene-3-inchx2-9m-no-jc13-w1-10185896.html",
-      "expected_url": "https://www.dohome.co.th/th/finext-under-cornice-wood-ethylene-4-inchx2-9m-no-157-19cm-10310029.html",
-      "confidence": 70,
-      "reason": "Candidate 2 is the exact product type and from the most preferred brand FINEXT, but has mismatched sizing specs.",
-      "gt_status": "INCORRECT"
     },
     {
       "chunk": 3,
@@ -77,7 +92,21 @@
       "target_url": "https://www.dohome.co.th/th/sanki-aluminum-ladder-with-tray-6-steps-10391217.html",
       "expected_url": "https://www.dohome.co.th/th/sanki-aluminum-ladder-with-tray-6-steps-10391217.html",
       "confidence": 75,
-      "reason": "The candidate is a SANKI, a preferred brand, and has the closest spec match for 'steps' with 6 steps, and is the same product type (ladder).",
+      "reason": "Candidate 0 is the only 'ladder' type, from a preferred brand, and has a 31% spec match on 'steps'.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 3,
+      "source_idx": 43,
+      "source_name": "เข็มขัดนิรภัยเต็มตัว GIANT KINGKONG รุ่น SA-100 ขนาด 180 ซม. สีเขียว - เหลือง",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60211306",
+      "target_name": "NASH เข็มขัดเซฟตี้ รุ่น NP-787B",
+      "target_brand": "NASH",
+      "target_url": "https://www.dohome.co.th/th/nash-safety-belt-no-np-787b-10231061.html",
+      "expected_url": "https://www.dohome.co.th/th/nash-safety-belt-no-np-787b-10231061.html",
+      "confidence": 70,
+      "reason": "Candidate is a full body harness from a preferred brand, even though the specific model and length from the source product are not matched it's the closest option.",
       "gt_status": "CORRECT"
     }
   ]

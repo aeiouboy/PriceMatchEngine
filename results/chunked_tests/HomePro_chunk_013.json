@@ -4,26 +4,13 @@
   "start_idx": 180,
   "end_idx": 195,
   "products_tested": 15,
-  "matches_found": 8,
+  "matches_found": 7,
   "correct": 4,
-  "incorrect": 4,
-  "accuracy": 50.0,
-  "timestamp": "2025-12-03T12:21:34.271547",
+  "incorrect": 3,
+  "gt_missing": 0,
+  "accuracy": 57.14285714285714,
+  "timestamp": "2025-12-03T16:51:25.591760",
   "matches": [
-    {
-      "chunk": 13,
-      "source_idx": 180,
-      "source_name": "แปรงทาสีน้ำมันขนสัตว์ด้ามไม้ GIANT KINGKONG รุ่น PB-037-2 ขนาด 2 นิ้ว",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60271279",
-      "target_name": "แปรงทาสีน้ำมัน FONKEY 2 นิ้ว",
-      "target_brand": "FONKEY",
-      "target_url": "https://www.homepro.co.th/p/1158408",
-      "expected_url": "https://www.homepro.co.th/p/1158408",
-      "confidence": 85,
-      "reason": "Candidate 9 is an oil paint brush of the same size (2 inch) as the source, matching the critical product type and size specifications.",
-      "gt_status": "CORRECT"
-    },
     {
       "chunk": 13,
       "source_idx": 182,
@@ -35,7 +22,7 @@
       "target_url": "https://www.homepro.co.th/p/1115049",
       "expected_url": "https://www.homepro.co.th/p/1137997",
       "confidence": 95,
-      "reason": "Candidate 2 is the best match as it has 100% spec match, the exact product type 'waterproof box' and is within an acceptable price range, despite not being a preferred brand.",
+      "reason": "Candidate 2 is a 'waterproof box' with 100% spec match (dimensions, size_inch) and similar price, making it a strong equivalent despite not being a preferred brand.",
       "gt_status": "INCORRECT"
     },
     {
@@ -49,22 +36,22 @@
       "target_url": "https://www.homepro.co.th/p/1049741",
       "expected_url": "https://www.homepro.co.th/p/1049741",
       "confidence": 75,
-      "reason": "Candidate 15 is the only 'tool box' type product that matches the model number and is from the preferred brand MATALL, despite a low SpecMatch percentage due to the lack of explicit size and tier information in the candidate's specs.",
+      "reason": "Candidate is the correct product type (tool box) and is from a preferred brand (MATALL), with a matching model identifier (HL3042-P), despite a lower overall spec match percentage.",
       "gt_status": "CORRECT"
     },
     {
       "chunk": 13,
-      "source_idx": 186,
-      "source_name": "โต๊ะสนาม HDPE FONTE รุ่น SLA-78 ขนาด 78 x 78 ซม. สีเทา - ขาว",
-      "source_brand": "FONTE",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60334910",
-      "target_name": "โต๊ะอเนกประสงค์พับครึ่ง 3 ระดับ SPRING 120 ซม. สีเทา",
-      "target_brand": "SPRING",
-      "target_url": "https://www.homepro.co.th/p/1182198",
-      "expected_url": "https://www.homepro.co.th/p/1106548",
-      "confidence": 60,
-      "reason": "The candidate is a folding table, matching the critical product type. It is also from the preferred brand 'SPRING', although the dimensions are different (120 cm vs 78 cm) which reduces the spec match.",
-      "gt_status": "INCORRECT"
+      "source_idx": 187,
+      "source_name": "พรมอัดเรียบ 2 มม. (ตัดขายเป็นเมตร) GIANT KINGKONG รุ่น Green 02-25M หน้ากว้าง 2 เมตร สีเขียว",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60369966",
+      "target_name": "พรมอัดเรียบ (ตัดขายเป็นเมตร) HOME LIVING STYLE XW03 หน้ากว้าง 2 ม. สีเขียว",
+      "target_brand": "HOME LIVING STYLE",
+      "target_url": "https://www.homepro.co.th/p/1105473",
+      "expected_url": "https://www.homepro.co.th/p/1105473",
+      "confidence": 75,
+      "reason": "Candidate 1 is a carpet from a preferred brand (HOME LIVING STYLE) and has matching type 'carpet', but the length spec differs significantly (2M vs 25M).",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 13,
@@ -77,7 +64,7 @@
       "target_url": "https://www.homepro.co.th/p/1091371",
       "expected_url": "https://www.homepro.co.th/p/1091371",
       "confidence": 85,
-      "reason": "Candidate 3 is the only track light with a preferred brand (CARINI, PREFERRED#1) and has the highest relevant spec match among all track lights.",
+      "reason": "Candidate 1 is a track light with GU5.3 and CS14 identifiers, matching the source product type and some key specs, and from the top preferred brand CARINI. The SpecMatch of 21% is low but it's the closest functional equivalent.",
       "gt_status": "CORRECT"
     },
     {
@@ -90,8 +77,8 @@
       "target_brand": "PACK IN",
       "target_url": "https://www.homepro.co.th/p/1153132",
       "expected_url": "https://www.homepro.co.th/p/1153132",
-      "confidence": 75,
-      "reason": "Candidate 0 is the only packing tape and has a 50% spec match, making it the best available option, aligning with a preferred brand.",
+      "confidence": 90,
+      "reason": "Candidate 0 is a preferred brand (PACK IN) with a product type (opp tape) that is a direct equivalent to packing tape, and has the highest spec match (50%) among relevant candidates for length 'X 45'.",
       "gt_status": "CORRECT"
     },
     {
@@ -104,8 +91,8 @@
       "target_brand": "TEFAL",
       "target_url": "https://www.homepro.co.th/p/1169003",
       "expected_url": "https://www.homepro.co.th/p/1184683",
-      "confidence": 95,
-      "reason": "Candidate 4 is a 'saucepan' which is a very close product type to 'pot with lid', has the exact same critical length spec (18CM), and is the highest spec match after filtering by product type.",
+      "confidence": 75,
+      "reason": "The candidate has the correct product type (saucepan is a type of pot), exact matching length, but is not a preferred brand.",
       "gt_status": "INCORRECT"
     },
     {
@@ -119,7 +106,7 @@
       "target_url": "https://www.homepro.co.th/p/1178949",
       "expected_url": "https://www.homepro.co.th/p/1157496",
       "confidence": 95,
-      "reason": "Candidate 0 is a 'silicone gun' which is functionally equivalent to a 'caulking gun' and matches the critical size spec and is a preferred brand (DEXZON).",
+      "reason": "The candidate has a 9-inch size, is a 'silicone gun' which is a very close product type to 'caulking gun', and is from a preferred brand (DEXZON).",
       "gt_status": "INCORRECT"
     }
   ]

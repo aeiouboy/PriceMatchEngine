@@ -4,11 +4,12 @@
   "start_idx": 255,
   "end_idx": 270,
   "products_tested": 15,
-  "matches_found": 8,
-  "correct": 4,
-  "incorrect": 4,
-  "accuracy": 50.0,
-  "timestamp": "2025-12-03T10:17:02.102353",
+  "matches_found": 5,
+  "correct": 3,
+  "incorrect": 2,
+  "gt_missing": 0,
+  "accuracy": 60.0,
+  "timestamp": "2025-12-03T16:56:15.797506",
   "matches": [
     {
       "chunk": 18,
@@ -20,22 +21,8 @@
       "target_brand": "ME LIVING",
       "target_url": "https://www.homepro.co.th/p/1184078",
       "expected_url": "https://www.homepro.co.th/p/1184078",
-      "confidence": 85,
-      "reason": "Candidate 0 is the highest spec match at 63% and is a preferred brand (ME LIVING) as well as the correct product type (cabinet). The dimensions are very close (69x50 vs 70x50) and length is within 10% (85cm vs 82cm). Both are 2 tiers.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 18,
-      "source_idx": 257,
-      "source_name": "โคมไฟหัวเสาภายนอก E27 LUZINO รุ่น 0313-PFB BK สีดำ",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60370247",
-      "target_name": "โคมไฟหัวเสา CARINI 614F สีน้ำตาล",
-      "target_brand": "CARINI",
-      "target_url": "https://www.homepro.co.th/p/1200199",
-      "expected_url": "https://www.homepro.co.th/p/1200199",
-      "confidence": 75,
-      "reason": "The candidate has the highest spec match (47%) among preferred brands and is the correct product type ('POLE_LAMP' vs 'outdoor post light').",
+      "confidence": 90,
+      "reason": "The candidate is a ME LIVING brand cabinet (preferred brand) with a high spec match percentage (63%) for dimensions, length, and tiers, which are close to the source product's specs.",
       "gt_status": "CORRECT"
     },
     {
@@ -48,8 +35,8 @@
       "target_brand": "KECH",
       "target_url": "https://www.homepro.co.th/p/1170736",
       "expected_url": "https://www.homepro.co.th/p/1170736",
-      "confidence": 70,
-      "reason": "Candidate 4 is a preferred brand (KECH) and precisely matches the product type 'tissue box' with a 50% spec match, making it the best available equivalent despite the limited spec details.",
+      "confidence": 90,
+      "reason": "Candidate 4 is a tissue box from a preferred brand (KECH) and has a 50% spec match, making it the best available equivalent product.",
       "gt_status": "CORRECT"
     },
     {
@@ -63,22 +50,8 @@
       "target_url": "https://www.homepro.co.th/p/1227914",
       "expected_url": "https://www.homepro.co.th/p/1227914",
       "confidence": 100,
-      "reason": "The candidate is an artificial grass with identical dimensions (1x4 meters) and length of 4M, making it a 100% spec match to the source product.",
+      "reason": "The candidate is an artificial grass product with 100% spec match to the source, including dimensions and length.",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 18,
-      "source_idx": 261,
-      "source_name": "แปรงทาสีขนสังเคราะห์ด้ามพลาสติก GIANT KINGKONG รุ่น FD03 ขนาด 2.0 นิ้ว",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60245644",
-      "target_name": "แปรงทาสีขนหมู MATALL PB037 2 นิ้ว",
-      "target_brand": "MATALL",
-      "target_url": "https://www.homepro.co.th/p/1189195",
-      "expected_url": "https://www.homepro.co.th/p/1180901",
-      "confidence": 85,
-      "reason": "Candidate 0 is a paint brush of the preferred brand MATALL with matching size, though it is hog bristle instead of synthetic. No synthetic bristle options available.",
-      "gt_status": "INCORRECT"
     },
     {
       "chunk": 18,
@@ -91,21 +64,7 @@
       "target_url": "https://www.homepro.co.th/p/1247635",
       "expected_url": "https://www.homepro.co.th/p/1175726",
       "confidence": 75,
-      "reason": "Candidate 2 is the exact product type (scissors) and is from a preferred brand (KECH).",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 18,
-      "source_idx": 267,
-      "source_name": "กล่องอเนกประสงค์พร้อมล้อและฝาล็อก Q95 KASSA HOME รุ่น PSM-8203 ขนาด 77 ลิตร สีเทา",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60240768",
-      "target_name": "กล่องเก็บของ มีล้อ ฝาล็อก STACKO 2009 70.5 ลิตร สีขาว",
-      "target_brand": "STACKO",
-      "target_url": "https://www.homepro.co.th/p/195586",
-      "expected_url": "https://www.homepro.co.th/p/1120065",
-      "confidence": 75,
-      "reason": "The candidate is a preferred brand (STACKO), is the correct product type (storage box), and its volume is reasonably close to the source (70.5L vs 77L).",
+      "reason": "The candidate has the correct product type 'scissors' and brand 'KECH' which is a preferred brand.",
       "gt_status": "INCORRECT"
     },
     {
@@ -119,7 +78,7 @@
       "target_url": "https://www.homepro.co.th/p/1247909",
       "expected_url": "https://www.homepro.co.th/p/1172023",
       "confidence": 85,
-      "reason": "Candidate 0 is an a-frame ladder with 4 steps, matching the critical 'steps' and 'ladder_type' specs of the source, and is from the most preferred brand (MATALL).",
+      "reason": "The candidate is an a-frame ladder with 4 steps, matching the critical product type and step count of the source, and is from a highly preferred brand (MATALL).",
       "gt_status": "INCORRECT"
     }
   ]

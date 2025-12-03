@@ -5,25 +5,12 @@
   "end_idx": 180,
   "products_tested": 15,
   "matches_found": 8,
-  "correct": 4,
-  "incorrect": 4,
-  "accuracy": 50.0,
-  "timestamp": "2025-12-03T12:20:46.802148",
+  "correct": 5,
+  "incorrect": 3,
+  "gt_missing": 0,
+  "accuracy": 62.5,
+  "timestamp": "2025-12-03T16:50:21.893460",
   "matches": [
-    {
-      "chunk": 12,
-      "source_idx": 167,
-      "source_name": "ไม้แขวนเสื้อไม้ หัวเหล็กชุปโครม KASSA HOME รุ่น L6611N/5 (แพ็ก 5 ชิ้น) สีธรรมชาติ",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60253287",
-      "target_name": "ไม้แขวนเสื้อ PLIM H-059 สีขาว แพ็ก 6 ชิ้น",
-      "target_brand": "PLIM",
-      "target_url": "https://www.homepro.co.th/p/1249480",
-      "expected_url": "https://www.homepro.co.th/p/1079882",
-      "confidence": 70,
-      "reason": "The candidate is also a hanger, from a preferred brand (PLIM), and has a pack count (6 pcs) that is close to the source's (5 pcs), resulting in the highest relevant SpecMatch%.",
-      "gt_status": "INCORRECT"
-    },
     {
       "chunk": 12,
       "source_idx": 169,
@@ -34,23 +21,23 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/1104652",
       "expected_url": "https://www.homepro.co.th/p/1104652",
-      "confidence": 60,
-      "reason": "The candidate is a 'drawer cabinet' with 4 tiers and a preferred brand (STACKO), but dimensions are a bit different, leading to a 49% spec match.",
+      "confidence": 70,
+      "reason": "The candidate is a 'drawer cabinet' from a PREFERRED brand (STACKO) and has the second highest SpecMatch% among preferred brands that are also 'drawer cabinet', with matching 'tiers' count.",
       "gt_status": "CORRECT"
     },
     {
       "chunk": 12,
-      "source_idx": 170,
-      "source_name": "เครื่องเป่าลมร้อน 2,000 วัตต์ GIANTTECH รุ่น HG001",
-      "source_brand": "GIANTTECH",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60293882",
-      "target_name": "เครื่องเป่าลมร้อน STANLEY STEL670 2000 วัตต์",
-      "target_brand": "STANLEY",
-      "target_url": "https://www.homepro.co.th/p/288240",
-      "expected_url": "https://www.homepro.co.th/p/1170344",
-      "confidence": 100,
-      "reason": "Candidate is the same product type (heat gun) and has 100% spec match for wattage, which is a critical spec.",
-      "gt_status": "INCORRECT"
+      "source_idx": 171,
+      "source_name": "กล่องกระดาษ 3 ชั้น ฝาชน GIANT KINGKONG รุ่น KI125/M-3C ขนาด 31 x 36 x 26 ซม. สีน้ำตาล",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60312444",
+      "target_name": "กล่องฝาปิด PACK IN 31X36X26 ซม.",
+      "target_brand": "PACK IN",
+      "target_url": "https://www.homepro.co.th/p/194753",
+      "expected_url": "https://www.homepro.co.th/p/194753",
+      "confidence": 75,
+      "reason": "Candidate 0 is a preferred brand (PACK IN) and has the highest SpecMatch (63%) with identical dimensions (31x36x26 cm), and a matching product type (box vs cardboard box).",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 12,
@@ -58,12 +45,12 @@
       "source_name": "โคมไฟหัวเสาภายนอก E27x1 LUZINO FOURSQUARE MAN รุ่น 0314-PF-B(BK) สีดำ",
       "source_brand": "LUZINO",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60272312",
-      "target_name": "โคมไฟหัวเสา CARINI 614F สีน้ำตาล",
+      "target_name": "ไฟหัวเสา CARINI 120M/S สีดำ",
       "target_brand": "CARINI",
-      "target_url": "https://www.homepro.co.th/p/1200199",
+      "target_url": "https://www.homepro.co.th/p/1003945",
       "expected_url": "https://www.homepro.co.th/p/1032598",
       "confidence": 75,
-      "reason": "The best matching product is a CARINI outdoor post lamp with 40% spec match, which is the exact product type and from a highly preferred brand.",
+      "reason": "The candidate has the highest spec match percentage at 40%, is the exact product type (post lamp), and is from the preferred brand CARINI (PREFERRED#1).",
       "gt_status": "INCORRECT"
     },
     {
@@ -77,7 +64,7 @@
       "target_url": "https://www.homepro.co.th/p/1104652",
       "expected_url": "https://www.homepro.co.th/p/1102758",
       "confidence": 70,
-      "reason": "Candidate 2 is a drawer cabinet (similar to storage cabinet), has a preferred brand (STACKO), matches the 4 tiers and 90cm length closely, and has a good SpecMatch of 63%.",
+      "reason": "Candidate is a drawer cabinet with 4 tiers and a similar length of 90.8cm, matching the source's type and key dimension, and is from a preferred brand (STACKO).",
       "gt_status": "INCORRECT"
     },
     {
@@ -90,8 +77,8 @@
       "target_brand": "ELEKTRA",
       "target_url": "https://www.homepro.co.th/p/1092084",
       "expected_url": "https://www.homepro.co.th/p/1092084",
-      "confidence": 60,
-      "reason": "Highest spec match among cable ties (55%), but not a preferred brand. Other cable tie options are similar but also not preferred.",
+      "confidence": 75,
+      "reason": "The candidate is a cable tie, has a matching size (8 inch) and pack count (100 pieces), and shares 55% spec similarity. Although not a preferred brand, it's the only direct product type match with relevant specs.",
       "gt_status": "CORRECT"
     },
     {
@@ -105,8 +92,22 @@
       "target_url": "https://www.homepro.co.th/p/1170031",
       "expected_url": "https://www.homepro.co.th/p/1170031",
       "confidence": 95,
-      "reason": "Candidate 0 is a perfect spec match (size_inch=6 inch) and the product type 'mortar and pestle' is a direct match for 'stone mortar'.",
+      "reason": "The candidate is the same product type (mortar and pestle) and has a 100% spec match on size. While not a preferred brand, it's the only exact functional match.",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 12,
+      "source_idx": 177,
+      "source_name": "โคมไฟกิ่งภายนอก E27x1 LUZINO รุ่น 0313-WD BK สีดำ",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60370246",
+      "target_name": "ไฟกิ่งภายนอก CARINI BO-G3101/2 สีดำ",
+      "target_brand": "CARINI",
+      "target_url": "https://www.homepro.co.th/p/1003063",
+      "expected_url": "https://www.homepro.co.th/p/1200198",
+      "confidence": 85,
+      "reason": "Candidate is an outdoor wall lamp from a preferred brand (CARINI) with similar product type, making it the best available match despite explicit spec match percentage not being calculated for the specific type keywords.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 12,
@@ -119,7 +120,7 @@
       "target_url": "https://www.homepro.co.th/p/1218486",
       "expected_url": "https://www.homepro.co.th/p/1218486",
       "confidence": 75,
-      "reason": "Candidate 6 is the only alternative that is also a 'tile leveling wedge' product type, although its spec match percentage is 0% it is the only viable option given the critical product type constraint. It is also from a preferred brand.",
+      "reason": "Candidate 4 is a 'tile leveling kit' which is a close product type to 'tile leveling device', has a preferred brand and a reasonable price point although the SpecMatch is 0% as it's a different model number and doesn't explicitly state the pack count.",
       "gt_status": "CORRECT"
     }
   ]

@@ -4,11 +4,12 @@
   "start_idx": 315,
   "end_idx": 330,
   "products_tested": 15,
-  "matches_found": 11,
+  "matches_found": 10,
   "correct": 8,
-  "incorrect": 3,
-  "accuracy": 72.72727272727273,
-  "timestamp": "2025-12-03T10:20:35.195507",
+  "incorrect": 2,
+  "gt_missing": 0,
+  "accuracy": 80.0,
+  "timestamp": "2025-12-03T17:00:38.626082",
   "matches": [
     {
       "chunk": 22,
@@ -20,8 +21,8 @@
       "target_brand": "DEXZON",
       "target_url": "https://www.homepro.co.th/p/1043474",
       "expected_url": "https://www.homepro.co.th/p/1043474",
-      "confidence": 90,
-      "reason": "The candidate is a preferred brand (DEXZON) and closely matches the product type (gloves) and has the highest SpecMatch for gloves.",
+      "confidence": 75,
+      "reason": "The source product is 'fabric glove' and candidate 0 is 'gloves' (a very close product type match). Candidate 0 is also from the most preferred brand DEXZON and has a SpecMatch of 50%, which is the highest among product type matches in the preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -35,7 +36,7 @@
       "target_url": "https://www.homepro.co.th/p/1108059",
       "expected_url": "https://www.homepro.co.th/p/1108059",
       "confidence": 85,
-      "reason": "The candidate has a 100% spec match including wattage and is the correct product type (ceiling light), despite not being a preferred brand. The price is also similar.",
+      "reason": "The candidate has a 100% spec match in wattage and is the correct product type (ceiling light), despite not being a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -48,8 +49,8 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/1243610",
       "expected_url": "https://www.homepro.co.th/p/1243610",
-      "confidence": 100,
-      "reason": "The candidate is a STACKO plastic shelf with identical dimensions, length, and tier count, and STACKO is the highest preferred brand.",
+      "confidence": 95,
+      "reason": "The candidate is from the top preferred brand STACKO, is the exact product type 'shelf', and has a perfect 100% SpecMatch with all critical dimensions and tier count matching the source product.",
       "gt_status": "CORRECT"
     },
     {
@@ -62,8 +63,8 @@
       "target_brand": "SPRING",
       "target_url": "https://www.homepro.co.th/p/1182193",
       "expected_url": "https://www.homepro.co.th/p/1182193",
-      "confidence": 80,
-      "reason": "The candidate has the exact same product type (garden bench) and is from a preferred brand (SPRING) with a 50% spec match, making it the best available equivalent.",
+      "confidence": 70,
+      "reason": "The candidate has the exact same product type (garden bench) and is from the highest preferred brand (SPRING) with a 50% spec match, making it the most suitable alternative.",
       "gt_status": "CORRECT"
     },
     {
@@ -77,7 +78,7 @@
       "target_url": "https://www.homepro.co.th/p/1249480",
       "expected_url": "https://www.homepro.co.th/p/1249480",
       "confidence": 95,
-      "reason": "The candidate is a preferred brand (PLIM) and has an exact match in product type (clothes hanger), pack count, and other relevant specifications with the source product.",
+      "reason": "The candidate is the same product type (hanger) and matches the critical 'pack_count' spec. It is also a preferred brand (PLIM) with a 100% SpecMatch.",
       "gt_status": "CORRECT"
     },
     {
@@ -91,22 +92,8 @@
       "target_url": "https://www.homepro.co.th/p/1181364",
       "expected_url": "https://www.homepro.co.th/p/1189085",
       "confidence": 95,
-      "reason": "Candidate 1 (MATALL) is a preferred brand with 100% spec match on size and roller type, and a lower price than the source. Candidate 0 is also a perfect match but has a higher price.",
+      "reason": "Candidate 1 (MATALL) is a preferred brand and has a 100% spec match for a paint roller of the same size, and is cheaper.",
       "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 22,
-      "source_idx": 324,
-      "source_name": "แปรงทาสีขนสัตว์ เกรด A ด้ามพลาสติก GIANT KINGKONG รุ่น C303AP4 ขนาด 2.5 นิ้ว สีน้ำตาล",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60342291",
-      "target_name": "แปรงทาสีด้ามพลาสติกขนสังคราะห์ดำ MATALL 2.5 นิ้ว",
-      "target_brand": "MATALL",
-      "target_url": "https://www.homepro.co.th/p/1234385",
-      "expected_url": "https://www.homepro.co.th/p/1234385",
-      "confidence": 95,
-      "reason": "The candidate is a paint brush of the preferred brand MATALL, matching the source's 2.5 inch size exactly and having a high spec match percentage.",
-      "gt_status": "CORRECT"
     },
     {
       "chunk": 22,
@@ -114,13 +101,13 @@
       "source_name": "พุกเหล็ก GIANT KINGKONG รุ่น P-10516 ขนาด 5/16 นิ้ว (แพ็ก 100 ตัว) สีซิงค์รุ้ง",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60374086",
-      "target_name": "พุกเหล็ก DEXZON 5/16 นิ้ว 5 ชิ้น",
+      "target_name": "พุกเหล็ก DEXZON 5/16 นิ้ว 50 ตัว",
       "target_brand": "DEXZON",
-      "target_url": "https://www.homepro.co.th/p/1184711",
+      "target_url": "https://www.homepro.co.th/p/1174595",
       "expected_url": "https://www.homepro.co.th/p/1174595",
-      "confidence": 100,
-      "reason": "Candidate 3 is an anchor bolt of the preferred brand DEXZON with the exact matching size of 5/16 inch and a 100% spec match.",
-      "gt_status": "INCORRECT"
+      "confidence": 95,
+      "reason": "Candidate 2 is an anchor bolt of the preferred brand DEXZON with a matching size of 5/16 inch and a high spec match.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 22,
@@ -132,8 +119,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1152429",
       "expected_url": "https://www.homepro.co.th/p/1152429",
-      "confidence": 75,
-      "reason": "The candidate product is a MATALL brand pallet truck, which is the exact product type and a preferred brand (ranked #2). The SpecMatch is 50%, which is acceptable given the exact product type match.",
+      "confidence": 90,
+      "reason": "The candidate is a pallet truck (pallet jack) from a preferred brand (MATALL) with 2.5 tons capacity, matching the critical product type and implied capacity, and a high spec match percentage.",
       "gt_status": "CORRECT"
     },
     {
@@ -146,8 +133,8 @@
       "target_brand": "FURDINI",
       "target_url": "https://www.homepro.co.th/p/1277055",
       "expected_url": "https://www.homepro.co.th/p/1277055",
-      "confidence": 75,
-      "reason": "The candidate has the exact product type 'wardrobe', is from the preferred brand 'FURDINI', and has a similar length (119cm vs 120cm).",
+      "confidence": 80,
+      "reason": "Candidate is a wardrobe from a preferred brand (FURDINI) and has the highest SpecMatch% among other wardrobes.",
       "gt_status": "CORRECT"
     },
     {
@@ -161,7 +148,7 @@
       "target_url": "https://www.homepro.co.th/p/1215244",
       "expected_url": "https://www.homepro.co.th/p/1040942",
       "confidence": 95,
-      "reason": "Candidate 0 is a rotary air compressor with identical volume (50L) and a preferred brand (ROWEL) with a perfect spec match.",
+      "reason": "The candidate is an air compressor with the exact same volume as the source product and is from a preferred brand (ROWEL).",
       "gt_status": "INCORRECT"
     }
   ]

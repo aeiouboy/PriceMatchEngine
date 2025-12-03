@@ -4,54 +4,13 @@
   "start_idx": 450,
   "end_idx": 465,
   "products_tested": 15,
-  "matches_found": 9,
-  "correct": 5,
-  "incorrect": 4,
-  "accuracy": 55.55555555555556,
-  "timestamp": "2025-12-03T10:27:56.506488",
+  "matches_found": 5,
+  "correct": 4,
+  "incorrect": 1,
+  "gt_missing": 0,
+  "accuracy": 80.0,
+  "timestamp": "2025-12-03T17:09:32.307334",
   "matches": [
-    {
-      "chunk": 31,
-      "source_idx": 450,
-      "source_name": "เก้าอี้ทานอาหารไม้ยางพารา KASSA สีธรรมชาติ",
-      "source_brand": "KASSA",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60294001",
-      "target_name": "เก้าอี้ห้องอาหารหมุนได้ FURDINI NARA สีน้ำตาล",
-      "target_brand": "FURDINI",
-      "target_url": "https://www.homepro.co.th/p/1287255",
-      "expected_url": "https://www.homepro.co.th/p/1169721",
-      "confidence": 70,
-      "reason": "The candidate is a 'dining chair' from the preferred brand FURDINI (PREFERRED#1) with the highest spec match among type-matched products.",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 31,
-      "source_idx": 452,
-      "source_name": "โซฟาหนังปรับระดับ 1 ที่นั่ง CALINA รุ่น HS-6009C ขนาด 102 ซม. สีเบจ",
-      "source_brand": "CALINA",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60353726",
-      "target_name": "โซฟา 2 ที่นั่ง KONCEPT GUNLY SL สีน้ำตาล",
-      "target_brand": "KONCEPT",
-      "target_url": "https://www.homepro.co.th/p/1153568",
-      "expected_url": "https://www.homepro.co.th/p/1139865",
-      "confidence": 75,
-      "reason": "The candidate product is also a 'sofa' and has a brand (KONCEPT) that is not specified as preferred or non-preferred. It is the only other sofa in the list, making it the best available match despite 0% spec match.",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 31,
-      "source_idx": 453,
-      "source_name": "จักรยานแม่บ้าน GIANT KINGKONG รุ่น UT2401WH ขนาด 24 นิ้ว สีขาว",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60374041",
-      "target_name": "จักรยานแม่บ้าน 24 นิ้ว JOY BICYCLE SKY สีเขียว",
-      "target_brand": "JOY BICYCLE",
-      "target_url": "https://www.homepro.co.th/p/1230068",
-      "expected_url": "https://www.homepro.co.th/p/1230068",
-      "confidence": 70,
-      "reason": "Candidate is the same product type (bicycle) and has a matching size (24 inches), making it the best alternative despite the source having a wattage spec which is not relevant for bicycles.",
-      "gt_status": "CORRECT"
-    },
     {
       "chunk": 31,
       "source_idx": 457,
@@ -63,7 +22,7 @@
       "target_url": "https://www.homepro.co.th/p/1255584",
       "expected_url": "https://www.homepro.co.th/p/1255584",
       "confidence": 75,
-      "reason": "The candidate has the correct product type, is a preferred brand (ACCO), and has dimensions (22x22 cm) close to the source (20x20 cm), along with the correct pack count.",
+      "reason": "The source is a multipurpose cloth with dimensions 20x20 cm. This candidate is also a cleaning cloth (multipurpose cloth) with dimensions 22x22 cm, which is within 10% tolerance, and is from a preferred brand (ACCO).",
       "gt_status": "CORRECT"
     },
     {
@@ -76,23 +35,9 @@
       "target_brand": "PUMPKIN",
       "target_url": "https://www.homepro.co.th/p/1176512",
       "expected_url": "https://www.homepro.co.th/p/1176512",
-      "confidence": 95,
-      "reason": "The candidate is also a 19-inch plastic toolbox, matching the source product's critical type and key size specification perfectly.",
+      "confidence": 80,
+      "reason": "The candidate is also a tool box, has the same size (19 inch), and a strong spec match percentage (100%).",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 31,
-      "source_idx": 459,
-      "source_name": "โคมไฟผนังภายนอกอะลูมิเนียม E27x2 LUZINO รุ่น GD-AWY32 สีดำ - ใส",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60402137",
-      "target_name": "ไฟกิ่งภายนอก CARINI HL042A สีดำ",
-      "target_brand": "CARINI",
-      "target_url": "https://www.homepro.co.th/p/267461",
-      "expected_url": "https://www.homepro.co.th/p/1021210",
-      "confidence": 85,
-      "reason": "Candidate 1 is an 'outdoor wall lamp' like the source, from the preferred brand CARINI, making it the best option despite a low spec match, as no other candidates match the critical product type.",
-      "gt_status": "INCORRECT"
     },
     {
       "chunk": 31,
@@ -105,7 +50,7 @@
       "target_url": "https://www.homepro.co.th/p/1181364",
       "expected_url": "https://www.homepro.co.th/p/1181364",
       "confidence": 95,
-      "reason": "The candidate is a paint roller of the same size (7 inch) and roller type (FULL) as the source, from a preferred brand (MATALL, PREFERRED#2).",
+      "reason": "Candidate 0 is a paint roller of the preferred brand MATALL and has a perfect spec match for size and roller type.",
       "gt_status": "CORRECT"
     },
     {
@@ -119,7 +64,7 @@
       "target_url": "https://www.homepro.co.th/p/1255549",
       "expected_url": "https://www.homepro.co.th/p/1255549",
       "confidence": 75,
-      "reason": "Candidate is a multi-purpose cloth from a preferred brand (ACCO) with a close dimension match (22x22 vs 20x20) and matching pack count (20 sheets).",
+      "reason": "The candidate has a reasonably close size (22x22 vs 20x20 cm) and pack count (20 pcs), matches the product type (cleaning cloth), and is from a PREFERRED brand (ACCO).",
       "gt_status": "CORRECT"
     },
     {
@@ -133,7 +78,7 @@
       "target_url": "https://www.homepro.co.th/p/1174886",
       "expected_url": "https://www.homepro.co.th/p/1172635",
       "confidence": 95,
-      "reason": "The candidate is a face mask, has an exact pack count match, and is from the most preferred brand DEXZON.",
+      "reason": "Candidate 0 is a face mask, matches the pack count exactly, and is from the most preferred brand (DEXZON).",
       "gt_status": "INCORRECT"
     }
   ]
