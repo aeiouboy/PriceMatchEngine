@@ -110,6 +110,14 @@ def normalize_text(text):
 
     return text
 
+def normalize_url(url):
+    """Normalize URL by removing query parameters and trailing slashes for consistent comparison"""
+    if not url:
+        return ''
+    url = url.split('?')[0]
+    url = url.rstrip('/')
+    return url
+
 def extract_brand(product_name, explicit_brand='', product_url=''):
     """Extract brand from product name or URL"""
     if explicit_brand:
@@ -699,10 +707,10 @@ def get_retailer(row):
     return 'Unknown'
 
 def get_url(row):
-    """Get product URL"""
+    """Get product URL (normalized - removes query params and trailing slashes)"""
     for col in ['url', 'product_url', 'link', 'URL', 'Link']:
         if col in row.index and pd.notna(row[col]):
-            return str(row[col])
+            return normalize_url(str(row[col]))
     return ''
 
 def get_category(row):
@@ -804,7 +812,7 @@ def ai_find_house_brand_alternatives(source_products, target_products, price_tol
     for i, t in enumerate(target_products):
         t_url = t.get('url', t.get('product_url', t.get('link', '')))
         if t_url:
-            target_url_to_idx[t_url.strip()] = i
+            target_url_to_idx[normalize_url(t_url)] = i
 
     for idx, source in enumerate(source_products):
         if progress_callback:
@@ -897,7 +905,7 @@ def ai_find_house_brand_alternatives(source_products, target_products, price_tol
 
         source_url = source.get('url', source.get('product_url', source.get('link', '')))
         if source_url:
-            source_url = source_url.strip()
+            source_url = normalize_url(source_url)
 
         candidates.sort(key=lambda x: x['combined_score'], reverse=True)
         # Increased to 40 candidates to give AI Stage 2 more options
