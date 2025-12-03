@@ -4,26 +4,12 @@
   "start_idx": 330,
   "end_idx": 345,
   "products_tested": 15,
-  "matches_found": 8,
-  "correct": 4,
-  "incorrect": 4,
-  "accuracy": 50.0,
-  "timestamp": "2025-12-03T04:30:37.747126",
+  "matches_found": 9,
+  "correct": 6,
+  "incorrect": 3,
+  "accuracy": 66.66666666666666,
+  "timestamp": "2025-12-03T06:18:32.260447",
   "matches": [
-    {
-      "chunk": 23,
-      "source_idx": 330,
-      "source_name": "ล้อยางแบบแป้นหมุนได้ไม่มีเบรค GIANT KINGKONG รุ่น 1102-160 ขนาด 16 ซม. สีดำ",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60139195",
-      "target_name": "ลูกล้อยาง BY TORA เพลาหมุน ไม่มีเบรก 6 นิ้ว สีดำ",
-      "target_brand": "BY TORA",
-      "target_url": "https://www.homepro.co.th/p/1114515",
-      "expected_url": "https://www.homepro.co.th/p/1168235",
-      "confidence": 70,
-      "reason": "The candidate is a rubber wheel, which is a type of caster, and matches the 'no brake' and '16cm' (6 inch) specs with a good SpecMatch score.",
-      "gt_status": "INCORRECT"
-    },
     {
       "chunk": 23,
       "source_idx": 331,
@@ -35,8 +21,22 @@
       "target_url": "https://www.homepro.co.th/p/1176083",
       "expected_url": "https://www.homepro.co.th/p/1185016",
       "confidence": 95,
-      "reason": "The candidate is a self-drilling screw with identical dimensions and pack count, achieving a 100% spec match and exact product type match.",
+      "reason": "The candidate is a self-drilling screw from a preferred brand with 100% spec match, including dimensions and size.",
       "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 23,
+      "source_idx": 335,
+      "source_name": "ที่คว่ำจานสเตนเลสแบบติดผนัง Dylan KASSA HOME รุ่น KS-106-WD61 ขนาด 80 ซม. สีเงิน",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60344870",
+      "target_name": "ชั้นคว่ำจานติดผนังสเตนเลส KECH 106D6 80 ซม.",
+      "target_brand": "KECH",
+      "target_url": "https://www.homepro.co.th/p/1030366",
+      "expected_url": "https://www.homepro.co.th/p/1030366",
+      "confidence": 95,
+      "reason": "The candidate is a dish rack of the same length (80CM) and is from a preferred brand (KECH) with a 100% spec match.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 23,
@@ -48,8 +48,8 @@
       "target_brand": "BY TORA",
       "target_url": "https://www.homepro.co.th/p/1076795",
       "expected_url": "https://www.homepro.co.th/p/1076795",
-      "confidence": 70,
-      "reason": "The candidate product is also a 'dry chemical extinguisher' and shares the '4A5B' model spec, making it the most equivalent match in product type and a key specification.",
+      "confidence": 95,
+      "reason": "The candidate is also a dry chemical fire extinguisher with the exact same model number '4A5B' and size '15 ปอนด์' as the source product, making it a strong equivalent despite being a different brand. Other candidates are different product types.",
       "gt_status": "CORRECT"
     },
     {
@@ -63,7 +63,7 @@
       "target_url": "https://www.homepro.co.th/p/1147572",
       "expected_url": "https://www.homepro.co.th/p/1192960",
       "confidence": 75,
-      "reason": "The candidate is the same product type (picnic stove) as the source, which is a critical match. Although specific specs are not available for comparison, the product type match indicates a reasonable alternative.",
+      "reason": "Candidate 27 is the only exact product type match to the source 'picnic gas stove' and is from a preferred brand, even though its SpecMatch is 0% as it doesn't share specific specs with the source.",
       "gt_status": "INCORRECT"
     },
     {
@@ -77,7 +77,7 @@
       "target_url": "https://www.homepro.co.th/p/191609",
       "expected_url": "https://www.homepro.co.th/p/191609",
       "confidence": 70,
-      "reason": "Candidate 0 is a trash bag with matching dimensions and size, achieving a 45% SpecMatch, making it the best available equivalent despite the lower percentage due to missing volume and pack count specs.",
+      "reason": "The candidate ACCO trash bags have the same dimensions as the source and ACCO is a preferred brand (PREFERRED#4). While SpecMatch is 45%, the dimensions critical spec matches perfectly, making it a good alternative.",
       "gt_status": "CORRECT"
     },
     {
@@ -86,13 +86,13 @@
       "source_name": "ผ้าใบพลาสติกม้วนรุ่นประหยัด FONTE ขนาด 72 นิ้ว x 40 หลา สีฟ้า-ขาว",
       "source_brand": "FONTE",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60366400",
-      "target_name": "ผ้าใบรุ่นประหยัด SPRING 72 นิ้วX40 หลา สีฟ้า",
-      "target_brand": "SPRING",
-      "target_url": "https://www.homepro.co.th/p/1173468",
+      "target_name": "ผ้าใบเกรดหนา GARTENE 72 นิ้วX40 หลา สีฟ้า-ขาว",
+      "target_brand": "GARTENE",
+      "target_url": "https://www.homepro.co.th/p/1121822",
       "expected_url": "https://www.homepro.co.th/p/1121822",
-      "confidence": 75,
-      "reason": "Candidate 0 is a 'canvas' which is a close equivalent to a 'plastic sheeting roll' within the 'FABRIC' category and matches on size.",
-      "gt_status": "INCORRECT"
+      "confidence": 95,
+      "reason": "Candidate 1 (GARTENE) closely matches the source product's type and critical spec (72 inch) and is a preferred brand (PREFERRED#2), with a very similar price.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 23,
@@ -105,7 +105,7 @@
       "target_url": "https://www.homepro.co.th/p/1056287",
       "expected_url": "https://www.homepro.co.th/p/1056287",
       "confidence": 95,
-      "reason": "The candidate is a 'shallow box' which is a close subtype to 'square box' and has a 100% spec match for dimensions and size.",
+      "reason": "The candidate 'สแคว์บ๊อกตื้น ELECKTA 4X4 นิ้ว' has 100% SpecMatch with matching product type 'square box' and similar dimensions, making it the best equivalent despite not being a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -114,12 +114,26 @@
       "source_name": "จักรยานเด็ก 20 นิ้ว GIANT KINGKONG รุ่น KD2001WH สีขาว",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60377239",
-      "target_name": "จักรยานเด็ก 20 นิ้ว QITONG TN24Q22 สีชมพู",
-      "target_brand": "QITONG",
-      "target_url": "https://www.homepro.co.th/p/1285365",
+      "target_name": "จักรยานเสือภูเขา 20 นิ้ว JOY BICYCLE VIPER สีน้ำเงิน",
+      "target_brand": "JOY BICYCLE",
+      "target_url": "https://www.homepro.co.th/p/1188025",
       "expected_url": "https://www.homepro.co.th/p/1285365",
       "confidence": 75,
-      "reason": "The candidate is a 'childrens bicycle' which is a very close match to 'bicycle', and has the same size of 20 inches.",
+      "reason": "The candidate is a bicycle with the exact matching size of 20 inches, making it the closest product type and spec match.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 23,
+      "source_idx": 344,
+      "source_name": "ชั้นวางของอเนกประสงค์ 3 ชั้น พร้อมล้อเลื่อน Danin KASSA HOME รุ่น JAH019 ขนาด 37.7 x 26.9 x 86.5 ซม.",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60374152",
+      "target_name": "ชั้นวางของ 3 ชั้น มีล้อ STACKO LAVISH 37.7X26.9X86.5 ซม. สีเงิน",
+      "target_brand": "STACKO",
+      "target_url": "https://www.homepro.co.th/p/1276400",
+      "expected_url": "https://www.homepro.co.th/p/1276400",
+      "confidence": 100,
+      "reason": "Candidate 0 is the exact product type 'shelf', has the highest SpecMatch% at 100%, and is from the most preferred brand 'STACKO'.",
       "gt_status": "CORRECT"
     }
   ]

@@ -342,13 +342,19 @@ PRODUCT_LINE_CONFLICTS = [
     ('กระทะตื้น', 'กระทะลึก'),
     ('กระทะทอด', 'หม้อต้ม'),
     ('shallow pan', 'deep pan'),
-    # Downlight types - LED vs conventional
+    # Downlight types - socket type vs integrated LED
     ('ดาวน์ไลท์ LED', 'ดาวน์ไลท์หลอด'),
     ('โคมดาวน์ไลท์แบบปิด', 'ดาวน์ไลท์ LED'),
+    ('หน้าเหลี่ยม', 'หน้ากลม'),  # Square vs round face
+    ('ทรงเหลี่ยม', 'ทรงกลม'),  # Square vs round shape
     # Hanger types - pack count sensitive
     ('แพ็ก 6', 'แพ็ก 10'),
     ('แพ็ก 3', 'แพ็ก 6'),
     ('แพ็ก 5', 'แพ็ก 10'),
+    ('แพ็ก 3', 'แพ็ก 10'),
+    # Drawer cabinet shapes - tall vs wide
+    ('สูง', 'กว้าง'),
+    ('tall', 'wide'),
 ]
 
 def has_product_conflict(source_name, target_name):
@@ -986,8 +992,9 @@ def ai_find_house_brand_alternatives(source_products, target_products, price_tol
                     'tier': 'spec'
                 })
                 seen_indices.add(i)
-            # TIER 2: Fuzzy text/brand candidates (normal price filter)
-            elif t_price >= min_price and t_price <= max_price:
+            # TIER 2: Fuzzy text/brand candidates (balanced price filter)
+            # Allow up to 60% price difference - captures most GT while limiting false positives
+            elif price_diff <= 0.6:
                 if text_sim >= 15 or spec_score >= 30 or brand_boost > 0 or model_boost > 0:
                     combined_score = spec_score * 0.6 + text_sim * 0.25 + brand_boost + model_boost
                     fuzzy_candidates.append({
@@ -1007,15 +1014,23 @@ def ai_find_house_brand_alternatives(source_products, target_products, price_tol
                         'tier': 'fuzzy'
                     })
         
-        # Combine candidates: prioritize spec-first, then fill with fuzzy
+        # DETERMINISTIC SPEC-TIER PRIORITIZATION WITH QUALITY GATE
+        # Use quality-based criterion instead of hard-coded count
         spec_candidates.sort(key=lambda x: x['spec_score'], reverse=True)
         fuzzy_candidates.sort(key=lambda x: x['combined_score'], reverse=True)
         
         # Filter out fuzzy candidates already in spec candidates
         fuzzy_candidates = [c for c in fuzzy_candidates if c['idx'] not in seen_indices]
         
-        # Take up to 25 spec candidates, fill remaining slots with fuzzy
-        candidates = spec_candidates[:25] + fuzzy_candidates[:15]
+        # Quality gate: count high-quality spec candidates (spec_score >= 60)
+        high_quality_spec = [c for c in spec_candidates if c['spec_score'] >= 60]
+        
+        if len(high_quality_spec) >= 3:
+            # Enough high-quality spec candidates - prioritize them heavily
+            candidates = high_quality_spec[:30] + fuzzy_candidates[:10]
+        else:
+            # Mix spec and fuzzy but maintain tier priority in sorting
+            candidates = spec_candidates + fuzzy_candidates[:max(0, 40 - len(spec_candidates))]
 
         if not candidates:
             continue
@@ -1024,7 +1039,11 @@ def ai_find_house_brand_alternatives(source_products, target_products, price_tol
         if source_url:
             source_url = normalize_url(source_url)
 
-        candidates.sort(key=lambda x: x['combined_score'], reverse=True)
+        # CRITICAL: Sort with explicit tier priority
+        # tier_priority: 'spec' = 0 (higher priority), 'fuzzy' = 1
+        def tier_priority(c):
+            return 0 if c.get('tier') == 'spec' else 1
+        candidates.sort(key=lambda x: (tier_priority(x), -x['spec_score'], -x['combined_score']))
         # Increased to 40 candidates to give AI Stage 2 more options
         top_candidates = candidates[:40]
 

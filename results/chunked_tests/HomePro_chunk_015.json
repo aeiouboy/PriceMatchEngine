@@ -4,12 +4,26 @@
   "start_idx": 210,
   "end_idx": 225,
   "products_tested": 15,
-  "matches_found": 5,
-  "correct": 5,
+  "matches_found": 7,
+  "correct": 7,
   "incorrect": 0,
   "accuracy": 100.0,
-  "timestamp": "2025-12-03T04:24:25.536468",
+  "timestamp": "2025-12-03T06:12:13.736952",
   "matches": [
+    {
+      "chunk": 15,
+      "source_idx": 210,
+      "source_name": "โคมไฟหัวเสาภายนอก E27x1 LUZINO รุ่น JEWEL P08(BK) สีดำ",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60252719",
+      "target_name": "ไฟหัวเสา CARINI HK-K2013 สีขาว/ดำ",
+      "target_brand": "CARINI",
+      "target_url": "https://www.homepro.co.th/p/1262899",
+      "expected_url": "https://www.homepro.co.th/p/1262899",
+      "confidence": 70,
+      "reason": "Candidate is the same product type (post light) and from a preferred brand (CARINI).",
+      "gt_status": "CORRECT"
+    },
     {
       "chunk": 15,
       "source_idx": 214,
@@ -20,8 +34,8 @@
       "target_brand": "DEXZON",
       "target_url": "https://www.homepro.co.th/p/1251658",
       "expected_url": "https://www.homepro.co.th/p/1251658",
-      "confidence": 75,
-      "reason": "The candidate is also a scaffolding castor with a brake, and its 8-inch size is acceptably close to the source's 20cm (approx 7.87 inch) size. The price is also lower.",
+      "confidence": 85,
+      "reason": "The candidate has the exact product type, a preferred brand, and a high spec match with matching brake type and a similar size (8 inch vs 20cm, which is approx 7.87 inch).",
       "gt_status": "CORRECT"
     },
     {
@@ -35,7 +49,35 @@
       "target_url": "https://www.homepro.co.th/p/1230386",
       "expected_url": "https://www.homepro.co.th/p/1230386",
       "confidence": 95,
-      "reason": "The candidate is a storage box with the exact same volume (235 L) as the source, and a very similar model identification (903L vs WIN-DCS903), resulting in a 100% SpecMatch.",
+      "reason": "The candidate is a storage box with the exact same volume (235 L) as the source product and is from a preferred brand (ME LIVING). The Model '903L' in the candidate closely matches the 'WIN-DCS903' of the source.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 15,
+      "source_idx": 217,
+      "source_name": "บันไดอลูมิเนียมเอนกประสงค์ 3 x 10 ขั้น GIANT KINGKONG PRO รุ่น LZ3210B สีเงิน",
+      "source_brand": "GIANT KINGKONG PRO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60229676",
+      "target_name": "บันไดอะลูมิเนียม ทรง A-SLIDE MATALL R13810 10 ขั้น",
+      "target_brand": "MATALL",
+      "target_url": "https://www.homepro.co.th/p/1227724",
+      "expected_url": "https://www.homepro.co.th/p/1227724",
+      "confidence": 66,
+      "reason": "The source product is a ladder and candidate 0 is also a ladder, matching on steps (10 steps) and is the highest ranked preferred brand with a strong spec match.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 15,
+      "source_idx": 219,
+      "source_name": "บันไดอะลูมิเนียมอเนกประสงค์พับได้ GIANT KINGKONG PRO รุ่น HCSS-02 ขนาด 4 x 3 ขั้น สีเงิน",
+      "source_brand": "GIANT KINGKONG PRO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60345788",
+      "target_name": "บันไดอเนกประสงค์ปรับแบบ MATALL R14204 16 ขั้น",
+      "target_brand": "MATALL",
+      "target_url": "https://www.homepro.co.th/p/1061343",
+      "expected_url": "https://www.homepro.co.th/p/1061343",
+      "confidence": 75,
+      "reason": "The candidate MATALL R14204 is a ladder from a preferred brand (MATALL) and has 'steps' which aligns with the source product's key spec 'steps'. While the steps and dimensions don't match exactly, it is the closest product type and brand available.",
       "gt_status": "CORRECT"
     },
     {
@@ -48,8 +90,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1162955",
       "expected_url": "https://www.homepro.co.th/p/1162955",
-      "confidence": 90,
-      "reason": "The candidate is a PVC pipe cutter, which directly matches the product type of the source 'pipe cutter'.",
+      "confidence": 75,
+      "reason": "The candidate is the same product type (pvc pipe cutter) and from the preferred brand MATALL, with a decent spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -62,22 +104,8 @@
       "target_brand": "ACCO",
       "target_url": "https://www.homepro.co.th/p/1220492",
       "expected_url": "https://www.homepro.co.th/p/1220492",
-      "confidence": 100,
-      "reason": "Candidate 0 is a trash can with the exact same volume (12 L) as the source product, resulting in a 100% spec match.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 15,
-      "source_idx": 223,
-      "source_name": "ที่โกยผงด้ามอะลูมิเนียม KASSA HOME รุ่น แพนด้า",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60311075",
-      "target_name": "ที่โกยผงพลาสติก ด้ามยาวJCJ 1901 11 นิ้ว สีขาว",
-      "target_brand": "JCJ",
-      "target_url": "https://www.homepro.co.th/p/55700",
-      "expected_url": "https://www.homepro.co.th/p/55700",
-      "confidence": 70,
-      "reason": "The candidate is also a 'dustpan' with a similar price and is the closest product type match.",
+      "confidence": 95,
+      "reason": "The candidate is a trash can with the same volume and is from a preferred brand (ACCO) with a high SpecMatch%.",
       "gt_status": "CORRECT"
     }
   ]

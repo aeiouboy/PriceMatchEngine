@@ -4,11 +4,11 @@
   "start_idx": 135,
   "end_idx": 150,
   "products_tested": 15,
-  "matches_found": 8,
+  "matches_found": 10,
   "correct": 8,
-  "incorrect": 0,
-  "accuracy": 100.0,
-  "timestamp": "2025-12-03T04:19:03.188482",
+  "incorrect": 2,
+  "accuracy": 80.0,
+  "timestamp": "2025-12-03T06:08:06.116578",
   "matches": [
     {
       "chunk": 10,
@@ -21,8 +21,22 @@
       "target_url": "https://www.homepro.co.th/p/1165718",
       "expected_url": "https://www.homepro.co.th/p/1165718",
       "confidence": 95,
-      "reason": "The candidate is a tool box with the exact same size and model number, making it a strong match.",
+      "reason": "Candidate 12 is a plastic toolbox with the same size and model number, and is a preferred brand (MATALL), making it a strong equivalent to the source product.",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 10,
+      "source_idx": 136,
+      "source_name": "บัวพื้นโพลีสไตรีน TIMELESS KASSA รุ่น 1041-E136 ขนาด 290 x 0.8 x 9 ซม. สีไม้พะยูง",
+      "source_brand": "KASSA",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60328506",
+      "target_name": "บัวพื้น PS CROBERN LD-3405 9x300x0.7 ซม. สีสัก",
+      "target_brand": "CROBERN",
+      "target_url": "https://www.homepro.co.th/p/1173437",
+      "expected_url": "https://www.homepro.co.th/p/1173517",
+      "confidence": 75,
+      "reason": "The candidate is the same product type (baseboard) and from a preferred brand (CROBERN). Although some dimensions differ, it's the closest match available.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 10,
@@ -34,8 +48,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1188969",
       "expected_url": "https://www.homepro.co.th/p/1188969",
-      "confidence": 100,
-      "reason": "Candidate 0 is a paint roller of the same size (10 inch) and roller type (FULL) as the source, making it an excellent spec match within the same product type.",
+      "confidence": 95,
+      "reason": "The candidate is a paint roller of the same size (10 inch) and is from a preferred brand (MATALL) with 100% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -48,8 +62,8 @@
       "target_brand": "ACCO",
       "target_url": "https://www.homepro.co.th/p/1150457",
       "expected_url": "https://www.homepro.co.th/p/1150457",
-      "confidence": 100,
-      "reason": "Candidate 0 is a hand soap with the exact same volume (3800 ML) as the source product, resulting in a 100% spec match and product type match.",
+      "confidence": 95,
+      "reason": "The candidate is the exact product type and volume, and comes from a preferred brand (ACCO).",
       "gt_status": "CORRECT"
     },
     {
@@ -62,8 +76,8 @@
       "target_brand": "SPRING",
       "target_url": "https://www.homepro.co.th/p/1173622",
       "expected_url": "https://www.homepro.co.th/p/1173622",
-      "confidence": 95,
-      "reason": "The candidate is the same product type ('canvas fabric' is a similar or equivalent type to 'plastic sheeting roll'), has an exact match in the 'size_inch' spec, and a very similar price.",
+      "confidence": 86,
+      "reason": "Candidate 0 is a preferred brand (SPRING) and has the highest spec match (86%) with identical size and type, making it an equivalent product.",
       "gt_status": "CORRECT"
     },
     {
@@ -77,7 +91,7 @@
       "target_url": "https://www.homepro.co.th/p/1217572",
       "expected_url": "https://www.homepro.co.th/p/1217572",
       "confidence": 70,
-      "reason": "Candidate 4 is also an 'electrical outlet' and has a 50% spec match, which is the highest among relevant alternatives.",
+      "reason": "Candidate 0 is the only duplex outlet in the preferred brands, matching the critical product type and having a preferred brand (ELECKTA).",
       "gt_status": "CORRECT"
     },
     {
@@ -90,8 +104,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1084528",
       "expected_url": "https://www.homepro.co.th/p/1084528",
-      "confidence": 100,
-      "reason": "The candidate is a tape measure with the exact same length (5M) as the source product, resulting in a 100% spec match.",
+      "confidence": 95,
+      "reason": "The candidate is a measuring tape with the same length (5M) and is from a highly preferred brand (MATALL).",
       "gt_status": "CORRECT"
     },
     {
@@ -105,8 +119,22 @@
       "target_url": "https://www.homepro.co.th/p/1178949",
       "expected_url": "https://www.homepro.co.th/p/1178949",
       "confidence": 95,
-      "reason": "Candidate 0 is a silicone gun with the same 9-inch size as the glue gun, making it a highly similar product type with good spec matching.",
+      "reason": "The candidate is a DEXZON brand silicone gun with a 9-inch size, identical to the source product's key specifications and product type, and DEXZON is a preferred brand.",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 10,
+      "source_idx": 148,
+      "source_name": "รถเข็นท้องแบนพื้นเหล็ก 4 ล้อด้ามจับพับเก็บได้ GIANT KINGKONG รุ่น TT2300CA ขนาด 300 กก. สีน้ำเงิน",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60259410",
+      "target_name": "รถเข็น 4 ล้อ MATALL FD300 300 กก. สีดำ",
+      "target_brand": "MATALL",
+      "target_url": "https://www.homepro.co.th/p/1028911",
+      "expected_url": "https://www.homepro.co.th/p/1165754",
+      "confidence": 75,
+      "reason": "The candidate is a flatbed trolley, a preferred brand (MATALL), and matches the critical volume spec of 300 KG.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 10,
@@ -119,7 +147,7 @@
       "target_url": "https://www.homepro.co.th/p/1123665",
       "expected_url": "https://www.homepro.co.th/p/1123665",
       "confidence": 95,
-      "reason": "The candidate is also a drain cleaning spring and matches the critical length specification perfectly. The brand and price are different, but the core product function and key spec align.",
+      "reason": "Candidate 0 is the only drain snake alternative, matches the critical product type, and has 100% spec match for length and an acceptable preferred brand rank.",
       "gt_status": "CORRECT"
     }
   ]

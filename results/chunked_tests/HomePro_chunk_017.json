@@ -4,11 +4,11 @@
   "start_idx": 240,
   "end_idx": 255,
   "products_tested": 15,
-  "matches_found": 5,
-  "correct": 3,
-  "incorrect": 2,
-  "accuracy": 60.0,
-  "timestamp": "2025-12-03T04:25:54.489892",
+  "matches_found": 7,
+  "correct": 4,
+  "incorrect": 3,
+  "accuracy": 57.14285714285714,
+  "timestamp": "2025-12-03T06:13:44.388723",
   "matches": [
     {
       "chunk": 17,
@@ -20,8 +20,22 @@
       "target_brand": "KECH",
       "target_url": "https://www.homepro.co.th/p/1201175",
       "expected_url": "https://www.homepro.co.th/p/1235030",
-      "confidence": 80,
-      "reason": "The candidate is a dish rack with 2 tiers, matching the critical product type and 'tiers' spec of the source, and has the highest SpecMatch percentage among relevant candidates.",
+      "confidence": 75,
+      "reason": "The candidate is the correct product type (dish rack) with a preferred brand (KECH) and matches the '2 tiers' spec.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 17,
+      "source_idx": 241,
+      "source_name": "สกรูไดร์วอลล์หัวเรียบ (เกลียวหุน) 6 x 1 นิ้ว TSS/GIANT KINGKONG รุ่น DW61-100 (แพ็ก 100 ตัว)",
+      "source_brand": "TSS/GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60274454",
+      "target_name": "สกรูไดร์วอลล์ TF DEXZON 6X3/4 นิ้ว แพ็ก 100 ชิ้น",
+      "target_brand": "DEXZON",
+      "target_url": "https://www.homepro.co.th/p/1206231",
+      "expected_url": "https://www.homepro.co.th/p/1082328",
+      "confidence": 70,
+      "reason": "Candidate 30 is the only other drywall screw among the preferred brands, however, its dimensions (6x3/4 inch) do not match the source product's dimensions (6x1 inch), resulting in 0% SpecMatch.",
       "gt_status": "INCORRECT"
     },
     {
@@ -34,9 +48,37 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1102878",
       "expected_url": "https://www.homepro.co.th/p/1157044",
-      "confidence": 68,
-      "reason": "The candidate is the same product type (ladder) with the highest spec match (68%) for 'steps' and 'ladder_type'.",
+      "confidence": 75,
+      "reason": "The candidate is the top preferred brand with the highest spec match, correctly identifying as an a-frame ladder and having the same number of steps.",
       "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 17,
+      "source_idx": 245,
+      "source_name": "พุกเหล็ก GIANT KINGKONG รุ่น P-16012 ขนาด 1/2 นิ้ว สีซิงค์รุ้ง",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60374089",
+      "target_name": "พุกเหล็ก DEXZON 1/2 นิ้ว",
+      "target_brand": "DEXZON",
+      "target_url": "https://www.homepro.co.th/p/1174272",
+      "expected_url": "https://www.homepro.co.th/p/1174272",
+      "confidence": 95,
+      "reason": "The candidate is a DEXZON anchor bolt with a matching size of 1/2 inch, making it a strong equivalent to the source product, and DEXZON is the most preferred brand.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 17,
+      "source_idx": 246,
+      "source_name": "โคมแทรคไลท์เข้ารางกลม GU5.3x1 LUZINO รุ่น CS13-BK สีดำ",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60392228",
+      "target_name": "แทรคไลท์ ติดผนัง GU5.3 CARINI CS13SBK สีดำ",
+      "target_brand": "CARINI",
+      "target_url": "https://www.homepro.co.th/p/1223428",
+      "expected_url": "https://www.homepro.co.th/p/1223428",
+      "confidence": 70,
+      "reason": "Candidate 3 is a track light, matching the product type, and is from the most preferred brand (CARINI). While the SpecMatch is low (16%), it is the only track light candidate from a preferred brand with a relevant identifier match ('GU5').",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 17,
@@ -48,22 +90,8 @@
       "target_brand": "SPRING",
       "target_url": "https://www.homepro.co.th/p/1020040",
       "expected_url": "https://www.homepro.co.th/p/1020040",
-      "confidence": 95,
-      "reason": "The candidate is a hose reel with identical size and length specifications to the source product, resulting in a 100% spec match.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 17,
-      "source_idx": 249,
-      "source_name": "กล่องใส่อะไหล่พลาสติกแบบลิ้นชักติดผนัง 12 ช่อง GIANT KINGKONG HL3045-B ขนาด 10.5 นิ้ว สีใส - เหลือง",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60212596",
-      "target_name": "กล่องเครื่องมือ DIY MATALL HL3045-B 12 ช่อง สีเหลือง",
-      "target_brand": "MATALL",
-      "target_url": "https://www.homepro.co.th/p/1230024",
-      "expected_url": "https://www.homepro.co.th/p/1230024",
-      "confidence": 75,
-      "reason": "Candidate is the same product type (tool box/storage box) and matches the key spec 'outlets'.",
+      "confidence": 89,
+      "reason": "Candidate 0 is a garden hose of the preferred brand SPRING, matching the critical product type and most key specifications (size 1/2 inch, length 30M) with an 89% SpecMatch.",
       "gt_status": "CORRECT"
     },
     {
@@ -77,7 +105,7 @@
       "target_url": "https://www.homepro.co.th/p/1206231",
       "expected_url": "https://www.homepro.co.th/p/1206231",
       "confidence": 100,
-      "reason": "Candidate 0 is a drywall screw with 100% spec match to the source 'TSS/GIANT KINGKONG' drywall screw, matching all key specs like dimensions, size, and pack count exactly.",
+      "reason": "Candidate 0 is a drywall screw of the preferred brand DEXZON, with the exact same dimensions and size as the source product, resulting in a 100% spec match.",
       "gt_status": "CORRECT"
     }
   ]

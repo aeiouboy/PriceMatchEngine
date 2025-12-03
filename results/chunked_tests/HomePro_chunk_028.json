@@ -4,11 +4,11 @@
   "start_idx": 405,
   "end_idx": 420,
   "products_tested": 15,
-  "matches_found": 10,
-  "correct": 5,
-  "incorrect": 5,
-  "accuracy": 50.0,
-  "timestamp": "2025-12-03T04:34:23.998841",
+  "matches_found": 11,
+  "correct": 7,
+  "incorrect": 4,
+  "accuracy": 63.63636363636363,
+  "timestamp": "2025-12-03T06:22:17.297366",
   "matches": [
     {
       "chunk": 28,
@@ -21,8 +21,22 @@
       "target_url": "https://www.homepro.co.th/p/1259491",
       "expected_url": "https://www.homepro.co.th/p/1259491",
       "confidence": 95,
-      "reason": "The candidate is a wardrobe with the same length_cm spec and a high SpecMatch%.",
+      "reason": "The candidate is a wardrobe from a preferred brand (FURDINI) with an exact match in length (90 cm) and product type.",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 28,
+      "source_idx": 406,
+      "source_name": "เสื้อกั๊กจราจร GIANT KINGKONG รุ่น HS703G-S ขนาด 70 x 56 ซม. S สีเขียว",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60211271",
+      "target_name": "เสื้อจราจรสะท้อนแสง 2 แถบ DEXZON HS782 สีเขียว",
+      "target_brand": "DEXZON",
+      "target_url": "https://www.homepro.co.th/p/1154021",
+      "expected_url": "https://www.homepro.co.th/p/1153937",
+      "confidence": 80,
+      "reason": "Candidate 3 is a DEXZON brand traffic vest, matching the critical product type and preferred brand. It does not have exact spec matches but is the closest type within preferred brands.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 28,
@@ -34,8 +48,8 @@
       "target_brand": "CARINI",
       "target_url": "https://www.homepro.co.th/p/267461",
       "expected_url": "https://www.homepro.co.th/p/1003063",
-      "confidence": 75,
-      "reason": "Candidate is an outdoor wall lamp, matching the critical product type. Although no specific specs were extracted for the candidate, it is the only one with a matching product type.",
+      "confidence": 70,
+      "reason": "Candidate 2 is the correct product type (outdoor wall lamp) and from a preferred brand, CARINI. Although the SpecMatch is 0%, the product name and type align perfectly with the source product.",
       "gt_status": "INCORRECT"
     },
     {
@@ -48,8 +62,8 @@
       "target_brand": "ELEKTRA",
       "target_url": "https://www.homepro.co.th/p/1146963",
       "expected_url": "https://www.homepro.co.th/p/1091950",
-      "confidence": 70,
-      "reason": "The candidate is a cable tie, has a matching size_inch of 10 inch, and 'lines' almost certainly refers to 'pack_count' with 100, making it a good match despite the brand difference.",
+      "confidence": 85,
+      "reason": "Candidate 7 is the only 'cable tie' product and has matching size_inch and similar pack_count to the source product, despite not being a preferred brand.",
       "gt_status": "INCORRECT"
     },
     {
@@ -63,7 +77,7 @@
       "target_url": "https://www.homepro.co.th/p/1167727",
       "expected_url": "https://www.homepro.co.th/p/1167727",
       "confidence": 95,
-      "reason": "The best candidate is a 'cable reel' (very similar to 'cord reel') with identical length and number of outlets, resulting in a 100% spec match.",
+      "reason": "The candidate is a cable reel, matches all key specs (length 30M, 4 outlets), and is from a preferred brand (ELECKTA).",
       "gt_status": "CORRECT"
     },
     {
@@ -72,13 +86,13 @@
       "source_name": "เกรียงโป๊วสีเหล็กด้ามพลาสติก GIANT KINGKONG PRO รุ่น H36-5 ขนาด 5 นิ้ว สีน้ำเงิน",
       "source_brand": "GIANT KINGKONG PRO",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60292792",
-      "target_name": "เกรียงโป๊วสี MATALL 4 นิ้ว",
+      "target_name": "เกรียงโป๊วด้ามพลาสติก MATALL 5 นิ้ว",
       "target_brand": "MATALL",
-      "target_url": "https://www.homepro.co.th/p/1167192",
+      "target_url": "https://www.homepro.co.th/p/1167130",
       "expected_url": "https://www.homepro.co.th/p/1167130",
-      "confidence": 70,
-      "reason": "Candidate 4 is the only other putty knife listed and has a similar size, although not exact.",
-      "gt_status": "INCORRECT"
+      "confidence": 95,
+      "reason": "The candidate is the same product type (putty knife) with an exact size match and is from the highest preferred brand (MATALL).",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 28,
@@ -90,8 +104,8 @@
       "target_brand": "KECH",
       "target_url": "https://www.homepro.co.th/p/1201175",
       "expected_url": "https://www.homepro.co.th/p/194804",
-      "confidence": 85,
-      "reason": "The candidate is a dish rack with 2 tiers, matching the critical product type and 'tiers' spec of the source product, and has the highest SpecMatch% among relevant alternatives.",
+      "confidence": 70,
+      "reason": "The best matching candidate is a dish rack with 2 tiers, the same product type and tier count as the source, and from a preferred brand (KECH) with a good SpecMatch percentage.",
       "gt_status": "INCORRECT"
     },
     {
@@ -104,23 +118,23 @@
       "target_brand": "GURALLA",
       "target_url": "https://www.homepro.co.th/p/1013700",
       "expected_url": "https://www.homepro.co.th/p/1013700",
-      "confidence": 70,
-      "reason": "The candidate has the exact same product type (tumbler) and a comparable volume spec, making it the best available match despite a 50% spec match score based on current data extraction.",
+      "confidence": 60,
+      "reason": "Candidate is also a cup, with a similar product type and SpecMatch of 50%. Although volume differs, it's the closest functional match.",
       "gt_status": "CORRECT"
     },
     {
       "chunk": 28,
-      "source_idx": 415,
-      "source_name": "สายรัดสายไฟ GIANT KINGKONG รุ่น HT-4.8 x 300 ขนาด 4.8 x 300 12 นิ้ว (แพ็ค 100 ชิ้น) สีขาว",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60166200",
-      "target_name": "เคเบิ้ลไทร์ ELEKTRA 10 นิ้ว สีขาว (100 เส้น)",
-      "target_brand": "ELEKTRA",
-      "target_url": "https://www.homepro.co.th/p/1146963",
-      "expected_url": "https://www.homepro.co.th/p/1154260",
+      "source_idx": 413,
+      "source_name": "ชุดโซฟาสนามตัวแอล พร้อมโต๊ะกลาง FONTE รุ่น AYD-24006-W (ชุด 4 ชิ้น) สีเทา",
+      "source_brand": "FONTE",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60391898",
+      "target_name": "ชุดโซฟาสนาม SPRING MORINE สีขาว/ดำ",
+      "target_brand": "SPRING",
+      "target_url": "https://www.homepro.co.th/p/1245333",
+      "expected_url": "https://www.homepro.co.th/p/1245333",
       "confidence": 75,
-      "reason": "The candidate is also a cable tie and has a matching pack count and a very close size in inches.",
-      "gt_status": "INCORRECT"
+      "reason": "Candidate is a sofa set from the preferred brand SPRING, despite no spec match for pack_count or model, as product type match is critical and preferred brand is prioritized.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 28,
@@ -132,8 +146,8 @@
       "target_brand": "PLIM",
       "target_url": "https://www.homepro.co.th/p/1249480",
       "expected_url": "https://www.homepro.co.th/p/1249480",
-      "confidence": 70,
-      "reason": "The candidate is also a 'clothes hanger' and has a similar pack count, making it the closest available alternative despite slightly different pack count.",
+      "confidence": 75,
+      "reason": "The candidate has a partially matching product type (hanger vs plastic hanger), is from a preferred brand, and has a similar pack count (6 pcs vs 5 pcs).",
       "gt_status": "CORRECT"
     },
     {
@@ -146,8 +160,8 @@
       "target_brand": "SPRING",
       "target_url": "https://www.homepro.co.th/p/1172299",
       "expected_url": "https://www.homepro.co.th/p/1172299",
-      "confidence": 70,
-      "reason": "Candidate 38 is the only other leaf fence-type product, has similar dimensions (200x100 vs source product implied dimension), and 'leaf fence' is critical to match.",
+      "confidence": 75,
+      "reason": "The candidate is a 'fence' type and from the preferred brand 'SPRING', although the model and color_temp specs do not match it is the closest product type match among candidates.",
       "gt_status": "CORRECT"
     }
   ]

@@ -4,11 +4,11 @@
   "start_idx": 60,
   "end_idx": 75,
   "products_tested": 15,
-  "matches_found": 6,
-  "correct": 5,
+  "matches_found": 7,
+  "correct": 6,
   "incorrect": 1,
-  "accuracy": 83.33333333333334,
-  "timestamp": "2025-12-03T04:14:56.846444",
+  "accuracy": 85.71428571428571,
+  "timestamp": "2025-12-03T06:04:03.621406",
   "matches": [
     {
       "chunk": 5,
@@ -20,8 +20,8 @@
       "target_brand": "ME LIVING",
       "target_url": "https://www.homepro.co.th/p/1230402",
       "expected_url": "https://www.homepro.co.th/p/1230402",
-      "confidence": 100,
-      "reason": "The candidate is a storage box with the exact same volume (340 L) as the source product, resulting in a 100% spec match and type match.",
+      "confidence": 95,
+      "reason": "The candidate is a storage box with an exact match in volume (340 L) and is from a preferred brand (ME LIVING). The model number difference is acceptable given the matching critical specs.",
       "gt_status": "CORRECT"
     },
     {
@@ -34,8 +34,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1227723",
       "expected_url": "https://www.homepro.co.th/p/1157325",
-      "confidence": 70,
-      "reason": "The candidate is the same product type (a-frame ladder) and has the highest SpecMatch percentage among relevant alternatives, with matching 'steps' and 'ladder_type' specifications.",
+      "confidence": 85,
+      "reason": "The candidate is an a-frame ladder with 8 steps, matching the critical 'PRODUCT TYPE' and 'steps' specifications of the source product, and it is from the most preferred brand 'MATALL'.",
       "gt_status": "INCORRECT"
     },
     {
@@ -48,8 +48,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1189195",
       "expected_url": "https://www.homepro.co.th/p/1189195",
-      "confidence": 90,
-      "reason": "The candidate is a 'pigment brush' which is a type of 'paint brush', has the exact same size (2 inches) and a high spec match percentage, making it a strong equivalent.",
+      "confidence": 95,
+      "reason": "Candidate 0 is a wool paint brush of the preferred brand MATALL with a matching size and high spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -62,8 +62,22 @@
       "target_brand": "PLIM",
       "target_url": "https://www.homepro.co.th/p/1266790",
       "expected_url": "https://www.homepro.co.th/p/1266790",
-      "confidence": 70,
-      "reason": "The candidate is the same product type (ironing board) with the highest spec match percentage among the alternatives, though specific 'model' data is missing.",
+      "confidence": 75,
+      "reason": "Candidate 0 is an ironing board from a preferred brand (PLIM) and has an identical product type, matching the critical spec of 'ironing board' from the source.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 5,
+      "source_idx": 68,
+      "source_name": "ยางรองขาเหล็กกล่อง (สวมใน) GIANT KINGKONG รุ่น B1-2 ขนาด 1 x 2 นิ้ว (แพ็ค 2 ชิ้น) สีดำ",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60328380",
+      "target_name": "ยางรองขาโต๊ะเหลี่ยมตันสวมใน DEXZON 1X2 นิ้ว แพ็ก 4 ชิ้น",
+      "target_brand": "DEXZON",
+      "target_url": "https://www.homepro.co.th/p/1182020",
+      "expected_url": "https://www.homepro.co.th/p/1182020",
+      "confidence": 90,
+      "reason": "The candidate is a preferred brand (DEXZON) and has very similar dimensions and product type (table leg caps vs leg pad) with a high spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -76,8 +90,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1227700",
       "expected_url": "https://www.homepro.co.th/p/1227700",
-      "confidence": 68,
-      "reason": "Candidate 0 is an a-frame ladder with 6 steps, closely matching the critical specs and product type of the source.",
+      "confidence": 85,
+      "reason": "Candidate 0 is the highest spec match within a preferred brand, matching the critical 'a-frame ladder' type and the 'steps' count exactly.",
       "gt_status": "CORRECT"
     },
     {
@@ -90,8 +104,8 @@
       "target_brand": "BIH",
       "target_url": "https://www.homepro.co.th/p/1144461",
       "expected_url": "https://www.homepro.co.th/p/1144461",
-      "confidence": 70,
-      "reason": "The candidate is the same product type (steel plate) and has the highest SpecMatch (23%) among all candidates, primarily matching on dimensions (6x6). Although the SpecMatch is below 50%, it's the closest available alternative for a steel plate.",
+      "confidence": 75,
+      "reason": "The candidate is also a steel plate with matching dimensions (6x6 inches) and is from a preferred brand, despite a mismatch in the drilled hole size and overall thickness compared to the source.",
       "gt_status": "CORRECT"
     }
   ]

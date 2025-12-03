@@ -4,12 +4,54 @@
   "start_idx": 30,
   "end_idx": 45,
   "products_tested": 15,
-  "matches_found": 3,
-  "correct": 1,
-  "incorrect": 2,
-  "accuracy": 33.33333333333333,
-  "timestamp": "2025-12-03T05:15:40.983482",
+  "matches_found": 5,
+  "correct": 2,
+  "incorrect": 3,
+  "accuracy": 40.0,
+  "timestamp": "2025-12-03T06:02:31.724854",
   "matches": [
+    {
+      "chunk": 3,
+      "source_idx": 30,
+      "source_name": "ตู้ลิ้นชักอเนกประสงค์ 5 ชั้น Rattan KASSA HOME รุ่น API-1078M5 ขนาด 60 ซม. สีขาว - เทา",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60313213",
+      "target_name": "ตู้ลิ้นชัก 5 ชั้น STACKO MAX(L) 58.5x41x109 ซม. สีใส",
+      "target_brand": "STACKO",
+      "target_url": "https://www.homepro.co.th/p/1150070",
+      "expected_url": "https://www.homepro.co.th/p/1150070",
+      "confidence": 65,
+      "reason": "The candidate is a preferred brand 'STACKO' and a drawer cabinet with 5-tiers, matching the source's critical specs and having the highest spec match percentage among suitable candidates.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 3,
+      "source_idx": 33,
+      "source_name": "ตู้ลิ้นชักอเนกประสงค์ 4 ชั้น Rattan KASSA HOME รุ่น API-1077M4 ขนาด 40 ซม. สีขาว - เทา",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60313209",
+      "target_name": "ตู้ลิ้นชัก 4 ชั้น STACKO 1200M4 45x40x84 ซม. สีพาสเทล",
+      "target_brand": "STACKO",
+      "target_url": "https://www.homepro.co.th/p/1102019",
+      "expected_url": "https://www.homepro.co.th/p/1248873",
+      "confidence": 75,
+      "reason": "Candidate 0 is a preferred brand (STACKO), has the same number of tiers (4), and a similar product type (drawer cabinet vs storage cabinet), with the highest SpecMatch% among viable alternatives.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 3,
+      "source_idx": 36,
+      "source_name": "เตาแก๊สปิกนิก ZAGIO รุ่น ZG-1557 สีน้ำตาล",
+      "source_brand": "ZAGIO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60380449",
+      "target_name": "เตาแก๊สปิกนิก AIKO EGP-1000 BLACK",
+      "target_brand": "AIKO",
+      "target_url": "https://www.homepro.co.th/p/1147572",
+      "expected_url": "https://www.homepro.co.th/p/1147572",
+      "confidence": 90,
+      "reason": "The candidate is the same product type ('gas stove' vs 'picnic gas stove') and it is a preferred brand AIKO.",
+      "gt_status": "CORRECT"
+    },
     {
       "chunk": 3,
       "source_idx": 38,
@@ -20,8 +62,8 @@
       "target_brand": "PLIM",
       "target_url": "https://www.homepro.co.th/p/1249480",
       "expected_url": "https://www.homepro.co.th/p/1221406",
-      "confidence": 95,
-      "reason": "The candidate is a preferred brand (PLIM) and an exact match in product type (clothes hanger) and pack count (6 pcs).",
+      "confidence": 90,
+      "reason": "The candidate is the same product type ('clothes hanger' is a hanger), has the identical pack count (6 pcs), and is from a PREFERRED brand (PLIM).",
       "gt_status": "INCORRECT"
     },
     {
@@ -35,22 +77,8 @@
       "target_url": "https://www.homepro.co.th/p/1145118",
       "expected_url": "https://www.homepro.co.th/p/274799",
       "confidence": 70,
-      "reason": "The candidate is a downlight with a matching size of 4 inches, although it is not from a preferred brand. Other candidates either have lower spec match or do not match the product type.",
+      "reason": "The candidate is a downlight with a matching size_inch (4 inch), making it the best functional equivalent despite the lower SpecMatch% due to brand difference.",
       "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 3,
-      "source_idx": 44,
-      "source_name": "เหล็กเพลทสี่เหลี่ยมหนา 6 มม. (เจาะรู 1.2ซม.) GIANT KINGKONG รุ่น HSD-1050-50 ขนาด 4 x 4 นิ้ว",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60315066",
-      "target_name": "แผ่นเหล็กเพลทเหลี่ยม (เจาะรู 3/8 นิ้ว) BIH 4X4X1/4 นิ้ว",
-      "target_brand": "BIH",
-      "target_url": "https://www.homepro.co.th/p/1144388",
-      "expected_url": "https://www.homepro.co.th/p/1144388",
-      "confidence": 75,
-      "reason": "Candidate 9 is a 'แผ่นเหล็กเพลทเหลี่ยม' (steel plate) matching the product type, has similar dimensions (4x4 inch), and is from a PREFERRED brand (BIH).",
-      "gt_status": "CORRECT"
     }
   ]
 }

@@ -4,11 +4,11 @@
   "start_idx": 255,
   "end_idx": 270,
   "products_tested": 15,
-  "matches_found": 5,
+  "matches_found": 6,
   "correct": 4,
-  "incorrect": 1,
-  "accuracy": 80.0,
-  "timestamp": "2025-12-03T04:26:42.951235",
+  "incorrect": 2,
+  "accuracy": 66.66666666666666,
+  "timestamp": "2025-12-03T06:14:31.802223",
   "matches": [
     {
       "chunk": 18,
@@ -20,8 +20,22 @@
       "target_brand": "ME LIVING",
       "target_url": "https://www.homepro.co.th/p/1184078",
       "expected_url": "https://www.homepro.co.th/p/1184078",
-      "confidence": 75,
-      "reason": "The candidate is a cabinet with 2 tiers, similar dimensions (70x50 vs 69x50) and length (82cm vs 85cm) to the source product, resulting in a 50% SpecMatch.",
+      "confidence": 85,
+      "reason": "Candidate 0 is the highest spec match at 63% for a 'cabinet' product type, is from a preferred brand (ME LIVING), and has nearly identical dimensions and tier count.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 18,
+      "source_idx": 257,
+      "source_name": "โคมไฟหัวเสาภายนอก E27 LUZINO รุ่น 0313-PFB BK สีดำ",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60370247",
+      "target_name": "โคมไฟหัวเสา CARINI 614F สีน้ำตาล",
+      "target_brand": "CARINI",
+      "target_url": "https://www.homepro.co.th/p/1200199",
+      "expected_url": "https://www.homepro.co.th/p/1200199",
+      "confidence": 70,
+      "reason": "Candidate 0 is a 'post lamp' which is a close type match to 'post top light' and is from the highest preferred brand 'CARINI' with the highest SpecMatch% among preferred brands.",
       "gt_status": "CORRECT"
     },
     {
@@ -34,8 +48,8 @@
       "target_brand": "KECH",
       "target_url": "https://www.homepro.co.th/p/1170736",
       "expected_url": "https://www.homepro.co.th/p/1170736",
-      "confidence": 75,
-      "reason": "Candidate 0 is the only option with matching product type 'tissue box' and has the highest SpecMatch percentage among relevant candidates.",
+      "confidence": 70,
+      "reason": "The candidate has a matching product type ('tissue box' vs 'tissue box holder'), is from a preferred brand (KECH, PREFERRED#3), and has a 50% SpecMatch focusing on the brand identifier.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,22 +63,22 @@
       "target_url": "https://www.homepro.co.th/p/1227914",
       "expected_url": "https://www.homepro.co.th/p/1227914",
       "confidence": 100,
-      "reason": "The candidate is the same product type (artificial grass) and has a 100% spec match for dimensions and length.",
+      "reason": "The candidate is the same product type (artificial grass), has identical dimensions (1x4 meters), and a 100% spec match, making it the most equivalent product.",
       "gt_status": "CORRECT"
     },
     {
       "chunk": 18,
-      "source_idx": 264,
-      "source_name": "ที่คว่ำจานพลาสติกพร้อมฝาปิด 1 ชั้น Leaf KASSA HOME รุ่น JCJ-2401 ขนาด 45 x 24 x 29.5 ซม. สีขาว",
+      "source_idx": 265,
+      "source_name": "กรรไกรอเนกประสงค์ Rio KASSA HOME รุ่น 923 สีดำ",
       "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60414832",
-      "target_name": "ชั้นคว่ำจานพลาสติกมีฝาครอบ JCJ NEW2401 สีขาว",
-      "target_brand": "JCJ",
-      "target_url": "https://www.homepro.co.th/p/1055448",
-      "expected_url": "https://www.homepro.co.th/p/1055448",
-      "confidence": 70,
-      "reason": "The candidate is also a dish rack and has the same brand, model (JCJ-2401 vs NEW2401, likely a minor version), and color, indicating a very strong product match even without full spec extraction.",
-      "gt_status": "CORRECT"
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60275722",
+      "target_name": "ชุดกรรไกรอเนกประสงค์ KECH สีเทา แพ็ก 4 ชิ้น",
+      "target_brand": "KECH",
+      "target_url": "https://www.homepro.co.th/p/1247635",
+      "expected_url": "https://www.homepro.co.th/p/1175726",
+      "confidence": 75,
+      "reason": "The candidate has the exact same product type (multi-purpose scissors) and is from a preferred brand (KECH, PREFERRED#3), with a comparable SpecMatch%.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 18,
@@ -76,8 +90,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1247909",
       "expected_url": "https://www.homepro.co.th/p/1172023",
-      "confidence": 70,
-      "reason": "The candidate has the highest spec match (68%) and is also an A-frame ladder with 4 steps, matching the critical product type and step count of the source product.",
+      "confidence": 85,
+      "reason": "Candidate 0 is an a-frame ladder with 4 steps, matching the source's critical specs and is from a highly preferred brand (MATALL).",
       "gt_status": "INCORRECT"
     }
   ]

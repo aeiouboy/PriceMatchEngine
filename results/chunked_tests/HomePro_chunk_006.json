@@ -4,26 +4,12 @@
   "start_idx": 75,
   "end_idx": 90,
   "products_tested": 15,
-  "matches_found": 7,
+  "matches_found": 10,
   "correct": 4,
-  "incorrect": 3,
-  "accuracy": 57.14285714285714,
-  "timestamp": "2025-12-03T04:15:42.642630",
+  "incorrect": 6,
+  "accuracy": 40.0,
+  "timestamp": "2025-12-03T06:04:47.596074",
   "matches": [
-    {
-      "chunk": 6,
-      "source_idx": 75,
-      "source_name": "เก้าอี้พักคอยหนัง PU AUSTIN KASSA รุ่น C-116-1-BR สีน้ำตาล",
-      "source_brand": "KASSA",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60396660",
-      "target_name": "เก้าอี้จัดเลี้ยง FURDINI UNIT สีน้ำตาล",
-      "target_brand": "FURDINI",
-      "target_url": "https://www.homepro.co.th/p/1165682",
-      "expected_url": "https://www.homepro.co.th/p/1165682",
-      "confidence": 70,
-      "reason": "The source product is a 'chair' and candidate 0 is also a 'chair' with the highest SpecMatch% among chairs, making it the most suitable equivalent.",
-      "gt_status": "CORRECT"
-    },
     {
       "chunk": 6,
       "source_idx": 77,
@@ -34,8 +20,8 @@
       "target_brand": "ACCO",
       "target_url": "https://www.homepro.co.th/p/1154350",
       "expected_url": "https://www.homepro.co.th/p/1154350",
-      "confidence": 95,
-      "reason": "The candidate is a trash can with the exact same volume (240 L) as the source product and is red, matching the source's color.",
+      "confidence": 90,
+      "reason": "The candidate is a trash can with the same volume (240 L) and color as the source, making it an equivalent product despite a different brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -48,8 +34,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1157044",
       "expected_url": "https://www.homepro.co.th/p/1102878",
-      "confidence": 75,
-      "reason": "The candidate is an aluminum ladder with 5 steps, matching the critical product type and step count of the source product.",
+      "confidence": 80,
+      "reason": "Candidate 1 (MATALL) is a preferred brand (PREFERRED#1) and matches the product type 'ladder' with the same number of steps (5 steps).",
       "gt_status": "INCORRECT"
     },
     {
@@ -62,8 +48,8 @@
       "target_brand": "KECH",
       "target_url": "https://www.homepro.co.th/p/183697",
       "expected_url": "https://www.homepro.co.th/p/183697",
-      "confidence": 100,
-      "reason": "The candidate is a dish rack with the same number of tiers (2 tiers) as the source product, and has a 100% spec match.",
+      "confidence": 95,
+      "reason": "The candidate is a dish drying rack with 2 tiers and is from a preferred brand (KECH) with 100% spec match on critical specifications.",
       "gt_status": "CORRECT"
     },
     {
@@ -72,12 +58,54 @@
       "source_name": "สายยางเด้ง 5/8 นิ้ว FONTE ยาว 20 เมตร",
       "source_brand": "FONTE",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60314436",
-      "target_name": "สายยางเด้ง GARTENE 5/8 นิ้วX20 ม. สีฟ้า",
-      "target_brand": "GARTENE",
-      "target_url": "https://www.homepro.co.th/p/1132429",
+      "target_name": "สายยางม้วนทึบ PVC SPRING 5/8 นิ้วx20 ม. สีน้ำเงิน",
+      "target_brand": "SPRING",
+      "target_url": "https://www.homepro.co.th/p/1096252",
       "expected_url": "https://www.homepro.co.th/p/1096252",
-      "confidence": 100,
-      "reason": "Candidate 0 is a garden hose with identical size, length, and hose diameter specifications as the source product.",
+      "confidence": 95,
+      "reason": "Candidate 1 (SPRING) is a preferred brand and has an excellent spec match (89%) with the identical product type, size, and length. Candidate 0 (GARTENE) also matches well but SPRING is a higher preferred brand.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 6,
+      "source_idx": 81,
+      "source_name": "โคมแทรคไลท์เข้ารางสี่เหลี่ยม GU5.3x1 LUZINO รุ่น CS14-WH สีขาว",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60392231",
+      "target_name": "แทรคไลท์ ติดราง GU5.3 CARINI CS14 สีดำ",
+      "target_brand": "CARINI",
+      "target_url": "https://www.homepro.co.th/p/1091371",
+      "expected_url": "https://www.homepro.co.th/p/1091371",
+      "confidence": 75,
+      "reason": "Candidate 3 is a track light and thus matches the critical product type. It is also from the most preferred brand CARINI and matches the GU5 identifier and model prefix. The lack of specific dimensions and volume is a minor discrepancy.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 6,
+      "source_idx": 82,
+      "source_name": "โคมไฟผนังภายนอก (PS) 6 นิ้ว E27x1 LUZINO รุ่น JEWEL W06(CL) สีใส",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60252715",
+      "target_name": "ไฟผนังภายนอก CARINI DL8009S-BK สีดำ",
+      "target_brand": "CARINI",
+      "target_url": "https://www.homepro.co.th/p/1170743",
+      "expected_url": "https://www.homepro.co.th/p/267461",
+      "confidence": 85,
+      "reason": "The candidate has the exact same product type (outdoor wall lamp) and the highest SpecMatch% among preferred brands. It is also the most relevant product type match.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 6,
+      "source_idx": 84,
+      "source_name": "ม้านั่ง HDPE ลายไม้ Fonte รุ่น SBK-140 ขนาด 140.5 x 28.5 x 42 ซม. สีเทา - ขาว",
+      "source_brand": "FONTE",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60359021",
+      "target_name": "ม้านั่งสนาม SPRING EVELYN PALM สี BRONZE",
+      "target_brand": "SPRING",
+      "target_url": "https://www.homepro.co.th/p/1182193",
+      "expected_url": "https://www.homepro.co.th/p/1087038",
+      "confidence": 60,
+      "reason": "The source product is a bench, and candidate 8 is also a bench from a preferred brand (SPRING#1). While the spec match percentage is low due to a lack of detailed matching specifications in the candidate, it's the only candidate that is the correct product type and from a preferred brand.",
       "gt_status": "INCORRECT"
     },
     {
@@ -91,7 +119,7 @@
       "target_url": "https://www.homepro.co.th/p/1226508",
       "expected_url": "https://www.homepro.co.th/p/194138",
       "confidence": 90,
-      "reason": "The candidate is a garden hose with the same size (1/2 inch) and only slightly shorter length (20M vs 21M), resulting in a high spec match.",
+      "reason": "The candidate is a preferred brand (SPRING) and has the highest spec match (81%), with the correct product type (garden hose) and very close length (20M vs 21M).",
       "gt_status": "INCORRECT"
     },
     {
@@ -100,13 +128,27 @@
       "source_name": "ราวแขวนตั้งพื้นทรงกางปีก 1.58 ม. เหล็กเคลือบ KASSA HOME รุ่น YLT-0501E ขนาด 158 x 61 x (99-130) ซม.",
       "source_brand": "KASSA HOME",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60279409",
-      "target_name": "ราวพาดผ้ามีปีก 143x60x97-140cm",
+      "target_name": "ราวตากผ้าเหล็กมีล้อ 8 เส้น PLIM 1.5 ม. สีขาว",
       "target_brand": "PLIM",
-      "target_url": "https://www.homepro.co.th/p/1041376",
+      "target_url": "https://www.homepro.co.th/p/1133475",
       "expected_url": "https://www.homepro.co.th/p/1041376",
       "confidence": 70,
-      "reason": "The candidate is a drying rack with similar dimensions and the same product type.",
-      "gt_status": "CORRECT"
+      "reason": "Candidate 0 is a drying rack, matching the product type, has a preferred brand (PLIM), and a decent spec match (46%) primarily due to matching length (1.5M vs 1.58M).",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 6,
+      "source_idx": 89,
+      "source_name": "โคมไฟผนังภายนอกอลูมิเนียม E27x2 LUZINO รุ่น SOPHIE 2013S/2-BK สีดำ",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60257192",
+      "target_name": "ไฟกิ่งภายนอก CARINI HL042A สีดำ",
+      "target_brand": "CARINI",
+      "target_url": "https://www.homepro.co.th/p/267461",
+      "expected_url": "https://www.homepro.co.th/p/1003063",
+      "confidence": 75,
+      "reason": "Candidate 1 is an outdoor wall light (matching product type) and from a preferred brand (CARINI), although the SpecMatch is 0%. The other candidates either have incorrect product types or are not preferred brands with better spec matches.",
+      "gt_status": "INCORRECT"
     }
   ]
 }

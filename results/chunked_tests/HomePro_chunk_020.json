@@ -5,24 +5,38 @@
   "end_idx": 300,
   "products_tested": 15,
   "matches_found": 6,
-  "correct": 3,
-  "incorrect": 3,
-  "accuracy": 50.0,
-  "timestamp": "2025-12-03T04:28:13.952894",
+  "correct": 4,
+  "incorrect": 2,
+  "accuracy": 66.66666666666666,
+  "timestamp": "2025-12-03T06:16:03.576219",
   "matches": [
+    {
+      "chunk": 20,
+      "source_idx": 285,
+      "source_name": "พุกเหล็ก GIANT KINGKONG รุ่น P-10516 ขนาด 5/16 นิ้ว (แพ็ก 5 ตัว) สีซิงค์รุ้ง",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60374085",
+      "target_name": "พุกเหล็ก DEXZON 5/16 นิ้ว 5 ชิ้น",
+      "target_brand": "DEXZON",
+      "target_url": "https://www.homepro.co.th/p/1184711",
+      "expected_url": "https://www.homepro.co.th/p/1174291",
+      "confidence": 95,
+      "reason": "Candidate 2 is the best match as it is the same product type (anchor bolt), has a 100% spec match including size and pack count, and is from a highly preferred brand (DEXZON).",
+      "gt_status": "INCORRECT"
+    },
     {
       "chunk": 20,
       "source_idx": 286,
       "source_name": "หน้ากากอนามัย GIANT KINGKONG รุ่น 33001-50 (กล่อง 50 ชิ้น) สีขาว",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60332149",
-      "target_name": "หน้ากากอนามัยการแพทย์ PPM 50 ชิ้น สีเขียว",
-      "target_brand": "PPM",
-      "target_url": "https://www.homepro.co.th/p/1172635",
+      "target_name": "หน้ากากอนามัยการแพทย์ Dexzon สีขาว 50 ชิ้น",
+      "target_brand": "DEXZON",
+      "target_url": "https://www.homepro.co.th/p/1174886",
       "expected_url": "https://www.homepro.co.th/p/1174886",
       "confidence": 95,
-      "reason": "The product type 'face mask' and 'pack_count' spec (50 pcs) are an exact match, with a high SpecMatch of 100%.",
-      "gt_status": "INCORRECT"
+      "reason": "The candidate is a preferred brand (DEXZON), has matching pack count and exact product type (face mask), offering the best spec match among alternatives.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 20,
@@ -34,9 +48,23 @@
       "target_brand": "SANWA",
       "target_url": "https://www.homepro.co.th/p/8817",
       "expected_url": "https://www.homepro.co.th/p/1254301",
-      "confidence": 75,
-      "reason": "The candidate is also a ball valve, matches the critical 'size_inch' spec of 1/2 inch, and has the highest SpecMatch% among relevant product types.",
+      "confidence": 80,
+      "reason": "Candidate 4 is a ball valve with the same size (1/2 inch) as the source, making it the closest type match despite not being a preferred brand.",
       "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 20,
+      "source_idx": 288,
+      "source_name": "คลิปปรับระดับกระเบื้อง GIANT KINGKONG PRO รุ่น KKP8117 ขนาด 1 มม. (แพ็ค 100 ชิ้น) สีขาว",
+      "source_brand": "GIANT KINGKONG PRO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60329241",
+      "target_name": "คลิปปรับระดับกระเบื้อง TARA DL-D09 1 มม.",
+      "target_brand": "TARA",
+      "target_url": "https://www.homepro.co.th/p/1175863",
+      "expected_url": "https://www.homepro.co.th/p/1175863",
+      "confidence": 90,
+      "reason": "The candidate product is a tile leveling clip, matching the critical product type, and is from a preferred brand (TARA), despite a 0% spec match on other details.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 20,
@@ -48,36 +76,8 @@
       "target_brand": "BIH",
       "target_url": "https://www.homepro.co.th/p/1144472",
       "expected_url": "https://www.homepro.co.th/p/1144472",
-      "confidence": 70,
-      "reason": "Candidate 0 is the only steel plate and has matching dimensions (5x5), although the hole size differs (3/8 inch vs 1.2 cm).",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 20,
-      "source_idx": 294,
-      "source_name": "โคมไฟช่ออะคริลิก E14x5 LUZINO รุ่น 63221-5CL สีใส",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60263289",
-      "target_name": "ไฟช่อ EGLO BRENDA 31666 สีดำ/ทองแดง 1 หัว",
-      "target_brand": "EGLO",
-      "target_url": "https://www.homepro.co.th/p/1253670",
-      "expected_url": "https://www.homepro.co.th/p/1223399",
-      "confidence": 70,
-      "reason": "The candidate is the only one with the matching product type 'pendant light', though specific specs are not provided for comparison.",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 20,
-      "source_idx": 296,
-      "source_name": "สายยางใยเชือก 1/2 นิ้ว พร้อมโรล FONTE รุ่น HWT001 ยาว 10 เมตร",
-      "source_brand": "FONTE",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60362443",
-      "target_name": "สายยางโรล ติดผนัง+ตั้งพื้น SAKURA DGS2001 1/2 นิ้วx10 ม. สีเขียว",
-      "target_brand": "SAKURA",
-      "target_url": "https://www.homepro.co.th/p/1101778",
-      "expected_url": "https://www.homepro.co.th/p/1101778",
-      "confidence": 100,
-      "reason": "Candidate 0 is a garden hose with exact matching size and length specs to the source product, resulting in a 100% SpecMatch.",
+      "confidence": 75,
+      "reason": "Candidate 11 is the only steel plate product type and has the highest spec match (23%) with the closest dimensions (5x5 inches).",
       "gt_status": "CORRECT"
     },
     {
@@ -91,7 +91,7 @@
       "target_url": "https://www.homepro.co.th/p/1179571",
       "expected_url": "https://www.homepro.co.th/p/1179571",
       "confidence": 95,
-      "reason": "Candidate 0 has a 100% spec match (size, length, diameter) and a matching product type ('pvc hose' is a subtype of 'garden hose') with the source product.",
+      "reason": "Candidate 0 is the highest preferred brand (SPRING) and has the highest SpecMatch% (89%) with an exact product type match to the source garden hose, and matching all critical specs including size and length.",
       "gt_status": "CORRECT"
     }
   ]

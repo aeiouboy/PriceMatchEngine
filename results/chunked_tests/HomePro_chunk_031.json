@@ -8,7 +8,7 @@
   "correct": 4,
   "incorrect": 2,
   "accuracy": 66.66666666666666,
-  "timestamp": "2025-12-03T04:36:41.710665",
+  "timestamp": "2025-12-03T06:24:34.454754",
   "matches": [
     {
       "chunk": 31,
@@ -21,7 +21,7 @@
       "target_url": "https://www.homepro.co.th/p/1287255",
       "expected_url": "https://www.homepro.co.th/p/1169721",
       "confidence": 60,
-      "reason": "Candidate 0 is the only dining chair and shares the same product type as the source, despite minimal spec data.",
+      "reason": "The candidate is a dining chair from a highly preferred brand (FURDINI) and has a 50% spec match, making it the best available equivalent despite the identifier mismatch.",
       "gt_status": "INCORRECT"
     },
     {
@@ -35,7 +35,21 @@
       "target_url": "https://www.homepro.co.th/p/1230068",
       "expected_url": "https://www.homepro.co.th/p/1230068",
       "confidence": 70,
-      "reason": "Candidate 0 is a bicycle with the same size (24 inch), making it the closest match despite the wattage and model number not being present in its specs.",
+      "reason": "Candidate 1 is a bicycle of the correct size (24 inch), matching the critical product type and 'size_inch' spec, and a preferred brand, despite the 'wattage' mismatch which is likely an incorrect spec for the source.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 31,
+      "source_idx": 457,
+      "source_name": "ผ้าเช็ดอเนกประสงค์แบบกล่อง KASSA HOME ขนาด 20 x 20 ซม. (กล่อง 20 แผ่น) สีฟ้า",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60394648",
+      "target_name": "ผ้าไมโครไฟเบอร์ทำความสะอาดแบบกล่อง ACCO 22x22 ซม. 20 ชิ้น สีฟ้า",
+      "target_brand": "ACCO",
+      "target_url": "https://www.homepro.co.th/p/1255584",
+      "expected_url": "https://www.homepro.co.th/p/1255584",
+      "confidence": 70,
+      "reason": "The candidate has the correct product type, a preferred brand (ACCO), and the dimensions are close enough (22x22 cm vs 20x20 cm), with matching pack count (20 pcs).",
       "gt_status": "CORRECT"
     },
     {
@@ -48,23 +62,23 @@
       "target_brand": "PUMPKIN",
       "target_url": "https://www.homepro.co.th/p/1176512",
       "expected_url": "https://www.homepro.co.th/p/1176512",
-      "confidence": 90,
-      "reason": "The candidate is a tool box with a matching size of 19 inches, resulting in a high spec match.",
+      "confidence": 95,
+      "reason": "Candidate 0 is the exact product type (tool box), has a matching size of 19 inches, and a 100% spec match, making it the best alternative.",
       "gt_status": "CORRECT"
     },
     {
       "chunk": 31,
-      "source_idx": 461,
-      "source_name": "ผ้าเช็ดอเนกประสงค์แบบกล่อง KASSA HOME ขนาด 20 x 20 ซม. (กล่อง 20 แผ่น) สีเขียว",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60394649",
-      "target_name": "ผ้าทำความสะอาดเคลือบเฟอร์นิเจอร์หนังเบาะรถ FARCENT 28.5x20 ซม. สีขาว",
-      "target_brand": "FARCENT",
-      "target_url": "https://www.homepro.co.th/p/204411",
-      "expected_url": "https://www.homepro.co.th/p/1255549",
-      "confidence": 70,
-      "reason": "Candidate 2 has the highest spec match (57%) and is also a 'cleaning cloth' product type, with dimensions somewhat close (28.5x20 vs 20x20).",
-      "gt_status": "INCORRECT"
+      "source_idx": 460,
+      "source_name": "ลูกกลิ้งทาสี GIANT KINGKONG รุ่น PR-007 ขนาด 7 นิ้ว",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60271295",
+      "target_name": "ลูกกลิ้งทาสี MATALL 7 นิ้ว",
+      "target_brand": "MATALL",
+      "target_url": "https://www.homepro.co.th/p/1181364",
+      "expected_url": "https://www.homepro.co.th/p/1181364",
+      "confidence": 100,
+      "reason": "Candidate 0 is the exact product type 'paint roller' with 100% spec match (size and roller type) and is from a preferred brand (MATALL, PREFERRED#2).",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 31,
@@ -72,27 +86,13 @@
       "source_name": "หน้ากากอนามัย GIANT KINGKONG รุ่น 33001-5OPP (แพ็ค 50 ชิ้น) สีเขียว",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60325724",
-      "target_name": "หน้ากากอนามัยการแพทย์ PPM 50 ชิ้น สีเขียว",
-      "target_brand": "PPM",
-      "target_url": "https://www.homepro.co.th/p/1172635",
+      "target_name": "หน้ากากอนามัยการแพทย์ Dexzon สีขาว 50 ชิ้น",
+      "target_brand": "DEXZON",
+      "target_url": "https://www.homepro.co.th/p/1174886",
       "expected_url": "https://www.homepro.co.th/p/1172635",
       "confidence": 95,
-      "reason": "The candidate is a medical mask (a specific type of face mask) and has an exact match on pack count, with the highest SpecMatch%.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 31,
-      "source_idx": 464,
-      "source_name": "ล้อยาง(นั่งร้าน)แบบเดือยหมุนได้ไม่มีเบรค GIANT KINGKONG รุ่น 1157-160 ขนาด 16 ซม. สีดำ",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60139193",
-      "target_name": "ลูกล้อยาง BY TORA เพลาหมุน ไม่มีเบรก 6 นิ้ว สีดำ",
-      "target_brand": "BY TORA",
-      "target_url": "https://www.homepro.co.th/p/1114515",
-      "expected_url": "https://www.homepro.co.th/p/1114515",
-      "confidence": 70,
-      "reason": "The candidate is a caster wheel with no brake, matching the product type and a key spec (brake=NO_BRAKE), and a similar size (6 inch vs 16 cm).",
-      "gt_status": "CORRECT"
+      "reason": "The candidate 'หน้ากากอนามัยการแพทย์ Dexzon สีขาว 50 ชิ้น' is a face mask, matches the pack count exactly, and is from DEXZON, a preferred brand.",
+      "gt_status": "INCORRECT"
     }
   ]
 }

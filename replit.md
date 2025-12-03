@@ -49,6 +49,10 @@ The system is built as a Streamlit web application, featuring two main matching 
 -   **AI Model Upgrade**: Upgraded from `google/gemini-2.5-flash-lite` to `google/gemini-2.5-flash` for improved matching accuracy.
 -   **Enhanced AI Prompt**: Added specific rejection rules for product sub-types (2-wheel vs 4-wheel carts, varnish vs oil brushes, beach vs banquet chairs, screw head types).
 -   **Chunked Testing System**: Created tests/chunked_test.py to handle large datasets in 15-product chunks, preventing API timeouts and saving progress incrementally.
+-   **Two-Tier Candidate Recall Pipeline**: Implemented spec-first candidate selection with relaxed price filter (100% for spec matches, 60% for fuzzy).
+-   **Deterministic Spec-Tier Prioritization**: High-quality spec candidates (spec_score >= 60) are prioritized over fuzzy matches using explicit tier priority sorting.
+-   **Expanded Product Line Conflicts**: Added conflicts for chairs, cookware, downlights, pack counts, and more to block mismatches.
+-   **Reduced Brand Boost**: Lowered brand boost from 40 to tiered 20→5 to prevent brand preference from overruling spec evidence.
 
 ## Comprehensive Testing Results (December 3, 2025)
 Full product matching test across all retailers using ground truth datasets:
@@ -56,13 +60,14 @@ Full product matching test across all retailers using ground truth datasets:
 | Retailer | Correct | Total GT | Accuracy | Status |
 |----------|---------|----------|----------|--------|
 | GlobalHouse | 30 | 35 | **85.7%** | ✅ Meets 85% target |
-| HomePro | 124 | 184 | 67.4% | Below target |
+| HomePro | 176 | 254 | 69.3% | Below target |
 | DoHome | 71 | 110 | 64.5% | Below target |
 | Boonthavorn | 7 | 16 | 43.8% | Below target |
-| **OVERALL** | **232** | **345** | **67.2%** | |
+| **OVERALL** | **284** | **415** | **68.4%** | |
 
-**Error Pattern Analysis:**
-- 60 incorrect matches on HomePro (brand mismatch to similar products)
-- 39 incorrect matches on DoHome
-- AI correctly identifies functional equivalents but may pick different valid alternatives than expected
-- Ground truth may be overly strict - multiple valid matches exist but only one is counted as correct
+**Key Insights from Error Analysis:**
+- 44% of ground truth entries have price differences >40%, requiring relaxed price tolerance
+- AI picks valid functional equivalents but may not match the specific GT-expected product
+- Volume/size mismatches (e.g., 66L vs 17L buckets) are common false positives
+- Product type mismatches (bar stool vs steel chair) indicate need for more conflict rules
+- Some GT entries may be overly strict when multiple valid alternatives exist

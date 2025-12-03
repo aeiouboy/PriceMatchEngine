@@ -4,12 +4,26 @@
   "start_idx": 435,
   "end_idx": 450,
   "products_tested": 15,
-  "matches_found": 7,
+  "matches_found": 8,
   "correct": 5,
-  "incorrect": 2,
-  "accuracy": 71.42857142857143,
-  "timestamp": "2025-12-03T04:35:56.181761",
+  "incorrect": 3,
+  "accuracy": 62.5,
+  "timestamp": "2025-12-03T06:23:47.349012",
   "matches": [
+    {
+      "chunk": 30,
+      "source_idx": 435,
+      "source_name": "ผ้าเช็ดอเนกประสงค์แบบกล่อง KASSA HOME ขนาด 20 x 20 ซม. (กล่อง 20 แผ่น) สีเทา",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60394647",
+      "target_name": "ผ้าไมโครไฟเบอร์ทำความสะอาดแบบกล่อง ACCO 22x22 ซม. 20 ชิ้น สีเทา",
+      "target_brand": "ACCO",
+      "target_url": "https://www.homepro.co.th/p/1255549",
+      "expected_url": "https://www.homepro.co.th/p/1182203",
+      "confidence": 75,
+      "reason": "The candidate has the exact product type, a preferred brand (ACCO), and the closest dimensions (22x22 vs 20x20) and pack count (20 sheets).",
+      "gt_status": "INCORRECT"
+    },
     {
       "chunk": 30,
       "source_idx": 436,
@@ -20,8 +34,8 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/1179052",
       "expected_url": "https://www.homepro.co.th/p/1179052",
-      "confidence": 70,
-      "reason": "The candidate is a cosmetic organizer and has a good spec match for dimensions and length, being within 10% of the source product.",
+      "confidence": 95,
+      "reason": "Candidate 0 is a preferred brand (STACKO), an exact product type match as a makeup organizer, and has a high SpecMatch (75%) with very similar dimensions (30x17.5 vs 29.5x17.5) and identical length (36cm).",
       "gt_status": "CORRECT"
     },
     {
@@ -34,23 +48,23 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1188985",
       "expected_url": "https://www.homepro.co.th/p/1181374",
-      "confidence": 100,
-      "reason": "Candidate 0 is a paint roller of the same size and roller type, with a 100% spec match.",
+      "confidence": 95,
+      "reason": "Candidate 2 is a paint roller of the same size (4 inch) and type (FULL) as the source, also from PREFERRED brand MATALL.",
       "gt_status": "INCORRECT"
     },
     {
       "chunk": 30,
-      "source_idx": 439,
-      "source_name": "บานพับประตูสเตนเลสหัวตัด GIANT KINGKONG รุ่น 4320 ขนาด 4 x 3 นิ้ว x 1.95 มม. (แพ็ก 3 ชิ้น) สีสเตนเลส",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60262683",
-      "target_name": "บานพับ 4X3 นิ้ว AZLE สีสเตนเลส แพ็ก 3 ชิ้น ไม่เซาะร่อง",
-      "target_brand": "AZLE",
-      "target_url": "https://www.homepro.co.th/p/1228500",
-      "expected_url": "https://www.homepro.co.th/p/1176591",
-      "confidence": 100,
-      "reason": "Candidate 0 is a door hinge with identical dimensions, size_inch, and pack count, achieving a 100% spec match.",
-      "gt_status": "INCORRECT"
+      "source_idx": 438,
+      "source_name": "กล่องอเนกประสงค์พร้อมล้อและฝาล็อก Q95 KASSA HOME รุ่น PSM-8101 ขนาด 104 ลิตร สีเทา",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60258077",
+      "target_name": "กล่องเก็บของ มีล้อ ฝาล็อค STACKO S105 A 100 ลิตร 50x70x42 ซม. สีฟ้า",
+      "target_brand": "STACKO",
+      "target_url": "https://www.homepro.co.th/p/1141879",
+      "expected_url": "https://www.homepro.co.th/p/1141879",
+      "confidence": 75,
+      "reason": "The candidate is a storage box from the preferred brand STACKO with a similar volume (100L vs 104L), making it a good match despite the lower SpecMatch% due to missing model number identifier.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 30,
@@ -62,8 +76,8 @@
       "target_brand": "JOY BICYCLE",
       "target_url": "https://www.homepro.co.th/p/1230068",
       "expected_url": "https://www.homepro.co.th/p/1230068",
-      "confidence": 95,
-      "reason": "The candidate is a bicycle with matching size_inch, making it the closest equivalent product.",
+      "confidence": 80,
+      "reason": "The candidate is also a 24 inch bicycle, matching the critical product type and size spec with 100% SpecMatch, and is from a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -76,9 +90,23 @@
       "target_brand": "CSP",
       "target_url": "https://www.homepro.co.th/p/292319",
       "expected_url": "https://www.homepro.co.th/p/292319",
-      "confidence": 70,
-      "reason": "The candidate is also a 2-tier corner shelf, matching the critical product type and the 'tiers' spec. Although dimensions do not match, the product type and an important spec for a shelf are aligned.",
+      "confidence": 75,
+      "reason": "The candidate has the correct product type (plastic shelf), matches the '2 tiers' spec and is a corner shelf, similar to the source which is described as 'เข้ามุม' (corner).",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 30,
+      "source_idx": 444,
+      "source_name": "กล่องอเนกประสงค์พร้อมฝาล็อก KASSA HOME รุ่น PSM-8207 ขนาด 30 ลิตร สีเทา",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60313992",
+      "target_name": "กล่องเก็บของฝาล็อก JCJ 5112 30 ลิตร 47.5x39x26 ซม. สีขาว",
+      "target_brand": "JCJ",
+      "target_url": "https://www.homepro.co.th/p/205254",
+      "expected_url": "https://www.homepro.co.th/p/268493",
+      "confidence": 95,
+      "reason": "The candidate is a storage box with the exact same volume (30 L) as the source product. Although not a preferred brand, it is the only one with high spec match within the same product type.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 30,
@@ -90,22 +118,8 @@
       "target_brand": "JCJ",
       "target_url": "https://www.homepro.co.th/p/205254",
       "expected_url": "https://www.homepro.co.th/p/205254",
-      "confidence": 60,
-      "reason": "Candidate 2 is the only other product of type 'storage box' and has the same product model (JCJ 5112) even if the volume differs.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 30,
-      "source_idx": 448,
-      "source_name": "น้ำยาถูพื้นทั่วไป KASSA HOME 5200 มล. สีชมพู กลิ่นฟลอรัลเฟรช",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60318683",
-      "target_name": "น้ำยาถูพื้น ACCO พิงค์ฟลอรัล 5.2 ลิตร",
-      "target_brand": "ACCO",
-      "target_url": "https://www.homepro.co.th/p/1157017",
-      "expected_url": "https://www.homepro.co.th/p/1157017",
       "confidence": 75,
-      "reason": "Candidate 10 is also a floor cleaner with a similar volume, despite the spec match being 0% due to unit conversion issues (5.2 L vs 5200 ML are equivalent).",
+      "reason": "The candidate is the correct product type 'storage box', shares the model identifier 'JCJ 5112', and has a volume (30L) close to the source (25L), which is the closest match among preferred brands and within acceptable tolerance.",
       "gt_status": "CORRECT"
     }
   ]

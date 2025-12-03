@@ -4,11 +4,11 @@
   "start_idx": 105,
   "end_idx": 120,
   "products_tested": 15,
-  "matches_found": 4,
-  "correct": 3,
-  "incorrect": 1,
+  "matches_found": 8,
+  "correct": 6,
+  "incorrect": 2,
   "accuracy": 75.0,
-  "timestamp": "2025-12-03T04:17:16.402080",
+  "timestamp": "2025-12-03T06:06:30.425125",
   "matches": [
     {
       "chunk": 8,
@@ -20,8 +20,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1167129",
       "expected_url": "https://www.homepro.co.th/p/1167129",
-      "confidence": 90,
-      "reason": "The candidate is a putty knife with the exact same size, making it a strong match for the steel trowel.",
+      "confidence": 100,
+      "reason": "Candidate 0 is the exact same product type (putty knife) and size (2.5 inch) as the source, and is from a highly preferred brand (MATALL).",
       "gt_status": "CORRECT"
     },
     {
@@ -35,7 +35,49 @@
       "target_url": "https://www.homepro.co.th/p/1182198",
       "expected_url": "https://www.homepro.co.th/p/1182198",
       "confidence": 75,
-      "reason": "Candidate 0 is a folding table with a similar length, and is the highest SpecMatch candidate of the correct product type.",
+      "reason": "The candidate is a folding table from a preferred brand (SPRING) and has similar dimensions (120 cm length) to the source product's primary dimension (120x60 cm). Although the length_cm for the source is 90 cm (which seems to be an error in the source data given the 120x60 dimensions), the candidate's 120 cm length aligns with the key dimension of '120'.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 8,
+      "source_idx": 112,
+      "source_name": "โคมดาวน์ไลท์หน้าเหลี่ยม 4 นิ้ว E27x1 Carry LUZINO รุ่น P4003-WH สีขาว",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60247110",
+      "target_name": "ดาวน์ไลท์ CARINI LD0140 4 นิ้ว สีขาว กลม",
+      "target_brand": "CARINI",
+      "target_url": "https://www.homepro.co.th/p/1052627",
+      "expected_url": "https://www.homepro.co.th/p/274789",
+      "confidence": 75,
+      "reason": "The candidate is a downlight (matching product type) from a highly preferred brand (CARINI), and has a good spec match (57%) on the critical size_inch spec, despite not matching the unusual 27x1 dimension of the source product.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 8,
+      "source_idx": 114,
+      "source_name": "ราวแขวนตั้งพื้น 4 เส้น 0.8 ม. ยางพารา KASSA HOME ขนาด 35 x 90 x 80 ซม. สีธรรมชาติ",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60277210",
+      "target_name": "ราวพาดผ้าไม้ยางพารา4เส้น MINI สีธรรมชาติ PLIM",
+      "target_brand": "PLIM",
+      "target_url": "https://www.homepro.co.th/p/1159460",
+      "expected_url": "https://www.homepro.co.th/p/1159460",
+      "confidence": 75,
+      "reason": "The candidate has the exact product type 'wooden towel rack' which broadly matches 'floor rack', same number of lines (4 lines), and is from a preferred brand (PLIM).",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 8,
+      "source_idx": 115,
+      "source_name": "โคมแทรคไลท์เข้ารางแปดเหลี่ยม GU5.3x1 LUZINO รุ่น CS15-WH สีขาว",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60392233",
+      "target_name": "แทรคไลท์ ติดราง GU5.3 CARINI CS15 สีดำ",
+      "target_brand": "CARINI",
+      "target_url": "https://www.homepro.co.th/p/1091353",
+      "expected_url": "https://www.homepro.co.th/p/1091353",
+      "confidence": 85,
+      "reason": "Candidate 3 is the only track light with a PREFERRED brand (CARINI) and shares critical identifiers ('GU5', 'CS15') with the source product, making it the best functional equivalent despite differences in color and the 'LUZINO' identifier.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,7 +91,21 @@
       "target_url": "https://www.homepro.co.th/p/1193332",
       "expected_url": "https://www.homepro.co.th/p/1193332",
       "confidence": 75,
-      "reason": "The candidate is the same product type (foam sheet) and has the highest spec match, with similar size_inch and length, though the length_cm is inconsistent with the length spec.",
+      "reason": "The candidate has the exact same product type (โฟมแผ่น), a preferred brand (PACK IN), and matching 'size_inch' as well as similar length_cm. The price is also the same.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 8,
+      "source_idx": 117,
+      "source_name": "ดอกสว่านเจาะดิน KARTEN รุ่น D-150 ขนาด 6 นิ้ว สีส้ม",
+      "source_brand": "KARTEN",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60306599",
+      "target_name": "ดอกสว่านเจาะดิน EUROX 6 นิ้ว",
+      "target_brand": "EUROX",
+      "target_url": "https://www.homepro.co.th/p/1229396",
+      "expected_url": "https://www.homepro.co.th/p/1229396",
+      "confidence": 95,
+      "reason": "The candidate is the same product type (earth drill bit) as the source, shares the exact size spec (6 inch), and is from a preferred brand (EUROX).",
       "gt_status": "CORRECT"
     },
     {
@@ -62,8 +118,8 @@
       "target_brand": "ISON",
       "target_url": "https://www.homepro.co.th/p/286157",
       "expected_url": "https://www.homepro.co.th/p/1228500",
-      "confidence": 100,
-      "reason": "The candidate is a door hinge with identical dimensions, pack count, and a very close thickness, making it a highly equivalent product.",
+      "confidence": 95,
+      "reason": "Candidate 6 is the only direct match for brand and specs (dimensions, pack count, and thickness), and Brand ISON is a suitable alternative to GIANT KINGKONG.",
       "gt_status": "INCORRECT"
     }
   ]

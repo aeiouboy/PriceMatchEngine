@@ -4,11 +4,11 @@
   "start_idx": 390,
   "end_idx": 405,
   "products_tested": 15,
-  "matches_found": 8,
-  "correct": 5,
-  "incorrect": 3,
-  "accuracy": 62.5,
-  "timestamp": "2025-12-03T04:33:41.364954",
+  "matches_found": 9,
+  "correct": 7,
+  "incorrect": 2,
+  "accuracy": 77.77777777777779,
+  "timestamp": "2025-12-03T06:21:33.394921",
   "matches": [
     {
       "chunk": 27,
@@ -16,13 +16,13 @@
       "source_name": "กล่องอเนกประสงค์พร้อมล้อและฝาล็อก KASSA HOME รุ่น API-2008 ขนาด 100 ลิตร สีเทา",
       "source_brand": "KASSA HOME",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60122984",
-      "target_name": "กล่องเก็บของ ME LIVING S023 59x54x42 ซม. 100 ลิตร สีเทา",
-      "target_brand": "ME LIVING",
-      "target_url": "https://www.homepro.co.th/p/1120065",
+      "target_name": "กล่องเก็บของ มีล้อ ฝาล็อค STACKO S105 A 100 ลิตร 50x70x42 ซม. สีฟ้า",
+      "target_brand": "STACKO",
+      "target_url": "https://www.homepro.co.th/p/1141879",
       "expected_url": "https://www.homepro.co.th/p/1141879",
       "confidence": 95,
-      "reason": "The candidate is also a 100L storage box from a house brand, with a matching price and similar dimensions.",
-      "gt_status": "INCORRECT"
+      "reason": "The candidate is a STACKO brand (PREFERRED#1) storage box with the exact same volume of 100 L, indicating a strong specification match.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 27,
@@ -34,8 +34,8 @@
       "target_brand": "ACCO",
       "target_url": "https://www.homepro.co.th/p/1152392",
       "expected_url": "https://www.homepro.co.th/p/1152392",
-      "confidence": 70,
-      "reason": "Candidate 2 is the only alternative of the same product type (dish soap) and has a compatible volume (3.8 L vs 3.5 L).",
+      "confidence": 85,
+      "reason": "Candidate 15 is another dish soap (PRODUCT TYPE and Category match required) and is a preferred brand (ACCO) with a similar volume (3.8L vs 3.5L).",
       "gt_status": "CORRECT"
     },
     {
@@ -49,7 +49,7 @@
       "target_url": "https://www.homepro.co.th/p/1028911",
       "expected_url": "https://www.homepro.co.th/p/1028911",
       "confidence": 70,
-      "reason": "The candidate is a trolley with the same volume (300 KG) and similar product type ('trolley' vs 'flat trolley'), making it the closest match.",
+      "reason": "Candidate 2 is a 'trolley' which is a close match to 'flat trolley', has the same 'volume' spec, and is a preferred brand (MATALL).",
       "gt_status": "CORRECT"
     },
     {
@@ -62,8 +62,8 @@
       "target_brand": "FURDINI",
       "target_url": "https://www.homepro.co.th/p/1279569",
       "expected_url": "https://www.homepro.co.th/p/1279569",
-      "confidence": 70,
-      "reason": "The candidate has the highest spec match percentage among office chairs and is the correct product type, despite lacking detailed specs.",
+      "confidence": 75,
+      "reason": "Candidate is an office chair from a preferred brand (Furdini) and has the highest spec match within the same product type.",
       "gt_status": "CORRECT"
     },
     {
@@ -77,7 +77,7 @@
       "target_url": "https://www.homepro.co.th/p/1083457",
       "expected_url": "https://www.homepro.co.th/p/1157391",
       "confidence": 75,
-      "reason": "The candidate is also an a-frame ladder with the same number of steps (7 steps) as the source product, resulting in a high SpecMatch of 68%. While the 'ladder_direction' and 'model' specs are not present, the core product type and critical 'steps' spec match.",
+      "reason": "The candidate is the same product type (a-frame ladder) and has the highest spec match (68%) with identical step count (7 steps), though it's not a top-preferred brand.",
       "gt_status": "INCORRECT"
     },
     {
@@ -91,22 +91,22 @@
       "target_url": "https://www.homepro.co.th/p/16342",
       "expected_url": "https://www.homepro.co.th/p/16342",
       "confidence": 100,
-      "reason": "Candidate 1 has an exact match in type (cover is equivalent to box lid) and all key specifications (dimensions and size_inch).",
+      "reason": "Candidate 1 has the exact product type 'square box lid' which is a close match to 'electrical box cover', and matches dimension specs with 100% SpecMatch.",
       "gt_status": "CORRECT"
     },
     {
       "chunk": 27,
-      "source_idx": 400,
-      "source_name": "แปรงทาสีขนสัตว์ เกรด A ด้ามพลาสติก GIANT KINGKONG รุ่น C303AP5 ขนาด 3 นิ้ว สีน้ำตาล",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60342292",
-      "target_name": "แปรงทาสีด้ามไม้ขลิบแดง FITT 3 นิ้ว",
-      "target_brand": "FITT",
-      "target_url": "https://www.homepro.co.th/p/1152414",
-      "expected_url": "https://www.homepro.co.th/p/1234386",
-      "confidence": 90,
-      "reason": "Candidate 14 is a paint brush of the same size as the source, making it the closest equivalent product.",
-      "gt_status": "INCORRECT"
+      "source_idx": 399,
+      "source_name": "เครื่องเป่าลม 600 วัตต์ GIANTTECH รุ่น HN-5016",
+      "source_brand": "GIANTTECH",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60291532",
+      "target_name": "เครื่องเป่าลมและดูด MATALL MT-0480 800 วัตต์",
+      "target_brand": "MATALL",
+      "target_url": "https://www.homepro.co.th/p/1182011",
+      "expected_url": "https://www.homepro.co.th/p/1182011",
+      "confidence": 85,
+      "reason": "Candidate 3 is an 'air blower' from a preferred brand (MATALL) with a reasonable wattage (800W vs 600W source).",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 27,
@@ -118,9 +118,23 @@
       "target_brand": "FURDINI",
       "target_url": "https://www.homepro.co.th/p/1287255",
       "expected_url": "https://www.homepro.co.th/p/1287255",
-      "confidence": 80,
-      "reason": "The candidate product is a dining chair, matching the source product type, and has the highest SpecMatch percentage among relevant options.",
+      "confidence": 70,
+      "reason": "The source product is a dining chair. Candidate 0 is also a dining chair from a preferred brand (FURDINI) with the highest spec match among qualifying items.",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 27,
+      "source_idx": 404,
+      "source_name": "กล่องอเนกประสงค์พร้อมล้อและฝาล็อก Fiona KASSA HOME รุ่น JCJ-5113 ขนาด 45 ลิตร สีขาว",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60220950",
+      "target_name": "กล่องเก็บของ มีล้อ ฝาล็อค STACKO 2000 42 ลิตร สีขาว",
+      "target_brand": "STACKO",
+      "target_url": "https://www.homepro.co.th/p/195587",
+      "expected_url": "https://www.homepro.co.th/p/1150463",
+      "confidence": 75,
+      "reason": "The candidate is a storage box with a volume of 42 L, which is close to the source's 45 L. It is also from the most preferred brand, STACKO, and is within a similar price range.",
+      "gt_status": "INCORRECT"
     }
   ]
 }

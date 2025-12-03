@@ -4,11 +4,11 @@
   "start_idx": 180,
   "end_idx": 195,
   "products_tested": 15,
-  "matches_found": 5,
+  "matches_found": 7,
   "correct": 3,
-  "incorrect": 2,
-  "accuracy": 60.0,
-  "timestamp": "2025-12-03T04:22:56.013965",
+  "incorrect": 4,
+  "accuracy": 42.857142857142854,
+  "timestamp": "2025-12-03T06:10:48.286234",
   "matches": [
     {
       "chunk": 13,
@@ -16,13 +16,13 @@
       "source_name": "แปรงทาสีน้ำมันขนสัตว์ด้ามไม้ GIANT KINGKONG รุ่น PB-037-2 ขนาด 2 นิ้ว",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60271279",
-      "target_name": "แปรงทาสีน้ำมัน FONKEY 2 นิ้ว",
-      "target_brand": "FONKEY",
-      "target_url": "https://www.homepro.co.th/p/1158408",
+      "target_name": "แปรงทาสีขนหมู MATALL PB037 2 นิ้ว",
+      "target_brand": "MATALL",
+      "target_url": "https://www.homepro.co.th/p/1189195",
       "expected_url": "https://www.homepro.co.th/p/1158408",
       "confidence": 95,
-      "reason": "The candidate is an oil paint brush of the same size as the source product, making it a strong match.",
-      "gt_status": "CORRECT"
+      "reason": "Candidate 0 is a paint brush of the same size and is from a preferred brand (MATALL) with 100% spec match.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 13,
@@ -35,7 +35,21 @@
       "target_url": "https://www.homepro.co.th/p/1115049",
       "expected_url": "https://www.homepro.co.th/p/1137997",
       "confidence": 100,
-      "reason": "Candidate 2 is the only alternative of type 'waterproof box' and has a 100% spec match, including matching dimensions and size.",
+      "reason": "Candidate 2 is the only product with a 100% spec match, the correct product type (waterproof box), and is within a reasonable price range.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 13,
+      "source_idx": 183,
+      "source_name": "ชิงช้า 3 ที่นั่ง FONTE รุ่น EMMIT 11001 สีเทา",
+      "source_brand": "FONTE",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60302627",
+      "target_name": "เก้าอี้โยก 3 ที่นั่ง SPRING POLY สีน้ำตาล",
+      "target_brand": "SPRING",
+      "target_url": "https://www.homepro.co.th/p/1039556",
+      "expected_url": "https://www.homepro.co.th/p/1272510",
+      "confidence": 60,
+      "reason": "Candidate is the same PREFERRED brand and product type (rocking chair is a type of swing seat) with a similar 3-seat count, making it the closest match despite model differences.",
       "gt_status": "INCORRECT"
     },
     {
@@ -48,8 +62,22 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1049741",
       "expected_url": "https://www.homepro.co.th/p/1049741",
-      "confidence": 95,
-      "reason": "The candidate is the same product type and brand, and the model number matches, implying a direct equivalent even without full spec data.",
+      "confidence": 75,
+      "reason": "Candidate is the same product type (tool box) and brand is MATALL which is the most preferred brand, with the same model HL3042-P. Although the spec match percentage is low, this is the only relevant match.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 13,
+      "source_idx": 190,
+      "source_name": "โคมแทรคไลท์เข้ารางสี่เหลี่ยม GU5.3x1 LUZINO รุ่น CS14-BK สีดำ",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60392230",
+      "target_name": "แทรคไลท์ ติดราง GU5.3 CARINI CS14 สีดำ",
+      "target_brand": "CARINI",
+      "target_url": "https://www.homepro.co.th/p/1091371",
+      "expected_url": "https://www.homepro.co.th/p/1091371",
+      "confidence": 90,
+      "reason": "The candidate is a track light, matches the critical product type, has a preferred brand (CARINI), and shares key identifiers with the source product.",
       "gt_status": "CORRECT"
     },
     {
@@ -62,8 +90,8 @@
       "target_brand": "PACK IN",
       "target_url": "https://www.homepro.co.th/p/1153132",
       "expected_url": "https://www.homepro.co.th/p/1153132",
-      "confidence": 90,
-      "reason": "Candidate 0 is also a packing tape and has the same product type and similar dimensions and roll count. The color and brand are different but the core product is the same.",
+      "confidence": 70,
+      "reason": "Candidate 0 is a packing tape, matching the source product type, and has 'PACK IN' as a preferred brand with key spec 'X 45' matching.",
       "gt_status": "CORRECT"
     },
     {
@@ -77,7 +105,7 @@
       "target_url": "https://www.homepro.co.th/p/1178949",
       "expected_url": "https://www.homepro.co.th/p/1157496",
       "confidence": 95,
-      "reason": "Candidate 0 is a silicone gun with matching size and price, which is a very close equivalent to a caulking gun in function.",
+      "reason": "The candidate is a preferred brand (DEXZON), has a 100% spec match for size, and is the same product type (silicone gun is equivalent to a caulking gun for this purpose).",
       "gt_status": "INCORRECT"
     }
   ]

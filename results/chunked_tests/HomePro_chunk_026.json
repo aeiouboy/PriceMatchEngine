@@ -4,12 +4,26 @@
   "start_idx": 375,
   "end_idx": 390,
   "products_tested": 15,
-  "matches_found": 6,
-  "correct": 5,
-  "incorrect": 1,
-  "accuracy": 83.33333333333334,
-  "timestamp": "2025-12-03T04:32:54.246953",
+  "matches_found": 10,
+  "correct": 8,
+  "incorrect": 2,
+  "accuracy": 80.0,
+  "timestamp": "2025-12-03T06:20:48.175142",
   "matches": [
+    {
+      "chunk": 26,
+      "source_idx": 375,
+      "source_name": "หม้อสองหูทรงสูงเคลือบเซรามิก 24 ซม. พร้อมฝาแก้ว Erika KASSA HOME รุ่น C24I สีครีม",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60392892",
+      "target_name": "หม้อพร้อมฝา 24 ซม. NEOFLAM BROTE สีเขียว",
+      "target_brand": "NEOFLAM",
+      "target_url": "https://www.homepro.co.th/p/1240600",
+      "expected_url": "https://www.homepro.co.th/p/1240600",
+      "confidence": 90,
+      "reason": "Candidate 1 is a pot with lid, similar to a ceramic pot, has an exact length match, and a high SpecMatch percentage. Candidate 0 and 2 are grill pans, which are a different product type.",
+      "gt_status": "CORRECT"
+    },
     {
       "chunk": 26,
       "source_idx": 376,
@@ -20,8 +34,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1247818",
       "expected_url": "https://www.homepro.co.th/p/1247818",
-      "confidence": 70,
-      "reason": "The candidate is a 'brush cutter' which is a very close match to 'grass trimmer' and has a spec match of 50%, with a similar model number implied in the name P-MKT411 vs CN-411.",
+      "confidence": 75,
+      "reason": "Candidate 0 is a grass trimmer, which is a type of brush cutter, and matches the product type and brand preference with a 50% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -34,8 +48,8 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/1263081",
       "expected_url": "https://www.homepro.co.th/p/1263081",
-      "confidence": 70,
-      "reason": "The candidate is the same product type (shoe box) and has identical dimensions and length. While the source specifies '6 tiers' and the candidate '12 outlets', these refer to the same concept of individual shoe compartments within the box, just phrased differently, and the overall dimensions match perfectly.",
+      "confidence": 63,
+      "reason": "The candidate is a shoe box from a preferred brand with identical dimensions and length, indicating a strong spec match for a replacement.",
       "gt_status": "CORRECT"
     },
     {
@@ -48,8 +62,8 @@
       "target_brand": "ELEKTRA",
       "target_url": "https://www.homepro.co.th/p/1154352",
       "expected_url": "https://www.homepro.co.th/p/1154352",
-      "confidence": 90,
-      "reason": "The candidate is also a cable tie with a matching size (16 inch) and pack count (100 lines vs 100 pcs).",
+      "confidence": 95,
+      "reason": "Candidate is the correct product type (cable tie) and has a strong spec match for size and pack count, with the next best matching alternative being a non-preferred brand and for a different product type.",
       "gt_status": "CORRECT"
     },
     {
@@ -63,7 +77,35 @@
       "target_url": "https://www.homepro.co.th/p/1102878",
       "expected_url": "https://www.homepro.co.th/p/195811",
       "confidence": 85,
-      "reason": "The candidate is the same product type (a-frame ladder) and has the highest SpecMatch% with matching step count.",
+      "reason": "The candidate is the same product type (a-frame ladder) and brand (MATALL, PREFERRED#1) with a high spec match for steps (5 steps).",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 26,
+      "source_idx": 381,
+      "source_name": "กล่องกระดาษ5 ชั้น ฝาชน GIANT KINGKONG รุ่น KI125/M ขนาด 40 x 45 x 35 ซม. สีน้ำตาล",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60175678",
+      "target_name": "กล่องฝาปิด PACK IN 40x45x35 ซม.",
+      "target_brand": "PACK IN",
+      "target_url": "https://www.homepro.co.th/p/194752",
+      "expected_url": "https://www.homepro.co.th/p/194752",
+      "confidence": 85,
+      "reason": "The candidate is the correct product type (box) and has the highest spec match (dimensions and length) among candidates, matching preferred brand criteria.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 26,
+      "source_idx": 384,
+      "source_name": "ปืนยิงยาแนวไส้กรอก GIANT KINGKONG รุ่น XY-501-9 ขนาด 9 นิ้ว สีเงิน",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60269861",
+      "target_name": "ปืนยิงซิลิโคนแบบเหล็ก DEXZON แกนคู่ 9 นิ้ว สีแดง",
+      "target_brand": "DEXZON",
+      "target_url": "https://www.homepro.co.th/p/1157496",
+      "expected_url": "https://www.homepro.co.th/p/1157195",
+      "confidence": 95,
+      "reason": "The candidate is a DEXZON silicone gun (a close product type to caulking gun) with the exact same size spec, and DEXZON is the highest preferred brand.",
       "gt_status": "INCORRECT"
     },
     {
@@ -77,7 +119,21 @@
       "target_url": "https://www.homepro.co.th/p/1167138",
       "expected_url": "https://www.homepro.co.th/p/1167138",
       "confidence": 95,
-      "reason": "The candidate is a 'plastic handle scraper' which is a very close functional equivalent to a 'putty knife' with the same size_inch spec, and the product type rule specifies putty knife which is a scraper functionality. The brand is different but the key specs align.",
+      "reason": "The candidate is a putty knife with the exact same size (3 inch) and is from the top preferred brand MATALL, resulting in a perfect spec match.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 26,
+      "source_idx": 388,
+      "source_name": "เต้ารับสามทางต้วเมียต่อกลาง 16A LUZINO รุ่น AJ-1013 กำลัง 220 โวลต์ น้ำเงิน",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60285940",
+      "target_name": "เพาเวอร์ปลั๊ก 3 ตัวเมีย 1ตัวผู้ SUMO P1-013Y 16A",
+      "target_brand": "SUMO",
+      "target_url": "https://www.homepro.co.th/p/1140156",
+      "expected_url": "https://www.homepro.co.th/p/1140156",
+      "confidence": 60,
+      "reason": "Candidate 10 (SUMO P1-013Y) is the only alternative identified as a socket type product, and matches the product type of the source. Although there is no spec match in terms of model number, it is the closest functional equivalent found.",
       "gt_status": "CORRECT"
     },
     {
@@ -91,7 +147,7 @@
       "target_url": "https://www.homepro.co.th/p/1021279",
       "expected_url": "https://www.homepro.co.th/p/1021279",
       "confidence": 90,
-      "reason": "The candidate is also a 'measuring wheel' and has the highest SpecMatch% among relevant alternatives.",
+      "reason": "Candidate is the same product type (measuring wheel) and a preferred brand (HACHI) with 50% spec match, which is the highest among relevant types.",
       "gt_status": "CORRECT"
     }
   ]

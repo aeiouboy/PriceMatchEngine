@@ -4,11 +4,11 @@
   "start_idx": 270,
   "end_idx": 285,
   "products_tested": 15,
-  "matches_found": 6,
-  "correct": 4,
-  "incorrect": 2,
-  "accuracy": 66.66666666666666,
-  "timestamp": "2025-12-03T04:27:29.453357",
+  "matches_found": 8,
+  "correct": 5,
+  "incorrect": 3,
+  "accuracy": 62.5,
+  "timestamp": "2025-12-03T06:15:17.802885",
   "matches": [
     {
       "chunk": 19,
@@ -16,12 +16,26 @@
       "source_name": "โคมไฟหัวเสาภายนอก E27x1 LUZINO RARE HOUSE รุ่น 0288-PF-B(BG) สีทองรมดำ",
       "source_brand": "LUZINO",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60272338",
-      "target_name": "ไฟหัวเสา CARINI C036/250 สีทองรมดำ",
+      "target_name": "โคมไฟหัวเสา 1122/250 CARINI MT/GS CT สีน้ำตาลรมดำ",
       "target_brand": "CARINI",
-      "target_url": "https://www.homepro.co.th/p/1004031",
+      "target_url": "https://www.homepro.co.th/p/1032598",
       "expected_url": "https://www.homepro.co.th/p/1004031",
-      "confidence": 70,
-      "reason": "The best candidate is a post lamp, matching the critical product type. Although the SpecMatch is 40%, it is the highest among relevant candidates and a closer examination of the specs in the prompt indicates that 'lamp_type=POLE_LAMP' is indeed a key spec. The other candidates with 40% SpecMatch have other significant differences (e.g. wattage, dimensions, color temp - for candidates 23, 24, 25).",
+      "confidence": 65,
+      "reason": "Candidate 1 (CARINI) is a preferred brand and a post lamp, matching the critical product type and having a similar SpecMatch % to other candidates.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 19,
+      "source_idx": 273,
+      "source_name": "พัดลมโคมไฟพลาสติกเอบีเอส Tri-Color (รีโมทคอนโทรล) LUZINO รุ่น WYD52-C04 ขนาด 52 นิ้ว สีดำ",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60305504",
+      "target_name": "พัดลมโคมไฟ LED CARINI 52-5B-1L-BK 52 นิ้ว สีดำ",
+      "target_brand": "CARINI",
+      "target_url": "https://www.homepro.co.th/p/1167597",
+      "expected_url": "https://www.homepro.co.th/p/1167597",
+      "confidence": 95,
+      "reason": "The candidate is a preferred brand (CARINI), has the exact same product type (ceiling fan), matches the critical size (52 inch), and has a 100% SpecMatch.",
       "gt_status": "CORRECT"
     },
     {
@@ -30,13 +44,13 @@
       "source_name": "แปรงทาสีขนสัตว์ เกรด A ด้ามพลาสติก GIANT KINGKONG รุ่น C303AP6 ขนาด 4 นิ้ว สีน้ำตาล",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60342293",
-      "target_name": "แปรงทาสีน้ำมัน FONKEY 4 นิ้ว",
-      "target_brand": "FONKEY",
-      "target_url": "https://www.homepro.co.th/p/1158356",
+      "target_name": "แปรงทาสีด้ามพลาสติกขนสังคราะห์ดำ MATALL 4 นิ้ว",
+      "target_brand": "MATALL",
+      "target_url": "https://www.homepro.co.th/p/1234363",
       "expected_url": "https://www.homepro.co.th/p/1234363",
-      "confidence": 85,
-      "reason": "The candidate is a paint brush with the correct 'size_inch' spec matching the source product, making it the closest equivalent type.",
-      "gt_status": "INCORRECT"
+      "confidence": 75,
+      "reason": "Candidate 0 is a paint brush of the preferred brand MATALL with the exact matching size of 4 inches.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 19,
@@ -48,22 +62,8 @@
       "target_brand": "BIH",
       "target_url": "https://www.homepro.co.th/p/1144390",
       "expected_url": "https://www.homepro.co.th/p/1144390",
-      "confidence": 75,
-      "reason": "The candidate is also a steel plate and has a similar size dimension of 8 inches, making it the closest available alternative despite a slight dimension mismatch in the first spec value compared to the source product.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 19,
-      "source_idx": 277,
-      "source_name": "น้ำยาถูพื้นทั่วไป KASSA HOME 5200 มล. สีน้ำเงิน กลิ่นบลูเฟรช",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60318685",
-      "target_name": "น้ำยาถูพื้น ACCO ลาเวนเดอร์ 5.2 ลิตร",
-      "target_brand": "ACCO",
-      "target_url": "https://www.homepro.co.th/p/1157142",
-      "expected_url": "https://www.homepro.co.th/p/1157142",
       "confidence": 90,
-      "reason": "Candidate 10 is also a floor cleaner with a similar volume, despite the stated 0% SpecMatch in the input, which appears to be an error given the listed volume of 5.2 L (5200 ML).",
+      "reason": "Candidate 1 is a preferred brand (BIH) and is the only alternative with the exact product type 'steel plate' and a close spec match (8x8 inch dimensions).",
       "gt_status": "CORRECT"
     },
     {
@@ -76,9 +76,23 @@
       "target_brand": "FURDINI",
       "target_url": "https://www.homepro.co.th/p/1231109",
       "expected_url": "https://www.homepro.co.th/p/1231109",
-      "confidence": 70,
-      "reason": "The candidate is also a 'safe' product, which is a critical match. Although specific specs like length and model are not available for the candidate, the product type is the strongest possible match among the given alternatives.",
+      "confidence": 75,
+      "reason": "Candidate 10 is the only 'safe' type product and is from a preferred brand (FURDINI) at a similar price, despite the lower spec match percentage not capturing other similarities.",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 19,
+      "source_idx": 280,
+      "source_name": "โคมดาวน์ไลท์ติดลอยกลม 4 นิ้ว E27x1 LUZINO รุ่น MZY401-BK สีดำ",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60320165",
+      "target_name": "ดาวน์ไลท์ CARINI LD0140 4 นิ้ว สีขาว กลม",
+      "target_brand": "CARINI",
+      "target_url": "https://www.homepro.co.th/p/1052627",
+      "expected_url": "https://www.homepro.co.th/p/1081378",
+      "confidence": 60,
+      "reason": "The candidate is a downlight with a matching size of 4 inches and a preferred brand, although the socket type is not specified.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 19,
@@ -91,8 +105,22 @@
       "target_url": "https://www.homepro.co.th/p/1249480",
       "expected_url": "https://www.homepro.co.th/p/1221434",
       "confidence": 95,
-      "reason": "The candidate is also a hanger with the same pack count as the source product.",
+      "reason": "Candidate is the same product type (hanger) and has an exact pack count match with a preferred brand (PLIM).",
       "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 19,
+      "source_idx": 283,
+      "source_name": "ครกหิน 7.6 นิ้ว พร้อมสาก KASSA HOME รุ่น 5RYQ1911 สีเทา",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60395548",
+      "target_name": "ครกพร้อมสากหิน 7.5 นิ้ว",
+      "target_brand": "COLOR KIT",
+      "target_url": "https://www.homepro.co.th/p/1012656",
+      "expected_url": "https://www.homepro.co.th/p/1012656",
+      "confidence": 95,
+      "reason": "The candidate is the same product type (mortar and pestle) and has a very close size (7.5 inch vs 7.6 inch) with a high SpecMatch of 83%.",
+      "gt_status": "CORRECT"
     }
   ]
 }

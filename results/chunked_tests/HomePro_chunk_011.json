@@ -4,11 +4,11 @@
   "start_idx": 150,
   "end_idx": 165,
   "products_tested": 15,
-  "matches_found": 5,
-  "correct": 3,
+  "matches_found": 4,
+  "correct": 2,
   "incorrect": 2,
-  "accuracy": 60.0,
-  "timestamp": "2025-12-03T04:20:02.785760",
+  "accuracy": 50.0,
+  "timestamp": "2025-12-03T06:08:55.380631",
   "matches": [
     {
       "chunk": 11,
@@ -16,13 +16,13 @@
       "source_name": "ล้อเก็บสายไฟเหล็ก 4 ช่อง VCT3x1.5 LUZINO รุ่น TLS-1520 ขนาด 20 ม. สีเทา",
       "source_brand": "LUZINO",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60321367",
-      "target_name": "ล้อเก็บสายไฟ 4 ช่อง ELECKTA ET-SA1520 3600 วัตต์ 20 เมตร เหลือง",
+      "target_name": "ล้อเก็บสายไฟ 4 ช่อง พร้อมเบรคเกอร์กันไฟดูด ELECKTA ET-BC1520 3600 วัตต์ 20 เมตร สีเหลือง",
       "target_brand": "ELECKTA",
-      "target_url": "https://www.homepro.co.th/p/1167863",
+      "target_url": "https://www.homepro.co.th/p/1176875",
       "expected_url": "https://www.homepro.co.th/p/1167863",
-      "confidence": 70,
-      "reason": "The candidate is also a cable reel, has 4 outlets and a length of 20M, strongly matching the critical specs of the source product.",
-      "gt_status": "CORRECT"
+      "confidence": 90,
+      "reason": "Candidate 1 (cable reel) is the same product type, from a preferred brand (ELECKTA), and has a high SpecMatch (57%) with matching key specs like length and outlets. It also includes an additional feature (เบรคเกอร์กันไฟดูด) which enhances it.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 11,
@@ -30,27 +30,13 @@
       "source_name": "ตู้ลิ้นชักอเนกประสงค์ 5 ชั้น Jasmin KASSA HOME รุ่น API-1500M5 ขนาด 50 x 47.2 x 114.6 ซม. สีพาสเทล",
       "source_brand": "KASSA HOME",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60335316",
-      "target_name": "ตู้ลิ้นชัก 5 ชั้น STACKO KS-515G 36x43.5x108 ซม. สีเทา",
+      "target_name": "ตู้ลิ้นชัก 5 ชั้น STACKO MAX(L) 58.5x41x109 ซม. สีใส",
       "target_brand": "STACKO",
-      "target_url": "https://www.homepro.co.th/p/1162129",
+      "target_url": "https://www.homepro.co.th/p/1150070",
       "expected_url": "https://www.homepro.co.th/p/1138783",
-      "confidence": 70,
-      "reason": "The candidate is a 5-tier drawer cabinet with matching product type and the highest spec match percentage (50%) among alternatives, even though dimensions differ.",
+      "confidence": 60,
+      "reason": "Candidate 4 is a drawer cabinet with 5 tiers, matching the source. While dimensions differ, it's the closest match with a preferred brand and decent SpecMatch percentage.",
       "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 11,
-      "source_idx": 158,
-      "source_name": "ถังขยะมีล้อและที่เหยียบ GIANT KINGKONG YY-240C-YL ความจุ 240 ลิตร สีเหลือง",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60243738",
-      "target_name": "ถังขยะเหลี่ยมขาเหยียบ ฝาเปิด-ปิด ACCO 240 ลิตร สีเหลือง",
-      "target_brand": "ACCO",
-      "target_url": "https://www.homepro.co.th/p/1154492",
-      "expected_url": "https://www.homepro.co.th/p/1154492",
-      "confidence": 100,
-      "reason": "The candidate is a trash can with the exact same volume (240 L) as the source, and a 100% spec match.",
-      "gt_status": "CORRECT"
     },
     {
       "chunk": 11,
@@ -58,13 +44,13 @@
       "source_name": "ลูกบิดห้องน้ำหัวจันจานใหญ่สเตนเลส GIANT KINGKONG รุ่น 5791BK-SS (D) สีเงิน",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60318387",
-      "target_name": "ลูกบิดห้องน้ำ YALE EKN-VCA5142US32D หัวกลม สีสเตนเลส",
-      "target_brand": "YALE",
-      "target_url": "https://www.homepro.co.th/p/1115919",
+      "target_name": "ลูกบิดห้องน้ำ COLT LITE K5791BKSS หัวจัน สีสเตนเลส",
+      "target_brand": "COLT LITE",
+      "target_url": "https://www.homepro.co.th/p/1181331",
       "expected_url": "https://www.homepro.co.th/p/1181331",
       "confidence": 95,
-      "reason": "The candidate is a 'door knob' for 'BATHROOM' with high spec match percentage and from a different brand.",
-      "gt_status": "INCORRECT"
+      "reason": "The candidate has a 100% spec match, matching the critical 'door knob' product type and 'BATHROOM' knob_room, with a very similar model identifier to the source.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 11,
@@ -77,7 +63,7 @@
       "target_url": "https://www.homepro.co.th/p/1168235",
       "expected_url": "https://www.homepro.co.th/p/1168235",
       "confidence": 100,
-      "reason": "The candidate is identical to the source product in product type, length, and color, resulting in a 100% spec match.",
+      "reason": "Candidate 0 is an exact product type and spec match (length=140M) and is from the highest preferred brand (DEXZON).",
       "gt_status": "CORRECT"
     }
   ]

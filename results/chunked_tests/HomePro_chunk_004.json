@@ -4,11 +4,11 @@
   "start_idx": 45,
   "end_idx": 60,
   "products_tested": 15,
-  "matches_found": 5,
-  "correct": 3,
+  "matches_found": 6,
+  "correct": 4,
   "incorrect": 2,
-  "accuracy": 60.0,
-  "timestamp": "2025-12-03T05:15:38.502265",
+  "accuracy": 66.66666666666666,
+  "timestamp": "2025-12-03T06:03:16.896299",
   "matches": [
     {
       "chunk": 4,
@@ -20,8 +20,8 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/1235138",
       "expected_url": "https://www.homepro.co.th/p/1235138",
-      "confidence": 75,
-      "reason": "The candidate has the correct product type (cable management box vs cable organizer) and is a preferred brand (STACKO), with a reasonable spec match percentage for dimensions.",
+      "confidence": 85,
+      "reason": "The candidate is the same product type (cable organizer) and brand (STACKO is PREFERRED#1). While dimensions differ by a small margin, it's the closest match available.",
       "gt_status": "CORRECT"
     },
     {
@@ -34,8 +34,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1247818",
       "expected_url": "https://www.homepro.co.th/p/1245097",
-      "confidence": 70,
-      "reason": "The candidate is the same product type (grass trimmer) and a preferred brand (MATALL), with a 50% spec match.",
+      "confidence": 75,
+      "reason": "The candidate is a MATALL brand brush cutter, which is a preferred brand, and although described as a brush cutter, it is a close product type to a grass trimmer with matching specs within a reasonable range.",
       "gt_status": "INCORRECT"
     },
     {
@@ -49,7 +49,7 @@
       "target_url": "https://www.homepro.co.th/p/1251658",
       "expected_url": "https://www.homepro.co.th/p/1144449",
       "confidence": 85,
-      "reason": "The candidate is a preferred brand 'DEXZON', has the highest spec match, and is the exact product type 'scaffolding caster' with a brake.",
+      "reason": "The candidate has the correct product type, the highest SpecMatch percentage among preferred brands, and matches the 'has brake' spec, although the size is in inches instead of cm.",
       "gt_status": "INCORRECT"
     },
     {
@@ -62,8 +62,22 @@
       "target_brand": "TARA",
       "target_url": "https://www.homepro.co.th/p/1092152",
       "expected_url": "https://www.homepro.co.th/p/1092152",
-      "confidence": 90,
-      "reason": "Candidate 1 (TARA DL-D03W) is the only alternative of the identical product type 'tile leveling pliers' and from a preferred brand, despite a low spec match, as all other candidates are either wrong product types or have 0% spec match.",
+      "confidence": 75,
+      "reason": "The candidate explicitly matches the critical product type 'tile leveling pliers' and has a preferred brand (TARA).",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 4,
+      "source_idx": 50,
+      "source_name": "เก้าอี้ทานอาหารหุ้มผ้า KASSA รุ่น DC409-G สีเทา",
+      "source_brand": "KASSA",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60349118",
+      "target_name": "เก้าอี้ทานข้าว SB FURNITURE LALADA สีเทา",
+      "target_brand": "SB FURNITURE",
+      "target_url": "https://www.homepro.co.th/p/1223708",
+      "expected_url": "https://www.homepro.co.th/p/1223708",
+      "confidence": 70,
+      "reason": "The candidate is a 'dining chair' matching the source product type, is from a preferred brand (SB FURNITURE), and has a 50% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -76,8 +90,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1028878",
       "expected_url": "https://www.homepro.co.th/p/1028878",
-      "confidence": 95,
-      "reason": "The candidate is a preferred brand MATALL, a plastic trolley with matching volume and 100% spec match.",
+      "confidence": 100,
+      "reason": "Candidate 0 is a MATALL plastic trolley with the exact same volume (150 KG) as the source, making it a perfect spec match and brand preference.",
       "gt_status": "CORRECT"
     }
   ]

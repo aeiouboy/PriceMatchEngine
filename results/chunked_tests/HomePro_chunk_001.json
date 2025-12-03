@@ -4,11 +4,11 @@
   "start_idx": 0,
   "end_idx": 15,
   "products_tested": 15,
-  "matches_found": 6,
-  "correct": 3,
-  "incorrect": 3,
+  "matches_found": 8,
+  "correct": 4,
+  "incorrect": 4,
   "accuracy": 50.0,
-  "timestamp": "2025-12-03T05:13:16.951949",
+  "timestamp": "2025-12-03T06:00:52.048108",
   "matches": [
     {
       "chunk": 1,
@@ -21,7 +21,7 @@
       "target_url": "https://www.homepro.co.th/p/1234363",
       "expected_url": "https://www.homepro.co.th/p/1158356",
       "confidence": 95,
-      "reason": "Candidate 0 is a painting brush of the same 4 inch size, with Brand MATALL which is a preferred brand (PREFERRED#2), and has a 100% spec match.",
+      "reason": "Candidate 0 is a paint brush of the preferred brand MATALL with exact size match, aligning perfectly with the source product's type and key specification.",
       "gt_status": "INCORRECT"
     },
     {
@@ -34,8 +34,8 @@
       "target_brand": "OZZIE",
       "target_url": "https://www.homepro.co.th/p/1236064",
       "expected_url": "https://www.homepro.co.th/p/1236064",
-      "confidence": 75,
-      "reason": "The candidate is a bluetooth speaker, matching the critical product type, and OZZIE is a preferred brand (#2), despite a low spec match, it is the only product of the correct type.",
+      "confidence": 80,
+      "reason": "The candidate has the exact product type (bluetooth speaker) and is from a preferred brand, OZZIE, despite a 0% spec match on other attributes. All other candidates mismatch in product type.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,7 +49,7 @@
       "target_url": "https://www.homepro.co.th/p/1167119",
       "expected_url": "https://www.homepro.co.th/p/1167119",
       "confidence": 95,
-      "reason": "The candidate is a putty knife with the exact same size as the source product and is from the highest preferred brand MATALL.",
+      "reason": "Candidate 0 is a preferred brand (MATALL) and is the exact product type (plastic handle putty knife) and size (1 inch) as the source's 'steel trowel', making it an equivalent product.",
       "gt_status": "CORRECT"
     },
     {
@@ -63,7 +63,7 @@
       "target_url": "https://www.homepro.co.th/p/1181393",
       "expected_url": "https://www.homepro.co.th/p/1181393",
       "confidence": 95,
-      "reason": "The candidate has 100% spec match, is a preferred brand, and is the correct product type.",
+      "reason": "Highest spec match (100%) and preferred brand (MATALL) for a paint roller of the same size.",
       "gt_status": "CORRECT"
     },
     {
@@ -72,12 +72,26 @@
       "source_name": "โคมไฟหัวเสาภายนอก E27x1 LUZINO รุ่น IMAGINI RH1106A4(BK) สีดำ",
       "source_brand": "LUZINO",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60262131",
-      "target_name": "ไฟหัวเสา CARINI HK-K2013 สีขาว/ดำ",
+      "target_name": "ไฟหัวเสา CARINI 5018S/N สีดำ",
       "target_brand": "CARINI",
-      "target_url": "https://www.homepro.co.th/p/1262899",
+      "target_url": "https://www.homepro.co.th/p/1074150",
       "expected_url": "https://www.homepro.co.th/p/1003945",
-      "confidence": 85,
-      "reason": "Candidate 0 is a preferred brand (CARINI PREFERRED#1) and has the correct product type (post lamp) with the highest spec match at 40% for another post lamp option.",
+      "confidence": 60,
+      "reason": "Candidate 0 is the highest preferred brand and has the highest spec match percentage (40%) among the post light type products.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 1,
+      "source_idx": 10,
+      "source_name": "สว่านไฟฟ้า 10 มม. GIANTTECH รุ่น BD6103 กำลัง 350 วัตต์ สีแดง - ดำ",
+      "source_brand": "GIANTTECH",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60263210",
+      "target_name": "สว่านไฟฟ้า MAKITA M011-M0600B 350 วัตต์",
+      "target_brand": "MAKITA",
+      "target_url": "https://www.homepro.co.th/p/1162943",
+      "expected_url": "https://www.homepro.co.th/p/1177335",
+      "confidence": 75,
+      "reason": "The candidate is a power drill with the same wattage (350W) as the source product. Although not a preferred brand, it is the only product of the correct type.",
       "gt_status": "INCORRECT"
     },
     {
@@ -91,8 +105,22 @@
       "target_url": "https://www.homepro.co.th/p/1110489",
       "expected_url": "https://www.homepro.co.th/p/1083200",
       "confidence": 95,
-      "reason": "The candidate is a 'door frame' of WPC material with matching dimensions, similar to the source product, and from a preferred brand (ECO-DOOR).",
+      "reason": "The candidate is a 'synthetic wood door frame' which is a very close type match to 'wpc door frame', and has identical dimensions. It is also from a preferred brand, ECO-DOOR.",
       "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 1,
+      "source_idx": 13,
+      "source_name": "สายรัดสายไฟ GIANT KINGKONG รุ่น HT-3.6 x 200 8 นิ้ว ขนาด 3.6 x 200 8.0 นิ้ว (แพ็ค 100 ชิ้น) สีขาว",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60166198",
+      "target_name": "เคเบิ้ลไทร์ ELEKTRA 8 นิ้ว สีขาว (100 เส้น)",
+      "target_brand": "ELEKTRA",
+      "target_url": "https://www.homepro.co.th/p/1092055",
+      "expected_url": "https://www.homepro.co.th/p/1092055",
+      "confidence": 70,
+      "reason": "Candidate 0 is a cable tie, matching the product type, and has the highest spec match (55%) for size and pack count, with the closest preferred brand ranking.",
+      "gt_status": "CORRECT"
     }
   ]
 }
