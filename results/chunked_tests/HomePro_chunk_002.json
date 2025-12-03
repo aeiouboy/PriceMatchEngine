@@ -4,11 +4,11 @@
   "start_idx": 15,
   "end_idx": 30,
   "products_tested": 15,
-  "matches_found": 6,
-  "correct": 4,
-  "incorrect": 2,
-  "accuracy": 66.66666666666666,
-  "timestamp": "2025-12-03T04:12:41.811889",
+  "matches_found": 8,
+  "correct": 5,
+  "incorrect": 3,
+  "accuracy": 62.5,
+  "timestamp": "2025-12-03T05:14:55.011860",
   "matches": [
     {
       "chunk": 2,
@@ -20,23 +20,9 @@
       "target_brand": "CARINI",
       "target_url": "https://www.homepro.co.th/p/1262899",
       "expected_url": "https://www.homepro.co.th/p/1074150",
-      "confidence": 70,
-      "reason": "The candidate is also a post lamp and has the highest spec match percentage among suitable alternatives, despite some spec differences.",
+      "confidence": 75,
+      "reason": "The candidate has the exact matching product type (pillar light / post light) and lamp_type (POLE_LAMP), and is from the highest preferred brand (CARINI). The SpecMatch of 40% is acceptable given the type match.",
       "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 2,
-      "source_idx": 16,
-      "source_name": "ถังขยะมีล้อและที่เหยียบ GIANT KINGKONG รุ่น YY-240C-BL ความจุ 240 ลิตร สีน้ำเงิน",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60278928",
-      "target_name": "ถังขยะเหลี่ยมขาเหยียบ ฝาเปิด-ปิด ACCO 240 ลิตร สีน้ำเงิน",
-      "target_brand": "ACCO",
-      "target_url": "https://www.homepro.co.th/p/1154473",
-      "expected_url": "https://www.homepro.co.th/p/1154473",
-      "confidence": 98,
-      "reason": "The candidate is a step trash can with the exact same volume as the source product and a very high spec match percentage.",
-      "gt_status": "CORRECT"
     },
     {
       "chunk": 2,
@@ -48,8 +34,8 @@
       "target_brand": "ACCO",
       "target_url": "https://www.homepro.co.th/p/1184261",
       "expected_url": "https://www.homepro.co.th/p/1184261",
-      "confidence": 70,
-      "reason": "The candidate is a drain cleaner powder of the same weight and brand ACCO is a common house brand for such products.",
+      "confidence": 90,
+      "reason": "Candidate 2 is the exact product type 'drain cleaner' (same as 'clog remover powder') with a dose of 375 grams, matching the source product's dose and has an ACCO brand which is a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -58,12 +44,40 @@
       "source_name": "ใบตัดเหล็ก 4 นิ้ว GIANTTECH รุ่น A60TBF2 ขนาด 100 x 1.0 x 16 มม.",
       "source_brand": "GIANTTECH",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60287092",
-      "target_name": "ใบตัดเหล็ก SUMO FAST CUT DOUBLENET 4 นิ้ว 1X16 มม.",
-      "target_brand": "SUMO",
-      "target_url": "https://www.homepro.co.th/p/1131870",
+      "target_name": "ใบตัดเหล็กสแตนเลส MATALL 4 นิ้ว",
+      "target_brand": "MATALL",
+      "target_url": "https://www.homepro.co.th/p/1154102",
       "expected_url": "https://www.homepro.co.th/p/1154102",
+      "confidence": 95,
+      "reason": "Candidate 0 is a preferred brand (MATALL) and is the correct product type (metal cutting disc) with the highest SpecMatch% among relevant candidates.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 2,
+      "source_idx": 19,
+      "source_name": "กล่องอเนกประสงค์พร้อมล้อและฝาล็อก KASSA HOME รุ่น API-2006 ขนาด 42 ลิตร สีเทา",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60322051",
+      "target_name": "กล่องเก็บของ มีล้อ ฝาล็อค STACKO 2000 42 ลิตร สีขาว",
+      "target_brand": "STACKO",
+      "target_url": "https://www.homepro.co.th/p/195587",
+      "expected_url": "https://www.homepro.co.th/p/195587",
+      "confidence": 95,
+      "reason": "The candidate is the same product type (storage box), from the highest preferred brand (STACKO), and has a 100% spec match for volume.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 2,
+      "source_idx": 21,
+      "source_name": "ตู้ลิ้นชักอเนกประสงค์ 4 ชั้น Jasmin KASSA HOME รุ่น API-1500M4 ขนาด 50 x 47.2 x 92.3 ซม. สีพาสเทล",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60335317",
+      "target_name": "ตู้ลิ้นชัก 4 ชั้น STACKO 1200M4 45x40x84 ซม. สีพาสเทล",
+      "target_brand": "STACKO",
+      "target_url": "https://www.homepro.co.th/p/1102019",
+      "expected_url": "https://www.homepro.co.th/p/1117329",
       "confidence": 70,
-      "reason": "The candidate is also a metal cutting disc and has a good spec match for dimensions and size, with the highest SpecMatch% among viable options.",
+      "reason": "The candidate is a preferred brand and has the highest spec match at 50%, with matching product type and number of tiers. Although dimensions differ, it's the closest available alternative given the constraints.",
       "gt_status": "INCORRECT"
     },
     {
@@ -76,8 +90,22 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1163258",
       "expected_url": "https://www.homepro.co.th/p/1163258",
-      "confidence": 70,
-      "reason": "The candidate is a tool set with a matching product type and a reasonably close 'pack_count' specification (53 pcs vs 54 pcs).",
+      "confidence": 85,
+      "reason": "Candidate 0 is a MATALL (preferred brand) tool kit with a similar count (53 pcs vs 54 pcs) and a good SpecMatch percentage within the same product type.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 2,
+      "source_idx": 26,
+      "source_name": "ชั้นวางของ 3 ชั้น พร้อมล้อเลื่อน Vinter KASSA HOME รุ่น HM-ST25346-BK ขนาด 46 x 38 x 86 ซม. สีดำ",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60392546",
+      "target_name": "ชั้นวางของ 3 ชั้น มีล้อ STACKO ST25346 46x39.5x87 ซม. สีเทา",
+      "target_brand": "STACKO",
+      "target_url": "https://www.homepro.co.th/p/1098200",
+      "expected_url": "https://www.homepro.co.th/p/1098200",
+      "confidence": 85,
+      "reason": "The candidate has the highest spec match (63%), is the correct product type (shelf), and is from the most preferred brand (STACKO). The dimensions and tiers are very close, and the height difference is minimal (86cm vs 87cm).",
       "gt_status": "CORRECT"
     },
     {
@@ -86,13 +114,13 @@
       "source_name": "รถเข็นตะแกรงรอบ GIANT KINGKONG รุ่น HBSS-05T ขนาด 300 กก. สีฟ้า",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60336118",
-      "target_name": "รถเข็นตะแกรง MATALL FD 300-A-PU 240 กิโลกรัม",
+      "target_name": "รถเข็น 4 ล้อ MATALL FD300 300 กก. สีดำ",
       "target_brand": "MATALL",
-      "target_url": "https://www.homepro.co.th/p/1069983",
+      "target_url": "https://www.homepro.co.th/p/1028911",
       "expected_url": "https://www.homepro.co.th/p/1069983",
-      "confidence": 60,
-      "reason": "The candidate is the same product type (trolley) but has a lower volume capacity (240kg vs 300kg) which is within an acceptable range for a potential alternative.",
-      "gt_status": "CORRECT"
+      "confidence": 95,
+      "reason": "Highest spec match (100%) and preferred brand (MATALL) for a trolley with the same volume capacity.",
+      "gt_status": "INCORRECT"
     }
   ]
 }

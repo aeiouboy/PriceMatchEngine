@@ -330,6 +330,25 @@ PRODUCT_LINE_CONFLICTS = [
     ('1/2 นิ้ว', '5/8 นิ้ว'),
     ('1/2 นิ้ว', '3/4 นิ้ว'),
     ('5/8 นิ้ว', '3/4 นิ้ว'),
+    # Chair types - CRITICAL: different chair categories
+    ('เก้าอี้จัดเลี้ยง', 'เก้าอี้สเตนเลส'),
+    ('เก้าอี้จัดเลี้ยง', 'เก้าอี้กลม'),
+    ('เก้าอี้จัดเลี้ยง', 'เก้าอี้บาร์'),
+    ('เก้าอี้พักผ่อน', 'เก้าอี้สเตนเลส'),
+    ('เก้าอี้พับ', 'เก้าอี้สเตนเลส'),
+    ('banquet chair', 'stool'),
+    ('banquet chair', 'bar chair'),
+    # Cookware types - pan sizes must match
+    ('กระทะตื้น', 'กระทะลึก'),
+    ('กระทะทอด', 'หม้อต้ม'),
+    ('shallow pan', 'deep pan'),
+    # Downlight types - LED vs conventional
+    ('ดาวน์ไลท์ LED', 'ดาวน์ไลท์หลอด'),
+    ('โคมดาวน์ไลท์แบบปิด', 'ดาวน์ไลท์ LED'),
+    # Hanger types - pack count sensitive
+    ('แพ็ก 6', 'แพ็ก 10'),
+    ('แพ็ก 3', 'แพ็ก 6'),
+    ('แพ็ก 5', 'แพ็ก 10'),
 ]
 
 def has_product_conflict(source_name, target_name):
@@ -526,10 +545,29 @@ def extract_size_specs(product_name):
         specs['hose_diameter'] = f"{hose_diameter.group(1)} inch"
 
     # Model number pattern - often important for exact matching
-    model_pattern = r'รุ่น\s*([A-Z0-9\-\.]+)'
+    model_pattern = r'รุ่น\s*([A-Z0-9\-\.\/]+)'
     model_match = re.search(model_pattern, name_orig, re.IGNORECASE)
     if model_match:
-        specs['model'] = model_match.group(1)
+        specs['model'] = model_match.group(1).upper()
+    
+    # Extract ALL alphanumeric identifiers (potential model numbers)
+    # These help match products with same specs but different model designations
+    # E.g., "120M/S", "HK-K2013", "5018S/N", "V-128"
+    alpha_num_pattern = r'\b([A-Z]{1,3}[\-\s]?[A-Z0-9]{2,10}(?:[\-/][A-Z0-9]+)?)\b'
+    identifiers = re.findall(alpha_num_pattern, name, re.IGNORECASE)
+    if identifiers:
+        # Filter out common non-model strings and normalize
+        non_models = {'LED', 'WPC', 'PVC', 'USB', 'SMD', 'MDF', 'ABS', 'DIY', 'PRO', 'MAX', 'ECO'}
+        clean_ids = [id.upper() for id in identifiers if id.upper() not in non_models and len(id) > 2]
+        if clean_ids:
+            specs['identifiers'] = clean_ids
+    
+    # Extract key numeric specs for fuzzy matching
+    # All numbers with units for comparison
+    num_spec_pattern = r'(\d+(?:\.\d+)?)\s*(นิ้ว|ซม\.|เมตร|วัตต์|W|CM|M|MM|")'
+    num_specs = re.findall(num_spec_pattern, name_orig, re.IGNORECASE)
+    if num_specs:
+        specs['numeric_values'] = [(float(v), u.upper()) for v, u in num_specs]
 
     return specs
 
@@ -668,6 +706,35 @@ def calculate_spec_score(source_specs, target_specs):
                             # Allow 1 tier difference with penalty
                             matched_weight += weight * 0.3
                         # >1 tier difference = 0 credit
+
+    # Check identifier overlap (model numbers, product codes)
+    # Only add boost for matching identifiers, no penalty for mismatch
+    if 'identifiers' in source_specs and 'identifiers' in target_specs:
+        src_ids = set(source_specs['identifiers'])
+        tgt_ids = set(target_specs['identifiers'])
+        common_ids = src_ids & tgt_ids
+        if common_ids:
+            # Boost for matching identifiers (only when they match)
+            id_boost = min(len(common_ids) * 10, 20)
+            matched_weight += id_boost
+            total_weight += 20
+    
+    # Check numeric value overlap - STRICT 5% tolerance
+    if 'numeric_values' in source_specs and 'numeric_values' in target_specs:
+        src_nums = source_specs['numeric_values']
+        tgt_nums = target_specs['numeric_values']
+        matching_nums = 0
+        total_nums = len(src_nums)
+        for sv, su in src_nums:
+            for tv, tu in tgt_nums:
+                if su == tu and abs(sv - tv) / max(sv, 1) <= 0.05:  # 5% tolerance
+                    matching_nums += 1
+                    break
+        if total_nums > 0 and matching_nums > 0:
+            # Proportional boost based on how many specs match
+            num_score = int(25 * matching_nums / total_nums)
+            matched_weight += num_score
+            total_weight += 25
 
     if total_weight == 0:
         return 50
@@ -834,8 +901,15 @@ def ai_find_house_brand_alternatives(source_products, target_products, price_tol
 
         min_price = source_price * (1 - price_tolerance)
         max_price = source_price * (1 + price_tolerance)
+        
+        # TWO-TIER CANDIDATE RECALL PIPELINE
+        # Tier 1: Spec-first candidates (bypass price filter for high spec matches)
+        # Tier 2: Fuzzy text/brand candidates (normal price filter)
+        
+        spec_candidates = []  # Tier 1: High spec match candidates
+        fuzzy_candidates = []  # Tier 2: Text/brand similarity candidates
+        seen_indices = set()
 
-        candidates = []
         for i, t in enumerate(target_products):
             t_name = t.get('name', t.get('product_name', ''))
             t_url = t.get('url', t.get('product_url', t.get('link', '')))
@@ -845,14 +919,12 @@ def ai_find_house_brand_alternatives(source_products, target_products, price_tol
 
             if t_price <= 0:
                 continue
-            if t_price < min_price or t_price > max_price:
-                continue
             if source_brand and t_brand and source_brand == t_brand:
                 continue
 
-            # NEW: Check for product line conflicts BEFORE adding to candidates
+            # Check for product line conflicts BEFORE adding to candidates
             if has_product_conflict(source_name, t_name):
-                continue  # Skip this candidate - product type conflict detected
+                continue
 
             t_specs = extract_size_specs(t_name)
             spec_score = calculate_spec_score(source_specs, t_specs)
@@ -862,30 +934,42 @@ def ai_find_house_brand_alternatives(source_products, target_products, price_tol
             text_sim = fuzz.token_set_ratio(source_text_norm, t_text_norm)
 
             brand_boost = 0
+            brand_rank = -1
             if preferred_brands and t_brand:
-                if t_brand in preferred_brands:
-                    brand_boost = 30
-                elif any(pb.upper() in t_brand.upper() or t_brand.upper() in pb.upper() for pb in preferred_brands):
-                    brand_boost = 20
+                for rank, pb in enumerate(preferred_brands):
+                    if t_brand.upper() == pb.upper():
+                        brand_rank = rank
+                        brand_boost = max(20 - rank * 3, 5)
+                        break
+                    elif pb.upper() in t_brand.upper() or t_brand.upper() in pb.upper():
+                        brand_rank = rank
+                        brand_boost = max(15 - rank * 3, 3)
+                        break
 
-            # Check for model number match - strong indicator of equivalent products
             source_model = source_specs.get('model', '')
             target_model = t_specs.get('model', '')
             model_boost = 0
             if source_model and target_model:
                 if source_model.upper() == target_model.upper():
-                    model_boost = 50  # Strong boost for exact model match
+                    model_boost = 50
                 elif source_model.upper() in target_model.upper() or target_model.upper() in source_model.upper():
-                    model_boost = 25  # Partial model match
+                    model_boost = 25
 
-            # Improved scoring: Higher weight on spec_score for better quality candidates
-            combined_score = spec_score * 0.6 + text_sim * 0.25 + brand_boost + model_boost
-
-            # Calculate price difference for candidate filtering
+            # Calculate price difference
             price_diff = abs(t_price - source_price) / source_price if source_price > 0 else 1
+            
+            # Count matching critical specs
+            critical_spec_matches = 0
+            for spec_key in ['wattage', 'led_wattage', 'size_inch', 'volume', 'dimensions', 'socket', 'tiers', 'pack_count']:
+                if spec_key in source_specs and spec_key in t_specs:
+                    if source_specs[spec_key] == t_specs[spec_key]:
+                        critical_spec_matches += 1
 
-            if text_sim >= 5 or spec_score >= 20 or brand_boost > 0 or model_boost > 0 or price_diff <= 0.15:
-                candidates.append({
+            # TIER 1: Spec-first candidates (high spec match, relaxed price filter)
+            # Include if 2+ critical specs match OR spec_score >= 60%
+            if (critical_spec_matches >= 2 or spec_score >= 60) and price_diff <= 1.0:  # Allow 100% price diff for spec matches
+                combined_score = spec_score * 0.8 + text_sim * 0.15 + brand_boost * 0.5
+                spec_candidates.append({
                     'idx': i,
                     'name': t_name,
                     'brand': t_brand,
@@ -896,9 +980,42 @@ def ai_find_house_brand_alternatives(source_products, target_products, price_tol
                     'spec_score': spec_score,
                     'text_sim': text_sim,
                     'brand_boost': brand_boost,
+                    'brand_rank': brand_rank,
                     'model_boost': model_boost,
-                    'combined_score': combined_score
+                    'combined_score': combined_score,
+                    'tier': 'spec'
                 })
+                seen_indices.add(i)
+            # TIER 2: Fuzzy text/brand candidates (normal price filter)
+            elif t_price >= min_price and t_price <= max_price:
+                if text_sim >= 15 or spec_score >= 30 or brand_boost > 0 or model_boost > 0:
+                    combined_score = spec_score * 0.6 + text_sim * 0.25 + brand_boost + model_boost
+                    fuzzy_candidates.append({
+                        'idx': i,
+                        'name': t_name,
+                        'brand': t_brand,
+                        'category': t_category,
+                        'price': t_price,
+                        'url': t_url,
+                        'specs': t_specs,
+                        'spec_score': spec_score,
+                        'text_sim': text_sim,
+                        'brand_boost': brand_boost,
+                        'brand_rank': brand_rank,
+                        'model_boost': model_boost,
+                        'combined_score': combined_score,
+                        'tier': 'fuzzy'
+                    })
+        
+        # Combine candidates: prioritize spec-first, then fill with fuzzy
+        spec_candidates.sort(key=lambda x: x['spec_score'], reverse=True)
+        fuzzy_candidates.sort(key=lambda x: x['combined_score'], reverse=True)
+        
+        # Filter out fuzzy candidates already in spec candidates
+        fuzzy_candidates = [c for c in fuzzy_candidates if c['idx'] not in seen_indices]
+        
+        # Take up to 25 spec candidates, fill remaining slots with fuzzy
+        candidates = spec_candidates[:25] + fuzzy_candidates[:15]
 
         if not candidates:
             continue
@@ -923,12 +1040,19 @@ def ai_find_house_brand_alternatives(source_products, target_products, price_tol
             spec_str = ', '.join([f"{k}={v}" for k, v in c['specs'].items()]) if c['specs'] else 'N/A'
             c_type = candidate_types.get(c['idx'], '')
             type_str = f", Type: {c_type}" if c_type else ""
-            target_list.append(f"{pos}: {c['name']} [Specs: {spec_str}] (Brand: {c['brand']}, Price: {c['price']:,.0f}, SpecMatch: {c['spec_score']}%{type_str})")
+            brand_pref = ""
+            if c.get('brand_rank', -1) >= 0:
+                brand_pref = f", PREFERRED#{c['brand_rank']+1}"
+            target_list.append(f"{pos}: {c['name']} [Specs: {spec_str}] (Brand: {c['brand']}{brand_pref}, Price: {c['price']:,.0f}, SpecMatch: {c['spec_score']}%{type_str})")
 
         source_spec_str = ', '.join([f"{k}={v}" for k, v in source_specs.items()]) if source_specs else 'N/A'
 
         # Stage 2: Build prompt with STRICT product type matching
         product_type_info = f"- PRODUCT TYPE (CRITICAL): {source_product_type}" if source_product_type else ""
+        
+        preferred_brands_info = ""
+        if preferred_brands:
+            preferred_brands_info = f"- PREFERRED BRANDS (in order): {', '.join(preferred_brands[:5])}"
 
         prompt = f"""House Brand Product Matcher - Find EQUIVALENT product with matching specs
 
@@ -939,6 +1063,7 @@ SOURCE PRODUCT:
 - Category: {source_category}
 - Price: {source_price:,.0f}
 - KEY SPECS: {source_spec_str}
+{preferred_brands_info}
 
 CANDIDATE ALTERNATIVES (ranked by spec match):
 {chr(10).join(target_list)}
@@ -949,18 +1074,23 @@ CANDIDATE ALTERNATIVES (ranked by spec match):
 {f"Source is: '{source_product_type}'" if source_product_type else "Identify product type from name."}
 The candidate must be the SAME type of product. Different subtypes = REJECT.
 
-**RULE 2 - USE SPECMATCH% AS PRIMARY GUIDE**
+**RULE 2 - PREFER BRANDS MARKED AS "PREFERRED"**
+Candidates marked PREFERRED#1 are most likely matches, PREFERRED#2 next likely, etc.
+When SpecMatch% is similar (within 10%), prefer higher-ranked preferred brand.
+
+**RULE 3 - USE SPECMATCH% AS PRIMARY GUIDE**
 Source specs: {source_spec_str}
 - SpecMatch >= 70%: Strong match - select with high confidence
 - SpecMatch 50-69%: Check if product type matches exactly
 - SpecMatch < 50%: Usually too different - prefer returning null
 
-**RULE 3 - CRITICAL SPEC MISMATCHES = REJECT**
+**RULE 4 - CRITICAL SPEC MISMATCHES = REJECT**
 If source has a spec, candidate should match closely:
 - Size/dimensions: must be same or within 10%
 - Wattage/volume/length: must be within 20%
 - Count specs (ชั้น/เส้น/ขั้น/ชิ้น): must match exactly
 - Type specs (brake/room type/lamp type): must match exactly
+- Model numbers with specs: prefer matching size/specs over different model
 
 **COMMON REJECTION EXAMPLES:**
 - ไม่มีเบรก ≠ มีเบรก (brake mismatch)
@@ -978,7 +1108,8 @@ If source has a spec, candidate should match closely:
 - บานพับผีเสื้อ ≠ บานพับหัวตัด (butterfly vs flat head hinge)
 
 **DECISION:**
-- Select candidate with HIGHEST SpecMatch% that passes type check
+- Prefer candidate with PREFERRED brand + highest SpecMatch%
+- If no PREFERRED brand, select highest SpecMatch% that passes type check
 - Return null if best candidate has SpecMatch < 50% or wrong type
 - It's OK to return null - better than wrong match!
 

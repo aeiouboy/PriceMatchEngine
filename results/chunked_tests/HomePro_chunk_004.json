@@ -8,7 +8,7 @@
   "correct": 3,
   "incorrect": 2,
   "accuracy": 60.0,
-  "timestamp": "2025-12-03T04:14:12.684080",
+  "timestamp": "2025-12-03T05:15:38.502265",
   "matches": [
     {
       "chunk": 4,
@@ -20,8 +20,8 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/1235138",
       "expected_url": "https://www.homepro.co.th/p/1235138",
-      "confidence": 70,
-      "reason": "The candidate is also a cable organizer and has similar dimensions (32x13.4 vs 30x12.3) and length (12.3cm vs 11.8cm), making it the closest match.",
+      "confidence": 75,
+      "reason": "The candidate has the correct product type (cable management box vs cable organizer) and is a preferred brand (STACKO), with a reasonable spec match percentage for dimensions.",
       "gt_status": "CORRECT"
     },
     {
@@ -35,7 +35,7 @@
       "target_url": "https://www.homepro.co.th/p/1247818",
       "expected_url": "https://www.homepro.co.th/p/1245097",
       "confidence": 70,
-      "reason": "The candidate is the only product of the same type (grass trimmer) and has the highest SpecMatch percentage among them, indicating it's the most similar equivalent product available, despite the limited spec data.",
+      "reason": "The candidate is the same product type (grass trimmer) and a preferred brand (MATALL), with a 50% spec match.",
       "gt_status": "INCORRECT"
     },
     {
@@ -49,7 +49,7 @@
       "target_url": "https://www.homepro.co.th/p/1251658",
       "expected_url": "https://www.homepro.co.th/p/1144449",
       "confidence": 85,
-      "reason": "The candidate is the same product type (scaffolding wheel/castor) and has a high spec match (66%) including the 'HAS_BRAKE' feature, which is a critical match.",
+      "reason": "The candidate is a preferred brand 'DEXZON', has the highest spec match, and is the exact product type 'scaffolding caster' with a brake.",
       "gt_status": "INCORRECT"
     },
     {
@@ -63,7 +63,7 @@
       "target_url": "https://www.homepro.co.th/p/1092152",
       "expected_url": "https://www.homepro.co.th/p/1092152",
       "confidence": 90,
-      "reason": "Candidate 0 is the only product identified as a 'tile leveling plier', closely matching the critical product type of the source product. Although there are no overlapping key specs for further comparison, the exact product type match is strong enough for this selection.",
+      "reason": "Candidate 1 (TARA DL-D03W) is the only alternative of the identical product type 'tile leveling pliers' and from a preferred brand, despite a low spec match, as all other candidates are either wrong product types or have 0% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -77,7 +77,7 @@
       "target_url": "https://www.homepro.co.th/p/1028878",
       "expected_url": "https://www.homepro.co.th/p/1028878",
       "confidence": 95,
-      "reason": "The candidate is a trolley with the exact same volume (150 KG) as the source product, making it a strong spec match.",
+      "reason": "The candidate is a preferred brand MATALL, a plastic trolley with matching volume and 100% spec match.",
       "gt_status": "CORRECT"
     }
   ]

@@ -4,24 +4,24 @@
   "start_idx": 0,
   "end_idx": 15,
   "products_tested": 15,
-  "matches_found": 5,
-  "correct": 2,
+  "matches_found": 6,
+  "correct": 3,
   "incorrect": 3,
-  "accuracy": 40.0,
-  "timestamp": "2025-12-03T04:11:52.212674",
+  "accuracy": 50.0,
+  "timestamp": "2025-12-03T05:13:16.951949",
   "matches": [
     {
       "chunk": 1,
-      "source_idx": 0,
-      "source_name": "ที่โกยผงพลาสติกพร้อมไม้กวาดในล่อน KASSA HOME ขนาด 40 x 32 x 100 ซม. สีเทา",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60306946",
-      "target_name": "ชุดไม้กวาดพร้อมที่โกยผง ด้ามสเตนเลส ACCO XG-2066 12 นิ้ว สีครีม",
-      "target_brand": "ACCO",
-      "target_url": "https://www.homepro.co.th/p/1016460",
-      "expected_url": "https://www.homepro.co.th/p/290323",
-      "confidence": 70,
-      "reason": "Candidate 2 is a broom set, matching the product type 'dustpan and broom set' of the source product, and has identical dimensions.",
+      "source_idx": 1,
+      "source_name": "แปรงทาสีขนสัตว์ ด้ามพลาสติก GIANT KINGKONG รุ่น BPB08 ขนาด 4 นิ้ว สีน้ำตาล",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60342251",
+      "target_name": "แปรงทาสีด้ามพลาสติกขนสังคราะห์ดำ MATALL 4 นิ้ว",
+      "target_brand": "MATALL",
+      "target_url": "https://www.homepro.co.th/p/1234363",
+      "expected_url": "https://www.homepro.co.th/p/1158356",
+      "confidence": 95,
+      "reason": "Candidate 0 is a painting brush of the same 4 inch size, with Brand MATALL which is a preferred brand (PREFERRED#2), and has a 100% spec match.",
       "gt_status": "INCORRECT"
     },
     {
@@ -34,8 +34,8 @@
       "target_brand": "OZZIE",
       "target_url": "https://www.homepro.co.th/p/1236064",
       "expected_url": "https://www.homepro.co.th/p/1236064",
-      "confidence": 70,
-      "reason": "The candidate is the same product type (bluetooth speaker) as the source, even though no specific specs are available for comparison. Other candidates are different product types.",
+      "confidence": 75,
+      "reason": "The candidate is a bluetooth speaker, matching the critical product type, and OZZIE is a preferred brand (#2), despite a low spec match, it is the only product of the correct type.",
       "gt_status": "CORRECT"
     },
     {
@@ -48,8 +48,22 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1167119",
       "expected_url": "https://www.homepro.co.th/p/1167119",
-      "confidence": 90,
-      "reason": "The candidate is a 'spatula' which is essentially a putty knife, with matching 'size_inch' spec of 1 inch.",
+      "confidence": 95,
+      "reason": "The candidate is a putty knife with the exact same size as the source product and is from the highest preferred brand MATALL.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 1,
+      "source_idx": 7,
+      "source_name": "ลูกกลิ้งทาสี GIANT KINGKONG รุ่น HP 10 ขนาด 10 นิ้ว",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60219887",
+      "target_name": "ลูกกลิ้งทาสี MATALL 10 นิ้ว",
+      "target_brand": "MATALL",
+      "target_url": "https://www.homepro.co.th/p/1181393",
+      "expected_url": "https://www.homepro.co.th/p/1181393",
+      "confidence": 95,
+      "reason": "The candidate has 100% spec match, is a preferred brand, and is the correct product type.",
       "gt_status": "CORRECT"
     },
     {
@@ -62,8 +76,8 @@
       "target_brand": "CARINI",
       "target_url": "https://www.homepro.co.th/p/1262899",
       "expected_url": "https://www.homepro.co.th/p/1003945",
-      "confidence": 75,
-      "reason": "The candidate is also a pole lamp, matching the critical 'lamp_type' spec and is the same product type. Although other specs are missing, it's the closest match provided.",
+      "confidence": 85,
+      "reason": "Candidate 0 is a preferred brand (CARINI PREFERRED#1) and has the correct product type (post lamp) with the highest spec match at 40% for another post lamp option.",
       "gt_status": "INCORRECT"
     },
     {
@@ -76,8 +90,8 @@
       "target_brand": "ECO-DOOR",
       "target_url": "https://www.homepro.co.th/p/1110489",
       "expected_url": "https://www.homepro.co.th/p/1083200",
-      "confidence": 100,
-      "reason": "Candidate 0 is a door frame with identical dimensions (80x200), closely matching all critical specs of the source product.",
+      "confidence": 95,
+      "reason": "The candidate is a 'door frame' of WPC material with matching dimensions, similar to the source product, and from a preferred brand (ECO-DOOR).",
       "gt_status": "INCORRECT"
     }
   ]

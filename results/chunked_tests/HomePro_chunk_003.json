@@ -5,25 +5,11 @@
   "end_idx": 45,
   "products_tested": 15,
   "matches_found": 3,
-  "correct": 2,
-  "incorrect": 1,
-  "accuracy": 66.66666666666666,
-  "timestamp": "2025-12-03T04:13:26.890198",
+  "correct": 1,
+  "incorrect": 2,
+  "accuracy": 33.33333333333333,
+  "timestamp": "2025-12-03T05:15:40.983482",
   "matches": [
-    {
-      "chunk": 3,
-      "source_idx": 34,
-      "source_name": "ปากกาตรวจสอบกระแสไฟ 90 - 1,000 โวลต์ GIANT KINGKONG PRO รุ่น KKP1000M สีน้ำเงิน - ดำ",
-      "source_brand": "GIANT KINGKONG PRO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60334764",
-      "target_name": "ปากกาเช็คกระแสไฟ HACHI",
-      "target_brand": "HACHI",
-      "target_url": "https://www.homepro.co.th/p/1149017",
-      "expected_url": "https://www.homepro.co.th/p/1149017",
-      "confidence": 70,
-      "reason": "The candidate is the only product of the same type ('current tester pen' is close enough to 'voltage tester pen') but lacks detailed specifications for a higher spec match.",
-      "gt_status": "CORRECT"
-    },
     {
       "chunk": 3,
       "source_idx": 38,
@@ -35,7 +21,21 @@
       "target_url": "https://www.homepro.co.th/p/1249480",
       "expected_url": "https://www.homepro.co.th/p/1221406",
       "confidence": 95,
-      "reason": "The candidate is a 'clothes hanger' which is equivalent to 'hanger' and has the exact same pack count spec.",
+      "reason": "The candidate is a preferred brand (PLIM) and an exact match in product type (clothes hanger) and pack count (6 pcs).",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 3,
+      "source_idx": 39,
+      "source_name": "โคมดาวน์ไลท์หน้าเหลี่ยมแบบปิด 4 นิ้ว E27x1 Carry LUZINO รุ่น P4003-G-WH สีขาว",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60247113",
+      "target_name": "ดาวน์ไลท์ LED RACER EVO TECH 4 นิ้ว 9 วัตต์ DAYLIGHT สีขาว",
+      "target_brand": "RACER",
+      "target_url": "https://www.homepro.co.th/p/1145118",
+      "expected_url": "https://www.homepro.co.th/p/274799",
+      "confidence": 70,
+      "reason": "The candidate is a downlight with a matching size of 4 inches, although it is not from a preferred brand. Other candidates either have lower spec match or do not match the product type.",
       "gt_status": "INCORRECT"
     },
     {
@@ -49,7 +49,7 @@
       "target_url": "https://www.homepro.co.th/p/1144388",
       "expected_url": "https://www.homepro.co.th/p/1144388",
       "confidence": 75,
-      "reason": "The candidate has the exact same product type 'steel plate' and matching dimensions (4x4), but the size_inch and length_cm specifications differ, resulting in a lower but acceptable SpecMatch%.",
+      "reason": "Candidate 9 is a 'แผ่นเหล็กเพลทเหลี่ยม' (steel plate) matching the product type, has similar dimensions (4x4 inch), and is from a PREFERRED brand (BIH).",
       "gt_status": "CORRECT"
     }
   ]
