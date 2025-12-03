@@ -4,11 +4,12 @@
   "start_idx": 0,
   "end_idx": 15,
   "products_tested": 15,
-  "matches_found": 3,
+  "matches_found": 2,
   "correct": 0,
-  "incorrect": 2,
-  "accuracy": 0.0,
-  "timestamp": "2025-12-03T12:30:10.188528",
+  "incorrect": 0,
+  "gt_missing": 1,
+  "accuracy": 0,
+  "timestamp": "2025-12-03T12:59:29.462082",
   "matches": [
     {
       "chunk": 1,
@@ -21,8 +22,8 @@
       "target_url": "https://www.boonthavorn.com/at-indy-115259",
       "expected_url": "https://www.boonthavorn.com/indy-1140736",
       "confidence": 95,
-      "reason": "Candidate 0 is a paint roller refill of the correct size (4 inch) and has a 100% spec match, making it an equivalent product. While not a preferred brand, its perfect spec match and critical product type alignment make it the best choice.",
-      "gt_status": "INCORRECT"
+      "reason": "The candidate is a painting roller accessory refill with matching size (4 inches) and type (REFILL).",
+      "gt_status": "GT_MISSING"
     },
     {
       "chunk": 1,
@@ -35,22 +36,8 @@
       "target_url": "https://www.boonthavorn.com/max-light-1144016",
       "expected_url": "",
       "confidence": 60,
-      "reason": "Candidate 1 is a downlight (matching product type), from a preferred brand (MAX LIGHT), but has a significant mismatch in wattage (not specified) and color temperature (DAYLIGHT vs. WARMWHITE).",
+      "reason": "Candidate 1 is a downlight from the preferred brand MAX LIGHT, but has 0% spec match.",
       "gt_status": "NO_GT"
-    },
-    {
-      "chunk": 1,
-      "source_idx": 14,
-      "source_name": "แปรงทาสีขนสังเคราะห์ด้ามพลาสติก GIANT KINGKONG รุ่น FD05 ขนาด 3 นิ้ว",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60245647",
-      "target_name": "แปรงทาสี 3 นิ้ว C307 น้ำตาล",
-      "target_brand": "AT.INDY",
-      "target_url": "https://www.boonthavorn.com/at-indy-115103",
-      "expected_url": "https://www.boonthavorn.com/at-indy-1069312",
-      "confidence": 95,
-      "reason": "The candidate is a 'paint brush' type and has a 100% spec match on size (3 inch) with the source product, even though its brand is not preferred.",
-      "gt_status": "INCORRECT"
     }
   ]
 }

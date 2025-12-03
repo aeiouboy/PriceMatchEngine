@@ -652,6 +652,56 @@ def has_product_conflict(source_name, target_name):
         if (source_square and target_round) or (source_round and target_square):
             return True
 
+    # Ladder step count conflict - step counts must be within 30% (ratio > 0.7)
+    ladder_keywords = ['บันได', 'ladder']
+    is_source_ladder = any(kw in source_lower for kw in ladder_keywords)
+    is_target_ladder = any(kw in target_lower for kw in ladder_keywords)
+    if is_source_ladder and is_target_ladder:
+        # Extract step count - handles both "4x3 ขั้น" format (multiply) and "8ขั้น" format
+        def get_step_count(name):
+            # Check for multiplication format first: 4x2 ขั้น, 4 x 3 ขั้น
+            mult_pattern = r'(\d+)\s*[xX×]\s*(\d+)\s*ขั้น'
+            mult_match = re.search(mult_pattern, name)
+            if mult_match:
+                return int(mult_match.group(1)) * int(mult_match.group(2))
+            # Check for simple format: 8ขั้น, 16ชั้น, 5 ขั้น
+            simple_pattern = r'(\d+)\s*(?:ขั้น|ชั้น)'
+            simple_match = re.search(simple_pattern, name)
+            if simple_match:
+                return int(simple_match.group(1))
+            return None
+
+        source_steps = get_step_count(source_name)
+        target_steps = get_step_count(target_name)
+        if source_steps and target_steps:
+            min_steps = min(source_steps, target_steps)
+            max_steps = max(source_steps, target_steps)
+            if max_steps > 0 and (min_steps / max_steps) < 0.7:
+                return True
+
+    # Paint brush bristle type conflict - natural hair vs synthetic/regular
+    brush_keywords = ['แปรง', 'brush']
+    is_source_brush = any(kw in source_lower for kw in brush_keywords)
+    is_target_brush = any(kw in target_lower for kw in brush_keywords)
+    if is_source_brush and is_target_brush:
+        # Check for natural bristle indicators (oil paint brushes use natural bristle)
+        natural_keywords = ['ขนสัตว์', 'natural', 'น้ำมัน']
+        source_natural = any(kw in source_lower for kw in natural_keywords)
+        target_natural = any(kw in target_lower for kw in natural_keywords)
+        # If source is natural but target is not, it's a conflict
+        if source_natural and not target_natural:
+            return True
+        # Paint brush size conflict - size must match exactly
+        inch_pattern = r'(\d+(?:\.\d+)?)\s*(?:นิ้ว|inch|"|″)'
+        source_inch = re.search(inch_pattern, source_name, re.IGNORECASE)
+        target_inch = re.search(inch_pattern, target_name, re.IGNORECASE)
+        if source_inch and target_inch:
+            source_size = float(source_inch.group(1))
+            target_size = float(target_inch.group(1))
+            # Brush sizes must be within 0.5 inch
+            if abs(source_size - target_size) > 0.5:
+                return True
+
     return False
 
 def extract_size_specs(product_name):

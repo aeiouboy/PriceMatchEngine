@@ -4,11 +4,12 @@
   "start_idx": 60,
   "end_idx": 64,
   "products_tested": 4,
-  "matches_found": 3,
+  "matches_found": 2,
   "correct": 1,
-  "incorrect": 2,
-  "accuracy": 33.33333333333333,
-  "timestamp": "2025-12-03T12:32:11.580682",
+  "incorrect": 0,
+  "gt_missing": 1,
+  "accuracy": 100.0,
+  "timestamp": "2025-12-03T13:01:42.331121",
   "matches": [
     {
       "chunk": 5,
@@ -21,7 +22,7 @@
       "target_url": "https://www.boonthavorn.com/anyhome-1111122",
       "expected_url": "https://www.boonthavorn.com/anyhome-1111122",
       "confidence": 85,
-      "reason": "Candidate 0 is a garden hose, has the top preferred brand ANYHOME, and a good length match (20M).",
+      "reason": "Candidate 0 is a preferred brand (ANYHOME) and has a good spec match for length and product type, even though diameter is not explicitly listed.",
       "gt_status": "CORRECT"
     },
     {
@@ -34,23 +35,9 @@
       "target_brand": "MAX LIGHT",
       "target_url": "https://www.boonthavorn.com/max-light-1249472",
       "expected_url": "https://www.boonthavorn.com/max-light-1202280",
-      "confidence": 95,
-      "reason": "The candidate is a wall lamp from the preferred brand MAX LIGHT, with high spec match (71%) for dimensions, socket, and lamp type, and is within acceptable price range.",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 5,
-      "source_idx": 63,
-      "source_name": "สายยางเด้ง 5/8 นิ้ว FONTE ยาว 15 เมตร",
-      "source_brand": "FONTE",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60338031",
-      "target_name": "สายยางเด้ง 5/8 x 20 เมตร *น้ำเงิน",
-      "target_brand": "ANYHOME",
-      "target_url": "https://www.boonthavorn.com/anyhome-1111122",
-      "expected_url": "https://www.boonthavorn.com/homemart-1111123",
-      "confidence": 75,
-      "reason": "The candidate is the correct product type (garden hose) and from a preferred brand, but the length does not match the source product.",
-      "gt_status": "INCORRECT"
+      "confidence": 90,
+      "reason": "Candidate 0 is a MAX LIGHT (PREFERRED#1 brand) outdoor wall lamp with 71% spec match including exact dimensions and socket, making it the closest equivalent product.",
+      "gt_status": "GT_MISSING"
     }
   ]
 }

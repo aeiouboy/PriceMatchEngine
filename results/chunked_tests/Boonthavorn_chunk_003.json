@@ -4,11 +4,12 @@
   "start_idx": 30,
   "end_idx": 45,
   "products_tested": 15,
-  "matches_found": 4,
-  "correct": 2,
-  "incorrect": 2,
-  "accuracy": 50.0,
-  "timestamp": "2025-12-03T12:31:18.931394",
+  "matches_found": 2,
+  "correct": 1,
+  "incorrect": 0,
+  "gt_missing": 1,
+  "accuracy": 100.0,
+  "timestamp": "2025-12-03T12:58:07.416137",
   "matches": [
     {
       "chunk": 3,
@@ -20,8 +21,8 @@
       "target_brand": "LIGHTMOST",
       "target_url": "https://www.boonthavorn.com/lightmost-1208338",
       "expected_url": "https://www.boonthavorn.com/lightmost-1208338",
-      "confidence": 85,
-      "reason": "The candidate is a hanging lamp, a preferred brand, and has a good spec match for dimensions and socket type with the source product.",
+      "confidence": 95,
+      "reason": "Candidate 0 is a pendant light with the highest spec match (36%) to the source, matching dimensions and socket specifications, and is from a preferred brand (LIGHTMOST).",
       "gt_status": "CORRECT"
     },
     {
@@ -34,37 +35,9 @@
       "target_brand": "MAX LIGHT",
       "target_url": "https://www.boonthavorn.com/max-light-1249472",
       "expected_url": "https://www.boonthavorn.com/yj-2180a-1-e27x1",
-      "confidence": 90,
-      "reason": "The candidate has a high SpecMatch percentage (71%), is from the most preferred brand (MAX LIGHT), and is the correct product type (wall lamp), matching the critical specs of the source product.",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 3,
-      "source_idx": 32,
-      "source_name": "แปรงทาสีขนสัตว์ เกรด A ด้ามพลาสติก GIANT KINGKONG รุ่น C303AP3 ขนาด 2 นิ้ว สีน้ำตาล",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60342289",
-      "target_name": "แปรงทาสี 2 นิ้ว C305 น้ำตาล",
-      "target_brand": "AT.INDY",
-      "target_url": "https://www.boonthavorn.com/at-indy-115100",
-      "expected_url": "https://www.boonthavorn.com/hachi-1218464",
       "confidence": 85,
-      "reason": "The candidate is the same product type (paint brush) and has a 100% spec match for size, though not a preferred brand. The source product type is \"wool paint brush\" and candidate is \"paint brush,\" which is an acceptable product type match.",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 3,
-      "source_idx": 33,
-      "source_name": "โคมแทรคไลท์เข้าราง E27x1 PAR30 LUZINO รุ่น LP03-WH สีขาว",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60320102",
-      "target_name": "แท็คไลท์ YD-WA8004 ขาว",
-      "target_brand": "MAX LIGHT",
-      "target_url": "https://www.boonthavorn.com/max-light-1101349",
-      "expected_url": "https://www.boonthavorn.com/max-light-1101349",
-      "confidence": 70,
-      "reason": "The candidate has the exact same product type and is from a highly preferred brand (MAX LIGHT). Although spec match is 0%, the product type and brand preference make it the most suitable alternative among weak options.",
-      "gt_status": "CORRECT"
+      "reason": "Candidate 0 is an outdoor wall lamp with a high spec match to the source, and is from a preferred brand (MAX LIGHT).",
+      "gt_status": "GT_MISSING"
     }
   ]
 }

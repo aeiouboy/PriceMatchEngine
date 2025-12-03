@@ -4,11 +4,12 @@
   "start_idx": 15,
   "end_idx": 30,
   "products_tested": 15,
-  "matches_found": 4,
-  "correct": 1,
-  "incorrect": 2,
-  "accuracy": 33.33333333333333,
-  "timestamp": "2025-12-03T12:30:43.837510",
+  "matches_found": 5,
+  "correct": 2,
+  "incorrect": 1,
+  "gt_missing": 1,
+  "accuracy": 66.66666666666666,
+  "timestamp": "2025-12-03T13:00:10.652942",
   "matches": [
     {
       "chunk": 2,
@@ -20,8 +21,8 @@
       "target_brand": "MAX LIGHT",
       "target_url": "https://www.boonthavorn.com/max-light-1249472",
       "expected_url": "https://www.boonthavorn.com/max-light-1060790",
-      "confidence": 90,
-      "reason": "Candidate 0 is a wall lamp from a highly preferred brand (MAX LIGHT) with the highest spec match (71%) and identical critical specs (socket E27x1, dimensions 27x1).",
+      "confidence": 95,
+      "reason": "The candidate 'ไฟผนัง O-001 E27x1 MAX 60W IP44' is a wall lamp, from the preferred brand 'MAX LIGHT' (#1), and has a high spec match of 71% with identical socket and dimensions.",
       "gt_status": "INCORRECT"
     },
     {
@@ -35,7 +36,7 @@
       "target_url": "https://www.boonthavorn.com/bih-1072224",
       "expected_url": "https://www.boonthavorn.com/bih-1072224",
       "confidence": 75,
-      "reason": "Candidate 4 is the only pallet wrap film product, matching the critical product type, and has a comparable length specification.",
+      "reason": "The candidate has the exact product type 'pallet wrap film' which is a synonym for 'stretch film' and shares length and dimension specs. It is also from a preferred brand (BIH).",
       "gt_status": "CORRECT"
     },
     {
@@ -48,9 +49,9 @@
       "target_brand": "MAX LIGHT",
       "target_url": "https://www.boonthavorn.com/max-light-1249472",
       "expected_url": "https://www.boonthavorn.com/max-light-1257089",
-      "confidence": 90,
-      "reason": "Candidate 0 is an outdoor wall lamp from the top preferred brand MAX LIGHT, with a high spec match of 71%, including matching dimensions and socket type.",
-      "gt_status": "INCORRECT"
+      "confidence": 95,
+      "reason": "Candidate 0 is a preferred brand (MAX LIGHT #1) with a high SpecMatch (71%) and exact product type match (wall lamp).",
+      "gt_status": "GT_MISSING"
     },
     {
       "chunk": 2,
@@ -63,8 +64,22 @@
       "target_url": "https://www.boonthavorn.com/max-light-1144016",
       "expected_url": "",
       "confidence": 70,
-      "reason": "Candidate is a downlight and from a preferred brand, with a matching color temperature (DAYLIGHT). However, wattage and size are not specified for the candidate, leading to a lower spec match percentage.",
+      "reason": "Candidate is a downlight, the correct product type, and is from the highly preferred brand MAX LIGHT, with DAYLIGHT color temperature matching the source.",
       "gt_status": "NO_GT"
+    },
+    {
+      "chunk": 2,
+      "source_idx": 23,
+      "source_name": "โคมไฟเสาสนาม E27x1 LUZINO รุ่น RH1876D(BK) สีดำ",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60322158",
+      "target_name": "ไฟสนามเตี้ย YK-005 E27x1 Max 60W IP44",
+      "target_brand": "MAX LIGHT",
+      "target_url": "https://www.boonthavorn.com/max-light-1249477",
+      "expected_url": "https://www.boonthavorn.com/max-light-1249477",
+      "confidence": 60,
+      "reason": "The candidate has the exact same socket type (E27x1) and dimensions as the source, is from the highly preferred brand MAX LIGHT, and its product 'yard light' is a close subtype to the source's 'post lamp'.",
+      "gt_status": "CORRECT"
     }
   ]
 }
