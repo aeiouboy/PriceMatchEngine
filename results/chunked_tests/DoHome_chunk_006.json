@@ -5,10 +5,10 @@
   "end_idx": 90,
   "products_tested": 15,
   "matches_found": 5,
-  "correct": 4,
-  "incorrect": 0,
-  "accuracy": 100.0,
-  "timestamp": "2025-12-03T07:44:02.728890",
+  "correct": 3,
+  "incorrect": 1,
+  "accuracy": 75.0,
+  "timestamp": "2025-12-03T10:39:33.124286",
   "matches": [
     {
       "chunk": 6,
@@ -20,8 +20,8 @@
       "target_brand": "FINEXT",
       "target_url": "https://www.dohome.co.th/th/finext-table-gas-stove-2-burners-no-gy72-12-10316576.html",
       "expected_url": "",
-      "confidence": 70,
-      "reason": "Candidate is a gas stove from a preferred brand (FINEXT) but lacks specific length matching. Other gas stove from FINEXT (index 3) is a single burner while source is 2 burners (identified inside product name).",
+      "confidence": 90,
+      "reason": "Candidate 1 is a gas stove of a preferred brand (FINEXT) and matches the product type, although specific length details differ.",
       "gt_status": "NO_GT"
     },
     {
@@ -34,8 +34,8 @@
       "target_brand": "FINEXT",
       "target_url": "https://www.dohome.co.th/th/finext-downlight-4-inch-square-white-10246941.html",
       "expected_url": "https://www.dohome.co.th/th/finext-downlight-4-inch-square-white-10246941.html",
-      "confidence": 85,
-      "reason": "The candidate is a downlight with matching size (4 inch) and is from a preferred brand (FINEXT), despite the slightly higher price.",
+      "confidence": 75,
+      "reason": "The candidate is a downlight with a matching size (4 inch) and is from a preferred brand (FINEXT), making it the closest available alternative despite variations in other specs.",
       "gt_status": "CORRECT"
     },
     {
@@ -44,13 +44,13 @@
       "source_name": "บานซิงค์คู่ ZAGIO รุ่น Max2 #3773 ขนาด 84x 63.9ซม. สีขาว",
       "source_brand": "ZAGIO",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60306581",
-      "target_name": "FINEXT บานซิงค์คู่ กระจกฝ้า รุ่น MAX 15 สีขาว",
-      "target_brand": "FINEXT",
-      "target_url": "https://www.dohome.co.th/th/finext-double-sink-door-frosted-glass-max-15-white-10353359.html",
+      "target_name": "KING บานซิงค์คู่ ABS รุ่น PLATINUM เพิร์ล สีขาว",
+      "target_brand": "KING",
+      "target_url": "https://www.dohome.co.th/th/double-doors-cabinet-for-kitchen-abs-no-platinum-pearl-white-10172906.html",
       "expected_url": "https://www.dohome.co.th/th/finext-double-sink-door-frosted-glass-max-15-white-10353359.html",
-      "confidence": 70,
-      "reason": "Candidate 0 is a FINEXT (PREFERRED#1) sink cabinet, matching the product type and brand preference, despite a model mismatch.",
-      "gt_status": "CORRECT"
+      "confidence": 60,
+      "reason": "The candidate is a 'sink cabinet' of a preferred brand (KING) but the model and other specs do not match the source product.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 6,
@@ -62,8 +62,8 @@
       "target_brand": "DE'COS",
       "target_url": "https://www.dohome.co.th/th/decos-coconut-fiber-carpet-40x60cm-03-3-brown-10397046.html",
       "expected_url": "https://www.dohome.co.th/th/decos-coconut-fiber-carpet-40x60cm-03-3-brown-10397046.html",
-      "confidence": 100,
-      "reason": "Candidate 0 is the exact product type and brand matches a preferred brand (DE'COS) with 100% spec match on dimensions.",
+      "confidence": 95,
+      "reason": "The candidate is also a coir mat, is from a preferred brand (DE'COS), and has a 100% spec match including identical dimensions.",
       "gt_status": "CORRECT"
     },
     {
@@ -77,7 +77,7 @@
       "target_url": "https://www.dohome.co.th/th/nash-paint-brush-4-inch-no-nm001-10224013.html",
       "expected_url": "https://www.dohome.co.th/th/nash-paint-brush-4-inch-no-nm001-10224013.html",
       "confidence": 100,
-      "reason": "Candidate 0 is the exact product type (paint brush) and size (4 inch) from the highest-ranked preferred brand (NASH) with a perfect spec match.",
+      "reason": "Candidate 0 is a paint brush of the preferred brand NASH, matching the size 4.0 inch and the product type exactly.",
       "gt_status": "CORRECT"
     }
   ]

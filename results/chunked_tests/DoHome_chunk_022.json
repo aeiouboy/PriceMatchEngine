@@ -4,38 +4,24 @@
   "start_idx": 315,
   "end_idx": 330,
   "products_tested": 15,
-  "matches_found": 7,
+  "matches_found": 8,
   "correct": 7,
-  "incorrect": 0,
-  "accuracy": 100.0,
-  "timestamp": "2025-12-03T07:48:32.625395",
+  "incorrect": 1,
+  "accuracy": 87.5,
+  "timestamp": "2025-12-03T10:51:53.493822",
   "matches": [
     {
       "chunk": 22,
-      "source_idx": 315,
-      "source_name": "โคมดาวน์ไลท์หน้ากลม 7 นิ้ว LED 18W Warm White LUZINO รุ่น PN-JYX0101-18W/WW สีขาว",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60308457",
-      "target_name": "POWER MAX ดาวน์ไลท์ LED 18 วัตต์ หน้ากลม รุ่น DHP006 (WARM WHITE)",
-      "target_brand": "POWER MAX",
-      "target_url": "https://www.dohome.co.th/th/power-max-led-downlight-18w-circle-dhp006-warm-white-10268573.html",
-      "expected_url": "https://www.dohome.co.th/th/power-max-led-downlight-18w-circle-dhp006-warm-white-10268573.html",
-      "confidence": 70,
-      "reason": "The candidate is a downlight, from a preferred brand (POWER MAX) and has a wattage of 18W and warm white color temperature, matching the source product closely in key specifications, although the size spec is missing.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 22,
-      "source_idx": 316,
-      "source_name": "ลูกกลิ้งทาสี GIANT KINGKONG รุ่น PR-007 ขนาด 7 นิ้ว",
+      "source_idx": 317,
+      "source_name": "ฟิล์มยืด 20 ไมครอน GIANT KINGKONG ขนาด 25 ซม. x 200 เมตร สีใส",
       "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60271295",
-      "target_name": "NASH ลูกกลิ้งทาสี 7 นิ้ว รุ่น RTS-007",
-      "target_brand": "NASH",
-      "target_url": "https://www.dohome.co.th/th/nash-paint-roller7-inch-no-rts-007-10185194.html",
-      "expected_url": "https://www.dohome.co.th/th/nash-paint-roller7-inch-no-rts-007-10185194.html",
-      "confidence": 100,
-      "reason": "The candidate is a paint roller of the preferred brand NASH, with a size of 7 inches, matching all key specifications of the source product perfectly.",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60366774",
+      "target_name": "ฟิล์มยืดอเนกประสงค์ 20 ไมครอน 30 ซม. x 200 เมตร",
+      "target_brand": "NYC",
+      "target_url": "https://www.dohome.co.th/th/cling-film-20-micron-30-cm-x-200-m-10310432.html",
+      "expected_url": "https://www.dohome.co.th/th/cling-film-20-micron-30-cm-x-200-m-10310432.html",
+      "confidence": 60,
+      "reason": "The candidate is a stretch film with the same length, but a larger width. The brand is not preferred.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,8 +35,22 @@
       "target_url": "https://www.dohome.co.th/th/jcp-plastic-rack-4-layers-no-5974-10309925.html",
       "expected_url": "https://www.dohome.co.th/th/jcp-plastic-rack-4-layers-no-5974-10309925.html",
       "confidence": 75,
-      "reason": "Candidate 0 is a 'shelf' type, matches 'tiers' and 'model' specs, and is a PREFERRED brand (JCP) although ranked lower.",
+      "reason": "The candidate is a plastic shelf with 4 tiers and matching model number '5974', resulting in a 50% SpecMatch, and its brand JCP is preferred. Although the brand is not a top preferred one, given the strong spec match it is the best option.",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 22,
+      "source_idx": 319,
+      "source_name": "บัวพื้นโพลีสไตรีน TIMELESS KASSA รุ่น 581-21076 ขนาด 1.5 x 290 x 8 ซม. สีแบล็กโอ๊ก",
+      "source_brand": "KASSA",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60328500",
+      "target_name": "FINEXT ไม้บัวล่างเอทิลีน 4 นิ้ว x 2.9 เมตร รุ่น 157-19CM",
+      "target_brand": "FINEXT",
+      "target_url": "https://www.dohome.co.th/th/finext-under-cornice-wood-ethylene-4-inchx2-9m-no-157-19cm-10310029.html",
+      "expected_url": "https://www.dohome.co.th/th/finext-under-cornice-wood-ethylene-4-inchx2-9m-no-jc157-372-10185907.html",
+      "confidence": 80,
+      "reason": "Candidate 2 is a PREFERRED brand (FINEXT) and is a baseboard type product, although the spec match is low due to differing length units and values. However, it's the closest product type match among preferred brands.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 22,
@@ -62,8 +62,8 @@
       "target_brand": "DECOS",
       "target_url": "https://www.dohome.co.th/th/jcj-plastic-box-100-l-no-5119a-white-10318582.html",
       "expected_url": "https://www.dohome.co.th/th/jcj-plastic-box-100-l-no-5119a-white-10318582.html",
-      "confidence": 75,
-      "reason": "Candidate 0 (DECOS) is a preferred brand and has the highest SpecMatch% among relevant product types, with identical volume and a very similar model number (5119 vs JCJ-5119).",
+      "confidence": 60,
+      "reason": "The candidate has the highest spec match (41%) with the same volume and a preferred brand (DECOS), and it is also a plastic box which is a very close product type to storage box. The model number 5119 is similar to the source model JCJ-5119.",
       "gt_status": "CORRECT"
     },
     {
@@ -77,7 +77,7 @@
       "target_url": "https://www.dohome.co.th/th/2-ply-corrugated-paper-width-48x80-m-weight-30-kg-10364692.html",
       "expected_url": "https://www.dohome.co.th/th/2-ply-corrugated-paper-width-48x80-m-weight-30-kg-10364692.html",
       "confidence": 95,
-      "reason": "The candidate is a corrugated paper with a 100% spec match, including identical size and length, and matching tiers. Although not a preferred brand, the perfect spec match outweighs the brand preference.",
+      "reason": "The candidate is a perfect spec match for corrugated paper, matching size, length, and tiers. Although the brand is not preferred, the spec match is 100% and product type is identical, making it the best equivalent.",
       "gt_status": "CORRECT"
     },
     {
@@ -90,8 +90,22 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/l-type-screw-1-2-inch-x-40-cm-10202377.html",
       "expected_url": "https://www.dohome.co.th/th/l-type-screw-1-2-inch-x-40-cm-10202377.html",
-      "confidence": 80,
-      "reason": "The candidate is an L-screw (a type of bolt), from the preferred brand NASH, with a matching size and length, resulting in a high spec match.",
+      "confidence": 95,
+      "reason": "The candidate 'สกรูตัวแอล 1/2 นิ้ว x 40 ซม. | NASH' is an L-bolt (สกรูตัวแอล), matches the critical product type 'l-bolt', has the exact size_inch and length, and is from the preferred brand NASH.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 22,
+      "source_idx": 325,
+      "source_name": "ยางกวาดน้ำกว้าง18นิ้ว ด้ามอะลูมิเนียมยาว120ซม.KASSA HOME ขนาด 45 x 7 x 120ซม. สีเทา",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60230626",
+      "target_name": "OPPA ยางรีดน้ำ ด้ามอลูมิเนียม 18 นิ้ว",
+      "target_brand": "OPPA",
+      "target_url": "https://www.dohome.co.th/th/oppa-bubber-wiper-with-aluminium-handle-18-inch-10240882.html",
+      "expected_url": "https://www.dohome.co.th/th/oppa-bubber-wiper-with-aluminium-handle-18-inch-10240882.html",
+      "confidence": 75,
+      "reason": "The candidate has the highest spec match (42%) and is a preferred brand (OPPA) with the correct product type and matching 'size_inch' spec.",
       "gt_status": "CORRECT"
     },
     {
@@ -105,7 +119,7 @@
       "target_url": "https://www.dohome.co.th/th/powermax-track-light-2m-no-lumos-white-10400227.html",
       "expected_url": "https://www.dohome.co.th/th/powermax-track-light-2m-no-lumos-white-10400227.html",
       "confidence": 90,
-      "reason": "Candidate 5 is a track light rail from the preferred brand POWER MAX with matching length, making it the best equivalent despite lower SpecMatch due to brand preference.",
+      "reason": "Candidate 5 is a track light rail from the preferred brand POWER MAX, and its length of 2m is equivalent to the source's 200cm, making it the best functional equivalent despite spec match percentage.",
       "gt_status": "CORRECT"
     }
   ]

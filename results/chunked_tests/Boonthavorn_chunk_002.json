@@ -4,40 +4,12 @@
   "start_idx": 15,
   "end_idx": 30,
   "products_tested": 15,
-  "matches_found": 8,
+  "matches_found": 7,
   "correct": 2,
-  "incorrect": 5,
-  "accuracy": 28.57142857142857,
-  "timestamp": "2025-12-03T07:34:31.977111",
+  "incorrect": 4,
+  "accuracy": 33.33333333333333,
+  "timestamp": "2025-12-03T10:54:22.405776",
   "matches": [
-    {
-      "chunk": 2,
-      "source_idx": 16,
-      "source_name": "โคมไฟผนังภายนอกอะลูมิเนียม E27x1 LUZINO รุ่น 2763-E27 สีดำ - ใส",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60406672",
-      "target_name": "ไฟผนัง O-001 E27x1 MAX 60W IP44",
-      "target_brand": "MAX LIGHT",
-      "target_url": "https://www.boonthavorn.com/max-light-1249472",
-      "expected_url": "https://www.boonthavorn.com/max-light-1060790",
-      "confidence": 90,
-      "reason": "Candidate 0 is a wall lamp from the preferred brand MAX LIGHT with a high spec match percentage (73%) for dimensions, socket, and lamp type.",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 2,
-      "source_idx": 17,
-      "source_name": "โคมไฟหัวเสาภายนอก E27x1 LUZINO รุ่น HW13PF-BK-WD สีดำ - ไม้",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60395094",
-      "target_name": "ไฟหัวเสา YF838S1 *น้ำตาล E27x1 60W",
-      "target_brand": "MAX LIGHT",
-      "target_url": "https://www.boonthavorn.com/max-light-1143594",
-      "expected_url": "https://www.boonthavorn.com/max-light-1252593",
-      "confidence": 95,
-      "reason": "Candidate 0 is a post lamp, a preferred brand (MAX LIGHT), and has a high SpecMatch (73%) with matching dimensions, socket, and lamp type.",
-      "gt_status": "INCORRECT"
-    },
     {
       "chunk": 2,
       "source_idx": 19,
@@ -49,7 +21,7 @@
       "target_url": "https://www.boonthavorn.com/bih-1072224",
       "expected_url": "https://www.boonthavorn.com/bih-1072224",
       "confidence": 75,
-      "reason": "Candidate 4 is the only alternative product of the same type 'pallet wrap' and has some matching specs with a preferred brand.",
+      "reason": "Candidate is the only 'pallet wrap film' product, matching product type and has relevant specs in description, also from a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -62,8 +34,8 @@
       "target_brand": "MAX LIGHT",
       "target_url": "https://www.boonthavorn.com/max-light-1249472",
       "expected_url": "https://www.boonthavorn.com/max-light-1257089",
-      "confidence": 95,
-      "reason": "Candidate 0 is an outdoor wall lamp, matches the product type, and has the highest spec match (73%) with critical specs like dimensions, socket, and lamp type matching, while also being from the most preferred brand (MAX LIGHT).",
+      "confidence": 90,
+      "reason": "Candidate 0 is the best match with the highest SpecMatch (73%) for an outdoor wall lamp and is from the top preferred brand (MAX LIGHT). All critical specs like socket type and lamp type match perfectly.",
       "gt_status": "INCORRECT"
     },
     {
@@ -76,8 +48,8 @@
       "target_brand": "MAX LIGHT",
       "target_url": "https://www.boonthavorn.com/max-light-1144016",
       "expected_url": "",
-      "confidence": 60,
-      "reason": "The candidate has a lower wattage (not specified, but likely different from 15W) however it is a downlight, 'DAYLIGHT' color temperature, and by a preferred brand.",
+      "confidence": 75,
+      "reason": "Candidate 1 is the correct product type (downlight), is a preferred brand (MAX LIGHT), and has a color temperature match (DAYLIGHT), making it the closest available alternative despite the lower spec match.",
       "gt_status": "NO_GT"
     },
     {
@@ -90,8 +62,8 @@
       "target_brand": "MAX LIGHT",
       "target_url": "https://www.boonthavorn.com/max-light-1143594",
       "expected_url": "https://www.boonthavorn.com/max-light-1143594",
-      "confidence": 90,
-      "reason": "Candidate 0 is a preferred brand (MAX LIGHT), has the identical product type (post lamp), and a high spec match (73%) for dimensions, socket, and lamp type.",
+      "confidence": 75,
+      "reason": "The candidate is from the top preferred brand 'MAX LIGHT' and has the highest spec match (73%) for an 'outdoor post lamp', with matching socket type, dimensions, and lamp type.",
       "gt_status": "CORRECT"
     },
     {
@@ -104,8 +76,8 @@
       "target_brand": "MAX LIGHT",
       "target_url": "https://www.boonthavorn.com/max-light-1143594",
       "expected_url": "https://www.boonthavorn.com/max-light-1249477",
-      "confidence": 70,
-      "reason": "Candidate 4 is a MAX LIGHT product (PREFERRED#1 brand), and while its SpecMatch is only 58%, its type 'post lamp' is the closest functional equivalent to 'lamp post' among the candidates, making it the most suitable match despite a lower SpecMatch score compared to a direct product type match.",
+      "confidence": 75,
+      "reason": "Candidate 4 is a MAX LIGHT preferred brand and the only one matching 'post lamp' (POLE_LAMP) product type, with a 58% spec match on critical specifications like socket and dimensions.",
       "gt_status": "INCORRECT"
     },
     {
@@ -118,8 +90,22 @@
       "target_brand": "MAX LIGHT",
       "target_url": "https://www.boonthavorn.com/max-light-1144016",
       "expected_url": "https://www.boonthavorn.com/le-1223378",
-      "confidence": 85,
-      "reason": "Candidate 1 (ดาวน์ไลท์ LED GL-DL-W15-PR 6500K DL) is a downlight, matching the product type, and is from the highest preferred brand (MAX LIGHT). While spec match based on extracted numerical values is 0%, both are downlights, suggesting a functional equivalence.",
+      "confidence": 60,
+      "reason": "Candidate 1 is the same product type (downlight), is a preferred brand (MAX LIGHT), and has some matching identifiers in the original product name, though specific specs are not detailed.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 2,
+      "source_idx": 29,
+      "source_name": "อะไหล่ลูกกลิ้งทาสี GIANT KINGKONG รุ่น PR-007C ขนาด 7 นิ้ว",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60271305",
+      "target_name": "อะไหล่ขนลูกกลิ้ง 4 นิ้ว C30104 ขาว",
+      "target_brand": "AT.INDY",
+      "target_url": "https://www.boonthavorn.com/at-indy-115259",
+      "expected_url": "https://www.boonthavorn.com/somic-77681",
+      "confidence": 60,
+      "reason": "The candidate has the correct product type, roller_type, and a relevant size_inch, despite being a different size to the source.",
       "gt_status": "INCORRECT"
     }
   ]

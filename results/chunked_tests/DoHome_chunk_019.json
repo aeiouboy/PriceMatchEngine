@@ -4,26 +4,12 @@
   "start_idx": 270,
   "end_idx": 285,
   "products_tested": 15,
-  "matches_found": 5,
-  "correct": 5,
+  "matches_found": 4,
+  "correct": 4,
   "incorrect": 0,
   "accuracy": 100.0,
-  "timestamp": "2025-12-03T07:48:37.862211",
+  "timestamp": "2025-12-03T10:49:26.879127",
   "matches": [
-    {
-      "chunk": 19,
-      "source_idx": 272,
-      "source_name": "เจโบลท์เกลียวหุน 3/4 นิ้ว x 500 มม. GIANT KINGKONG รุ่น JB3450 (แพ็ก 1 ชุด)",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60398198",
-      "target_name": "สกรูตัวเจ 3/4 นิ้ว x 50 ซม. | NASH",
-      "target_brand": "NASH",
-      "target_url": "https://www.dohome.co.th/th/j-type-screw-3-4-inch-x-50-cm-10175218.html",
-      "expected_url": "https://www.dohome.co.th/th/j-type-screw-3-4-inch-x-50-cm-10175218.html",
-      "confidence": 95,
-      "reason": "Candidate 3 is an exact match for size and length, and is a j-bolt from a preferred brand (NASH).",
-      "gt_status": "CORRECT"
-    },
     {
       "chunk": 19,
       "source_idx": 277,
@@ -34,8 +20,8 @@
       "target_brand": "POWER MAX",
       "target_url": "https://www.dohome.co.th/th/power-max-led-downlight-18w-square-dhp013-warm-white-10268585.html",
       "expected_url": "https://www.dohome.co.th/th/power-max-led-downlight-18w-square-dhp013-warm-white-10268585.html",
-      "confidence": 70,
-      "reason": "The candidate is a downlight from a preferred brand (POWER MAX) with matching wattage (18W) and color temperature (WARMWHITE), and a high SpecMatch of 51%.",
+      "confidence": 95,
+      "reason": "Highest SpecMatch% (51%) among preferred brands and exact product type match. Wattage and color temperature match exactly. Size is not explicitly stated for candidate but is often a standard for 18W downlights.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,7 +35,7 @@
       "target_url": "https://www.dohome.co.th/th/nash-heavy-duty-trolley-with-air-wheels-10-inches-250-kg-10383695.html",
       "expected_url": "https://www.dohome.co.th/th/nash-heavy-duty-trolley-with-air-wheels-10-inches-250-kg-10383695.html",
       "confidence": 85,
-      "reason": "The candidate is a NASH brand heavy-duty trolley, matching the source product type 'trolley' and sharing the key spec of 10 inch wheels and 250 KG capacity, aligning with the highest preferred brand and a high spec match percentage.",
+      "reason": "Candidate 1 is a NASH brand heavy duty trolley with a 10 inch wheel size, matching the critical 'trolley' product type and the 10 inch size spec of the source, and a similar weight capacity (250 kg is implied for heavy duty).",
       "gt_status": "CORRECT"
     },
     {
@@ -63,7 +49,7 @@
       "target_url": "https://www.dohome.co.th/th/decos-duvet-cover-size-70x90-inch-no-ct-streak-white-10303565.html",
       "expected_url": "https://www.dohome.co.th/th/decos-duvet-cover-size-70x90-inch-no-ct-streak-white-10303565.html",
       "confidence": 75,
-      "reason": "Candidate is a preferred brand 'DE'COS' and is a duvet cover with matching dimensions, making it the closest product type match despite a lower SpecMatch% due to 'size_inch' being extracted differently.",
+      "reason": "Candidate 12 is a duvet cover (product type match) from a preferred brand (DE'COS) with matching dimensions (70x90), despite a lower SpecMatch% due to differing 'size_inch' interpretation.",
       "gt_status": "CORRECT"
     },
     {
@@ -76,8 +62,8 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/nash-cement-trolley-single-air-wheel-14-inches-green-200-kg-10383679.html",
       "expected_url": "https://www.dohome.co.th/th/nash-cement-trolley-single-air-wheel-14-inches-green-200-kg-10383679.html",
-      "confidence": 90,
-      "reason": "The candidate is a wheelbarrow from a preferred brand (NASH) with the exact same wheel size (14 inch) as the source product.",
+      "confidence": 70,
+      "reason": "The candidate is a preferred brand (NASH) with the exact product type (wheelbarrow) and closest size_inch spec (14 inch) to the source, resulting in the highest SpecMatch for a preferred brand.",
       "gt_status": "CORRECT"
     }
   ]

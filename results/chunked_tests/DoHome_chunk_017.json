@@ -4,11 +4,11 @@
   "start_idx": 240,
   "end_idx": 255,
   "products_tested": 15,
-  "matches_found": 6,
-  "correct": 6,
-  "incorrect": 0,
-  "accuracy": 100.0,
-  "timestamp": "2025-12-03T07:48:36.629981",
+  "matches_found": 9,
+  "correct": 7,
+  "incorrect": 1,
+  "accuracy": 87.5,
+  "timestamp": "2025-12-03T10:47:54.608020",
   "matches": [
     {
       "chunk": 17,
@@ -21,8 +21,36 @@
       "target_url": "https://www.dohome.co.th/th/jcj-square-rolling-plastic-box-85-l-5115-10335532.html",
       "expected_url": "https://www.dohome.co.th/th/jcj-square-rolling-plastic-box-85-l-5115-10335532.html",
       "confidence": 95,
-      "reason": "The candidate has the exact same volume and model number as the source, is from a preferred brand, and is the correct product type.",
+      "reason": "The candidate is a preferred brand (DE'COS) and matches the product type (plastic box/storage box) and critical 'volume' (85 L) and 'model' (5115) specs of the source, indicating a strong equivalent.",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 17,
+      "source_idx": 244,
+      "source_name": "กระชอนตักของทอด KASSA HOME รุ่น TD0601-1 สีเงิน",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/sku/60326860",
+      "target_name": "ตะแกรงตักของทอด 16 ซม. รุ่น 109511",
+      "target_brand": "HAPPY COOK",
+      "target_url": "https://www.dohome.co.th/th/skimmer-spoon-for-frying-16-cm-no-109511-10314853.html",
+      "expected_url": "",
+      "confidence": 70,
+      "reason": "Candidate 1 (ตะแกรงตักของทอด) is a 'frying skimmer' which is very similar to 'skimmer' and has the highest SpecMatch% among preferred brands that are type-compatible.",
+      "gt_status": "NO_GT"
+    },
+    {
+      "chunk": 17,
+      "source_idx": 246,
+      "source_name": "กล่องอเนกประสงค์พร้อมล้อและฝาล็อก KASSA HOME รุ่น KPC K90B ขนาด 90 ลิตร สีดำ",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60304733",
+      "target_name": "DECOS กล่องพลาสติกมีล้อ 50 ลิตร รุ่น 5116 สีขาว",
+      "target_brand": "DE'COS",
+      "target_url": "https://www.dohome.co.th/th/jcj-rolling-plastic-box-50-l-no-5116-white-10325992.html",
+      "expected_url": "https://www.dohome.co.th/th/modern-plastic-box-100-l-no-023-brown-10312818.html",
+      "confidence": 75,
+      "reason": "Candidate 2 is the correct product type (storage box) and from a preferred brand (DE'COS), although the volume is lower (50 L vs 90 L) and model doesn't match.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 17,
@@ -34,8 +62,22 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/nash-combination-plier-8-inch-no-ty10115-10188652.html",
       "expected_url": "https://www.dohome.co.th/th/nash-combination-plier-8-inch-no-ty10115-10188652.html",
-      "confidence": 95,
-      "reason": "Candidate 0 is a preferred brand (NASH), a nipper pliers with 100% spec match on size, and the correct product type.",
+      "confidence": 100,
+      "reason": "Candidate 0 is a preferred brand (NASH, PREFERRED#1) and has a 100% spec (size_inch=8 inch) match, with the correct product type (pliers).",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 17,
+      "source_idx": 249,
+      "source_name": "ตู้กับข้าว 6 บานเปิด ZAGIO รุ่น 6Y30AT ขนาด 77 x 38 x 110 ซม. สีขาว",
+      "source_brand": "ZAGIO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60370573",
+      "target_name": "FINEXT ตู้ครัว 6 บาน 62x38x119 ลายดอกไม้ขาว [ไม่รวมประกอบ]",
+      "target_brand": "FINEXT",
+      "target_url": "https://www.dohome.co.th/th/finext-kitchen-cabinet-6-doors-62x38x119-white-floral-pattern-10381869.html",
+      "expected_url": "https://www.dohome.co.th/th/finext-kitchen-cabinet-6-doors-62x38x119-white-floral-pattern-10381869.html",
+      "confidence": 80,
+      "reason": "The candidate has a kitchen cabinet product type, shares the same 'FINEXT' preferred brand, similar dimensions (62x38 vs 77x38), and is priced similarly to the source product, even though the spec match percentage is 0% based on the provided data, it is a much better conceptual fit for a kitchen cabinet replacement than any of the other options.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,7 +91,7 @@
       "target_url": "https://www.dohome.co.th/th/decos-duvet-insert-size-100x90-inch-white-10302217.html",
       "expected_url": "https://www.dohome.co.th/th/decos-duvet-insert-size-100x90-inch-white-10302217.html",
       "confidence": 95,
-      "reason": "The candidate is a duvet insert, is from the highly preferred brand DE'COS, and has a 100% spec match including identical dimensions.",
+      "reason": "The candidate is a preferred brand 'DE'COS' and is an exact match for product type and all key specifications (dimensions and size).",
       "gt_status": "CORRECT"
     },
     {
@@ -62,8 +104,8 @@
       "target_brand": "POWER MAX",
       "target_url": "https://www.dohome.co.th/th/power-max-led-downlight-12w-circle-dhp004-warm-white-10268569.html",
       "expected_url": "https://www.dohome.co.th/th/power-max-led-downlight-12w-circle-dhp004-warm-white-10268569.html",
-      "confidence": 90,
-      "reason": "The candidate is a downlight with matching wattage (12W) and color temperature (Warm White) from the preferred brand POWER MAX, representing the highest spec match while being the correct product type.",
+      "confidence": 70,
+      "reason": "The candidate is from the highest preferred brand (POWER MAX) and has the highest SpecMatch (51%), with matching product type, wattage, and color temperature, which are critical specs.",
       "gt_status": "CORRECT"
     },
     {
@@ -76,8 +118,8 @@
       "target_brand": "POWER MAX",
       "target_url": "https://www.dohome.co.th/th/finext-embed-downlight-6-inch-white-border-10001343.html",
       "expected_url": "https://www.dohome.co.th/th/finext-embed-downlight-6-inch-white-border-10001343.html",
-      "confidence": 60,
-      "reason": "The candidate is the correct product type (downlight), from a preferred brand (POWER MAX), and matches the size (6 inch) of the source product, achieving a 57% spec match.",
+      "confidence": 80,
+      "reason": "The candidate is a downlight, matches the size of 6 inches, and is from the preferred brand POWER MAX, making it the best available match despite a lower spec match percentage.",
       "gt_status": "CORRECT"
     },
     {
@@ -90,8 +132,8 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/nash-oil-based-nail-glue-300-ml-model-dfj55-10412443.html",
       "expected_url": "https://www.dohome.co.th/th/nash-oil-based-nail-glue-300-ml-model-dfj55-10412443.html",
-      "confidence": 65,
-      "reason": "The candidate has a highly preferred brand (NASH, PREFERRED#1) and matches the product type 'adhesive' even though the volume is slightly different (300ML vs 280ML), which is within acceptable tolerance for volume.",
+      "confidence": 75,
+      "reason": "The candidate has the exact same product type (nail glue) and is from the highest preferred brand (NASH), despite a small volume difference.",
       "gt_status": "CORRECT"
     }
   ]

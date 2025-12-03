@@ -4,26 +4,12 @@
   "start_idx": 225,
   "end_idx": 240,
   "products_tested": 15,
-  "matches_found": 13,
-  "correct": 7,
+  "matches_found": 11,
+  "correct": 6,
   "incorrect": 4,
-  "accuracy": 63.63636363636363,
-  "timestamp": "2025-12-03T07:47:39.056213",
+  "accuracy": 60.0,
+  "timestamp": "2025-12-03T10:47:10.012472",
   "matches": [
-    {
-      "chunk": 16,
-      "source_idx": 225,
-      "source_name": "ไม้บัวล่าง KASSA DUKE รุ่น INT001-01 BW1601 ขนาด 1 x 290 x 9 ซม. สีไม้สัก",
-      "source_brand": "KASSA",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60259487",
-      "target_name": "FINEXT ไม้บัวล่างเอทิลีน 4 นิ้ว x 2.9 เมตร รุ่น JC157-W1",
-      "target_brand": "FINEXT",
-      "target_url": "https://www.dohome.co.th/th/finext-under-cornice-wood-ethylene-4-inchx2-9m-no-jc157-w1-10185905.html",
-      "expected_url": "https://www.dohome.co.th/th/finext-under-cornice-wood-ethylene-4-inchx2-9m-no-jc422-372-10223038.html",
-      "confidence": 60,
-      "reason": "The candidate has the exact same product type as the source (baseboard molding) and is from a preferred brand (FINEXT), although the specific dimensions differ. It is the best available match given the constraints.",
-      "gt_status": "INCORRECT"
-    },
     {
       "chunk": 16,
       "source_idx": 226,
@@ -35,7 +21,7 @@
       "target_url": "https://www.dohome.co.th/th/wheel-chock-29x16x19-cm-no-9093-10316653.html",
       "expected_url": "https://www.dohome.co.th/th/wheel-chock-29x16x19-cm-no-9093-10316653.html",
       "confidence": 70,
-      "reason": "The candidate is a wheel chock from a preferred brand (NASH) with the exact same product type. Although the dimensions are inversed, the numbers 29x16x19 are very close to the source's 16x19x29, indicating a potential strong match after re-ordering.",
+      "reason": "Candidate 1 is a wheel chock by a preferred brand and has dimensions and length that are very similar to the source product, making it a good equivalent despite a low calculated SpecMatch due to limited shared quantifiable specs beyond 'length_cm' parsing differing between the products.",
       "gt_status": "CORRECT"
     },
     {
@@ -48,8 +34,8 @@
       "target_brand": "JORAKAY",
       "target_url": "https://www.dohome.co.th/th/crocodile-nail-glue-adhesive-quick-280-ml-10270012.html",
       "expected_url": "https://www.dohome.co.th/th/d-fix-nail-glue-300-ml-no-djf66-10259128.html",
-      "confidence": 85,
-      "reason": "The candidate is the same product type (nail glue) with an exact volume match, providing a high spec match. While not a preferred brand, it's the only one with matching product type and 100% spec match.",
+      "confidence": 95,
+      "reason": "Candidate 0 is a nail glue with the exact same volume (280 ML) as the source product, making it the best spec match despite not being a preferred brand.",
       "gt_status": "INCORRECT"
     },
     {
@@ -62,8 +48,8 @@
       "target_brand": "DECOS",
       "target_url": "https://www.dohome.co.th/th/finext-lamp-post-10-inch-sphere-8014-pt-10109628.html",
       "expected_url": "https://www.dohome.co.th/th/finext-lamp-post-10-inch-sphere-8014-pt-10109628.html",
-      "confidence": 70,
-      "reason": "Candidate is the same product type (post lamp) and from a preferred brand (DECOS), with the highest SpecMatch%. Although dimensions are not an exact match, the type and brand preference make it the best alternative.",
+      "confidence": 75,
+      "reason": "The candidate is a 'post lamp' matching the source product type, has a preferred brand, and a good spec match including 'POLE_LAMP'.",
       "gt_status": "CORRECT"
     },
     {
@@ -77,7 +63,7 @@
       "target_url": "https://www.dohome.co.th/th/nash-sleeve-anchor-5-16-inch-shark-10244343.html",
       "expected_url": "https://www.dohome.co.th/th/nash-sleeve-anchor-5-16-inch-shark-10244343.html",
       "confidence": 95,
-      "reason": "Candidate 1 (NASH พุ๊กเหล็ก 5/16 นิ้ว SHARK (แพ็ค 10)) is an anchor bolt, has the critical size_inch=5/16 inch, and is from the most preferred brand (NASH).",
+      "reason": "Candidate is a NASH steel anchor with matching size_inch (5/16 inch) and the correct product type (steel anchor is a synonym for anchor bolt) and is a preferred brand (NASH).",
       "gt_status": "CORRECT"
     },
     {
@@ -91,7 +77,7 @@
       "target_url": "https://www.dohome.co.th/th/finext-downlight-3-5-inch-circle-white-10130724.html",
       "expected_url": "https://www.dohome.co.th/th/finext-downlight-3-5-inch-circle-white-10130724.html",
       "confidence": 75,
-      "reason": "The candidate is a downlight with matching size, a preferred brand, and the highest spec match percentage.",
+      "reason": "The candidate has the exact product type (downlight), matching size (3.5 inch), and is from a preferred brand (FINEXT), making it the closest available alternative despite some missing spec details.",
       "gt_status": "CORRECT"
     },
     {
@@ -105,7 +91,21 @@
       "target_url": "https://www.dohome.co.th/th/zinsano-rotary-air-compressor-50-l-3-hp-no-apc13050-10268208.html",
       "expected_url": "https://www.dohome.co.th/th/nash-rotary-air-compressor-50-l-3-hp-10141690.html",
       "confidence": 95,
-      "reason": "Candidate 0 is the only air compressor with 100% spec match, despite not being a preferred brand. Its specifications (volume and product type) perfectly align with the source product.",
+      "reason": "Candidate 0 is an air compressor with identical volume (50 L) to the source, and is the only candidate that matches the critical product type.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 16,
+      "source_idx": 232,
+      "source_name": "แม่แรงตะเข้จาน 4.7 นิ้ว GIANT KINGKONG รุ่น STFL322 ขนาด 3 ตัน สีแดง",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60165871",
+      "target_name": "NASH แม่แรงกระปุก 32 ตัน รุ่น GF3204",
+      "target_brand": "NASH",
+      "target_url": "https://www.dohome.co.th/th/nash-hydraulic-bottle-jack-32-t-no-gf3204-10227282.html",
+      "expected_url": "https://www.dohome.co.th/en/yoshino-3-tons-1-piston-hip-jack-no-jk32-10376065.html",
+      "confidence": 60,
+      "reason": "Candidate 13 is a hydraulic jack from the preferred brand NASH, making it the only suitable product type match despite the lack of spec similarity.",
       "gt_status": "INCORRECT"
     },
     {
@@ -119,7 +119,7 @@
       "target_url": "https://www.dohome.co.th/th/aluguard-door-rubber-seal-9x6-mm-6-m-brown-10383374.html",
       "expected_url": "https://www.dohome.co.th/th/aluguard-door-rubber-seal-9x6-mm-6-m-brown-10383374.html",
       "confidence": 100,
-      "reason": "The candidate is the same product type (door seal) and brand (ALUGUARD) is preferred, with a 100% spec match for length and relevant dimensions.",
+      "reason": "The candidate is a door seal with the exact same length (6M) and is from a preferred brand (ALUGUARD).",
       "gt_status": "CORRECT"
     },
     {
@@ -132,22 +132,8 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/nash-wire-rope-tensioner-3-4-inch-10051311.html",
       "expected_url": "",
-      "confidence": 95,
-      "reason": "The candidate is a 'turnbuckle' from a preferred brand, 'NASH', with an exact match on 'size_inch' and the highest spec match percentage among all candidates.",
-      "gt_status": "NO_GT"
-    },
-    {
-      "chunk": 16,
-      "source_idx": 235,
-      "source_name": "ตะแกรงล้างผักผลไม้ KASSA HOME รุ่น YJ027161055 ขนาด 19 ซม. สีเงิน",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/sku/60326878",
-      "target_name": "กระชอน แบบมีหู พร้อมขาตั้ง ขนาด 19.5 ซม. - PP",
-      "target_brand": "PP",
-      "target_url": "https://www.dohome.co.th/th/colander-with-ears-with-stand-195-cm-10382476.html",
-      "expected_url": "",
-      "confidence": 65,
-      "reason": "Candidate 1 (PP) is a colander with a very similar length (19.5cm vs 19cm) to the source product, exceeding the 50% spec match threshold, and it is a preferred brand (PP - PREFERRED#3).",
+      "confidence": 90,
+      "reason": "The candidate is a turnbuckle from a preferred brand (NASH) with a 3/4 inch size, matching the critical product type and size of the source product.",
       "gt_status": "NO_GT"
     },
     {
@@ -160,8 +146,8 @@
       "target_brand": "LAMPTAN",
       "target_url": "https://www.dohome.co.th/th/lamptan-downlight-e27-round-4-inch-surface-white-10365109.html",
       "expected_url": "https://www.dohome.co.th/th/lamptan-downlight-e27-round-4-inch-surface-white-10365109.html",
-      "confidence": 85,
-      "reason": "The candidate is the same product type (downlight), has matching size and socket type (E27x1, 4 inch), and a good SpecMatch percentage. Although LAMPTAN is a lower preferred brand, its spec match is significantly higher than other preferred brands.",
+      "confidence": 75,
+      "reason": "Candidate 0 is a downlight with matching size (4 inch) and socket type (E27x1), confirming a strong spec match for the product type.",
       "gt_status": "CORRECT"
     },
     {
@@ -175,22 +161,8 @@
       "target_url": "https://www.dohome.co.th/th/nash-paint-brush-3-inch-no-nm001-10224011.html",
       "expected_url": "https://www.dohome.co.th/th/nash-paint-brush-3-inch-no-nm002-10224022.html",
       "confidence": 95,
-      "reason": "The candidate is a preferred brand (NASH) with a 100% spec match, exact product type (paint brush), and matching size.",
+      "reason": "The candidate is a preferred brand (NASH), has the same product type (paint brush), and matches the critical size spec (3 inch) with 100% SpecMatch.",
       "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 16,
-      "source_idx": 238,
-      "source_name": "ฟิล์มยืดพันพาเลท 15 ไมครอน GIANT KINGKONG รุ่น MH50-220-15 ขนาด 0.5 x 220 เมตร สีใส",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60358586",
-      "target_name": "DECOS ฟิล์มยืดพันพาเลท 15 ไมคอน ยาว 300 ม. สีใส",
-      "target_brand": "DE'COS",
-      "target_url": "https://www.dohome.co.th/th/stretch-film-15-micron-300-m-clear-10236866.html",
-      "expected_url": "https://www.dohome.co.th/th/stretch-film-15-micron-300-m-clear-10236866.html",
-      "confidence": 75,
-      "reason": "Candidate 34 is the only pallet wrap film (matching product type) and is a preferred brand (DE'COS). While its length is 300M compared to the source's 220M, it's the closest available alternative given the strict product type match.",
-      "gt_status": "CORRECT"
     }
   ]
 }

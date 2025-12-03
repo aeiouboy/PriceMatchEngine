@@ -8,7 +8,7 @@
   "correct": 6,
   "incorrect": 1,
   "accuracy": 85.71428571428571,
-  "timestamp": "2025-12-03T07:33:16.972901",
+  "timestamp": "2025-12-03T10:34:03.457098",
   "matches": [
     {
       "chunk": 6,
@@ -21,7 +21,7 @@
       "target_url": "https://www.globalhouse.co.th/product/detail/6322004360015",
       "expected_url": "https://www.globalhouse.co.th/product/detail/6322004360015",
       "confidence": 95,
-      "reason": "The candidate is a trash can with the same volume (120 L) as the source product and is from a preferred brand (ICLEAN).",
+      "reason": "Candidate 0 from ICLEAN is a trash can with the exact same volume (120 L) as the source product, making it a strong spec match, and ICLEAN is a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -34,8 +34,8 @@
       "target_brand": "GOME",
       "target_url": "https://globalhouse.co.th/product/GOME-%E0%B8%A3%E0%B8%96%E0%B9%80%E0%B8%82%E0%B9%87%E0%B8%99%E0%B8%AD%E0%B9%80%E0%B8%99%E0%B8%81%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%AA%E0%B8%87%E0%B8%84%E0%B9%8C-%E0%B8%9E%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%81%E0%B9%87%E0%B8%9A%E0%B9%84%E0%B8%94%E0%B9%89-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-TG51448-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-36.5x3914x10060-%E0%B8%8B%E0%B8%A1.-%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3-i.6322007380805",
       "expected_url": "https://globalhouse.co.th/product/GOME-%E0%B8%A3%E0%B8%96%E0%B9%80%E0%B8%82%E0%B9%87%E0%B8%99%E0%B8%AD%E0%B9%80%E0%B8%99%E0%B8%81%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%AA%E0%B8%87%E0%B8%84%E0%B9%8C-%E0%B8%9E%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%81%E0%B9%87%E0%B8%9A%E0%B9%84%E0%B8%94%E0%B9%89-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-TG51448-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-36.5x3914x10060-%E0%B8%8B%E0%B8%A1.-%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3-i.6322007380805",
-      "confidence": 85,
-      "reason": "Candidate 2 is the only option with a high SpecMatch (81%) and the correct product type ('trolley' which is a synonym for 'shopping cart'). It also belongs to a preferred brand (GOME, PREFERRED#2).",
+      "confidence": 75,
+      "reason": "Candidate 2 is the closest match, having the same model number, being foldable, and from the preferred brand Gome, despite being categorized as a trolley instead of a shopping cart.",
       "gt_status": "CORRECT"
     },
     {
@@ -48,8 +48,8 @@
       "target_brand": "RACER",
       "target_url": "https://globalhouse.co.th/product/detail/8858869068318",
       "expected_url": "https://globalhouse.co.th/product/detail/8858869068318",
-      "confidence": 95,
-      "reason": "Candidate 0 is a downlight, matches critical specs (9W, 4 inch, DAYLIGHT) and is from the preferred brand RACER with a high SpecMatch of 73%.",
+      "confidence": 85,
+      "reason": "The RACER downlight is the same product type, a preferred brand, and has a very high spec match (wattage, size, and color temperature are all identical).",
       "gt_status": "CORRECT"
     },
     {
@@ -63,7 +63,7 @@
       "target_url": "https://globalhouse.co.th/product/LAMPTAN-%E0%B9%82%E0%B8%84%E0%B8%A1%E0%B9%84%E0%B8%9F%E0%B9%80%E0%B8%9E%E0%B8%94%E0%B8%B2%E0%B8%99-LED-24W-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-BASIC-%E0%B9%81%E0%B8%AA%E0%B8%87%E0%B9%80%E0%B8%94%E0%B8%A2%E0%B9%8C%E0%B9%84%E0%B8%A5%E0%B8%97%E0%B9%8C-i.8850646026009",
       "expected_url": "https://globalhouse.co.th/product/GATA-%E0%B9%82%E0%B8%84%E0%B8%A1%E0%B8%8B%E0%B8%B2%E0%B8%A5%E0%B8%B2%E0%B9%80%E0%B8%9B%E0%B8%B2-LED-24W-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-Moon-%E0%B9%81%E0%B8%AA%E0%B8%87%E0%B9%80%E0%B8%94%E0%B8%A2%E0%B9%8C%E0%B9%84%E0%B8%A5%E0%B8%97%E0%B9%8C-i.8858817658004",
       "confidence": 95,
-      "reason": "The candidate is a preferred brand (LAMPTAN) and has a very high SpecMatch (92%) with exact matches for wattage, LED wattage, color temperature, and product type.",
+      "reason": "The candidate is a 'ceiling lamp' type, matching the source, with a high spec match (92%) and is from a preferred brand (LAMPTAN).",
       "gt_status": "INCORRECT"
     },
     {
@@ -77,7 +77,7 @@
       "target_url": "https://globalhouse.co.th/product/NINO-WORLD-%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%94%E0%B9%87%E0%B8%81-16%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-25123Q16-%E0%B8%AA%E0%B8%B5%E0%B8%A1%E0%B9%88%E0%B8%A7%E0%B8%87--i.2008060314126",
       "expected_url": "https://globalhouse.co.th/product/NINO-WORLD-%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%94%E0%B9%87%E0%B8%81-16%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-25123Q16-%E0%B8%AA%E0%B8%B5%E0%B8%A1%E0%B9%88%E0%B8%A7%E0%B8%87--i.2008060314126",
       "confidence": 95,
-      "reason": "Candidate 0 is a preferred brand (NINO WORLD) and has 100% spec match, exact product type match (children's bicycle), and the critical size spec (16 inch) matches perfectly.",
+      "reason": "The candidate is a children's bicycle of the same size with a 100% spec match, and its brand NINO WORLD is a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -91,7 +91,7 @@
       "target_url": "https://globalhouse.co.th/product/VAVO-%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%95%E0%B8%B9%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%97%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%87-34-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-YF40562-i.1903300133697",
       "expected_url": "",
       "confidence": 75,
-      "reason": "Candidate 7 is a gate valve from a preferred brand (VAVO), making it the most suitable match despite a low SpecMatch% due to missing size information in the candidate's specs, which can be inferred from '3/4' in the model name.",
+      "reason": "Candidate 7 is the only 'water gate' type product and is from a preferred brand (VAVO), but lacks detailed spec matching in the provided data.",
       "gt_status": "NO_GT"
     },
     {
@@ -105,7 +105,7 @@
       "target_url": "https://globalhouse.co.th/product/SANE-%E0%B8%84%E0%B8%A3%E0%B8%81%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%AA%E0%B8%B2%E0%B8%81%E0%B8%AA%E0%B9%80%E0%B8%95%E0%B8%99%E0%B9%80%E0%B8%A5%E0%B8%AA304-4-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-JAKA04-i.4622007261428",
       "expected_url": "",
       "confidence": 95,
-      "reason": "Candidate 0 has a 100% spec match, is the correct product type (mortar and pestle), and is a preferred brand (SANE).",
+      "reason": "Candidate 0 is a mortar and pestle with matching size and is from a preferred brand (SANE) with 100% spec match.",
       "gt_status": "NO_GT"
     },
     {
@@ -119,7 +119,7 @@
       "target_url": "https://globalhouse.co.th/product/POLLO-%E0%B8%AA%E0%B9%81%E0%B8%A5%E0%B8%99-HDPE-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99SH321155-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%942x50%E0%B8%A1.-50%E0%B8%AA%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%82%E0%B9%87%E0%B8%A1-%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3-i.3922005830048",
       "expected_url": "https://globalhouse.co.th/product/POLLO-%E0%B8%AA%E0%B9%81%E0%B8%A5%E0%B8%99-HDPE-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99SH321155-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%942x50%E0%B8%A1.-50%E0%B8%AA%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%82%E0%B9%87%E0%B8%A1-%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3-i.3922005830048",
       "confidence": 100,
-      "reason": "Candidate 0 is a POLLO brand sunshade net (preferred brand) with identical dimensions and product type matching the source product, resulting in a 100% spec match.",
+      "reason": "The candidate is the same product type ('slat screen' is a type of sun shade net) and has 100% spec match, preferred brand, and exact dimensions.",
       "gt_status": "CORRECT"
     },
     {
@@ -133,7 +133,7 @@
       "target_url": "https://globalhouse.co.th/product/HUMMER-%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B9%84%E0%B8%94%E0%B8%AD%E0%B8%B0%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1-%E0%B8%97%E0%B8%A3%E0%B8%87-ASLIDE-3x10-%E0%B8%82%E0%B8%B1%E0%B9%89%E0%B8%99-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99LZ3210B-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99-i.5922005601752",
       "expected_url": "https://globalhouse.co.th/product/HUMMER-%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B9%84%E0%B8%94%E0%B8%AD%E0%B8%B0%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1-%E0%B8%97%E0%B8%A3%E0%B8%87-ASLIDE-3x10-%E0%B8%82%E0%B8%B1%E0%B9%89%E0%B8%99-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99LZ3210B-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99-i.5922005601752",
       "confidence": 100,
-      "reason": "Candidate 0 is a HUMMER brand ladder with identical dimensions, steps, and model number (LZ3210B) to the source product, making it a perfect match in a preferred brand.",
+      "reason": "The candidate is from the preferred brand, has a 100% spec match, and is the correct product type (ladder).",
       "gt_status": "CORRECT"
     }
   ]

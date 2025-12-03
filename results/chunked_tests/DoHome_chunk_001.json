@@ -4,11 +4,11 @@
   "start_idx": 0,
   "end_idx": 15,
   "products_tested": 15,
-  "matches_found": 6,
+  "matches_found": 7,
   "correct": 4,
-  "incorrect": 2,
-  "accuracy": 66.66666666666666,
-  "timestamp": "2025-12-03T07:44:57.044994",
+  "incorrect": 3,
+  "accuracy": 57.14285714285714,
+  "timestamp": "2025-12-03T10:35:29.303186",
   "matches": [
     {
       "chunk": 1,
@@ -21,7 +21,7 @@
       "target_url": "https://www.dohome.co.th/th/decos-2-bulb-outdoor-wall-lamp-square-shape-e27-socket-model-gris-grey-10417412.html",
       "expected_url": "https://www.dohome.co.th/th/decos-2-bulb-outdoor-wall-lamp-square-shape-e27-socket-model-gris-grey-10417412.html",
       "confidence": 60,
-      "reason": "The candidate is a preferred brand 'DECOS' and has a matching product type (wall lamp) with E27 socket, although it specifies 1 bulb rather than 2 like the source, which is the closest available within preferred brands.",
+      "reason": "The candidate is a DECOS wall lamp with an E27 socket, though it's E27x1 instead of E27x2. It's the highest ranked preferred brand with the closest specs in the wall lamp category.",
       "gt_status": "CORRECT"
     },
     {
@@ -34,8 +34,8 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/j-type-screw-1-2-inch-x-50-cm-10201456.html",
       "expected_url": "https://www.dohome.co.th/th/j-type-screw-1-2-inch-x-50-cm-10201456.html",
-      "confidence": 95,
-      "reason": "The candidate has the correct product type (j-bolt/สกรูตัวเจ), matches the critical size spec (1/2 inch x 50 cm), and is from a preferred brand (NASH).",
+      "confidence": 85,
+      "reason": "Candidate 4 is a 'สกรูตัวเจ' which is a close alternative to 'เจโบลท์' and has an exact size_inch and similar length, and is a preferred brand (NASH).",
       "gt_status": "CORRECT"
     },
     {
@@ -48,8 +48,8 @@
       "target_brand": "MONO",
       "target_url": "https://www.dohome.co.th/th/mono-dish-drainer-with-cover-2-layers-no3838-10342751.html",
       "expected_url": "https://www.dohome.co.th/en/mono-dish-drainer-with-cover-2-layers-no3838-10342751.html",
-      "confidence": 70,
-      "reason": "The candidate has the exact matching product type, tiers specification, and is from a preferred brand (MONO), making it the closest available match despite a higher price.",
+      "confidence": 75,
+      "reason": "Candidate is the same product type, has a preferred brand, and has a good spec match for 'tiers'.",
       "gt_status": "INCORRECT"
     },
     {
@@ -63,7 +63,7 @@
       "target_url": "https://www.dohome.co.th/th/nash-paint-roller10-inch-no-rts-010-10185198.html",
       "expected_url": "https://www.dohome.co.th/th/nash-paint-roller10-inch-no-rts-010-10185198.html",
       "confidence": 95,
-      "reason": "The candidate is a paint roller of the same size (10 inch) and roller type (FULL), with a 100% spec match and is from the highest preferred brand NASH.",
+      "reason": "The candidate is a paint roller of the preferred brand NASH with identical size and full roller type, resulting in a 100% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -76,8 +76,22 @@
       "target_brand": "FINEXT",
       "target_url": "https://www.dohome.co.th/th/finext-double-sink-door-frosted-glass-max-15-white-10353359.html",
       "expected_url": "https://www.dohome.co.th/th/double-doors-cabinet-for-kitchen-abs-no-platinum-pearl-white-10172906.html",
+      "confidence": 70,
+      "reason": "Candidate 1 (FINEXT บานซิงค์คู่ กระจกฝ้า รุ่น MAX 15 สีขาว) is the only alternative with a product type (sink cabinet) closely related to the source's 'cabinet door' and is from a PREFERRED brand (FINEXT).",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 1,
+      "source_idx": 10,
+      "source_name": "แอลโบลท์เกลียวหุน 5/8 นิ้ว x 500 มม. GIANT KINGKONG LB5850 (แพ็ก 1 ชุด)",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60398207",
+      "target_name": "สกรูตัวเจ 5/8 นิ้ว x 50 ซม. | NASH",
+      "target_brand": "NASH",
+      "target_url": "https://www.dohome.co.th/th/j-type-screw-5-8-inch-x-50-cm-10201458.html",
+      "expected_url": "https://www.dohome.co.th/th/l-type-screw-5-8-inch-x-50-cm-10202382.html",
       "confidence": 75,
-      "reason": "The candidate is from the preferred brand FINEXT and is the correct product type (sink cabinet, which is a type of cabinet door), although its model and dimensions specs do not match.",
+      "reason": "The source product is a 'bolt' and none of the top-ranking candidates are explicitly categorized as 'bolt'. However, candidate 2 is an 'L-screw' which is the closest structural and functional match given the other higher-ranked L-screws have a different length. Given the length of the original is 500mm, 50CM is its exact equivalent and is from the preferred brand NASH (rank #1).",
       "gt_status": "INCORRECT"
     },
     {
@@ -91,7 +105,7 @@
       "target_url": "https://www.dohome.co.th/th/decos-pvc-window-blind-80x130-cm-dark-brown-10353771.html",
       "expected_url": "https://www.dohome.co.th/th/decos-pvc-window-blind-80x130-cm-dark-brown-10353771.html",
       "confidence": 85,
-      "reason": "The candidate has the exact same product type (blinds) and length, a similar dimension, and is from a highly preferred brand (DE'COS).",
+      "reason": "The candidate is the same product type (blinds), from a preferred brand (DE'COS), and has a good spec match for length and an acceptable dimension match (80x130 vs 70x130) given the product type.",
       "gt_status": "CORRECT"
     }
   ]

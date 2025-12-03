@@ -1,0 +1,56 @@
+{
+  "retailer": "Boonthavorn",
+  "chunk": 5,
+  "start_idx": 60,
+  "end_idx": 64,
+  "products_tested": 4,
+  "matches_found": 3,
+  "correct": 1,
+  "incorrect": 2,
+  "accuracy": 33.33333333333333,
+  "timestamp": "2025-12-03T10:55:54.982090",
+  "matches": [
+    {
+      "chunk": 5,
+      "source_idx": 60,
+      "source_name": "สายยางเด้ง 5/8 นิ้ว FONTE ยาว 20 เมตร",
+      "source_brand": "FONTE",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60314436",
+      "target_name": "สายยางเด้ง 5/8 x 20 เมตร *น้ำเงิน",
+      "target_brand": "ANYHOME",
+      "target_url": "https://www.boonthavorn.com/anyhome-1111122",
+      "expected_url": "https://www.boonthavorn.com/anyhome-1111122",
+      "confidence": 75,
+      "reason": "Candidate 0 is a garden hose, matching the product type, and has the highest spec match (35%) among preferred brands, with a similar length.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 5,
+      "source_idx": 62,
+      "source_name": "โคมไฟผนังภายนอกอะลูมิเนียม E27x1 LUZINO รุ่น 2461-E27 สีดำ - ใส",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60406664",
+      "target_name": "ไฟผนัง O-001 E27x1 MAX 60W IP44",
+      "target_brand": "MAX LIGHT",
+      "target_url": "https://www.boonthavorn.com/max-light-1249472",
+      "expected_url": "https://www.boonthavorn.com/max-light-1202280",
+      "confidence": 95,
+      "reason": "The candidate is a wall lamp by the preferred brand MAX LIGHT with the highest SpecMatch (73%) and matching dimensions and socket type.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 5,
+      "source_idx": 63,
+      "source_name": "สายยางเด้ง 5/8 นิ้ว FONTE ยาว 15 เมตร",
+      "source_brand": "FONTE",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60338031",
+      "target_name": "สายยางเด้ง 5/8 x 20 เมตร *น้ำเงิน",
+      "target_brand": "ANYHOME",
+      "target_url": "https://www.boonthavorn.com/anyhome-1111122",
+      "expected_url": "https://www.boonthavorn.com/homemart-1111123",
+      "confidence": 60,
+      "reason": "Candidate 1 (ANYHOME) is a preferred brand and the only other garden hose, although the length is different. Other candidates are not garden hoses.",
+      "gt_status": "INCORRECT"
+    }
+  ]
+}

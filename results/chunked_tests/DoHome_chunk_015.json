@@ -8,7 +8,7 @@
   "correct": 5,
   "incorrect": 2,
   "accuracy": 71.42857142857143,
-  "timestamp": "2025-12-03T07:47:38.660810",
+  "timestamp": "2025-12-03T10:46:17.927453",
   "matches": [
     {
       "chunk": 15,
@@ -20,8 +20,8 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/nash-battery-charger-cable-car-noxh-600a-10232377.html",
       "expected_url": "https://www.dohome.co.th/th/nash-battery-charger-cable-car-noxh-600a-10232377.html",
-      "confidence": 75,
-      "reason": "Candidate is the same product type (battery jumper cable) and from the preferred brand NASH, even though spec match percentage is low, it is the only viable option among the preferred brands.",
+      "confidence": 70,
+      "reason": "The candidate is the only one of the correct product type ('battery jumper cable') and is from a preferred brand (NASH), although it does not share common specific specs with the source after product type is filtered.",
       "gt_status": "CORRECT"
     },
     {
@@ -35,7 +35,7 @@
       "target_url": "https://www.dohome.co.th/th/decos-dust-trap-doormat-45x75-cm-model-teso-grey-10414250.html",
       "expected_url": "",
       "confidence": 95,
-      "reason": "Candidate 0 is a doormat with identical dimensions (45x75 cm) and is from a preferred brand DECOS, achieving 100% spec match.",
+      "reason": "The candidate is from a preferred brand, has a 100% spec match in dimensions and length, and a matching product type (doormat is a very close match to dust mat).",
       "gt_status": "NO_GT"
     },
     {
@@ -49,7 +49,7 @@
       "target_url": "https://www.dohome.co.th/th/jcj-rolling-plastic-box-50-l-no-5116-white-10325992.html",
       "expected_url": "https://www.dohome.co.th/th/jcj-rolling-plastic-box-50-l-no-5116-white-10325992.html",
       "confidence": 85,
-      "reason": "Candidate 2 is a plastic box with the same volume and model number as the source, and is from a preferred brand (DE'COS) with a good SpecMatch%.",
+      "reason": "Candidate is a preferred brand (DE'COS) and has matching product type (plastic box, which is a storage box), volume (50 L), and model number (5116) with high SpecMatch percentage.",
       "gt_status": "CORRECT"
     },
     {
@@ -58,13 +58,13 @@
       "source_name": "บันไดอะลูมิเนียม 2 ตอนเลื่อนทรงพาด GIANT KINGKONG PRO รุ่น LZ2410W ขนาด 2 x 10 ขั้น สีเงิน",
       "source_brand": "GIANT KINGKONG PRO",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60346046",
-      "target_name": "NASH บันไดสไลด์ 10 ขั้น รุ่น R-128010N",
+      "target_name": "NASH บันไดมิเนียม 10 ขั้น รุ่น R-12210L",
       "target_brand": "NASH",
-      "target_url": "https://www.dohome.co.th/th/nash-sliding-ladder-10-step-no-r-128010n-10229901.html",
+      "target_url": "https://www.dohome.co.th/th/nash-aluminium-ladder-10-step-no-r-12210l-10177374.html",
       "expected_url": "https://www.dohome.co.th/th/nash-sliding-ladder-10-step-no-r-128010n-10229901.html",
-      "confidence": 60,
-      "reason": "The candidate is a preferred brand (NASH) and is a ladder with a matching step count (10 steps), despite having a low SpecMatch% due to missing dimension information.",
-      "gt_status": "CORRECT"
+      "confidence": 75,
+      "reason": "The candidate NASH บันไดมิเนียม 10 ขั้น รุ่น R-12210L is an aluminum ladder from the preferred brand NASH, has the same number of steps, and a good SpecMatch%.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 15,
@@ -77,7 +77,7 @@
       "target_url": "https://www.dohome.co.th/th/oppa-bubber-wiper-with-aluminium-handle-24-inch-10240884.html",
       "expected_url": "https://www.dohome.co.th/th/oppa-bubber-wiper-with-aluminium-handle-24-inch-10240884.html",
       "confidence": 90,
-      "reason": "The candidate has the correct product type (squeegee), matches the critical size spec of 24 inches, and is from a preferred brand (OPPA).",
+      "reason": "The candidate has the highest SpecMatch% among preferred brands for the correct product type (squeegee is a type of wiper) and matches the critical 'size_inch' spec.",
       "gt_status": "CORRECT"
     },
     {
@@ -90,8 +90,8 @@
       "target_brand": "DE'COS",
       "target_url": "https://www.dohome.co.th/th/decos-duvet-insert-size-70x90-inch-white-10302216.html",
       "expected_url": "https://www.dohome.co.th/th/decos-duvet-insert-size-70x90-inch-white-10302216.html",
-      "confidence": 98,
-      "reason": "The candidate is the same product type (duvet insert), has the same dimensions (70x90), and is from a preferred brand (DE'COS) with 100% spec match.",
+      "confidence": 100,
+      "reason": "Candidate 0 is a perfect spec match for dimensions and product type, and is from a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -104,8 +104,8 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/nash-wire-rope-tensioner-5-16-inch-10307506.html",
       "expected_url": "",
-      "confidence": 95,
-      "reason": "The candidate is the same product type (turnbuckle), matches the critical size spec (5/16 inch), and is from the most preferred brand (NASH).",
+      "confidence": 100,
+      "reason": "Candidate 0 is a turnbuckle, matches the critical product type, and matches the exact size and is from the most preferred brand (NASH).",
       "gt_status": "NO_GT"
     },
     {
@@ -119,22 +119,22 @@
       "target_url": "https://www.dohome.co.th/th/finext-ceiling-fan-48-inch-no-f348-wh-wc-10203272.html",
       "expected_url": "https://www.dohome.co.th/th/lucky-misu-ceiling-fan-48-inches-black-10306707.html",
       "confidence": 95,
-      "reason": "The candidate is a ceiling fan with the same size (48 inch) and from a preferred brand (FINEXT) with a high spec match.",
+      "reason": "The candidate is a ceiling fan with matching 48-inch size and is from a preferred brand (FINEXT).",
       "gt_status": "INCORRECT"
     },
     {
       "chunk": 15,
-      "source_idx": 223,
-      "source_name": "หมอนอิง KASSA HOME รุ่น Tweed ขนาด 45 x 45 ซม. สีเบจ",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60401533",
-      "target_name": "DECOS หมอนหนุนใยสังเคราะห์",
-      "target_brand": "DE'COS",
-      "target_url": "https://www.dohome.co.th/th/decos-synthetic-pillow-10327047.html",
-      "expected_url": "https://www.dohome.co.th/en/decos-linen-cushion-18x18-inches-gold-10366969.html",
-      "confidence": 60,
-      "reason": "Candidate 17 is a 'หมอนหนุนใยสังเคราะห์' (pillow), which is the closest product type to 'cushion' among the preferred brands, despite a low spec match percentage. No other candidate is a cushion or similar type.",
-      "gt_status": "INCORRECT"
+      "source_idx": 224,
+      "source_name": "เจโบลท์เกลียวหุน 5/8 นิ้ว x 500 มม. GIANT KINGKONG รุ่น JB5850 (แพ็ก 1 ชุด)",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60398194",
+      "target_name": "สกรูตัวเจ 5/8 นิ้ว x 50 ซม. | NASH",
+      "target_brand": "NASH",
+      "target_url": "https://www.dohome.co.th/th/j-type-screw-5-8-inch-x-50-cm-10201458.html",
+      "expected_url": "https://www.dohome.co.th/th/j-type-screw-5-8-inch-x-50-cm-10201458.html",
+      "confidence": 95,
+      "reason": "Candidate is the same product type (เจโบลท์/J-screw) with identical size_inch (5/8 inch) and length (50 cm), and is a preferred brand (NASH).",
+      "gt_status": "CORRECT"
     }
   ]
 }

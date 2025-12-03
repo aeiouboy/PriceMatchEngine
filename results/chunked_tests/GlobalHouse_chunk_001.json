@@ -4,11 +4,11 @@
   "start_idx": 0,
   "end_idx": 15,
   "products_tested": 15,
-  "matches_found": 12,
-  "correct": 7,
+  "matches_found": 10,
+  "correct": 5,
   "incorrect": 3,
-  "accuracy": 70.0,
-  "timestamp": "2025-12-03T07:33:15.934637",
+  "accuracy": 62.5,
+  "timestamp": "2025-12-03T10:30:06.998515",
   "matches": [
     {
       "chunk": 1,
@@ -20,22 +20,8 @@
       "target_brand": "HAWDD",
       "target_url": "https://globalhouse.co.th/product/HAWDD-%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B8%A7%E0%B8%B2%E0%B8%87%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B9%87%E0%B8%81%E0%B9%82%E0%B8%A5%E0%B9%88%E0%B8%87-5-%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%99-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-ROHAN90-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-45x90x180%E0%B8%8B%E0%B8%A1.-%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3-i.5722008180557",
       "expected_url": "https://globalhouse.co.th/product/HAWDD-%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B8%A7%E0%B8%B2%E0%B8%87%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B9%87%E0%B8%81%E0%B9%82%E0%B8%A5%E0%B9%88%E0%B8%87-5-%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%99-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-ROHAN90-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-45x90x180%E0%B8%8B%E0%B8%A1.-%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3-i.5722008180557",
-      "confidence": 85,
-      "reason": "The candidate is a preferred brand (HAWDD) and has a high spec match percentage (84%) with identical product type, length, and number of tiers. The dimensions are also equivalent (90x45 vs 45x90).",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 1,
-      "source_idx": 1,
-      "source_name": "ยางหนุนล้อรถยนต์ GIANT KINGKONG รุ่น 9081 ขนาด 19 x 15 x 10 ซม. สีดำ",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60302727",
-      "target_name": "PROTX ยางห้ามล้อแบบสามเหลี่ยม 10x20x15cm. รุ่นWC-01 สีดำ",
-      "target_brand": "PROTX",
-      "target_url": "https://globalhouse.co.th/product/PROTX-%E0%B8%A2%E0%B8%B2%E0%B8%87%E0%B8%AB%E0%B9%89%E0%B8%B2%E0%B8%A1%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B9%81%E0%B8%9A%E0%B8%9A%E0%B8%AA%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A1-10x20x15cm.-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99WC01-%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3-i.5922008040152",
-      "expected_url": "https://globalhouse.co.th/product/PROTX-%E0%B8%A2%E0%B8%B2%E0%B8%87%E0%B8%AB%E0%B9%89%E0%B8%B2%E0%B8%A1%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B9%81%E0%B8%9A%E0%B8%9A%E0%B8%AA%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A1-10x20x15cm.-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99WC01-%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3-i.5922008040152",
-      "confidence": 80,
-      "reason": "The candidate is a wheel chock from the preferred brand PROTX and has matching product type, although dimensions are different.",
+      "confidence": 84,
+      "reason": "The candidate is a HAWDD brand metal shelf with 5 tiers and the same height (180CM), although the dimensions are swapped.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,7 +35,7 @@
       "target_url": "https://globalhouse.co.th/product/ICLEAN-%E0%B8%96%E0%B8%B1%E0%B8%87%E0%B8%82%E0%B8%A2%E0%B8%B0%E0%B9%80%E0%B8%97%E0%B8%A8%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%9D%E0%B8%B2%E0%B8%AA%E0%B8%A7%E0%B8%B4%E0%B8%87%E0%B8%97%E0%B8%A3%E0%B8%87%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A1-240-%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A3-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-XDL240A9G-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%82%E0%B8%B5%E0%B8%A2%E0%B8%A7-%E0%B8%82%E0%B8%A2%E0%B8%B0%E0%B9%80%E0%B8%9B%E0%B8%B5%E0%B8%A2%E0%B8%81-i.6122004360011",
       "expected_url": "https://globalhouse.co.th/product/ICLEAN-%E0%B8%96%E0%B8%B1%E0%B8%87%E0%B8%82%E0%B8%A2%E0%B8%B0%E0%B9%80%E0%B8%97%E0%B8%A8%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%9D%E0%B8%B2%E0%B8%AA%E0%B8%A7%E0%B8%B4%E0%B8%87%E0%B8%97%E0%B8%A3%E0%B8%87%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A1-240-%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A3-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-XDL240A9G-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%82%E0%B8%B5%E0%B8%A2%E0%B8%A7-%E0%B8%82%E0%B8%A2%E0%B8%B0%E0%B9%80%E0%B8%9B%E0%B8%B5%E0%B8%A2%E0%B8%81-i.6122004360011",
       "confidence": 95,
-      "reason": "Candidate 0 is a trash can with the exact same volume (240 L) and is from a preferred brand (ICLEAN), making it a strong spec and type match. Candidate 1 is a duplicate of Candiate 0.",
+      "reason": "The candidate is a trash can with the same volume (240 L) and model number, making it a strong spec match, even with a different color and the brand being a preferred one.",
       "gt_status": "CORRECT"
     },
     {
@@ -62,8 +48,8 @@
       "target_brand": "JCJ",
       "target_url": "https://globalhouse.co.th/product/JCJ-%E0%B8%81%E0%B8%A5%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%81%E0%B9%87%E0%B8%9A%E0%B8%82%E0%B8%AD%E0%B8%87-100L-%E0%B8%A1%E0%B8%B5%E0%B8%A5%E0%B9%89%E0%B8%AD-S55-Plus-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-45.9x46.8x45.7cm.-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-5519-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%9A%E0%B8%88-i.8852080055195",
       "expected_url": "",
-      "confidence": 100,
-      "reason": "Candidate 0 is a storage box with the exact same volume (100 L) and a very similar model number (5519 vs JCJ-5519), and is from a preferred brand (JCJ).",
+      "confidence": 95,
+      "reason": "The candidate is a storage box from a preferred brand (JCJ) with 100% spec match, including volume and model number.",
       "gt_status": "NO_GT"
     },
     {
@@ -76,8 +62,8 @@
       "target_brand": "SUMMER SET",
       "target_url": "https://globalhouse.co.th/product/SUMMER-SET-%E0%B8%8A%E0%B8%B8%E0%B8%94%E0%B9%82%E0%B8%95%E0%B9%8A%E0%B8%B0%E0%B8%AA%E0%B8%99%E0%B8%B2%E0%B8%A1--2-%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%99%E0%B8%B1%E0%B9%88%E0%B8%87TIMOTHY-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-62%C3%9762%C3%9773%E0%B8%8B%E0%B8%A1.-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99TY001-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%9A%E0%B8%88-i.5722006080330",
       "expected_url": "https://globalhouse.co.th/product/SUMMER-SET-%E0%B8%8A%E0%B8%B8%E0%B8%94%E0%B9%82%E0%B8%95%E0%B9%8A%E0%B8%B0%E0%B8%AA%E0%B8%99%E0%B8%B2%E0%B8%A1--2-%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%99%E0%B8%B1%E0%B9%88%E0%B8%87TIMOTHY-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-62%C3%9762%C3%9773%E0%B8%8B%E0%B8%A1.-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99TY001-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%9A%E0%B8%88-i.5722006080330",
-      "confidence": 70,
-      "reason": "The candidate has a PREFERRED brand (SUMMER SET) and the product type 'summer set' is a plausible match for 'field table set'.",
+      "confidence": 75,
+      "reason": "The candidate is a 'garden table' which is a very close product type to 'garden table set', and it is from a PREFERRED brand (SUMMER SET). While the pack_count is not explicitly stated to be 3, a 2-seater set could potentially be considered a 3-piece set (table + 2 chairs).",
       "gt_status": "CORRECT"
     },
     {
@@ -91,7 +77,7 @@
       "target_url": "https://globalhouse.co.th/product/HUMMER-%E0%B8%A5%E0%B8%B9%E0%B8%81%E0%B8%81%E0%B8%A5%E0%B8%B4%E0%B9%89%E0%B8%87%E0%B8%97%E0%B8%B2%E0%B8%AA%E0%B8%B5-%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%94%E0%B9%89%E0%B8%B2%E0%B8%A1G014-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-DTPT371-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%87%E0%B8%94%E0%B8%B3-10%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-i.6022001930371",
       "expected_url": "https://globalhouse.co.th/product/Hummer-%E0%B8%A5%E0%B8%B9%E0%B8%81%E0%B8%81%E0%B8%A5%E0%B8%B4%E0%B9%89%E0%B8%87%E0%B8%97%E0%B8%B2%E0%B8%AA%E0%B8%B5-%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%94%E0%B9%89%E0%B8%B2%E0%B8%A1-10%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-Light-yellow-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-SOM010-i.5922005602544",
       "confidence": 95,
-      "reason": "The candidate is a paint roller of the same size and type, from a preferred brand (HUMMER) with 100% spec match.",
+      "reason": "The candidate is a 'paint roller' with identical size (10 inch), the same roller type (FULL), and is from a highly preferred brand (HUMMER) with a 100% spec match.",
       "gt_status": "INCORRECT"
     },
     {
@@ -104,8 +90,8 @@
       "target_brand": "PULITO",
       "target_url": "https://globalhouse.co.th/product/detail/6422005910278",
       "expected_url": "https://globalhouse.co.th/product/detail/6422005910278",
-      "confidence": 70,
-      "reason": "The candidate is from the highly preferred brand PULITO, has 'bar chair' type which is very close to 'bar stool', and a 50% spec match.",
+      "confidence": 90,
+      "reason": "The candidate has the same product type ('bar stool'), is from the preferred brand PULITO, and has a 50% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -114,12 +100,12 @@
       "source_name": "รถเข็นปูนล้อคู่แมกซ์ 12 นิ้ว GIANT KINGKONG รุ่น HB4511Aขนาด 65 ลิตร (250 กก.) สีส้ม",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60321429",
-      "target_name": "MARTON รถเข็นปูนโครงปั๊มล้อเดี่ยว ล้อแม็กซ์ 12 นิ้ว ขนาดบรรจุ 55 ลิตร สีแดง",
+      "target_name": "MARTON รถเข็นปูนโครงเชื่อมล้อคู่ (ดั๊มได้) ล้อตัน 13 นิ้ว ขนาดบรรจุ 65 ลิตร (รับน้ำหนักได้ 250kg.) สีเขียว",
       "target_brand": "MARTON",
-      "target_url": "https://globalhouse.co.th/product/MARTON-%E0%B8%A3%E0%B8%96%E0%B9%80%E0%B8%82%E0%B9%87%E0%B8%99%E0%B8%9B%E0%B8%B9%E0%B8%99%E0%B9%82%E0%B8%84%E0%B8%A3%E0%B8%87%E0%B8%9B%E0%B8%B1%E0%B9%8A%E0%B8%A1%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%94%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B9%81%E0%B8%A1%E0%B9%87%E0%B8%81%E0%B8%8B%E0%B9%8C-12-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94%E0%B8%9A%E0%B8%A3%E0%B8%A3%E0%B8%88%E0%B8%B8-55-%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A3-%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%AB%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B9%84%E0%B8%94%E0%B9%89-80kg.-%E0%B8%AA%E0%B8%B5%E0%B9%81%E0%B8%94%E0%B8%87-i.8859229140017",
+      "target_url": "https://globalhouse.co.th/product/MARTON-%E0%B8%A3%E0%B8%96%E0%B9%80%E0%B8%82%E0%B9%87%E0%B8%99%E0%B8%9B%E0%B8%B9%E0%B8%99%E0%B9%82%E0%B8%84%E0%B8%A3%E0%B8%87%E0%B9%80%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%84%E0%B8%B9%E0%B9%88-%E0%B8%94%E0%B8%B1%E0%B9%8A%E0%B8%A1%E0%B9%84%E0%B8%94%E0%B9%89-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%95%E0%B8%B1%E0%B8%99-13-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94%E0%B8%9A%E0%B8%A3%E0%B8%A3%E0%B8%88%E0%B8%B8-65-%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A3-%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%AB%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B9%84%E0%B8%94%E0%B9%89-250kg.-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%82%E0%B8%B5%E0%B8%A2%E0%B8%A7-i.8859229140569",
       "expected_url": "https://globalhouse.co.th/product/TUF-%E0%B8%A3%E0%B8%96%E0%B9%80%E0%B8%82%E0%B9%87%E0%B8%99%E0%B8%9B%E0%B8%B9%E0%B8%99%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%84%E0%B8%B9%E0%B9%88-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%95%E0%B8%B1%E0%B8%99-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-HB4511AO-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-670x1230x620mm.-%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%AB%E0%B8%99%E0%B8%B1%E0%B8%81250kg.65%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A3-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%82%E0%B8%B5%E0%B8%A2%E0%B8%A7-i.5922006760090",
-      "confidence": 60,
-      "reason": "The candidate is a wheelbarrow with a good spec match (68%) for volume and wheel size, and it's the closest type match among available options, despite not being a preferred brand.",
+      "confidence": 85,
+      "reason": "The candidate is the same product type (wheelbarrow) and has the highest SpecMatch% at 83%, with an identical volume (65 L) to the source product, even though the brand is not preferred.",
       "gt_status": "INCORRECT"
     },
     {
@@ -133,21 +119,21 @@
       "target_url": "https://globalhouse.co.th/product/API-%E0%B8%96%E0%B8%B1%E0%B8%87%E0%B8%82%E0%B8%A2%E0%B8%B0%E0%B8%81%E0%B8%A5%E0%B8%A1-%E0%B8%9D%E0%B8%B2%E0%B9%82%E0%B8%94%E0%B8%A1%E0%B8%AA%E0%B8%A7%E0%B8%B4%E0%B8%87-118L-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-57x57x91cm.-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-199-%E0%B8%AA%E0%B8%B5%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99-i.8853228016788",
       "expected_url": "https://globalhouse.co.th/product/API-%E0%B8%96%E0%B8%B1%E0%B8%87%E0%B8%82%E0%B8%A2%E0%B8%B0%E0%B8%81%E0%B8%A5%E0%B8%A1-%E0%B8%9D%E0%B8%B2%E0%B9%82%E0%B8%94%E0%B8%A1%E0%B8%AA%E0%B8%A7%E0%B8%B4%E0%B8%87-118L-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-57x57x91cm.-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-199-%E0%B8%AA%E0%B8%B5%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99-i.8853228016788",
       "confidence": 95,
-      "reason": "Candidate 0 is a trash can with the exact same volume (118 L) and model identifier (API199, matching source's API199).",
+      "reason": "Candidate 0 is a 100% spec match for volume and type, and its model identifier '199' is a strong match for the source's 'API199', even though the brand 'API' is not preferred.",
       "gt_status": "CORRECT"
     },
     {
       "chunk": 1,
-      "source_idx": 11,
-      "source_name": "ตะแกรงปิ้งย่างสเตนเลส ด้ามไม้ KASSA HOME รุ่น TD0601-16 สีเงิน",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/sku/60326863",
-      "target_name": "SANE เหล็กปิ้งย่าง 33x66x56 ซม. DSK019",
-      "target_brand": "SANE",
-      "target_url": "https://globalhouse.co.th/product/SANE-%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B9%87%E0%B8%81%E0%B8%9B%E0%B8%B4%E0%B9%89%E0%B8%87%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87-33x66x56-%E0%B8%8B%E0%B8%A1.-DSK019-i.1905170538575",
+      "source_idx": 12,
+      "source_name": "เหล็กฉากเจาะรู หนา 1.8 มม. GIANT KINGKONG รุ่น FWIRGY18 ขนาด 1 1/2 x 1 1/2 นิ้ว ยาว 3 เมตร สีเทา",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/sku/60420129",
+      "target_name": "เหล็กฉากเจาะรูหนา 1.8 มม. ขนาด 1.1/2 x 1.1/2 นิ้ว ยาว 3 เมตร สีดำ",
+      "target_brand": "ปืนใหญ่",
+      "target_url": "https://globalhouse.co.th/product/%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B9%87%E0%B8%81%E0%B8%89%E0%B8%B2%E0%B8%81%E0%B9%80%E0%B8%88%E0%B8%B2%E0%B8%B0%E0%B8%A3%E0%B8%B9%E0%B8%AB%E0%B8%99%E0%B8%B2-1.8-%E0%B8%A1%E0%B8%A1.-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-1.12-x-1.12-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-%E0%B8%A2%E0%B8%B2%E0%B8%A7-3-%E0%B9%80%E0%B8%A1%E0%B8%95%E0%B8%A3-%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3-i.3622004360071",
       "expected_url": "",
-      "confidence": 70,
-      "reason": "Candidate SANE เหล็กปิ้งย่าง is a grill rack (matching product type) and is from a preferred brand (SANE, PREFERRED#3) with a 50% spec match, which is the highest available for a matching product type.",
+      "confidence": 90,
+      "reason": "The candidate is the same product type (angle iron) and has a high spec match (85%), including the thickness (1.8mm), dimensions (1.1/2 x 1.1/2 inch), and length (3M). The color difference is minor.",
       "gt_status": "NO_GT"
     },
     {
@@ -156,27 +142,13 @@
       "source_name": "บันไดอะลูมิเนียมอเนกประสงค์ทรง A/I GIANT KINGKONG PRO รุ่น LDA2108 ขนาด 8 x 7 ขั้น สีเงิน",
       "source_brand": "GIANT KINGKONG PRO",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60289704",
-      "target_name": "HUMMER บันไดอลูมิเนียมมีมือจับ 7 ขั้น รุ่น LJG307D",
+      "target_name": "HUMMERบันไดอะลูมิเนียมทรง A ขึ้นลง 2ทาง 6ขั้น รุ่น GB4203-6 สีเงิน",
       "target_brand": "HUMMER",
-      "target_url": "https://globalhouse.co.th/product/HUMMER-%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B9%84%E0%B8%94%E0%B8%AD%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1%E0%B8%A1%E0%B8%B5%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%88%E0%B8%B1%E0%B8%9A-7-%E0%B8%82%E0%B8%B1%E0%B9%89%E0%B8%99-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-LJG307D-i.5922005600229",
+      "target_url": "https://globalhouse.co.th/product/HUMMER%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B9%84%E0%B8%94%E0%B8%AD%E0%B8%B0%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1%E0%B8%97%E0%B8%A3%E0%B8%87-A-%E0%B8%82%E0%B8%B6%E0%B9%89%E0%B8%99%E0%B8%A5%E0%B8%87-2%E0%B8%97%E0%B8%B2%E0%B8%87-6%E0%B8%82%E0%B8%B1%E0%B9%89%E0%B8%99-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-GB42036-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99-i.5922007470202",
       "expected_url": "https://globalhouse.co.th/product/HUMMER%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B9%84%E0%B8%94%E0%B8%AD%E0%B8%B0%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1%E0%B8%97%E0%B8%A3%E0%B8%87-A-%E0%B8%82%E0%B8%B6%E0%B9%89%E0%B8%99%E0%B8%A5%E0%B8%87-2%E0%B8%97%E0%B8%B2%E0%B8%87-7%E0%B8%82%E0%B8%B1%E0%B9%89%E0%B8%99-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-GB42037-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99-i.5922007470219",
-      "confidence": 70,
-      "reason": "Candidate 2 is the top preferred brand with a matching product type (ladder) and an exact match in the critical 'steps' spec (7 steps).",
+      "confidence": 60,
+      "reason": "The candidate has the highest spec match (55%) among preferred brands, matching the A-frame ladder type, though with fewer steps (6 vs 7).",
       "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 1,
-      "source_idx": 14,
-      "source_name": "เสื้อกั๊กจราจร GIANT KINGKONG รุ่น HS782O-S ขนาด 60 x 46 ซม. S สีส้ม",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60211268",
-      "target_name": "Protx เสื้อจราจรสะท้อนแสง 2แถบ รุ่น1ZC-008-Free Size สีส้ม",
-      "target_brand": "PROTX",
-      "target_url": "https://globalhouse.co.th/product/Protx-%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%88%E0%B8%A3%E0%B8%B2%E0%B8%88%E0%B8%A3%E0%B8%AA%E0%B8%B0%E0%B8%97%E0%B9%89%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%AA%E0%B8%87-2%E0%B9%81%E0%B8%96%E0%B8%9A-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%991ZC008Free-Size-%E0%B8%AA%E0%B8%B5%E0%B8%AA%E0%B9%89%E0%B8%A1-i.5922007040788",
-      "expected_url": "https://globalhouse.co.th/product/Protx-%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%88%E0%B8%A3%E0%B8%B2%E0%B8%88%E0%B8%A3%E0%B8%AA%E0%B8%B0%E0%B8%97%E0%B9%89%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%AA%E0%B8%87-2%E0%B9%81%E0%B8%96%E0%B8%9A-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%991ZC008Free-Size-%E0%B8%AA%E0%B8%B5%E0%B8%AA%E0%B9%89%E0%B8%A1-i.5922007040788",
-      "confidence": 70,
-      "reason": "Candidate 1 is a PROTX brand reflective vest with a similar product type (reflective vest vs safety vest), though specs do not match.",
-      "gt_status": "CORRECT"
     }
   ]
 }

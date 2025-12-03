@@ -8,7 +8,7 @@
   "correct": 5,
   "incorrect": 1,
   "accuracy": 83.33333333333334,
-  "timestamp": "2025-12-03T07:45:54.214312",
+  "timestamp": "2025-12-03T10:40:14.165821",
   "matches": [
     {
       "chunk": 7,
@@ -20,8 +20,8 @@
       "target_brand": "POWER MAX",
       "target_url": "https://www.dohome.co.th/th/power-max-led-downlight-12w-square-dhp011-warm-white-10268581.html",
       "expected_url": "https://www.dohome.co.th/th/power-max-led-downlight-12w-square-dhp011-warm-white-10268581.html",
-      "confidence": 70,
-      "reason": "The candidate is also a downlight, has the preferred brand POWER MAX, and closely matches wattage (12W) and color temperature (Warm White), with the square face being a visual match to the source product's description.",
+      "confidence": 75,
+      "reason": "The candidate is a downlight, from a preferred brand (POWER MAX), has the same wattage (12W), and color temperature (WARMWHITE). While the exact size (5 inch) isn't matched explicitly, the overall specifications are the closest. It is still a face-square (หน้าเหลี่ยม) type of downlight, as is the source product.",
       "gt_status": "CORRECT"
     },
     {
@@ -34,8 +34,8 @@
       "target_brand": "DECOS",
       "target_url": "https://www.dohome.co.th/th/decos-1-bulb-outdoor-wall-lamp-square-shape-e27-socket-model-gris-grey-10417411.html",
       "expected_url": "https://www.dohome.co.th/th/decos-1-bulb-outdoor-wall-lamp-square-shape-e27-socket-model-gris-grey-10417411.html",
-      "confidence": 85,
-      "reason": "The candidate is an outdoor wall lamp from a preferred brand (DECOS), has the same socket type (E27x1) and a high spec match percentage (63%).",
+      "confidence": 70,
+      "reason": "Candidate 0 is a wall lamp from a preferred brand (DECOS) with the same socket type (E27x1) as the source product, making it the closest match.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,21 +49,21 @@
       "target_url": "https://www.dohome.co.th/th/power-max-led-downlight-15w-square-dhp012-day-linght-10268582.html",
       "expected_url": "https://www.dohome.co.th/th/power-max-led-downlight-15w-square-dhp012-day-linght-10268582.html",
       "confidence": 85,
-      "reason": "The candidate is the same product type (downlight), is from the highest preferred brand (POWER MAX), has matching wattage (15W) and color temperature (Daylight), and a good spec match percentage.",
+      "reason": "The candidate is the same product type (downlight), has the highest spec match (wattage, color temperature), and is from the most preferred brand (POWER MAX).",
       "gt_status": "CORRECT"
     },
     {
       "chunk": 7,
-      "source_idx": 96,
-      "source_name": "โคมไฟผนังภายนอกอลูมิเนียม E27x2 LUZINO รุ่น OLIVER 2197/2(BK) สีดำ",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60257202",
-      "target_name": "DECOS โคมไฟผนังนอก 2 หลอด ทรงสี่เหลี่ยม ขั้ว E27 รุ่น GRIS สีเทา",
-      "target_brand": "DECOS",
-      "target_url": "https://www.dohome.co.th/th/decos-2-bulb-outdoor-wall-lamp-square-shape-e27-socket-model-gris-grey-10417412.html",
-      "expected_url": "https://www.dohome.co.th/th/finext-outdoor-wall-lamp-aluminium-a119-gray-10247667.html",
-      "confidence": 60,
-      "reason": "The candidate has the correct product type, a preferred brand (DECOS), and a socket type (E27) that is partially aligned with the source, making it the closest available alternative despite the socket count difference.",
+      "source_idx": 97,
+      "source_name": "กล่องอเนกประสงค์ พร้อมล้อและฝาล็อก 75 ลิตร Fiona KASSA HOME รุ่น JCJ-5114 ขนาด 67 x 46.2 x 35.1 ซม.",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60277742",
+      "target_name": "DECOS กล่องพลาสติกมีล้อ 85 ลิตร รุ่น 5115",
+      "target_brand": "DE'COS",
+      "target_url": "https://www.dohome.co.th/th/jcj-square-rolling-plastic-box-85-l-5115-10335532.html",
+      "expected_url": "https://www.dohome.co.th/th/jcj-square-plastic-box-70-l-no-5117-10365718.html",
+      "confidence": 75,
+      "reason": "The candidate has a preferred brand, the same product type (plastic box/storage box), and a similar volume (85L vs 75L), which is within an acceptable range for an equivalent product.",
       "gt_status": "INCORRECT"
     },
     {
@@ -76,8 +76,8 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/nash-plastic-tools-box-16-5-inch-no-mj20148-10223196.html",
       "expected_url": "https://www.dohome.co.th/th/nash-plastic-tools-box-16-5-inch-no-mj20148-10223196.html",
-      "confidence": 90,
-      "reason": "The candidate has a very close size match (16.5 inch vs 16 inch) and is of the exact same product type ('plastic toolbox') from a preferred brand (NASH).",
+      "confidence": 85,
+      "reason": "The candidate is the correct product type (plastic tool box), has a similar size (16.5 inch vs 16 inch), and is from a preferred brand (NASH).",
       "gt_status": "CORRECT"
     },
     {
@@ -91,7 +91,7 @@
       "target_url": "https://www.dohome.co.th/th/nash-aluminium-ladder-2-way-4-step-no-lfd88al-10142444.html",
       "expected_url": "https://www.dohome.co.th/th/nash-aluminium-ladder-2-way-4-step-no-lfd88al-10142444.html",
       "confidence": 75,
-      "reason": "The candidate is the same product type (aluminum ladder), has the exact same number of steps (4 steps), the same ladder direction (2-way), and is from the highest preferred brand (NASH).",
+      "reason": "The candidate is an aluminum ladder from a preferred brand (NASH) with the exact same number of steps and ladder direction as the source product.",
       "gt_status": "CORRECT"
     },
     {
@@ -105,7 +105,7 @@
       "target_url": "https://www.dohome.co.th/th/vegetable-cutter-no-112368-10314920.html",
       "expected_url": "",
       "confidence": 70,
-      "reason": "Candidate 1 (HAPPY COOK) is the only alternative with a matching product type ('vegetable and fruit grater') and a preferred brand, even though the spec match is 50% due to differing model numbers. No other candidate has a matching product type.",
+      "reason": "Candidate 1 has a matching product type (fruit and vegetable grater / peeler) and is from a preferred brand (HAPPY COOK).",
       "gt_status": "NO_GT"
     }
   ]

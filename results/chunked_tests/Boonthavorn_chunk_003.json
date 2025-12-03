@@ -4,11 +4,11 @@
   "start_idx": 30,
   "end_idx": 45,
   "products_tested": 15,
-  "matches_found": 6,
-  "correct": 2,
+  "matches_found": 5,
+  "correct": 1,
   "incorrect": 4,
-  "accuracy": 33.33333333333333,
-  "timestamp": "2025-12-03T07:34:29.140936",
+  "accuracy": 20.0,
+  "timestamp": "2025-12-03T10:54:56.087165",
   "matches": [
     {
       "chunk": 3,
@@ -20,8 +20,8 @@
       "target_brand": "LIGHTMOST",
       "target_url": "https://www.boonthavorn.com/lightmost-1208338",
       "expected_url": "https://www.boonthavorn.com/lightmost-1208338",
-      "confidence": 75,
-      "reason": "The candidate is also a hanging lamp with matching dimensions and socket, and LIGHTMOST is a preferred brand.",
+      "confidence": 70,
+      "reason": "The candidate is a pendant light (matching type) from a preferred brand (LIGHTMOST) and has a good spec match for dimensions and socket, despite lower overall spec match due to missing additional identifiers.",
       "gt_status": "CORRECT"
     },
     {
@@ -30,12 +30,12 @@
       "source_name": "โคมไฟผนังภายนอกอะลูมิเนียม E27x1 LUZINO รุ่น GD-AWY31 สีดำ - ใส",
       "source_brand": "LUZINO",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60402136",
-      "target_name": "ไฟผนัง O-001 E27x1 MAX 60W IP44",
+      "target_name": "ไฟผนัง MAX LIGHT/YF2003A(S) E27x1",
       "target_brand": "MAX LIGHT",
-      "target_url": "https://www.boonthavorn.com/max-light-1249472",
+      "target_url": "https://www.boonthavorn.com/max-light-1060903",
       "expected_url": "https://www.boonthavorn.com/yj-2180a-1-e27x1",
-      "confidence": 90,
-      "reason": "Candidate is a 'wall lamp' from a preferred brand (MAX LIGHT) with high spec match (73%) including matching dimensions and socket type.",
+      "confidence": 95,
+      "reason": "Candidate 1 (MAX LIGHT) is a preferred brand for wall lamps, has a high spec match (73%), and all critical specs align with the source product, specifically the 'wall lamp' type and 'E27x1' socket.",
       "gt_status": "INCORRECT"
     },
     {
@@ -49,7 +49,7 @@
       "target_url": "https://www.boonthavorn.com/at-indy-115100",
       "expected_url": "https://www.boonthavorn.com/hachi-1218464",
       "confidence": 95,
-      "reason": "The candidate is also a paint brush with the exact same size specification (2 inches) as the source product.",
+      "reason": "The candidate is a paint brush of the same size (2 inches) as the source, even though it's not a preferred brand.",
       "gt_status": "INCORRECT"
     },
     {
@@ -63,36 +63,22 @@
       "target_url": "https://www.boonthavorn.com/max-light-1101335",
       "expected_url": "https://www.boonthavorn.com/max-light-1101349",
       "confidence": 75,
-      "reason": "Candidate 0 is the only track light, matches critical product type, has a preferred brand (MAX LIGHT), and a spec match of 58% which includes matching dimensions and socket type.",
+      "reason": "The candidate has the exact matching product type (track light), preferred brand (MAX LIGHT), and a high SpecMatch% due to matching dimensions and socket type.",
       "gt_status": "INCORRECT"
     },
     {
       "chunk": 3,
-      "source_idx": 37,
-      "source_name": "บานซิงค์คู่ ZAGIO รุ่น MAX21 #3876 ขนาด 84 x 10 x 64 ซม. สีขาว",
-      "source_brand": "ZAGIO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60327394",
-      "target_name": "บานซิงค์ PLATINUMเดี่ยว เคิร์ฟ ขาว",
-      "target_brand": "KING",
-      "target_url": "https://www.boonthavorn.com/king-1105764",
-      "expected_url": "https://www.boonthavorn.com/king-1028712",
+      "source_idx": 40,
+      "source_name": "โคมไฟผนังภายนอกอะลูมิเนียม LED 2x3W Warm White LUZINO รุ่น GD-AWZ17-BK สีดำ",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60404640",
+      "target_name": "TH-ET ไฟผนัง LED SZ-L619587 8W *ขาว IP54",
+      "target_brand": "MAX LIGHT",
+      "target_url": "https://www.boonthavorn.com/max-light-1257088",
+      "expected_url": "https://www.boonthavorn.com/le-1226422",
       "confidence": 70,
-      "reason": "Candidate 0 is the only 'cabinet door' type product and a preferred brand, despite a low spec match, as no other candidates are cabinet doors.",
+      "reason": "The candidate is a preferred brand (MAX LIGHT) and is an outdoor wall lamp, matching the product type. While the wattage is higher (8W vs 3W), it is the closest match among preferred brands for the critical 'outdoor wall lamp' type and has a reasonable SpecMatch of 39%.",
       "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 3,
-      "source_idx": 43,
-      "source_name": "แปรงทาสีขนสัตว์ ด้ามพลาสติก GIANT KINGKONG รุ่น BPB08 ขนาด 4 นิ้ว สีน้ำตาล",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60342251",
-      "target_name": "แปรงทาสีน้ำมัน 4 นิ้ว H1827 *ดำ-ขาว",
-      "target_brand": "HACHI",
-      "target_url": "https://www.boonthavorn.com/hachi-1218465",
-      "expected_url": "https://www.boonthavorn.com/hachi-1218465",
-      "confidence": 95,
-      "reason": "The candidate has a 100% spec match in size and is a 'paint brush' type (oil paint brush is a subtype of paint brush), from a preferred brand, making it a strong equivalent.",
-      "gt_status": "CORRECT"
     }
   ]
 }

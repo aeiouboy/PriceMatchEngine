@@ -5,10 +5,10 @@
   "end_idx": 75,
   "products_tested": 15,
   "matches_found": 7,
-  "correct": 4,
-  "incorrect": 2,
-  "accuracy": 66.66666666666666,
-  "timestamp": "2025-12-03T07:44:10.536089",
+  "correct": 5,
+  "incorrect": 1,
+  "accuracy": 83.33333333333334,
+  "timestamp": "2025-12-03T10:38:54.422194",
   "matches": [
     {
       "chunk": 5,
@@ -20,8 +20,8 @@
       "target_brand": "DE'COS",
       "target_url": "https://www.dohome.co.th/th/towel-30x60-inch-white-10207776.html",
       "expected_url": "https://www.dohome.co.th/th/towel-30x60-inch-white-10207776.html",
-      "confidence": 100,
-      "reason": "Candidate 0 is a hotel towel with identical dimensions and brand preference, resulting in a 100% SpecMatch.",
+      "confidence": 95,
+      "reason": "The candidate is a preferred brand (DE'COS) and perfectly matches the critical product type (hotel towel vs bath towel) and key dimensions (30x60, 60 inch) with a 100% SpecMatch.",
       "gt_status": "CORRECT"
     },
     {
@@ -35,7 +35,7 @@
       "target_url": "https://www.dohome.co.th/th/aluguard-door-rubber-seal-9x6-mm-6-m-brown-10383374.html",
       "expected_url": "https://www.dohome.co.th/th/aluguard-door-rubber-seal-9x6-mm-6-m-brown-10383374.html",
       "confidence": 95,
-      "reason": "The candidate is a door seal, which is an equivalent product type to window seal, and has the same length specification as the source product.",
+      "reason": "Candidate is the same product type (door seal is a type of window/door seal), same length (6M), and is from a preferred brand (ALUGUARD) with 100% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -44,13 +44,13 @@
       "source_name": "โคมดาวน์ไลท์ติดลอยเหลี่ยม 4 นิ้ว E27x1 LUZINO รุ่น MZF401-BK สีดำ",
       "source_brand": "LUZINO",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60320169",
-      "target_name": "LAMPTAN โคมดาวน์ไลท์ E27 แบบกลม 4 นิ้ว รุ่น SURFACE สีขาว",
-      "target_brand": "LAMPTAN",
-      "target_url": "https://www.dohome.co.th/th/lamptan-downlight-e27-round-4-inch-surface-white-10365109.html",
+      "target_name": "POWER MAX ดาวน์ไลท์ 4 นิ้ว ติดลอย กล่องเหลี่ยม สีดำ [ไม่รวมหลอดไฟ]",
+      "target_brand": "POWER MAX",
+      "target_url": "https://www.dohome.co.th/th/heap-downlight-4-inch-square-black-10204672.html",
       "expected_url": "https://www.dohome.co.th/th/heap-downlight-4-inch-square-black-10204672.html",
-      "confidence": 75,
-      "reason": "Candidate 0 has the highest SpecMatch (66%) and is the correct product type (downlight). It also matches the critical 'size_inch' and 'socket' specifications.",
-      "gt_status": "INCORRECT"
+      "confidence": 85,
+      "reason": "Candidate 1 (POWER MAX) is a preferred brand (PREFERRED#1), has a high SpecMatch% (45%), and is the correct product type (downlight) with matching size and description of surface mount square (กล่องเหลี่ยม).",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 5,
@@ -62,8 +62,8 @@
       "target_brand": "SANKI",
       "target_url": "https://www.dohome.co.th/th/sanki-aluminum-ladder-with-tray-7-steps-10391218.html",
       "expected_url": "https://www.dohome.co.th/th/sanki-aluminum-ladder-with-tray-7-steps-10391218.html",
-      "confidence": 75,
-      "reason": "The candidate is a preferred brand (SANKI) and matches the critical 'steps' spec (7 steps) exactly, and is the correct product type (ladder).",
+      "confidence": 60,
+      "reason": "Candidate 1 (SANKI) and Candidate 2 (SANKI) both have the critical spec of 7 steps matching the source, and SANKI is a preferred brand. Candidate 1 is chosen over candidate 0 (NASH) due to matching the important 'steps' spec more closely, even though NASH is a higher preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -76,8 +76,8 @@
       "target_brand": "FINEXT",
       "target_url": "https://www.dohome.co.th/th/finext-under-cornice-wood-ethylene-4-inchx2-9m-no-157-19cm-10310029.html",
       "expected_url": "https://www.dohome.co.th/th/finext-under-cornice-wood-ethylene-4-inchx2-9m-no-jc157-372-10185907.html",
-      "confidence": 75,
-      "reason": "Candidate 1 is a baseboard from a preferred brand (FINEXT) and has some dimension similarities, although the length is different. It is the best match among the candidates given the product type critical match.",
+      "confidence": 70,
+      "reason": "Candidate is a FINEXT branded baseboard, which is a preferred brand, and has relevant dimensional specs although not an exact match.",
       "gt_status": "INCORRECT"
     },
     {
@@ -90,8 +90,8 @@
       "target_brand": "KING",
       "target_url": "https://www.dohome.co.th/th/single-door-cabinet-for-kitchen-abs-no-neo-ivory-10014369.html",
       "expected_url": "https://www.dohome.co.th/th/single-door-cabinet-for-kitchen-abs-no-neo-ivory-10014369.html",
-      "confidence": 75,
-      "reason": "The candidate has the exact matching product type 'sink cabinet' and is from a preferred brand (KING). Although most other specs are N/A, it is the best available match given the critical product type requirement.",
+      "confidence": 85,
+      "reason": "Candidate 0 is a 'sink cabinet' which matches the source product type, and its brand KING is a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -104,8 +104,8 @@
       "target_brand": "DE'COS",
       "target_url": "https://www.dohome.co.th/th/decos-coconut-fiber-carpet-40x60cm-03-3-brown-10397046.html",
       "expected_url": "",
-      "confidence": 70,
-      "reason": "The candidate has a highly preferred brand (DE'COS), a similar product type (พรมใยมะพร้าว is a type of doormat), and matching dimensions (40x60 vs 60x40).",
+      "confidence": 75,
+      "reason": "Candidate is the correct product type (doormat) and is from a preferred brand (DE'COS), despite a low SpecMatch indicating dimensional differences.",
       "gt_status": "NO_GT"
     }
   ]

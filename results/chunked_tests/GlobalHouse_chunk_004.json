@@ -4,11 +4,11 @@
   "start_idx": 45,
   "end_idx": 60,
   "products_tested": 15,
-  "matches_found": 7,
+  "matches_found": 8,
   "correct": 4,
   "incorrect": 1,
   "accuracy": 80.0,
-  "timestamp": "2025-12-03T07:33:16.533794",
+  "timestamp": "2025-12-03T10:31:54.924859",
   "matches": [
     {
       "chunk": 4,
@@ -20,8 +20,22 @@
       "target_brand": "VAVO",
       "target_url": "https://globalhouse.co.th/product/VAVO-%E0%B9%80%E0%B8%8A%E0%B9%87%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A5%E0%B9%8C%E0%B8%A7%E0%B8%AA%E0%B8%9B%E0%B8%A3%E0%B8%B4%E0%B8%87%E0%B8%97%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%87-34-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-YF40542-i.1903300130262",
       "expected_url": "",
-      "confidence": 75,
-      "reason": "Candidate is the same product type (check valve), is from a preferred brand (VAVO), and has some matching identifiers, although the size is different.",
+      "confidence": 85,
+      "reason": "The candidate is a 'check valve' which is a type of 'spring check valve', from the preferred brand VAVO, despite a low SpecMatch indicating a size difference.",
+      "gt_status": "NO_GT"
+    },
+    {
+      "chunk": 4,
+      "source_idx": 47,
+      "source_name": "ประตูน้ำ KARTEN รุ่น HN3042-1 ขนาด 1 นิ้ว สีแดง",
+      "source_brand": "KARTEN",
+      "source_url": "https://www.thaiwatsadu.com/sku/60350473",
+      "target_name": "GROSNA ประตูน้ำทองเหลือง 1 รุ่น YF-4056-3",
+      "target_brand": "GROSNA",
+      "target_url": "https://globalhouse.co.th/product/GROSNA-%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%95%E0%B8%B9%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%97%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%87-1-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-YF40563-i.1903300134139",
+      "expected_url": "",
+      "confidence": 85,
+      "reason": "The source product is a 'water gate' (ประตูน้ำ). Candidates 4 and 8 are also gate valves, matching the product type. Candidate 8 is a 'GROSNA brass gate valve 1 inch' which matches the 1 inch size of the source, and GROSNA is a preferred brand (PREFERRED#4). Candidate 4 is a 'VAVO brass gate valve 3/4 inch' (PREFERRED#1) but the size is 3/4 inch which is different from the source's 1 inch. Therefore, candidate 8 is a better overall match.",
       "gt_status": "NO_GT"
     },
     {
@@ -34,8 +48,8 @@
       "target_brand": "VAVO",
       "target_url": "https://globalhouse.co.th/product/VAVO-%E0%B9%80%E0%B8%8A%E0%B9%87%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A5%E0%B9%8C%E0%B8%A7%E0%B8%AA%E0%B8%9B%E0%B8%A3%E0%B8%B4%E0%B8%87%E0%B8%97%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%87-34-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-YF40542-i.1903300130262",
       "expected_url": "",
-      "confidence": 90,
-      "reason": "The candidate is the same product type (check valve), is from a preferred brand (VAVO), and has a matching brand, making it the most suitable alternative despite the lack of direct spec match for size.",
+      "confidence": 85,
+      "reason": "The candidate is a check valve from a preferred brand (VAVO) and matches the product type, although specific model details differ.",
       "gt_status": "NO_GT"
     },
     {
@@ -48,22 +62,36 @@
       "target_brand": "HUMMER",
       "target_url": "https://globalhouse.co.th/product/HUMMER-%E0%B8%81%E0%B8%B4%E0%B9%8A%E0%B8%9A%E0%B8%88%E0%B8%B1%E0%B8%9A%E0%B8%A5%E0%B8%A7%E0%B8%94%E0%B8%AA%E0%B8%A5%E0%B8%B4%E0%B8%87-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-WRCM8-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-516-i.2422005400766",
       "expected_url": "https://globalhouse.co.th/product/HUMMER-%E0%B8%81%E0%B8%B4%E0%B9%8A%E0%B8%9A%E0%B8%88%E0%B8%B1%E0%B8%9A%E0%B8%A5%E0%B8%A7%E0%B8%94%E0%B8%AA%E0%B8%A5%E0%B8%B4%E0%B8%87-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-WRCM8-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-516-i.2422005400766",
-      "confidence": 70,
-      "reason": "Candidate 0 is the same product type (wire rope clamp, which is equivalent to wire rope clip), has a preferred brand (HUMMER), and the size 5/16 inch matches the source product despite the model number difference.",
+      "confidence": 75,
+      "reason": "Candidate 0 is a wire rope clamp (similar to clip), is from a preferred brand (HUMMER), and has the correct size (5/16 inch) but differs in model number, making it a good, though not perfect, alternative.",
       "gt_status": "CORRECT"
     },
     {
       "chunk": 4,
-      "source_idx": 53,
-      "source_name": "ไม้แขวนเสื้อหัวเหล็ก ตัวเคลือบ PVC Sandee KASSA HOME รุ่น LMS1172-2.2 (แพ็ก 6 ชิ้น) สีขาว",
+      "source_idx": 50,
+      "source_name": "ม่านม้วนสลับทึบโปร่ง Zebra KASSA HOME รุ่น SV-DN-NR-17-1319-701 ขนาด 70 x 160 ซม. สีน้ำตาล",
       "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60372117",
-      "target_name": "UHENG ไพพ์แฮงเกอร์ 3 - 1 ตัว",
-      "target_brand": "U-HENG",
-      "target_url": "https://globalhouse.co.th/product/UHENG-%E0%B9%84%E0%B8%9E%E0%B8%9E%E0%B9%8C%E0%B9%81%E0%B8%AE%E0%B8%87%E0%B9%80%E0%B8%81%E0%B8%AD%E0%B8%A3%E0%B9%8C-3-i.8859177005637",
-      "expected_url": "https://globalhouse.co.th/product/%E0%B9%84%E0%B8%A1%E0%B9%89%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B9%87%E0%B8%81%E0%B9%80%E0%B8%84%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%9A-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-AN10--%E0%B8%AA%E0%B8%B5%E0%B8%81%E0%B8%B2%E0%B8%81%E0%B8%B5--%E0%B8%9A%E0%B8%A3%E0%B8%A3%E0%B8%88%E0%B8%B8-6%E0%B8%8A%E0%B8%B4%E0%B9%89%E0%B8%99%E0%B9%81%E0%B8%9E%E0%B9%87%E0%B8%84--SAKU-i.1905290720712",
-      "confidence": 60,
-      "reason": "The candidate is the same product type (hanger) as the source, but no specific shared specs could be identified beyond the general product type.",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60282613",
+      "target_name": "DAVINCI ม่านม้วนปรับแสง BC-003L-B164-70WBB ขนาด 70x160ซม.สีขาว-เบจ-น้ำตาล",
+      "target_brand": "DAVINCI",
+      "target_url": "https://globalhouse.co.th/product/DAVINCI-%E0%B8%A1%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B8%A1%E0%B9%89%E0%B8%A7%E0%B8%99%E0%B8%9B%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B9%81%E0%B8%AA%E0%B8%87-BC003LB16470WBB-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-70x160%E0%B8%8B%E0%B8%A1.%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7%E0%B9%80%E0%B8%9A%E0%B8%88%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%95%E0%B8%B2%E0%B8%A5-i.5922005540204",
+      "expected_url": "https://globalhouse.co.th/product/DAVINCI-%E0%B8%A1%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B8%A1%E0%B9%89%E0%B8%A7%E0%B8%99%E0%B8%9B%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B9%81%E0%B8%AA%E0%B8%87-BC003LB16470WBB-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-70x160%E0%B8%8B%E0%B8%A1.%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7%E0%B9%80%E0%B8%9A%E0%B8%88%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%95%E0%B8%B2%E0%B8%A5-i.5922005540204",
+      "confidence": 95,
+      "reason": "The candidate is the same product type (roller blind) as the source and has a 100% spec match on dimensions (70x160cm) and length (160CM).",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 4,
+      "source_idx": 51,
+      "source_name": "เสื้อกั๊กจราจร GIANT KINGKONG รุ่น HS782G-S ขนาด 60 x 46 ซม. S สีเขียว",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60211265",
+      "target_name": "Protx เสื้อจราจรสะท้อนแสง 2แถบ รุ่น1ZC-008-Free Size สีส้ม",
+      "target_brand": "PROTX",
+      "target_url": "https://globalhouse.co.th/product/Protx-%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%88%E0%B8%A3%E0%B8%B2%E0%B8%88%E0%B8%A3%E0%B8%AA%E0%B8%B0%E0%B8%97%E0%B9%89%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%AA%E0%B8%87-2%E0%B9%81%E0%B8%96%E0%B8%9A-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%991ZC008Free-Size-%E0%B8%AA%E0%B8%B5%E0%B8%AA%E0%B9%89%E0%B8%A1-i.5922007040788",
+      "expected_url": "https://globalhouse.co.th/product/Protx-%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%88%E0%B8%A3%E0%B8%B2%E0%B8%88%E0%B8%A3%E0%B8%AA%E0%B8%B0%E0%B8%97%E0%B9%89%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%AA%E0%B8%87-2%E0%B9%81%E0%B8%96%E0%B8%9A-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%991ZC008Free-Size-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%82%E0%B8%B5%E0%B8%A2%E0%B8%A7-i.5922007040771",
+      "confidence": 75,
+      "reason": "The candidate is a 'traffic vest' and from PREFERRED brand PROTX. Although key specs don't match, the product type and brand preference make it the closest alternative.",
       "gt_status": "INCORRECT"
     },
     {
@@ -76,8 +104,8 @@
       "target_brand": "HUMMER",
       "target_url": "https://globalhouse.co.th/product/HUMMER-%E0%B8%81%E0%B8%B4%E0%B9%8A%E0%B8%9A%E0%B8%88%E0%B8%B1%E0%B8%9A%E0%B8%A5%E0%B8%A7%E0%B8%94%E0%B8%AA%E0%B8%A5%E0%B8%B4%E0%B8%87-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-WRCM6-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-14-i.2422005400759",
       "expected_url": "https://globalhouse.co.th/product/HUMMER-%E0%B8%81%E0%B8%B4%E0%B9%8A%E0%B8%9A%E0%B8%88%E0%B8%B1%E0%B8%9A%E0%B8%A5%E0%B8%A7%E0%B8%94%E0%B8%AA%E0%B8%A5%E0%B8%B4%E0%B8%87-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-WRCM6-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-14-i.2422005400759",
-      "confidence": 60,
-      "reason": "Candidate 0 is a preferred brand (HUMMER) and has the closest product type match (wire rope clamp vs. wire clamp). Although the model and identifiers differ, the core function and brand preference make it the most suitable alternative.",
+      "confidence": 70,
+      "reason": "The candidate is a preferred brand 'HUMMER' and is the correct product type 'wire rope clamp' with matching size '1/4'.",
       "gt_status": "CORRECT"
     },
     {
@@ -91,21 +119,7 @@
       "target_url": "https://globalhouse.co.th/product/SUPERCAT-%E0%B8%A2%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%A7%E0%B8%B2%E0%B8%94%E0%B8%99%E0%B9%89%E0%B8%B3-%E0%B8%94%E0%B9%89%E0%B8%B2%E0%B8%A1%E0%B8%AD%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-24-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-i.8859238901946",
       "expected_url": "https://globalhouse.co.th/product/SUPERCAT-%E0%B8%A2%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%A7%E0%B8%B2%E0%B8%94%E0%B8%99%E0%B9%89%E0%B8%B3-%E0%B8%94%E0%B9%89%E0%B8%B2%E0%B8%A1%E0%B8%AD%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-24-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-i.8859238901946",
       "confidence": 75,
-      "reason": "The candidate is the same product type (wiper) and has a matching size_inch spec, aligning well with the source product's key specifications, despite the brand not being preferred.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 4,
-      "source_idx": 59,
-      "source_name": "ล้อไนลอนแบบเดือย หมุนได้ ไม่มีเบรก GIANT KINGKONG รุ่น P21-04-50-105B ขนาด 5 ซม. สีดำ",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60139177",
-      "target_name": "KAMPER ล้อแกนเดือย Black Nylon 50มม (2นิ้ว) รุ่น TWFF-50",
-      "target_brand": "KAMPER",
-      "target_url": "https://globalhouse.co.th/product/KAMPER-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B9%81%E0%B8%81%E0%B8%99%E0%B9%80%E0%B8%94%E0%B8%B7%E0%B8%AD%E0%B8%A2-Black-Nylon-50%E0%B8%A1%E0%B8%A1-2%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-TWFF50-i.6020003000993",
-      "expected_url": "https://globalhouse.co.th/product/KAMPER-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B9%81%E0%B8%81%E0%B8%99%E0%B9%80%E0%B8%94%E0%B8%B7%E0%B8%AD%E0%B8%A2-Black-Nylon-50%E0%B8%A1%E0%B8%A1-2%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-TWFF50-i.6020003000993",
-      "confidence": 60,
-      "reason": "Candidate is a caster and has a similar size specification, despite a different model number and brand.",
+      "reason": "The candidate is the correct product type (wiper) and has a identical size_inch (24 inch) spec matching the source product closely.",
       "gt_status": "CORRECT"
     }
   ]
