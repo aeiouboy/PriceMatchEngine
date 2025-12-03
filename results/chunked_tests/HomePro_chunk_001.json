@@ -4,24 +4,24 @@
   "start_idx": 0,
   "end_idx": 15,
   "products_tested": 15,
-  "matches_found": 5,
-  "correct": 3,
-  "incorrect": 2,
-  "accuracy": 60.0,
-  "timestamp": "2025-12-03T10:02:11.731190",
+  "matches_found": 7,
+  "correct": 4,
+  "incorrect": 3,
+  "accuracy": 57.14285714285714,
+  "timestamp": "2025-12-03T12:00:01.470749",
   "matches": [
     {
       "chunk": 1,
-      "source_idx": 2,
-      "source_name": "ลำโพงบลูทูท 10 วัตต์ ZAGIO รุ่น ZG-85525 สีดำ",
-      "source_brand": "ZAGIO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60394838",
-      "target_name": "ลำโพงบลูทูธ OZZIE H100 สีน้ำเงิน",
-      "target_brand": "OZZIE",
-      "target_url": "https://www.homepro.co.th/p/1236064",
-      "expected_url": "https://www.homepro.co.th/p/1236064",
-      "confidence": 70,
-      "reason": "The candidate is the same product type (bluetooth speaker) and is from a preferred brand, despite a low spec match, as all other high spec match candidates are different product types.",
+      "source_idx": 4,
+      "source_name": "แปรงทาแชล็คด้ามพลาสติก GIANT KINGKONG รุ่น BPB12 ขนาด 2.5 นิ้ว สีน้ำตาล",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60342280",
+      "target_name": "แปรงทาสีด้ามพลาสติกขนสังคราะห์ดำ MATALL 2.5 นิ้ว",
+      "target_brand": "MATALL",
+      "target_url": "https://www.homepro.co.th/p/1234385",
+      "expected_url": "https://www.homepro.co.th/p/1234385",
+      "confidence": 95,
+      "reason": "The candidate 'แปรงทาสีด้ามพลาสติกขนสังคราะห์ดำ MATALL 2.5 นิ้ว' is a paint brush, matching the product type of the source 'แปรงทาแชล็ค' (lacquer brush), and has the exact same size (2.5 inch) with 100% SpecMatch. It is also from a preferred brand (MATALL, PREFERRED#2).",
       "gt_status": "CORRECT"
     },
     {
@@ -35,7 +35,7 @@
       "target_url": "https://www.homepro.co.th/p/1167119",
       "expected_url": "https://www.homepro.co.th/p/1167119",
       "confidence": 95,
-      "reason": "Candidate 0 is a steel putty knife, matching the product type, has the exact same size spec, and is from a highly preferred brand (MATALL).",
+      "reason": "The candidate is a putty knife of the same size (1 inch) and from the highly preferred brand MATALL, making it an excellent equivalent.",
       "gt_status": "CORRECT"
     },
     {
@@ -48,8 +48,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1181393",
       "expected_url": "https://www.homepro.co.th/p/1181393",
-      "confidence": 95,
-      "reason": "Highest SpecMatch (100%) and preferred brand (MATALL) with exact product type and size match.",
+      "confidence": 100,
+      "reason": "The candidate is a paint roller of the preferred brand MATALL, matching the size and full roller type of the source product with 100% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -62,8 +62,22 @@
       "target_brand": "CARINI",
       "target_url": "https://www.homepro.co.th/p/1074150",
       "expected_url": "https://www.homepro.co.th/p/1003945",
-      "confidence": 75,
-      "reason": "The candidate has the highest spec match (40%) and is a 'post lamp', which is a close equivalent product type to 'pillar lamp', and is from the most preferred brand CARINI.",
+      "confidence": 95,
+      "reason": "Candidate 0 is a 'post lamp' (Type: post light) and matches the critical product type ('post lamp'). It is also from a PREFERRED brand (CARINI, PREFERRED#1) and has the highest SpecMatch (40%) among relevant candidates.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 1,
+      "source_idx": 10,
+      "source_name": "สว่านไฟฟ้า 10 มม. GIANTTECH รุ่น BD6103 กำลัง 350 วัตต์ สีแดง - ดำ",
+      "source_brand": "GIANTTECH",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60263210",
+      "target_name": "สว่านไฟฟ้า MAKITA M011-M0600B 350 วัตต์",
+      "target_brand": "MAKITA",
+      "target_url": "https://www.homepro.co.th/p/1162943",
+      "expected_url": "https://www.homepro.co.th/p/1177335",
+      "confidence": 90,
+      "reason": "The candidate is the same product type (electric drill) and has identical wattage to the source product, resulting in a 100% spec match.",
       "gt_status": "INCORRECT"
     },
     {
@@ -76,9 +90,23 @@
       "target_brand": "ECO-DOOR",
       "target_url": "https://www.homepro.co.th/p/1110489",
       "expected_url": "https://www.homepro.co.th/p/1083200",
-      "confidence": 85,
-      "reason": "The candidate has a 100% spec match including dimensions and WPC material, and is a wpc door frame, aligning with the source product's type and dimensions. It is also the closest type to the source's 'door frame'.",
+      "confidence": 95,
+      "reason": "The candidate is a door frame of the same WPC material and dimensions (80x200 cm) as the source, only differing in color and being from the ECO-DOOR brand.",
       "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 1,
+      "source_idx": 13,
+      "source_name": "สายรัดสายไฟ GIANT KINGKONG รุ่น HT-3.6 x 200 8 นิ้ว ขนาด 3.6 x 200 8.0 นิ้ว (แพ็ค 100 ชิ้น) สีขาว",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60166198",
+      "target_name": "เคเบิ้ลไทร์ ELEKTRA 8 นิ้ว สีขาว (100 เส้น)",
+      "target_brand": "ELEKTRA",
+      "target_url": "https://www.homepro.co.th/p/1092055",
+      "expected_url": "https://www.homepro.co.th/p/1092055",
+      "confidence": 70,
+      "reason": "The candidate is the correct product type (cable tie), matches the size and pack count, and has the highest SpecMatch%. Although not a preferred brand, it's the closest equivalent.",
+      "gt_status": "CORRECT"
     }
   ]
 }

@@ -4,11 +4,11 @@
   "start_idx": 45,
   "end_idx": 60,
   "products_tested": 15,
-  "matches_found": 6,
-  "correct": 4,
+  "matches_found": 8,
+  "correct": 6,
   "incorrect": 2,
-  "accuracy": 66.66666666666666,
-  "timestamp": "2025-12-03T10:55:40.750276",
+  "accuracy": 75.0,
+  "timestamp": "2025-12-03T12:31:57.225129",
   "matches": [
     {
       "chunk": 4,
@@ -21,22 +21,22 @@
       "target_url": "https://www.boonthavorn.com/max-light-1249472",
       "expected_url": "https://www.boonthavorn.com/yj-2180a-1-e27x1",
       "confidence": 95,
-      "reason": "Candidate 0 is an exact product type match as an outdoor wall lamp, from the top preferred brand MAX LIGHT, and has the highest SpecMatch% (73%) with matching dimensions and E27x1 socket.",
+      "reason": "The candidate is a preferred brand (MAX LIGHT) and has a high spec match (71%) with identical product type (wall lamp) and key specifications like dimensions and socket type.",
       "gt_status": "INCORRECT"
     },
     {
       "chunk": 4,
-      "source_idx": 49,
-      "source_name": "ลูกกลิ้งทาสีเคมีพร้อมอะไหล่ 1 ชิ้น GIANT KINGKONG รุ่น MRC01 ขนาด 4 นิ้ว",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60245712",
-      "target_name": "อะไหล่ขนลูกกลิ้ง 4 นิ้ว C30104 ขาว",
-      "target_brand": "AT.INDY",
-      "target_url": "https://www.boonthavorn.com/at-indy-115259",
-      "expected_url": "https://www.boonthavorn.com/somic-77663",
-      "confidence": 76,
-      "reason": "The candidate has a strong spec match (76%), specifically matching size and roller type, and is a compatible product type (roller brush vs paint roller).",
-      "gt_status": "INCORRECT"
+      "source_idx": 46,
+      "source_name": "บันไดอะลูมิเนียมอเนกประสงค์พับได้ GIANT KINGKONG PRO รุ่น HCSS-01 ขนาด 4 x 2 ขั้น สีเงิน",
+      "source_brand": "GIANT KINGKONG PRO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60345787",
+      "target_name": "บันไดอลูมิเนียม พับได้ 8ขั้น ZHTL402B-08",
+      "target_brand": "NL HOME",
+      "target_url": "https://www.boonthavorn.com/nl-home-1104357",
+      "expected_url": "https://www.boonthavorn.com/nl-home-1104357",
+      "confidence": 60,
+      "reason": "The candidate is a folding ladder from a preferred brand (NL HOME) and has the highest spec match, although the number of steps differs.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 4,
@@ -48,8 +48,8 @@
       "target_brand": "HAFELE",
       "target_url": "https://www.boonthavorn.com/hafele-1074605",
       "expected_url": "https://www.boonthavorn.com/hafele-1074605",
-      "confidence": 95,
-      "reason": "The candidate is a door knob for general rooms, matches the product type and has a high spec match percentage. It also belongs to a preferred brand (HAFELE).",
+      "confidence": 100,
+      "reason": "Candidate 0 is a doorknob for general rooms, matching the product type and 'knob_room' spec of the source, and is from a preferred brand (HAFELE).",
       "gt_status": "CORRECT"
     },
     {
@@ -62,8 +62,22 @@
       "target_brand": "SAKURA",
       "target_url": "https://www.boonthavorn.com/sakura-1084347",
       "expected_url": "https://www.boonthavorn.com/sakura-1084347",
-      "confidence": 85,
-      "reason": "The candidate is the correct product type (pvc hose, near garden hose), has a preferred brand, and matches the length specification.",
+      "confidence": 75,
+      "reason": "Candidate 0 is a garden hose, the correct product type, and has a good length match (10M) with a preferred brand (SAKURA), though the diameter is not explicitly matched.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 4,
+      "source_idx": 52,
+      "source_name": "โคมแทรคไลท์เข้าราง E27x1 PAR30 LUZINO รุ่น LP03-BK สีดำ",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60320101",
+      "target_name": "แท็คไลท์ YD-WA8004 ดำ E27x1",
+      "target_brand": "MAX LIGHT",
+      "target_url": "https://www.boonthavorn.com/max-light-1101335",
+      "expected_url": "https://www.boonthavorn.com/max-light-1101335",
+      "confidence": 70,
+      "reason": "Candidate 0 is the same product type (track light), matches dimensions and socket, and is from a preferred brand (MAX LIGHT).",
       "gt_status": "CORRECT"
     },
     {
@@ -77,8 +91,22 @@
       "target_url": "https://www.boonthavorn.com/bf-1055169",
       "expected_url": "https://www.boonthavorn.com/bf-1055169",
       "confidence": 75,
-      "reason": "The candidate is the same product type (aluminum ladder) with matching steps (5 steps) and is from a preferred brand (BF).",
+      "reason": "Candidate 0 is an aluminum ladder with 5 steps, matching the critical product type and step count of the source, and is from a preferred brand (BF). The brand and step count are the only matching specs, but the product type match is crucial.",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 4,
+      "source_idx": 57,
+      "source_name": "บันไดอะลูมิเนียมอเนกประสงค์พับได้ GIANT KINGKONG PRO รุ่น HCSS-02 ขนาด 4 x 3 ขั้น สีเงิน",
+      "source_brand": "GIANT KINGKONG PRO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60345788",
+      "target_name": "บันไดอลูมิเนียม พับได้ 8ขั้น ZHTL402B-08",
+      "target_brand": "NL HOME",
+      "target_url": "https://www.boonthavorn.com/nl-home-1104357",
+      "expected_url": "https://www.boonthavorn.com/bf-1136106",
+      "confidence": 75,
+      "reason": "The candidate is a 'folding ladder' (product type match) and is from a preferred brand, but has a different number of steps (8 vs 3) resulting in a moderate spec match.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 4,
@@ -90,8 +118,8 @@
       "target_brand": "ANYHOME",
       "target_url": "https://www.boonthavorn.com/anyhome-1160885",
       "expected_url": "https://www.boonthavorn.com/anyhome-1160885",
-      "confidence": 95,
-      "reason": "The candidate is the same product type (flexible hose), has a 100% spec match for length, and is from a preferred brand (ANYHOME).",
+      "confidence": 100,
+      "reason": "Candidate 0 is a flexible hose with matching length (180CM), and is from a preferred brand (ANYHOME).",
       "gt_status": "CORRECT"
     }
   ]

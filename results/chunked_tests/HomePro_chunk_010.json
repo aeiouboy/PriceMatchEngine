@@ -4,11 +4,11 @@
   "start_idx": 135,
   "end_idx": 150,
   "products_tested": 15,
-  "matches_found": 9,
+  "matches_found": 10,
   "correct": 8,
-  "incorrect": 1,
-  "accuracy": 88.88888888888889,
-  "timestamp": "2025-12-03T10:10:17.873942",
+  "incorrect": 2,
+  "accuracy": 80.0,
+  "timestamp": "2025-12-03T12:08:30.447282",
   "matches": [
     {
       "chunk": 10,
@@ -20,9 +20,23 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1165718",
       "expected_url": "https://www.homepro.co.th/p/1165718",
-      "confidence": 95,
-      "reason": "Candidate is the same product type (tool box), has a preferred brand (MATALL), and a high spec match including the model number and size.",
+      "confidence": 85,
+      "reason": "Candidate 15 is a 'กล่องเครื่องมือ' (tool box) with '16 นิ้ว' size and the same model 'HL30157-C', aligning closely with the source's 'plastic tool box' type and key specs, and is from a preferred brand (MATALL).",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 10,
+      "source_idx": 136,
+      "source_name": "บัวพื้นโพลีสไตรีน TIMELESS KASSA รุ่น 1041-E136 ขนาด 290 x 0.8 x 9 ซม. สีไม้พะยูง",
+      "source_brand": "KASSA",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60328506",
+      "target_name": "บัวพื้น WPC CROBERN 7.5X245X1.5 ซม. สีโอ๊ค",
+      "target_brand": "CROBERN",
+      "target_url": "https://www.homepro.co.th/p/1189995",
+      "expected_url": "https://www.homepro.co.th/p/1173517",
+      "confidence": 60,
+      "reason": "Candidate 2 is the only alternative with a 'baseboard' product type matching the source and belongs to a preferred brand (CROBERN), though the spec match is low at 0%.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 10,
@@ -35,7 +49,7 @@
       "target_url": "https://www.homepro.co.th/p/1188969",
       "expected_url": "https://www.homepro.co.th/p/1188969",
       "confidence": 95,
-      "reason": "The candidate is a paint roller of the same size (10 inch) and is from MATALL, a preferred brand, with a 100% spec match.",
+      "reason": "The candidate is a paint roller of the same size (10 inch) by a preferred brand (MATALL) with 100% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,7 +63,7 @@
       "target_url": "https://www.homepro.co.th/p/1150457",
       "expected_url": "https://www.homepro.co.th/p/1150457",
       "confidence": 95,
-      "reason": "Candidate 0 is the highest preferred brand (ACCO) with a 100% spec match for volume and exact product type match (liquid hand soap).",
+      "reason": "The source and candidate product are both 'liquid hand soap' with matching volume (3800 ML). Candidate 0 is from a preferred brand (ACCO) and has the highest SpecMatch% among viable alternatives.",
       "gt_status": "CORRECT"
     },
     {
@@ -63,7 +77,7 @@
       "target_url": "https://www.homepro.co.th/p/1173622",
       "expected_url": "https://www.homepro.co.th/p/1173622",
       "confidence": 95,
-      "reason": "The candidate has the exact same dimensions, type, and is from a preferred brand (SPRING) with a very high spec match percentage.",
+      "reason": "Candidate 1 (SPRING) is a preferred brand (PREFERRED#1), has a near-perfect spec match (82%) for size and identifiers, and is a very similar product type ('canvas roll' is essentially the same as 'plastic sheeting' in this context).",
       "gt_status": "CORRECT"
     },
     {
@@ -76,8 +90,8 @@
       "target_brand": "ELECKTA",
       "target_url": "https://www.homepro.co.th/p/1217572",
       "expected_url": "https://www.homepro.co.th/p/1217572",
-      "confidence": 75,
-      "reason": "Candidate 0 is the correct product type (power outlet is a match for double socket outlet) and is from a preferred brand (ELECKTA), with similar SpecMatch% to other candidates of the correct type.",
+      "confidence": 70,
+      "reason": "Candidate 0 is a 'wall socket' (electrical outlet) from a preferred brand (ELECKTA), which matches the critical product type of the source 'wall socket' and has the highest SpecMatch for relevant products.",
       "gt_status": "CORRECT"
     },
     {
@@ -91,7 +105,7 @@
       "target_url": "https://www.homepro.co.th/p/1084528",
       "expected_url": "https://www.homepro.co.th/p/1084528",
       "confidence": 95,
-      "reason": "Highest SpecMatch% (100) and preferred brand (MATALL) with exact product type match.",
+      "reason": "The candidate is a MATALL brand (PREFERRED#1) measuring tape with identical length (5M) and a 100% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -104,8 +118,8 @@
       "target_brand": "DEXZON",
       "target_url": "https://www.homepro.co.th/p/1178949",
       "expected_url": "https://www.homepro.co.th/p/1178949",
-      "confidence": 95,
-      "reason": "Candidate 0 is a DEXZON brand (PREFERRED#1) silicone gun with the same 9-inch size as the source glue gun, resulting in a 100% spec match and exact product type equivalence in function.",
+      "confidence": 100,
+      "reason": "Candidate 0 is a DEXZON brand glue gun of the correct product type and size (9 inch), matching the critical specifications perfectly with a 100% SpecMatch.",
       "gt_status": "CORRECT"
     },
     {
@@ -119,7 +133,7 @@
       "target_url": "https://www.homepro.co.th/p/1028911",
       "expected_url": "https://www.homepro.co.th/p/1165754",
       "confidence": 85,
-      "reason": "The candidate is a 'trolley' which is a close match to 'flat trolley', has the exact same volume, and is from a preferred brand MATALL.",
+      "reason": "Candidate is the same product type (trolley), matches the critical volume spec within 20% (300kg vs 300kg), and is from a preferred brand (MATALL).",
       "gt_status": "INCORRECT"
     },
     {
@@ -133,7 +147,7 @@
       "target_url": "https://www.homepro.co.th/p/1123665",
       "expected_url": "https://www.homepro.co.th/p/1123665",
       "confidence": 95,
-      "reason": "Candidate 0 is a drain auger with an exact match on length (5M) and is a preferred brand (HACHI, PREFERRED#3), making it the best equivalent product.",
+      "reason": "The candidate is a drain snake with matching length, and is a preferred brand (HACHI).",
       "gt_status": "CORRECT"
     }
   ]

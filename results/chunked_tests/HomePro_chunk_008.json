@@ -4,54 +4,12 @@
   "start_idx": 105,
   "end_idx": 120,
   "products_tested": 15,
-  "matches_found": 9,
-  "correct": 5,
-  "incorrect": 4,
-  "accuracy": 55.55555555555556,
-  "timestamp": "2025-12-03T10:08:45.371764",
+  "matches_found": 5,
+  "correct": 4,
+  "incorrect": 1,
+  "accuracy": 80.0,
+  "timestamp": "2025-12-03T12:06:51.126969",
   "matches": [
-    {
-      "chunk": 8,
-      "source_idx": 107,
-      "source_name": "เกรียงโป๊วสีเหล็กด้ามพลาสติก GIANT KINGKONG PRO รุ่น H36-2.5 ขนาด 2.5 นิ้ว สีน้ำเงิน",
-      "source_brand": "GIANT KINGKONG PRO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60292789",
-      "target_name": "เกรียงโป๊วด้ามพลาสติก MATALL 2.5 นิ้ว",
-      "target_brand": "MATALL",
-      "target_url": "https://www.homepro.co.th/p/1167129",
-      "expected_url": "https://www.homepro.co.th/p/1167129",
-      "confidence": 95,
-      "reason": "Candidate 0 is the exact product type (steel trowel, a subtype of putty knife), has the same size (2.5 inch), and is from the highest preferred brand (MATALL).",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 8,
-      "source_idx": 111,
-      "source_name": "โต๊ะพับแบบพกพา HDPE ขาปรับได้ 3 ระดับ FONTE รุ่น NZK-120H-GY ขนาด 120 x 60 x 90 ซม. สีเทา",
-      "source_brand": "FONTE",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60379308",
-      "target_name": "โต๊ะอเนกประสงค์พับครึ่ง 3 ระดับ SPRING 120 ซม. สีเทา",
-      "target_brand": "SPRING",
-      "target_url": "https://www.homepro.co.th/p/1182198",
-      "expected_url": "https://www.homepro.co.th/p/1182198",
-      "confidence": 70,
-      "reason": "The source is a folding table and candidate 14 is also a folding table, from a preferred brand (SPRING), and has similar dimensions.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 8,
-      "source_idx": 112,
-      "source_name": "โคมดาวน์ไลท์หน้าเหลี่ยม 4 นิ้ว E27x1 Carry LUZINO รุ่น P4003-WH สีขาว",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60247110",
-      "target_name": "ดาวน์ไลท์ CARINI LD0140 4 นิ้ว สีขาว กลม",
-      "target_brand": "CARINI",
-      "target_url": "https://www.homepro.co.th/p/1052627",
-      "expected_url": "https://www.homepro.co.th/p/274789",
-      "confidence": 75,
-      "reason": "Candidate is the same product type (downlight), has a high spec match (57%), and is from a preferred brand (CARINI).",
-      "gt_status": "INCORRECT"
-    },
     {
       "chunk": 8,
       "source_idx": 114,
@@ -62,8 +20,8 @@
       "target_brand": "PLIM",
       "target_url": "https://www.homepro.co.th/p/1159460",
       "expected_url": "https://www.homepro.co.th/p/1159460",
-      "confidence": 60,
-      "reason": "Candidate 0 is a preferred brand (PLIM) and has an exact match on '4 lines' spec. While the product name indicates 'wooden towel rack', the description for the source product 'ราวแขวนตั้งพื้น' also implies a drying rack or hanger, making it a plausible alternative. Size is not explicitly matched for candidate 0.",
+      "confidence": 75,
+      "reason": "Candidate 0 is the highest spec match, shares the critical 'lines' spec, and is type 'towel rack' which is a close enough match to 'drying rack' for household use, and is also from a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -76,8 +34,8 @@
       "target_brand": "CARINI",
       "target_url": "https://www.homepro.co.th/p/1091353",
       "expected_url": "https://www.homepro.co.th/p/1091353",
-      "confidence": 75,
-      "reason": "The candidate is a track light, which matches the source product type, and is from the preferred brand CARINI, with matching 'GU5' and 'CS15' identifiers, despite the lower numerical SpecMatch due to less detailed spec extraction for the candidate.",
+      "confidence": 95,
+      "reason": "The candidate is a track light, matching the source product type, and is from the highest preferred brand CARINI with relevant identifiers GU5 and CS15, despite a lower numerical SpecMatch due to a different model number suffix and color.",
       "gt_status": "CORRECT"
     },
     {
@@ -86,13 +44,13 @@
       "source_name": "โฟมแผ่น 1 1/2 นิ้ว GIANT KINGKONG ขนาด 60 x 120 ซม. สีขาว",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60175572",
-      "target_name": "โฟมแผ่น PACK IN 1/2 นิ้วX60 ซม.X1.2 ม. สีขาว",
+      "target_name": "โฟมแผ่น PACK IN 1 1/2 นิ้วX60 ซม.X1.2 ม. สีขาว",
       "target_brand": "PACK IN",
-      "target_url": "https://www.homepro.co.th/p/1192467",
+      "target_url": "https://www.homepro.co.th/p/1193332",
       "expected_url": "https://www.homepro.co.th/p/1193332",
-      "confidence": 95,
-      "reason": "Candidate 12 is a foam sheet from a preferred brand (PACK IN) with identical size_inch and very similar length_cm specs, making it an excellent product type match.",
-      "gt_status": "INCORRECT"
+      "confidence": 75,
+      "reason": "Candidate 8 (โฟมแผ่น PACK IN) is a foam sheet (matching product type) from a preferred brand (PACK IN) and has the highest SpecMatch% among plausible alternatives, with similar dimensions and size.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 8,
@@ -105,22 +63,8 @@
       "target_url": "https://www.homepro.co.th/p/1229396",
       "expected_url": "https://www.homepro.co.th/p/1229396",
       "confidence": 95,
-      "reason": "Candidate is the same product type (earth auger bit) with 100% spec match, the same size, and is from a preferred brand (EUROX, PREFERRED#2).",
+      "reason": "Candidate 0 is an auger bit with the exact 6 inch size and is from a preferred brand (EUROX), making it a strong match.",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 8,
-      "source_idx": 118,
-      "source_name": "บัวพื้นโพลีสไตรีน TIMELESS KASSA รุ่น 1041-5420 ขนาด 290 x 0.8 x 9 ซม. สีไม้สัก",
-      "source_brand": "KASSA",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60328505",
-      "target_name": "บัวพื้น WPC CROBERN 7.5X245X1.5 ซม. สีโอ๊ค",
-      "target_brand": "CROBERN",
-      "target_url": "https://www.homepro.co.th/p/1189995",
-      "expected_url": "https://www.homepro.co.th/p/1173437",
-      "confidence": 70,
-      "reason": "The product type 'baseboard molding' matches 'baseboard', and it is from a preferred brand CROBERN. The dimensions are somewhat close (290x0.8 vs 7.5x245).",
-      "gt_status": "INCORRECT"
     },
     {
       "chunk": 8,
@@ -133,7 +77,7 @@
       "target_url": "https://www.homepro.co.th/p/286157",
       "expected_url": "https://www.homepro.co.th/p/1228500",
       "confidence": 95,
-      "reason": "Candidate 6 is a door hinge with identical dimensions, pack count, and a thickness that closely matches the source product (2.2 mm vs 2.2 mm), making it a strong spec match.",
+      "reason": "Candidate 6 is a door hinge with the exact same dimensions, pack count, and thickness as the source product, making it the closest match despite not being a preferred brand.",
       "gt_status": "INCORRECT"
     }
   ]

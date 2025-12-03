@@ -4,40 +4,12 @@
   "start_idx": 0,
   "end_idx": 15,
   "products_tested": 15,
-  "matches_found": 4,
+  "matches_found": 3,
   "correct": 0,
-  "incorrect": 3,
+  "incorrect": 2,
   "accuracy": 0.0,
-  "timestamp": "2025-12-03T10:53:25.920572",
+  "timestamp": "2025-12-03T12:30:10.188528",
   "matches": [
-    {
-      "chunk": 1,
-      "source_idx": 1,
-      "source_name": "สายยางใยเชือก 1/2 นิ้ว พร้อมโรล FONTE รุ่น MG2012 ยาว 21 เมตร",
-      "source_brand": "FONTE",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60324354",
-      "target_name": "สายยางเด้ง 5/8 x 20 เมตร *น้ำเงิน",
-      "target_brand": "ANYHOME",
-      "target_url": "https://www.boonthavorn.com/anyhome-1111122",
-      "expected_url": "https://www.boonthavorn.com/homemart-1111134",
-      "confidence": 60,
-      "reason": "The candidate is a hose, matching the product type. While the dimensions are different (5/8 inch vs 1/2 inch, 20M vs 21M), it's the closest spec match among preferred brands and within acceptable difference for length.",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 1,
-      "source_idx": 5,
-      "source_name": "โคมไฟหัวเสาภายนอก E27x1 LUZINO รุ่น GD-BL05-40 สีดำ - ใส",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60402145",
-      "target_name": "ไฟหัวเสา YF838S1 *น้ำตาล E27x1 60W",
-      "target_brand": "MAX LIGHT",
-      "target_url": "https://www.boonthavorn.com/max-light-1143594",
-      "expected_url": "https://www.boonthavorn.com/max-light-1060904",
-      "confidence": 90,
-      "reason": "The candidate is a 'pole lamp' (lantern is a sub-type) from a preferred brand with a high spec match for dimensions, socket type, and lamp type. Despite the slight difference in product type name from 'post lamp' to 'lantern', it's functionally the same, fitting Rule 1.",
-      "gt_status": "INCORRECT"
-    },
     {
       "chunk": 1,
       "source_idx": 7,
@@ -49,7 +21,7 @@
       "target_url": "https://www.boonthavorn.com/at-indy-115259",
       "expected_url": "https://www.boonthavorn.com/indy-1140736",
       "confidence": 95,
-      "reason": "The candidate is a 'roller brush part' with 'REFILL' type and 4 inch size, matching the source's 'paint roller spare part' with 'REFILL' type and 4 inch size, resulting in a 100% spec match.",
+      "reason": "Candidate 0 is a paint roller refill of the correct size (4 inch) and has a 100% spec match, making it an equivalent product. While not a preferred brand, its perfect spec match and critical product type alignment make it the best choice.",
       "gt_status": "INCORRECT"
     },
     {
@@ -63,8 +35,22 @@
       "target_url": "https://www.boonthavorn.com/max-light-1144016",
       "expected_url": "",
       "confidence": 60,
-      "reason": "Candidate 3 is the only other downlight with the highest preferred brand and a matching product type, although the color temperature differs.",
+      "reason": "Candidate 1 is a downlight (matching product type), from a preferred brand (MAX LIGHT), but has a significant mismatch in wattage (not specified) and color temperature (DAYLIGHT vs. WARMWHITE).",
       "gt_status": "NO_GT"
+    },
+    {
+      "chunk": 1,
+      "source_idx": 14,
+      "source_name": "แปรงทาสีขนสังเคราะห์ด้ามพลาสติก GIANT KINGKONG รุ่น FD05 ขนาด 3 นิ้ว",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60245647",
+      "target_name": "แปรงทาสี 3 นิ้ว C307 น้ำตาล",
+      "target_brand": "AT.INDY",
+      "target_url": "https://www.boonthavorn.com/at-indy-115103",
+      "expected_url": "https://www.boonthavorn.com/at-indy-1069312",
+      "confidence": 95,
+      "reason": "The candidate is a 'paint brush' type and has a 100% spec match on size (3 inch) with the source product, even though its brand is not preferred.",
+      "gt_status": "INCORRECT"
     }
   ]
 }

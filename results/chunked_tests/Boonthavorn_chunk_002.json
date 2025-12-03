@@ -4,12 +4,26 @@
   "start_idx": 15,
   "end_idx": 30,
   "products_tested": 15,
-  "matches_found": 7,
-  "correct": 2,
-  "incorrect": 4,
+  "matches_found": 4,
+  "correct": 1,
+  "incorrect": 2,
   "accuracy": 33.33333333333333,
-  "timestamp": "2025-12-03T10:54:22.405776",
+  "timestamp": "2025-12-03T12:30:43.837510",
   "matches": [
+    {
+      "chunk": 2,
+      "source_idx": 16,
+      "source_name": "โคมไฟผนังภายนอกอะลูมิเนียม E27x1 LUZINO รุ่น 2763-E27 สีดำ - ใส",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60406672",
+      "target_name": "ไฟผนัง O-001 E27x1 MAX 60W IP44",
+      "target_brand": "MAX LIGHT",
+      "target_url": "https://www.boonthavorn.com/max-light-1249472",
+      "expected_url": "https://www.boonthavorn.com/max-light-1060790",
+      "confidence": 90,
+      "reason": "Candidate 0 is a wall lamp from a highly preferred brand (MAX LIGHT) with the highest spec match (71%) and identical critical specs (socket E27x1, dimensions 27x1).",
+      "gt_status": "INCORRECT"
+    },
     {
       "chunk": 2,
       "source_idx": 19,
@@ -21,7 +35,7 @@
       "target_url": "https://www.boonthavorn.com/bih-1072224",
       "expected_url": "https://www.boonthavorn.com/bih-1072224",
       "confidence": 75,
-      "reason": "Candidate is the only 'pallet wrap film' product, matching product type and has relevant specs in description, also from a preferred brand.",
+      "reason": "Candidate 4 is the only pallet wrap film product, matching the critical product type, and has a comparable length specification.",
       "gt_status": "CORRECT"
     },
     {
@@ -35,7 +49,7 @@
       "target_url": "https://www.boonthavorn.com/max-light-1249472",
       "expected_url": "https://www.boonthavorn.com/max-light-1257089",
       "confidence": 90,
-      "reason": "Candidate 0 is the best match with the highest SpecMatch (73%) for an outdoor wall lamp and is from the top preferred brand (MAX LIGHT). All critical specs like socket type and lamp type match perfectly.",
+      "reason": "Candidate 0 is an outdoor wall lamp from the top preferred brand MAX LIGHT, with a high spec match of 71%, including matching dimensions and socket type.",
       "gt_status": "INCORRECT"
     },
     {
@@ -48,65 +62,9 @@
       "target_brand": "MAX LIGHT",
       "target_url": "https://www.boonthavorn.com/max-light-1144016",
       "expected_url": "",
-      "confidence": 75,
-      "reason": "Candidate 1 is the correct product type (downlight), is a preferred brand (MAX LIGHT), and has a color temperature match (DAYLIGHT), making it the closest available alternative despite the lower spec match.",
+      "confidence": 70,
+      "reason": "Candidate is a downlight and from a preferred brand, with a matching color temperature (DAYLIGHT). However, wattage and size are not specified for the candidate, leading to a lower spec match percentage.",
       "gt_status": "NO_GT"
-    },
-    {
-      "chunk": 2,
-      "source_idx": 22,
-      "source_name": "โคมไฟหัวเสาภายนอก E27x1 LUZINO VIETNAMESE รุ่น 0011-PF(BG) สีทองรมดำ",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60272330",
-      "target_name": "ไฟหัวเสา YF838S1 *น้ำตาล E27x1 60W",
-      "target_brand": "MAX LIGHT",
-      "target_url": "https://www.boonthavorn.com/max-light-1143594",
-      "expected_url": "https://www.boonthavorn.com/max-light-1143594",
-      "confidence": 75,
-      "reason": "The candidate is from the top preferred brand 'MAX LIGHT' and has the highest spec match (73%) for an 'outdoor post lamp', with matching socket type, dimensions, and lamp type.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 2,
-      "source_idx": 23,
-      "source_name": "โคมไฟเสาสนาม E27x1 LUZINO รุ่น RH1876D(BK) สีดำ",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60322158",
-      "target_name": "ไฟหัวเสา YF838S1 *น้ำตาล E27x1 60W",
-      "target_brand": "MAX LIGHT",
-      "target_url": "https://www.boonthavorn.com/max-light-1143594",
-      "expected_url": "https://www.boonthavorn.com/max-light-1249477",
-      "confidence": 75,
-      "reason": "Candidate 4 is a MAX LIGHT preferred brand and the only one matching 'post lamp' (POLE_LAMP) product type, with a 58% spec match on critical specifications like socket and dimensions.",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 2,
-      "source_idx": 26,
-      "source_name": "โคมดาวน์ไลท์หน้าเหลี่ยม 4 นิ้ว E27x2 Cylin LUZINO รุ่น PB4004-WH สีขาว",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60247120",
-      "target_name": "ดาวน์ไลท์ LED GL-DL-W15-PR 6500K DL",
-      "target_brand": "MAX LIGHT",
-      "target_url": "https://www.boonthavorn.com/max-light-1144016",
-      "expected_url": "https://www.boonthavorn.com/le-1223378",
-      "confidence": 60,
-      "reason": "Candidate 1 is the same product type (downlight), is a preferred brand (MAX LIGHT), and has some matching identifiers in the original product name, though specific specs are not detailed.",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 2,
-      "source_idx": 29,
-      "source_name": "อะไหล่ลูกกลิ้งทาสี GIANT KINGKONG รุ่น PR-007C ขนาด 7 นิ้ว",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60271305",
-      "target_name": "อะไหล่ขนลูกกลิ้ง 4 นิ้ว C30104 ขาว",
-      "target_brand": "AT.INDY",
-      "target_url": "https://www.boonthavorn.com/at-indy-115259",
-      "expected_url": "https://www.boonthavorn.com/somic-77681",
-      "confidence": 60,
-      "reason": "The candidate has the correct product type, roller_type, and a relevant size_inch, despite being a different size to the source.",
-      "gt_status": "INCORRECT"
     }
   ]
 }

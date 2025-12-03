@@ -4,11 +4,11 @@
   "start_idx": 120,
   "end_idx": 135,
   "products_tested": 15,
-  "matches_found": 7,
+  "matches_found": 6,
   "correct": 4,
-  "incorrect": 3,
-  "accuracy": 57.14285714285714,
-  "timestamp": "2025-12-03T10:09:31.818240",
+  "incorrect": 2,
+  "accuracy": 66.66666666666666,
+  "timestamp": "2025-12-03T12:07:43.837433",
   "matches": [
     {
       "chunk": 9,
@@ -16,12 +16,12 @@
       "source_name": "โคมไฟหัวเสาภายนอก E27x1 LUZINO RARE HOUSE รุ่น 0288-PF-B(BK) สีดำ",
       "source_brand": "LUZINO",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60272336",
-      "target_name": "ไฟหัวเสา CARINI 5018S/N สีดำ",
+      "target_name": "ไฟหัวเสา CARINI C036/250 สีทองรมดำ",
       "target_brand": "CARINI",
-      "target_url": "https://www.homepro.co.th/p/1074150",
+      "target_url": "https://www.homepro.co.th/p/1004031",
       "expected_url": "https://www.homepro.co.th/p/1032598",
-      "confidence": 65,
-      "reason": "Highest spec match (40%) and preferred brand (CARINI #1) among candidates that are also 'post lamp' type. Price is lower than source which can be a good alternative.",
+      "confidence": 60,
+      "reason": "The candidate has a very high spec match (40%) and is from the most preferred brand (CARINI), with the correct product type (POLE_LAMP).",
       "gt_status": "INCORRECT"
     },
     {
@@ -30,12 +30,12 @@
       "source_name": "ลังโปร่งทรงเตี้ย พร้อมหูจับ KASSA HOME รุ่น STW-DD สีดำ",
       "source_brand": "KASSA HOME",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60251504",
-      "target_name": "กล่องเก็บของ STACKO 2006 39X55X28 ซม. สีเทา",
-      "target_brand": "STACKO",
-      "target_url": "https://www.homepro.co.th/p/1120669",
+      "target_name": "ตะกร้าผ้าเหลี่ยมเตี้ย PLIM SAAN SIZE S สีน้ำตาล",
+      "target_brand": "PLIM",
+      "target_url": "https://www.homepro.co.th/p/1238135",
       "expected_url": "https://www.homepro.co.th/p/1012200",
-      "confidence": 60,
-      "reason": "The candidate is a 'storage box' from the most preferred brand STACKO, with a 50% spec match, making it the closest fit in terms of product type and brand preference.",
+      "confidence": 70,
+      "reason": "The candidate has the correct product type, a preferred brand, and the highest spec match among valid options.",
       "gt_status": "INCORRECT"
     },
     {
@@ -49,22 +49,8 @@
       "target_url": "https://www.homepro.co.th/p/1173468",
       "expected_url": "https://www.homepro.co.th/p/1173468",
       "confidence": 95,
-      "reason": "Candidate 0 is a plastic canvas roll of the preferred brand SPRING with a 100% spec match in size and similar identifiers.",
+      "reason": "The candidate is a preferred brand (SPRING) with 100% spec match, exact product type (canvas is a type of tarp), and is a good price alternative.",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 9,
-      "source_idx": 128,
-      "source_name": "ชุดไม้กวาดพร้อมที่โกยผงด้ามสแตนเลสแบบยาว LIAO รุ่น C130024 ขนาด 85 ซม. สีแดง - เทา",
-      "source_brand": "LIAO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60284486",
-      "target_name": "ชุดไม้กวาดพร้อมที่โกยผง ด้ามสเตนเลส ACCO XG-2066 12 นิ้ว สีครีม",
-      "target_brand": "ACCO",
-      "target_url": "https://www.homepro.co.th/p/1016460",
-      "expected_url": "https://www.homepro.co.th/p/1083202",
-      "confidence": 75,
-      "reason": "Candidate 0 is the correct product type (broom and dustpan set), is from the highest preferred brand (ACCO), and has the highest SpecMatch for relevant specs despite the length mismatch, which is within an acceptable range for a functional equivalent.",
-      "gt_status": "INCORRECT"
     },
     {
       "chunk": 9,
@@ -76,8 +62,8 @@
       "target_brand": "CARINI",
       "target_url": "https://www.homepro.co.th/p/1170703",
       "expected_url": "https://www.homepro.co.th/p/1170703",
-      "confidence": 75,
-      "reason": "The candidate is the same product type (exterior wall lamp), is from the highest preferred brand (CARINI), and has the highest SpecMatch (40%) among relevant candidates.",
+      "confidence": 85,
+      "reason": "Candidate 0 is a CARINI brand (preferred #1) and a wall lamp, matching the critical product type and having the highest spec match among wall lamps.",
       "gt_status": "CORRECT"
     },
     {
@@ -91,7 +77,7 @@
       "target_url": "https://www.homepro.co.th/p/242081",
       "expected_url": "https://www.homepro.co.th/p/242081",
       "confidence": 95,
-      "reason": "The candidate is also a trash can with the same volume (9L) and a high SpecMatch percentage, making it a very strong equivalent despite being a different brand.",
+      "reason": "The candidate is a 'trash can', which perfectly matches the 'dustbin' type of the source product, and has 100% spec match for volume.",
       "gt_status": "CORRECT"
     },
     {
@@ -104,8 +90,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1234375",
       "expected_url": "https://www.homepro.co.th/p/1234375",
-      "confidence": 80,
-      "reason": "Candidate 0 is a preferred brand (MATALL) and has a 100% spec match for size. Although the source is a 'shellac brush' and the candidate is a 'paint brush', these are often interchangeable in general brush categories where a specific shellac brush equivalent might not be available, and the core function of applying liquid with a brush is the same. The product type is broadly similar enough.",
+      "confidence": 75,
+      "reason": "Candidate is a paint brush (similar to shellac brush) from a preferred brand (MATALL) with 100% spec match for size.",
       "gt_status": "CORRECT"
     }
   ]

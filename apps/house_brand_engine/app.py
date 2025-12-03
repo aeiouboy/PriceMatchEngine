@@ -392,6 +392,8 @@ PRODUCT_LINE_CONFLICTS = [
     ('surface mount', 'recessed'),
     # Sink cabinet single vs double - CRITICAL
     ('บานซิงค์คู่', 'บานซิงค์เดี่ยว'),
+    ('ซิงค์คู่', 'เดี่ยว'),
+    ('คู่ใต้เตา', 'เดี่ยว'),
     ('double sink', 'single sink'),
     # Electrical outlet ground vs no ground
     ('มีกราวด์', 'ไม่มีกราวด์'),
@@ -442,6 +444,64 @@ PRODUCT_LINE_CONFLICTS = [
     ('ห้องน้ำ', 'ห้องนอน'),
     ('bathroom lock', 'bedroom lock'),
     ('privacy lock', 'passage lock'),
+    # Brush types - shellac vs varnish vs oil paint - CRITICAL
+    ('แชล็ค', 'วานิช'),
+    ('แชล็ค', 'น้ำมัน'),
+    ('shellac', 'varnish'),
+    ('shellac', 'oil'),
+    # Sofa seating count - CRITICAL
+    ('1 ที่นั่ง', '2 ที่นั่ง'),
+    ('1 ที่นั่ง', '3 ที่นั่ง'),
+    ('2 ที่นั่ง', '3 ที่นั่ง'),
+    ('1 seat', '2 seat'),
+    ('2 seat', '3 seat'),
+    # Cloth vs tissue/paper products
+    ('ผ้าเช็ด', 'ทิชชู่'),
+    ('ผ้าเช็ด', 'กระดาษ'),
+    ('cloth', 'tissue'),
+    ('cloth', 'paper'),
+    # Cable tie size conflicts
+    ('x 250', 'x 200'),
+    ('x 300', 'x 250'),
+    ('x 300', 'x 200'),
+    # Downlight type - socket-based (E27) vs integrated LED - CRITICAL
+    ('E27x1', 'วัตต์ DAYLIGHT'),
+    ('E27x2', 'วัตต์ DAYLIGHT'),
+    ('E27x1', 'วัตต์ WARMWHITE'),
+    ('E27x2', 'วัตต์ WARMWHITE'),
+    ('E27x1', 'W DAYLIGHT'),
+    ('E27x2', 'W DAYLIGHT'),
+    # Volume/capacity differences for storage
+    ('42 ลิตร', '30 ลิตร'),
+    ('60 ลิตร', '42 ลิตร'),
+    ('60 ลิตร', '30 ลิตร'),
+    # Color conflicts for lighting fixtures - CRITICAL
+    ('สีดำ', 'น้ำตาล'),
+    ('ดำ', 'น้ำตาล'),
+    ('black', 'brown'),
+    ('ขาว', 'ดำ'),
+    ('สีขาว', 'สีดำ'),
+    ('white', 'black'),
+    # Brush bristle types - CRITICAL
+    ('ขนสัตว์', 'ขนสังเคราะห์'),
+    ('natural bristle', 'synthetic'),
+    # LED wattage vs E27 socket - different product types
+    ('LED 2x3W', 'E27x1'),
+    ('LED 6W', 'E27x1'),
+    ('LED 9W', 'E27x1'),
+    ('LED 12W', 'E27x1'),
+    ('LED 15W', 'E27x1'),
+    # E27x2 vs LED integrated - different products
+    ('E27x2', 'LED GL'),
+    ('E27x2', 'LED 15W'),
+    ('E27x2', 'LED 9W'),
+    # Chemical roller vs regular roller
+    ('ลูกกลิ้งเคมี', 'อะไหล่ขน'),
+    ('ทาสีเคมี', 'อะไหล่ขน'),
+    ('chemical roller', 'paint roller refill'),
+    # Fiberglass vs foam roller
+    ('ไฟเบอร์กลาส', 'โฟม'),
+    ('fiberglass', 'foam'),
 ]
 
 def extract_volume_liters(name):
@@ -558,6 +618,39 @@ def has_product_conflict(source_name, target_name):
         if source_inch and target_inch:
             if int(source_inch.group(1)) != int(target_inch.group(1)):
                 return True
+
+    # Socket COUNT conflict for lighting - E27x2 vs E27x1 are different products
+    socket_count_pattern = r'E27[xX×](\d+)'
+    source_socket_count = re.search(socket_count_pattern, source_name, re.IGNORECASE)
+    target_socket_count = re.search(socket_count_pattern, target_name, re.IGNORECASE)
+    if source_socket_count and target_socket_count:
+        if source_socket_count.group(1) != target_socket_count.group(1):
+            return True
+
+    # Hose diameter conflict - CRITICAL: 1/2" vs 5/8" vs 3/4" are incompatible
+    hose_keywords = ['สายยาง', 'hose', 'ยางรด']
+    is_source_hose = any(kw in source_lower for kw in hose_keywords)
+    is_target_hose = any(kw in target_lower for kw in hose_keywords)
+    if is_source_hose and is_target_hose:
+        # Match fraction patterns like 1/2, 5/8, 3/4
+        frac_pattern = r'(\d+/\d+)'
+        source_frac = re.search(frac_pattern, source_name)
+        target_frac = re.search(frac_pattern, target_name)
+        if source_frac and target_frac:
+            if source_frac.group(1) != target_frac.group(1):
+                return True
+
+    # Downlight shape conflict - square vs round face
+    downlight_keywords = ['ดาวน์ไลท์', 'downlight']
+    is_source_downlight = any(kw in source_lower for kw in downlight_keywords)
+    is_target_downlight = any(kw in target_lower for kw in downlight_keywords)
+    if is_source_downlight and is_target_downlight:
+        source_square = 'เหลี่ยม' in source_lower or 'square' in source_lower
+        source_round = 'กลม' in source_lower or 'round' in source_lower
+        target_square = 'เหลี่ยม' in target_lower or 'square' in target_lower
+        target_round = 'กลม' in target_lower or 'round' in target_lower
+        if (source_square and target_round) or (source_round and target_square):
+            return True
 
     return False
 

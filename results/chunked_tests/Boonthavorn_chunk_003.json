@@ -4,11 +4,11 @@
   "start_idx": 30,
   "end_idx": 45,
   "products_tested": 15,
-  "matches_found": 5,
-  "correct": 1,
-  "incorrect": 4,
-  "accuracy": 20.0,
-  "timestamp": "2025-12-03T10:54:56.087165",
+  "matches_found": 4,
+  "correct": 2,
+  "incorrect": 2,
+  "accuracy": 50.0,
+  "timestamp": "2025-12-03T12:31:18.931394",
   "matches": [
     {
       "chunk": 3,
@@ -20,8 +20,8 @@
       "target_brand": "LIGHTMOST",
       "target_url": "https://www.boonthavorn.com/lightmost-1208338",
       "expected_url": "https://www.boonthavorn.com/lightmost-1208338",
-      "confidence": 70,
-      "reason": "The candidate is a pendant light (matching type) from a preferred brand (LIGHTMOST) and has a good spec match for dimensions and socket, despite lower overall spec match due to missing additional identifiers.",
+      "confidence": 85,
+      "reason": "The candidate is a hanging lamp, a preferred brand, and has a good spec match for dimensions and socket type with the source product.",
       "gt_status": "CORRECT"
     },
     {
@@ -30,12 +30,12 @@
       "source_name": "โคมไฟผนังภายนอกอะลูมิเนียม E27x1 LUZINO รุ่น GD-AWY31 สีดำ - ใส",
       "source_brand": "LUZINO",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60402136",
-      "target_name": "ไฟผนัง MAX LIGHT/YF2003A(S) E27x1",
+      "target_name": "ไฟผนัง O-001 E27x1 MAX 60W IP44",
       "target_brand": "MAX LIGHT",
-      "target_url": "https://www.boonthavorn.com/max-light-1060903",
+      "target_url": "https://www.boonthavorn.com/max-light-1249472",
       "expected_url": "https://www.boonthavorn.com/yj-2180a-1-e27x1",
-      "confidence": 95,
-      "reason": "Candidate 1 (MAX LIGHT) is a preferred brand for wall lamps, has a high spec match (73%), and all critical specs align with the source product, specifically the 'wall lamp' type and 'E27x1' socket.",
+      "confidence": 90,
+      "reason": "The candidate has a high SpecMatch percentage (71%), is from the most preferred brand (MAX LIGHT), and is the correct product type (wall lamp), matching the critical specs of the source product.",
       "gt_status": "INCORRECT"
     },
     {
@@ -48,8 +48,8 @@
       "target_brand": "AT.INDY",
       "target_url": "https://www.boonthavorn.com/at-indy-115100",
       "expected_url": "https://www.boonthavorn.com/hachi-1218464",
-      "confidence": 95,
-      "reason": "The candidate is a paint brush of the same size (2 inches) as the source, even though it's not a preferred brand.",
+      "confidence": 85,
+      "reason": "The candidate is the same product type (paint brush) and has a 100% spec match for size, though not a preferred brand. The source product type is \"wool paint brush\" and candidate is \"paint brush,\" which is an acceptable product type match.",
       "gt_status": "INCORRECT"
     },
     {
@@ -58,27 +58,13 @@
       "source_name": "โคมแทรคไลท์เข้าราง E27x1 PAR30 LUZINO รุ่น LP03-WH สีขาว",
       "source_brand": "LUZINO",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60320102",
-      "target_name": "แท็คไลท์ YD-WA8004 ดำ E27x1",
+      "target_name": "แท็คไลท์ YD-WA8004 ขาว",
       "target_brand": "MAX LIGHT",
-      "target_url": "https://www.boonthavorn.com/max-light-1101335",
+      "target_url": "https://www.boonthavorn.com/max-light-1101349",
       "expected_url": "https://www.boonthavorn.com/max-light-1101349",
-      "confidence": 75,
-      "reason": "The candidate has the exact matching product type (track light), preferred brand (MAX LIGHT), and a high SpecMatch% due to matching dimensions and socket type.",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 3,
-      "source_idx": 40,
-      "source_name": "โคมไฟผนังภายนอกอะลูมิเนียม LED 2x3W Warm White LUZINO รุ่น GD-AWZ17-BK สีดำ",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60404640",
-      "target_name": "TH-ET ไฟผนัง LED SZ-L619587 8W *ขาว IP54",
-      "target_brand": "MAX LIGHT",
-      "target_url": "https://www.boonthavorn.com/max-light-1257088",
-      "expected_url": "https://www.boonthavorn.com/le-1226422",
       "confidence": 70,
-      "reason": "The candidate is a preferred brand (MAX LIGHT) and is an outdoor wall lamp, matching the product type. While the wattage is higher (8W vs 3W), it is the closest match among preferred brands for the critical 'outdoor wall lamp' type and has a reasonable SpecMatch of 39%.",
-      "gt_status": "INCORRECT"
+      "reason": "The candidate has the exact same product type and is from a highly preferred brand (MAX LIGHT). Although spec match is 0%, the product type and brand preference make it the most suitable alternative among weak options.",
+      "gt_status": "CORRECT"
     }
   ]
 }

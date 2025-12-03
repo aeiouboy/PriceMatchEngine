@@ -4,25 +4,25 @@
   "start_idx": 180,
   "end_idx": 195,
   "products_tested": 15,
-  "matches_found": 6,
-  "correct": 3,
-  "incorrect": 3,
+  "matches_found": 8,
+  "correct": 4,
+  "incorrect": 4,
   "accuracy": 50.0,
-  "timestamp": "2025-12-03T10:12:45.644485",
+  "timestamp": "2025-12-03T12:21:34.271547",
   "matches": [
     {
       "chunk": 13,
-      "source_idx": 181,
-      "source_name": "ชั้นวางพลาสติก 3 ชั้น แบบเข้ามุม Circle KASSA HOME รุ่น API-10302-3 ขนาด 41.3 x 27 x 58.5 ซม. สีขาว",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60404705",
-      "target_name": "ชั้นเข้ามุมพลาสติก 2 ชั้น CSP 247-2 สีขาว",
-      "target_brand": "CSP",
-      "target_url": "https://www.homepro.co.th/p/292319",
-      "expected_url": "https://www.homepro.co.th/p/229486",
-      "confidence": 60,
-      "reason": "The candidate is a corner shelf, matching the product type, and has a similar product name concept. Although it has 2 tiers instead of 3, other options are not shelves or have much lower spec match. Since no options are ideal, this is the best available.",
-      "gt_status": "INCORRECT"
+      "source_idx": 180,
+      "source_name": "แปรงทาสีน้ำมันขนสัตว์ด้ามไม้ GIANT KINGKONG รุ่น PB-037-2 ขนาด 2 นิ้ว",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60271279",
+      "target_name": "แปรงทาสีน้ำมัน FONKEY 2 นิ้ว",
+      "target_brand": "FONKEY",
+      "target_url": "https://www.homepro.co.th/p/1158408",
+      "expected_url": "https://www.homepro.co.th/p/1158408",
+      "confidence": 85,
+      "reason": "Candidate 9 is an oil paint brush of the same size (2 inch) as the source, matching the critical product type and size specifications.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 13,
@@ -35,7 +35,7 @@
       "target_url": "https://www.homepro.co.th/p/1115049",
       "expected_url": "https://www.homepro.co.th/p/1137997",
       "confidence": 95,
-      "reason": "The candidate is a waterproof box with matching dimensions and size, with a high spec match percentage.",
+      "reason": "Candidate 2 is the best match as it has 100% spec match, the exact product type 'waterproof box' and is within an acceptable price range, despite not being a preferred brand.",
       "gt_status": "INCORRECT"
     },
     {
@@ -49,8 +49,22 @@
       "target_url": "https://www.homepro.co.th/p/1049741",
       "expected_url": "https://www.homepro.co.th/p/1049741",
       "confidence": 75,
-      "reason": "Candidate is the same product type, a preferred brand (MATALL), and shares the same model identifier (HL3042-P) as the source, despite a lower SpecMatch% overall due to missing other detailed specs.",
+      "reason": "Candidate 15 is the only 'tool box' type product that matches the model number and is from the preferred brand MATALL, despite a low SpecMatch percentage due to the lack of explicit size and tier information in the candidate's specs.",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 13,
+      "source_idx": 186,
+      "source_name": "โต๊ะสนาม HDPE FONTE รุ่น SLA-78 ขนาด 78 x 78 ซม. สีเทา - ขาว",
+      "source_brand": "FONTE",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60334910",
+      "target_name": "โต๊ะอเนกประสงค์พับครึ่ง 3 ระดับ SPRING 120 ซม. สีเทา",
+      "target_brand": "SPRING",
+      "target_url": "https://www.homepro.co.th/p/1182198",
+      "expected_url": "https://www.homepro.co.th/p/1106548",
+      "confidence": 60,
+      "reason": "The candidate is a folding table, matching the critical product type. It is also from the preferred brand 'SPRING', although the dimensions are different (120 cm vs 78 cm) which reduces the spec match.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 13,
@@ -62,8 +76,8 @@
       "target_brand": "CARINI",
       "target_url": "https://www.homepro.co.th/p/1091371",
       "expected_url": "https://www.homepro.co.th/p/1091371",
-      "confidence": 90,
-      "reason": "Candidate 3 is a track light, matching the product type, and is from the preferred brand CARINI with a relevant model identifier (GU5).",
+      "confidence": 85,
+      "reason": "Candidate 3 is the only track light with a preferred brand (CARINI, PREFERRED#1) and has the highest relevant spec match among all track lights.",
       "gt_status": "CORRECT"
     },
     {
@@ -76,9 +90,23 @@
       "target_brand": "PACK IN",
       "target_url": "https://www.homepro.co.th/p/1153132",
       "expected_url": "https://www.homepro.co.th/p/1153132",
-      "confidence": 70,
-      "reason": "Candidate 0 is a packing tape, matching the product type, has a preferred brand (PACK IN), and matches the key spec 'X 45' with 50% SpecMatch.",
+      "confidence": 75,
+      "reason": "Candidate 0 is the only packing tape and has a 50% spec match, making it the best available option, aligning with a preferred brand.",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 13,
+      "source_idx": 192,
+      "source_name": "หม้อด้ามเคลือบเซรามิก 18 ซม. พร้อมฝาแก้ว Gracie KASSA HOME รุ่น ED-0102 สีเขียว",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60370061",
+      "target_name": "หม้อด้ามพร้อมฝาแก้ว 18 ซม. TEFAL PRIMARY IH",
+      "target_brand": "TEFAL",
+      "target_url": "https://www.homepro.co.th/p/1169003",
+      "expected_url": "https://www.homepro.co.th/p/1184683",
+      "confidence": 95,
+      "reason": "Candidate 4 is a 'saucepan' which is a very close product type to 'pot with lid', has the exact same critical length spec (18CM), and is the highest spec match after filtering by product type.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 13,
@@ -90,8 +118,8 @@
       "target_brand": "DEXZON",
       "target_url": "https://www.homepro.co.th/p/1178949",
       "expected_url": "https://www.homepro.co.th/p/1157496",
-      "confidence": 90,
-      "reason": "Candidate 0 (DEXZON) is the only product with a matching product type (silicone gun is a close equivalent to caulking gun) and exactly matches the critical 'size_inch' spec (9 inch) while being a PREFERRED brand.",
+      "confidence": 95,
+      "reason": "Candidate 0 is a 'silicone gun' which is functionally equivalent to a 'caulking gun' and matches the critical size spec and is a preferred brand (DEXZON).",
       "gt_status": "INCORRECT"
     }
   ]

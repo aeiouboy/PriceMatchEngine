@@ -4,11 +4,11 @@
   "start_idx": 150,
   "end_idx": 165,
   "products_tested": 15,
-  "matches_found": 5,
-  "correct": 4,
+  "matches_found": 4,
+  "correct": 3,
   "incorrect": 1,
-  "accuracy": 80.0,
-  "timestamp": "2025-12-03T10:11:06.921311",
+  "accuracy": 75.0,
+  "timestamp": "2025-12-03T12:19:43.987911",
   "matches": [
     {
       "chunk": 11,
@@ -20,8 +20,8 @@
       "target_brand": "ELECKTA",
       "target_url": "https://www.homepro.co.th/p/1167863",
       "expected_url": "https://www.homepro.co.th/p/1167863",
-      "confidence": 85,
-      "reason": "The candidate is a cable reel, which matches the source product type. It has a high SpecMatch (57%) and is a PREFERRED brand (ELECKTA, PREFERRED#2), with matching length and number of outlets.",
+      "confidence": 90,
+      "reason": "The candidate is the same product type (cable reel), from a preferred brand (ELECKTA), and has the highest SpecMatch (57%) with matching length (20M) and number of outlets (4).",
       "gt_status": "CORRECT"
     },
     {
@@ -35,22 +35,8 @@
       "target_url": "https://www.homepro.co.th/p/1150070",
       "expected_url": "https://www.homepro.co.th/p/1138783",
       "confidence": 75,
-      "reason": "The candidate is a preferred brand (STACKO), has the same number of tiers (5), and closely matches the dimensions of the source product, making it the best alternative despite a 49% SpecMatch.",
+      "reason": "The candidate has the highest SpecMatch% among preferred brands and is the correct product type (drawer cabinet is a sub-type of storage cabinet), with matching tiers, and dimensions within an acceptable range.",
       "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 11,
-      "source_idx": 158,
-      "source_name": "ถังขยะมีล้อและที่เหยียบ GIANT KINGKONG YY-240C-YL ความจุ 240 ลิตร สีเหลือง",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60243738",
-      "target_name": "ถังขยะเหลี่ยมขาเหยียบ ฝาเปิด-ปิด ACCO 240 ลิตร สีเหลือง",
-      "target_brand": "ACCO",
-      "target_url": "https://www.homepro.co.th/p/1154492",
-      "expected_url": "https://www.homepro.co.th/p/1154492",
-      "confidence": 90,
-      "reason": "Highest SpecMatch% (100%) and same product type (trash can) and volume (240 L). Although not a preferred brand, it's the only one that matches the core specifications.",
-      "gt_status": "CORRECT"
     },
     {
       "chunk": 11,
@@ -63,7 +49,7 @@
       "target_url": "https://www.homepro.co.th/p/1181331",
       "expected_url": "https://www.homepro.co.th/p/1181331",
       "confidence": 95,
-      "reason": "The candidate is a door knob for the bathroom, matching the critical product type and specific room type, and has a very similar model number to the source product (5791BK-SS vs K5791BKSS).",
+      "reason": "The candidate has the most similar model number (K5791BKSS vs 5791BK-SS) and the product type and key spec (knob_room=BATHROOM) match exactly. Although not a preferred brand, it's the closest spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -77,7 +63,7 @@
       "target_url": "https://www.homepro.co.th/p/1168235",
       "expected_url": "https://www.homepro.co.th/p/1168235",
       "confidence": 100,
-      "reason": "Candidate 0 is a perfect match for product type (twine is a subtype of plastic rope) and all key specs (length=140M) and is from the highest preferred brand (DEXZON).",
+      "reason": "Candidate 0 is a rope product, exactly matching the source's critical product type. It matches all key specifications (length=140M) and is from the highest preferred brand (DEXZON), resulting in a 100% spec match.",
       "gt_status": "CORRECT"
     }
   ]

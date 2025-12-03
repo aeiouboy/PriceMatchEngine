@@ -4,11 +4,11 @@
   "start_idx": 165,
   "end_idx": 180,
   "products_tested": 15,
-  "matches_found": 9,
-  "correct": 5,
+  "matches_found": 8,
+  "correct": 4,
   "incorrect": 4,
-  "accuracy": 55.55555555555556,
-  "timestamp": "2025-12-03T10:11:55.087499",
+  "accuracy": 50.0,
+  "timestamp": "2025-12-03T12:20:46.802148",
   "matches": [
     {
       "chunk": 12,
@@ -16,12 +16,12 @@
       "source_name": "ไม้แขวนเสื้อไม้ หัวเหล็กชุปโครม KASSA HOME รุ่น L6611N/5 (แพ็ก 5 ชิ้น) สีธรรมชาติ",
       "source_brand": "KASSA HOME",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60253287",
-      "target_name": "ไพพ์แฮงเกอร์ UROD U-HENG 2 นิ้ว 5 ชิ้น",
-      "target_brand": "U-HENG",
-      "target_url": "https://www.homepro.co.th/p/1119255",
+      "target_name": "ไม้แขวนเสื้อ PLIM H-059 สีขาว แพ็ก 6 ชิ้น",
+      "target_brand": "PLIM",
+      "target_url": "https://www.homepro.co.th/p/1249480",
       "expected_url": "https://www.homepro.co.th/p/1079882",
-      "confidence": 60,
-      "reason": "Candidate 1 is the only other product with matching type 'hanger' and pack count of 5, despite the brand being different and not preferred.",
+      "confidence": 70,
+      "reason": "The candidate is also a hanger, from a preferred brand (PLIM), and has a pack count (6 pcs) that is close to the source's (5 pcs), resulting in the highest relevant SpecMatch%.",
       "gt_status": "INCORRECT"
     },
     {
@@ -35,7 +35,7 @@
       "target_url": "https://www.homepro.co.th/p/1104652",
       "expected_url": "https://www.homepro.co.th/p/1104652",
       "confidence": 60,
-      "reason": "The candidate has a preferred brand (STACKO), matches the product type (drawer cabinet is a sub-type of storage cabinet), has 4 tiers and similar dimensions to the source product (40x59 vs 58x40, and 90.8cm vs 93.5cm length).",
+      "reason": "The candidate is a 'drawer cabinet' with 4 tiers and a preferred brand (STACKO), but dimensions are a bit different, leading to a 49% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -48,23 +48,9 @@
       "target_brand": "STANLEY",
       "target_url": "https://www.homepro.co.th/p/288240",
       "expected_url": "https://www.homepro.co.th/p/1170344",
-      "confidence": 75,
-      "reason": "The candidate is a 'heat gun' which is a synonym for 'hot air blower' and has a 100% SpecMatch for wattage, but is not a preferred brand.",
+      "confidence": 100,
+      "reason": "Candidate is the same product type (heat gun) and has 100% spec match for wattage, which is a critical spec.",
       "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 12,
-      "source_idx": 171,
-      "source_name": "กล่องกระดาษ 3 ชั้น ฝาชน GIANT KINGKONG รุ่น KI125/M-3C ขนาด 31 x 36 x 26 ซม. สีน้ำตาล",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60312444",
-      "target_name": "กล่องฝาปิด PACK IN 31X36X26 ซม.",
-      "target_brand": "PACK IN",
-      "target_url": "https://www.homepro.co.th/p/194753",
-      "expected_url": "https://www.homepro.co.th/p/194753",
-      "confidence": 85,
-      "reason": "The candidate is from a preferred brand (PACK IN) and has a similar product type (box vs cardboard box). It also shares critical dimensions (31x36x26CM) with the source product, resulting in a good SpecMatch of 63%.",
-      "gt_status": "CORRECT"
     },
     {
       "chunk": 12,
@@ -77,7 +63,7 @@
       "target_url": "https://www.homepro.co.th/p/1200199",
       "expected_url": "https://www.homepro.co.th/p/1032598",
       "confidence": 75,
-      "reason": "The candidate has the highest spec match percentage among preferred brands and is a 'post lamp' which is a close synonym for 'post cap lamp'.",
+      "reason": "The best matching product is a CARINI outdoor post lamp with 40% spec match, which is the exact product type and from a highly preferred brand.",
       "gt_status": "INCORRECT"
     },
     {
@@ -90,8 +76,8 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/1104652",
       "expected_url": "https://www.homepro.co.th/p/1102758",
-      "confidence": 65,
-      "reason": "Candidate 2 is the best match as it shares the same product type (drawer cabinet) and has a preferred brand (STACKO), with a reasonable spec match of 63% which is the highest among other cabinets.",
+      "confidence": 70,
+      "reason": "Candidate 2 is a drawer cabinet (similar to storage cabinet), has a preferred brand (STACKO), matches the 4 tiers and 90cm length closely, and has a good SpecMatch of 63%.",
       "gt_status": "INCORRECT"
     },
     {
@@ -104,8 +90,8 @@
       "target_brand": "ELEKTRA",
       "target_url": "https://www.homepro.co.th/p/1092084",
       "expected_url": "https://www.homepro.co.th/p/1092084",
-      "confidence": 70,
-      "reason": "Candidate 0 is the correct product type (cable tie), matches the size (8 inch) and pack count (100 lines/pcs), and has the highest SpecMatch%.",
+      "confidence": 60,
+      "reason": "Highest spec match among cable ties (55%), but not a preferred brand. Other cable tie options are similar but also not preferred.",
       "gt_status": "CORRECT"
     },
     {
@@ -118,8 +104,8 @@
       "target_brand": "COLOR KIT",
       "target_url": "https://www.homepro.co.th/p/1170031",
       "expected_url": "https://www.homepro.co.th/p/1170031",
-      "confidence": 100,
-      "reason": "Candidate 0 is the correct product type (mortar and pestle) and has a 100% spec match for the critical 'size_inch' spec, despite not being a preferred brand.",
+      "confidence": 95,
+      "reason": "Candidate 0 is a perfect spec match (size_inch=6 inch) and the product type 'mortar and pestle' is a direct match for 'stone mortar'.",
       "gt_status": "CORRECT"
     },
     {
@@ -132,8 +118,8 @@
       "target_brand": "TARA",
       "target_url": "https://www.homepro.co.th/p/1218486",
       "expected_url": "https://www.homepro.co.th/p/1218486",
-      "confidence": 60,
-      "reason": "The candidate is a tile leveling device, matching the product type, and TARA is a preferred brand (#2).",
+      "confidence": 75,
+      "reason": "Candidate 6 is the only alternative that is also a 'tile leveling wedge' product type, although its spec match percentage is 0% it is the only viable option given the critical product type constraint. It is also from a preferred brand.",
       "gt_status": "CORRECT"
     }
   ]

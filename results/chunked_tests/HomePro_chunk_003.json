@@ -4,11 +4,11 @@
   "start_idx": 30,
   "end_idx": 45,
   "products_tested": 15,
-  "matches_found": 4,
-  "correct": 2,
-  "incorrect": 2,
+  "matches_found": 2,
+  "correct": 1,
+  "incorrect": 1,
   "accuracy": 50.0,
-  "timestamp": "2025-12-03T10:04:28.345846",
+  "timestamp": "2025-12-03T12:01:45.634948",
   "matches": [
     {
       "chunk": 3,
@@ -20,8 +20,8 @@
       "target_brand": "AIKO",
       "target_url": "https://www.homepro.co.th/p/1147572",
       "expected_url": "https://www.homepro.co.th/p/1147572",
-      "confidence": 60,
-      "reason": "Candidate is the same product type (เตาแก๊สปิกนิก), has a preferred brand (AIKO), and has a 50% spec match with an identifier match, making it the closest alternative.",
+      "confidence": 90,
+      "reason": "The candidate is a 'picnic stove' with a preferred brand (AIKO) and has a SpecMatch of 50%, which is the highest among relevant options after filtering for product type.",
       "gt_status": "CORRECT"
     },
     {
@@ -34,37 +34,9 @@
       "target_brand": "PLIM",
       "target_url": "https://www.homepro.co.th/p/1249480",
       "expected_url": "https://www.homepro.co.th/p/1221406",
-      "confidence": 95,
-      "reason": "The candidate is a clothes hanger from a preferred brand (PLIM) with an exact match on pack count (6 pcs) and 100% spec match.",
+      "confidence": 100,
+      "reason": "The candidate is a clothes hanger, has the same pack count (6 pcs), and is from a preferred brand (PLIM).",
       "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 3,
-      "source_idx": 39,
-      "source_name": "โคมดาวน์ไลท์หน้าเหลี่ยมแบบปิด 4 นิ้ว E27x1 Carry LUZINO รุ่น P4003-G-WH สีขาว",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60247113",
-      "target_name": "ดาวน์ไลท์ LED RACER EVO TECH 4 นิ้ว 9 วัตต์ DAYLIGHT สีขาว",
-      "target_brand": "RACER",
-      "target_url": "https://www.homepro.co.th/p/1145118",
-      "expected_url": "https://www.homepro.co.th/p/274799",
-      "confidence": 60,
-      "reason": "The candidate has the exact same product type (downlight) and size_inch, with a reasonable SpecMatch%.",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 3,
-      "source_idx": 44,
-      "source_name": "เหล็กเพลทสี่เหลี่ยมหนา 6 มม. (เจาะรู 1.2ซม.) GIANT KINGKONG รุ่น HSD-1050-50 ขนาด 4 x 4 นิ้ว",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60315066",
-      "target_name": "แผ่นเหล็กเพลทเหลี่ยม (เจาะรู 3/8 นิ้ว) BIH 4X4X1/4 นิ้ว",
-      "target_brand": "BIH",
-      "target_url": "https://www.homepro.co.th/p/1144388",
-      "expected_url": "https://www.homepro.co.th/p/1144388",
-      "confidence": 75,
-      "reason": "Candidate 15 is a 'แผ่นเหล็กเพลทเหลี่ยม' (square steel plate), which is the closest product type to 'เหล็กเพลทสี่เหลี่ยม' (square steel plate) among the alternatives, and is also a preferred brand (BIH) with matching core dimensions (4x4 inches).",
-      "gt_status": "CORRECT"
     }
   ]
 }
