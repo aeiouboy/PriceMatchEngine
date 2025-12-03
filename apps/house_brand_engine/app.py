@@ -396,6 +396,52 @@ PRODUCT_LINE_CONFLICTS = [
     # Electrical outlet ground vs no ground
     ('มีกราวด์', 'ไม่มีกราวด์'),
     ('grounded outlet', 'ungrounded outlet'),
+    # Additional tier count conflicts - CRITICAL for cabinets/shelves
+    ('5 ชั้น', '3 ชั้น'),
+    ('5 ชั้น', '4 ชั้น'),
+    ('4 ชั้น', '3 ชั้น'),
+    ('5 tier', '3 tier'),
+    ('5 tier', '4 tier'),
+    ('4 tier', '3 tier'),
+    # Line count conflicts for racks/rails - CRITICAL
+    ('6 เส้น', '9 เส้น'),
+    ('6 เส้น', '12 เส้น'),
+    ('9 เส้น', '12 เส้น'),
+    ('6 lines', '9 lines'),
+    ('6 lines', '12 lines'),
+    ('9 lines', '12 lines'),
+    # Step count for ladders - CRITICAL
+    ('3 ขั้น', '4 ขั้น'),
+    ('3 ขั้น', '5 ขั้น'),
+    ('4 ขั้น', '5 ขั้น'),
+    ('4 ขั้น', '6 ขั้น'),
+    ('5 ขั้น', '6 ขั้น'),
+    ('3 steps', '4 steps'),
+    ('3 steps', '5 steps'),
+    ('4 steps', '5 steps'),
+    # Container shapes - round vs square CRITICAL
+    ('กลม', 'สี่เหลี่ยม'),
+    ('ทรงกลม', 'ทรงสี่เหลี่ยม'),
+    ('round', 'square'),
+    ('circular', 'rectangular'),
+    # Size inch mismatches
+    ('3 นิ้ว', '4 นิ้ว'),
+    ('4 นิ้ว', '5 นิ้ว'),
+    ('3 inch', '4 inch'),
+    ('4 inch', '5 inch'),
+    # Different drawer counts
+    ('3 ลิ้นชัก', '4 ลิ้นชัก'),
+    ('3 ลิ้นชัก', '5 ลิ้นชัก'),
+    ('4 ลิ้นชัก', '5 ลิ้นชัก'),
+    ('3 drawer', '4 drawer'),
+    ('3 drawer', '5 drawer'),
+    # Waterproof box size conflicts
+    ('2x4', '4x4'),
+    ('4x4', '6x6'),
+    # Door lock types - passage vs privacy
+    ('ห้องน้ำ', 'ห้องนอน'),
+    ('bathroom lock', 'bedroom lock'),
+    ('privacy lock', 'passage lock'),
 ]
 
 def extract_volume_liters(name):
@@ -799,8 +845,31 @@ def calculate_spec_score(source_specs, target_specs):
                                 # Within 30% - partial credit
                                 matched_weight += weight * 0.3
                             # >30% difference (e.g., 10 vs 6) = 0 credit
-                elif spec_key in ['size_inch', 'length', 'outlets', 'steps', 'lines']:
-                    # Allow 10-20% tolerance for other numeric specs
+                elif spec_key == 'size_inch':
+                    # STRICT 5% tolerance for size in inches
+                    src_val = re.search(r'(\d+(?:\.\d+)?)', str(source_specs[spec_key]))
+                    tgt_val = re.search(r'(\d+(?:\.\d+)?)', str(target_specs[spec_key]))
+                    if src_val and tgt_val:
+                        src_num = float(src_val.group(1))
+                        tgt_num = float(tgt_val.group(1))
+                        if src_num == tgt_num:
+                            matched_weight += weight
+                        elif src_num > 0 and abs(src_num - tgt_num) / src_num <= 0.05:
+                            # Within 5% tolerance - partial credit
+                            matched_weight += weight * 0.7
+                        # >5% difference = 0 credit (e.g., 3" vs 2.5")
+                elif spec_key in ['steps', 'lines']:
+                    # STRICT matching for steps and lines - MUST be exact
+                    src_val = re.search(r'(\d+)', str(source_specs[spec_key]))
+                    tgt_val = re.search(r'(\d+)', str(target_specs[spec_key]))
+                    if src_val and tgt_val:
+                        src_num = int(src_val.group(1))
+                        tgt_num = int(tgt_val.group(1))
+                        if src_num == tgt_num:
+                            matched_weight += weight
+                        # ANY difference = 0 credit (e.g., 6 lines vs 9 lines)
+                elif spec_key in ['length', 'outlets']:
+                    # Allow 10% tolerance for length and outlets
                     src_val = re.search(r'(\d+(?:\.\d+)?)', str(source_specs[spec_key]))
                     tgt_val = re.search(r'(\d+(?:\.\d+)?)', str(target_specs[spec_key]))
                     if src_val and tgt_val:
@@ -811,9 +880,6 @@ def calculate_spec_score(source_specs, target_specs):
                         elif src_num > 0 and abs(src_num - tgt_num) / src_num <= 0.1:
                             # Within 10% tolerance - partial credit
                             matched_weight += weight * 0.7
-                        elif src_num > 0 and abs(src_num - tgt_num) / src_num <= 0.2:
-                            # Within 20% tolerance - less credit
-                            matched_weight += weight * 0.3
                 elif spec_key == 'model':
                     # Model number requires exact or partial match
                     src_model = str(source_specs.get('model', '')).upper()
@@ -837,7 +903,7 @@ def calculate_spec_score(source_specs, target_specs):
                         matched_weight += weight
                     # No partial credit for different diameters (1/2" ≠ 5/8")
                 elif spec_key == 'tiers':
-                    # Tier count - strict matching, allow only 1 tier difference
+                    # STRICT tier count matching - MUST be exact, no tolerance
                     src_val = re.search(r'(\d+)', str(source_specs[spec_key]))
                     tgt_val = re.search(r'(\d+)', str(target_specs[spec_key]))
                     if src_val and tgt_val:
@@ -845,22 +911,20 @@ def calculate_spec_score(source_specs, target_specs):
                         tgt_num = int(tgt_val.group(1))
                         if src_num == tgt_num:
                             matched_weight += weight
-                        elif abs(src_num - tgt_num) == 1:
-                            # Allow 1 tier difference with penalty
-                            matched_weight += weight * 0.3
-                        # >1 tier difference = 0 credit
+                        # ANY tier difference = 0 credit (e.g., 3 tier vs 4 tier)
 
     # Check identifier overlap (model numbers, product codes)
     # Only add boost for matching identifiers, no penalty for mismatch
+    # INCREASED boost for better model matching when brand is correct
     if 'identifiers' in source_specs and 'identifiers' in target_specs:
         src_ids = set(source_specs['identifiers'])
         tgt_ids = set(target_specs['identifiers'])
         common_ids = src_ids & tgt_ids
         if common_ids:
-            # Boost for matching identifiers (only when they match)
-            id_boost = min(len(common_ids) * 10, 20)
+            # Boost for matching identifiers (increased to 30 max)
+            id_boost = min(len(common_ids) * 15, 30)
             matched_weight += id_boost
-            total_weight += 20
+            total_weight += 30
     
     # Check numeric value overlap - STRICT 5% tolerance
     if 'numeric_values' in source_specs and 'numeric_values' in target_specs:
