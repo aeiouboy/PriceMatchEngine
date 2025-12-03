@@ -4,11 +4,11 @@
   "start_idx": 285,
   "end_idx": 300,
   "products_tested": 15,
-  "matches_found": 4,
-  "correct": 3,
+  "matches_found": 7,
+  "correct": 6,
   "incorrect": 1,
-  "accuracy": 75.0,
-  "timestamp": "2025-12-03T04:08:27.793278",
+  "accuracy": 85.71428571428571,
+  "timestamp": "2025-12-03T07:48:34.469617",
   "matches": [
     {
       "chunk": 20,
@@ -20,9 +20,23 @@
       "target_brand": "SIKA",
       "target_url": "https://www.dohome.co.th/th/sika-polyurethane-glue-600-white-10249593.html",
       "expected_url": "https://www.dohome.co.th/th/besbond-polyurethane-glue-600ml-white-10405383.html",
-      "confidence": 95,
-      "reason": "The candidate is a polyurethane adhesive/sealant with the same volume (600ml) and color (white) as the source, making it a strong equivalent, despite being listed as 'adhesive' vs 'sealant'.",
+      "confidence": 90,
+      "reason": "The candidate 'SIKA กาวโพลียูรีเทน 600 มล. รุ่น FLEX-740 สีขาว' is a polyurethane adhesive, which is a very close product type to polyurethane sealant, and has 100% spec match for volume and color.",
       "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 20,
+      "source_idx": 290,
+      "source_name": "แอลโบลท์เกลียวหุน 5/8 นิ้ว x 300 มม. GIANT KINGKONG รุ่น LB5830 (แพ็ก 1 ชุด)",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60398205",
+      "target_name": "สกรูตัวแอล 5/8 นิ้ว x 30 ซม. | ดูโฮมออนไลน์",
+      "target_brand": "NASH",
+      "target_url": "https://www.dohome.co.th/th/l-type-screw-5-8-inch-x-30-cm-10202380.html",
+      "expected_url": "https://www.dohome.co.th/th/l-type-screw-5-8-inch-x-30-cm-10202380.html",
+      "confidence": 95,
+      "reason": "Candidate is an L-bolt with the correct size (5/8 inch) and the closest length (30 cm vs 300 mm) to the source product, and from a preferred brand (NASH).",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 20,
@@ -34,8 +48,8 @@
       "target_brand": "JCJ",
       "target_url": "https://www.dohome.co.th/th/jcj-plastic-picnic-box-85-liters-no-2009-10395874.html",
       "expected_url": "https://www.dohome.co.th/th/jcj-plastic-picnic-box-85-liters-no-2009-10395874.html",
-      "confidence": 100,
-      "reason": "Candidate 0 has the same product type, volume, and model number (discounting minor variation in model name) as the source, resulting in a perfect spec match.",
+      "confidence": 95,
+      "reason": "The candidate is a picnic box with the exact same volume (8.5 L) and its brand JCJ is a preferred brand (PREFERRED#5). The model number '2552' in the candidate is a close match to 'JCJ-2552B' in the source, suggesting they are the same product line.",
       "gt_status": "CORRECT"
     },
     {
@@ -48,8 +62,8 @@
       "target_brand": "X 1 PLUS",
       "target_url": "https://www.dohome.co.th/th/x1-plus-microfiber-cloth-40x40cm-blue-10399594.html",
       "expected_url": "https://www.dohome.co.th/th/x1-plus-microfiber-cloth-40x40cm-blue-10399594.html",
-      "confidence": 100,
-      "reason": "Candidate 0 has identical product type and key specifications (dimensions) to the source product, resulting in a 100% SpecMatch.",
+      "confidence": 95,
+      "reason": "The candidate is a microfiber cloth with matching dimensions (40x40) and has a 100% spec match, even though it is not a preferred brand, it's the best available type match.",
       "gt_status": "CORRECT"
     },
     {
@@ -62,8 +76,36 @@
       "target_brand": "POWER MAX",
       "target_url": "https://www.dohome.co.th/th/finext-downlight-4-inch-circle-white-10234509.html",
       "expected_url": "https://www.dohome.co.th/th/finext-downlight-4-inch-circle-white-10234509.html",
-      "confidence": 70,
-      "reason": "The candidate is also a downlight, matches the critical 'size_inch=4 inch' spec, and has the highest SpecMatch% among relevant products.",
+      "confidence": 85,
+      "reason": "The candidate is a downlight with a matching 4-inch size and is from the highly preferred brand POWER MAX, making it the closest equivalent despite missing specific socket details.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 20,
+      "source_idx": 297,
+      "source_name": "ด้ามต่อลูกกลิ้งทาสี GIANT KINGKONG รุ่น P202A03 ขนาด 2 เมตร สีส้ม",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60271310",
+      "target_name": "NASH ด้ามต่อลูกกลิ้งทาสี 1-2 เมตร",
+      "target_brand": "NASH",
+      "target_url": "https://www.dohome.co.th/th/nash-paint-roller-extension-handle-1-2-10285698.html",
+      "expected_url": "https://www.dohome.co.th/th/nash-paint-roller-extension-handle-1-2-10285698.html",
+      "confidence": 95,
+      "reason": "The candidate is a NASH paint roller extension pole with the identical length of 2M, matching the source product type and primary specs. NASH is also the highest preferred brand.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 20,
+      "source_idx": 299,
+      "source_name": "โคมไฟแขวนเหล็ก E27x1 LUZINO รุ่น YD-DT1513B สีดำ",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60272166",
+      "target_name": "DECOS โคมห้อยดิ่งสไตล์โมเดิร์น อลูมิเนียม 1 หลอด รุ่น SA1556 สีดำ",
+      "target_brand": "DE'COS",
+      "target_url": "https://www.dohome.co.th/th/decos-modern-style-aluminum-hanging-lamp-1-bulb-sa1556-black-10381121.html",
+      "expected_url": "https://www.dohome.co.th/th/decos-modern-style-aluminum-hanging-lamp-1-bulb-sa1556-black-10381121.html",
+      "confidence": 75,
+      "reason": "Candidate 7 has a 'pendant light' product type, matching the source's 'pendant light', and is from a preferred brand (DE'COS).",
       "gt_status": "CORRECT"
     }
   ]

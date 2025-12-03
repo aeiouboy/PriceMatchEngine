@@ -355,7 +355,68 @@ PRODUCT_LINE_CONFLICTS = [
     # Drawer cabinet shapes - tall vs wide
     ('สูง', 'กว้าง'),
     ('tall', 'wide'),
+    # Bar stool vs regular chair - only block when clearly different types
+    ('เก้าอี้บาร์เหล็ก', 'เก้าอี้พับ'),
+    ('bar stool', 'folding chair'),
+    # Bucket volume conflicts - CRITICAL for water containers
+    ('66L', '17L'),
+    ('66 ลิตร', '17 ลิตร'),
+    ('17GL', '4.5GL'),
+    ('17 แกลลอน', '4.5 แกลลอน'),
+    ('66 L', '17 L'),
+    # Rattan vs non-rattan storage
+    ('rattan', 'stacko'),
+    ('หวาย', 'stacko'),
+    # Color conflicts for junction boxes only - check in context
+    # Removed global color conflicts as they block valid matches
+    # Paint brush bristle types
+    ('ขนสัตว์', 'ขนหมู'),
+    ('natural bristle', 'pig bristle'),
+    # Hanger material types
+    ('หัวเหล็ก', 'หัวพลาสติก'),
+    ('iron hook', 'plastic hook'),
+    # Trash can feature conflicts - wheels vs no wheels CRITICAL
+    ('มีล้อ', 'แบบเหยียบ'),  # with wheels vs step-type
+    ('ถังขยะมีล้อ', 'ถังขยะแบบเหยียบ'),
+    ('wheeled trash', 'step trash'),
+    # Socket count must match for lighting - E27x2 vs E27x1
+    ('E27x2', 'E27x1'),
+    ('E27x3', 'E27x1'),
+    ('E27x3', 'E27x2'),
+    # Food container sets are different from storage boxes
+    ('กล่องอาหาร', 'กล่องพลาสติก'),
+    ('กล่องอาหาร', 'กล่องเก็บของ'),
+    ('food container', 'storage box'),
+    # Downlight mounting type - surface vs recessed
+    ('ดาวน์ไลท์ติดลอย', 'ดาวน์ไลท์ฝัง'),
+    ('surface mount', 'recessed'),
+    # Sink cabinet single vs double - CRITICAL
+    ('บานซิงค์คู่', 'บานซิงค์เดี่ยว'),
+    ('double sink', 'single sink'),
+    # Electrical outlet ground vs no ground
+    ('มีกราวด์', 'ไม่มีกราวด์'),
+    ('grounded outlet', 'ungrounded outlet'),
 ]
+
+def extract_volume_liters(name):
+    """Extract volume in liters from product name for comparison"""
+    if not name:
+        return None
+    name_upper = name.upper()
+    
+    # Match patterns like 66L, 17L, 66 ลิตร, etc.
+    liter_pattern = r'(\d+(?:\.\d+)?)\s*(?:L|ลิตร)'
+    match = re.search(liter_pattern, name_upper, re.IGNORECASE)
+    if match:
+        return float(match.group(1))
+    
+    # Match gallon patterns and convert to liters (1 gallon ≈ 3.785 liters)
+    gallon_pattern = r'(\d+(?:\.\d+)?)\s*(?:GL|GAL|แกลลอน)'
+    match = re.search(gallon_pattern, name_upper, re.IGNORECASE)
+    if match:
+        return float(match.group(1)) * 3.785
+    
+    return None
 
 def has_product_conflict(source_name, target_name):
     """Check if source and target have conflicting product types.
@@ -375,6 +436,82 @@ def has_product_conflict(source_name, target_name):
         if (term1_lower in source_lower and term2_lower in target_lower) or \
            (term2_lower in source_lower and term1_lower in target_lower):
             return True
+    
+    # Dynamic volume conflict check - block when size differs by >50%
+    # For containers/buckets, different sizes are truly different products
+    source_vol = extract_volume_liters(source_name)
+    target_vol = extract_volume_liters(target_name)
+    if source_vol and target_vol:
+        max_vol = max(source_vol, target_vol)
+        min_vol = min(source_vol, target_vol)
+        if max_vol > 0 and (min_vol / max_vol) < 0.5:  # More than 50% difference = conflict
+            return True
+    
+    # Socket type conflict for lighting products - E27 vs E14 are incompatible
+    socket_pattern = r'(E27|E14|GU10|MR16)'
+    source_socket = re.search(socket_pattern, source_name, re.IGNORECASE)
+    target_socket = re.search(socket_pattern, target_name, re.IGNORECASE)
+    if source_socket and target_socket:
+        if source_socket.group(1).upper() != target_socket.group(1).upper():
+            return True
+    
+    # Bicycle wheel size conflict - CRITICAL: 12" vs 16" are different age groups
+    # Only apply to bicycle products
+    bicycle_keywords = ['จักรยาน', 'bicycle', 'bike']
+    is_source_bicycle = any(kw in source_lower for kw in bicycle_keywords)
+    is_target_bicycle = any(kw in target_lower for kw in bicycle_keywords)
+    if is_source_bicycle and is_target_bicycle:
+        # Extract wheel size in inches for bicycles
+        wheel_pattern = r'(\d+)\s*(?:นิ้ว|inch|"|″)'
+        source_wheel = re.search(wheel_pattern, source_name, re.IGNORECASE)
+        target_wheel = re.search(wheel_pattern, target_name, re.IGNORECASE)
+        if source_wheel and target_wheel:
+            source_size = int(source_wheel.group(1))
+            target_size = int(target_wheel.group(1))
+            # Exact wheel size must match for bicycles (12", 14", 16", 20", 24", 26")
+            if source_size != target_size:
+                return True
+    
+    # Shade net color conflict - green vs black are different products
+    shade_keywords = ['ตาข่ายกรองแสง', 'สแลน', 'shade net', 'sunshade']
+    is_source_shade = any(kw in source_lower for kw in shade_keywords)
+    is_target_shade = any(kw in target_lower for kw in shade_keywords)
+    if is_source_shade and is_target_shade:
+        source_green = 'เขียว' in source_lower or 'green' in source_lower
+        source_black = 'ดำ' in source_lower or 'black' in source_lower
+        target_green = 'เขียว' in target_lower or 'green' in target_lower
+        target_black = 'ดำ' in target_lower or 'black' in target_lower
+        if (source_green and target_black) or (source_black and target_green):
+            return True
+    
+    # Window blind/curtain dimension conflict - width must be within 30%
+    blind_keywords = ['มู่ลี่', 'ม่านหน้าต่าง', 'blind', 'curtain']
+    is_source_blind = any(kw in source_lower for kw in blind_keywords)
+    is_target_blind = any(kw in target_lower for kw in blind_keywords)
+    if is_source_blind and is_target_blind:
+        # Extract dimensions WxH
+        dim_pattern = r'(\d+)\s*[xX×]\s*(\d+)'
+        source_dim = re.search(dim_pattern, source_name)
+        target_dim = re.search(dim_pattern, target_name)
+        if source_dim and target_dim:
+            source_w = int(source_dim.group(1))
+            target_w = int(target_dim.group(1))
+            if max(source_w, target_w) > 0:
+                ratio = min(source_w, target_w) / max(source_w, target_w)
+                if ratio < 0.7:  # More than 30% difference = conflict
+                    return True
+    
+    # Auger bit/drill bit size conflict - size must match exactly
+    auger_keywords = ['ดอกสว่านเจาะดิน', 'ดอกเจาะดิน', 'auger bit', 'earth auger']
+    is_source_auger = any(kw in source_lower for kw in auger_keywords)
+    is_target_auger = any(kw in target_lower for kw in auger_keywords)
+    if is_source_auger and is_target_auger:
+        inch_pattern = r'(\d+)\s*(?:นิ้ว|inch|"|″)'
+        source_inch = re.search(inch_pattern, source_name, re.IGNORECASE)
+        target_inch = re.search(inch_pattern, target_name, re.IGNORECASE)
+        if source_inch and target_inch:
+            if int(source_inch.group(1)) != int(target_inch.group(1)):
+                return True
 
     return False
 

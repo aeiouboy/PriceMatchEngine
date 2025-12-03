@@ -4,11 +4,11 @@
   "start_idx": 75,
   "end_idx": 90,
   "products_tested": 15,
-  "matches_found": 6,
-  "correct": 5,
-  "incorrect": 0,
-  "accuracy": 100.0,
-  "timestamp": "2025-12-03T03:50:03.212922",
+  "matches_found": 9,
+  "correct": 6,
+  "incorrect": 1,
+  "accuracy": 85.71428571428571,
+  "timestamp": "2025-12-03T07:33:16.972901",
   "matches": [
     {
       "chunk": 6,
@@ -21,7 +21,7 @@
       "target_url": "https://www.globalhouse.co.th/product/detail/6322004360015",
       "expected_url": "https://www.globalhouse.co.th/product/detail/6322004360015",
       "confidence": 95,
-      "reason": "The candidate is a trash can with the same volume (120 L) and very similar product name and description, indicating a strong spec and type match.",
+      "reason": "The candidate is a trash can with the same volume (120 L) as the source product and is from a preferred brand (ICLEAN).",
       "gt_status": "CORRECT"
     },
     {
@@ -34,8 +34,8 @@
       "target_brand": "GOME",
       "target_url": "https://globalhouse.co.th/product/GOME-%E0%B8%A3%E0%B8%96%E0%B9%80%E0%B8%82%E0%B9%87%E0%B8%99%E0%B8%AD%E0%B9%80%E0%B8%99%E0%B8%81%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%AA%E0%B8%87%E0%B8%84%E0%B9%8C-%E0%B8%9E%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%81%E0%B9%87%E0%B8%9A%E0%B9%84%E0%B8%94%E0%B9%89-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-TG51448-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-36.5x3914x10060-%E0%B8%8B%E0%B8%A1.-%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3-i.6322007380805",
       "expected_url": "https://globalhouse.co.th/product/GOME-%E0%B8%A3%E0%B8%96%E0%B9%80%E0%B8%82%E0%B9%87%E0%B8%99%E0%B8%AD%E0%B9%80%E0%B8%99%E0%B8%81%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%AA%E0%B8%87%E0%B8%84%E0%B9%8C-%E0%B8%9E%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%81%E0%B9%87%E0%B8%9A%E0%B9%84%E0%B8%94%E0%B9%89-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-TG51448-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-36.5x3914x10060-%E0%B8%8B%E0%B8%A1.-%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3-i.6322007380805",
-      "confidence": 100,
-      "reason": "The candidate is a 'trolley' which is a close equivalent to a 'shopping cart', has identical 'ladder_type' and 'model' specs, and a 100% spec match.",
+      "confidence": 85,
+      "reason": "Candidate 2 is the only option with a high SpecMatch (81%) and the correct product type ('trolley' which is a synonym for 'shopping cart'). It also belongs to a preferred brand (GOME, PREFERRED#2).",
       "gt_status": "CORRECT"
     },
     {
@@ -48,9 +48,23 @@
       "target_brand": "RACER",
       "target_url": "https://globalhouse.co.th/product/detail/8858869068318",
       "expected_url": "https://globalhouse.co.th/product/detail/8858869068318",
-      "confidence": 80,
-      "reason": "The candidate is also a downlight with matching wattage, size, and color temperature. The model name differs, but the core specifications are a strong match.",
+      "confidence": 95,
+      "reason": "Candidate 0 is a downlight, matches critical specs (9W, 4 inch, DAYLIGHT) and is from the preferred brand RACER with a high SpecMatch of 73%.",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 6,
+      "source_idx": 79,
+      "source_name": "โคมไฟเพดานพลาสติก LED 24W Daylight LUZINO รุ่น PX-0663-330 สีขาว",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60405252",
+      "target_name": "LAMPTAN โคมไฟเพดาน LED 24W รุ่น BASIC แสงเดย์ไลท์",
+      "target_brand": "LAMPTAN",
+      "target_url": "https://globalhouse.co.th/product/LAMPTAN-%E0%B9%82%E0%B8%84%E0%B8%A1%E0%B9%84%E0%B8%9F%E0%B9%80%E0%B8%9E%E0%B8%94%E0%B8%B2%E0%B8%99-LED-24W-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-BASIC-%E0%B9%81%E0%B8%AA%E0%B8%87%E0%B9%80%E0%B8%94%E0%B8%A2%E0%B9%8C%E0%B9%84%E0%B8%A5%E0%B8%97%E0%B9%8C-i.8850646026009",
+      "expected_url": "https://globalhouse.co.th/product/GATA-%E0%B9%82%E0%B8%84%E0%B8%A1%E0%B8%8B%E0%B8%B2%E0%B8%A5%E0%B8%B2%E0%B9%80%E0%B8%9B%E0%B8%B2-LED-24W-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-Moon-%E0%B9%81%E0%B8%AA%E0%B8%87%E0%B9%80%E0%B8%94%E0%B8%A2%E0%B9%8C%E0%B9%84%E0%B8%A5%E0%B8%97%E0%B9%8C-i.8858817658004",
+      "confidence": 95,
+      "reason": "The candidate is a preferred brand (LAMPTAN) and has a very high SpecMatch (92%) with exact matches for wattage, LED wattage, color temperature, and product type.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 6,
@@ -63,8 +77,22 @@
       "target_url": "https://globalhouse.co.th/product/NINO-WORLD-%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%94%E0%B9%87%E0%B8%81-16%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-25123Q16-%E0%B8%AA%E0%B8%B5%E0%B8%A1%E0%B9%88%E0%B8%A7%E0%B8%87--i.2008060314126",
       "expected_url": "https://globalhouse.co.th/product/NINO-WORLD-%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%94%E0%B9%87%E0%B8%81-16%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-25123Q16-%E0%B8%AA%E0%B8%B5%E0%B8%A1%E0%B9%88%E0%B8%A7%E0%B8%87--i.2008060314126",
       "confidence": 95,
-      "reason": "The candidate is a children's bicycle with a matching 16-inch size, making it a strong equivalent to the source bicycle.",
+      "reason": "Candidate 0 is a preferred brand (NINO WORLD) and has 100% spec match, exact product type match (children's bicycle), and the critical size spec (16 inch) matches perfectly.",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 6,
+      "source_idx": 83,
+      "source_name": "ประตูน้ำ KARTEN รุ่น HN3042-3/4 ขนาด 3/4 นิ้ว สีแดง",
+      "source_brand": "KARTEN",
+      "source_url": "https://www.thaiwatsadu.com/sku/60350472",
+      "target_name": "VAVO ประตูน้ำทองเหลือง 3/4 รุ่น YF-4056-2",
+      "target_brand": "VAVO",
+      "target_url": "https://globalhouse.co.th/product/VAVO-%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%95%E0%B8%B9%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%97%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%87-34-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-YF40562-i.1903300133697",
+      "expected_url": "",
+      "confidence": 75,
+      "reason": "Candidate 7 is a gate valve from a preferred brand (VAVO), making it the most suitable match despite a low SpecMatch% due to missing size information in the candidate's specs, which can be inferred from '3/4' in the model name.",
+      "gt_status": "NO_GT"
     },
     {
       "chunk": 6,
@@ -77,8 +105,22 @@
       "target_url": "https://globalhouse.co.th/product/SANE-%E0%B8%84%E0%B8%A3%E0%B8%81%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%AA%E0%B8%B2%E0%B8%81%E0%B8%AA%E0%B9%80%E0%B8%95%E0%B8%99%E0%B9%80%E0%B8%A5%E0%B8%AA304-4-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-JAKA04-i.4622007261428",
       "expected_url": "",
       "confidence": 95,
-      "reason": "The candidate is a mortar and pestle set of the same 4-inch size, matching the critical product type and key spec.",
+      "reason": "Candidate 0 has a 100% spec match, is the correct product type (mortar and pestle), and is a preferred brand (SANE).",
       "gt_status": "NO_GT"
+    },
+    {
+      "chunk": 6,
+      "source_idx": 86,
+      "source_name": "ตาข่ายกรองแสง 50% (ม้วน) FONTE รุ่น FE-1 (ถัก 3 เข็ม) ขนาด 2 x 50 เมตร สีดำ",
+      "source_brand": "FONTE",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60268731",
+      "target_name": "POLLO สแลน HDPE รุ่นSH-3211-55 ขนาด2x50ม. 50%(สามเข็ม) สีดำ",
+      "target_brand": "POLLO",
+      "target_url": "https://globalhouse.co.th/product/POLLO-%E0%B8%AA%E0%B9%81%E0%B8%A5%E0%B8%99-HDPE-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99SH321155-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%942x50%E0%B8%A1.-50%E0%B8%AA%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%82%E0%B9%87%E0%B8%A1-%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3-i.3922005830048",
+      "expected_url": "https://globalhouse.co.th/product/POLLO-%E0%B8%AA%E0%B9%81%E0%B8%A5%E0%B8%99-HDPE-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99SH321155-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%942x50%E0%B8%A1.-50%E0%B8%AA%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%82%E0%B9%87%E0%B8%A1-%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3-i.3922005830048",
+      "confidence": 100,
+      "reason": "Candidate 0 is a POLLO brand sunshade net (preferred brand) with identical dimensions and product type matching the source product, resulting in a 100% spec match.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 6,
@@ -91,7 +133,7 @@
       "target_url": "https://globalhouse.co.th/product/HUMMER-%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B9%84%E0%B8%94%E0%B8%AD%E0%B8%B0%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1-%E0%B8%97%E0%B8%A3%E0%B8%87-ASLIDE-3x10-%E0%B8%82%E0%B8%B1%E0%B9%89%E0%B8%99-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99LZ3210B-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99-i.5922005601752",
       "expected_url": "https://globalhouse.co.th/product/HUMMER-%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B9%84%E0%B8%94%E0%B8%AD%E0%B8%B0%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1-%E0%B8%97%E0%B8%A3%E0%B8%87-ASLIDE-3x10-%E0%B8%82%E0%B8%B1%E0%B9%89%E0%B8%99-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99LZ3210B-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99-i.5922005601752",
       "confidence": 100,
-      "reason": "The candidate is an aluminum ladder with identical dimensions, steps, and model number, resulting in a 100% spec match.",
+      "reason": "Candidate 0 is a HUMMER brand ladder with identical dimensions, steps, and model number (LZ3210B) to the source product, making it a perfect match in a preferred brand.",
       "gt_status": "CORRECT"
     }
   ]

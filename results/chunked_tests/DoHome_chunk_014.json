@@ -5,11 +5,25 @@
   "end_idx": 210,
   "products_tested": 15,
   "matches_found": 5,
-  "correct": 1,
-  "incorrect": 3,
-  "accuracy": 25.0,
-  "timestamp": "2025-12-03T04:02:53.162153",
+  "correct": 2,
+  "incorrect": 2,
+  "accuracy": 50.0,
+  "timestamp": "2025-12-03T07:47:39.207123",
   "matches": [
+    {
+      "chunk": 14,
+      "source_idx": 195,
+      "source_name": "โคมไฟหัวเสาภายนอก E27x1 LUZINO รุ่น GD-BL05-40 สีดำ - ใส",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60402145",
+      "target_name": "DECOS โคมไฟหัวเสา 10 นิ้ว แบบกลม รุ่น 8014-PT",
+      "target_brand": "DECOS",
+      "target_url": "https://www.dohome.co.th/th/finext-lamp-post-10-inch-sphere-8014-pt-10109628.html",
+      "expected_url": "https://www.dohome.co.th/th/finext-lamp-post-fn2093-pt-10139005.html",
+      "confidence": 70,
+      "reason": "The candidate is a pillar lamp from a preferred brand (DECOS) and has the highest spec match at 40% for type and includes a size specification, although not an exact match to the source dimensions.",
+      "gt_status": "INCORRECT"
+    },
     {
       "chunk": 14,
       "source_idx": 196,
@@ -20,8 +34,8 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/nash-stainless-door-knob-no-587ss-l-et-10260692.html",
       "expected_url": "",
-      "confidence": 75,
-      "reason": "The candidate is the same product type (door knob) and has a similar model number, suggesting a close match despite a 0% SpecMatch from the current spec extraction; further inspection of the full model number '587SS-L ET' is needed to accurately determine model similarity to '5791ET-SS'.",
+      "confidence": 90,
+      "reason": "The candidate is the same product type (door knob) and is from the highest preferred brand (NASH). Although the model number is different, the product type match is critical.",
       "gt_status": "NO_GT"
     },
     {
@@ -30,13 +44,13 @@
       "source_name": "น้ำยาเช็ดกระจก KASSA HOME ขนาด 5,200 มล. สีฟ้า",
       "source_brand": "KASSA HOME",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60332047",
-      "target_name": "KING'S STELLA น้ำยาเช็ดกระจก 2500 มล.",
+      "target_name": "KING'S STELLA น้ำยาเช็ดกระจก 5200 มล.",
       "target_brand": "KING STELLA",
-      "target_url": "https://www.dohome.co.th/th/kings-stella-glass-cleaner-2500-ml-10022843.html",
+      "target_url": "https://www.dohome.co.th/th/kings-stella-glass-cleaner-5200-ml-10044863.html",
       "expected_url": "https://www.dohome.co.th/th/kings-stella-glass-cleaner-5200-ml-10044863.html",
-      "confidence": 70,
-      "reason": "Candidate 34 is a glass cleaner with a volume of 2500 ML, which is the same product type as the source, although the volume is not a complete match it is the closest available.",
-      "gt_status": "INCORRECT"
+      "confidence": 100,
+      "reason": "Candidate 0 is a glass cleaner with matching volume (5200 ML) and is the highest spec match at 100% among suitable product types.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 14,
@@ -48,23 +62,9 @@
       "target_brand": "DECOS",
       "target_url": "https://www.dohome.co.th/th/decos-1-bulb-outdoor-wall-lamp-square-shape-e27-socket-model-gris-grey-10417411.html",
       "expected_url": "https://www.dohome.co.th/th/finext-outdoor-wall-lamp-6336-black-10216410.html",
-      "confidence": 70,
-      "reason": "Candidate 0 has the highest SpecMatch (63%) with matching product type (wall lamp) and critical specs like socket and lamp_type.",
+      "confidence": 65,
+      "reason": "The candidate has the highest spec match (63%) and is from a preferred brand (DECOS), with matching product type and E27x1 socket.",
       "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 14,
-      "source_idx": 204,
-      "source_name": "ตู้ลิ้นชักอเนกประสงค์ท็อปไม้ 5 ชั้น KASSA HOME รุ่น UDC-A05AB5 ขนาด 63 x 40 x 112 ซม. สีพาสเทล",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60409845",
-      "target_name": "ตู้ลิ้นชัก 5 ชั้น SUMO-WOODTOP สีพาสเทล",
-      "target_brand": "SUMO-WOODTOP",
-      "target_url": "https://www.dohome.co.th/th/drawer-cabinet-5-layers-sumo-woodtop-plastel-10271532.html",
-      "expected_url": "https://www.dohome.co.th/th/drawer-cabinet-5-layers-sumo-woodtop-plastel-10271532.html",
-      "confidence": 70,
-      "reason": "The candidate is a drawer cabinet with 5 tiers, matching the source product's type and critical tier count spec. It also shares the 'pastel' color mentioned in the name, although not explicitly in the specs.",
-      "gt_status": "CORRECT"
     },
     {
       "chunk": 14,
@@ -72,13 +72,13 @@
       "source_name": "หมอนหนุน KASSA HOME ขนาด 19 x 29 นิ้ว สีขาว",
       "source_brand": "KASSA HOME",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60247332",
-      "target_name": "DECOS หมอนหนุนใยสังเคราะห์",
+      "target_name": "DECOS หมอนหนุนใยสังเคราะห์ รุ่น Joy Pillow 1 ชิ้น",
       "target_brand": "DE'COS",
-      "target_url": "https://www.dohome.co.th/th/decos-synthetic-pillow-10327047.html",
+      "target_url": "https://www.dohome.co.th/th/synthetic-pillow-no-joy-pillow-10325006.html",
       "expected_url": "https://www.dohome.co.th/th/synthetic-pillow-no-joy-pillow-10325006.html",
       "confidence": 75,
-      "reason": "Candidate 18 is the only 'pillow' product type available and has a matching product type, despite lacking specific dimension details in its specs to achieve a higher SpecMatch%.",
-      "gt_status": "INCORRECT"
+      "reason": "Candidate 15 is a 'pillow' type and from a preferred brand (DE'COS) with 0% SpecMatch, but it's the only actual pillow among the candidates.",
+      "gt_status": "CORRECT"
     }
   ]
 }

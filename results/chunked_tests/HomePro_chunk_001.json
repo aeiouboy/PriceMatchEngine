@@ -4,11 +4,11 @@
   "start_idx": 0,
   "end_idx": 15,
   "products_tested": 15,
-  "matches_found": 8,
+  "matches_found": 9,
   "correct": 4,
-  "incorrect": 4,
-  "accuracy": 50.0,
-  "timestamp": "2025-12-03T06:00:52.048108",
+  "incorrect": 5,
+  "accuracy": 44.44444444444444,
+  "timestamp": "2025-12-03T07:50:11.248029",
   "matches": [
     {
       "chunk": 1,
@@ -21,7 +21,7 @@
       "target_url": "https://www.homepro.co.th/p/1234363",
       "expected_url": "https://www.homepro.co.th/p/1158356",
       "confidence": 95,
-      "reason": "Candidate 0 is a paint brush of the preferred brand MATALL with exact size match, aligning perfectly with the source product's type and key specification.",
+      "reason": "Candidate 0 is a paint brush of the same size as the source and from a preferred brand (MATALL), making it the closest equivalent based on the rules.",
       "gt_status": "INCORRECT"
     },
     {
@@ -34,8 +34,8 @@
       "target_brand": "OZZIE",
       "target_url": "https://www.homepro.co.th/p/1236064",
       "expected_url": "https://www.homepro.co.th/p/1236064",
-      "confidence": 80,
-      "reason": "The candidate has the exact product type (bluetooth speaker) and is from a preferred brand, OZZIE, despite a 0% spec match on other attributes. All other candidates mismatch in product type.",
+      "confidence": 75,
+      "reason": "Candidate 29 is the only 'ลำโพงบลูทูธ' (bluetooth speaker) which perfectly matches the product type and is from a preferred brand (OZZIE).",
       "gt_status": "CORRECT"
     },
     {
@@ -49,7 +49,7 @@
       "target_url": "https://www.homepro.co.th/p/1167119",
       "expected_url": "https://www.homepro.co.th/p/1167119",
       "confidence": 95,
-      "reason": "Candidate 0 is a preferred brand (MATALL) and is the exact product type (plastic handle putty knife) and size (1 inch) as the source's 'steel trowel', making it an equivalent product.",
+      "reason": "The candidate is the same product type (filling knife/steel putty knife) with the exact same size (1 inch) and is from the most preferred brand (MATALL).",
       "gt_status": "CORRECT"
     },
     {
@@ -62,8 +62,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1181393",
       "expected_url": "https://www.homepro.co.th/p/1181393",
-      "confidence": 95,
-      "reason": "Highest spec match (100%) and preferred brand (MATALL) for a paint roller of the same size.",
+      "confidence": 100,
+      "reason": "Candidate 0 is a perfect spec match for size and roller type, and is from a preferred brand (MATALL) with 100% SpecMatch.",
       "gt_status": "CORRECT"
     },
     {
@@ -76,8 +76,8 @@
       "target_brand": "CARINI",
       "target_url": "https://www.homepro.co.th/p/1074150",
       "expected_url": "https://www.homepro.co.th/p/1003945",
-      "confidence": 60,
-      "reason": "Candidate 0 is the highest preferred brand and has the highest spec match percentage (40%) among the post light type products.",
+      "confidence": 85,
+      "reason": "The candidate 'ไฟหัวเสา CARINI 5018S/N สีดำ' is the correct product type (post light / POLE_LAMP), is from a highly preferred brand (CARINI), and has the highest SpecMatch of the comparable products.",
       "gt_status": "INCORRECT"
     },
     {
@@ -90,8 +90,8 @@
       "target_brand": "MAKITA",
       "target_url": "https://www.homepro.co.th/p/1162943",
       "expected_url": "https://www.homepro.co.th/p/1177335",
-      "confidence": 75,
-      "reason": "The candidate is a power drill with the same wattage (350W) as the source product. Although not a preferred brand, it is the only product of the correct type.",
+      "confidence": 95,
+      "reason": "Candidate 0 is an electric drill with the exact same wattage (350W) as the source, making it a strong spec match despite being a different brand.",
       "gt_status": "INCORRECT"
     },
     {
@@ -104,8 +104,8 @@
       "target_brand": "ECO-DOOR",
       "target_url": "https://www.homepro.co.th/p/1110489",
       "expected_url": "https://www.homepro.co.th/p/1083200",
-      "confidence": 95,
-      "reason": "The candidate is a 'synthetic wood door frame' which is a very close type match to 'wpc door frame', and has identical dimensions. It is also from a preferred brand, ECO-DOOR.",
+      "confidence": 90,
+      "reason": "Candidate 1 is a door frame of the same dimensions (80x200cm) and is WPC, making it a strong equivalent to the source product's WPC door frame.",
       "gt_status": "INCORRECT"
     },
     {
@@ -118,9 +118,23 @@
       "target_brand": "ELEKTRA",
       "target_url": "https://www.homepro.co.th/p/1092055",
       "expected_url": "https://www.homepro.co.th/p/1092055",
-      "confidence": 70,
-      "reason": "Candidate 0 is a cable tie, matching the product type, and has the highest spec match (55%) for size and pack count, with the closest preferred brand ranking.",
+      "confidence": 80,
+      "reason": "Candidate 0 is a cable tie with matching size (8 inch) and pack count (100 pcs) and is the highest spec match at 55%.",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 1,
+      "source_idx": 14,
+      "source_name": "โคมไฟผนังภายนอกอลูมิเนียม E27x2 LUZINO รุ่น MEGAN YJ2181A/2(BK) สีดำ",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60257207",
+      "target_name": "ไฟกิ่งภายนอก CARINI HL042A สีดำ",
+      "target_brand": "CARINI",
+      "target_url": "https://www.homepro.co.th/p/267461",
+      "expected_url": "https://www.homepro.co.th/p/1021174",
+      "confidence": 75,
+      "reason": "The candidate is the same product type (outdoor wall lamp), is a preferred brand (CARINI), and while it has 0% spec match, it is the only one among the preferred brands that is an outdoor wall lamp.",
+      "gt_status": "INCORRECT"
     }
   ]
 }

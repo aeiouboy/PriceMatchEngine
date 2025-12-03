@@ -4,11 +4,11 @@
   "start_idx": 60,
   "end_idx": 75,
   "products_tested": 15,
-  "matches_found": 12,
-  "correct": 6,
-  "incorrect": 3,
-  "accuracy": 66.66666666666666,
-  "timestamp": "2025-12-03T03:49:23.641468",
+  "matches_found": 13,
+  "correct": 9,
+  "incorrect": 1,
+  "accuracy": 90.0,
+  "timestamp": "2025-12-03T07:33:18.811733",
   "matches": [
     {
       "chunk": 5,
@@ -21,7 +21,7 @@
       "target_url": "https://globalhouse.co.th/product/PROTX-%E0%B8%A1%E0%B8%B8%E0%B9%89%E0%B8%87%E0%B8%A5%E0%B8%A7%E0%B8%94%E0%B8%AD%E0%B8%B0%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1-42-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-x-10%E0%B9%80%E0%B8%A1%E0%B8%95%E0%B8%A3-Dia-0.21mm-18x16%E0%B8%95%E0%B8%A3.%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-4TCS0034210AL-i.5922007040610",
       "expected_url": "https://globalhouse.co.th/product/PROTX-%E0%B8%A1%E0%B8%B8%E0%B9%89%E0%B8%87%E0%B8%A5%E0%B8%A7%E0%B8%94%E0%B8%AD%E0%B8%B0%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1-42-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-x-10%E0%B9%80%E0%B8%A1%E0%B8%95%E0%B8%A3-Dia-0.21mm-18x16%E0%B8%95%E0%B8%A3.%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-4TCS0034210AL-i.5922007040610",
       "confidence": 95,
-      "reason": "Candidate 0 is an aluminum screen with the same size (42 inch) as the source product, resulting in a high spec match.",
+      "reason": "The candidate is the same product type (aluminum screen) from the preferred brand PROTX and has a perfect size_inch match of 42 inches.",
       "gt_status": "CORRECT"
     },
     {
@@ -34,8 +34,8 @@
       "target_brand": "ICLEAN",
       "target_url": "https://www.globalhouse.co.th/product/detail/6322007600255",
       "expected_url": "https://www.globalhouse.co.th/product/detail/6322007600255",
-      "confidence": 70,
-      "reason": "The candidate is a trash can (trash bin) and has a 25x25x61CM dimension, with the height (length_cm) matching exactly to the source product (61CM). The model number does not match, but the core product type and key dimension are very close, especially considering the source description for dimensions is simpler (25x61 cm).",
+      "confidence": 75,
+      "reason": "The candidate is a 'trash can with ashtray' which is an exact product type match, has a significant spec match of 57%, and the dimensions are very similar although not exact.",
       "gt_status": "CORRECT"
     },
     {
@@ -44,12 +44,12 @@
       "source_name": "ชั้นวางของอเนกประสงค์พื้นไม้เอ็มดีเอฟ 5 ชั้น Woody KASSA HOME รุ่น MHR-06GR ขนาด 90 x 45 x 183 ซม.",
       "source_brand": "KASSA HOME",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60388624",
-      "target_name": "HAWDD ชั้นวางของเหล็กโล่ง 4 ชั้น รุ่น ROGER-90 ขนาด 45x90x150ซม. สีดำ",
+      "target_name": "HAWDD ชั้นวางของเหล็กโล่ง 5 ชั้น รุ่น ROHAN-90 ขนาด 45x90x180ซม. สีดำ",
       "target_brand": "HAWDD",
-      "target_url": "https://globalhouse.co.th/product/HAWDD-%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B8%A7%E0%B8%B2%E0%B8%87%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B9%87%E0%B8%81%E0%B9%82%E0%B8%A5%E0%B9%88%E0%B8%87-4-%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%99-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-ROGER90-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-45x90x150%E0%B8%8B%E0%B8%A1.-%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3-i.5722008180533",
+      "target_url": "https://globalhouse.co.th/product/HAWDD-%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B8%A7%E0%B8%B2%E0%B8%87%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B9%87%E0%B8%81%E0%B9%82%E0%B8%A5%E0%B9%88%E0%B8%87-5-%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%99-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-ROHAN90-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-45x90x180%E0%B8%8B%E0%B8%A1.-%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3-i.5722008180557",
       "expected_url": "https://globalhouse.co.th/product/HUMMER-%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B8%A7%E0%B8%B2%E0%B8%87%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B9%87%E0%B8%81%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B9%84%E0%B8%A1%E0%B9%89-MDF-5-%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%99-90x50x182%E0%B8%8B%E0%B8%A1.-%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3-i.5722004360908",
-      "confidence": 60,
-      "reason": "The product type 'shelving unit' matches and candidate has the highest spec match, although the dimensions and number of tiers are slightly different.",
+      "confidence": 65,
+      "reason": "Candidate 0 has the highest spec match at 63% and is from the most preferred brand 'HAWDD'. The product type is a direct match ('shelf'), and dimensions and tiers are very close to the source.",
       "gt_status": "INCORRECT"
     },
     {
@@ -58,13 +58,13 @@
       "source_name": "มือจับประตูดึง สเตนเลส 304 GIANT KINGKONG รุ่น DPL01 800SS ขนาด 800 มม. สีเงิน",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60377086",
-      "target_name": "YALE มือจับก้านโยกห้องทั่วไป ฝาครอบแบบกลม รุ่น KL5327ETUS15 สีนิกเกิลด้าน",
-      "target_brand": "YALE",
-      "target_url": "https://globalhouse.co.th/product/YALE-%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%88%E0%B8%B1%E0%B8%9A%E0%B8%81%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B9%82%E0%B8%A2%E0%B8%81%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A2%E0%B8%AB%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%97%E0%B8%B1%E0%B9%88%E0%B8%A7%E0%B9%84%E0%B8%9B-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-KL5327ETUS15-%E0%B8%AA%E0%B8%B5%E0%B8%99%E0%B8%B4%E0%B9%80%E0%B8%81%E0%B8%B4%E0%B8%A5%E0%B8%94%E0%B9%89%E0%B8%B2%E0%B8%99-i.4893862062394",
+      "target_name": "TORSTEN มือจับประตูบานดึง 800 มม. รุ่น CHCP010-800 สีสเตนเลส",
+      "target_brand": "TORSTEN",
+      "target_url": "https://globalhouse.co.th/product/TORSTEN-%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%88%E0%B8%B1%E0%B8%9A%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%95%E0%B8%B9%E0%B8%9A%E0%B8%B2%E0%B8%99%E0%B8%94%E0%B8%B6%E0%B8%87-800-%E0%B8%A1%E0%B8%A1.-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-CHCP010800-%E0%B8%AA%E0%B8%B5%E0%B8%AA%E0%B9%80%E0%B8%95%E0%B8%99%E0%B9%80%E0%B8%A5%E0%B8%AA-i.2622001820197",
       "expected_url": "https://globalhouse.co.th/product/TORSTEN-%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%88%E0%B8%B1%E0%B8%9A%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%95%E0%B8%B9%E0%B8%9A%E0%B8%B2%E0%B8%99%E0%B8%94%E0%B8%B6%E0%B8%87-800-%E0%B8%A1%E0%B8%A1.-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-CHCP010800-%E0%B8%AA%E0%B8%B5%E0%B8%AA%E0%B9%80%E0%B8%95%E0%B8%99%E0%B9%80%E0%B8%A5%E0%B8%AA-i.2622001820197",
-      "confidence": 60,
-      "reason": "The candidate is also a 'door handle' but the model specification does not match exactly, resulting in a 50% spec match.",
-      "gt_status": "INCORRECT"
+      "confidence": 70,
+      "reason": "The candidate has the exact product type (door pull handle) and a matching length (800 mm), making it a good functional equivalent although not a preferred brand.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 5,
@@ -77,7 +77,7 @@
       "target_url": "https://globalhouse.co.th/product/JCJ-%E0%B8%81%E0%B8%A5%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%81%E0%B9%87%E0%B8%9A%E0%B8%82%E0%B8%AD%E0%B8%87-70L-%E0%B8%A1%E0%B8%B5%E0%B8%A5%E0%B9%89%E0%B8%AD-S55-Plus-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-49.1x74.3x49.2cm.-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-5518-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%9A%E0%B8%88-i.8852080055188",
       "expected_url": "",
       "confidence": 100,
-      "reason": "Candidate 0 is a storage box with identical volume (70 L) and very similar model number (5518 vs JCJ-5518) resulting in a 100% spec match.",
+      "reason": "Candidate 0 is a perfect spec match (volume 70L, model 5518) of the correct product type (storage box) and is from a preferred brand (JCJ).",
       "gt_status": "NO_GT"
     },
     {
@@ -90,8 +90,8 @@
       "target_brand": "OO POWER",
       "target_url": "https://globalhouse.co.th/product/%E0%B8%94%E0%B8%AD%E0%B8%81%E0%B8%AA%E0%B8%A7%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%88%E0%B8%B2%E0%B8%B0%E0%B8%94%E0%B8%B4%E0%B8%99-8-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-OOEA52B-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-20-x-80-%E0%B8%8B%E0%B8%A1.-i.3922007950232",
       "expected_url": "https://globalhouse.co.th/product/%E0%B8%94%E0%B8%AD%E0%B8%81%E0%B8%AA%E0%B8%A7%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%88%E0%B8%B2%E0%B8%B0%E0%B8%94%E0%B8%B4%E0%B8%99-8-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-OOEA52B-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-20-x-80-%E0%B8%8B%E0%B8%A1.-i.3922007950232",
-      "confidence": 100,
-      "reason": "The candidate has a 100% spec match, the exact product type 'earth drill bit', and shares the critical 'size_inch' spec.",
+      "confidence": 95,
+      "reason": "The candidate has a 100% spec match, is the correct product type (earth auger bit, which is equivalent to earth drill bit), and is from a preferred brand (OO POWER).",
       "gt_status": "CORRECT"
     },
     {
@@ -104,8 +104,22 @@
       "target_brand": "HUMMER",
       "target_url": "https://globalhouse.co.th/product/HUMMER%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B9%84%E0%B8%94%E0%B8%AD%E0%B8%B0%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%88%E0%B8%B1%E0%B8%9A-8%E0%B8%82%E0%B8%B1%E0%B9%89%E0%B8%99-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-GB40288-i.5922007470189",
       "expected_url": "https://globalhouse.co.th/product/HUMMER%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B9%84%E0%B8%94%E0%B8%AD%E0%B8%B0%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%88%E0%B8%B1%E0%B8%9A-8%E0%B8%82%E0%B8%B1%E0%B9%89%E0%B8%99-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-GB40288-i.5922007470189",
-      "confidence": 95,
-      "reason": "The candidate is an aluminum ladder with 8 steps, perfectly matching the critical product type and step count of the source product. The SpecMatch of 100% further confirms a strong match.",
+      "confidence": 100,
+      "reason": "The candidate is a perfect spec match with the same number of steps and is from the preferred brand HUMMER, and the product type is a direct match (ladder).",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 5,
+      "source_idx": 69,
+      "source_name": "กล่องแบบพับได้เปิดหน้า ฝาไม้ 24 ลิตร Camping KASSA HOME รุ่น BFPD2001 ขนาด 41.5 x 28.5 x 23.5 ซม.",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60393705",
+      "target_name": "GOME กล่องเก็บของพับเก็บได้ พร้อมฝาปิด 30ลิตร ขนาด 30×43×23 ซม. รุ่น TZ03 สีน้ำตาลอ่อน",
+      "target_brand": "GOME",
+      "target_url": "https://globalhouse.co.th/product/GOME-%E0%B8%81%E0%B8%A5%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%81%E0%B9%87%E0%B8%9A%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%81%E0%B9%87%E0%B8%9A%E0%B9%84%E0%B8%94%E0%B9%89-%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%9D%E0%B8%B2%E0%B8%9B%E0%B8%B4%E0%B8%94-30%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A3--%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-30%C3%9743%C3%9723-%E0%B8%8B%E0%B8%A1.-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-TZ03-%E0%B8%AA%E0%B8%B5%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%95%E0%B8%B2%E0%B8%A5%E0%B8%AD%E0%B9%88%E0%B8%AD%E0%B8%99-i.6122006080344",
+      "expected_url": "https://globalhouse.co.th/product/GOME-%E0%B8%81%E0%B8%A5%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%81%E0%B9%87%E0%B8%9A%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%81%E0%B9%87%E0%B8%9A%E0%B9%84%E0%B8%94%E0%B9%89-%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%9D%E0%B8%B2%E0%B8%9B%E0%B8%B4%E0%B8%94-30%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A3--%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-30%C3%9743%C3%9723-%E0%B8%8B%E0%B8%A1.-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-TZ03-%E0%B8%AA%E0%B8%B5%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%95%E0%B8%B2%E0%B8%A5%E0%B8%AD%E0%B9%88%E0%B8%AD%E0%B8%99-i.6122006080344",
+      "confidence": 60,
+      "reason": "Candidate 0 is a folding box from a preferred brand, GOME. While the volume is slightly different (30L vs 24L), it's the closest spec match among the preferred brands and has the correct product type.",
       "gt_status": "CORRECT"
     },
     {
@@ -118,8 +132,8 @@
       "target_brand": "ADAMAS",
       "target_url": "https://globalhouse.co.th/product/ADAMAS-%E0%B8%A1%E0%B8%B5%E0%B8%94%E0%B8%AA%E0%B8%B1%E0%B8%9A-6.5-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-KESH08-%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3-i.4622007040160",
       "expected_url": "https://globalhouse.co.th/product/ADAMAS-%E0%B8%A1%E0%B8%B5%E0%B8%94%E0%B8%AA%E0%B8%B1%E0%B8%9A-6.5-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-KESH08-%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3-i.4622007040160",
-      "confidence": 100,
-      "reason": "Candidate 2 is a 'knife' and the source is a 'cleaver', which are often used interchangeably and the specs match perfectly.",
+      "confidence": 95,
+      "reason": "The candidate is a cleaver with the exact same size (6.5 inches) as the source product, resulting in a 100% spec match. While the brand is not preferred, the high spec match for a critical product type is a strong indicator.",
       "gt_status": "CORRECT"
     },
     {
@@ -132,8 +146,8 @@
       "target_brand": "TUF",
       "target_url": "https://globalhouse.co.th/product/TUF-%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B9%88%E0%B8%99%E0%B8%A2%E0%B8%B2%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%A2%E0%B8%99%E0%B8%95%E0%B9%8C-4%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B0-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99QL767-25%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A3-%E0%B8%AA%E0%B8%B5%E0%B9%81%E0%B8%94%E0%B8%87%E0%B8%82%E0%B8%B2%E0%B8%A7-i.6222003810545",
       "expected_url": "",
-      "confidence": 100,
-      "reason": "Candidate 0 is an engine sprayer with the exact same volume (25 L) as the source product and a 100% spec match.",
+      "confidence": 95,
+      "reason": "The candidate is a 'sprayer' from a preferred brand 'TUF', and has a perfect 100% SpecMatch for volume.",
       "gt_status": "NO_GT"
     },
     {
@@ -147,7 +161,7 @@
       "target_url": "https://globalhouse.co.th/product/%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B9%87%E0%B8%81%E0%B8%89%E0%B8%B2%E0%B8%81%E0%B9%80%E0%B8%88%E0%B8%B2%E0%B8%B0%E0%B8%A3%E0%B8%B9%E0%B8%AB%E0%B8%99%E0%B8%B2-2-%E0%B8%A1%E0%B8%A1.-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-1.12-x-1.12-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-%E0%B8%A2%E0%B8%B2%E0%B8%A7-3-%E0%B9%80%E0%B8%A1%E0%B8%95%E0%B8%A3-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%97%E0%B8%B2-i.8722006760031",
       "expected_url": "",
       "confidence": 90,
-      "reason": "The candidate is the same product type (angle iron/steel) and has a high spec match with identical dimensions, length, and size, with only a minor difference in the dimension parsing.",
+      "reason": "Candidate 0 is an 'angle bar' which is a close type match to 'angle iron'. It has the highest SpecMatch% among viable alternatives and matches key specs like thickness, size, and length.",
       "gt_status": "NO_GT"
     },
     {
@@ -156,13 +170,13 @@
       "source_name": "จักรยานเด็ก GIANT KINGKONG รุ่น KD1601WH ขนาด 16 นิ้ว สีขาว",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60374044",
-      "target_name": "NINO WORLD จักรยานเด็ก 16นิ้ว รุ่น 25123-Q16 สีม่วง",
+      "target_name": "NINO WORLD จักรยานเด็ก 16นิ้ว รุ่น 15823-M21 สีแดง เหมาะกับเด็ก 3-8ขวบ",
       "target_brand": "NINO WORLD",
-      "target_url": "https://globalhouse.co.th/product/NINO-WORLD-%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%94%E0%B9%87%E0%B8%81-16%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-25123Q16-%E0%B8%AA%E0%B8%B5%E0%B8%A1%E0%B9%88%E0%B8%A7%E0%B8%87--i.2008060314126",
+      "target_url": "https://globalhouse.co.th/product/NINO-WORLD-%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%94%E0%B9%87%E0%B8%81-16%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-15823M21-%E0%B8%AA%E0%B8%B5%E0%B9%81%E0%B8%94%E0%B8%87-%E0%B9%80%E0%B8%AB%E0%B8%A1%E0%B8%B2%E0%B8%B0%E0%B8%81%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%94%E0%B9%87%E0%B8%81--38%E0%B8%82%E0%B8%A7%E0%B8%9A-i.2008060317437",
       "expected_url": "https://globalhouse.co.th/product/NINO-WORLD-%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%94%E0%B9%87%E0%B8%81-16%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-15823M21-%E0%B8%AA%E0%B8%B5%E0%B9%81%E0%B8%94%E0%B8%87-%E0%B9%80%E0%B8%AB%E0%B8%A1%E0%B8%B2%E0%B8%B0%E0%B8%81%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%94%E0%B9%87%E0%B8%81--38%E0%B8%82%E0%B8%A7%E0%B8%9A-i.2008060317437",
-      "confidence": 75,
-      "reason": "Candidate 0 is the strongest match with the same product type (bicycle) and matches the critical 'size_inch' spec. The wattage spec on the source product is likely a typo for a bicycle and not considered critical for matching.",
-      "gt_status": "INCORRECT"
+      "confidence": 60,
+      "reason": "The candidate is a 'bicycle' and has the exact same 'size_inch' as the source product. It is also from a preferred brand, NINO WORLD.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 5,
@@ -175,7 +189,7 @@
       "target_url": "https://globalhouse.co.th/product/%E0%B8%96%E0%B8%B8%E0%B8%87%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%97%E0%B8%AD%E0%B9%83%E0%B8%A2%E0%B8%9D%E0%B9%89%E0%B8%B2%E0%B8%A2%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%97%E0%B8%B2-500-%E0%B8%81%E0%B8%A3%E0%B8%B1%E0%B8%A1%E0%B9%82%E0%B8%AB%E0%B8%A5-1x12%E0%B8%84%E0%B8%B9%E0%B9%88-i.8858847105677",
       "expected_url": "https://globalhouse.co.th/product/%E0%B8%96%E0%B8%B8%E0%B8%87%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%97%E0%B8%AD%E0%B9%83%E0%B8%A2%E0%B8%9D%E0%B9%89%E0%B8%B2%E0%B8%A2%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%97%E0%B8%B2-500-%E0%B8%81%E0%B8%A3%E0%B8%B1%E0%B8%A1%E0%B9%82%E0%B8%AB%E0%B8%A5-1x12%E0%B8%84%E0%B8%B9%E0%B9%88-i.8858847105677",
       "confidence": 90,
-      "reason": "The candidate is also 'gloves' (same product type as 'cloth gloves') and has a 50% spec match, which is the highest among relevant candidates.",
+      "reason": "Candidate 0 is the only alternative of type 'gloves', is from the preferred brand PROTX (PREFERRED#1), and shares a common key spec (weight/size equivalent of 500g/โหล vs 5 ขีด).",
       "gt_status": "CORRECT"
     }
   ]

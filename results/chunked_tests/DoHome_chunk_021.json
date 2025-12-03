@@ -4,11 +4,11 @@
   "start_idx": 300,
   "end_idx": 315,
   "products_tested": 15,
-  "matches_found": 7,
-  "correct": 5,
-  "incorrect": 2,
-  "accuracy": 71.42857142857143,
-  "timestamp": "2025-12-03T04:09:13.866927",
+  "matches_found": 10,
+  "correct": 7,
+  "incorrect": 3,
+  "accuracy": 70.0,
+  "timestamp": "2025-12-03T07:48:34.823072",
   "matches": [
     {
       "chunk": 21,
@@ -20,8 +20,36 @@
       "target_brand": "FINEXT",
       "target_url": "https://www.dohome.co.th/th/finext-clear-glass-double-wall-cabinet-max-15-white-10353346.html",
       "expected_url": "https://www.dohome.co.th/th/finext-clear-glass-double-wall-cabinet-max-15-white-10353346.html",
-      "confidence": 70,
-      "reason": "The product type 'hanging cabinet' matches exactly. While the model names are different, the candidate is the only hanging cabinet offered and Finzext is a house brand.",
+      "confidence": 75,
+      "reason": "Candidate 0 is a hanging cabinet, matches the preferred brand FINEXT, and has the closest model identifier (MAX vs MAX8).",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 21,
+      "source_idx": 301,
+      "source_name": "ลูกกลิ้งทาสี GIANT KINGKONG รุ่น PR-004 ขนาด 4 นิ้ว",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60271294",
+      "target_name": "NASH ลูกกลิ้งทาสี 4 นิ้ว รุ่น RTS-004",
+      "target_brand": "NASH",
+      "target_url": "https://www.dohome.co.th/th/nash-paint-roller4-inch-no-rts-004-10185189.html",
+      "expected_url": "https://www.dohome.co.th/th/nash-paint-roller4-inch-no-rts-004-10185189.html",
+      "confidence": 95,
+      "reason": "Candidate 1 (NASH) is a preferred brand and has a 100% spec match, including product type and size, to the source paint roller.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 21,
+      "source_idx": 302,
+      "source_name": "ที่คว่ำจานพลาสติกพร้อมฝาปิด 1 ชั้น Leaf KASSA HOME รุ่น JCJ-2400 ขนาด 45.4 x 33.5 x 29.7 ซม. สีขาว",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60414831",
+      "target_name": "DECOS ชุดคว่ำจาน รุ่น No.2400 สีขาว",
+      "target_brand": "DECOS",
+      "target_url": "https://www.dohome.co.th/th/jcj-dish-drying-rack-storage-box-set-no-no-2400-white-10318971.html",
+      "expected_url": "https://www.dohome.co.th/th/jcj-dish-drying-rack-storage-box-set-no-no-2400-white-10318971.html",
+      "confidence": 75,
+      "reason": "The candidate has the correct product type (ชุดคว่ำจาน / dish rack), a preferred brand (DECOS), and a matching model number (No.2400 vs JCJ-2400), despite having 0% SpecMatch from the current algorithm.",
       "gt_status": "CORRECT"
     },
     {
@@ -34,8 +62,8 @@
       "target_brand": "COLT",
       "target_url": "https://www.dohome.co.th/th/colt-lite-hinges-stainless-steel-4x3-inches-model-747-10341631.html",
       "expected_url": "https://www.dohome.co.th/th/nash-stainless-steel-hinges-268ss-10220072.html",
-      "confidence": 85,
-      "reason": "The candidate COLT LITE บานพับ 4x3 นิ้ว รุ่น 747 สแตนเลส (แพ็ค 3) is a door hinge with matching dimensions (4x3) and pack count (3).",
+      "confidence": 90,
+      "reason": "The candidate 'COLT LITE บานพับ 4x3 นิ้ว รุ่น 747 สแตนเลส (แพ็ค 3)' is a door hinge with identical dimensions and pack count to the source product, and has a high SpecMatch of 70%.",
       "gt_status": "INCORRECT"
     },
     {
@@ -48,8 +76,8 @@
       "target_brand": "MEGALEC",
       "target_url": "https://www.dohome.co.th/th/aluminum-bag-rolling-machine-12-inches-no-pcs300a-10302488.html",
       "expected_url": "https://www.dohome.co.th/th/aluminum-bag-rolling-machine-12-inches-no-pcs300a-10302488.html",
-      "confidence": 70,
-      "reason": "The candidate is also a bag sealer and matches the critical 'size_inch' specification exactly. While wattage is missing, the core function and key dimension align well.",
+      "confidence": 75,
+      "reason": "The candidate is the correct product type (bag sealer) and has a matching size (12 inch), with an acceptable SpecMatch percentage.",
       "gt_status": "CORRECT"
     },
     {
@@ -63,7 +91,7 @@
       "target_url": "https://www.dohome.co.th/th/finext-ceiling-fan-48-inch-no-f348-wh-wc-10203272.html",
       "expected_url": "https://www.dohome.co.th/th/finext-ceiling-fan-48-inch-no-f348-wh-wc-10203272.html",
       "confidence": 95,
-      "reason": "The candidate is a ceiling fan with the identical size_inch spec (48 inch) and the same product type as the source, indicating a very strong match.",
+      "reason": "The candidate has a 100% spec match, is the correct product type (ceiling fan), and is from a preferred brand (FINEXT).",
       "gt_status": "CORRECT"
     },
     {
@@ -77,7 +105,7 @@
       "target_url": "https://www.dohome.co.th/th/decos-1-bulb-outdoor-wall-lamp-square-shape-e27-socket-model-gris-grey-10417411.html",
       "expected_url": "https://www.dohome.co.th/th/decos-outdoor-wall-lamp-pp-cylinder-1-bulb-2039-black-10384418.html",
       "confidence": 70,
-      "reason": "Candidate 0 is the highest spec match at 63% and has an exact match on product type (wall lamp) and key specs (socket=E27x1, lamp_type=WALL_LAMP).",
+      "reason": "The candidate is a DECOS brand (preferred), is the correct product type (wall lamp), and has the highest spec match (63%) among all candidates, particularly matching the E27x1 socket.",
       "gt_status": "INCORRECT"
     },
     {
@@ -90,8 +118,8 @@
       "target_brand": "WHIZ",
       "target_url": "https://www.dohome.co.th/th/whiz-floor-cleaner-5200-ml-pink-10160079.html",
       "expected_url": "https://www.dohome.co.th/th/whiz-floor-cleaner-5200-ml-pink-10160079.html",
-      "confidence": 100,
-      "reason": "The candidate is a floor cleaner of the exact same volume as the source product, and has 100% spec match.",
+      "confidence": 95,
+      "reason": "The candidate is a floor cleaner with the exact same volume (5200 ML) and a very similar price point, making it a strong substitute despite not being a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -105,8 +133,22 @@
       "target_url": "https://www.dohome.co.th/th/nash-traffic-cones-70-cm-no7091-10234547.html",
       "expected_url": "https://www.dohome.co.th/th/nash-traffic-cones-70-cm-no7091-10234547.html",
       "confidence": 95,
-      "reason": "The candidate is the same product type (traffic cone) and has a 100% spec match with an identical length (70CM).",
+      "reason": "Highest spec match (100%) and preferred brand (NASH #1 Priority) of the same product type: traffic cone.",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 21,
+      "source_idx": 314,
+      "source_name": "ไม้บัวล่าง KASSA WOODLOOK รุ่น 903-0896T ขนาด 1.2 x 290 x 9 ซม. สีไลท์โอ๊ก",
+      "source_brand": "KASSA",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60311777",
+      "target_name": "FINEXT ไม้บัวล่างเอทิลีน 3 นิ้ว x 2.9 เมตร รุ่น JC13-W1",
+      "target_brand": "FINEXT",
+      "target_url": "https://www.dohome.co.th/th/finext-under-cornice-wood-ethylene-3-inchx2-9m-no-jc13-w1-10185896.html",
+      "expected_url": "https://www.dohome.co.th/th/finext-under-cornice-wood-ethylene-4-inchx2-9m-no-jc422-730-10223048.html",
+      "confidence": 75,
+      "reason": "Candidate 1 is the most suitable match as it is a baseboard trim from a preferred brand (FINEXT) and has matching length (2.9M close to 290cm), although the size_inch and specific model differ.",
+      "gt_status": "INCORRECT"
     }
   ]
 }

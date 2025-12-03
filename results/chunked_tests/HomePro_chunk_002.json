@@ -4,11 +4,11 @@
   "start_idx": 15,
   "end_idx": 30,
   "products_tested": 15,
-  "matches_found": 9,
+  "matches_found": 11,
   "correct": 8,
-  "incorrect": 1,
-  "accuracy": 88.88888888888889,
-  "timestamp": "2025-12-03T06:01:43.810511",
+  "incorrect": 3,
+  "accuracy": 72.72727272727273,
+  "timestamp": "2025-12-03T07:49:58.004249",
   "matches": [
     {
       "chunk": 2,
@@ -21,7 +21,7 @@
       "target_url": "https://www.homepro.co.th/p/1074150",
       "expected_url": "https://www.homepro.co.th/p/1074150",
       "confidence": 75,
-      "reason": "Candidate is the top preferred brand (CARINI) for post-top lamps and has the highest spec match percentage (40%) among relevant products. While the spec match is not very high, it is the closest equivalent and above the 0% of other post light candidates from the same brand.",
+      "reason": "Candidate 0 is a pole lamp of the preferred brand CARINI, matching the critical product type 'lantern' more closely than others, despite a lower SpecMatch% due to limited shared specs beyond lamp type.",
       "gt_status": "CORRECT"
     },
     {
@@ -35,7 +35,7 @@
       "target_url": "https://www.homepro.co.th/p/1154473",
       "expected_url": "https://www.homepro.co.th/p/1154473",
       "confidence": 95,
-      "reason": "The candidate is the same product type (trash can) with an exact volume match and a high SpecMatch percentage, although the brand is not preferred.",
+      "reason": "The candidate is an exact spec match (volume 240 L) and the correct product type (trash can).",
       "gt_status": "CORRECT"
     },
     {
@@ -48,8 +48,8 @@
       "target_brand": "ACCO",
       "target_url": "https://www.homepro.co.th/p/1184261",
       "expected_url": "https://www.homepro.co.th/p/1184261",
-      "confidence": 75,
-      "reason": "The candidate has the exact same product type (drain cleaner powder) and brand ACCO is a preferred brand (PREFERRED#4). The SpecMatch is 50%, which is acceptable given the exact product type match.",
+      "confidence": 70,
+      "reason": "The candidate is also a drain cleaner powder and is from a preferred brand (ACCO) with a good spec match, including the weight.",
       "gt_status": "CORRECT"
     },
     {
@@ -62,8 +62,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1154102",
       "expected_url": "https://www.homepro.co.th/p/1154102",
-      "confidence": 95,
-      "reason": "Candidate 0 is a preferred brand (MATALL) and is the exact product type 'metal cutting disc' with relevant size specs matching the source. Although Candidate 1 also has similar specs, Candidate 0 is a preferred brand.",
+      "confidence": 90,
+      "reason": "Candidate 0 is a preferred brand (MATALL) and has the highest spec match at 78%, with matching product type and size.",
       "gt_status": "CORRECT"
     },
     {
@@ -76,9 +76,23 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/195587",
       "expected_url": "https://www.homepro.co.th/p/195587",
-      "confidence": 100,
-      "reason": "Candidate is a preferred brand (STACKO) and has an exact match on critical specs (volume=42 L) and product type (storage box).",
+      "confidence": 95,
+      "reason": "The candidate is from the highest preferred brand (STACKO), has the same product type (storage box), and matches the critical volume spec (42 L) exactly, resulting in 100% SpecMatch.",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 2,
+      "source_idx": 21,
+      "source_name": "ตู้ลิ้นชักอเนกประสงค์ 4 ชั้น Jasmin KASSA HOME รุ่น API-1500M4 ขนาด 50 x 47.2 x 92.3 ซม. สีพาสเทล",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60335317",
+      "target_name": "ตู้ลิ้นชัก 4 ชั้นทึบ STACKO MORI 40x59x90.8 ซม. สีขาว",
+      "target_brand": "STACKO",
+      "target_url": "https://www.homepro.co.th/p/1104652",
+      "expected_url": "https://www.homepro.co.th/p/1117329",
+      "confidence": 65,
+      "reason": "The candidate is a STACKO brand (preferred) 4-tier drawer cabinet with similar dimensions and length, offering a good spec match.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 2,
@@ -91,7 +105,7 @@
       "target_url": "https://www.homepro.co.th/p/1163258",
       "expected_url": "https://www.homepro.co.th/p/1163258",
       "confidence": 75,
-      "reason": "Candidate is a preferred brand (MATALL) and has the highest spec match (35%) among other tool sets, with a slightly different pack count but the same product type.",
+      "reason": "The best match is a MATALL tool set, which is a preferred brand and has a similar pack count (53 vs 54), making it the closest equivalent product type.",
       "gt_status": "CORRECT"
     },
     {
@@ -104,9 +118,23 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/1098200",
       "expected_url": "https://www.homepro.co.th/p/1098200",
-      "confidence": 85,
-      "reason": "The candidate is a STACKO (PREFERRED#1) shelving unit with identical number of tiers, very similar dimensions, and a strong SpecMatch% of 63%.",
+      "confidence": 65,
+      "reason": "The candidate has the highest spec match (63%) and is a preferred brand (STACKO), with identical product type and very similar dimensions and tiers.",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 2,
+      "source_idx": 27,
+      "source_name": "โคมไฟแขวนเหล็ก E27x1 LUZINO รุ่น THD20382-1 (MY) สีดำ - ไม้",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60405269",
+      "target_name": "ไฟช่อ CARINI MS16D08 สีดำ 1 หัว",
+      "target_brand": "CARINI",
+      "target_url": "https://www.homepro.co.th/p/1063671",
+      "expected_url": "https://www.homepro.co.th/p/1253670",
+      "confidence": 75,
+      "reason": "The candidate has the preferred brand CARINI and is a 'pendant light' which is a close type to 'hanging lamp', despite a low SpecMatch% due to missing detailed specs.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 2,
@@ -118,8 +146,8 @@
       "target_brand": "CARINI",
       "target_url": "https://www.homepro.co.th/p/1262899",
       "expected_url": "https://www.homepro.co.th/p/1262899",
-      "confidence": 70,
-      "reason": "The candidate has the correct PRODUCT TYPE (post lamp) and is from a PREFERRED brand (CARINI). Although specific specs like socket and dimensions are not extracted for the candidate, it is the closest match in terms of product category and brand preference.",
+      "confidence": 75,
+      "reason": "Candidate 0 is the correct product type (post light is a subtype of lawn lamp), has the highest spec match percentage among preferred brands, and is from the highest preferred brand CARINI.",
       "gt_status": "CORRECT"
     },
     {
@@ -132,8 +160,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1028911",
       "expected_url": "https://www.homepro.co.th/p/1069983",
-      "confidence": 100,
-      "reason": "The candidate is a trolley and has the exact same volume (300 KG) as the source, and is from a preferred brand (MATALL).",
+      "confidence": 95,
+      "reason": "Candidate 0 is a trolley from a preferred brand (MATALL, PREFERRED#2) with identical volume (300 KG) matching the source product.",
       "gt_status": "INCORRECT"
     }
   ]

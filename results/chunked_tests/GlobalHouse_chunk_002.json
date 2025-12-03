@@ -8,7 +8,7 @@
   "correct": 7,
   "incorrect": 0,
   "accuracy": 100.0,
-  "timestamp": "2025-12-03T03:47:03.370827",
+  "timestamp": "2025-12-03T07:33:20.996251",
   "matches": [
     {
       "chunk": 2,
@@ -21,7 +21,7 @@
       "target_url": "https://globalhouse.co.th/product/OOPOWER-%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B9%88%E0%B8%99%E0%B8%9B%E0%B8%B8%E0%B9%8B%E0%B8%A2%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%A1%E0%B8%A5%E0%B9%87%E0%B8%94-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-26-%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A3-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%993WF3A-%E0%B8%AA%E0%B8%B5%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%94%E0%B8%B3-i.3922007950539",
       "expected_url": "https://globalhouse.co.th/product/OOPOWER-%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B9%88%E0%B8%99%E0%B8%9B%E0%B8%B8%E0%B9%8B%E0%B8%A2%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%A1%E0%B8%A5%E0%B9%87%E0%B8%94-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-26-%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A3-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%993WF3A-%E0%B8%AA%E0%B8%B5%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%94%E0%B8%B3-i.3922007950539",
       "confidence": 100,
-      "reason": "Candidate 0 is a sprayer with identical volume, wattage, and model number as the source product, resulting in a 100% spec match.",
+      "reason": "Candidate 0 is a knapsack sprayer with identical volume, wattage, and model number, and is from a preferred brand (OO POWER).",
       "gt_status": "CORRECT"
     },
     {
@@ -35,7 +35,7 @@
       "target_url": "https://globalhouse.co.th/product/PROTX-%E0%B8%A1%E0%B8%B8%E0%B9%89%E0%B8%87%E0%B8%A5%E0%B8%A7%E0%B8%94%E0%B8%AD%E0%B8%B0%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1-36-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-x-10%E0%B9%80%E0%B8%A1%E0%B8%95%E0%B8%A3-Dia-0.21mm-18x16%E0%B8%95%E0%B8%A3.%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-4TCS0023610AL-i.5922007040603",
       "expected_url": "https://globalhouse.co.th/product/PROTX-%E0%B8%A1%E0%B8%B8%E0%B9%89%E0%B8%87%E0%B8%A5%E0%B8%A7%E0%B8%94%E0%B8%AD%E0%B8%B0%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1-36-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-x-10%E0%B9%80%E0%B8%A1%E0%B8%95%E0%B8%A3-Dia-0.21mm-18x16%E0%B8%95%E0%B8%A3.%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-4TCS0023610AL-i.5922007040603",
       "confidence": 100,
-      "reason": "Candidate 0 is an aluminum screen with a matching size (36 inch) and has a 100% SpecMatch.",
+      "reason": "Candidate 0 is an aluminum screen with the same size (36 inch) and is from the highly preferred brand PROTX, achieving a 100% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -48,8 +48,8 @@
       "target_brand": "HUMMER",
       "target_url": "https://globalhouse.co.th/product/HUMMER-%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B9%84%E0%B8%94%E0%B8%AD%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1%E0%B8%A1%E0%B8%B5%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%88%E0%B8%B1%E0%B8%9A-4-%E0%B8%82%E0%B8%B1%E0%B9%89%E0%B8%99-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-LJG304D-i.5922005600199",
       "expected_url": "https://globalhouse.co.th/product/HUMMER-%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B9%84%E0%B8%94%E0%B8%AD%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1%E0%B8%A1%E0%B8%B5%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%88%E0%B8%B1%E0%B8%9A-4-%E0%B8%82%E0%B8%B1%E0%B9%89%E0%B8%99-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-LJG304D-i.5922005600199",
-      "confidence": 90,
-      "reason": "The candidate is a ladder with 4 steps, directly matching the critical product type and step count of the source product.",
+      "confidence": 85,
+      "reason": "The candidate is the same product type (aluminum ladder), has the preferred brand (HUMMER), and an excellent spec match for 'steps' (4 steps).",
       "gt_status": "CORRECT"
     },
     {
@@ -63,7 +63,21 @@
       "target_url": "https://globalhouse.co.th/product/TUF-%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B9%88%E0%B8%99%E0%B8%A2%E0%B8%B2%E0%B9%81%E0%B8%9A%E0%B8%95%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B8%B5%E0%B9%88-20-%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A3-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-JNMD20B-%E0%B8%AA%E0%B8%B5%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99--i.3922007880218",
       "expected_url": "https://globalhouse.co.th/product/TUF-%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B9%88%E0%B8%99%E0%B8%A2%E0%B8%B2%E0%B9%81%E0%B8%9A%E0%B8%95%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B8%B5%E0%B9%88-20-%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A3-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-JNMD20B-%E0%B8%AA%E0%B8%B5%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99--i.3922007880218",
       "confidence": 95,
-      "reason": "The candidate is a 'battery sprayer' which is a type of 'sprayer' and perfectly matches the critical 'volume' spec and has a high spec match percentage.",
+      "reason": "The candidate is a sprayer, matches the critical volume specification, and is from a preferred brand with a high SpecMatch%. The difference in 'model' is acceptable for an equivalent product.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 2,
+      "source_idx": 21,
+      "source_name": "ลูกกลิ้งทาสีขนขาวแถบเหลือง GIANT KINGKONG รุ่น HP 10YS ขนาด 10 นิ้ว สีขาว",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60304687",
+      "target_name": "HUMMER ลูกกลิ้งทาสี พร้อมด้าม(G-014) รุ่น DTPT371 สีเหลือง-ดำ 10นิ้ว",
+      "target_brand": "HUMMER",
+      "target_url": "https://globalhouse.co.th/product/HUMMER-%E0%B8%A5%E0%B8%B9%E0%B8%81%E0%B8%81%E0%B8%A5%E0%B8%B4%E0%B9%89%E0%B8%87%E0%B8%97%E0%B8%B2%E0%B8%AA%E0%B8%B5-%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%94%E0%B9%89%E0%B8%B2%E0%B8%A1G014-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-DTPT371-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%87%E0%B8%94%E0%B8%B3-10%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-i.6022001930371",
+      "expected_url": "https://globalhouse.co.th/product/HUMMER-%E0%B8%A5%E0%B8%B9%E0%B8%81%E0%B8%81%E0%B8%A5%E0%B8%B4%E0%B9%89%E0%B8%87%E0%B8%97%E0%B8%B2%E0%B8%AA%E0%B8%B5-%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%94%E0%B9%89%E0%B8%B2%E0%B8%A1G014-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-DTPT371-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%87%E0%B8%94%E0%B8%B3-10%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-i.6022001930371",
+      "confidence": 95,
+      "reason": "The candidate is a preferred brand (HUMMER), has a 100% spec match, and is the correct product type (paint roller).",
       "gt_status": "CORRECT"
     },
     {
@@ -76,8 +90,8 @@
       "target_brand": "OO POWER",
       "target_url": "https://globalhouse.co.th/product/detail/3922007950560",
       "expected_url": "https://globalhouse.co.th/product/detail/3922007950560",
-      "confidence": 100,
-      "reason": "Candidate 0 is an exact product type match ('drill bit' is close enough to 'earth drill bit' in this context as per user rule implied by SpecMatch 100%) and has a 100% spec match on size_inch (4 inch) and a different model (OO-DR10B vs D-100), but the size is the most critical spec.",
+      "confidence": 95,
+      "reason": "Candidate 0 is an auger bit of the preferred brand OO POWER, with an exact size match and 100% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -90,22 +104,8 @@
       "target_brand": "KAMPER",
       "target_url": "https://globalhouse.co.th/product/KAMPER-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%99%E0%B8%B1%E0%B9%88%E0%B8%87%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B9%82%E0%B8%9E%E0%B8%A5%E0%B8%B5%E0%B8%A2%E0%B8%B9%E0%B8%A3%E0%B8%B5%E0%B9%80%E0%B8%97%E0%B8%99-PU-%E0%B8%82%E0%B8%B2%E0%B8%AB%E0%B8%A1%E0%B8%B8%E0%B8%99-%E0%B8%A1%E0%B8%B5%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%84-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-1152152B-6-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-i.6032698301842",
       "expected_url": "https://globalhouse.co.th/product/KAMPER-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%99%E0%B8%B1%E0%B9%88%E0%B8%87%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B9%82%E0%B8%9E%E0%B8%A5%E0%B8%B5%E0%B8%A2%E0%B8%B9%E0%B8%A3%E0%B8%B5%E0%B9%80%E0%B8%97%E0%B8%99-PU-%E0%B8%82%E0%B8%B2%E0%B8%AB%E0%B8%A1%E0%B8%B8%E0%B8%99-%E0%B8%A1%E0%B8%B5%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%84-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-1152152B-6-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-i.6032698301842",
-      "confidence": 70,
-      "reason": "The candidate is the same product type (caster), has a brake, and its size in inches (6 inch) is highly similar to the source's size in cm (15.2 cm conversion ~5.98 inch), with a high SpecMatch percentage.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 2,
-      "source_idx": 24,
-      "source_name": "กิ๊บจับสลิง GIANT KINGKONG รุ่น WR-38 ขนาด 3/8 นิ้ว (แพ็ค 1 ตัว) สีซิงค์ขาว",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60307033",
-      "target_name": "HUMMER กิ๊บจับลวดสลิง รุ่น WRC-M10 ขนาด 3/8",
-      "target_brand": "HUMMER",
-      "target_url": "https://globalhouse.co.th/product/HUMMER-%E0%B8%81%E0%B8%B4%E0%B9%8A%E0%B8%9A%E0%B8%88%E0%B8%B1%E0%B8%9A%E0%B8%A5%E0%B8%A7%E0%B8%94%E0%B8%AA%E0%B8%A5%E0%B8%B4%E0%B8%87-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-WRCM10-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-38-i.2422005400773",
-      "expected_url": "https://globalhouse.co.th/product/HUMMER-%E0%B8%81%E0%B8%B4%E0%B9%8A%E0%B8%9A%E0%B8%88%E0%B8%B1%E0%B8%9A%E0%B8%A5%E0%B8%A7%E0%B8%94%E0%B8%AA%E0%B8%A5%E0%B8%B4%E0%B8%87-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-WRCM10-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-38-i.2422005400773",
-      "confidence": 70,
-      "reason": "The product type 'wire clamp' is functionally the same as 'wire rope clip' and the size is a match, despite the specmatch being 0% due to model discrepancy.",
+      "confidence": 85,
+      "reason": "The candidate is a 'caster' with a brake, matching the source's type and brake specification. The size is also very close (6 inches is approximately 15.24 cm).",
       "gt_status": "CORRECT"
     },
     {
@@ -118,8 +118,8 @@
       "target_brand": "SANE",
       "target_url": "https://globalhouse.co.th/product/SANE-%E0%B8%84%E0%B8%A3%E0%B8%81%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%AA%E0%B8%B2%E0%B8%81%E0%B8%AA%E0%B9%80%E0%B8%95%E0%B8%99%E0%B9%80%E0%B8%A5%E0%B8%AA-SUS304-6-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-JAKA05-i.4622007261435",
       "expected_url": "",
-      "confidence": 90,
-      "reason": "The candidate is a mortar and pestle with the exact same size (6 inch) as the source product.",
+      "confidence": 100,
+      "reason": "Candidate 0 is a perfect spec match with the same product type (mortar and pestle) and belongs to a preferred brand (SANE).",
       "gt_status": "NO_GT"
     },
     {
@@ -132,8 +132,8 @@
       "target_brand": "HUMMER",
       "target_url": "https://globalhouse.co.th/product/HUMMER-%E0%B8%9B%E0%B8%B7%E0%B8%99%E0%B8%A2%E0%B8%B4%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A7%E0%B8%8B%E0%B8%B4%E0%B8%A5%E0%B8%B4%E0%B9%82%E0%B8%84%E0%B8%99-9-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-DTSG269-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%87-i.6022001932269",
       "expected_url": "",
-      "confidence": 75,
-      "reason": "The candidate is also a silicone sealant gun, which is essentially the same product type as a glue gun, and has a 9-inch size spec, indicating a functional match despite the model difference. The name clearly indicates 'silicone sealant gun 9'.",
+      "confidence": 60,
+      "reason": "The candidate has the correct product type (glue gun) and is from a preferred brand, even though the model number does not match.",
       "gt_status": "NO_GT"
     }
   ]

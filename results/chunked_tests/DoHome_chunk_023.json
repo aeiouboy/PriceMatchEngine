@@ -4,25 +4,39 @@
   "start_idx": 330,
   "end_idx": 339,
   "products_tested": 9,
-  "matches_found": 3,
+  "matches_found": 5,
   "correct": 2,
-  "incorrect": 1,
-  "accuracy": 66.66666666666666,
-  "timestamp": "2025-12-03T04:10:46.472960",
+  "incorrect": 3,
+  "accuracy": 40.0,
+  "timestamp": "2025-12-03T07:48:18.532669",
   "matches": [
+    {
+      "chunk": 23,
+      "source_idx": 330,
+      "source_name": "กล่องอเนกประสงค์พร้อมล้อและฝาล็อก KASSA HOME รุ่น KPC-K40B ขนาด 40 ลิตร สีดำ",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60234565",
+      "target_name": "JCJ กล่องพลาสติกมีฝาปิด 28 ลิตร รุ่น 5223 A สีขาว",
+      "target_brand": "JCJ",
+      "target_url": "https://www.dohome.co.th/th/jcj-plastic-box-28-l-no-5223-a-white-10318795.html",
+      "expected_url": "https://www.dohome.co.th/th/plastic-box-with-lid-49-liter-black-10370410.html",
+      "confidence": 60,
+      "reason": "The source product is a storage box with a volume of 40L. Candidate 19 is a JCJ brand plastic storage box with a lid and a volume of 28L. While the volume is not exact, it is the closest product type with a preferred brand, making it the most reasonable match despite the volume difference being outside the 20% threshold.",
+      "gt_status": "INCORRECT"
+    },
     {
       "chunk": 23,
       "source_idx": 332,
       "source_name": "แอลโบลท์เกลียวหุน 5/8 นิ้ว x 400 มม. GIANT KINGKONG รุ่น LB5840 (แพ็ก 1 ชุด)",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60398206",
-      "target_name": "สกรูตัวแอล 5/8 นิ้ว x 30 ซม. | ดูโฮมออนไลน์",
+      "target_name": "สกรูตัวแอล 5/8 นิ้ว x 40 ซม. | NASH",
       "target_brand": "NASH",
-      "target_url": "https://www.dohome.co.th/th/l-type-screw-5-8-inch-x-30-cm-10202380.html",
+      "target_url": "https://www.dohome.co.th/th/l-type-screw-5-8-inch-x-40-cm-10202381.html",
       "expected_url": "https://www.dohome.co.th/th/l-type-screw-5-8-inch-x-40-cm-10202381.html",
-      "confidence": 90,
-      "reason": "The candidate has the exact size_inch and is an L-screw, which is a very close product type to a bolt. The length differs but is not a critical spec for an equivalent product in this context.",
-      "gt_status": "INCORRECT"
+      "confidence": 95,
+      "reason": "Candidate is an L-screw (equivalent to L bolt) with matching size and length, and from a preferred brand (NASH).",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 23,
@@ -34,9 +48,23 @@
       "target_brand": "DE'COS",
       "target_url": "https://www.dohome.co.th/th/stretch-film-15-micron-300-m-clear-10236866.html",
       "expected_url": "https://www.dohome.co.th/th/stretch-film-15-micron-300-m-clear-10236866.html",
-      "confidence": 70,
-      "reason": "Candidate 0 is a pallet wrap film and has a 50% spec match, sharing 'length=300M' with the source implicitly, which is the closest match to the source's '15 ไมครอน' (thickness) and '300' (length part of model).",
+      "confidence": 75,
+      "reason": "Candidate 36 is a 'stretch film' from PREFERRED brand DE'COS, matching the source product type. Although the model number is not an exact match, the length and micron are implied to be 300M and 15 micron, making it a strong alternative.",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 23,
+      "source_idx": 334,
+      "source_name": "พัดลมเพดานเหล็ก Luzino รุ่น TW-356-BK-WC ขนาด 56 นิ้ว สีดำ",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60371073",
+      "target_name": "FINEXT พัดลมเพดาน 48 นิ้ว รุ่น F348-WH-WC",
+      "target_brand": "FINEXT",
+      "target_url": "https://www.dohome.co.th/th/finext-ceiling-fan-48-inch-no-f348-wh-wc-10203272.html",
+      "expected_url": "https://www.dohome.co.th/th/lucky-misu-ceiling-fan-56-inch-black-10306779.html",
+      "confidence": 70,
+      "reason": "The candidate has the correct product type (ceiling fan) and a preferred brand (FINEXT) with a reasonable (though not ideal) size match (48 inch vs 56 inch).",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 23,
@@ -44,13 +72,13 @@
       "source_name": "ชั้นวางของพลาสติกอเนกประสงค์ 4 ชั้น KASSA HOME รุ่น PSM-1314 ขนาด 40 x 51 x 94.7 ซม. สีขาว",
       "source_brand": "KASSA HOME",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60372961",
-      "target_name": "ชั้นตะกร้าเหลี่ยม 4 ชั้น รุ่น BK-135",
-      "target_brand": "NO BRANDS",
-      "target_url": "https://www.dohome.co.th/th/4-tier-square-basket-shelf-no-bk-135-10395719.html",
+      "target_name": "JCP ชั้นวางของพลาสติก 4 ชั้น รุ่น 5974",
+      "target_brand": "JCP",
+      "target_url": "https://www.dohome.co.th/th/jcp-plastic-rack-4-layers-no-5974-10309925.html",
       "expected_url": "https://www.dohome.co.th/th/4-tier-square-basket-shelf-no-bk-135-10395719.html",
-      "confidence": 75,
-      "reason": "The candidate is a 'shelf' product and shares the '4 tiers' spec with the source 'plastic shelf', making it the closest match despite not being explicitly 'plastic'.",
-      "gt_status": "CORRECT"
+      "confidence": 70,
+      "reason": "The candidate is a plastic shelf, matches the source product type, and has the same number of tiers (4 tiers), with a 50% spec match.",
+      "gt_status": "INCORRECT"
     }
   ]
 }

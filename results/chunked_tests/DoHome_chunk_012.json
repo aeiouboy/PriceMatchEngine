@@ -4,12 +4,26 @@
   "start_idx": 165,
   "end_idx": 180,
   "products_tested": 15,
-  "matches_found": 5,
-  "correct": 4,
+  "matches_found": 4,
+  "correct": 3,
   "incorrect": 1,
-  "accuracy": 80.0,
-  "timestamp": "2025-12-03T04:00:46.522064",
+  "accuracy": 75.0,
+  "timestamp": "2025-12-03T07:46:46.881348",
   "matches": [
+    {
+      "chunk": 12,
+      "source_idx": 165,
+      "source_name": "โคมดาวน์ไลท์หน้ากลม 5 นิ้ว LED 12 วัตต์ Daylight LUZINO รุ่น PN-JYX0101-12W/DL สีขาว",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60308452",
+      "target_name": "RACER ดาวน์ไลท์ LED 12 วัตต์ รุ่น NANO-D (Day Light)",
+      "target_brand": "RACER",
+      "target_url": "https://www.dohome.co.th/th/racer-led-downlight-12w-nano-d-day-linght-10236083.html",
+      "expected_url": "https://www.dohome.co.th/th/power-max-led-downlight-floating-12w-round-eco-10323429.html",
+      "confidence": 60,
+      "reason": "The candidate RACER ดาวน์ไลท์ LED 12 วัตต์ รุ่น NANO-D (Day Light) matches the product type (downlight), wattage (12W), and color temperature (Day Light) of the source product.",
+      "gt_status": "INCORRECT"
+    },
     {
       "chunk": 12,
       "source_idx": 166,
@@ -20,37 +34,9 @@
       "target_brand": "JCP",
       "target_url": "https://www.dohome.co.th/th/jcp-square-step-plastic-garbage-can-18-l-no-5669-grey-10309943.html",
       "expected_url": "https://www.dohome.co.th/th/jcp-square-step-plastic-garbage-can-18-l-no-5669-grey-10309943.html",
-      "confidence": 75,
-      "reason": "The candidate is also a trash can with the exact same volume (18 L) and model series (5669), which are critical specs. It is highly likely to be the same product from a different house brand.",
+      "confidence": 90,
+      "reason": "The candidate is a trash can with the same volume (18 L) and a very similar model number (5669 vs 5669GY), indicating a strong product match despite being a different brand. It has the highest SpecMatch and is the correct product type.",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 12,
-      "source_idx": 169,
-      "source_name": "ราวแขวนตั้งพื้นทรงเอคู่ 1 เมตร เหล็กเคลือบ KASSA HOME ขนาด 100 x 40 x 142 ซม. สีขาว",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60213857",
-      "target_name": "PP ราวตากผ้าอลูมิเนียม ทรง A ใหญ่ สีขาว",
-      "target_brand": "PP",
-      "target_url": "https://www.dohome.co.th/th/steel-clothes-rail-a-shape-10376602.html",
-      "expected_url": "https://www.dohome.co.th/th/steel-clothes-rail-a-shape-10376602.html",
-      "confidence": 70,
-      "reason": "The candidate has 'ทรง A' which translates to A-frame, matching the critical product type. Although the specific dimensions are not listed, the product type match is strong.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 12,
-      "source_idx": 172,
-      "source_name": "เจโบลท์เกลียวหุน 1/2 นิ้ว x 400 มม. GIANT KINGKONG รุ่น JB1240 (แพ็ก 1 ชุด)",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60398190",
-      "target_name": "สกรูตัวเจ 1/2 นิ้ว x 30 ซม. | NASH",
-      "target_brand": "NASH",
-      "target_url": "https://www.dohome.co.th/th/j-type-screw-1-2-inch-x-30-cm-10201454.html",
-      "expected_url": "https://www.dohome.co.th/th/j-type-screw-1-2-inch-x-40-cm-10201455.html",
-      "confidence": 75,
-      "reason": "The candidate has the correct size_inch and is also a screw product, which is a close match to 'เจโบลท์'.",
-      "gt_status": "INCORRECT"
     },
     {
       "chunk": 12,
@@ -62,8 +48,8 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/nash-paint-brush-3-inch-no-nm001-10224011.html",
       "expected_url": "https://www.dohome.co.th/th/nash-paint-brush-3-inch-no-nm001-10224011.html",
-      "confidence": 100,
-      "reason": "Candidate 0 is the only 'paint brush' type product and has an exact match on 'size_inch' and a high SpecMatch% for a synthetic bristle paint brush equivalent, despite brand and model difference.",
+      "confidence": 95,
+      "reason": "Candidate 0 is a synthetic brush with a matching size and is from the most preferred brand, NASH.",
       "gt_status": "CORRECT"
     },
     {
@@ -77,7 +63,7 @@
       "target_url": "https://www.dohome.co.th/th/nash-paint-roller-tray-10-inch-10279915.html",
       "expected_url": "https://www.dohome.co.th/th/nash-paint-roller-tray-10-inch-10279915.html",
       "confidence": 100,
-      "reason": "The candidate is a paint roller tray with identical size and roller type, matching all key specifications.",
+      "reason": "Candidate 0 is a paint tray with identical size and is from the most preferred brand (NASH).",
       "gt_status": "CORRECT"
     }
   ]

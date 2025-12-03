@@ -4,11 +4,11 @@
   "start_idx": 30,
   "end_idx": 45,
   "products_tested": 15,
-  "matches_found": 6,
-  "correct": 4,
-  "incorrect": 1,
-  "accuracy": 80.0,
-  "timestamp": "2025-12-03T03:53:14.157442",
+  "matches_found": 8,
+  "correct": 5,
+  "incorrect": 2,
+  "accuracy": 71.42857142857143,
+  "timestamp": "2025-12-03T07:44:11.609570",
   "matches": [
     {
       "chunk": 3,
@@ -20,8 +20,8 @@
       "target_brand": "DECOS",
       "target_url": "https://www.dohome.co.th/th/stretch-film-20-micron-300-m-clear-10236868.html",
       "expected_url": "",
-      "confidence": 90,
-      "reason": "The candidate is the same product type (stretch film) and has a high spec match with several matching key specifications like length.",
+      "confidence": 100,
+      "reason": "Candidate 0 is a 'pallet wrap film' which is an exact product type match for 'pallet stretch film'. It has the highest SpecMatch of 78% and is from the DECOS brand which is PREFERRED#6, matching the critical 'length' spec of 300M with the source. The price is also identical to the source.",
       "gt_status": "NO_GT"
     },
     {
@@ -30,13 +30,13 @@
       "source_name": "แม่แรงตะเข้จาน 6 นิ้ว GIANT KINGKONG รุ่น STFL322 ขนาด 3 ตัน สีแดง",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60165872",
-      "target_name": "YOSHINO แม่แรงตะเข้ 3 ตัน 1 ลูกสูบ รุ่น JK32",
-      "target_brand": "YOSHINO",
-      "target_url": "https://www.dohome.co.th/th/yoshino-3-tons-1-piston-hip-jack-no-jk32-10376065.html",
+      "target_name": "NASH แม่แรงกระปุก 32 ตัน รุ่น GF3204",
+      "target_brand": "NASH",
+      "target_url": "https://www.dohome.co.th/th/nash-hydraulic-bottle-jack-32-t-no-gf3204-10227282.html",
       "expected_url": "https://www.dohome.co.th/th/yoshino-3-tons-1-piston-hip-jack-no-jk32-10376065.html",
-      "confidence": 60,
-      "reason": "The candidate is also a trolley jack but has a lower spec match (0%) because the model numbers do not align, and the source product includes a size spec which is missing from the candidate.",
-      "gt_status": "CORRECT"
+      "confidence": 70,
+      "reason": "The source product is a 'trolley jack'. Candidate 9 is a 'แม่แรงกระปุก' which is a type of jack. While not identical, it serves a similar function and is from a PREFERRED brand (NASH). SpecMatch is 0% as the source specifies 'size_inch=6 inch' and the candidate lacks this specific spec, but it is a similar product type and the highest ranked PREFERRED brand acting as a jack.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 3,
@@ -49,7 +49,7 @@
       "target_url": "https://www.dohome.co.th/th/powermax-track-light-2m-no-lumos-black-10400229.html",
       "expected_url": "https://www.dohome.co.th/th/powermax-track-light-2m-no-lumos-black-10400229.html",
       "confidence": 90,
-      "reason": "The candidate product is also a 'track light rail' with a similar length (2M vs 200CM) and price. Although the model numbers differ, the core product type and main spec are a good match.",
+      "reason": "The candidate has the highest SpecMatch% among preferred brands for the correct product type (track light rail). Although the length spec format differs (200CM vs 2M), they are equivalent and the model is different but consistent for a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -58,13 +58,27 @@
       "source_name": "โคมดาวน์ไลท์หน้าเหลี่ยม 4 นิ้ว LED 9W Daylight LUZINO รุ่น PN-JYX0102-9W/DL สีขาว",
       "source_brand": "LUZINO",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60308458",
-      "target_name": "FINEXT ดาวน์ไลท์ 4 นิ้ว แบบฝัง หน้าเหลี่ยม สีขาว",
-      "target_brand": "FINEXT",
-      "target_url": "https://www.dohome.co.th/th/finext-downlight-4-inch-square-white-10246941.html",
+      "target_name": "POWER MAX ดาวน์ไลท์ 4 นิ้ว ติดลอย กล่องเหลี่ยม สีขาว [ไม่รวมหลอดไฟ]",
+      "target_brand": "POWER MAX",
+      "target_url": "https://www.dohome.co.th/th/heap-downlight-4-inch-square-white-10204670.html",
       "expected_url": "https://www.dohome.co.th/th/power-max-led-downlight-9w-square-dhp010-day-linght-10268578.html",
       "confidence": 75,
-      "reason": "The candidate is also a 'downlight' product with a matching size of 4 inches, making it the closest alternative despite a lower spec match percentage in other areas.",
+      "reason": "The candidate has the exact same product type (downlight) and size (4 inch) as the source, and is from a preferred brand (POWER MAX). While it doesn't specify wattage or color temperature, it is the best available match among the preferred brands.",
       "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 3,
+      "source_idx": 37,
+      "source_name": "รถเข็นท้องแบนพื้นเหล็ก 4 ล้อด้ามจับพับเก็บได้ GIANT KINGKONG รุ่น TT0150CA ขนาด 150 กก. สีน้ำเงิน",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60259408",
+      "target_name": "NASH รถเข็น อเนกประสงค์ (150 กก.)",
+      "target_brand": "NASH",
+      "target_url": "https://www.dohome.co.th/th/trolley-150-kg-10066707.html",
+      "expected_url": "https://www.dohome.co.th/th/trolley-150-kg-10066707.html",
+      "confidence": 70,
+      "reason": "The candidate is a NASH brand trolley and has a matching volume spec of 150 KG, making it the closest product type and spec match among the preferred brands.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 3,
@@ -76,8 +90,8 @@
       "target_brand": "JCJ",
       "target_url": "https://www.dohome.co.th/th/jcj-square-plastic-box-70-l-no-5117-10365718.html",
       "expected_url": "https://www.dohome.co.th/th/jcj-square-plastic-box-70-l-no-5117-10365718.html",
-      "confidence": 70,
-      "reason": "The candidate is a 'plastic box' which is a close match for 'multi-purpose box' and has a model and volume match, indicating it's the same product. The other candidates do not match the product type or have sufficiently high SpecMatch percentage.",
+      "confidence": 80,
+      "reason": "The candidate is a preferred brand (JCJ), matches the primary product type (storage box), and the volume (70 L) and model number (5117) match exactly, providing a high SpecMatch%.",
       "gt_status": "CORRECT"
     },
     {
@@ -90,8 +104,22 @@
       "target_brand": "SANKI",
       "target_url": "https://www.dohome.co.th/th/sanki-aluminum-ladder-with-tray-6-steps-10391217.html",
       "expected_url": "https://www.dohome.co.th/th/sanki-aluminum-ladder-with-tray-6-steps-10391217.html",
+      "confidence": 70,
+      "reason": "The candidate has the exact same number of steps and is from a preferred brand (SANKI), making it the closest available alternative despite the lower SpecMatch% due to fewer extracted specs.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 3,
+      "source_idx": 43,
+      "source_name": "เข็มขัดนิรภัยเต็มตัว GIANT KINGKONG รุ่น SA-100 ขนาด 180 ซม. สีเขียว - เหลือง",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60211306",
+      "target_name": "NASH เข็มขัดเซฟตี้ รุ่น NP-787B",
+      "target_brand": "NASH",
+      "target_url": "https://www.dohome.co.th/th/nash-safety-belt-no-np-787b-10231061.html",
+      "expected_url": "https://www.dohome.co.th/th/nash-safety-belt-no-np-787b-10231061.html",
       "confidence": 75,
-      "reason": "The candidate is the same product type (ladder) and has a matching number of steps (6 steps), indicating a strong specification match for a house brand equivalent.",
+      "reason": "Candidate is the same product type (เข็มขัดเซฟตี้ - safety belt, synonymous with full body harness), and is from a preferred brand (NASH).",
       "gt_status": "CORRECT"
     }
   ]

@@ -4,11 +4,11 @@
   "start_idx": 15,
   "end_idx": 30,
   "products_tested": 15,
-  "matches_found": 6,
-  "correct": 2,
+  "matches_found": 8,
+  "correct": 4,
   "incorrect": 3,
-  "accuracy": 40.0,
-  "timestamp": "2025-12-03T03:52:26.204682",
+  "accuracy": 57.14285714285714,
+  "timestamp": "2025-12-03T07:44:09.679236",
   "matches": [
     {
       "chunk": 2,
@@ -20,8 +20,22 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/nash-cement-trolley-single-air-wheel-13-inches-yellow-80-kg-10383677.html",
       "expected_url": "https://www.dohome.co.th/th/nash-cement-trolley-single-air-wheel-13-inches-yellow-80-kg-10383677.html",
-      "confidence": 70,
-      "reason": "The candidate is the same product type (wheelbarrow) and has a matching wheel size (13 inch). While the volume is not specified, it is the best match with 54% spec match and brand Nash is a common house brand for hardware.",
+      "confidence": 85,
+      "reason": "The candidate is the same product type (wheelbarrow), from a highly preferred brand (NASH), and has a strong spec match (13 inch wheel) with the source product. Although the volume specification is missing, the critical 'size_inch' matches exactly.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 2,
+      "source_idx": 17,
+      "source_name": "ชุดเครื่องมือช่างอเนกประสงค์ GIANT KINGKONG PRO รุ่น KKP3991M (54 ชิ้น) สีน้ำเงิน - เทา",
+      "source_brand": "GIANT KINGKONG PRO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60293221",
+      "target_name": "NASH ชุดเครื่องมือช่าง 69 ชิ้น",
+      "target_brand": "NASH",
+      "target_url": "https://www.dohome.co.th/th/nash-hand-tools-set-69-pieces-10287204.html",
+      "expected_url": "https://www.dohome.co.th/th/nash-hand-tools-set-69-pieces-10287204.html",
+      "confidence": 60,
+      "reason": "Candidate is the same product type ('tool kit' is a close synonym for 'tool set') and is from a preferred brand, despite a lower pack count.",
       "gt_status": "CORRECT"
     },
     {
@@ -34,8 +48,8 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/nash-plastic-tools-box-16-5-inch-no-mj20148-10223196.html",
       "expected_url": "https://www.dohome.co.th/en/yoshino-plastic-tool-box-165-inch-jk04165-10376378.html",
-      "confidence": 70,
-      "reason": "The candidate is a plastic toolbox, matching the product type, and has a similar size of 16.5 inches compared to the source's 16 inches, resulting in a 70% spec match.",
+      "confidence": 95,
+      "reason": "The candidate is a tool box, which matches the critical product type, and is from a preferred brand (NASH) with a high spec match for size (16.5 inch vs 16 inch).",
       "gt_status": "INCORRECT"
     },
     {
@@ -44,12 +58,12 @@
       "source_name": "โคมไฟผนังภายนอกอะลูมิเนียม E27x1 LUZINO รุ่น GD-AWY31 สีดำ - ใส",
       "source_brand": "LUZINO",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60402136",
-      "target_name": "DECOS โคมไฟผนัง ภายนอก ABS 1 หลอด รุ่น P5007S-W สีดำ",
+      "target_name": "DECOS โคมไฟผนังนอก 1 หลอด ทรงสี่เหลี่ยม ขั้ว E27 รุ่น GRIS สีเทา",
       "target_brand": "DECOS",
-      "target_url": "https://www.dohome.co.th/th/heap-wall-lamp-exterior-abs-1-bulb-p5007sw-black-10317666.html",
+      "target_url": "https://www.dohome.co.th/th/decos-1-bulb-outdoor-wall-lamp-square-shape-e27-socket-model-gris-grey-10417411.html",
       "expected_url": "https://www.dohome.co.th/th/finext-outdoor-wall-lamp-6336-black-10216410.html",
-      "confidence": 70,
-      "reason": "The candidate is also a wall lamp and has a 40% spec match, which is the highest among relevant candidates. The 'lamp_type' spec (WALL_LAMP) matches perfectly.",
+      "confidence": 75,
+      "reason": "The candidate has the highest spec match (63%), is the correct product type (wall lamp), and is from a preferred brand (DECOS).",
       "gt_status": "INCORRECT"
     },
     {
@@ -58,13 +72,27 @@
       "source_name": "มือจับก้านโยกห้องน้ำซิงค์พรีเมียมจานสี่เหลี่ยม GIANT KINGKONG รุ่น 8807BK-MB สีดำด้าน",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/sku/60365811",
-      "target_name": "COLT LITE มือจับก้านโยกห้องน้ำสแตนเลส รุ่น 8121 SS",
-      "target_brand": "COLT",
-      "target_url": "https://www.dohome.co.th/th/colt-lite-bathroom-lever-handle-no-8121-ss-10314468.html",
+      "target_name": "SOLEX ก้านโยกห้องน้ำ รุ่น 1704BLK สีดำ",
+      "target_brand": "SOLEX",
+      "target_url": "https://www.dohome.co.th/th/solex-bathroom-lever-no-1704blk-black-10401969.html",
       "expected_url": "",
       "confidence": 95,
-      "reason": "The candidate is also a 'door handle' and has a perfect spec match on 'knob_room' and a high spec match on 'model', indicating it is a very similar product.",
+      "reason": "Candidate 1 (SOLEX ก้านโยกห้องน้ำ) is the only 'lever handle' (or similar type 'door lever') identified with 100% spec match for 'BATHROOM' and is an equivalent product type.",
       "gt_status": "NO_GT"
+    },
+    {
+      "chunk": 2,
+      "source_idx": 23,
+      "source_name": "ปากกาตรวจสอบกระแสไฟ 90 - 1,000 โวลต์ GIANT KINGKONG PRO รุ่น KKP1000M สีน้ำเงิน - ดำ",
+      "source_brand": "GIANT KINGKONG PRO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60334764",
+      "target_name": "SUMO ปากกาวัดแรงดันไฟ รุ่น AC-90",
+      "target_brand": "SUMO",
+      "target_url": "https://www.dohome.co.th/th/sumo-voltage-detector-pen-no-ac-90-10303068.html",
+      "expected_url": "https://www.dohome.co.th/th/sumo-voltage-detector-pen-no-ac-90-10303068.html",
+      "confidence": 70,
+      "reason": "The candidate is also a voltage tester and from a preferred brand (SUMO), despite having a low SpecMatch% due to different model numbers and specifications.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 2,
@@ -72,12 +100,12 @@
       "source_name": "โคมไฟผนังภายนอกอลูมิเนียม E27x1 LUZINO รุ่น PHOEBE 2197/1(GY) สีเทา",
       "source_brand": "LUZINO",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60257199",
-      "target_name": "DECOS โคมไฟผนัง ภายนอก ABS 1 หลอด รุ่น P5007S-W สีดำ",
+      "target_name": "DECOS โคมไฟผนังนอก 1 หลอด ทรงสี่เหลี่ยม ขั้ว E27 รุ่น GRIS สีเทา",
       "target_brand": "DECOS",
-      "target_url": "https://www.dohome.co.th/th/heap-wall-lamp-exterior-abs-1-bulb-p5007sw-black-10317666.html",
+      "target_url": "https://www.dohome.co.th/th/decos-1-bulb-outdoor-wall-lamp-square-shape-e27-socket-model-gris-grey-10417411.html",
       "expected_url": "https://www.dohome.co.th/th/finext-outdoor-wall-lamp-aluminium-a119-black-10247661.html",
       "confidence": 75,
-      "reason": "The candidate is a wall lamp with the highest spec match percentage (40%) among the alternatives, and its product type perfectly matches the source.",
+      "reason": "The candidate is the same product type (outdoor wall lamp), has the exact same socket type (E27x1), and is from a preferred brand (DECOS), though the model name differs.",
       "gt_status": "INCORRECT"
     },
     {
@@ -91,7 +119,7 @@
       "target_url": "https://www.dohome.co.th/th/horse-caster-wheel-with-braker-8-inch-10052144.html",
       "expected_url": "https://www.dohome.co.th/th/horse-caster-wheel-with-braker-8-inch-10052144.html",
       "confidence": 70,
-      "reason": "The candidate is a 'scaffolding roller' which is a close product type to 'caster wheel', has a brake, and its size in inches (8 inch) is equivalent to the source's 16cm (approx 6.3 inch), making it the best available match despite a slight size difference.",
+      "reason": "Candidate 0 is a scaffolding caster with a brake, matching the critical product type and brake spec, and is from a preferred brand (NASH).",
       "gt_status": "CORRECT"
     }
   ]
