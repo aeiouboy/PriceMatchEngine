@@ -499,6 +499,9 @@ PRODUCT_LINE_CONFLICTS = [
     # Fiberglass vs foam roller
     ('ไฟเบอร์กลาส', 'โฟม'),
     ('fiberglass', 'foam'),
+    # Microfiber glass roller vs regular chemical roller - different materials
+    ('ไมโครไฟเบอร์กลาส', 'พร้อมอะไหล่'),
+    ('microfiber glass', 'with refill'),
 ]
 
 def extract_volume_liters(name):
@@ -1100,6 +1103,29 @@ def has_product_conflict(source_name, target_name):
         target_black = 'ดำ' in target_lower or 'black' in target_lower
         # White source should not match black target and vice versa
         if (source_white and target_black) or (source_black and target_white):
+            return True
+
+    # LED wall lamp wattage conflict - different wattages are different products
+    led_wall_keywords = ['ไฟผนัง', 'โคมไฟผนัง', 'wall lamp', 'wall light']
+    is_source_led_wall = any(kw in source_lower for kw in led_wall_keywords) and 'led' in source_lower
+    is_target_led_wall = any(kw in target_lower for kw in led_wall_keywords) and 'led' in target_lower
+    if is_source_led_wall and is_target_led_wall:
+        # Extract LED wattage
+        led_watt_pattern = r'led\s*(\d+)\s*w'
+        source_watt = re.search(led_watt_pattern, source_lower)
+        target_watt = re.search(led_watt_pattern, target_lower)
+        if source_watt and target_watt:
+            source_w = int(source_watt.group(1))
+            target_w = int(target_watt.group(1))
+            # If wattage differs by more than 30%, it's a different product
+            if abs(source_w - target_w) / max(source_w, target_w) > 0.3:
+                return True
+        # Color conflict for LED wall lamps - black vs white
+        source_black = 'ดำ' in source_lower or 'black' in source_lower or 'bk' in source_lower
+        target_white = 'ขาว' in target_lower or 'white' in target_lower
+        source_white = 'ขาว' in source_lower or 'white' in source_lower
+        target_black = 'ดำ' in target_lower or 'black' in target_lower or 'bk' in target_lower
+        if (source_black and target_white) or (source_white and target_black):
             return True
 
     # Screw/fastener dimension conflict - must match exactly (e.g., 8x1/2 vs 8x1-1/2)

@@ -4,40 +4,11 @@
   "start_idx": 30,
   "end_idx": 45,
   "products_tested": 15,
-  "matches_found": 2,
-  "correct": 1,
+  "matches_found": 0,
+  "correct": 0,
   "incorrect": 0,
-  "gt_missing": 1,
-  "accuracy": 100.0,
-  "timestamp": "2025-12-04T10:22:09.602880",
-  "matches": [
-    {
-      "chunk": 3,
-      "source_idx": 30,
-      "source_name": "โคมไฟแขวนแก้ว Mamo G E27x3 LUZINO รุ่น HH150 สีดำ",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60365506",
-      "target_name": "ไฟแขวน MD54158C-3A BK *ดำ E27x3 40W",
-      "target_brand": "LIGHTMOST",
-      "target_url": "https://www.boonthavorn.com/lightmost-1208338",
-      "expected_url": "https://www.boonthavorn.com/lightmost-1208338",
-      "confidence": 75,
-      "reason": "The candidate is the correct product type (pendant light) and has a matching socket type (E27x3) and dimensions, and is from a preferred brand (LIGHTMOST).",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 3,
-      "source_idx": 31,
-      "source_name": "โคมไฟผนังภายนอกอะลูมิเนียม E27x1 LUZINO รุ่น GD-AWY31 สีดำ - ใส",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60402136",
-      "target_name": "ไฟผนัง O-001 E27x1 MAX 60W IP44",
-      "target_brand": "MAX LIGHT",
-      "target_url": "https://www.boonthavorn.com/max-light-1249472",
-      "expected_url": "https://www.boonthavorn.com/yj-2180a-1-e27x1",
-      "confidence": 90,
-      "reason": "The candidate has the highest spec match (71%) and is from a highly preferred brand (MAX LIGHT, PREFERRED#1). The product type (wall lamp) and key specs like dimensions and socket type perfectly match the source.",
-      "gt_status": "GT_MISSING"
-    }
-  ]
+  "gt_missing": 0,
+  "accuracy": 0,
+  "timestamp": "2025-12-04T10:49:26.275268",
+  "matches": []
 }

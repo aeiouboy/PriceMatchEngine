@@ -4,13 +4,41 @@
   "start_idx": 45,
   "end_idx": 60,
   "products_tested": 15,
-  "matches_found": 4,
-  "correct": 4,
+  "matches_found": 6,
+  "correct": 5,
   "incorrect": 0,
-  "gt_missing": 0,
+  "gt_missing": 1,
   "accuracy": 100.0,
-  "timestamp": "2025-12-04T10:34:16.237004",
+  "timestamp": "2025-12-04T10:53:52.571361",
   "matches": [
+    {
+      "chunk": 4,
+      "source_idx": 45,
+      "source_name": "โคมไฟผนังภายนอกอะลูมิเนียม E27x1 LUZINO รุ่น GD-AWY33 สีดำ - ใส",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60402138",
+      "target_name": "ไฟผนัง O-001 E27x1 MAX 60W IP44",
+      "target_brand": "MAX LIGHT",
+      "target_url": "https://www.boonthavorn.com/max-light-1249472",
+      "expected_url": "https://www.boonthavorn.com/yj-2180a-1-e27x1",
+      "confidence": 95,
+      "reason": "Candidate 0 is the closest match, with a high SpecMatch of 71%, matching the critical 'outdoor wall lamp' product type and 'E27x1' socket, and being from the top preferred brand 'MAX LIGHT'.",
+      "gt_status": "GT_MISSING"
+    },
+    {
+      "chunk": 4,
+      "source_idx": 46,
+      "source_name": "บันไดอะลูมิเนียมอเนกประสงค์พับได้ GIANT KINGKONG PRO รุ่น HCSS-01 ขนาด 4 x 2 ขั้น สีเงิน",
+      "source_brand": "GIANT KINGKONG PRO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60345787",
+      "target_name": "บันไดอลูมิเนียม พับได้ 8ขั้น ZHTL402B-08",
+      "target_brand": "NL HOME",
+      "target_url": "https://www.boonthavorn.com/nl-home-1104357",
+      "expected_url": "https://www.boonthavorn.com/nl-home-1104357",
+      "confidence": 60,
+      "reason": "The product type (ladder) and ladder_type (FOLDABLE) match the source. While steps count is different, it is the only viable ladder option from a preferred brand.",
+      "gt_status": "CORRECT"
+    },
     {
       "chunk": 4,
       "source_idx": 51,
@@ -21,8 +49,8 @@
       "target_brand": "SAKURA",
       "target_url": "https://www.boonthavorn.com/sakura-1084347",
       "expected_url": "https://www.boonthavorn.com/sakura-1084347",
-      "confidence": 70,
-      "reason": "Candidate 0 is a preferred brand (SAKURA) and the only candidate that is a flexible hose, matching the length, although exact diameter is not explicitly stated in the candidate name.",
+      "confidence": 75,
+      "reason": "The candidate is a preferred brand and has the highest spec match, with matching length and product type, differing only slightly in brand-specific hose diameter description.",
       "gt_status": "CORRECT"
     },
     {
@@ -35,8 +63,8 @@
       "target_brand": "MAX LIGHT",
       "target_url": "https://www.boonthavorn.com/max-light-1101335",
       "expected_url": "https://www.boonthavorn.com/max-light-1101335",
-      "confidence": 60,
-      "reason": "Candidate 0 is the only track light product and has the highest SpecMatch% at 57%, sharing dimensions and socket type with the source.",
+      "confidence": 70,
+      "reason": "Candidate 0 is a track light, matching the source product type. It is from a preferred brand (MAX LIGHT) and has a SpecMatch of 57% due to matching socket and dimensions, making it the best available option although not a perfect spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,8 +77,8 @@
       "target_brand": "BF",
       "target_url": "https://www.boonthavorn.com/bf-1055169",
       "expected_url": "https://www.boonthavorn.com/bf-1055169",
-      "confidence": 80,
-      "reason": "The candidate is the same product type (aluminum ladder), has the exact same number of steps (5 steps), and is a preferred brand (BF). Although it lacks color_temp and model, the critical 'steps' spec matches.",
+      "confidence": 85,
+      "reason": "The candidate is a ladder with the exact same number of steps (5 steps) and is from a preferred brand (BF), making it a strong match despite some missing specs.",
       "gt_status": "CORRECT"
     },
     {
@@ -64,7 +92,7 @@
       "target_url": "https://www.boonthavorn.com/anyhome-1160885",
       "expected_url": "https://www.boonthavorn.com/anyhome-1160885",
       "confidence": 95,
-      "reason": "The candidate is a flexible hose (semantically equivalent to flexible pipe), has a 100% spec match on length (180 cm), and is from a preferred brand (ANYHOME).",
+      "reason": "The candidate is the same product type (flexible pipe), has an exact length match (180CM), and is from a preferred brand (ANYHOME).",
       "gt_status": "CORRECT"
     }
   ]

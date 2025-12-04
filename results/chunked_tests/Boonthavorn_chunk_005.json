@@ -4,40 +4,11 @@
   "start_idx": 60,
   "end_idx": 64,
   "products_tested": 4,
-  "matches_found": 2,
-  "correct": 1,
+  "matches_found": 0,
+  "correct": 0,
   "incorrect": 0,
-  "gt_missing": 1,
-  "accuracy": 100.0,
-  "timestamp": "2025-12-04T10:34:34.421163",
-  "matches": [
-    {
-      "chunk": 5,
-      "source_idx": 60,
-      "source_name": "สายยางเด้ง 5/8 นิ้ว FONTE ยาว 20 เมตร",
-      "source_brand": "FONTE",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60314436",
-      "target_name": "สายยางเด้ง 5/8 x 20 เมตร *น้ำเงิน",
-      "target_brand": "ANYHOME",
-      "target_url": "https://www.boonthavorn.com/anyhome-1111122",
-      "expected_url": "https://www.boonthavorn.com/anyhome-1111122",
-      "confidence": 70,
-      "reason": "The candidate is the same product type (hose) and has a preferred brand, with the highest spec match percentage at 35% for length.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 5,
-      "source_idx": 62,
-      "source_name": "โคมไฟผนังภายนอกอะลูมิเนียม E27x1 LUZINO รุ่น 2461-E27 สีดำ - ใส",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60406664",
-      "target_name": "ไฟผนัง O-001 E27x1 MAX 60W IP44",
-      "target_brand": "MAX LIGHT",
-      "target_url": "https://www.boonthavorn.com/max-light-1249472",
-      "expected_url": "https://www.boonthavorn.com/max-light-1202280",
-      "confidence": 95,
-      "reason": "Candidate 0 is a preferred brand (MAX LIGHT), has an exact product type match as 'wall light' (exterior wall lamp is a type of wall light), and a high SpecMatch of 71% with matching socket and dimensions.",
-      "gt_status": "GT_MISSING"
-    }
-  ]
+  "gt_missing": 0,
+  "accuracy": 0,
+  "timestamp": "2025-12-04T10:50:46.966761",
+  "matches": []
 }

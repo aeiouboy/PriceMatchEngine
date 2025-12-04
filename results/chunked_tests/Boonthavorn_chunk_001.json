@@ -9,7 +9,7 @@
   "incorrect": 0,
   "gt_missing": 1,
   "accuracy": 0,
-  "timestamp": "2025-12-04T10:37:06.276322",
+  "timestamp": "2025-12-04T10:47:07.680147",
   "matches": [
     {
       "chunk": 1,
@@ -21,8 +21,8 @@
       "target_brand": "AT.INDY",
       "target_url": "https://www.boonthavorn.com/at-indy-115103",
       "expected_url": "https://www.boonthavorn.com/at-indy-1069312",
-      "confidence": 70,
-      "reason": "The candidate is a paint brush with the correct 'synthetic paint brush' product type and an exact size match (3 inch), resulting in a high SpecMatch percentage. Although the brand is not preferred, it's the only one with correct product type and high spec match.",
+      "confidence": 85,
+      "reason": "The candidate 'แปรงทาสี 3 นิ้ว C307 น้ำตาล' is a paint brush with an identical size spec (3 inch) to the source 'synthetic paint brush', making it a strong functional equivalent despite not being a preferred brand.",
       "gt_status": "GT_MISSING"
     }
   ]
