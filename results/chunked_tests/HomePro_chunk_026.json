@@ -4,12 +4,12 @@
   "start_idx": 375,
   "end_idx": 390,
   "products_tested": 15,
-  "matches_found": 9,
+  "matches_found": 8,
   "correct": 8,
-  "incorrect": 1,
+  "incorrect": 0,
   "gt_missing": 0,
-  "accuracy": 88.88888888888889,
-  "timestamp": "2025-12-03T17:04:57.998705",
+  "accuracy": 100.0,
+  "timestamp": "2025-12-04T02:58:45.204780",
   "matches": [
     {
       "chunk": 26,
@@ -21,8 +21,8 @@
       "target_brand": "NEOFLAM",
       "target_url": "https://www.homepro.co.th/p/1240600",
       "expected_url": "https://www.homepro.co.th/p/1240600",
-      "confidence": 95,
-      "reason": "Candidate 1 is a pot with the exact same length as the source, and its product type 'pot with lid' is very close to the source's 'pot'.",
+      "confidence": 90,
+      "reason": "The candidate is a 'pot with lid' which is the closest product type to 'pot', has a 100% spec match, and while not a preferred brand, it's the best available direct product type match.",
       "gt_status": "CORRECT"
     },
     {
@@ -35,8 +35,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1247818",
       "expected_url": "https://www.homepro.co.th/p/1247818",
-      "confidence": 70,
-      "reason": "The candidate is the same product type (brush cutter) and is from a preferred brand (MATALL) with the highest SpecMatch% among relevant alternatives.",
+      "confidence": 60,
+      "reason": "The candidate has the highest spec match percentage (50%) and is a brush cutter, which is a very similar product type to a grass trimmer.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,8 +49,8 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/1263081",
       "expected_url": "https://www.homepro.co.th/p/1263081",
-      "confidence": 75,
-      "reason": "The candidate is a shoe box from the preferred brand STACKO with highly similar dimensions (53x34x99cm) matching the source's dimensions (53x34x99cm) although the tier count (6 vs 12 outlets) is not an exact match.",
+      "confidence": 70,
+      "reason": "The candidate is a preferred brand (STACKO), has the correct product type (shoe box), matches the dimensions (53x34) and length (99CM), and has a similar concept of 'tiers' or 'outlets' for shoe storage, even though the exact count differs (6 tiers vs 12 outlets).",
       "gt_status": "CORRECT"
     },
     {
@@ -63,8 +63,8 @@
       "target_brand": "ELEKTRA",
       "target_url": "https://www.homepro.co.th/p/1154352",
       "expected_url": "https://www.homepro.co.th/p/1154352",
-      "confidence": 80,
-      "reason": "The candidate is also a cable tie with matching size and pack count, though from a non-preferred brand.",
+      "confidence": 70,
+      "reason": "The candidate is a cable tie, matching the product type, and has a good spec match including size and pack count, even though the brand is not preferred.",
       "gt_status": "CORRECT"
     },
     {
@@ -77,23 +77,9 @@
       "target_brand": "PACK IN",
       "target_url": "https://www.homepro.co.th/p/194752",
       "expected_url": "https://www.homepro.co.th/p/194752",
-      "confidence": 75,
-      "reason": "The candidate is the correct product type (box) and brand (PACK IN) is preferred. It has a high SpecMatch of 63%, matching dimensions and length.",
+      "confidence": 85,
+      "reason": "Candidate 0 is a cardboard box with matching dimensions (40x45x35 cm) and comes from a preferred brand (PACK IN). While the 'tiers' spec is missing, the core product type and dimensions are a strong match.",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 26,
-      "source_idx": 383,
-      "source_name": "บันไดอลูมิเนียมทรง A ขึ้นลง 2 ทาง 8 ขั้น GIANT KINGKONG PRO รุ่น LDA2008D สีเงิน",
-      "source_brand": "GIANT KINGKONG PRO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60263923",
-      "target_name": "บันไดอะลูมิเนียมมีถาด MATALL 8 ขั้น",
-      "target_brand": "MATALL",
-      "target_url": "https://www.homepro.co.th/p/1157325",
-      "expected_url": "https://www.homepro.co.th/p/1227723",
-      "confidence": 70,
-      "reason": "Candidate 0 is a MATALL (preferred brand) aluminum ladder with 8 steps, matching the critical 'steps' spec and product type of the source. While it lacks details like 'A-FRAME' and '2-WAY', it's the closest match.",
-      "gt_status": "INCORRECT"
     },
     {
       "chunk": 26,
@@ -106,7 +92,7 @@
       "target_url": "https://www.homepro.co.th/p/1167138",
       "expected_url": "https://www.homepro.co.th/p/1167138",
       "confidence": 95,
-      "reason": "The candidate has the exact same product type (putty knife/steel trowel is functionally equivalent), matching size, and is from the highest preferred brand (MATALL).",
+      "reason": "The candidate is the same product type (putty knife) with an exact size match (3 inch) and is from a preferred brand (MATALL, PREFERRED#1).",
       "gt_status": "CORRECT"
     },
     {
@@ -119,8 +105,8 @@
       "target_brand": "SUMO",
       "target_url": "https://www.homepro.co.th/p/1140156",
       "expected_url": "https://www.homepro.co.th/p/1140156",
-      "confidence": 75,
-      "reason": "Candidate 10 is the only 'socket' product (implied by 'เพาเวอร์ปลั๊ก') and is from a preferred brand (SUMO), making it the closest available alternative despite the lower SpecMatch% due to limited common specs.",
+      "confidence": 65,
+      "reason": "Candidate 10 is the only female socket type (เพาเวอร์ปลั๊ก 3 ตัวเมีย) and is from a preferred brand (SUMO).",
       "gt_status": "CORRECT"
     },
     {
@@ -134,7 +120,7 @@
       "target_url": "https://www.homepro.co.th/p/1021279",
       "expected_url": "https://www.homepro.co.th/p/1021279",
       "confidence": 90,
-      "reason": "Candidate 0 is the only 'measuring wheel' product type, matching the source. It also has a preferred brand.",
+      "reason": "Candidate 0 is a measuring wheel, matching the product type, has a preferred brand, and has the highest spec match among relevant candidates.",
       "gt_status": "CORRECT"
     }
   ]

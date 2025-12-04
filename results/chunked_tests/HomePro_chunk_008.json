@@ -4,12 +4,12 @@
   "start_idx": 105,
   "end_idx": 120,
   "products_tested": 15,
-  "matches_found": 7,
-  "correct": 5,
+  "matches_found": 6,
+  "correct": 4,
   "incorrect": 2,
   "gt_missing": 0,
-  "accuracy": 71.42857142857143,
-  "timestamp": "2025-12-03T16:46:16.565504",
+  "accuracy": 66.66666666666666,
+  "timestamp": "2025-12-03T17:58:53.538948",
   "matches": [
     {
       "chunk": 8,
@@ -21,22 +21,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1167129",
       "expected_url": "https://www.homepro.co.th/p/1167129",
-      "confidence": 100,
-      "reason": "The candidate is a MATALL steel trowel of the exact same size (2.5 inch) with a 100% spec match, and MATALL is the top preferred brand.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 8,
-      "source_idx": 111,
-      "source_name": "โต๊ะพับแบบพกพา HDPE ขาปรับได้ 3 ระดับ FONTE รุ่น NZK-120H-GY ขนาด 120 x 60 x 90 ซม. สีเทา",
-      "source_brand": "FONTE",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60379308",
-      "target_name": "โต๊ะอเนกประสงค์พับครึ่ง 3 ระดับ SPRING 120 ซม. สีเทา",
-      "target_brand": "SPRING",
-      "target_url": "https://www.homepro.co.th/p/1182198",
-      "expected_url": "https://www.homepro.co.th/p/1182198",
-      "confidence": 75,
-      "reason": "The candidate has the exact product type (folding table) and is a preferred brand (SPRING) with a similar length, although the spec match percentage is low, it's the closest available within the preferred brands and product type.",
+      "confidence": 95,
+      "reason": "The candidate is a MATALL brand (preferred), has an exact size match (2.5 inch), and a 100% spec match, despite a slight type variation (steel trowel vs spatula, which is acceptable due to High-level category match).",
       "gt_status": "CORRECT"
     },
     {
@@ -49,8 +35,8 @@
       "target_brand": "PLIM",
       "target_url": "https://www.homepro.co.th/p/1159460",
       "expected_url": "https://www.homepro.co.th/p/1159460",
-      "confidence": 70,
-      "reason": "The candidate is a PLIM branded wooden towel rack, which is a preferred brand and a close product type match (garment rack vs towel rack) with 4 lines, matching a key spec.",
+      "confidence": 75,
+      "reason": "Candidate 0 is a preferred brand (PLIM) and has an exact match on '4 lines' spec, although the type is 'wooden towel rack' instead of 'floor rack' with a slightly lower SpecMatch of 31%.",
       "gt_status": "CORRECT"
     },
     {
@@ -59,13 +45,13 @@
       "source_name": "โฟมแผ่น 1 1/2 นิ้ว GIANT KINGKONG ขนาด 60 x 120 ซม. สีขาว",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60175572",
-      "target_name": "โฟมแผ่น PACK IN 1/2 นิ้วX60 ซม.X1.2 ม. สีขาว",
+      "target_name": "โฟมแผ่น PACK IN 1 1/2 นิ้วX60 ซม.X1.2 ม. สีขาว",
       "target_brand": "PACK IN",
-      "target_url": "https://www.homepro.co.th/p/1192467",
+      "target_url": "https://www.homepro.co.th/p/1193332",
       "expected_url": "https://www.homepro.co.th/p/1193332",
-      "confidence": 75,
-      "reason": "Candidate 12 is a foam sheet from a preferred brand (PACK IN) with the same size_inch spec and a reasonable price for a similar product. It is a closer product type match than Candidate 8 despite the same spec match score.",
-      "gt_status": "INCORRECT"
+      "confidence": 95,
+      "reason": "The candidate is a foam sheet from a preferred brand (PACK IN) with highly matching specs including size_inch and numeric values, and the product type is identical to the source.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 8,
@@ -78,7 +64,7 @@
       "target_url": "https://www.homepro.co.th/p/1229396",
       "expected_url": "https://www.homepro.co.th/p/1229396",
       "confidence": 100,
-      "reason": "Candidate 0 is the only earth drill bit, matching the source product type exactly and having a 100% spec match for the critical 'size_inch' spec, while also being a preferred brand (EUROX).",
+      "reason": "Candidate 0 is the exact product type 'earth drill bit' and matches the 'size_inch=6 inch' specification of the source product. It is also from a preferred brand (EUROX, PREFERRED#2).",
       "gt_status": "CORRECT"
     },
     {
@@ -87,13 +73,13 @@
       "source_name": "บัวพื้นโพลีสไตรีน TIMELESS KASSA รุ่น 1041-5420 ขนาด 290 x 0.8 x 9 ซม. สีไม้สัก",
       "source_brand": "KASSA",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60328505",
-      "target_name": "บัวพื้น PS CROBERN LD-3405 9x300x0.7 ซม. สีสัก",
+      "target_name": "บัวพื้น WPC CROBERN 7.5X245X1.5 ซม. สีโอ๊ค",
       "target_brand": "CROBERN",
-      "target_url": "https://www.homepro.co.th/p/1173437",
+      "target_url": "https://www.homepro.co.th/p/1189995",
       "expected_url": "https://www.homepro.co.th/p/1173437",
       "confidence": 75,
-      "reason": "The candidate is the correct product type (floor skirting) and is from a preferred brand (CROBERN), making it the best available match despite limited spec overlap in length.",
-      "gt_status": "CORRECT"
+      "reason": "The candidate has a matching product type ('floor skirting') and is from the preferred brand 'CROBERN', despite having a low SpecMatch% due to differing dimensions, it is the best available option from the preferred brands.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 8,
@@ -106,7 +92,7 @@
       "target_url": "https://www.homepro.co.th/p/286157",
       "expected_url": "https://www.homepro.co.th/p/1228500",
       "confidence": 95,
-      "reason": "Candidate 6 is the only direct match in thickness (2.2mm) with 100% spec match, even though it's not a preferred brand. Other 100% spec candidates have different thicknesses.",
+      "reason": "Candidate 6 is a door hinge with identical dimensions, pack count, and a nearly identical model number (SM4325 vs 4325) with the same thickness (2.2mm) as the source product, making it an excellent spec match. Although ISON is not a preferred brand, the high spec match outweighs the brand preference in this case.",
       "gt_status": "INCORRECT"
     }
   ]

@@ -4,12 +4,12 @@
   "start_idx": 195,
   "end_idx": 210,
   "products_tested": 15,
-  "matches_found": 4,
-  "correct": 4,
-  "incorrect": 0,
+  "matches_found": 6,
+  "correct": 5,
+  "incorrect": 1,
   "gt_missing": 0,
-  "accuracy": 100.0,
-  "timestamp": "2025-12-03T16:52:24.450917",
+  "accuracy": 83.33333333333334,
+  "timestamp": "2025-12-03T18:04:37.596631",
   "matches": [
     {
       "chunk": 14,
@@ -21,8 +21,8 @@
       "target_brand": "PACK IN",
       "target_url": "https://www.homepro.co.th/p/1153064",
       "expected_url": "https://www.homepro.co.th/p/1153064",
-      "confidence": 75,
-      "reason": "The candidate has a preferred brand (PACK IN) and the highest SpecMatch (50%) among tape products, matching the length, pack count, and product type of the source.",
+      "confidence": 70,
+      "reason": "The candidate has a matching product type (opp tape vs packing tape), a high SpecMatch% (50%), and is from a preferred brand (PACK IN).",
       "gt_status": "CORRECT"
     },
     {
@@ -36,7 +36,21 @@
       "target_url": "https://www.homepro.co.th/p/1204502",
       "expected_url": "https://www.homepro.co.th/p/1204502",
       "confidence": 95,
-      "reason": "The candidate is a preferred brand (SPRING) and has a high SpecMatch (89%) for a garden hose, matching all critical specs like hose size and length.",
+      "reason": "The candidate 'สายยางม้วน PVC เด้ง SPRING 5/8 นิ้ว x 30 ม. สีน้ำเงิน' is a garden hose with matching size and length, from the preferred brand SPRING, and has a high spec match of 89%.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 14,
+      "source_idx": 200,
+      "source_name": "ถังต้มน้ำไฟฟ้า ZAGIO รุ่น ZG-4450 ความจุ 10 ลิตร สีเงิน",
+      "source_brand": "ZAGIO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60289340",
+      "target_name": "หม้อต้มน้ำไฟฟ้า MITSUMARU KT-110 10ลิตร",
+      "target_brand": "MITSUMARU",
+      "target_url": "https://www.homepro.co.th/p/1103618",
+      "expected_url": "https://www.homepro.co.th/p/1103618",
+      "confidence": 70,
+      "reason": "The candidate has a 100% spec match for volume and is of a preferred brand, but the product type is slightly different (electric kettle vs electric water boiler).",
       "gt_status": "CORRECT"
     },
     {
@@ -49,8 +63,22 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1168190",
       "expected_url": "https://www.homepro.co.th/p/1168190",
-      "confidence": 70,
-      "reason": "Candidate 7 is the only alternative product of type 'wheelbarrow' and is from a preferred brand (Matall). Although the spec match percentage is 0% based on numerical values, the product type matches exactly, which is heavily weighted.",
+      "confidence": 80,
+      "reason": "The candidate is a wheelbarrow from a preferred brand (MATALL) and has the correct product type, despite lacking specific attribute matches in the provided data, a common issue when original specs are not fully parsed.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 14,
+      "source_idx": 204,
+      "source_name": "ถังขยะใหญ่ฝาช่องทิ้ง GIANT KINGKONG รุ่น LXD-120BG RED ความจุ 120 ลิตร สีแดง",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60294822",
+      "target_name": "ถังขยะเหลี่ยม ฝาเปิด-ปิด มีล้อ ACCO 120L สีแดง",
+      "target_brand": "ACCO",
+      "target_url": "https://www.homepro.co.th/p/1112300",
+      "expected_url": "https://www.homepro.co.th/p/1112300",
+      "confidence": 95,
+      "reason": "The candidate is a trash can with the exact same volume (120 L) and is the closest product type match to the source 'trash bin'.",
       "gt_status": "CORRECT"
     },
     {
@@ -59,13 +87,13 @@
       "source_name": "โคมดาวน์ไลท์หน้ากลม 4 นิ้ว LED 9W Daylight LUZINO รุ่น PN-JYX0101-9W/DL สีขาว",
       "source_brand": "LUZINO",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60308450",
-      "target_name": "ดาวน์ไลท์ LED RACER EVO TECH 4 นิ้ว 9 วัตต์ DAYLIGHT สีขาว",
-      "target_brand": "RACER",
-      "target_url": "https://www.homepro.co.th/p/1145118",
+      "target_name": "ดาวน์ไลท์ LED PHILIPS 59449 MESON105 4 นิ้ว 9 วัตต์ DAYLIGHT สีขาว",
+      "target_brand": "PHILIPS",
+      "target_url": "https://www.homepro.co.th/p/1112838",
       "expected_url": "https://www.homepro.co.th/p/1145118",
       "confidence": 75,
-      "reason": "Candidate 1 is a downlight with matching wattage and size, and has the correct DAYLIGHT color temperature. It is also within an acceptable price range and is a non-preferred but higher-ranked brand than Philips.",
-      "gt_status": "CORRECT"
+      "reason": "Candidate has the highest SpecMatch and is a downlight, matching wattage, size, and color temperature. Although not a preferred brand, it's the closest match.",
+      "gt_status": "INCORRECT"
     }
   ]
 }

@@ -9,7 +9,7 @@
   "incorrect": 3,
   "gt_missing": 0,
   "accuracy": 62.5,
-  "timestamp": "2025-12-03T16:40:43.850751",
+  "timestamp": "2025-12-03T17:52:21.908244",
   "matches": [
     {
       "chunk": 1,
@@ -21,8 +21,8 @@
       "target_brand": "FONKEY",
       "target_url": "https://www.homepro.co.th/p/1158356",
       "expected_url": "https://www.homepro.co.th/p/1158356",
-      "confidence": 75,
-      "reason": "Candidate 14 is the only paint brush with the correct size, matching the product type and key spec, although it is not a preferred brand.",
+      "confidence": 95,
+      "reason": "Candidate is a paint brush of the same size, with a high SpecMatch% and no critical spec mismatches, although not a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -36,7 +36,7 @@
       "target_url": "https://www.homepro.co.th/p/1236064",
       "expected_url": "https://www.homepro.co.th/p/1236064",
       "confidence": 75,
-      "reason": "The candidate product is from a preferred brand (OZZIE) and is the exact same product type (bluetooth speaker), despite a low spec match percentage due to missing wattage information in the candidate's specs. Other candidates are not bluetooth speakers.",
+      "reason": "The source product is a bluetooth speaker and the candidate is also a bluetooth speaker. Although the SpecMatch is 0% based on wattage, OZZIE is a preferred brand and it is the only candidate that matches the critical product type.",
       "gt_status": "CORRECT"
     },
     {
@@ -50,7 +50,7 @@
       "target_url": "https://www.homepro.co.th/p/1167119",
       "expected_url": "https://www.homepro.co.th/p/1167119",
       "confidence": 95,
-      "reason": "The candidate is a putty knife of the preferred brand MATALL, matching the size exactly, and has a very high SpecMatch%.",
+      "reason": "Candidate 0 is a MATALL brand (PREFERRED#1), has the exact same type 'spatula' and size '1 inch' as the source product, and has a 100% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -63,8 +63,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1181393",
       "expected_url": "https://www.homepro.co.th/p/1181393",
-      "confidence": 95,
-      "reason": "The candidate is a paint roller of the same size (10 inch) from a preferred brand (MATALL) with 100% spec match.",
+      "confidence": 100,
+      "reason": "The candidate is a paint roller of the preferred brand MATALL with identical size (10 inch) and roller type (FULL) specs, resulting in a 100% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -78,7 +78,7 @@
       "target_url": "https://www.homepro.co.th/p/1074150",
       "expected_url": "https://www.homepro.co.th/p/1003945",
       "confidence": 75,
-      "reason": "The candidate has a strong spec match (40%) and is the highest-ranked preferred brand (CARINI). Although the spec match is not very high, it is the only candidate that is a POLE_LAMP type, matching the critical product type requirement of a 'lamp' and specifically 'pole_lamp' from the source.",
+      "reason": "The candidate is a 'POLE_LAMP' like the source, has a preferred brand 'CARINI', and the highest spec match at 40% among relevant products.",
       "gt_status": "INCORRECT"
     },
     {
@@ -91,8 +91,8 @@
       "target_brand": "MAKITA",
       "target_url": "https://www.homepro.co.th/p/1162943",
       "expected_url": "https://www.homepro.co.th/p/1177335",
-      "confidence": 95,
-      "reason": "The candidate is the same product type (electric drill) and has identical wattage (350W) to the source product, resulting in a 100% spec match, even though the brand is not preferred.",
+      "confidence": 100,
+      "reason": "The candidate is an electric drill with the identical wattage as the source product. Although not a preferred brand, it is the only candidate that matches the critical product type and has 100% spec match for wattage.",
       "gt_status": "INCORRECT"
     },
     {
@@ -106,7 +106,7 @@
       "target_url": "https://www.homepro.co.th/p/1110489",
       "expected_url": "https://www.homepro.co.th/p/1083200",
       "confidence": 95,
-      "reason": "Candidate 1 is the most suitable alternative as it is a 'synthetic wood door frame' which is a close match to the source's 'door frame' of WPC material, has a 100% spec match, includes 'WPC' in its identifiers and is from a known brand ECO-DOOR.",
+      "reason": "The candidate is a door frame of the same dimensions and material (WPC), with a 100% spec match, making it an excellent alternative despite not being a preferred brand.",
       "gt_status": "INCORRECT"
     },
     {
@@ -120,7 +120,7 @@
       "target_url": "https://www.homepro.co.th/p/1092055",
       "expected_url": "https://www.homepro.co.th/p/1092055",
       "confidence": 70,
-      "reason": "The candidate is a cable tie, matches the size_inch and pack_count specifications, and is the closest type match available.",
+      "reason": "The candidate is the same product type (cable tie), matches the critical 'size_inch' and 'pack_count' specifications, and has a good SpecMatch percentage. Although not a preferred brand, it is the only viable option among the preferred brands.",
       "gt_status": "CORRECT"
     }
   ]

@@ -4,12 +4,12 @@
   "start_idx": 480,
   "end_idx": 492,
   "products_tested": 12,
-  "matches_found": 4,
-  "correct": 2,
+  "matches_found": 5,
+  "correct": 3,
   "incorrect": 2,
   "gt_missing": 0,
-  "accuracy": 50.0,
-  "timestamp": "2025-12-03T16:37:22.607717",
+  "accuracy": 60.0,
+  "timestamp": "2025-12-04T03:04:46.092677",
   "matches": [
     {
       "chunk": 33,
@@ -21,8 +21,8 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/1150070",
       "expected_url": "https://www.homepro.co.th/p/1102787",
-      "confidence": 75,
-      "reason": "Candidate 4 is from the most preferred brand (STACKO), has an exact match on tiers and a close match on dimensions (58.5x41 vs 63x40) and length (109CM vs 112CM), and the product types are both cabinets.",
+      "confidence": 65,
+      "reason": "The candidate is a preferred brand (STACKO), has a matching product type (drawer cabinet) and number of tiers (5 tiers), and its dimensions are acceptably close to the source.",
       "gt_status": "INCORRECT"
     },
     {
@@ -36,7 +36,21 @@
       "target_url": "https://www.homepro.co.th/p/1165025",
       "expected_url": "https://www.homepro.co.th/p/1165025",
       "confidence": 75,
-      "reason": "The candidate 'ชุดเครื่องมือช่าง MATALL 62 ชิ้น/ชุด' is a tool set, matching the product type of the source 'tool kit'. It is from a PREFERRED brand (MATALL) and has a high SpecMatch (70%) due to a similar pack count (62 pcs vs 61 pcs).",
+      "reason": "The candidate has the highest spec match percentage at 70%, is the exact product type, and is from the most preferred brand (MATALL).",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 33,
+      "source_idx": 489,
+      "source_name": "สกรูปลายสว่านหัวเรียบ (เกลียวหุน) 8 x 2 1/2 นิ้ว GIANT KINGKONG รุ่น SDF-8212 (แพ็ก 100 ตัว)",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60305626",
+      "target_name": "สกรูปลายสว่าน TF DEXZON 8x2-1/2 นิ้ว 100 ชิ้น",
+      "target_brand": "DEXZON",
+      "target_url": "https://www.homepro.co.th/p/1184365",
+      "expected_url": "https://www.homepro.co.th/p/1184365",
+      "confidence": 95,
+      "reason": "The candidate is a self-drilling screw from a preferred brand (DEXZON) with a 100% spec match, including dimensions and size.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,8 +63,8 @@
       "target_brand": "PACK IN",
       "target_url": "https://www.homepro.co.th/p/195633",
       "expected_url": "https://www.homepro.co.th/p/195633",
-      "confidence": 100,
-      "reason": "The candidate is the same product type (bubble wrap) and has 100% spec match (dimensions, length), and its brand 'PACK IN' is a preferred brand.",
+      "confidence": 95,
+      "reason": "The candidate is the correct product type (bubble wrap), matches all key specifications, and is a preferred brand (PACK IN).",
       "gt_status": "CORRECT"
     },
     {
@@ -59,12 +73,12 @@
       "source_name": "ประตูภายใน UPVC พร้อมวงกบ KASSA รุ่น BT-002 ขนาด 70 x 200 ซม. สีขาว (ไม่เจาะลูกบิด)",
       "source_brand": "KASSA",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60392591",
-      "target_name": "ประตูห้องน้ำ UPVC ECO-DOOR PG2 70X200 ซม. สีขาว เจาะลูกบิด",
-      "target_brand": "ECO-DOOR",
-      "target_url": "https://www.homepro.co.th/p/1200647",
+      "target_name": "ประตู UPVC ASARA G925 ดอกซากุระ 70x200 ซม. สีขาว พร้อมวงกบ ไม่เจาะลูกบิด",
+      "target_brand": "ASARA",
+      "target_url": "https://www.homepro.co.th/p/1157824",
       "expected_url": "https://www.homepro.co.th/p/1093233",
       "confidence": 85,
-      "reason": "The candidate is a UPVC door with matching dimensions (70x200cm), although it specifies 'bathroom' and 'เจาะลูกบิด' (with knob hole) while the source is 'ไม่เจาะลูกบิด' (without knob hole).",
+      "reason": "Candidate 8 is an UPVC door with the same dimensions and 'no knob hole' feature as the source, making it the closest match despite not being a preferred brand.",
       "gt_status": "INCORRECT"
     }
   ]

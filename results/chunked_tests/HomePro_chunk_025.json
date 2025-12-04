@@ -4,12 +4,12 @@
   "start_idx": 360,
   "end_idx": 375,
   "products_tested": 15,
-  "matches_found": 8,
-  "correct": 7,
-  "incorrect": 1,
+  "matches_found": 9,
+  "correct": 6,
+  "incorrect": 3,
   "gt_missing": 0,
-  "accuracy": 87.5,
-  "timestamp": "2025-12-03T17:04:01.602603",
+  "accuracy": 66.66666666666666,
+  "timestamp": "2025-12-04T02:58:12.969128",
   "matches": [
     {
       "chunk": 25,
@@ -22,7 +22,7 @@
       "target_url": "https://www.homepro.co.th/p/1176875",
       "expected_url": "https://www.homepro.co.th/p/1176875",
       "confidence": 95,
-      "reason": "Candidate 1 has an 89% spec match, is of a preferred brand (ELECKTA), and matches the critical product type 'extension cord reel' with an added 'breaker' feature which complements the source product's 'เบรกเกอร์กันไฟดูด' (leakage circuit breaker) feature. Candidate 0 also has a high spec match and preferred brand but lacks the 'breaker' feature.",
+      "reason": "Candidate 1 (ELECKTA) is a preferred brand (PREFERRED#2) and has an 89% spec match, perfectly matching wattage, length, and outlets, and explicitly mentioning a fire protection breaker like the source.",
       "gt_status": "CORRECT"
     },
     {
@@ -36,7 +36,7 @@
       "target_url": "https://www.homepro.co.th/p/1262922",
       "expected_url": "https://www.homepro.co.th/p/1262922",
       "confidence": 95,
-      "reason": "Candidate 0 is a 'water tank' with identical volume and is from a preferred brand (WAVE) with 100% spec match.",
+      "reason": "The candidate is a water tank with the exact same volume as the source, and its brand WAVE is a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,8 +49,8 @@
       "target_brand": "SPRING NELLY",
       "target_url": "https://www.homepro.co.th/p/1290037",
       "expected_url": "https://www.homepro.co.th/p/1290037",
-      "confidence": 60,
-      "reason": "Candidate is the same product type ('chair') and from the highest preferred brand (SPRING) with a 50% spec match.",
+      "confidence": 70,
+      "reason": "Highest SpecMatch (50%) among preferred brands and exact product type match (chair).",
       "gt_status": "CORRECT"
     },
     {
@@ -64,7 +64,7 @@
       "target_url": "https://www.homepro.co.th/p/1146963",
       "expected_url": "https://www.homepro.co.th/p/1146963",
       "confidence": 70,
-      "reason": "The candidate is the correct product type (cable tie) and has a similar size and pack count to the source product, making it the best available match despite not being a preferred brand.",
+      "reason": "The candidate has a matching product type (cable tie) and 'size_inch' and is the closest match in terms of product specific specs, despite a relatively low SpecMatch% due to missing dimension data from the source product.",
       "gt_status": "CORRECT"
     },
     {
@@ -78,7 +78,7 @@
       "target_url": "https://www.homepro.co.th/p/1188985",
       "expected_url": "https://www.homepro.co.th/p/1188985",
       "confidence": 95,
-      "reason": "The candidate is a paint roller of the preferred brand MATALL, with identical size (4 inch) and roller type (FULL), resulting in a 100% spec match.",
+      "reason": "The candidate has a 100% spec match, is the correct product type (paint roller), and is from a preferred brand (MATALL).",
       "gt_status": "CORRECT"
     },
     {
@@ -87,13 +87,13 @@
       "source_name": "สกรูปลายสว่านหัวเวเฟอร์ (เกลียวหุน) 8 x 1 นิ้ว GIANT KINGKONG รุ่น WF81-100 (แพ็ก 100 ตัว)",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60274475",
-      "target_name": "สกรูปลายสว่านหัวเวเฟอร์ BY TORA 8x1 นิ้ว 100 ชิ้น",
-      "target_brand": "BY TORA",
-      "target_url": "https://www.homepro.co.th/p/1018052",
+      "target_name": "สกรูปลายสว่าน TF DEXZON 8x1 นิ้ว 30 ชิ้น",
+      "target_brand": "DEXZON",
+      "target_url": "https://www.homepro.co.th/p/1184139",
       "expected_url": "https://www.homepro.co.th/p/1018052",
-      "confidence": 95,
-      "reason": "The source product is a self-drilling screw with dimensions 8x1 inch and 100 pieces per pack. Candidate 7 is also a self-drilling screw with the exact same dimensions and pack count, achieving a 100% spec match. Although not a preferred brand, it's the best match for all critical specifications, particularly the pack count which is a core feature.",
-      "gt_status": "CORRECT"
+      "confidence": 85,
+      "reason": "Candidate 2 is a `self-drilling screw` (equivalent to self-tapping screw) from the most preferred brand DEXZON, with an exact match on dimensions (8x1 inch) and good SpecMatch%. The pack quantity is lower (30 vs 100), but given the brand preference and exact size match, it's the strongest equivalent.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 25,
@@ -105,8 +105,8 @@
       "target_brand": "CARINI",
       "target_url": "https://www.homepro.co.th/p/1170703",
       "expected_url": "https://www.homepro.co.th/p/1099181",
-      "confidence": 75,
-      "reason": "The candidate is the correct product type (exterior wall light/wall lamp), has a high spec match (40%), and is from a highly preferred brand (CARINI).",
+      "confidence": 70,
+      "reason": "Candidate 0 is a 'WALL_LAMP' which matches the source product type 'wall lamp' and is from the preferred brand CARINI, with a SpecMatch of 40%.",
       "gt_status": "INCORRECT"
     },
     {
@@ -120,8 +120,22 @@
       "target_url": "https://www.homepro.co.th/p/1185611",
       "expected_url": "https://www.homepro.co.th/p/1185611",
       "confidence": 95,
-      "reason": "The candidate is a varnish brush with the exact same size and is from a preferred brand (MATALL).",
+      "reason": "The candidate is a varnish brush of the same size (4 inch) and is from a preferred brand (MATALL), making it an excellent match.",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 25,
+      "source_idx": 373,
+      "source_name": "โคมไฟผนังภายนอกอะลูมิเนียม LED 2x4W Warm White LUZINO รุ่น GD-AWZ57-8-BK สีดำ",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60404643",
+      "target_name": "ไฟกิ่งภายนอก CARINI HL042A สีดำ",
+      "target_brand": "CARINI",
+      "target_url": "https://www.homepro.co.th/p/267461",
+      "expected_url": "https://www.homepro.co.th/p/1258850",
+      "confidence": 75,
+      "reason": "The source product is a 'wall lamp' and candidate 11 is also a 'wall lamp' (ไฟกิ่งภายนอก), making it a product type match. Additionally, candidate 11 is from CARINI, which is the highest preferred brand.",
+      "gt_status": "INCORRECT"
     }
   ]
 }

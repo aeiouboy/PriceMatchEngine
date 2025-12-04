@@ -4,12 +4,12 @@
   "start_idx": 390,
   "end_idx": 405,
   "products_tested": 15,
-  "matches_found": 10,
-  "correct": 7,
+  "matches_found": 9,
+  "correct": 6,
   "incorrect": 3,
   "gt_missing": 0,
-  "accuracy": 70.0,
-  "timestamp": "2025-12-03T17:05:48.144646",
+  "accuracy": 66.66666666666666,
+  "timestamp": "2025-12-04T02:59:31.461356",
   "matches": [
     {
       "chunk": 27,
@@ -22,7 +22,7 @@
       "target_url": "https://www.homepro.co.th/p/1141879",
       "expected_url": "https://www.homepro.co.th/p/1141879",
       "confidence": 95,
-      "reason": "Candidate 0 is a storage box with the exact same volume (100 L) as the source, is from the highly preferred brand STACKO, and has a 100% spec match.",
+      "reason": "Candidate 0 is a storage box from a preferred brand (STACKO) and has an exact match in volume (100 L) to the source product, indicating a strong equivalent match.",
       "gt_status": "CORRECT"
     },
     {
@@ -36,21 +36,7 @@
       "target_url": "https://www.homepro.co.th/p/1152392",
       "expected_url": "https://www.homepro.co.th/p/1152392",
       "confidence": 85,
-      "reason": "Candidate 15 is another dish soap (matching product type) from a preferred brand (ACCO) and has a similar volume (3.8L vs 3.5L).",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 27,
-      "source_idx": 395,
-      "source_name": "รถเข็นท้องแบนพื้นพลาสติก 4 ล้อด้ามจับพับเก็บได้ GIANT KINGKONG รุ่น TT7300CA ขนาด 300 กก. สีฟ้า",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60259411",
-      "target_name": "รถเข็น 4 ล้อ MATALL FD300 300 กก. สีดำ",
-      "target_brand": "MATALL",
-      "target_url": "https://www.homepro.co.th/p/1028911",
-      "expected_url": "https://www.homepro.co.th/p/1028911",
-      "confidence": 60,
-      "reason": "The candidate is a flat cart (trolley) with the same volume capacity (300 KG) and is from a preferred brand (MATALL), making it the closest functional match despite lacking the 'foldable' handle and specific model number.",
+      "reason": "Candidate 15 is the only dish soap found and is from a preferred brand (ACCO) with a similar volume (3.8L vs 3.5L) at a comparable price, making it the best available match despite a lower SpecMatch% due to brand priority.",
       "gt_status": "CORRECT"
     },
     {
@@ -63,8 +49,8 @@
       "target_brand": "FURDINI",
       "target_url": "https://www.homepro.co.th/p/1279569",
       "expected_url": "https://www.homepro.co.th/p/1279569",
-      "confidence": 70,
-      "reason": "The candidate has the correct product type (office chair) and is from a preferred brand (FURDINI), with a SpecMatch of 50%, which is the best available among relevant candidates.",
+      "confidence": 60,
+      "reason": "Candidate 0 is an 'office chair' from the PREFERRED brand FURDINI, matching the critical product type and having a 50% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -77,8 +63,8 @@
       "target_brand": "SANKI",
       "target_url": "https://www.homepro.co.th/p/1083457",
       "expected_url": "https://www.homepro.co.th/p/1157391",
-      "confidence": 75,
-      "reason": "Candidate 0 is an a-frame ladder with 7 steps, matching the critical 'steps' and 'ladder_type' specs of the source, and has the highest spec match percentage among all candidates.",
+      "confidence": 85,
+      "reason": "The candidate is the same product type (a-frame ladder) and has a high spec match with the same number of steps (7) as the source product.",
       "gt_status": "INCORRECT"
     },
     {
@@ -92,7 +78,7 @@
       "target_url": "https://www.homepro.co.th/p/16342",
       "expected_url": "https://www.homepro.co.th/p/16342",
       "confidence": 95,
-      "reason": "Candidate 1 (ฝาปิดสแควร์บ็อกซ์มิด BT 4x4 นิ้ว) is a perfect spec match for dimensions and size, and has the correct product type (square box cover vs box cover).",
+      "reason": "Candidate 1 is a 'cover plate' which is a matching product type for 'box cover' and has 100% spec match, making it the best alternative despite not being a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -106,7 +92,7 @@
       "target_url": "https://www.homepro.co.th/p/1182011",
       "expected_url": "https://www.homepro.co.th/p/1182011",
       "confidence": 85,
-      "reason": "The candidate is an air blower from a PREFERRED brand (MATALL) with a wattage within 20% of the source, making it the best functional equivalent despite a low SpecMatch% due to exact numerical differences.",
+      "reason": "The candidate has a preferred brand 'MATALL', is the correct product type 'blower', and has a wattage within acceptable range (800W vs 600W).",
       "gt_status": "CORRECT"
     },
     {
@@ -119,8 +105,8 @@
       "target_brand": "FURDINI",
       "target_url": "https://www.homepro.co.th/p/1287255",
       "expected_url": "https://www.homepro.co.th/p/1287255",
-      "confidence": 70,
-      "reason": "The candidate is a dining chair from a highly preferred brand (FURDINI) with a good SpecMatch percentage. The price is also comparable.",
+      "confidence": 60,
+      "reason": "The candidate is a preferred brand (FURDINI) and a dining chair, which is the exact product type of the source. While the specific material 'rubberwood' is not explicitly mentioned, it is the closest match available.",
       "gt_status": "CORRECT"
     },
     {
@@ -133,8 +119,8 @@
       "target_brand": "SPRING",
       "target_url": "https://www.homepro.co.th/p/1182198",
       "expected_url": "https://www.homepro.co.th/p/1231349",
-      "confidence": 85,
-      "reason": "The candidate is a folding table, matching the source product type. Although the dimensions don't match, the product type is critical and the brand is not preferred in the source list, making this the best available match among the candidates given the low spec match for other folding tables.",
+      "confidence": 75,
+      "reason": "The candidate has the exact same product type (folding table) and is within acceptable length difference (120cm vs 75cm), although not a preferred brand.",
       "gt_status": "INCORRECT"
     },
     {
@@ -147,8 +133,8 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/195587",
       "expected_url": "https://www.homepro.co.th/p/1150463",
-      "confidence": 70,
-      "reason": "The candidate is a storage box with wheels and lock, a preferred brand (STACKO), and a similar volume (42L vs 45L).",
+      "confidence": 75,
+      "reason": "Candidate 11 is a storage box from a preferred brand (STACKO) and has a similar volume (42 L) to the source (45 L), making it the closest functional equivalent despite a low SpecMatch% due to limited common specs.",
       "gt_status": "INCORRECT"
     }
   ]

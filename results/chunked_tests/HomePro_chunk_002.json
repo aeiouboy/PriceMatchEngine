@@ -4,12 +4,12 @@
   "start_idx": 15,
   "end_idx": 30,
   "products_tested": 15,
-  "matches_found": 10,
+  "matches_found": 8,
   "correct": 8,
-  "incorrect": 2,
+  "incorrect": 0,
   "gt_missing": 0,
-  "accuracy": 80.0,
-  "timestamp": "2025-12-03T16:41:38.697975",
+  "accuracy": 100.0,
+  "timestamp": "2025-12-03T17:53:15.838253",
   "matches": [
     {
       "chunk": 2,
@@ -22,7 +22,7 @@
       "target_url": "https://www.homepro.co.th/p/1074150",
       "expected_url": "https://www.homepro.co.th/p/1074150",
       "confidence": 75,
-      "reason": "The candidate has the exact same product type (pole lamp) as the source, is from a preferred brand (CARINI #1), and has a decent spec match despite the limited specific spec overlap in the candidate's data.",
+      "reason": "The candidate is the same product type (pole lamp) from the highest-ranked preferred brand (CARINI). Although the spec match percentage is 40% (below 50), the product type is critical and matches, and it is a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -35,8 +35,8 @@
       "target_brand": "ACCO",
       "target_url": "https://www.homepro.co.th/p/1154473",
       "expected_url": "https://www.homepro.co.th/p/1154473",
-      "confidence": 95,
-      "reason": "The candidate is a trash can with the exact same volume (240 L) and same color (blue), making it a strong spec match. While the brand is not preferred, the high spec match and exact product type make it the best equivalent.",
+      "confidence": 100,
+      "reason": "Candidate 0 is a trash can with the exact same volume (240 L) as the source, making it a perfect functional match. Although the brand is not preferred, the critical product type and key spec match are exact.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,8 +49,8 @@
       "target_brand": "ACCO",
       "target_url": "https://www.homepro.co.th/p/1184261",
       "expected_url": "https://www.homepro.co.th/p/1184261",
-      "confidence": 90,
-      "reason": "Candidate 8 is the only clog remover powder, matching the critical product type, and is from a preferred brand (ACCO).",
+      "confidence": 70,
+      "reason": "The source product is a 'drain cleaner powder' and candidate 8 (as well as 9) is also a 'drain cleaner powder'. Candidate 8 is from brand ACCO, which is a preferred brand (ranked #4).",
       "gt_status": "CORRECT"
     },
     {
@@ -64,7 +64,7 @@
       "target_url": "https://www.homepro.co.th/p/1154102",
       "expected_url": "https://www.homepro.co.th/p/1154102",
       "confidence": 90,
-      "reason": "The candidate has the correct product type (metal cutting disc), a high SpecMatch (78%), and is from a preferred brand (MATALL).",
+      "reason": "Candidate 0 is a metal cutting disc, matches the critical product type, has a high SpecMatch% (78%) and is from the most preferred brand (MATALL).",
       "gt_status": "CORRECT"
     },
     {
@@ -77,23 +77,9 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/195587",
       "expected_url": "https://www.homepro.co.th/p/195587",
-      "confidence": 100,
-      "reason": "The candidate is a storage box, has the preferred brand STACKO, and an exact match on the critical volume spec (42 L) and high SpecMatch% (100%).",
+      "confidence": 95,
+      "reason": "The candidate is a storage box with the exact same volume (42 L) and is from the preferred brand STACKO, despite a different model number.",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 2,
-      "source_idx": 21,
-      "source_name": "ตู้ลิ้นชักอเนกประสงค์ 4 ชั้น Jasmin KASSA HOME รุ่น API-1500M4 ขนาด 50 x 47.2 x 92.3 ซม. สีพาสเทล",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60335317",
-      "target_name": "ตู้ลิ้นชัก 4 ชั้น STACKO 1200M4 45x40x84 ซม. สีพาสเทล",
-      "target_brand": "STACKO",
-      "target_url": "https://www.homepro.co.th/p/1102019",
-      "expected_url": "https://www.homepro.co.th/p/1117329",
-      "confidence": 70,
-      "reason": "The candidate is a preferred brand (STACKO), has an exact match on tiers (4 tiers), and a high spec match percentage of 50%, with dimensions within an acceptable range for a house brand alternative.",
-      "gt_status": "INCORRECT"
     },
     {
       "chunk": 2,
@@ -106,7 +92,7 @@
       "target_url": "https://www.homepro.co.th/p/1163258",
       "expected_url": "https://www.homepro.co.th/p/1163258",
       "confidence": 70,
-      "reason": "The candidate has the correct product type (tool set), is from the highest preferred brand (MATALL), and has a reasonably close pack_count spec (53 vs 54 pcs).",
+      "reason": "The candidate has the highest spec match percentage among the preferred brands and matches the critical product type 'tool set'. The pack count is close (53 vs 54).",
       "gt_status": "CORRECT"
     },
     {
@@ -119,8 +105,8 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/1098200",
       "expected_url": "https://www.homepro.co.th/p/1098200",
-      "confidence": 70,
-      "reason": "Candidate is a preferred brand (STACKO), exact product type (shelf), and has the highest SpecMatch (63%) with identical tiers and very similar dimensions.",
+      "confidence": 85,
+      "reason": "Candidate 0 is a STACKO (preferred brand) shelving unit with identical number of tiers and very close dimensions (46x39.5 vs 46x38 and 87cm vs 86cm) resulting in a high SpecMatch of 63%.",
       "gt_status": "CORRECT"
     },
     {
@@ -133,23 +119,9 @@
       "target_brand": "CARINI",
       "target_url": "https://www.homepro.co.th/p/1262899",
       "expected_url": "https://www.homepro.co.th/p/1262899",
-      "confidence": 70,
-      "reason": "Candidate 0 is a pillar light (similar to pole lamp) by a preferred brand (CARINI) and has the highest SpecMatch for the correct product type.",
+      "confidence": 75,
+      "reason": "The candidate 'ไฟหัวเสา CARINI HK-K2013' is a post lamp, matching the source product type, and is from a preferred brand (CARINI, PREFERRED#1). Although the SpecMatch is 40%, it is the best available option given the product type matches, and other candidates are either wrong product types or have lower overall relevance.",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 2,
-      "source_idx": 29,
-      "source_name": "รถเข็นตะแกรงรอบ GIANT KINGKONG รุ่น HBSS-05T ขนาด 300 กก. สีฟ้า",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60336118",
-      "target_name": "รถเข็น 4 ล้อ MATALL FD300 300 กก. สีดำ",
-      "target_brand": "MATALL",
-      "target_url": "https://www.homepro.co.th/p/1028911",
-      "expected_url": "https://www.homepro.co.th/p/1069983",
-      "confidence": 95,
-      "reason": "Candidate 0 is a trolley from a preferred brand (MATALL) with an identical volume capacity of 300 KG, resulting in 100% spec match.",
-      "gt_status": "INCORRECT"
     }
   ]
 }

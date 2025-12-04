@@ -9,7 +9,7 @@
   "incorrect": 1,
   "gt_missing": 0,
   "accuracy": 83.33333333333334,
-  "timestamp": "2025-12-03T16:57:16.569714",
+  "timestamp": "2025-12-03T18:09:34.974022",
   "matches": [
     {
       "chunk": 19,
@@ -22,7 +22,7 @@
       "target_url": "https://www.homepro.co.th/p/1004031",
       "expected_url": "https://www.homepro.co.th/p/1004031",
       "confidence": 70,
-      "reason": "Candidate 0 is a preferred brand (CARINI), matches the critical product type 'post light' and has the highest SpecMatch% among relevant alternatives with similar product types. Although the SpecMatch% is below 50%, the product type and brand preference make it the best available option for a 'post light'.",
+      "reason": "The candidate has the highest spec match percentage (40%) and is the correct product type ('post light' often interchangeable with 'post lamp'), and it is from the most preferred brand 'CARINI'.",
       "gt_status": "CORRECT"
     },
     {
@@ -35,8 +35,8 @@
       "target_brand": "CARINI",
       "target_url": "https://www.homepro.co.th/p/1167597",
       "expected_url": "https://www.homepro.co.th/p/1167597",
-      "confidence": 95,
-      "reason": "The candidate is a preferred brand (CARINI), has an exact product type match (ceiling fan), and an exact size match (52 inch).",
+      "confidence": 100,
+      "reason": "Candidate 0 is the exact product type 'ceiling fan light' (equivalent to 'fan lamp'), shares the identical 52-inch size, a highly preferred brand (CARINI), and has a 100% spec match for the critical 'size_inch' spec.",
       "gt_status": "CORRECT"
     },
     {
@@ -50,7 +50,7 @@
       "target_url": "https://www.homepro.co.th/p/1144390",
       "expected_url": "https://www.homepro.co.th/p/1144390",
       "confidence": 90,
-      "reason": "The candidate has the exact same product type (steel plate), a highly preferred brand (BIH), and a high spec match with matching 'size_inch' and 'dimensions' specs, making it the closest equivalent product.",
+      "reason": "Candidate 1 is the same product type (steel plate) and has the highest spec match (78%) among preferred brands, with matching dimensions.",
       "gt_status": "CORRECT"
     },
     {
@@ -63,8 +63,8 @@
       "target_brand": "FURDINI",
       "target_url": "https://www.homepro.co.th/p/1231109",
       "expected_url": "https://www.homepro.co.th/p/1231109",
-      "confidence": 90,
-      "reason": "The candidate is a 'safe' product, matching the critical product type of the source. It is also from a highly preferred brand (FURDINI) and is a safe, making it the best available match despite a 0% spec match on other details.",
+      "confidence": 75,
+      "reason": "The candidate is a preferred brand 'FURDINI' and is the correct product type 'safe', although specific dimensions are not provided for a direct comparison, it is the most relevant match.",
       "gt_status": "CORRECT"
     },
     {
@@ -78,7 +78,7 @@
       "target_url": "https://www.homepro.co.th/p/1249480",
       "expected_url": "https://www.homepro.co.th/p/1221434",
       "confidence": 95,
-      "reason": "The candidate is the same product type, matches the critical pack count spec, and is from a preferred brand.",
+      "reason": "The candidate is a 'hanger' with the exact same pack count and is from a preferred brand (PLIM), making it an excellent product type and spec match.",
       "gt_status": "INCORRECT"
     },
     {
@@ -91,8 +91,8 @@
       "target_brand": "COLOR KIT",
       "target_url": "https://www.homepro.co.th/p/1012656",
       "expected_url": "https://www.homepro.co.th/p/1012656",
-      "confidence": 90,
-      "reason": "Highest spec match (83%) and exact product type match (mortar and pestle) with size within 10% of source. Preferred brand, though lower rank, solidifies the choice.",
+      "confidence": 95,
+      "reason": "Candidate 0 is a perfect product type match ('stone mortar and pestle' vs 'mortar and pestle'), has a high SpecMatch of 83% for size (7.5 inch vs 7.6 inch), and is from a preferred brand (COLOR KIT).",
       "gt_status": "CORRECT"
     }
   ]

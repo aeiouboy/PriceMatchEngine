@@ -9,7 +9,7 @@
   "incorrect": 2,
   "gt_missing": 0,
   "accuracy": 50.0,
-  "timestamp": "2025-12-03T16:42:31.229821",
+  "timestamp": "2025-12-04T03:07:17.276924",
   "matches": [
     {
       "chunk": 3,
@@ -21,8 +21,8 @@
       "target_brand": "TEFAL",
       "target_url": "https://www.homepro.co.th/p/1118583",
       "expected_url": "https://www.homepro.co.th/p/1114764",
-      "confidence": 90,
-      "reason": "The candidate is a frying pan, which is a very close product type to a shallow pan, and has a 100% spec match for length.",
+      "confidence": 95,
+      "reason": "The candidate is a frying pan with the same length (24CM) as the source product, making it a strong spec match, even though the brand is not preferred.",
       "gt_status": "INCORRECT"
     },
     {
@@ -35,8 +35,8 @@
       "target_brand": "ME LIVING",
       "target_url": "https://www.homepro.co.th/p/1248873",
       "expected_url": "https://www.homepro.co.th/p/1248873",
-      "confidence": 63,
-      "reason": "The candidate has the highest spec match (63%), is a preferred brand (ME LIVING), and its product type 'wicker drawer cabinet' is a subtype of the source's 'storage cabinet', both are 4 tiers.",
+      "confidence": 70,
+      "reason": "The candidate is a preferred brand and has the highest SpecMatch (63%) with the same product type and number of tiers, which is the closest available alternative despite slightly different dimensions.",
       "gt_status": "CORRECT"
     },
     {
@@ -50,7 +50,7 @@
       "target_url": "https://www.homepro.co.th/p/1147572",
       "expected_url": "https://www.homepro.co.th/p/1147572",
       "confidence": 90,
-      "reason": "Candidate 0 is the only 'picnic stove' type, matching the source product type, and is from a preferred brand (AIKO).",
+      "reason": "The candidate 'เตาแก๊สปิกนิก AIKO EGP-1000 BLACK' is a 'picnic stove' with a 50% spec match, and AIKO is a preferred brand (ranked #4).",
       "gt_status": "CORRECT"
     },
     {
@@ -64,7 +64,7 @@
       "target_url": "https://www.homepro.co.th/p/1249480",
       "expected_url": "https://www.homepro.co.th/p/1221406",
       "confidence": 95,
-      "reason": "Candidate 0 is a hanger, matches source pack_count, and is from a preferred brand (PLIM) with 100% spec match.",
+      "reason": "The candidate is a hanger and has an exact match on 'pack_count' with a preferred brand (PLIM) and 100% SpecMatch.",
       "gt_status": "INCORRECT"
     }
   ]

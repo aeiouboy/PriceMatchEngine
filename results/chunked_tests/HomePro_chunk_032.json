@@ -4,12 +4,12 @@
   "start_idx": 465,
   "end_idx": 480,
   "products_tested": 15,
-  "matches_found": 9,
+  "matches_found": 10,
   "correct": 6,
-  "incorrect": 3,
+  "incorrect": 4,
   "gt_missing": 0,
-  "accuracy": 66.66666666666666,
-  "timestamp": "2025-12-03T16:36:39.335168",
+  "accuracy": 60.0,
+  "timestamp": "2025-12-04T03:03:44.068169",
   "matches": [
     {
       "chunk": 32,
@@ -17,12 +17,12 @@
       "source_name": "ลูกบิดห้องน้ำหัวกลมจานใหญ่สเตนเลส GIANT KINGKONG รุ่น 587BK-SS (D) ขนาด 75 มม. สีเงิน",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60318386",
-      "target_name": "ลูกบิดห้องน้ำ หัวกลม ISON 8711 สีสเตนเลส",
-      "target_brand": "ISON",
-      "target_url": "https://www.homepro.co.th/p/1267661",
+      "target_name": "ลูกบิดห้องน้ำ COLT LITE K5791BKSS หัวจัน สีสเตนเลส",
+      "target_brand": "COLT LITE",
+      "target_url": "https://www.homepro.co.th/p/1181331",
       "expected_url": "https://www.homepro.co.th/p/1180889",
-      "confidence": 80,
-      "reason": "Candidate 3 is an exact product type match ('door knob') and has the same critical spec 'knob_room=BATHROOM'. While not a preferred brand, it's the highest spec match candidate that isn't significantly more expensive than the source.",
+      "confidence": 85,
+      "reason": "The candidate has the highest SpecMatch% among candidates with the same product type, matching 'knob_room=BATHROOM'.",
       "gt_status": "INCORRECT"
     },
     {
@@ -35,8 +35,8 @@
       "target_brand": "HOME LIVING",
       "target_url": "https://www.homepro.co.th/p/1066288",
       "expected_url": "https://www.homepro.co.th/p/1066288",
-      "confidence": 95,
-      "reason": "Candidate 0 is a strong match, having the same volume (8L) and is a 'pet water tank' which is functionally equivalent to the source 'water jug'. Although not a preferred brand, it's the closest spec match for the critical product type.",
+      "confidence": 85,
+      "reason": "Candidate 0 has the exact same volume (8 L) and a very high SpecMatch (100%), with a matching product type (gallon vs pet water bottle is acceptable for a water container).",
       "gt_status": "CORRECT"
     },
     {
@@ -50,7 +50,7 @@
       "target_url": "https://www.homepro.co.th/p/1153937",
       "expected_url": "https://www.homepro.co.th/p/1153937",
       "confidence": 75,
-      "reason": "Candidate 2 is a reflective safety vest of a preferred brand, matching the source product type, although specific dimensions are not provided.",
+      "reason": "Candidate 2 is a 'reflective vest' which is a very close product type to 'safety vest' and is from the most preferred brand DEXZON. Although spec match is 0%, the product type and brand preference make it the best available option for an equivalent product.",
       "gt_status": "CORRECT"
     },
     {
@@ -59,12 +59,12 @@
       "source_name": "กล่องอเนกประสงค์ พร้อมล้อและฝาล็อก 100 ลิตร Fiona KASSA HOME รุ่น JCJ-5119 ขนาด 72 x 47 x 42 ซม.",
       "source_brand": "KASSA HOME",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60313145",
-      "target_name": "กล่องเก็บของ ME LIVING S023 59x54x42 ซม. 100 ลิตร สีเทา",
-      "target_brand": "ME LIVING",
-      "target_url": "https://www.homepro.co.th/p/1120065",
+      "target_name": "กล่องเก็บของ มีล้อ ฝาล็อค STACKO S105 A 100 ลิตร 50x70x42 ซม. สีฟ้า",
+      "target_brand": "STACKO",
+      "target_url": "https://www.homepro.co.th/p/1141879",
       "expected_url": "https://www.homepro.co.th/p/1156107",
       "confidence": 85,
-      "reason": "Candidate 4 (ME LIVING) matches the critical specs of volume and length exactly, and is a preferred brand (though lower priority than STACKO), with a similar price point. The dimensions are within an acceptable range for a utilitarian item like a storage box.",
+      "reason": "Candidate 0 is a STACKO storage box with 100L volume, matching the source's critical specs and dimensions are within an acceptable range, and STACKO is the top preferred brand.",
       "gt_status": "INCORRECT"
     },
     {
@@ -77,8 +77,8 @@
       "target_brand": "PACK IN",
       "target_url": "https://www.homepro.co.th/p/1166605",
       "expected_url": "https://www.homepro.co.th/p/1166605",
-      "confidence": 90,
-      "reason": "The candidate is a preferred brand (PACK IN) and has a high spec match (90%), with identical size, length, and tiers, and the correct product type (corrugated paper is a close subtype of corrugated cardboard).",
+      "confidence": 95,
+      "reason": "Candidate 0 is a strong match: same product type, identical size, length, and number of tiers, and from a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -91,8 +91,8 @@
       "target_brand": "ACCO",
       "target_url": "https://www.homepro.co.th/p/1135630",
       "expected_url": "https://www.homepro.co.th/p/1135630",
-      "confidence": 70,
-      "reason": "Candidate 29 is a trash can from a preferred brand (ACCO), and its volume (12L) is very close to the source's (12.4L), making it the best available match despite a 0% SpecMatch from the automated calculation due to different model numbers and identifiers being weighted higher than actual product type and primary specs.",
+      "confidence": 75,
+      "reason": "Candidate is a step trash can from a preferred brand (ACCO) with a similar volume specification (12L vs 12.4L) and matches the product type.",
       "gt_status": "CORRECT"
     },
     {
@@ -106,7 +106,7 @@
       "target_url": "https://www.homepro.co.th/p/1184120",
       "expected_url": "https://www.homepro.co.th/p/1184120",
       "confidence": 95,
-      "reason": "The candidate is a self-drilling screw of the preferred brand DEXZON with matching dimensions (10x1 inch).",
+      "reason": "The candidate is a self-drilling screw of the preferred brand DEXZON with identical dimensions (10x1 inch).",
       "gt_status": "CORRECT"
     },
     {
@@ -119,8 +119,8 @@
       "target_brand": "SPRING",
       "target_url": "https://www.homepro.co.th/p/1226525",
       "expected_url": "https://www.homepro.co.th/p/1226525",
-      "confidence": 85,
-      "reason": "Candidate 0 is a garden hose from the preferred brand SPRING, with a good spec match (81%) for size and hose diameter, and a similar length.",
+      "confidence": 95,
+      "reason": "The candidate is a preferred brand (SPRING) and has a high spec match (81%), with the same product type (garden hose) and hose diameter (1/2 inch). The length difference (15M vs 16M) is within an acceptable range.",
       "gt_status": "CORRECT"
     },
     {
@@ -134,7 +134,21 @@
       "target_url": "https://www.homepro.co.th/p/1174556",
       "expected_url": "https://www.homepro.co.th/p/1176083",
       "confidence": 95,
-      "reason": "Candidate 0 is the correct product type (self-drilling screw) and has a 100% spec match, with the same 'dimensions' and 'size_inch' as the source. It is also from the most preferred brand DEXZON.",
+      "reason": "Candidate 0 is a self-drilling screw of the preferred brand DEXZON with a 100% spec match on dimensions and size_inch, despite a different pack count.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 32,
+      "source_idx": 479,
+      "source_name": "ไม้แขวนเสื้อลวดเคลือบ KASSA HOME รุ่น 2.4 mm. (แพ็ก 10 ชิ้น) สีขาวออฟไวท์",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60328777",
+      "target_name": "ไม้แขวนเสื้อ HANSEN แพ็ก 10 ชิ้น สีเขียว",
+      "target_brand": "HANSEN",
+      "target_url": "https://www.homepro.co.th/p/1221406",
+      "expected_url": "https://www.homepro.co.th/p/196167",
+      "confidence": 90,
+      "reason": "Candidates 0, 1, 2, and 3 are all clothes hangers, match the pack count of 10, and have 100% spec match with the 'pack_count' identifier. There is no specific preference among them in terms of brand preference for HANSEN, so we pick the first one.",
       "gt_status": "INCORRECT"
     }
   ]

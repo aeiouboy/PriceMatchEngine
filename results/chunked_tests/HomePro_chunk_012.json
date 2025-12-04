@@ -4,12 +4,12 @@
   "start_idx": 165,
   "end_idx": 180,
   "products_tested": 15,
-  "matches_found": 8,
-  "correct": 5,
+  "matches_found": 9,
+  "correct": 6,
   "incorrect": 3,
   "gt_missing": 0,
-  "accuracy": 62.5,
-  "timestamp": "2025-12-03T16:50:21.893460",
+  "accuracy": 66.66666666666666,
+  "timestamp": "2025-12-04T03:08:56.933023",
   "matches": [
     {
       "chunk": 12,
@@ -22,7 +22,7 @@
       "target_url": "https://www.homepro.co.th/p/1104652",
       "expected_url": "https://www.homepro.co.th/p/1104652",
       "confidence": 70,
-      "reason": "The candidate is a 'drawer cabinet' from a PREFERRED brand (STACKO) and has the second highest SpecMatch% among preferred brands that are also 'drawer cabinet', with matching 'tiers' count.",
+      "reason": "The candidate has the highest SpecMatch% (49%) among preferred brands, matching the product type (drawer cabinet) and number of tiers (4 floors), while having similar dimensions to the source (source: 58x40, candidate: 40x59).",
       "gt_status": "CORRECT"
     },
     {
@@ -35,8 +35,8 @@
       "target_brand": "PACK IN",
       "target_url": "https://www.homepro.co.th/p/194753",
       "expected_url": "https://www.homepro.co.th/p/194753",
-      "confidence": 75,
-      "reason": "Candidate 0 is a preferred brand (PACK IN) and has the highest SpecMatch (63%) with identical dimensions (31x36x26 cm), and a matching product type (box vs cardboard box).",
+      "confidence": 85,
+      "reason": "The candidate is a 'box' which is a close subtype of 'cardboard box', has identical dimensions, and is from a preferred brand (PACK IN) with a high SpecMatch of 63%.",
       "gt_status": "CORRECT"
     },
     {
@@ -50,7 +50,7 @@
       "target_url": "https://www.homepro.co.th/p/1003945",
       "expected_url": "https://www.homepro.co.th/p/1032598",
       "confidence": 75,
-      "reason": "The candidate has the highest spec match percentage at 40%, is the exact product type (post lamp), and is from the preferred brand CARINI (PREFERRED#1).",
+      "reason": "The candidate is from the preferred brand CARINI, is the correct product type (post light), and has the highest spec match at 40% for 'lamp_type=POLE_LAMP'.",
       "gt_status": "INCORRECT"
     },
     {
@@ -63,8 +63,8 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/1104652",
       "expected_url": "https://www.homepro.co.th/p/1102758",
-      "confidence": 70,
-      "reason": "Candidate is a drawer cabinet with 4 tiers and a similar length of 90.8cm, matching the source's type and key dimension, and is from a preferred brand (STACKO).",
+      "confidence": 85,
+      "reason": "The candidate is a 'drawer cabinet' with the highest SpecMatch% among preferred brands, and dimensions are within an acceptable range.",
       "gt_status": "INCORRECT"
     },
     {
@@ -78,7 +78,7 @@
       "target_url": "https://www.homepro.co.th/p/1092084",
       "expected_url": "https://www.homepro.co.th/p/1092084",
       "confidence": 75,
-      "reason": "The candidate is a cable tie, has a matching size (8 inch) and pack count (100 pieces), and shares 55% spec similarity. Although not a preferred brand, it's the only direct product type match with relevant specs.",
+      "reason": "The candidate is the same product type (cable tie), has a good spec match (55%), and matches the key specs of size and pack count.",
       "gt_status": "CORRECT"
     },
     {
@@ -92,7 +92,7 @@
       "target_url": "https://www.homepro.co.th/p/1170031",
       "expected_url": "https://www.homepro.co.th/p/1170031",
       "confidence": 95,
-      "reason": "The candidate is the same product type (mortar and pestle) and has a 100% spec match on size. While not a preferred brand, it's the only exact functional match.",
+      "reason": "Candidate has 100% spec match, matching product type (stone mortar and pestle) and size, making it a strong equivalent.",
       "gt_status": "CORRECT"
     },
     {
@@ -105,9 +105,23 @@
       "target_brand": "CARINI",
       "target_url": "https://www.homepro.co.th/p/1003063",
       "expected_url": "https://www.homepro.co.th/p/1200198",
-      "confidence": 85,
-      "reason": "Candidate is an outdoor wall lamp from a preferred brand (CARINI) with similar product type, making it the best available match despite explicit spec match percentage not being calculated for the specific type keywords.",
+      "confidence": 75,
+      "reason": "Candidate 6 is an outdoor wall lamp from the preferred brand CARINI, matching the critical product type of the source.",
       "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 12,
+      "source_idx": 178,
+      "source_name": "ตู้บานเปิดอเนกประสงค์แบบพับเก็บได้ 4 ชั้น KASSA HOME รุ่น C-2026-L4 ขนาด 70 x 46 x 149 ซม.",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60393930",
+      "target_name": "ตู้เสื้อผ้าพับเก็บได้ 4 ชั้น STACKO CLAIRE 69x50x136 ซม. สีขาว",
+      "target_brand": "STACKO",
+      "target_url": "https://www.homepro.co.th/p/1241775",
+      "expected_url": "https://www.homepro.co.th/p/1241775",
+      "confidence": 66,
+      "reason": "The candidate is a STACKO foldable wardrobe with 4 tiers and similar dimensions (69x50) to the source's (70x46), making it the closest match despite a slight difference in type.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 12,
@@ -120,7 +134,7 @@
       "target_url": "https://www.homepro.co.th/p/1218486",
       "expected_url": "https://www.homepro.co.th/p/1218486",
       "confidence": 75,
-      "reason": "Candidate 4 is a 'tile leveling kit' which is a close product type to 'tile leveling device', has a preferred brand and a reasonable price point although the SpecMatch is 0% as it's a different model number and doesn't explicitly state the pack count.",
+      "reason": "Candidate is a 'tile leveling kit' from a preferred brand (TARA), which is a very close product type match to 'tile leveling device'. Although the SpecMatch is 0% based on numerical/identifier specs, the product type and brand preference make it the strongest candidate.",
       "gt_status": "CORRECT"
     }
   ]

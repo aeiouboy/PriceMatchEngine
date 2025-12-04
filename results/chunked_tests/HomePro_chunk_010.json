@@ -4,12 +4,12 @@
   "start_idx": 135,
   "end_idx": 150,
   "products_tested": 15,
-  "matches_found": 10,
-  "correct": 9,
+  "matches_found": 9,
+  "correct": 8,
   "incorrect": 1,
   "gt_missing": 0,
-  "accuracy": 90.0,
-  "timestamp": "2025-12-03T16:48:18.827784",
+  "accuracy": 88.88888888888889,
+  "timestamp": "2025-12-03T18:00:43.927426",
   "matches": [
     {
       "chunk": 10,
@@ -21,8 +21,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1165718",
       "expected_url": "https://www.homepro.co.th/p/1165718",
-      "confidence": 82,
-      "reason": "Candidate 12 is a plastic tool box with matching size and model number, and MATALL is a preferred brand (ranked 2nd).",
+      "confidence": 85,
+      "reason": "Candidate 12 is a 'tool box' which matches the source product type, has a high SpecMatch of 82%, and is from the PREFERRED brand MATALL.",
       "gt_status": "CORRECT"
     },
     {
@@ -31,13 +31,13 @@
       "source_name": "บัวพื้นโพลีสไตรีน TIMELESS KASSA รุ่น 1041-E136 ขนาด 290 x 0.8 x 9 ซม. สีไม้พะยูง",
       "source_brand": "KASSA",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60328506",
-      "target_name": "บัวพื้น PS CROBERN LD-4001 10x300x1.5 ซม. สีโอ๊ค",
+      "target_name": "บัวพื้น PS CROBERN LD-3405 9x300x0.7 ซม. สีสัก",
       "target_brand": "CROBERN",
-      "target_url": "https://www.homepro.co.th/p/1173517",
+      "target_url": "https://www.homepro.co.th/p/1173437",
       "expected_url": "https://www.homepro.co.th/p/1173517",
       "confidence": 75,
-      "reason": "Candidate is a preferred brand (CROBERN) and its product type (baseboard) matches the source product. Although spec match is low, other candidates are either wrong product type or have even worse spec match.",
-      "gt_status": "CORRECT"
+      "reason": "The candidate has the exact same product type (skirting board) and is from a preferred brand, even though the dimensions are different (290x0.8 cm vs 9x300 cm), which is a common variation for this product type. The model numbers and specific length value (9CM vs 0.7CM) also differ.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 10,
@@ -50,7 +50,7 @@
       "target_url": "https://www.homepro.co.th/p/1188969",
       "expected_url": "https://www.homepro.co.th/p/1188969",
       "confidence": 95,
-      "reason": "The candidate is a paint roller of the same size (10 inch), has 100% spec match, and is from a preferred brand (MATALL, PREFERRED#2).",
+      "reason": "The candidate is a preferred brand (MATALL) and has 100% spec match, including the critical 'size_inch' and 'roller_type' which fully match the source product.",
       "gt_status": "CORRECT"
     },
     {
@@ -64,7 +64,7 @@
       "target_url": "https://www.homepro.co.th/p/1150457",
       "expected_url": "https://www.homepro.co.th/p/1150457",
       "confidence": 95,
-      "reason": "The candidate is a preferred brand (ACCO) and has an exact spec match for volume and product type.",
+      "reason": "The candidate is also a liquid hand soap, has the same volume as the source, and is from 'ACCO' which is a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -78,7 +78,7 @@
       "target_url": "https://www.homepro.co.th/p/1173622",
       "expected_url": "https://www.homepro.co.th/p/1173622",
       "confidence": 85,
-      "reason": "Candidate 1 (SPRING) is a preferred brand and has a high spec match with the same width and approximate length (52 inches x 25 หลา), and is explicitly a 'canvas fabric' which is an acceptable type for 'plastic sheet roll'.",
+      "reason": "Candidate 1 (SPRING) is a preferred brand and has a high SpecMatch (82%) with identical size specs and product type (canvas vs plastic sheet roll is close enough for this context as canvas often refers to durable sheet materials).",
       "gt_status": "CORRECT"
     },
     {
@@ -92,7 +92,7 @@
       "target_url": "https://www.homepro.co.th/p/1217572",
       "expected_url": "https://www.homepro.co.th/p/1217572",
       "confidence": 75,
-      "reason": "The candidate is the correct product type (double socket outlet, which is a type of electrical outlet) from a preferred brand (ELECKTA), with a 50% spec match.",
+      "reason": "The candidate has a matching product type (double socket vs socket) and is from a preferred brand (ELECKTA), with a 50% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -106,7 +106,7 @@
       "target_url": "https://www.homepro.co.th/p/1084528",
       "expected_url": "https://www.homepro.co.th/p/1084528",
       "confidence": 95,
-      "reason": "The candidate has the correct product type (measuring tape), matches the critical length spec of 5M, and is from a preferred brand (MATALL) with 100% spec match.",
+      "reason": "The candidate is a measuring tape with the same length (5M), and it is from the top preferred brand MATALL, matching all critical specs.",
       "gt_status": "CORRECT"
     },
     {
@@ -120,22 +120,8 @@
       "target_url": "https://www.homepro.co.th/p/1178949",
       "expected_url": "https://www.homepro.co.th/p/1178949",
       "confidence": 95,
-      "reason": "The product type 'silicone gun' is an equivalent of 'glue gun' and the size_inch and brand match perfectly, with DEXZON being a preferred brand.",
+      "reason": "The candidate is a DEXZON brand silicone gun, matching the source's 'glue gun' product type and '9 inch' size, achieving a 100% spec match with an equivalent product type.",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 10,
-      "source_idx": 148,
-      "source_name": "รถเข็นท้องแบนพื้นเหล็ก 4 ล้อด้ามจับพับเก็บได้ GIANT KINGKONG รุ่น TT2300CA ขนาด 300 กก. สีน้ำเงิน",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60259410",
-      "target_name": "รถเข็น 4 ล้อ MATALL FD300 300 กก. สีดำ",
-      "target_brand": "MATALL",
-      "target_url": "https://www.homepro.co.th/p/1028911",
-      "expected_url": "https://www.homepro.co.th/p/1165754",
-      "confidence": 85,
-      "reason": "The candidate has the correct product type, the same volume capacity, and is from a preferred brand (MATALL), making it the closest available alternative despite not having the foldable handle spec listed.",
-      "gt_status": "INCORRECT"
     },
     {
       "chunk": 10,
@@ -147,8 +133,8 @@
       "target_brand": "HACHI",
       "target_url": "https://www.homepro.co.th/p/1123665",
       "expected_url": "https://www.homepro.co.th/p/1123665",
-      "confidence": 100,
-      "reason": "Candidate 0 is a drain snake of the same length (5M) and from a preferred brand (HACHI, PREFERRED#3), making it a direct and highly confident match based on product type and key specs.",
+      "confidence": 95,
+      "reason": "The candidate has the exact product type 'drain snake' (which is very close to 'pipe clearing spring') and a 100% spec match for length, while also being a preferred brand (HACHI).",
       "gt_status": "CORRECT"
     }
   ]

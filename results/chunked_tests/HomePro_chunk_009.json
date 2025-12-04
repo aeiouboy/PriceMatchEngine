@@ -4,13 +4,27 @@
   "start_idx": 120,
   "end_idx": 135,
   "products_tested": 15,
-  "matches_found": 5,
+  "matches_found": 4,
   "correct": 3,
-  "incorrect": 2,
+  "incorrect": 1,
   "gt_missing": 0,
-  "accuracy": 60.0,
-  "timestamp": "2025-12-03T16:47:28.020695",
+  "accuracy": 75.0,
+  "timestamp": "2025-12-03T17:59:47.174835",
   "matches": [
+    {
+      "chunk": 9,
+      "source_idx": 120,
+      "source_name": "โคมไฟหัวเสาภายนอก E27x1 LUZINO RARE HOUSE รุ่น 0288-PF-B(BK) สีดำ",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60272336",
+      "target_name": "ไฟหัวเสา CARINI 5018S/N สีดำ",
+      "target_brand": "CARINI",
+      "target_url": "https://www.homepro.co.th/p/1074150",
+      "expected_url": "https://www.homepro.co.th/p/1032598",
+      "confidence": 75,
+      "reason": "Candidate 0 is a 'post lamp' which matches the 'outdoor post light' product type, is from the most preferred brand CARINI, and has the highest SpecMatch% among plausible alternatives, focusing on the critical 'lamp_type' spec.",
+      "gt_status": "INCORRECT"
+    },
     {
       "chunk": 9,
       "source_idx": 127,
@@ -22,22 +36,8 @@
       "target_url": "https://www.homepro.co.th/p/1173468",
       "expected_url": "https://www.homepro.co.th/p/1173468",
       "confidence": 95,
-      "reason": "Candidate 0 is a preferred brand (SPRING) with 100% spec match for size and is a 'canvas roll', which is a very close product type to 'plastic sheet'.",
+      "reason": "Candidate 0 is a plastic tarp from preferred brand SPRING with exact spec match (72 inch x 40 yard) and a lower price.",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 9,
-      "source_idx": 128,
-      "source_name": "ชุดไม้กวาดพร้อมที่โกยผงด้ามสแตนเลสแบบยาว LIAO รุ่น C130024 ขนาด 85 ซม. สีแดง - เทา",
-      "source_brand": "LIAO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60284486",
-      "target_name": "ชุดไม้กวาดพร้อมที่โกยผง ด้ามสเตนเลส ACCO XG-2066 12 นิ้ว สีครีม",
-      "target_brand": "ACCO",
-      "target_url": "https://www.homepro.co.th/p/1016460",
-      "expected_url": "https://www.homepro.co.th/p/1083202",
-      "confidence": 70,
-      "reason": "The candidate is a broom and dustpan set (matching product type) and is from a preferred brand (ACCO), although the size spec does not directly match the source's length.",
-      "gt_status": "INCORRECT"
     },
     {
       "chunk": 9,
@@ -49,8 +49,8 @@
       "target_brand": "CARINI",
       "target_url": "https://www.homepro.co.th/p/1170703",
       "expected_url": "https://www.homepro.co.th/p/1170703",
-      "confidence": 75,
-      "reason": "The candidate is a PREFERRED brand (CARINI), matches the critical PRODUCT TYPE 'wall lamp', and has a high SpecMatch% of 40% with similar lamp_type.",
+      "confidence": 65,
+      "reason": "Candidate 0 is a preferred brand (CARINI) and has the highest SpecMatch% among outdoor wall lamps, matching the critical product type and 'lamp_type' spec. Although the SpecMatch is not high, it is the best available within the same product category and a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -64,22 +64,8 @@
       "target_url": "https://www.homepro.co.th/p/242081",
       "expected_url": "https://www.homepro.co.th/p/242081",
       "confidence": 95,
-      "reason": "The candidate is also a dustbin (trash can) with the exact same volume (9 L), making it an excellent functional match. While not a preferred brand, the spec match is perfect.",
+      "reason": "The candidate is a 'trash can', which is equivalent to 'dustbin', has a perfect 100% spec match on volume, and is the best available alternative despite a lower preferred brand ranking.",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 9,
-      "source_idx": 132,
-      "source_name": "ตาข่ายกรองแสง 80% (ม้วน) FONTE รุ่น SH-11 (ทอ 1 เข็ม) ขนาด 2 x 100 เมตร สีดำ",
-      "source_brand": "FONTE",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60215930",
-      "target_name": "สแลนม้วนกรองแสง 50 เปอร์เซ็นต์ ทอ 1 เข็ม GARTENE 2 ม.X100 หลา สีดำ",
-      "target_brand": "GARTENE",
-      "target_url": "https://www.homepro.co.th/p/1137193",
-      "expected_url": "https://www.homepro.co.th/p/1137659",
-      "confidence": 75,
-      "reason": "Candidate 25 is a 'shade net' from a preferred brand (GARTENE) and has partially matching dimensions and 'ทอ 1 เข็ม' feature, though the length is different.",
-      "gt_status": "INCORRECT"
     }
   ]
 }

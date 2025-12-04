@@ -4,12 +4,12 @@
   "start_idx": 240,
   "end_idx": 255,
   "products_tested": 15,
-  "matches_found": 9,
-  "correct": 6,
-  "incorrect": 3,
+  "matches_found": 7,
+  "correct": 5,
+  "incorrect": 2,
   "gt_missing": 0,
-  "accuracy": 66.66666666666666,
-  "timestamp": "2025-12-03T16:55:11.869028",
+  "accuracy": 71.42857142857143,
+  "timestamp": "2025-12-03T18:07:39.499382",
   "matches": [
     {
       "chunk": 17,
@@ -21,8 +21,8 @@
       "target_brand": "KECH",
       "target_url": "https://www.homepro.co.th/p/1201175",
       "expected_url": "https://www.homepro.co.th/p/1235030",
-      "confidence": 75,
-      "reason": "The candidate is the correct product type (dish rack), is a preferred brand (KECH), and matches the 'tiers' spec exactly.",
+      "confidence": 70,
+      "reason": "The best matching candidate is a 'dish rack' from a preferred brand (KECH) with 2 tiers, matching the critical product type and a key spec of the source product.",
       "gt_status": "INCORRECT"
     },
     {
@@ -35,37 +35,9 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1102878",
       "expected_url": "https://www.homepro.co.th/p/1157044",
-      "confidence": 90,
-      "reason": "Candidate is a preferred brand MATALL, has the same product type 'a-frame ladder', and an excellent spec match (68%) including the critical '5 steps'.",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 17,
-      "source_idx": 244,
-      "source_name": "ทินเนอร์ GIANT KINGKONG ปี๊ป 11 กก. สีใส",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60375478",
-      "target_name": "ทินเนอร์ BARGO AAA 11 ลิตร (ปี๊ป)",
-      "target_brand": "BARGO",
-      "target_url": "https://www.homepro.co.th/p/15099",
-      "expected_url": "https://www.homepro.co.th/p/1105241",
       "confidence": 85,
-      "reason": "Candidate 31 is the only other 'thinner' product listed, and its volume of 11 L is a close match to the source's 11 KG, especially given that thinner density is close to water.",
+      "reason": "The candidate is the same product type (a-frame ladder) and brand (MATALL, PREFERRED#1), with a high spec match for steps (5 steps) and ladder type, making it the best equivalent despite the higher price.",
       "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 17,
-      "source_idx": 245,
-      "source_name": "พุกเหล็ก GIANT KINGKONG รุ่น P-16012 ขนาด 1/2 นิ้ว สีซิงค์รุ้ง",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60374089",
-      "target_name": "พุกเหล็ก DEXZON 1/2 นิ้ว",
-      "target_brand": "DEXZON",
-      "target_url": "https://www.homepro.co.th/p/1174272",
-      "expected_url": "https://www.homepro.co.th/p/1174272",
-      "confidence": 95,
-      "reason": "The candidate has the exact same product type (wall plug converted to expansion bolt), size, and is from a highly preferred brand (DEXZON) with a 100% spec match.",
-      "gt_status": "CORRECT"
     },
     {
       "chunk": 17,
@@ -77,8 +49,8 @@
       "target_brand": "CARINI",
       "target_url": "https://www.homepro.co.th/p/1223428",
       "expected_url": "https://www.homepro.co.th/p/1223428",
-      "confidence": 85,
-      "reason": "Candidate is the same product type (track light), features a preferred brand (CARINI - PREFERRED#1), and shares key identifiers like 'GU5' which is the socket type. While the model number differs and overall spec match is not very high, it is the best available option given the constraints.",
+      "confidence": 80,
+      "reason": "Candidate 1 is the same product type (track light) and from the top preferred brand (CARINI). The SpecMatch is 21%, which is acceptable given the lack of specific numerical matches, but 'GU5' is a key identifier match.",
       "gt_status": "CORRECT"
     },
     {
@@ -91,8 +63,8 @@
       "target_brand": "SPRING",
       "target_url": "https://www.homepro.co.th/p/1020040",
       "expected_url": "https://www.homepro.co.th/p/1020040",
-      "confidence": 95,
-      "reason": "Candidate is the same product type (garden hose), matches all key specifications (1/2 inch diameter, 30M length), and is from a highly preferred brand (SPRING).",
+      "confidence": 89,
+      "reason": "The candidate is a preferred brand (SPRING) and has the highest SpecMatch% among candidates of the same product type and all critical specs match.",
       "gt_status": "CORRECT"
     },
     {
@@ -105,8 +77,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1230024",
       "expected_url": "https://www.homepro.co.th/p/1230024",
-      "confidence": 85,
-      "reason": "The candidate is the same product type (storage box) and is a MATALL branded item, which is a preferred brand. It matches the 'outlets' count and has a similar model identifier (HL3045-B).",
+      "confidence": 60,
+      "reason": "The source product is a 'drawer storage box'. Candidate 21 is a 'กล่องเครื่องมือ DIY' which is a type of storage box with similar specs (12 outlets) and is from a PREFERRED brand (MATALL). Although not an exact product type match due to tools vs. general parts, it's the closest available alternative. Other candidates are 'paint roller part' or different types of mops/tools, which are clearly product type mismatches.",
       "gt_status": "CORRECT"
     },
     {
@@ -120,7 +92,7 @@
       "target_url": "https://www.homepro.co.th/p/1206231",
       "expected_url": "https://www.homepro.co.th/p/1206231",
       "confidence": 100,
-      "reason": "Candidate 0 is a perfect spec match for the drywall screw type and is from a preferred brand (DEXZON).",
+      "reason": "Candidate 0 is a drywall screw, matches all key specs (dimensions, size_inch, pack_count) exactly and is from the preferred brand DEXZON.",
       "gt_status": "CORRECT"
     },
     {
@@ -134,7 +106,7 @@
       "target_url": "https://www.homepro.co.th/p/1105473",
       "expected_url": "https://www.homepro.co.th/p/1105473",
       "confidence": 75,
-      "reason": "The candidate has the exact same product type (carpet) and similar product name, with a matching width of 2 meters, though the length is not specified in the candidate's description, it is the closest in product type and other specifications to the source.",
+      "reason": "Candidate 38 is a carpet from a preferred brand (HOME LIVING STYLE) with matching product type and a relevant 'length' spec, making it the closest available alternative despite the length difference from the original 25M to 2M.",
       "gt_status": "CORRECT"
     }
   ]

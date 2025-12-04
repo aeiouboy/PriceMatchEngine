@@ -9,7 +9,7 @@
   "incorrect": 0,
   "gt_missing": 0,
   "accuracy": 100.0,
-  "timestamp": "2025-12-03T16:53:17.126232",
+  "timestamp": "2025-12-03T18:05:29.636161",
   "matches": [
     {
       "chunk": 15,
@@ -21,8 +21,8 @@
       "target_brand": "DEXZON",
       "target_url": "https://www.homepro.co.th/p/1251658",
       "expected_url": "https://www.homepro.co.th/p/1251658",
-      "confidence": 85,
-      "reason": "Candidate 0 is the closest match with 'scaffolding caster' type, 'HAS_BRAKE' and is the most preferred brand DEXZON. The size difference (20cm vs 8 inch which is ~20.32cm) is acceptable, and has a good SpecMatch%.",
+      "confidence": 75,
+      "reason": "The candidate is a preferred brand (DEXZON), has the correct product type (scaffolding castor), and a high spec match (66%) including the presence of a brake, though the size is in inches instead of cm.",
       "gt_status": "CORRECT"
     },
     {
@@ -36,7 +36,7 @@
       "target_url": "https://www.homepro.co.th/p/1230386",
       "expected_url": "https://www.homepro.co.th/p/1230386",
       "confidence": 100,
-      "reason": "Candidate 0 is the exact product type and matches the critical volume spec of 235 L. It's also from a preferred brand (ME LIVING).",
+      "reason": "The candidate is a storage box with the exact same volume (235 L) as the source, and is from a preferred brand (ME LIVING). The SpecMatch is 100%.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,8 +49,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1162955",
       "expected_url": "https://www.homepro.co.th/p/1162955",
-      "confidence": 70,
-      "reason": "The candidate is the same product type (pipe cutter) and is from the most preferred brand (MATALL).",
+      "confidence": 90,
+      "reason": "The candidate is a 'pvc pipe cutter' which closely matches the source's 'pipe cutter' product type, is by the most preferred brand MATALL, and has a 50% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -64,7 +64,7 @@
       "target_url": "https://www.homepro.co.th/p/1220492",
       "expected_url": "https://www.homepro.co.th/p/1220492",
       "confidence": 95,
-      "reason": "The candidate is the same product type (trash can), has the exact same volume (12 L), and is from a preferred brand (ACCO) with 100% spec match.",
+      "reason": "Candidate has a matching product type (trash can) and volume (12L), and is from a preferred brand (ACCO).",
       "gt_status": "CORRECT"
     }
   ]

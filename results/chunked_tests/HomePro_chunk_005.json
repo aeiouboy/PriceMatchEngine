@@ -9,7 +9,7 @@
   "incorrect": 2,
   "gt_missing": 0,
   "accuracy": 77.77777777777779,
-  "timestamp": "2025-12-03T16:44:21.267953",
+  "timestamp": "2025-12-03T17:56:01.135504",
   "matches": [
     {
       "chunk": 5,
@@ -22,7 +22,7 @@
       "target_url": "https://www.homepro.co.th/p/1230402",
       "expected_url": "https://www.homepro.co.th/p/1230402",
       "confidence": 95,
-      "reason": "The candidate is a storage box with the exact same volume (340 L) and is from a preferred brand (ME LIVING). Although the model number is different, the critical specs align perfectly.",
+      "reason": "The candidate is a storage box from a preferred brand with 100% spec match on volume, which is a critical specification. The price is also reasonably close.",
       "gt_status": "CORRECT"
     },
     {
@@ -36,7 +36,7 @@
       "target_url": "https://www.homepro.co.th/p/1227723",
       "expected_url": "https://www.homepro.co.th/p/1157325",
       "confidence": 85,
-      "reason": "Candidate 0 is a preferred brand (MATALL) with 8 steps and A-frame ladder type, matching the critical specs of the source product.",
+      "reason": "Candidate 0 is an A-frame ladder with the same number of steps (8) and is from the most preferred brand (MATALL), making it the closest available alternative despite missing 'ladder_direction' spec.",
       "gt_status": "INCORRECT"
     },
     {
@@ -49,8 +49,8 @@
       "target_brand": "HOME LIVING STYLE",
       "target_url": "https://www.homepro.co.th/p/1105472",
       "expected_url": "https://www.homepro.co.th/p/1105472",
-      "confidence": 70,
-      "reason": "The candidate has the correct product type (carpet) and is from a preferred brand (HOME LIVING STYLE). Although the length and model number are not a direct match, the product description suggests it's a similar 'cut by meter' carpet with a 2-meter width, making it the closest available alternative despite some spec differences.",
+      "confidence": 75,
+      "reason": "Candidate is the only one identified as 'carpet roll' and explicitly mentions 'XW05' like the source, with a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -63,8 +63,8 @@
       "target_brand": "FONKEY",
       "target_url": "https://www.homepro.co.th/p/1158408",
       "expected_url": "https://www.homepro.co.th/p/1189195",
-      "confidence": 85,
-      "reason": "Candidate 12 is a paint brush of the same size as the source product, making it a good functional match despite being a different brand.",
+      "confidence": 75,
+      "reason": "Candidate is a paint brush of the same size, but not a preferred brand and likely a different bristle type (oil vs wool).",
       "gt_status": "INCORRECT"
     },
     {
@@ -77,8 +77,8 @@
       "target_brand": "PLIM",
       "target_url": "https://www.homepro.co.th/p/1266790",
       "expected_url": "https://www.homepro.co.th/p/1266790",
-      "confidence": 75,
-      "reason": "Candidate 0 is the same product type (ironing board) and from a preferred brand (PLIM) with a 50% spec match, making it the best available equivalent despite the identifier mismatch.",
+      "confidence": 90,
+      "reason": "The candidate has the exact same product type (ironing board), is from a preferred brand (PLIM), and has a good spec match (50%) for available information.",
       "gt_status": "CORRECT"
     },
     {
@@ -92,7 +92,7 @@
       "target_url": "https://www.homepro.co.th/p/1182020",
       "expected_url": "https://www.homepro.co.th/p/1182020",
       "confidence": 95,
-      "reason": "The candidate has the correct product type (table leg protector, which is a leg cap), exact dimensions (1x2 inch), and is from a preferred brand (DEXZON). The pack count differs (4 pcs vs 2 pcs), leading to a slightly lower SpecMatch but it is the closest equivalent.",
+      "reason": "Candidate 1 (DEXZON) is the only alternative with the exact same product type 'table leg cap' (equivalent to 'leg protector') and matching dimensions, while also being a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -106,7 +106,7 @@
       "target_url": "https://www.homepro.co.th/p/1227700",
       "expected_url": "https://www.homepro.co.th/p/1227700",
       "confidence": 90,
-      "reason": "The candidate is the same product type, a preferred brand, and has a high spec match percentage with the exact number of steps.",
+      "reason": "The candidate is the same product type (a-frame ladder) with the same number of steps (6 steps) and is from the most preferred brand (MATALL).",
       "gt_status": "CORRECT"
     },
     {
@@ -119,8 +119,8 @@
       "target_brand": "BIH",
       "target_url": "https://www.homepro.co.th/p/1144461",
       "expected_url": "https://www.homepro.co.th/p/1144461",
-      "confidence": 75,
-      "reason": "Candidate 4 is also a steel plate with matching dimensions and a preferred brand (BIH). However, the drilled hole size is different (3/8 inch vs 1.5 cm).",
+      "confidence": 80,
+      "reason": "The candidate is also a 'steel plate' and has matching dimensions (6x6) with a preferred brand, despite a lower SpecMatch% due to differing hole size.",
       "gt_status": "CORRECT"
     },
     {
@@ -134,7 +134,7 @@
       "target_url": "https://www.homepro.co.th/p/1172052",
       "expected_url": "https://www.homepro.co.th/p/1172052",
       "confidence": 75,
-      "reason": "The candidate has the correct product type (makeup organizer), a preferred brand (STACKO), and a similar length of 21cm compared to the source's 21.5cm, although with fewer tiers.",
+      "reason": "The product type 'อุปกรณ์จัดเก็บเครื่องสำอาง' is a close match to 'makeup organizer', and the dimensions are very similar (18x9 vs 18x9.5), with a preferred brand.",
       "gt_status": "CORRECT"
     }
   ]

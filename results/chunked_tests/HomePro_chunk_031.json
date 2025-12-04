@@ -4,13 +4,27 @@
   "start_idx": 450,
   "end_idx": 465,
   "products_tested": 15,
-  "matches_found": 5,
+  "matches_found": 6,
   "correct": 4,
-  "incorrect": 1,
+  "incorrect": 2,
   "gt_missing": 0,
-  "accuracy": 80.0,
-  "timestamp": "2025-12-03T17:09:32.307334",
+  "accuracy": 66.66666666666666,
+  "timestamp": "2025-12-04T03:02:56.554703",
   "matches": [
+    {
+      "chunk": 31,
+      "source_idx": 450,
+      "source_name": "เก้าอี้ทานอาหารไม้ยางพารา KASSA สีธรรมชาติ",
+      "source_brand": "KASSA",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60294001",
+      "target_name": "เก้าอี้ห้องอาหารหมุนได้ FURDINI NARA สีน้ำตาล",
+      "target_brand": "FURDINI",
+      "target_url": "https://www.homepro.co.th/p/1287255",
+      "expected_url": "https://www.homepro.co.th/p/1169721",
+      "confidence": 75,
+      "reason": "The candidate is a FURDINI dining chair, matching the product type and a preferred brand, with a reasonable price difference.",
+      "gt_status": "INCORRECT"
+    },
     {
       "chunk": 31,
       "source_idx": 457,
@@ -21,8 +35,8 @@
       "target_brand": "ACCO",
       "target_url": "https://www.homepro.co.th/p/1255584",
       "expected_url": "https://www.homepro.co.th/p/1255584",
-      "confidence": 75,
-      "reason": "The source is a multipurpose cloth with dimensions 20x20 cm. This candidate is also a cleaning cloth (multipurpose cloth) with dimensions 22x22 cm, which is within 10% tolerance, and is from a preferred brand (ACCO).",
+      "confidence": 85,
+      "reason": "Candidate is the same product type, a preferred brand, and has dimensions (22x22 cm) close to the source (20x20 cm), and matches the pack count (20pcs).",
       "gt_status": "CORRECT"
     },
     {
@@ -35,8 +49,8 @@
       "target_brand": "PUMPKIN",
       "target_url": "https://www.homepro.co.th/p/1176512",
       "expected_url": "https://www.homepro.co.th/p/1176512",
-      "confidence": 80,
-      "reason": "The candidate is also a tool box, has the same size (19 inch), and a strong spec match percentage (100%).",
+      "confidence": 90,
+      "reason": "The candidate is also a 19-inch plastic tool box, matching the source product type and critical size specification, and has the highest SpecMatch.",
       "gt_status": "CORRECT"
     },
     {
@@ -50,7 +64,7 @@
       "target_url": "https://www.homepro.co.th/p/1181364",
       "expected_url": "https://www.homepro.co.th/p/1181364",
       "confidence": 95,
-      "reason": "Candidate 0 is a paint roller of the preferred brand MATALL and has a perfect spec match for size and roller type.",
+      "reason": "Candidate 0 is a preferred brand (MATALL) and has a 100% spec match, sharing the same product type and critical 'size_inch' spec as the source product.",
       "gt_status": "CORRECT"
     },
     {
@@ -64,7 +78,7 @@
       "target_url": "https://www.homepro.co.th/p/1255549",
       "expected_url": "https://www.homepro.co.th/p/1255549",
       "confidence": 75,
-      "reason": "The candidate has a reasonably close size (22x22 vs 20x20 cm) and pack count (20 pcs), matches the product type (cleaning cloth), and is from a PREFERRED brand (ACCO).",
+      "reason": "Candidate is the correct product type (disposable wipes), has the preferred brand ACCO, and a good spec match for dimensions and pack count. Although dimensions are slightly off (22x22 vs 20x20), the pack count of 20 pieces perfectly matches the source.",
       "gt_status": "CORRECT"
     },
     {
@@ -77,8 +91,8 @@
       "target_brand": "DEXZON",
       "target_url": "https://www.homepro.co.th/p/1174886",
       "expected_url": "https://www.homepro.co.th/p/1172635",
-      "confidence": 95,
-      "reason": "Candidate 0 is a face mask, matches the pack count exactly, and is from the most preferred brand (DEXZON).",
+      "confidence": 90,
+      "reason": "Candidate 0 is a face mask, matches the pack count, and is from the most preferred brand DEXZON.",
       "gt_status": "INCORRECT"
     }
   ]

@@ -5,11 +5,11 @@
   "end_idx": 300,
   "products_tested": 15,
   "matches_found": 7,
-  "correct": 6,
-  "incorrect": 1,
+  "correct": 5,
+  "incorrect": 2,
   "gt_missing": 0,
-  "accuracy": 85.71428571428571,
-  "timestamp": "2025-12-03T16:58:12.079848",
+  "accuracy": 71.42857142857143,
+  "timestamp": "2025-12-03T18:10:30.007146",
   "matches": [
     {
       "chunk": 20,
@@ -17,13 +17,13 @@
       "source_name": "พุกเหล็ก GIANT KINGKONG รุ่น P-10516 ขนาด 5/16 นิ้ว (แพ็ก 5 ตัว) สีซิงค์รุ้ง",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60374085",
-      "target_name": "พุกเหล็ก DEXZON 5/16 นิ้ว 5 ตัว",
+      "target_name": "พุกเหล็ก DEXZON 5/16 นิ้ว 5 ชิ้น",
       "target_brand": "DEXZON",
-      "target_url": "https://www.homepro.co.th/p/1174291",
+      "target_url": "https://www.homepro.co.th/p/1184711",
       "expected_url": "https://www.homepro.co.th/p/1174291",
       "confidence": 95,
-      "reason": "Candidate 0 is an anchor bolt of the preferred brand DEXZON with a perfect spec match (5/16 inch size).",
-      "gt_status": "CORRECT"
+      "reason": "Candidate 2 is an exact size match for the 'anchor bolt' product type and is from a preferred brand (DEXZON).",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 20,
@@ -36,7 +36,7 @@
       "target_url": "https://www.homepro.co.th/p/1174886",
       "expected_url": "https://www.homepro.co.th/p/1174886",
       "confidence": 95,
-      "reason": "The candidate is a preferred brand (DEXZON) and matches the product type (face mask) and pack count (50 pcs) exactly.",
+      "reason": "The candidate has the highest spec match (100%), exact product type match as a medical mask (which is a subtype of face mask), and is from the highest preferred brand (DEXZON).",
       "gt_status": "CORRECT"
     },
     {
@@ -49,8 +49,8 @@
       "target_brand": "SANWA",
       "target_url": "https://www.homepro.co.th/p/8817",
       "expected_url": "https://www.homepro.co.th/p/1254301",
-      "confidence": 90,
-      "reason": "Candidate 4 is a ball valve, matches the critical product type and size_inch specification of the source, despite not being a preferred brand.",
+      "confidence": 75,
+      "reason": "Candidate 4 is a ball valve with matching size_inch, even though it's not a preferred brand, it's the only one that matches the critical product type after filtering out DEXZON faucets.",
       "gt_status": "INCORRECT"
     },
     {
@@ -63,8 +63,22 @@
       "target_brand": "TARA",
       "target_url": "https://www.homepro.co.th/p/1175863",
       "expected_url": "https://www.homepro.co.th/p/1175863",
-      "confidence": 85,
-      "reason": "Candidate is the same product type (tile leveling clip) and from a preferred brand (TARA), despite a low spec match score due to differing 'model' and 'pack_count' not being explicitly listed for the candidate.",
+      "confidence": 70,
+      "reason": "The candidate is also a 'tile leveling clip' and is from a preferred brand (TARA), despite the SpecMatch% being 0% as specific dimensions and pack count are not extracted in the candidate's specs, but it is the closest type match.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 20,
+      "source_idx": 289,
+      "source_name": "เสื้อกั๊กจราจร GIANT KINGKONG รุ่น HS703G-L ขนาด 70 x 60 ซม. L สีเขียว",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60211273",
+      "target_name": "เสื้อจราจรสะท้อนแสง 2 แถบ DEXZON HS713 สีเขียว",
+      "target_brand": "DEXZON",
+      "target_url": "https://www.homepro.co.th/p/1153937",
+      "expected_url": "https://www.homepro.co.th/p/1153937",
+      "confidence": 90,
+      "reason": "The candidate has the exact same product type (traffic vest, 'เสื้อจราจรสะท้อนแสง' is a traffic vest) and is from the highest preferred brand 'DEXZON', despite having 0% spec match on other specs.",
       "gt_status": "CORRECT"
     },
     {
@@ -78,21 +92,7 @@
       "target_url": "https://www.homepro.co.th/p/1101778",
       "expected_url": "https://www.homepro.co.th/p/1101778",
       "confidence": 89,
-      "reason": "Candidate 0 is a garden hose with matching size and length, and the brand is preferred though not in the top tier.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 20,
-      "source_idx": 297,
-      "source_name": "ชั้นวางของพร้อมล้อเลื่อน 5 ลิ้นชัก Salon KASSA HOME รุ่น NAP021-PS5T ขนาด 33 x 39 x 94 ซม. สีขาว",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60317303",
-      "target_name": "ชั้นลิ้นชัก 5 ชั้น STACKO BONNIE 32.2x36.5x91 ซม. สีขาว",
-      "target_brand": "STACKO",
-      "target_url": "https://www.homepro.co.th/p/1245455",
-      "expected_url": "https://www.homepro.co.th/p/1245455",
-      "confidence": 75,
-      "reason": "Candidate 0 is a STACKO (preferred brand) drawer cabinet, matching the product type and having the highest spec match percentage among preferred brands with similar dimensions and 5 tiers.",
+      "reason": "The candidate has the highest SpecMatch% (89%) and is the correct product type (hose), matching size and length specs. Although not a preferred brand, it's the only viable option among candidates.",
       "gt_status": "CORRECT"
     },
     {
@@ -106,7 +106,7 @@
       "target_url": "https://www.homepro.co.th/p/1179571",
       "expected_url": "https://www.homepro.co.th/p/1179571",
       "confidence": 95,
-      "reason": "Candidate 0 is a garden hose with matching size and length, from a preferred brand (SPRING), and has a high SpecMatch%.",
+      "reason": "The candidate is a preferred brand (SPRING), has the same product type (garden hose), and an excellent spec match (89%) for size and length.",
       "gt_status": "CORRECT"
     }
   ]
