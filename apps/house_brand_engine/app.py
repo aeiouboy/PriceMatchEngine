@@ -972,6 +972,367 @@ def has_product_conflict(source_name, target_name):
         if source_nylon != target_nylon:
             return True
 
+    # Ladder feature conflict - tray vs handle are different features
+    if is_source_ladder and is_target_ladder:
+        # Check for tray (ถาด) feature
+        source_tray = 'ถาด' in source_lower or 'tray' in source_lower
+        target_tray = 'ถาด' in target_lower or 'tray' in target_lower
+        # Check for handle (มือจับ/ด้ามจับ) feature
+        source_handle = 'มือจับ' in source_lower or 'ด้ามจับ' in source_lower or 'handle' in source_lower
+        target_handle = 'มือจับ' in target_lower or 'ด้ามจับ' in target_lower or 'handle' in target_lower
+        # If source has tray but target has handle (not tray), conflict
+        if source_tray and target_handle and not target_tray:
+            return True
+
+    # Cabinet wood top conflict - wood top vs regular cabinet
+    cabinet_keywords = ['ตู้ลิ้นชัก', 'drawer cabinet', 'ตู้เก็บของ']
+    is_source_cabinet = any(kw in source_lower for kw in cabinet_keywords)
+    is_target_cabinet = any(kw in target_lower for kw in cabinet_keywords)
+    if is_source_cabinet and is_target_cabinet:
+        source_woodtop = 'ท็อปไม้' in source_lower or 'wood top' in source_lower
+        target_woodtop = 'ท็อปไม้' in target_lower or 'wood top' in target_lower
+        if source_woodtop and not target_woodtop:
+            return True
+
+    # Baseboard material conflict - PS vs WPC vs wood
+    baseboard_keywords = ['บัวพื้น', 'บัวล่าง', 'baseboard', 'skirting']
+    is_source_baseboard = any(kw in source_lower for kw in baseboard_keywords)
+    is_target_baseboard = any(kw in target_lower for kw in baseboard_keywords)
+    if is_source_baseboard and is_target_baseboard:
+        source_ps = 'โพลีสไตรีน' in source_lower or 'ps ' in source_lower or '(ps)' in source_lower
+        target_ps = 'โพลีสไตรีน' in target_lower or 'ps ' in target_lower or '(ps)' in target_lower
+        source_wpc = 'wpc' in source_lower
+        target_wpc = 'wpc' in target_lower
+        # PS and WPC are different materials
+        if (source_ps and target_wpc) or (source_wpc and target_ps):
+            return True
+
+    # Frying pan handle material conflict - stainless handle vs regular
+    pan_keywords = ['กระทะ', 'frying pan', 'pan']
+    is_source_pan = any(kw in source_lower for kw in pan_keywords)
+    is_target_pan = any(kw in target_lower for kw in pan_keywords)
+    if is_source_pan and is_target_pan:
+        source_ss_handle = 'ด้ามสเตนเลส' in source_lower or 'stainless handle' in source_lower
+        target_ss_handle = 'ด้ามสเตนเลส' in target_lower or 'stainless handle' in target_lower
+        if source_ss_handle and not target_ss_handle:
+            return True
+
+    # Scaffold wheel type conflict - single vs double wheel
+    wheel_keywords = ['ล้อนั่งร้าน', 'ลูกล้อนั่งร้าน', 'scaffold wheel', 'caster']
+    is_source_wheel = any(kw in source_lower for kw in wheel_keywords)
+    is_target_wheel = any(kw in target_lower for kw in wheel_keywords)
+    if is_source_wheel and is_target_wheel:
+        source_double = 'ล้อคู่' in source_lower or 'double' in source_lower
+        target_double = 'ล้อคู่' in target_lower or 'double' in target_lower
+        source_single = 'ล้อเดี่ยว' in source_lower or 'single' in source_lower
+        target_single = 'ล้อเดี่ยว' in target_lower or 'single' in target_lower
+        if (source_double and target_single) or (source_single and target_double):
+            return True
+
+    # Door frame color conflict - different wood colors
+    if is_source_doorframe and is_target_doorframe:
+        wood_colors = ['ออริจินัล', 'โอ๊ค', 'วอลนัท', 'เชอรี่', 'มะฮอกกานี', 'original', 'oak', 'walnut', 'cherry', 'mahogany']
+        source_color = None
+        target_color = None
+        for c in wood_colors:
+            if c in source_lower:
+                source_color = c
+            if c in target_lower:
+                target_color = c
+        if source_color and target_color and source_color != target_color:
+            return True
+
+    # Wheelbarrow wheel type conflict - single vs twin wheel, solid vs pneumatic
+    wheelbarrow_keywords = ['รถเข็นปูน', 'wheelbarrow']
+    is_source_wheelbarrow = any(kw in source_lower for kw in wheelbarrow_keywords)
+    is_target_wheelbarrow = any(kw in target_lower for kw in wheelbarrow_keywords)
+    if is_source_wheelbarrow and is_target_wheelbarrow:
+        source_twin = 'ล้อคู่' in source_lower or 'twin' in source_lower
+        target_twin = 'ล้อคู่' in target_lower or 'twin' in target_lower
+        source_single = 'ล้อเดี่ยว' in source_lower or 'single' in source_lower
+        target_single = 'ล้อเดี่ยว' in target_lower or 'single' in target_lower
+        if (source_twin and not target_twin) or (source_single and not target_single):
+            return True
+
+    # Hanger material conflict - iron head vs plastic, wood vs plastic
+    if is_source_hanger and is_target_hanger:
+        source_iron = 'หัวเหล็ก' in source_lower or 'iron' in source_lower
+        target_iron = 'หัวเหล็ก' in target_lower or 'iron' in target_lower
+        source_wood = 'ไม้' in source_lower or 'wood' in source_lower
+        target_wood = 'ไม้' in target_lower or 'wood' in target_lower
+        # Iron head hanger should match iron head
+        if source_iron and not target_iron:
+            return True
+        # Wood hanger should match wood
+        if source_wood and not target_wood:
+            return True
+
+    # Paint roller size conflict - must match exactly
+    roller_keywords = ['ลูกกลิ้ง', 'roller']
+    is_source_roller = any(kw in source_lower for kw in roller_keywords)
+    is_target_roller = any(kw in target_lower for kw in roller_keywords)
+    if is_source_roller and is_target_roller:
+        inch_pattern = r'(\d+)\s*(?:นิ้ว|inch|"|″)'
+        source_inch = re.search(inch_pattern, source_name, re.IGNORECASE)
+        target_inch = re.search(inch_pattern, target_name, re.IGNORECASE)
+        if source_inch and target_inch:
+            if int(source_inch.group(1)) != int(target_inch.group(1)):
+                return True
+
+    # Lighting fixture color conflict for outdoor lights
+    lighting_keywords = ['โคมไฟ', 'ไฟหัวเสา', 'ไฟผนัง', 'ไฟกิ่ง', 'lamp', 'light']
+    is_source_light = any(kw in source_lower for kw in lighting_keywords)
+    is_target_light = any(kw in target_lower for kw in lighting_keywords)
+    if is_source_light and is_target_light:
+        # Clear vs black/other colors
+        source_clear = 'ใส' in source_lower or 'clear' in source_lower or '(cl)' in source_lower
+        target_clear = 'ใส' in target_lower or 'clear' in target_lower or '(cl)' in target_lower
+        source_black = 'ดำ' in source_lower or 'black' in source_lower or '(bk)' in source_lower
+        target_black = 'ดำ' in target_lower or 'black' in target_lower or '(bk)' in target_lower
+        if (source_clear and target_black) or (source_black and target_clear):
+            return True
+
+    # Screw/fastener dimension conflict - must match exactly (e.g., 8x1/2 vs 8x1-1/2)
+    screw_keywords = ['สกรู', 'screw', 'น็อต', 'bolt', 'ตะปู', 'nail']
+    is_source_screw = any(kw in source_lower for kw in screw_keywords)
+    is_target_screw = any(kw in target_lower for kw in screw_keywords)
+    if is_source_screw and is_target_screw:
+        # Extract screw dimensions like "8x1/2", "10x1", "8x1-1/2"
+        screw_dim_pattern = r'(\d+)\s*[xX×]\s*(\d+(?:-\d+)?(?:/\d+)?)'
+        source_dim = re.search(screw_dim_pattern, source_name)
+        target_dim = re.search(screw_dim_pattern, target_name)
+        if source_dim and target_dim:
+            source_full = f"{source_dim.group(1)}x{source_dim.group(2)}"
+            target_full = f"{target_dim.group(1)}x{target_dim.group(2)}"
+            if source_full != target_full:
+                return True
+
+    # Door knob/handle type conflict - หัวกลม (round) vs หัวจัน (moon) vs other types
+    knob_keywords = ['ลูกบิด', 'door knob', 'knob']
+    is_source_knob = any(kw in source_lower for kw in knob_keywords)
+    is_target_knob = any(kw in target_lower for kw in knob_keywords)
+    if is_source_knob and is_target_knob:
+        source_round = 'หัวกลม' in source_lower or 'round' in source_lower
+        target_round = 'หัวกลม' in target_lower or 'round' in target_lower
+        source_moon = 'หัวจัน' in source_lower or 'moon' in source_lower
+        target_moon = 'หัวจัน' in target_lower or 'moon' in target_lower
+        if (source_round and target_moon) or (source_moon and target_round):
+            return True
+        # Also check plate size - จานใหญ่ (large plate) vs จานเล็ก (small plate)
+        source_large_plate = 'จานใหญ่' in source_lower or 'large plate' in source_lower
+        target_large_plate = 'จานใหญ่' in target_lower or 'large plate' in target_lower
+        source_small_plate = 'จานเล็ก' in source_lower or 'small plate' in source_lower
+        target_small_plate = 'จานเล็ก' in target_lower or 'small plate' in target_lower
+        if (source_large_plate and not target_large_plate) or (source_small_plate and not target_small_plate):
+            return True
+
+    # Storage box wheel conflict - boxes with wheels vs without
+    storage_keywords = ['กล่องเก็บของ', 'กล่องอเนกประสงค์', 'storage box']
+    is_source_storage = any(kw in source_lower for kw in storage_keywords)
+    is_target_storage = any(kw in target_lower for kw in storage_keywords)
+    if is_source_storage and is_target_storage:
+        source_wheels = 'ล้อ' in source_lower or 'wheel' in source_lower
+        target_wheels = 'ล้อ' in target_lower or 'wheel' in target_lower
+        # If source has wheels, target should also have wheels
+        if source_wheels and not target_wheels:
+            return True
+
+    # Hanger wire type conflict - ลวดเคลือบ (coated wire) vs plastic vs wood
+    if is_source_hanger and is_target_hanger:
+        source_wire = 'ลวด' in source_lower or 'wire' in source_lower
+        target_wire = 'ลวด' in target_lower or 'wire' in target_lower
+        source_plastic = 'พลาสติก' in source_lower or 'plastic' in source_lower
+        target_plastic = 'พลาสติก' in target_lower or 'plastic' in target_lower
+        # Wire vs plastic are different products
+        if (source_wire and target_plastic) or (source_plastic and target_wire):
+            return True
+
+    # Cloth/wipe color conflict - color must match for multipurpose cloths
+    if is_source_cloth and is_target_cloth:
+        cloth_colors = ['เขียว', 'เทา', 'ฟ้า', 'ชมพู', 'ขาว', 'green', 'gray', 'blue', 'pink', 'white']
+        source_color = None
+        target_color = None
+        for color in cloth_colors:
+            if color in source_lower:
+                source_color = color
+            if color in target_lower:
+                target_color = color
+        # If both have colors specified and they differ, conflict
+        if source_color and target_color and source_color != target_color:
+            return True
+
+    # Face mask color conflict - color is important for uniforms/coordination
+    mask_keywords = ['หน้ากาก', 'mask', 'หน้ากากอนามัย']
+    is_source_mask = any(kw in source_lower for kw in mask_keywords)
+    is_target_mask = any(kw in target_lower for kw in mask_keywords)
+    if is_source_mask and is_target_mask:
+        mask_colors = ['เขียว', 'ขาว', 'ดำ', 'ฟ้า', 'green', 'white', 'black', 'blue']
+        source_color = None
+        target_color = None
+        for color in mask_colors:
+            if color in source_lower:
+                source_color = color
+            if color in target_lower:
+                target_color = color
+        if source_color and target_color and source_color != target_color:
+            return True
+
+    # Dish rack size conflict - เล็ก (small) vs ใหญ่ (large) vs regular
+    if is_source_dishrack and is_target_dishrack:
+        source_small = 'เล็ก' in source_lower or 'small' in source_lower
+        target_small = 'เล็ก' in target_lower or 'small' in target_lower
+        source_large = 'ใหญ่' in source_lower or 'large' in source_lower
+        target_large = 'ใหญ่' in target_lower or 'large' in target_lower
+        # Small vs large or small vs regular are conflicts
+        if source_small and target_large:
+            return True
+        if source_large and target_small:
+            return True
+        # If source is explicitly small but target is not small (likely regular/large)
+        if source_small and not target_small:
+            return True
+
+    # Dining chair material conflict - rubber wood vs regular/other materials
+    chair_keywords_ext = ['เก้าอี้ทานอาหาร', 'เก้าอี้ห้องอาหาร', 'dining chair']
+    is_source_dining = any(kw in source_lower for kw in chair_keywords_ext)
+    is_target_dining = any(kw in target_lower for kw in chair_keywords_ext)
+    if is_source_dining and is_target_dining:
+        source_rubber_wood = 'ไม้ยางพารา' in source_lower or 'rubber wood' in source_lower
+        target_rubber_wood = 'ไม้ยางพารา' in target_lower or 'rubber wood' in target_lower
+        source_rotating = 'หมุน' in source_lower or 'rotating' in source_lower or 'swivel' in source_lower
+        target_rotating = 'หมุน' in target_lower or 'rotating' in target_lower or 'swivel' in target_lower
+        # Rubber wood vs rotating chair are different types
+        if source_rubber_wood and target_rotating:
+            return True
+        if source_rotating and target_rubber_wood:
+            return True
+
+    # Paint brush vs putty knife/scraper conflict - completely different tools
+    brush_paint_keywords = ['แปรงทาสี', 'แปรงทา', 'paint brush']
+    is_source_paint_brush = any(kw in source_lower for kw in brush_paint_keywords)
+    is_target_paint_brush = any(kw in target_lower for kw in brush_paint_keywords)
+    scraper_keywords = ['เกรียง', 'scraper', 'putty knife', 'โป๊ว']
+    is_source_scraper = any(kw in source_lower for kw in scraper_keywords)
+    is_target_scraper = any(kw in target_lower for kw in scraper_keywords)
+    if (is_source_paint_brush and is_target_scraper) or (is_source_scraper and is_target_paint_brush):
+        return True
+
+    # Drawer cabinet vs door cabinet conflict - different furniture types
+    drawer_cabinet_keywords = ['ตู้ลิ้นชัก', 'drawer cabinet', 'chest of drawers']
+    is_source_drawer_cabinet = any(kw in source_lower for kw in drawer_cabinet_keywords)
+    is_target_drawer_cabinet = any(kw in target_lower for kw in drawer_cabinet_keywords)
+    door_cabinet_keywords = ['ตู้บานเปิด', 'door cabinet', 'บานเปิด']
+    is_source_door_cabinet = any(kw in source_lower for kw in door_cabinet_keywords)
+    is_target_door_cabinet = any(kw in target_lower for kw in door_cabinet_keywords)
+    if (is_source_drawer_cabinet and is_target_door_cabinet) or (is_source_door_cabinet and is_target_drawer_cabinet):
+        return True
+
+    # Hanging rail/rack vs regular shelf conflict - different product types
+    hanging_rail_keywords = ['ราวแขวน', 'hanging rack', 'hanging rail', 'clothes rail']
+    is_source_hanging_rail = any(kw in source_lower for kw in hanging_rail_keywords)
+    is_target_hanging_rail = any(kw in target_lower for kw in hanging_rail_keywords)
+    regular_shelf_keywords = ['ชั้นวางของ', 'shelf', 'shelving']
+    # Only trigger if target is shelf WITHOUT "ราว" or "hanging"
+    is_target_regular_shelf = any(kw in target_lower for kw in regular_shelf_keywords) and not any(kw in target_lower for kw in hanging_rail_keywords)
+    if is_source_hanging_rail and is_target_regular_shelf:
+        return True
+
+    # Door with/without knob hole conflict - เจาะลูกบิด vs ไม่เจาะลูกบิด
+    door_keywords = ['ประตู', 'door']
+    is_source_door = any(kw in source_lower for kw in door_keywords)
+    is_target_door = any(kw in target_lower for kw in door_keywords)
+    if is_source_door and is_target_door:
+        source_drilled = 'เจาะลูกบิด' in source_lower or 'เจาะ' in source_lower
+        target_drilled = 'เจาะลูกบิด' in target_lower or 'เจาะ' in target_lower
+        source_not_drilled = 'ไม่เจาะ' in source_lower or 'not drilled' in source_lower
+        target_not_drilled = 'ไม่เจาะ' in target_lower or 'not drilled' in target_lower
+        if (source_not_drilled and target_drilled) or (source_drilled and target_not_drilled):
+            return True
+
+    # Electrical box type conflict - บล็อกฝัง (recessed) vs แฮนดี้บ๊อกซ์ (handy box/surface)
+    elec_box_keywords = ['บล็อกฝัง', 'บล็อก', 'handy box', 'junction box']
+    is_source_elec_box = any(kw in source_lower for kw in elec_box_keywords)
+    is_target_elec_box = any(kw in target_lower for kw in elec_box_keywords)
+    if is_source_elec_box and is_target_elec_box:
+        source_recessed = 'บล็อกฝัง' in source_lower or 'ฝัง' in source_lower or 'recessed' in source_lower
+        target_recessed = 'บล็อกฝัง' in target_lower or 'ฝัง' in target_lower or 'recessed' in target_lower
+        source_surface = 'แฮนดี้บ๊อกซ์' in source_lower or 'handy' in source_lower or 'surface' in source_lower
+        target_surface = 'แฮนดี้บ๊อกซ์' in target_lower or 'handy' in target_lower or 'surface' in target_lower
+        if (source_recessed and target_surface) or (source_surface and target_recessed):
+            return True
+
+    # Wheel/caster size conflict - must be within 20% tolerance
+    wheel_general_keywords = ['ล้อยาง', 'ลูกล้อ', 'ล้อ', 'wheel', 'caster']
+    is_source_wheel_general = any(kw in source_lower for kw in wheel_general_keywords)
+    is_target_wheel_general = any(kw in target_lower for kw in wheel_general_keywords)
+    if is_source_wheel_general and is_target_wheel_general:
+        # Extract size in cm or inches and convert to cm for comparison
+        # Pattern for cm: "16 ซม." or "16cm"
+        cm_pattern = r'(\d+(?:\.\d+)?)\s*(?:ซม\.|cm|เซนติเมตร)'
+        # Pattern for inch: "8 นิ้ว" or "8""
+        inch_pattern = r'(\d+(?:\.\d+)?)\s*(?:นิ้ว|inch|"|″)'
+
+        source_cm = re.search(cm_pattern, source_name, re.IGNORECASE)
+        target_cm = re.search(cm_pattern, target_name, re.IGNORECASE)
+        source_inch = re.search(inch_pattern, source_name, re.IGNORECASE)
+        target_inch = re.search(inch_pattern, target_name, re.IGNORECASE)
+
+        source_size_cm = None
+        target_size_cm = None
+
+        if source_cm:
+            source_size_cm = float(source_cm.group(1))
+        elif source_inch:
+            source_size_cm = float(source_inch.group(1)) * 2.54  # Convert inches to cm
+
+        if target_cm:
+            target_size_cm = float(target_cm.group(1))
+        elif target_inch:
+            target_size_cm = float(target_inch.group(1)) * 2.54  # Convert inches to cm
+
+        # If both have sizes, check if they're within 20% of each other
+        if source_size_cm and target_size_cm:
+            max_size = max(source_size_cm, target_size_cm)
+            min_size = min(source_size_cm, target_size_cm)
+            if max_size > 0 and (min_size / max_size) < 0.8:  # More than 20% difference
+                return True
+
+    # Tool set piece count conflict - must be within 30%
+    toolset_keywords = ['ชุดเครื่องมือ', 'tool set', 'เครื่องมือช่าง']
+    is_source_toolset = any(kw in source_lower for kw in toolset_keywords)
+    is_target_toolset = any(kw in target_lower for kw in toolset_keywords)
+    if is_source_toolset and is_target_toolset:
+        piece_pattern = r'(\d+)\s*(?:ชิ้น|pcs|pieces|piece)'
+        source_pieces = re.search(piece_pattern, source_name, re.IGNORECASE)
+        target_pieces = re.search(piece_pattern, target_name, re.IGNORECASE)
+        if source_pieces and target_pieces:
+            s_count = int(source_pieces.group(1))
+            t_count = int(target_pieces.group(1))
+            if s_count > 0 and t_count > 0:
+                ratio = min(s_count, t_count) / max(s_count, t_count)
+                if ratio < 0.7:  # More than 30% difference
+                    return True
+
+    # Table size conflict - folding vs regular, must match dimensions closely
+    table_keywords = ['โต๊ะ', 'table']
+    is_source_table = any(kw in source_lower for kw in table_keywords)
+    is_target_table = any(kw in target_lower for kw in table_keywords)
+    if is_source_table and is_target_table:
+        # Check for folding vs non-folding
+        source_fold = 'พับ' in source_lower or 'fold' in source_lower
+        target_fold = 'พับ' in target_lower or 'fold' in target_lower
+        # Extract length dimension
+        length_pattern = r'(\d+)\s*(?:x|X|×)\s*\d+'
+        source_len = re.search(length_pattern, source_name)
+        target_len = re.search(length_pattern, target_name)
+        if source_len and target_len:
+            s_len = int(source_len.group(1))
+            t_len = int(target_len.group(1))
+            if s_len > 0 and t_len > 0:
+                ratio = min(s_len, t_len) / max(s_len, t_len)
+                if ratio < 0.75:  # More than 25% length difference
+                    return True
+
     return False
 
 def extract_size_specs(product_name):
