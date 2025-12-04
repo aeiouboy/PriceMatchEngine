@@ -9,7 +9,7 @@
   "incorrect": 0,
   "gt_missing": 1,
   "accuracy": 100.0,
-  "timestamp": "2025-12-03T13:01:42.331121",
+  "timestamp": "2025-12-04T10:34:34.421163",
   "matches": [
     {
       "chunk": 5,
@@ -21,8 +21,8 @@
       "target_brand": "ANYHOME",
       "target_url": "https://www.boonthavorn.com/anyhome-1111122",
       "expected_url": "https://www.boonthavorn.com/anyhome-1111122",
-      "confidence": 85,
-      "reason": "Candidate 0 is a preferred brand (ANYHOME) and has a good spec match for length and product type, even though diameter is not explicitly listed.",
+      "confidence": 70,
+      "reason": "The candidate is the same product type (hose) and has a preferred brand, with the highest spec match percentage at 35% for length.",
       "gt_status": "CORRECT"
     },
     {
@@ -35,8 +35,8 @@
       "target_brand": "MAX LIGHT",
       "target_url": "https://www.boonthavorn.com/max-light-1249472",
       "expected_url": "https://www.boonthavorn.com/max-light-1202280",
-      "confidence": 90,
-      "reason": "Candidate 0 is a MAX LIGHT (PREFERRED#1 brand) outdoor wall lamp with 71% spec match including exact dimensions and socket, making it the closest equivalent product.",
+      "confidence": 95,
+      "reason": "Candidate 0 is a preferred brand (MAX LIGHT), has an exact product type match as 'wall light' (exterior wall lamp is a type of wall light), and a high SpecMatch of 71% with matching socket and dimensions.",
       "gt_status": "GT_MISSING"
     }
   ]

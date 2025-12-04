@@ -9,7 +9,7 @@
   "incorrect": 0,
   "gt_missing": 1,
   "accuracy": 100.0,
-  "timestamp": "2025-12-03T12:58:07.416137",
+  "timestamp": "2025-12-04T10:22:09.602880",
   "matches": [
     {
       "chunk": 3,
@@ -21,8 +21,8 @@
       "target_brand": "LIGHTMOST",
       "target_url": "https://www.boonthavorn.com/lightmost-1208338",
       "expected_url": "https://www.boonthavorn.com/lightmost-1208338",
-      "confidence": 95,
-      "reason": "Candidate 0 is a pendant light with the highest spec match (36%) to the source, matching dimensions and socket specifications, and is from a preferred brand (LIGHTMOST).",
+      "confidence": 75,
+      "reason": "The candidate is the correct product type (pendant light) and has a matching socket type (E27x3) and dimensions, and is from a preferred brand (LIGHTMOST).",
       "gt_status": "CORRECT"
     },
     {
@@ -35,8 +35,8 @@
       "target_brand": "MAX LIGHT",
       "target_url": "https://www.boonthavorn.com/max-light-1249472",
       "expected_url": "https://www.boonthavorn.com/yj-2180a-1-e27x1",
-      "confidence": 85,
-      "reason": "Candidate 0 is an outdoor wall lamp with a high spec match to the source, and is from a preferred brand (MAX LIGHT).",
+      "confidence": 90,
+      "reason": "The candidate has the highest spec match (71%) and is from a highly preferred brand (MAX LIGHT, PREFERRED#1). The product type (wall lamp) and key specs like dimensions and socket type perfectly match the source.",
       "gt_status": "GT_MISSING"
     }
   ]

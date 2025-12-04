@@ -479,9 +479,6 @@ PRODUCT_LINE_CONFLICTS = [
     ('สีดำ', 'น้ำตาล'),
     ('ดำ', 'น้ำตาล'),
     ('black', 'brown'),
-    ('ขาว', 'ดำ'),
-    ('สีขาว', 'สีดำ'),
-    ('white', 'black'),
     # Brush bristle types - CRITICAL
     ('ขนสัตว์', 'ขนสังเคราะห์'),
     ('natural bristle', 'synthetic'),
@@ -1090,6 +1087,19 @@ def has_product_conflict(source_name, target_name):
         source_black = 'ดำ' in source_lower or 'black' in source_lower or '(bk)' in source_lower
         target_black = 'ดำ' in target_lower or 'black' in target_lower or '(bk)' in target_lower
         if (source_clear and target_black) or (source_black and target_clear):
+            return True
+
+    # Track light color conflict - white vs black must match
+    track_keywords = ['แทรคไลท์', 'แท็คไลท์', 'track light', 'tracklight']
+    is_source_track = any(kw in source_lower for kw in track_keywords)
+    is_target_track = any(kw in target_lower for kw in track_keywords)
+    if is_source_track and is_target_track:
+        source_white = 'ขาว' in source_lower or 'white' in source_lower or '-wh' in source_lower
+        target_white = 'ขาว' in target_lower or 'white' in target_lower
+        source_black = 'ดำ' in source_lower or 'black' in source_lower or '-bk' in source_lower
+        target_black = 'ดำ' in target_lower or 'black' in target_lower
+        # White source should not match black target and vice versa
+        if (source_white and target_black) or (source_black and target_white):
             return True
 
     # Screw/fastener dimension conflict - must match exactly (e.g., 8x1/2 vs 8x1-1/2)
