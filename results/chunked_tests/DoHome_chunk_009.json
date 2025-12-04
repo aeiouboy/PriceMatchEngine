@@ -6,22 +6,23 @@
   "products_tested": 15,
   "matches_found": 6,
   "correct": 5,
-  "incorrect": 1,
-  "accuracy": 83.33333333333334,
-  "timestamp": "2025-12-03T07:45:57.824398",
+  "incorrect": 0,
+  "gt_missing": 1,
+  "accuracy": 100.0,
+  "timestamp": "2025-12-03T14:31:07.243370",
   "matches": [
     {
       "chunk": 9,
-      "source_idx": 123,
-      "source_name": "เจโบลท์เกลียวหุน 1/2 นิ้ว x 300 มม. GIANT KINGKONG รุ่น JB1230 (แพ็ก 1 ชุด)",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60398189",
-      "target_name": "สกรูตัวเจ 1/2 นิ้ว x 30 ซม. | NASH",
-      "target_brand": "NASH",
-      "target_url": "https://www.dohome.co.th/th/j-type-screw-1-2-inch-x-30-cm-10201454.html",
-      "expected_url": "https://www.dohome.co.th/th/j-type-screw-1-2-inch-x-30-cm-10201454.html",
-      "confidence": 85,
-      "reason": "Candidate 5 (NASH สกรูตัวเจ 1/2 นิ้ว x 30 ซม.) is the best match by product type ('j-bolt' vs 'สกรูตัวเจ' which are synonyms), the 'size_inch' spec (1/2 inch) matches the source, the 'length_cm' (30 ซม.) matches the implicit length in the source's name (300 มม. = 30 ซม.), and it's from a PREFERRED brand (NASH).",
+      "source_idx": 122,
+      "source_name": "ตู้วางเตาแก๊ส ZAGIO รุ่น CR80-S ขนาด 81.5 x 45.5 x 85.5 ซม. สีเงิน",
+      "source_brand": "ZAGIO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60367930",
+      "target_name": "FINEXT ตู้วางเตา 3 ฟุต 2 ประตู ปูกระเบื้อง",
+      "target_brand": "FINEXT",
+      "target_url": "https://www.dohome.co.th/th/gas-stove-cabinet-3-feet-2-doors-tiled-10303410.html",
+      "expected_url": "https://www.dohome.co.th/th/gas-stove-cabinet-3-feet-2-doors-tiled-10303410.html",
+      "confidence": 65,
+      "reason": "The candidate is a 'ตู้วางเตา' (stove cabinet) from a preferred brand (FINEXT) and matches the product type, although specific dimensions are not provided.",
       "gt_status": "CORRECT"
     },
     {
@@ -34,8 +35,8 @@
       "target_brand": "JCP",
       "target_url": "https://www.dohome.co.th/th/jcp-plastic-drawer-cabinet-4-layers-no-5834-10345681.html",
       "expected_url": "https://www.dohome.co.th/th/jcp-plastic-drawer-cabinet-4-layers-no-5834-10345681.html",
-      "confidence": 75,
-      "reason": "Candidate 0 is a cabinet with drawers, which matches the critical product type, and has 4 tiers, matching a key spec, with a 50% spec match. It is also from a preferred brand (JCP).",
+      "confidence": 70,
+      "reason": "The candidate is a chest of drawers with 4 tiers, matching the critical product type and tier count of the source. Although the brand is not a top preferred one and the dimensions are not identical, it's the closest spec match among the available alternatives.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,22 +50,22 @@
       "target_url": "https://www.dohome.co.th/th/nash-hot-air-gun-2000-w-no-hag016-10277732.html",
       "expected_url": "https://www.dohome.co.th/th/nash-hot-air-gun-2000-w-no-hag016-10277732.html",
       "confidence": 100,
-      "reason": "Candidate 0 is a perfect spec match for wattage and product type (heat gun is synonymous with heat blower), and is from the preferred brand NASH.",
+      "reason": "Candidate 0 is a preferred brand (NASH) and has a 100% spec match, including wattage and product type, aligning perfectly with the source product's critical specifications.",
       "gt_status": "CORRECT"
     },
     {
       "chunk": 9,
-      "source_idx": 130,
-      "source_name": "โคมดาวน์ไลท์หน้ากลม 4 นิ้ว LED 9W Warm White LUZINO รุ่น PN-JYX0101-9W/WW สีขาว",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60308451",
-      "target_name": "LAMPTAN ดาวน์ไลท์ LED 9 วัตต์ กลม รุ่น Ultra Slim (Day Light)",
-      "target_brand": "LAMPTAN",
-      "target_url": "https://www.dohome.co.th/th/lamptan-led-downlight-9w-circle-ultra-slimday-linght-10310002.html",
-      "expected_url": "https://www.dohome.co.th/th/power-max-led-downlight-9w-circle-dhp003-warm-white-10268566.html",
+      "source_idx": 129,
+      "source_name": "ตู้ลิ้นชักอเนกประสงค์ท็อปไม้ 4 ชั้น (โครงทึบ) KASSA HOME รุ่น UDC-A05AB4 ขนาด 63 x 40 x 90 ซม.",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60372918",
+      "target_name": "JCP ตู้ลิ้นชักพลาสติก 4 ชั้น รุ่น 5834",
+      "target_brand": "JCP",
+      "target_url": "https://www.dohome.co.th/th/jcp-plastic-drawer-cabinet-4-layers-no-5834-10345681.html",
+      "expected_url": "https://www.dohome.co.th/en/4-drawer-cabinet-sumo-woodtop-white-10271541.html",
       "confidence": 60,
-      "reason": "Candidate 1 is the only other downlight with matching wattage, although the specific color temperature and size are not specified for the candidate.",
-      "gt_status": "INCORRECT"
+      "reason": "Candidate 8 (JCP ตู้ลิ้นชักพลาสติก 4 ชั้น) has a matching product type ('ตู้ลิ้นชัก' implies cabinet) and exact tier count as the source product, and it is from a moderately preferred brand (JCP).",
+      "gt_status": "GT_MISSING"
     },
     {
       "chunk": 9,
@@ -76,8 +77,8 @@
       "target_brand": "POWER MAX",
       "target_url": "https://www.dohome.co.th/th/power-max-solar-cell-street-light-200-watt-model-bright-day-light-10414334.html",
       "expected_url": "https://www.dohome.co.th/th/power-max-solar-cell-street-light-200-watt-model-bright-day-light-10414334.html",
-      "confidence": 85,
-      "reason": "Candidate 0 is the closest match, with a preferred brand and identical wattage and product type to the source.",
+      "confidence": 90,
+      "reason": "Candidate 0 is a solar street light with the same wattage (200W) and is from the most preferred brand (POWER MAX), making it a strong equivalent.",
       "gt_status": "CORRECT"
     },
     {
@@ -90,8 +91,8 @@
       "target_brand": "POWER MAX",
       "target_url": "https://www.dohome.co.th/th/power-max-electric-fly-mosquito-swatter-with-flashlight-led-no-pm-1707-10289353.html",
       "expected_url": "https://www.dohome.co.th/th/power-max-electric-fly-mosquito-swatter-with-flashlight-led-no-pm-1707-10289353.html",
-      "confidence": 90,
-      "reason": "Candidate 0 is branded POWER MAX (PREFERRED#1) and is an electric mosquito swatter, matching the product type of the source 'rechargeable mosquito swatter'.",
+      "confidence": 75,
+      "reason": "Candidate 0 is the only option that is the same product type ('electric mosquito swatter' vs 'rechargeable mosquito bat') and within a preferred brand, despite a lower SpecMatch% due to different model numbers.",
       "gt_status": "CORRECT"
     }
   ]

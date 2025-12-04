@@ -4,11 +4,12 @@
   "start_idx": 135,
   "end_idx": 150,
   "products_tested": 15,
-  "matches_found": 10,
-  "correct": 7,
+  "matches_found": 8,
+  "correct": 6,
   "incorrect": 2,
-  "accuracy": 77.77777777777779,
-  "timestamp": "2025-12-03T07:46:47.679192",
+  "gt_missing": 0,
+  "accuracy": 75.0,
+  "timestamp": "2025-12-03T14:32:05.049190",
   "matches": [
     {
       "chunk": 10,
@@ -20,8 +21,8 @@
       "target_brand": "MARINE",
       "target_url": "https://www.dohome.co.th/th/marine-tile-leveling-device-orange-10393596.html",
       "expected_url": "https://www.dohome.co.th/th/marine-tile-leveling-device-orange-10393596.html",
-      "confidence": 80,
-      "reason": "The candidate is the correct product type (tile leveler) and from a preferred brand, although the SpecMatch is 0% due to implicit specs.",
+      "confidence": 70,
+      "reason": "Candidate 2 is the correct product type (tile leveler) and from a preferred brand (MARINE). Although SpecMatch is 0%, the product type and brand alignment make it the best available option, unlike other candidates that are completely different product types with higher SpecMatch percentages that are not valid.",
       "gt_status": "CORRECT"
     },
     {
@@ -34,22 +35,8 @@
       "target_brand": "POWER MAX",
       "target_url": "https://www.dohome.co.th/th/heap-downlight-4-inch-square-white-10204670.html",
       "expected_url": "https://www.dohome.co.th/th/heap-downlight-4-inch-square-white-10204670.html",
-      "confidence": 75,
-      "reason": "Candidate 1 (POWER MAX) is the highest preferred brand among the options, matches the product type (downlight), and has a reasonable SpecMatch% of 45%, showing agreement on the 4-inch size.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 10,
-      "source_idx": 137,
-      "source_name": "แปรงทาสีน้ำมันขนสัตว์ด้ามไม้ GIANT KINGKONG รุ่น PB-037-2 ขนาด 2 นิ้ว",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60271279",
-      "target_name": "NASH แปรงทาสี 2 นิ้ว รุ่น NM002",
-      "target_brand": "NASH",
-      "target_url": "https://www.dohome.co.th/th/nash-paint-brush-2-inch-no-nm002-10224018.html",
-      "expected_url": "https://www.dohome.co.th/th/nash-paint-brush-2-inch-no-nm002-10224018.html",
-      "confidence": 95,
-      "reason": "The candidate is a NASH brand (preferred), has 100% spec match with the same size (2 inch), and is the correct product type (paint brush vs oil paint brush).",
+      "confidence": 85,
+      "reason": "The candidate has the correct product type (downlight), matches the critical size spec (4 inch), and is a preferred brand (POWER MAX) with the highest spec match among viable options.",
       "gt_status": "CORRECT"
     },
     {
@@ -62,8 +49,8 @@
       "target_brand": "DECOS",
       "target_url": "https://www.dohome.co.th/th/decos-waterproof-mattress-protector-6x6-5-inch-10302226.html",
       "expected_url": "https://www.dohome.co.th/th/decos-waterproof-mattress-protector-6x6-5-inch-10302226.html",
-      "confidence": 60,
-      "reason": "Candidate is the same product type (ผ้ารองกันเปื้อน/mattress protector) and is a preferred brand.",
+      "confidence": 70,
+      "reason": "Candidate 14 is a 'protector pad' (ผ้ารองกันเปื้อน) matching the source's product type 'protector pad'. It is also from a preferred brand (DECOS) and has a similar model spec ('identifiers' contain 'DECOS').",
       "gt_status": "CORRECT"
     },
     {
@@ -76,8 +63,8 @@
       "target_brand": "DE'COS",
       "target_url": "https://www.dohome.co.th/th/decos-bathrobe-size-s-white-10302288.html",
       "expected_url": "https://www.dohome.co.th/th/decos-bathrobe-size-s-white-10302288.html",
-      "confidence": 95,
-      "reason": "Candidate 0 is the only product of the exact same type (bathrobe) and a preferred brand, with a reasonable spec match for identifiers.",
+      "confidence": 90,
+      "reason": "Candidate 0 is the only bathrobe with a preferred brand, matching the product type exactly and having a 50% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -91,7 +78,7 @@
       "target_url": "https://www.dohome.co.th/th/oppa-bubber-wiper-spare-partsr-24-inch-10247342.html",
       "expected_url": "https://www.dohome.co.th/th/oppa-bubber-wiper-spare-partsr-24-inch-10247342.html",
       "confidence": 85,
-      "reason": "The candidate is the correct product type (wiper blade, which is a common alternative name for wiper rubber refill) and matches the critical 'size_inch' and 'roller_type' specs, and the brand is preferred.",
+      "reason": "Candidate 0 is an exact product type match as a wiper refill and has the highest spec match at 63%, including the critical 24-inch size, and is from a preferred brand (OPPA).",
       "gt_status": "CORRECT"
     },
     {
@@ -104,8 +91,8 @@
       "target_brand": "DECOS",
       "target_url": "https://www.dohome.co.th/th/decos-2-bulb-outdoor-wall-lamp-square-shape-e27-socket-model-gris-grey-10417412.html",
       "expected_url": "https://www.dohome.co.th/th/finext-outdoor-wall-lamp-aluminium-a119-black-10247666.html",
-      "confidence": 65,
-      "reason": "The candidate has the exact product type (WALL_LAMP) and the same socket count (E27x2 is implied by '2 หลอด' and E27 socket) as the source, and is from a preferred brand (DECOS).",
+      "confidence": 70,
+      "reason": "Candidate 4 is a preferred brand (DECOS), has the correct product type (WALL_LAMP), and shares the E27 socket type with the source, although it has E27x1 instead of E27x2 which is the closest match among candidates.",
       "gt_status": "INCORRECT"
     },
     {
@@ -118,23 +105,9 @@
       "target_brand": "OPPA",
       "target_url": "https://www.dohome.co.th/th/oppa-sponge-mop-for-cleaning-glass-extendable-2-levels-size-12-inch-10247349.html",
       "expected_url": "https://www.dohome.co.th/th/oppa-sponge-mop-for-cleaning-glass-extendable-2-levels-size-12-inch-10247349.html",
-      "confidence": 85,
-      "reason": "The candidate has the highest spec match (56%), the correct product type (window squeegee, similar to squeegee), and is from a preferred brand (OPPA).",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 10,
-      "source_idx": 148,
-      "source_name": "พรมเช็ดเท้า ขอบยาง KASSA HOME รุ่น KGWM 54 สีน้ำตาล",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/sku/60308065",
-      "target_name": "DECOS พรมใยมะพร้าว 40x60 ซม. รุ่น 03-3 สีน้ำตาล",
-      "target_brand": "DE'COS",
-      "target_url": "https://www.dohome.co.th/th/decos-coconut-fiber-carpet-40x60cm-03-3-brown-10397046.html",
-      "expected_url": "",
       "confidence": 60,
-      "reason": "The candidate has the exact product type (doormat is a floor mat) and is from a preferred brand DECOS, with a 50% spec match on model/identifiers, the highest among relevant types.",
-      "gt_status": "NO_GT"
+      "reason": "Candidate 0 has the correct product type (glass wiper/squeegee), matches the 12-inch size, and is from a preferred brand (OPPA) with a reasonable SpecMatch%.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 10,
@@ -146,8 +119,8 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/nash-cement-trolley-single-air-wheel-13-inches-yellow-80-kg-10383677.html",
       "expected_url": "https://www.dohome.co.th/th/nash-cement-trolley-single-air-wheel-15-inches-orange-130-kg-10383616.html",
-      "confidence": 75,
-      "reason": "The candidate is the same product type (wheelbarrow) and brand (NASH, PREFERRED#1) with a high spec match (68%) for wheel size (13 inch).",
+      "confidence": 70,
+      "reason": "The candidate is a preferred brand and a wheelbarrow with the same wheel size (13 inch) as the source, making it a good spec match despite the volume difference.",
       "gt_status": "INCORRECT"
     }
   ]

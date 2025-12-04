@@ -4,40 +4,13 @@
   "start_idx": 45,
   "end_idx": 60,
   "products_tested": 15,
-  "matches_found": 8,
-  "correct": 3,
+  "matches_found": 5,
+  "correct": 1,
   "incorrect": 3,
-  "accuracy": 50.0,
-  "timestamp": "2025-12-03T07:44:08.611531",
+  "gt_missing": 0,
+  "accuracy": 25.0,
+  "timestamp": "2025-12-03T14:25:37.705446",
   "matches": [
-    {
-      "chunk": 4,
-      "source_idx": 45,
-      "source_name": "ผ้าขนหนูเช็ดผม KASSA HOTEL ขนาด 15 x 30 นิ้ว สีขาว",
-      "source_brand": "KASSA HOTEL",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60275956",
-      "target_name": "ผ้าขนหนูโรงแรม 15x30 นิ้ว ด้ายคู่ สีขาว",
-      "target_brand": "DE'COS",
-      "target_url": "https://www.dohome.co.th/th/towel-15x30-inch-white-10214475.html",
-      "expected_url": "https://www.dohome.co.th/th/towel-15x30-inch-white-10214475.html",
-      "confidence": 98,
-      "reason": "The candidate is a hotel towel with identical dimensions and brand DE'COS is a preferred brand.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 4,
-      "source_idx": 47,
-      "source_name": "โคมไฟผนังภายนอก E27x1 LUZINO รุ่น GD-PW019-E27-BK สีดำ - ใส",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/product/%E0%B9%82%E0%B8%84%E0%B8%A1%E0%B9%84%E0%B8%9F%E0%B8%9C%E0%B8%99%E0%B8%B1%E0%B8%87%E0%B8%A0%E0%B8%B2%E0%B8%A2%E0%B8%99%E0%B8%AD%E0%B8%81-E27x1-LUZINO-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-GD-PW019-E27-BK-%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3---%E0%B9%83%E0%B8%AA-60392223",
-      "target_name": "DECOS โคมไฟผนังนอก 1 หลอด วงรีเล็ก รุ่น 4004 สีดำ",
-      "target_brand": "DECOS",
-      "target_url": "https://www.dohome.co.th/th/finext-outdoor-wall-lamp-ellipse-4004m-black-10109730.html",
-      "expected_url": "",
-      "confidence": 75,
-      "reason": "The candidate is the same product type (outdoor wall lamp) and from a preferred brand (DECOS), with the highest spec match percentage among suitable alternatives.",
-      "gt_status": "NO_GT"
-    },
     {
       "chunk": 4,
       "source_idx": 51,
@@ -49,7 +22,7 @@
       "target_url": "https://www.dohome.co.th/th/decos-1-bulb-outdoor-wall-lamp-square-shape-e27-socket-model-gris-grey-10417411.html",
       "expected_url": "https://www.dohome.co.th/th/finext-outdoor-wall-lamp-aluminium-a119-black-10247661.html",
       "confidence": 75,
-      "reason": "The candidate has the highest SpecMatch percentage among preferred brands and is the correct product type (exterior wall lamp) with a matching socket type.",
+      "reason": "The candidate has the highest spec match percentage at 63%, which includes the critical 'E27x1' socket and 'WALL_LAMP' type, and belongs to a preferred brand (DECOS).",
       "gt_status": "INCORRECT"
     },
     {
@@ -62,8 +35,8 @@
       "target_brand": "DECOS",
       "target_url": "https://www.dohome.co.th/th/decos-towel-27x54-inch-no-fresh-grey-10326730.html",
       "expected_url": "",
-      "confidence": 100,
-      "reason": "The candidate is a bath towel from a preferred brand (DECOS) with 100% spec match including identical dimensions and size.",
+      "confidence": 95,
+      "reason": "Candidate 0 is a DECOS brand towel with identical dimensions (27x54 inch) and a 100% spec match, making it an excellent equivalent, surpassing the original KASSA HOME brand due to preferred brand status.",
       "gt_status": "NO_GT"
     },
     {
@@ -76,8 +49,8 @@
       "target_brand": "HAPPY COOK",
       "target_url": "https://www.dohome.co.th/th/sieve-for-washing-vegetables-21-cm-no-112245-10314891.html",
       "expected_url": "https://www.dohome.co.th/th/sieve-for-washing-vegetables-21-cm-no-112245-10314891.html",
-      "confidence": 95,
-      "reason": "The candidate is a 'vegetable strainer' with identical length and 100% spec match, from a preferred brand.",
+      "confidence": 100,
+      "reason": "Candidate 0 is a vegetable strainer, matching the source product type, and has 100% spec match with length 21cm, and is from a preferred brand HAPPY COOK.",
       "gt_status": "CORRECT"
     },
     {
@@ -90,8 +63,8 @@
       "target_brand": "DECOS",
       "target_url": "https://www.dohome.co.th/th/decos-1-bulb-outdoor-wall-lamp-square-shape-e27-socket-model-gris-grey-10417411.html",
       "expected_url": "https://www.dohome.co.th/th/finext-outdoor-wall-lamp-aluminium-black-10186704.html",
-      "confidence": 85,
-      "reason": "The candidate has the highest spec match (63%), is the correct product type (wall lamp), and is a preferred brand (DECOS).",
+      "confidence": 90,
+      "reason": "Candidate 0 is a preferred brand (DECOS), has the highest SpecMatch at 63% for critical specs 'socket' and 'lamp_type', and is also an outdoor wall lamp like the source product.",
       "gt_status": "INCORRECT"
     },
     {
@@ -105,22 +78,8 @@
       "target_url": "https://www.dohome.co.th/th/finext-outdoor-wall-lamp-ellipse-4004m-black-10109730.html",
       "expected_url": "https://www.dohome.co.th/th/decos-outdoor-wall-lamp-1-bulb-steel-model-white-ball-10412373.html",
       "confidence": 70,
-      "reason": "The candidate is an outdoor wall lamp from a preferred brand (DECOS) and shares the critical 'wall lamp' type with the source. Although the model and size are different, it is the best available match.",
+      "reason": "The candidate DECOS โคมไฟผนังนอก 1 หลอด วงรีเล็ก รุ่น 4004 สีดำ is a wall lamp from a preferred brand (DECOS, PREFERRED#2) and has a similar product type (WALL_LAMP).",
       "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 4,
-      "source_idx": 58,
-      "source_name": "ผ้าปูที่นอนลายริ้ว KASSA HOTEL รุ่น 250T ขนาด 6 ฟุต สีขาว",
-      "source_brand": "KASSA HOTEL",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60275981",
-      "target_name": "DECOS ชุดผ้าปูที่นอน 110x110 นิ้ว รุ่น CT ลายริ้ว สีขาว",
-      "target_brand": "DE'COS",
-      "target_url": "https://www.dohome.co.th/th/decos-bed-sheet-set-size-110x110-inch-no-ct-streak-white-10302106.html",
-      "expected_url": "https://www.dohome.co.th/th/decos-bed-sheet-set-size-110x110-inch-no-ct-streak-white-10302106.html",
-      "confidence": 60,
-      "reason": "The candidate has the correct brand (DE'COS, PREFERRED#1) and product type (bedding set, which is close to bed sheet). Although the model number differs, the item is still a bedding accessory.",
-      "gt_status": "CORRECT"
     }
   ]
 }

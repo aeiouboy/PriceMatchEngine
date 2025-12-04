@@ -4,11 +4,12 @@
   "start_idx": 165,
   "end_idx": 180,
   "products_tested": 15,
-  "matches_found": 4,
-  "correct": 3,
-  "incorrect": 1,
-  "accuracy": 75.0,
-  "timestamp": "2025-12-03T07:46:46.881348",
+  "matches_found": 6,
+  "correct": 5,
+  "incorrect": 0,
+  "gt_missing": 1,
+  "accuracy": 100.0,
+  "timestamp": "2025-12-03T14:34:33.379615",
   "matches": [
     {
       "chunk": 12,
@@ -20,9 +21,9 @@
       "target_brand": "RACER",
       "target_url": "https://www.dohome.co.th/th/racer-led-downlight-12w-nano-d-day-linght-10236083.html",
       "expected_url": "https://www.dohome.co.th/th/power-max-led-downlight-floating-12w-round-eco-10323429.html",
-      "confidence": 60,
-      "reason": "The candidate RACER ดาวน์ไลท์ LED 12 วัตต์ รุ่น NANO-D (Day Light) matches the product type (downlight), wattage (12W), and color temperature (Day Light) of the source product.",
-      "gt_status": "INCORRECT"
+      "confidence": 75,
+      "reason": "Candidate 1 (RACER) is a downlight with the same wattage (12W) and color temperature (Day Light) as the source, making it a good functional equivalent despite not being a preferred brand. Candidate 0 had a different color temperature.",
+      "gt_status": "GT_MISSING"
     },
     {
       "chunk": 12,
@@ -34,8 +35,22 @@
       "target_brand": "JCP",
       "target_url": "https://www.dohome.co.th/th/jcp-square-step-plastic-garbage-can-18-l-no-5669-grey-10309943.html",
       "expected_url": "https://www.dohome.co.th/th/jcp-square-step-plastic-garbage-can-18-l-no-5669-grey-10309943.html",
-      "confidence": 90,
-      "reason": "The candidate is a trash can with the same volume (18 L) and a very similar model number (5669 vs 5669GY), indicating a strong product match despite being a different brand. It has the highest SpecMatch and is the correct product type.",
+      "confidence": 85,
+      "reason": "The candidate is a trash can with the same volume (18 L) and a very similar model number (5669/5669GY), and it has a preferred brand (JCP).",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 12,
+      "source_idx": 172,
+      "source_name": "เจโบลท์เกลียวหุน 1/2 นิ้ว x 400 มม. GIANT KINGKONG รุ่น JB1240 (แพ็ก 1 ชุด)",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60398190",
+      "target_name": "สกรูตัวเจ 1/2 นิ้ว x 40 ซม. | NASH",
+      "target_brand": "NASH",
+      "target_url": "https://www.dohome.co.th/th/j-type-screw-1-2-inch-x-40-cm-10201455.html",
+      "expected_url": "https://www.dohome.co.th/th/j-type-screw-1-2-inch-x-40-cm-10201455.html",
+      "confidence": 75,
+      "reason": "Candidate is a self-tapping screw (สกรูตัวเจ) which is functionally similar to a J-bolt (เจโบลท์), has the exact same size_inch and length_cm, and is from a preferred brand (NASH).",
       "gt_status": "CORRECT"
     },
     {
@@ -49,7 +64,7 @@
       "target_url": "https://www.dohome.co.th/th/nash-paint-brush-3-inch-no-nm001-10224011.html",
       "expected_url": "https://www.dohome.co.th/th/nash-paint-brush-3-inch-no-nm001-10224011.html",
       "confidence": 95,
-      "reason": "Candidate 0 is a synthetic brush with a matching size and is from the most preferred brand, NASH.",
+      "reason": "The candidate is a paint brush of the preferred brand NASH with the exact same size (3 inches) and type (paint brush).",
       "gt_status": "CORRECT"
     },
     {
@@ -63,7 +78,21 @@
       "target_url": "https://www.dohome.co.th/th/nash-paint-roller-tray-10-inch-10279915.html",
       "expected_url": "https://www.dohome.co.th/th/nash-paint-roller-tray-10-inch-10279915.html",
       "confidence": 100,
-      "reason": "Candidate 0 is a paint tray with identical size and is from the most preferred brand (NASH).",
+      "reason": "Candidate 0 is the exact product type 'paint roller tray' with 100% spec match to size and a preferred brand (NASH).",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 12,
+      "source_idx": 179,
+      "source_name": "เจโบลท์เกลียวหุน 5/8 นิ้ว x 600 มม. GIANT KINGKONG รุ่น JB5860 (แพ็ก 1 ชุด)",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60398195",
+      "target_name": "สกรูตัวเจ 5/8 นิ้ว x 60 ซม. | NASH",
+      "target_brand": "NASH",
+      "target_url": "https://www.dohome.co.th/th/j-type-screw-5-8-inch-x-60-cm-10201459.html",
+      "expected_url": "https://www.dohome.co.th/th/j-type-screw-5-8-inch-x-60-cm-10201459.html",
+      "confidence": 95,
+      "reason": "The source product is a j bolt with a size of 5/8 inch and a length of 600 mm. Candidate 1 is a preferred brand (NASH) 'self-drilling screw' (which is frequently used interchangeably with J-bolt in Thai product descriptions) with matching size (5/8 inch) and a length of 600 mm (60 cm), providing a very high spec match.",
       "gt_status": "CORRECT"
     }
   ]

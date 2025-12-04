@@ -1,0 +1,14 @@
+{
+  "retailer": "Boonthavorn",
+  "chunk": 5,
+  "start_idx": 60,
+  "end_idx": 64,
+  "products_tested": 4,
+  "matches_found": 0,
+  "correct": 0,
+  "incorrect": 0,
+  "gt_missing": 0,
+  "accuracy": 0,
+  "timestamp": "2025-12-04T10:50:46.966761",
+  "matches": []
+}

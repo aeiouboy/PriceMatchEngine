@@ -4,26 +4,13 @@
   "start_idx": 0,
   "end_idx": 15,
   "products_tested": 15,
-  "matches_found": 6,
+  "matches_found": 7,
   "correct": 4,
   "incorrect": 2,
+  "gt_missing": 1,
   "accuracy": 66.66666666666666,
-  "timestamp": "2025-12-03T07:44:57.044994",
+  "timestamp": "2025-12-03T14:22:27.864113",
   "matches": [
-    {
-      "chunk": 1,
-      "source_idx": 2,
-      "source_name": "โคมไฟผนังภายนอกอลูมิเนียม E27x2 LUZINO รุ่น MEGAN YJ2181A/2(GY) สีเทา",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60257206",
-      "target_name": "DECOS โคมไฟผนังนอก 2 หลอด ทรงสี่เหลี่ยม ขั้ว E27 รุ่น GRIS สีเทา",
-      "target_brand": "DECOS",
-      "target_url": "https://www.dohome.co.th/th/decos-2-bulb-outdoor-wall-lamp-square-shape-e27-socket-model-gris-grey-10417412.html",
-      "expected_url": "https://www.dohome.co.th/th/decos-2-bulb-outdoor-wall-lamp-square-shape-e27-socket-model-gris-grey-10417412.html",
-      "confidence": 60,
-      "reason": "The candidate is a preferred brand 'DECOS' and has a matching product type (wall lamp) with E27 socket, although it specifies 1 bulb rather than 2 like the source, which is the closest available within preferred brands.",
-      "gt_status": "CORRECT"
-    },
     {
       "chunk": 1,
       "source_idx": 5,
@@ -35,7 +22,21 @@
       "target_url": "https://www.dohome.co.th/th/j-type-screw-1-2-inch-x-50-cm-10201456.html",
       "expected_url": "https://www.dohome.co.th/th/j-type-screw-1-2-inch-x-50-cm-10201456.html",
       "confidence": 95,
-      "reason": "The candidate has the correct product type (j-bolt/สกรูตัวเจ), matches the critical size spec (1/2 inch x 50 cm), and is from a preferred brand (NASH).",
+      "reason": "Candidate 4 (NASH สกรูตัวเจ 1/2 นิ้ว x 50 ซม.) has the correct product type (เจโบลท์ is a type of J-screw/สกรูตัวเจ), matches the size_inch and length_cm, and is from a preferred brand (NASH).",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 1,
+      "source_idx": 6,
+      "source_name": "รอกโซ่มือสาวทรงกลม GIANT KINGKONG รุ่น 605-1A(3m) ขนาด 1 ตัน x 3 เมตร สีแดง",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60221082",
+      "target_name": "NASH รอกโซ่ 1 ตัน รุ่น HSZ-1 กลม",
+      "target_brand": "NASH",
+      "target_url": "https://www.dohome.co.th/th/nash-chain-block-1-t-no-hsz-1-10141836.html",
+      "expected_url": "https://www.dohome.co.th/th/nash-chain-block-1-t-no-hsz-1-10141836.html",
+      "confidence": 75,
+      "reason": "The candidate is a NASH brand chain block, which is a preferred brand and the correct product type, despite the lower spec match percentage as exact length was not parsed for this candidate.",
       "gt_status": "CORRECT"
     },
     {
@@ -48,9 +49,9 @@
       "target_brand": "MONO",
       "target_url": "https://www.dohome.co.th/th/mono-dish-drainer-with-cover-2-layers-no3838-10342751.html",
       "expected_url": "https://www.dohome.co.th/en/mono-dish-drainer-with-cover-2-layers-no3838-10342751.html",
-      "confidence": 70,
-      "reason": "The candidate has the exact matching product type, tiers specification, and is from a preferred brand (MONO), making it the closest available match despite a higher price.",
-      "gt_status": "INCORRECT"
+      "confidence": 75,
+      "reason": "The candidate has the correct product type (dish rack), matches the '2 tiers' spec, and is from a preferred brand (MONO) with a good SpecMatch%.",
+      "gt_status": "GT_MISSING"
     },
     {
       "chunk": 1,
@@ -63,7 +64,7 @@
       "target_url": "https://www.dohome.co.th/th/nash-paint-roller10-inch-no-rts-010-10185198.html",
       "expected_url": "https://www.dohome.co.th/th/nash-paint-roller10-inch-no-rts-010-10185198.html",
       "confidence": 95,
-      "reason": "The candidate is a paint roller of the same size (10 inch) and roller type (FULL), with a 100% spec match and is from the highest preferred brand NASH.",
+      "reason": "The candidate is the same product type (paint roller), has identical key specs (10 inch, FULL roller_type), and is from a highly preferred brand (NASH).",
       "gt_status": "CORRECT"
     },
     {
@@ -77,7 +78,21 @@
       "target_url": "https://www.dohome.co.th/th/finext-double-sink-door-frosted-glass-max-15-white-10353359.html",
       "expected_url": "https://www.dohome.co.th/th/double-doors-cabinet-for-kitchen-abs-no-platinum-pearl-white-10172906.html",
       "confidence": 75,
-      "reason": "The candidate is from the preferred brand FINEXT and is the correct product type (sink cabinet, which is a type of cabinet door), although its model and dimensions specs do not match.",
+      "reason": "Candidate 1 is a 'sink cabinet' which is a type of 'cabinet door' and is from a PREFERRED brand (FINEXT). Although the SpecMatch is 0%, it is the only candidate that is relevant by product type and brand preference.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 1,
+      "source_idx": 10,
+      "source_name": "แอลโบลท์เกลียวหุน 5/8 นิ้ว x 500 มม. GIANT KINGKONG LB5850 (แพ็ก 1 ชุด)",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60398207",
+      "target_name": "สกรูตัวเจ 5/8 นิ้ว x 50 ซม. | NASH",
+      "target_brand": "NASH",
+      "target_url": "https://www.dohome.co.th/th/j-type-screw-5-8-inch-x-50-cm-10201458.html",
+      "expected_url": "https://www.dohome.co.th/th/l-type-screw-5-8-inch-x-50-cm-10202382.html",
+      "confidence": 90,
+      "reason": "The source product is a bolt with specs size_inch=5/8 inch and approximately 500mm length. Candidate 2 is a NASH (preferred brand) self-tapping screw with size_inch=5/8 inch and 50cm (500mm) length, making it a very close match in type and all critical specifications.",
       "gt_status": "INCORRECT"
     },
     {
@@ -91,7 +106,7 @@
       "target_url": "https://www.dohome.co.th/th/decos-pvc-window-blind-80x130-cm-dark-brown-10353771.html",
       "expected_url": "https://www.dohome.co.th/th/decos-pvc-window-blind-80x130-cm-dark-brown-10353771.html",
       "confidence": 85,
-      "reason": "The candidate has the exact same product type (blinds) and length, a similar dimension, and is from a highly preferred brand (DE'COS).",
+      "reason": "Candidate 4 is the same product type ('blinds'), has the same length (130CM), is a preferred brand (DE'COS), and has a similar dimensions (80x130 vs 70x130).",
       "gt_status": "CORRECT"
     }
   ]

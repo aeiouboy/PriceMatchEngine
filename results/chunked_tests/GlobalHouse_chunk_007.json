@@ -4,11 +4,12 @@
   "start_idx": 90,
   "end_idx": 103,
   "products_tested": 13,
-  "matches_found": 9,
+  "matches_found": 8,
   "correct": 6,
-  "incorrect": 1,
-  "accuracy": 85.71428571428571,
-  "timestamp": "2025-12-03T07:33:13.273826",
+  "incorrect": 0,
+  "gt_missing": 0,
+  "accuracy": 100.0,
+  "timestamp": "2025-12-03T14:21:00.549699",
   "matches": [
     {
       "chunk": 7,
@@ -16,12 +17,12 @@
       "source_name": "เหล็กฉากเจาะรู หนา 1.8 มม. GIANT KINGKONG รุ่น FWIRBK18 ขนาด 1 1/2 x 1 1/2 นิ้ว ยาว 3 เมตร สีดำ",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/sku/60420128",
-      "target_name": "เหล็กฉากเจาะรูหนา 1.8 มม. ขนาด 1.1/2 x 1.1/2 นิ้ว ยาว 3 เมตร สีขาว",
+      "target_name": "เหล็กฉากเจาะรูหนา 1.8 มม. ขนาด 1.1/2 x 1.1/2 นิ้ว ยาว 3 เมตร สีดำ",
       "target_brand": "ปืนใหญ่",
-      "target_url": "https://globalhouse.co.th/product/%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B9%87%E0%B8%81%E0%B8%89%E0%B8%B2%E0%B8%81%E0%B9%80%E0%B8%88%E0%B8%B2%E0%B8%B0%E0%B8%A3%E0%B8%B9%E0%B8%AB%E0%B8%99%E0%B8%B2-1.8-%E0%B8%A1%E0%B8%A1.-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-1.12-x-1.12-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-%E0%B8%A2%E0%B8%B2%E0%B8%A7-3-%E0%B9%80%E0%B8%A1%E0%B8%95%E0%B8%A3-%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7-i.3622007800031",
+      "target_url": "https://globalhouse.co.th/product/%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B9%87%E0%B8%81%E0%B8%89%E0%B8%B2%E0%B8%81%E0%B9%80%E0%B8%88%E0%B8%B2%E0%B8%B0%E0%B8%A3%E0%B8%B9%E0%B8%AB%E0%B8%99%E0%B8%B2-1.8-%E0%B8%A1%E0%B8%A1.-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-1.12-x-1.12-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-%E0%B8%A2%E0%B8%B2%E0%B8%A7-3-%E0%B9%80%E0%B8%A1%E0%B8%95%E0%B8%A3-%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3-i.3622004360071",
       "expected_url": "",
-      "confidence": 85,
-      "reason": "Candidate 1 is an angle steel product with a high spec match (85%), sharing dimensions, length, and product type, differing only in color from the source product.",
+      "confidence": 90,
+      "reason": "The candidate is the same product type (angle steel), has a high SpecMatch% (85%), and matching dimensions and length, differing only in the missing model number from the source.",
       "gt_status": "NO_GT"
     },
     {
@@ -34,8 +35,8 @@
       "target_brand": "FIX-XY",
       "target_url": "https://globalhouse.co.th/product/FIXXY-%E0%B8%AA%E0%B8%81%E0%B8%A3%E0%B8%B9%E0%B8%A2%E0%B8%B6%E0%B8%94%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%9A%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%A2%E0%B8%AA%E0%B8%A7%E0%B9%88%E0%B8%B2%E0%B8%99-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-8-%E0%B8%A2%E0%B8%B2%E0%B8%A7-34%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-18.75%E0%B8%A1%E0%B8%A1.-%E0%B8%9A%E0%B8%A3%E0%B8%A3%E0%B8%88%E0%B8%B8-100%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B8%96%E0%B8%B8%E0%B8%87-%E0%B8%AA%E0%B8%B5%E0%B8%97%E0%B8%AD%E0%B8%87-i.2422006300119",
       "expected_url": "https://globalhouse.co.th/product/FIXXY-%E0%B8%AA%E0%B8%81%E0%B8%A3%E0%B8%B9%E0%B8%A2%E0%B8%B6%E0%B8%94%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%9A%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%A2%E0%B8%AA%E0%B8%A7%E0%B9%88%E0%B8%B2%E0%B8%99-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-8-%E0%B8%A2%E0%B8%B2%E0%B8%A7-34%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-18.75%E0%B8%A1%E0%B8%A1.-%E0%B8%9A%E0%B8%A3%E0%B8%A3%E0%B8%88%E0%B8%B8-100%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B8%96%E0%B8%B8%E0%B8%87-%E0%B8%AA%E0%B8%B5%E0%B8%97%E0%B8%AD%E0%B8%87-i.2422006300119",
-      "confidence": 90,
-      "reason": "Candidate 0 is a self-drilling screw with matching size_inch and high SpecMatch%. Although not a preferred brand, it's the only suitable product type match available.",
+      "confidence": 78,
+      "reason": "Candidate 0 is a self-drilling screw with matching size_inch (3/4 inch) and a high SpecMatch of 78%, despite being a lower preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,7 +50,7 @@
       "target_url": "https://globalhouse.co.th/product/EKO-%E0%B8%96%E0%B8%B1%E0%B8%87%E0%B8%82%E0%B8%A2%E0%B8%B0%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%AB%E0%B8%A2%E0%B8%B5%E0%B8%A2%E0%B8%9A%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A1-12-%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A3-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-STELLA-EK9384MT-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-25x31x40-%E0%B8%8B%E0%B8%A1.-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99-i.6951800675735",
       "expected_url": "https://globalhouse.co.th/product/EKO-%E0%B8%96%E0%B8%B1%E0%B8%87%E0%B8%82%E0%B8%A2%E0%B8%B0%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%AB%E0%B8%A2%E0%B8%B5%E0%B8%A2%E0%B8%9A%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A1-12-%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A3-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-STELLA-EK9384MT-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-25x31x40-%E0%B8%8B%E0%B8%A1.-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99-i.6951800675735",
       "confidence": 95,
-      "reason": "The candidate is a trash can with the exact same volume (12L) as the source, leading to a 100% spec match for the most critical specification.",
+      "reason": "The candidate is also a trash can with the exact same volume (12 L) and high spec match (100%). Although not a preferred brand, it's the only one with matching product type and high spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -63,7 +64,7 @@
       "target_url": "https://globalhouse.co.th/product/HUMMER-%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B9%84%E0%B8%94%E0%B8%AD%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1%E0%B8%A1%E0%B8%B5%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%88%E0%B8%B1%E0%B8%9A-7-%E0%B8%82%E0%B8%B1%E0%B9%89%E0%B8%99-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-LJG307D-i.5922005600229",
       "expected_url": "https://globalhouse.co.th/product/HUMMER-%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B9%84%E0%B8%94%E0%B8%AD%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1%E0%B8%A1%E0%B8%B5%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%88%E0%B8%B1%E0%B8%9A-7-%E0%B8%82%E0%B8%B1%E0%B9%89%E0%B8%99-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-LJG307D-i.5922005600229",
       "confidence": 95,
-      "reason": "Candidate 0 is a HUMMER brand aluminum ladder with the exact same number of steps (7 steps) and a very similar model number to the source product, making it the best equivalent.",
+      "reason": "The candidate is a preferred brand (HUMMER) and has a 100% spec match, including the number of steps and product type.",
       "gt_status": "CORRECT"
     },
     {
@@ -76,8 +77,8 @@
       "target_brand": "SMITH",
       "target_url": "https://globalhouse.co.th/product/SMITH-%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B8%A3%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A5%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B8%B4%E0%B8%81-PP-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-15-%E0%B8%A1%E0%B8%A1.-%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3-%E0%B8%A1%E0%B9%89%E0%B8%A7%E0%B8%99-7-%E0%B8%81%E0%B8%81.-i.7061804052681",
       "expected_url": "https://globalhouse.co.th/product/SMITH-%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B8%A3%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A5%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B8%B4%E0%B8%81-PP-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-15-%E0%B8%A1%E0%B8%A1.-%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3-%E0%B8%A1%E0%B9%89%E0%B8%A7%E0%B8%99-7-%E0%B8%81%E0%B8%81.-i.7061804052681",
-      "confidence": 70,
-      "reason": "Candidate 0 is a 'plastic strap' matching the source product's type, has identical volume and a similar brand identifier, and is from a preferred brand.",
+      "confidence": 75,
+      "reason": "The candidate is the only one matching the critical product type 'pp strapping band' and shares the same volume (7 KG) with an acceptable spec match percentage. It also has a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -90,8 +91,8 @@
       "target_brand": "KAMPER",
       "target_url": "https://globalhouse.co.th/product/KAMPER-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B8%B2%E0%B8%87%E0%B9%81%E0%B8%9B%E0%B9%89%E0%B8%99-%E0%B8%A1%E0%B8%B5%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%84-4%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-100%E0%B8%A1%E0%B8%A1-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-1013100-i.2622002650229",
       "expected_url": "https://globalhouse.co.th/product/KAMPER-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B8%B2%E0%B8%87%E0%B9%81%E0%B8%9B%E0%B9%89%E0%B8%99-%E0%B8%A1%E0%B8%B5%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%84-4%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-100%E0%B8%A1%E0%B8%A1-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-1013100-i.2622002650229",
-      "confidence": 75,
-      "reason": "The candidate is a 'caster wheel' which is a type of wheel, has a brake, and its size is a close match (100mm vs 10cm). The brand is not preferred but it is the closest spec match among all candidates.",
+      "confidence": 80,
+      "reason": "The candidate is also a rubber caster with a brake and a very similar size (4 inch vs 10 cm), resulting in a high spec match percentage.",
       "gt_status": "CORRECT"
     },
     {
@@ -104,23 +105,9 @@
       "target_brand": "DELICATO",
       "target_url": "https://globalhouse.co.th/product/DELICATO-%E0%B8%95%E0%B8%B9%E0%B9%89%E0%B8%A3%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%97%E0%B9%89%E0%B8%B2%E0%B8%AD%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1-5-%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%99-OVIE-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-82.5x33x110%E0%B8%8B%E0%B8%A1.-%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7-i.5722007260045",
       "expected_url": "",
-      "confidence": 95,
-      "reason": "The DELICATO shoe cabinet has the highest SpecMatch at 84%, is the correct product type, and is from a preferred brand (PREFERRED#1). Its dimensions and tiers are very close to the source product.",
+      "confidence": 90,
+      "reason": "The candidate DELICATO ตู้รองเท้าอลูมิเนียม 5 ชั้น OVIE has an 84% spec match as a shoe cabinet with 5 tiers and very similar dimensions (82.5x33 vs 82x33 cm, 110cm length), and is from a PREFERRED brand (DELICATO).",
       "gt_status": "NO_GT"
-    },
-    {
-      "chunk": 7,
-      "source_idx": 99,
-      "source_name": "ดอกสว่านเจาะดิน KARTEN รุ่น D-150 ขนาด 6 นิ้ว สีส้ม",
-      "source_brand": "KARTEN",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60306599",
-      "target_name": "ดอกสว่านเจาะดิน 8 นิ้ว รุ่น OO-EA52B ขนาด 20 x 80 ซม.",
-      "target_brand": "OO POWER",
-      "target_url": "https://globalhouse.co.th/product/%E0%B8%94%E0%B8%AD%E0%B8%81%E0%B8%AA%E0%B8%A7%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%88%E0%B8%B2%E0%B8%B0%E0%B8%94%E0%B8%B4%E0%B8%99-8-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-OOEA52B-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-20-x-80-%E0%B8%8B%E0%B8%A1.-i.3922007950232",
-      "expected_url": "https://globalhouse.co.th/product/%E0%B8%94%E0%B8%AD%E0%B8%81%E0%B8%AA%E0%B8%A7%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%88%E0%B8%B2%E0%B8%B0%E0%B8%94%E0%B8%B4%E0%B8%99-6--%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7--%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-DB150800-i.3422006400023",
-      "confidence": 70,
-      "reason": "The candidate has the correct product type (auger bit) and is from a preferred brand (OO POWER). Although the size is different (8 inch vs 6 inch), it's the closest available auger bit from a preferred brand.",
-      "gt_status": "INCORRECT"
     },
     {
       "chunk": 7,
@@ -132,8 +119,8 @@
       "target_brand": "ICLEAN",
       "target_url": "https://globalhouse.co.th/product/detail/6322007380362",
       "expected_url": "https://globalhouse.co.th/product/detail/6322007380362",
-      "confidence": 100,
-      "reason": "Candidate 0 is a trash bin with the same 120 L volume and a preferred brand (ICLEAN).",
+      "confidence": 95,
+      "reason": "The candidate is a trash can with the exact same volume (120 L) and is a preferred brand (ICLEAN).",
       "gt_status": "CORRECT"
     }
   ]

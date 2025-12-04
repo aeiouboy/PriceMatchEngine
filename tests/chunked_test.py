@@ -139,26 +139,37 @@ def run_chunk(retailer, chunk_num):
     results = []
     correct = 0
     incorrect = 0
-    
+    gt_missing = 0
+
+    # Build set of catalog URLs to check if GT product exists
+    catalog_urls = set()
+    for p in competitor_products:
+        url = p.get('url', p.get('product_url', p.get('link', '')))
+        catalog_urls.add(normalize_url(url))
+
     if matches:
         for m in matches:
             source_idx = m['source_idx']
             actual_source_idx = start_idx + source_idx
-            
+
             source = chunk_products[source_idx]
             source_url = normalize_url(source.get('url', source.get('product_url', source.get('link', ''))))
-            
+
             target = competitor_products[m['target_idx']]
             target_url = normalize_url(target.get('url', target.get('product_url', target.get('link', ''))))
-            
+
             expected_url = gt_dict.get(source_url, '')
-            
+
             if expected_url:
-                is_correct = (target_url == expected_url)
-                gt_status = 'CORRECT' if is_correct else 'INCORRECT'
-                if is_correct:
+                # Check if expected GT product exists in catalog
+                if expected_url not in catalog_urls:
+                    gt_status = 'GT_MISSING'  # GT product not in catalog - not counted as incorrect
+                    gt_missing += 1
+                elif target_url == expected_url:
+                    gt_status = 'CORRECT'
                     correct += 1
                 else:
+                    gt_status = 'INCORRECT'
                     incorrect += 1
             else:
                 gt_status = 'NO_GT'
@@ -178,9 +189,9 @@ def run_chunk(retailer, chunk_num):
                 'gt_status': gt_status
             })
     
-    total_gt_tested = correct + incorrect
+    total_gt_tested = correct + incorrect  # Only count where GT exists in catalog
     accuracy = (correct / total_gt_tested * 100) if total_gt_tested > 0 else 0
-    
+
     chunk_result = {
         'retailer': retailer,
         'chunk': chunk_num,
@@ -190,20 +201,23 @@ def run_chunk(retailer, chunk_num):
         'matches_found': len(matches) if matches else 0,
         'correct': correct,
         'incorrect': incorrect,
+        'gt_missing': gt_missing,  # GT product not in catalog - excluded from accuracy
         'accuracy': accuracy,
         'timestamp': datetime.now().isoformat(),
         'matches': results
     }
-    
+
     chunk_file = get_chunk_file(retailer, chunk_num)
     with open(chunk_file, 'w') as f:
         json.dump(chunk_result, f, indent=2, ensure_ascii=False)
-    
+
     print(f"\n{'='*60}")
     print(f"CHUNK {chunk_num} RESULTS:")
     print(f"  Products tested: {len(chunk_products)}")
     print(f"  Matches found: {len(matches) if matches else 0}")
-    print(f"  GT tested: {total_gt_tested}")
+    print(f"  GT tested (catalog has product): {total_gt_tested}")
+    if gt_missing > 0:
+        print(f"  GT missing from catalog: {gt_missing} (excluded)")
     print(f"  Correct: {correct}/{total_gt_tested} ({accuracy:.1f}%)")
     print(f"  Saved to: {chunk_file}")
     print(f"{'='*60}")
@@ -226,9 +240,10 @@ def show_summary(retailer):
     
     all_correct = 0
     all_incorrect = 0
+    all_gt_missing = 0
     all_matches = 0
     completed_chunks = []
-    
+
     for chunk_num in range(1, total_chunks + 1):
         chunk_file = get_chunk_file(retailer, chunk_num)
         if os.path.exists(chunk_file):
@@ -237,19 +252,24 @@ def show_summary(retailer):
             completed_chunks.append(chunk_num)
             all_correct += data['correct']
             all_incorrect += data['incorrect']
+            all_gt_missing += data.get('gt_missing', 0)
             all_matches += data['matches_found']
-            print(f"  Chunk {chunk_num}: {data['correct']}/{data['correct']+data['incorrect']} correct ({data['accuracy']:.1f}%)")
+            gt_miss = data.get('gt_missing', 0)
+            gt_miss_str = f" [GT missing: {gt_miss}]" if gt_miss > 0 else ""
+            print(f"  Chunk {chunk_num}: {data['correct']}/{data['correct']+data['incorrect']} correct ({data['accuracy']:.1f}%){gt_miss_str}")
         else:
             print(f"  Chunk {chunk_num}: NOT RUN")
-    
+
     print()
     print(f"Completed: {len(completed_chunks)}/{total_chunks} chunks")
-    
+
     if completed_chunks:
         total_gt = all_correct + all_incorrect
         overall_accuracy = (all_correct / total_gt * 100) if total_gt > 0 else 0
         print(f"Total matches: {all_matches}")
         print(f"Overall accuracy: {all_correct}/{total_gt} ({overall_accuracy:.1f}%)")
+        if all_gt_missing > 0:
+            print(f"GT missing from catalog (excluded): {all_gt_missing}")
         
         missing = [c for c in range(1, total_chunks + 1) if c not in completed_chunks]
         if missing:

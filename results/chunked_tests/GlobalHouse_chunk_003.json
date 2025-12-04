@@ -4,11 +4,12 @@
   "start_idx": 30,
   "end_idx": 45,
   "products_tested": 15,
-  "matches_found": 5,
-  "correct": 3,
+  "matches_found": 3,
+  "correct": 2,
   "incorrect": 0,
+  "gt_missing": 0,
   "accuracy": 100.0,
-  "timestamp": "2025-12-03T07:33:17.527450",
+  "timestamp": "2025-12-03T14:17:34.781229",
   "matches": [
     {
       "chunk": 3,
@@ -20,23 +21,9 @@
       "target_brand": "SMITH",
       "target_url": "https://globalhouse.co.th/product/SMITH-%E0%B8%84%E0%B8%A5%E0%B8%B4%E0%B9%8A%E0%B8%9A%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B9%87%E0%B8%81%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B8%A3%E0%B8%B1%E0%B8%94%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B8%9E%E0%B8%A5%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B8%B4%E0%B8%81-%E0%B9%81%E0%B8%9E%E0%B9%87%E0%B8%84-1-%E0%B8%81%E0%B8%81.-i.7061804053772",
       "expected_url": "https://globalhouse.co.th/product/SMITH-%E0%B8%84%E0%B8%A5%E0%B8%B4%E0%B9%8A%E0%B8%9A%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B9%87%E0%B8%81%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B8%A3%E0%B8%B1%E0%B8%94%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B8%9E%E0%B8%A5%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B8%B4%E0%B8%81-%E0%B9%81%E0%B8%9E%E0%B9%87%E0%B8%84-1-%E0%B8%81%E0%B8%81.-i.7061804053772",
-      "confidence": 95,
-      "reason": "Candidate has a 100% spec match (volume 1 KG) and is the correct product type ('steel clip' is a very close match to 'plastic cable lock clip'), and the brand SMITH is a preferred brand.",
+      "confidence": 85,
+      "reason": "The candidate has a perfect spec match (volume 1 KG) and the product type 'strap clip' is a very close match to 'plastic cable clip', making it the best alternative despite being a lower preferred brand.",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 3,
-      "source_idx": 34,
-      "source_name": "เหล็กฉากเจาะรู หนา 2 มม. GIANT KINGKONG รุ่น FWIRBK20 ขนาด 1 1/2 x 1 1/2 นิ้ว ยาว 3 เมตร สีดำ",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/sku/60420130",
-      "target_name": "เหล็กฉากเจาะรูหนา 1.8 มม. ขนาด 1.1/2 x 1.1/2 นิ้ว ยาว 3 เมตร สีดำ",
-      "target_brand": "ปืนใหญ่",
-      "target_url": "https://globalhouse.co.th/product/%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B9%87%E0%B8%81%E0%B8%89%E0%B8%B2%E0%B8%81%E0%B9%80%E0%B8%88%E0%B8%B2%E0%B8%B0%E0%B8%A3%E0%B8%B9%E0%B8%AB%E0%B8%99%E0%B8%B2-1.8-%E0%B8%A1%E0%B8%A1.-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-1.12-x-1.12-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-%E0%B8%A2%E0%B8%B2%E0%B8%A7-3-%E0%B9%80%E0%B8%A1%E0%B8%95%E0%B8%A3-%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3-i.3622004360071",
-      "expected_url": "",
-      "confidence": 95,
-      "reason": "Candidate 2 is the best match as it is the same product type (punched angle steel) and has the highest SpecMatch (85%) among relevant candidates for dimensions and length, despite a slight difference in thickness (1.8mm vs 2mm) and not being a preferred brand. Candidates 0 and 1 are 'angle iron' which is a different product type, and all preferred brands have 0% spec match.",
-      "gt_status": "NO_GT"
     },
     {
       "chunk": 3,
@@ -48,23 +35,9 @@
       "target_brand": "SMITH",
       "target_url": "https://globalhouse.co.th/product/SMITH-%E0%B9%80%E0%B8%81%E0%B9%89%E0%B8%B2%E0%B8%AD%E0%B8%B5%E0%B9%89%E0%B8%AA%E0%B8%B3%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%87%E0%B8%B2%E0%B8%99-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-MANDY-%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7%E0%B9%80%E0%B8%97%E0%B8%B2-i.5722007590043",
       "expected_url": "",
-      "confidence": 70,
-      "reason": "The best match is 'SMITH เก้าอี้สำนักงาน รุ่น MANDY สีขาว-เทา' because it is an office chair and from a preferred brand (SMITH), with a 50% spec match based on model identification.",
-      "gt_status": "NO_GT"
-    },
-    {
-      "chunk": 3,
-      "source_idx": 39,
-      "source_name": "ยางกั้นล้อรถยนต์ GIANT KINGKONG รุ่น RB-10E-3 ขนาด 60 x 12 x 10 ซม. สีดำ - เหลือง",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60198858",
-      "target_name": "PROTX ยางห้ามล้อ 600x120x80mm รุ่นWS-04a สีดำเหลือง",
-      "target_brand": "PROTX",
-      "target_url": "https://globalhouse.co.th/product/PROTX-%E0%B8%A2%E0%B8%B2%E0%B8%87%E0%B8%AB%E0%B9%89%E0%B8%B2%E0%B8%A1%E0%B8%A5%E0%B9%89%E0%B8%AD-600x120x80mm--%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99WS04a-%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%87-i.5922007830020",
-      "expected_url": "https://globalhouse.co.th/product/PROTX-%E0%B8%A2%E0%B8%B2%E0%B8%87%E0%B8%AB%E0%B9%89%E0%B8%B2%E0%B8%A1%E0%B8%A5%E0%B9%89%E0%B8%AD-600x120x80mm--%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99WS04a-%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%87-i.5922007830020",
       "confidence": 75,
-      "reason": "Candidate 0 is the only wheel stopper and is from a preferred brand (PROTX) with similar dimensions (600mm vs 60cm, 120mm vs 12cm).",
-      "gt_status": "CORRECT"
+      "reason": "The candidate has the exact product type and is from a preferred brand, making it the best available match despite a 50% spec match.",
+      "gt_status": "NO_GT"
     },
     {
       "chunk": 3,
@@ -76,8 +49,8 @@
       "target_brand": "KAMPER",
       "target_url": "https://globalhouse.co.th/product/KAMPER-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%AD%E0%B8%B0%E0%B9%84%E0%B8%AB%E0%B8%A5%E0%B9%88-%E0%B9%81%E0%B8%A1%E0%B9%87%E0%B8%81%E0%B8%8B%E0%B9%8C-6%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-150%E0%B8%A1%E0%B8%A1-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-4000150-i.6020003000757",
       "expected_url": "https://globalhouse.co.th/product/KAMPER-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%AD%E0%B8%B0%E0%B9%84%E0%B8%AB%E0%B8%A5%E0%B9%88-%E0%B9%81%E0%B8%A1%E0%B9%87%E0%B8%81%E0%B8%8B%E0%B9%8C-6%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-150%E0%B8%A1%E0%B8%A1-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-4000150-i.6020003000757",
-      "confidence": 75,
-      "reason": "Candidate 0 is the only strong spec match, although the length/size is slightly different (6 inch vs 12.5 cm).",
+      "confidence": 70,
+      "reason": "The candidate is also a 'spare tire' type and has a high SpecMatch% of 66% with matching 'roller_type' and a similar model number series, differing only in size.",
       "gt_status": "CORRECT"
     }
   ]

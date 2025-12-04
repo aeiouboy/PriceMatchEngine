@@ -5,10 +5,11 @@
   "end_idx": 120,
   "products_tested": 15,
   "matches_found": 7,
-  "correct": 3,
-  "incorrect": 3,
-  "accuracy": 50.0,
-  "timestamp": "2025-12-03T07:45:55.837718",
+  "correct": 4,
+  "incorrect": 0,
+  "gt_missing": 2,
+  "accuracy": 100.0,
+  "timestamp": "2025-12-03T14:29:51.595508",
   "matches": [
     {
       "chunk": 8,
@@ -20,8 +21,8 @@
       "target_brand": "DE'COS",
       "target_url": "https://www.dohome.co.th/th/decos-slipper-size-38-39-no-rbc-rabbit-charcoal-10386953.html",
       "expected_url": "https://www.dohome.co.th/th/decos-slipper-size-38-39-no-rbc-rabbit-charcoal-10386953.html",
-      "confidence": 85,
-      "reason": "The candidate has the exact same product type (slippers) and is from a highly preferred brand (DE'COS) with the highest preference ranking even though the listed spec match is 0% (likely due to missing specs for dimensions and model in the candidate data).",
+      "confidence": 75,
+      "reason": "The candidate product is of the correct product type (slippers) and is from a highly preferred brand (DE'COS). Although the SpecMatch is 0%, the product type and brand alignment make it the best available option, as direct spec matches for slippers are rare.",
       "gt_status": "CORRECT"
     },
     {
@@ -34,8 +35,8 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/nash-wire-rope-tensioner-1-2-inch-10069950.html",
       "expected_url": "",
-      "confidence": 100,
-      "reason": "Candidate 0 is the only 'turnbuckle' type product, matches on size, and is from a preferred brand with 100% spec match.",
+      "confidence": 95,
+      "reason": "The candidate is the same product type (turnbuckle), has the exact size, and is from the preferred brand NASH with a 100% spec match.",
       "gt_status": "NO_GT"
     },
     {
@@ -48,9 +49,9 @@
       "target_brand": "PANASONIC",
       "target_url": "https://www.dohome.co.th/th/panasonic-single-ground-plug-with-safety-shutter-no-weg1181k-10239669.html",
       "expected_url": "https://www.dohome.co.th/th/eve-grounding-lamp-socket-set-2-slots-no-570085-10312129.html",
-      "confidence": 65,
-      "reason": "Candidate 15, PANASONIC ปลั๊กกราวด์เดี่ยว มีม่านนิรภัย รุ่น WEG1181K, is the only alternative identified as a 'power outlet' and shares the 'มีม่านนิรภัย' spec with the source product, making it the closest functional match despite the brand difference.",
-      "gt_status": "INCORRECT"
+      "confidence": 60,
+      "reason": "The candidate has the correct product type (power outlet) and mentions 'มีม่านนิรภัย' (with safety shutter) matching a key feature of the source product, despite being a different brand.",
+      "gt_status": "GT_MISSING"
     },
     {
       "chunk": 8,
@@ -63,8 +64,22 @@
       "target_url": "https://www.dohome.co.th/th/stanley-tape-measure-5-m-no-30-496n-10270497.html",
       "expected_url": "https://www.dohome.co.th/th/nash-tape-measure-5-m-no-abs055-19nc-10312463.html",
       "confidence": 100,
-      "reason": "The candidate is the same product type (measuring tape) and has a 100% spec match, specifically in length (5M).",
-      "gt_status": "INCORRECT"
+      "reason": "The candidate is a measuring tape with the exact matching length spec (5M) and is the only alternative of the correct product type.",
+      "gt_status": "GT_MISSING"
+    },
+    {
+      "chunk": 8,
+      "source_idx": 114,
+      "source_name": "ชั้นวางของพลาสติกอเนกประสงค์ 3 ชั้น KASSA HOME รุ่น Circle API-10301M3 ขนาด 43 x 30 x 59 ซม. สีขาว",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60357772",
+      "target_name": "PIONEER ชั้นวางของพลาสติก 3 ชั้น รุ่น PN8018L/3 สีขาว",
+      "target_brand": "PIONEER",
+      "target_url": "https://www.dohome.co.th/th/pioneer-plastics-shelf-3-levels-no-pn8018l3-white-10268698.html",
+      "expected_url": "https://www.dohome.co.th/th/pioneer-plastics-shelf-3-levels-no-pn8018l3-white-10268698.html",
+      "confidence": 75,
+      "reason": "The candidate is a plastic shelf, has 3 tiers, matching the critical product type and 'tiers' spec from the source. Although the brand is not preferred, it is the best match available.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 8,
@@ -77,7 +92,7 @@
       "target_url": "https://www.dohome.co.th/th/nash-silicone-gun-9-inch-no-dt0524-48-10308445.html",
       "expected_url": "https://www.dohome.co.th/th/nash-silicone-gun-9-inch-no-dt0524-48-10308445.html",
       "confidence": 100,
-      "reason": "The candidate is a glue gun, matching the product type, and has a 100% spec match with the same size (9 inch) and is from the most preferred brand (NASH).",
+      "reason": "Candidate 0 is a glue gun of the preferred brand NASH, matching the size and product type exactly.",
       "gt_status": "CORRECT"
     },
     {
@@ -90,23 +105,9 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/trolley-300-kg-10066705.html",
       "expected_url": "https://www.dohome.co.th/th/trolley-300-kg-10066705.html",
-      "confidence": 75,
-      "reason": "The candidate NASH trolley matches the product type 'flat cart' (trolley) and the critical 'volume' spec of 300 KG, while being from a highly preferred brand (NASH).",
+      "confidence": 60,
+      "reason": "The candidate NASH trolley matches on product type and a critical spec (volume=300 KG) and is a preferred brand (NASH).",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 8,
-      "source_idx": 119,
-      "source_name": "ชั้นวางของสเตนเลสอเนกประสงค์แบบตั้งพื้น 2 ชั้น (ใหญ่) Daniel KASSA HOME รุ่น KS-106-HD32 ขนาด 60 ซม.",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60345870",
-      "target_name": "API ชั้นวางของ 2 ชั้น รุ่น SNOWY",
-      "target_brand": "API",
-      "target_url": "https://www.dohome.co.th/th/api-2-tier-shelf-no-snowy-10404584.html",
-      "expected_url": "https://www.dohome.co.th/th/vrh-dish-shelf-2-levels-no-hwhoy-hw16a-10315630.html",
-      "confidence": 70,
-      "reason": "The candidate is also a 2-tier shelf with a matching product type and a high SpecMatch percentage, although it lacks the length_cm attribute. It also falls within an acceptable price range difference.",
-      "gt_status": "INCORRECT"
     }
   ]
 }

@@ -5,10 +5,11 @@
   "end_idx": 30,
   "products_tested": 15,
   "matches_found": 8,
-  "correct": 4,
-  "incorrect": 3,
-  "accuracy": 57.14285714285714,
-  "timestamp": "2025-12-03T07:44:09.679236",
+  "correct": 3,
+  "incorrect": 2,
+  "gt_missing": 1,
+  "accuracy": 60.0,
+  "timestamp": "2025-12-03T14:23:23.629394",
   "matches": [
     {
       "chunk": 2,
@@ -21,7 +22,7 @@
       "target_url": "https://www.dohome.co.th/th/nash-cement-trolley-single-air-wheel-13-inches-yellow-80-kg-10383677.html",
       "expected_url": "https://www.dohome.co.th/th/nash-cement-trolley-single-air-wheel-13-inches-yellow-80-kg-10383677.html",
       "confidence": 85,
-      "reason": "The candidate is the same product type (wheelbarrow), from a highly preferred brand (NASH), and has a strong spec match (13 inch wheel) with the source product. Although the volume specification is missing, the critical 'size_inch' matches exactly.",
+      "reason": "The candidate is a wheelbarrow from a preferred brand (NASH, PREFERRED#1) and matches the critical 'size_inch=13 inch' specification with a high SpecMatch of 68%. While the volume is not specified in the candidate, the product type, brand preference, and common size match make it the best equivalent.",
       "gt_status": "CORRECT"
     },
     {
@@ -35,7 +36,7 @@
       "target_url": "https://www.dohome.co.th/th/nash-hand-tools-set-69-pieces-10287204.html",
       "expected_url": "https://www.dohome.co.th/th/nash-hand-tools-set-69-pieces-10287204.html",
       "confidence": 60,
-      "reason": "Candidate is the same product type ('tool kit' is a close synonym for 'tool set') and is from a preferred brand, despite a lower pack count.",
+      "reason": "Candidate 1 (NASH) is a preferred brand and the product type 'tool set' matches exactly. While the pack count is different (69 vs 54), it's the closest spec match among preferred brands and within a reasonable range for a tool set.",
       "gt_status": "CORRECT"
     },
     {
@@ -48,9 +49,9 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/nash-plastic-tools-box-16-5-inch-no-mj20148-10223196.html",
       "expected_url": "https://www.dohome.co.th/en/yoshino-plastic-tool-box-165-inch-jk04165-10376378.html",
-      "confidence": 95,
-      "reason": "The candidate is a tool box, which matches the critical product type, and is from a preferred brand (NASH) with a high spec match for size (16.5 inch vs 16 inch).",
-      "gt_status": "INCORRECT"
+      "confidence": 85,
+      "reason": "The candidate is a plastic tool box with a very similar size (16.5 inch vs 16 inch) and is from a preferred brand (NASH).",
+      "gt_status": "GT_MISSING"
     },
     {
       "chunk": 2,
@@ -62,8 +63,8 @@
       "target_brand": "DECOS",
       "target_url": "https://www.dohome.co.th/th/decos-1-bulb-outdoor-wall-lamp-square-shape-e27-socket-model-gris-grey-10417411.html",
       "expected_url": "https://www.dohome.co.th/th/finext-outdoor-wall-lamp-6336-black-10216410.html",
-      "confidence": 75,
-      "reason": "The candidate has the highest spec match (63%), is the correct product type (wall lamp), and is from a preferred brand (DECOS).",
+      "confidence": 85,
+      "reason": "The candidate is the same product type (outdoor wall lamp) and the best available preferred brand, with a good spec match for socket and lamp type.",
       "gt_status": "INCORRECT"
     },
     {
@@ -76,23 +77,9 @@
       "target_brand": "SOLEX",
       "target_url": "https://www.dohome.co.th/th/solex-bathroom-lever-no-1704blk-black-10401969.html",
       "expected_url": "",
-      "confidence": 95,
-      "reason": "Candidate 1 (SOLEX ก้านโยกห้องน้ำ) is the only 'lever handle' (or similar type 'door lever') identified with 100% spec match for 'BATHROOM' and is an equivalent product type.",
+      "confidence": 85,
+      "reason": "The candidate is a door lever for bathrooms, matching the source's product type and room specification. SOLEX is not a preferred brand but it's the closest match.",
       "gt_status": "NO_GT"
-    },
-    {
-      "chunk": 2,
-      "source_idx": 23,
-      "source_name": "ปากกาตรวจสอบกระแสไฟ 90 - 1,000 โวลต์ GIANT KINGKONG PRO รุ่น KKP1000M สีน้ำเงิน - ดำ",
-      "source_brand": "GIANT KINGKONG PRO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60334764",
-      "target_name": "SUMO ปากกาวัดแรงดันไฟ รุ่น AC-90",
-      "target_brand": "SUMO",
-      "target_url": "https://www.dohome.co.th/th/sumo-voltage-detector-pen-no-ac-90-10303068.html",
-      "expected_url": "https://www.dohome.co.th/th/sumo-voltage-detector-pen-no-ac-90-10303068.html",
-      "confidence": 70,
-      "reason": "The candidate is also a voltage tester and from a preferred brand (SUMO), despite having a low SpecMatch% due to different model numbers and specifications.",
-      "gt_status": "CORRECT"
     },
     {
       "chunk": 2,
@@ -105,7 +92,7 @@
       "target_url": "https://www.dohome.co.th/th/decos-1-bulb-outdoor-wall-lamp-square-shape-e27-socket-model-gris-grey-10417411.html",
       "expected_url": "https://www.dohome.co.th/th/finext-outdoor-wall-lamp-aluminium-a119-black-10247661.html",
       "confidence": 75,
-      "reason": "The candidate is the same product type (outdoor wall lamp), has the exact same socket type (E27x1), and is from a preferred brand (DECOS), though the model name differs.",
+      "reason": "The candidate has the highest SpecMatch% among preferred brands that are the exact product type (wall lamp). Although the model differs, the critical specs (lamp type and socket) are a good match.",
       "gt_status": "INCORRECT"
     },
     {
@@ -118,9 +105,23 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/horse-caster-wheel-with-braker-8-inch-10052144.html",
       "expected_url": "https://www.dohome.co.th/th/horse-caster-wheel-with-braker-8-inch-10052144.html",
-      "confidence": 70,
-      "reason": "Candidate 0 is a scaffolding caster with a brake, matching the critical product type and brake spec, and is from a preferred brand (NASH).",
+      "confidence": 75,
+      "reason": "The candidate is the correct product type (scaffolding caster) and has a brake, matching a key spec of the source, and is from a preferred brand (NASH). The size conversion leads to a slight discrepancy (16cm vs 8 inch), but it's the closest available match.",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 2,
+      "source_idx": 29,
+      "source_name": "เตาแก๊สกระจกตั้งโต๊ะ 1 หัวแก๊ส 29.5 ซม. ZAGIO 8002(เดี่ยว) สีดำ",
+      "source_brand": "ZAGIO",
+      "source_url": "https://www.thaiwatsadu.com/sku/60422423",
+      "target_name": "FINEXT เตาแก๊สตั้งโต๊ะ 1 หัว รุ่น Super Cyclon GL-GQ3128",
+      "target_brand": "FINEXT",
+      "target_url": "https://www.dohome.co.th/th/finext-table-gas-stove-1-head-super-cyclone-gl-gq3128-10392248.html",
+      "expected_url": "",
+      "confidence": 85,
+      "reason": "Candidate 1 (FINEXT gas stove) is a gas stove from the preferred brand FINEXT and has a matching number of burners (1), despite the length spec not being explicitly found for the candidate.",
+      "gt_status": "NO_GT"
     }
   ]
 }

@@ -5,10 +5,11 @@
   "end_idx": 195,
   "products_tested": 15,
   "matches_found": 5,
-  "correct": 4,
+  "correct": 3,
   "incorrect": 0,
+  "gt_missing": 1,
   "accuracy": 100.0,
-  "timestamp": "2025-12-03T07:47:40.487370",
+  "timestamp": "2025-12-03T14:35:29.735784",
   "matches": [
     {
       "chunk": 13,
@@ -20,8 +21,8 @@
       "target_brand": "POWER MAX",
       "target_url": "https://www.dohome.co.th/th/power-max-led-downlight-15w-square-dhp012-warm-white-10268583.html",
       "expected_url": "https://www.dohome.co.th/th/power-max-led-downlight-15w-square-dhp012-warm-white-10268583.html",
-      "confidence": 75,
-      "reason": "The candidate has the highest spec match (51%), is a preferred brand (POWER MAX), and matches the product type (downlight), wattage, and color temperature.",
+      "confidence": 90,
+      "reason": "Candidate 0 is a downlight, matches critical product type, has an exact wattage match (15W), a warm white color temperature match, is a preferred brand (POWER MAX), and has the highest SpecMatch% while maintaining similar price.",
       "gt_status": "CORRECT"
     },
     {
@@ -35,22 +36,22 @@
       "target_url": "https://www.dohome.co.th/th/nash-paint-brush-2-inch-no-nm002-10224018.html",
       "expected_url": "https://www.dohome.co.th/th/nash-paint-brush-2-inch-no-nm002-10224018.html",
       "confidence": 95,
-      "reason": "Candidate 0 is a paint brush of the preferred brand NASH, with a size of 2 inches matching the source product exactly. Although the model number is different, the critical specs align.",
+      "reason": "The candidate is a NASH synthetic bristle brush of the same 2.0 inch size, matching the critical product type and size specification of the source. Although the model number differs, this is a common occurrence in house brand equivalents where the manufacturer might rebrand an existing product.",
       "gt_status": "CORRECT"
     },
     {
       "chunk": 13,
-      "source_idx": 189,
-      "source_name": "โพลียูรีเทนยาแนว GIANT KINGKONG ขนาด 600 มล. สีเทา",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60398261",
-      "target_name": "BESBOND กาวโพลียูรีเทน 600 มล. สีเทา",
-      "target_brand": "BESBOND",
-      "target_url": "https://www.dohome.co.th/th/besbond-polyurethane-glue-600ml-gray-10405384.html",
-      "expected_url": "https://www.dohome.co.th/th/besbond-polyurethane-glue-600ml-gray-10405384.html",
-      "confidence": 95,
-      "reason": "The candidate has a 100% spec match (volume and color) and the product type ('polyurethane glue') is a close equivalent to the source's 'polyurethane sealant', as 'glue' and 'sealant' often refer to similar adhesive/sealing properties in this context. While not a preferred brand, it's the best available option with high spec match.",
-      "gt_status": "CORRECT"
+      "source_idx": 192,
+      "source_name": "แผ่นผนัง PVC KASSA รุ่น 30V101 ขนาด 30 x 297 x 0.75 ซม. สีไลท์วอนัท",
+      "source_brand": "KASSA",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60303955",
+      "target_name": "MARINE แผ่นฝ้า PVC 30x297x0.7 ซม. สีน้ำตาลแก่",
+      "target_brand": "MARINE",
+      "target_url": "https://www.dohome.co.th/th/finext-pvc-frosted-sheet-30x297x07-cm-dark-brown-10391963.html",
+      "expected_url": "https://www.dohome.co.th/en/finext-pvc-ceiling-board-30x297x07-cm-brown-bark-10391902.html",
+      "confidence": 60,
+      "reason": "The candidate has the correct brand and product type with a good SpecMatch score for dimensions, showing a slight difference in thickness (0.75cm vs 0.7cm).",
+      "gt_status": "GT_MISSING"
     },
     {
       "chunk": 13,
@@ -62,8 +63,8 @@
       "target_brand": "MEX",
       "target_url": "https://www.dohome.co.th/th/mex-ventilation-cover-6-inch-mar150wh-10328262.html",
       "expected_url": "https://www.dohome.co.th/th/mex-ventilation-cover-6-inch-mar150wh-10328262.html",
-      "confidence": 100,
-      "reason": "Candidate 0 is the only 'vent cover' type product, matching the source product type, size, and has 100% spec match. It is also from a preferred brand.",
+      "confidence": 95,
+      "reason": "The candidate is a vent cover with the exact same size as the source product and is from a preferred brand (MEX).",
       "gt_status": "CORRECT"
     },
     {
@@ -77,7 +78,7 @@
       "target_url": "https://www.dohome.co.th/th/nash-aluminium-extension-ladder-ladder-12-step-no-r-11712-10177342.html",
       "expected_url": "",
       "confidence": 70,
-      "reason": "The candidate is a 'ladder' from preferred brand NASH, has the same number of steps (12 steps), and a good SpecMatch of 50%. The length (3.8M) is not matched but 12 steps is a strong match.",
+      "reason": "Candidate 0 is a Nash brand ladder with 12 steps, matching the critical product type and step count of the source product, and Nash is the most preferred brand.",
       "gt_status": "NO_GT"
     }
   ]

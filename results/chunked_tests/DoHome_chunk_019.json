@@ -7,8 +7,9 @@
   "matches_found": 5,
   "correct": 5,
   "incorrect": 0,
+  "gt_missing": 0,
   "accuracy": 100.0,
-  "timestamp": "2025-12-03T07:48:37.862211",
+  "timestamp": "2025-12-03T14:41:51.624302",
   "matches": [
     {
       "chunk": 19,
@@ -21,7 +22,7 @@
       "target_url": "https://www.dohome.co.th/th/j-type-screw-3-4-inch-x-50-cm-10175218.html",
       "expected_url": "https://www.dohome.co.th/th/j-type-screw-3-4-inch-x-50-cm-10175218.html",
       "confidence": 95,
-      "reason": "Candidate 3 is an exact match for size and length, and is a j-bolt from a preferred brand (NASH).",
+      "reason": "The candidate has the exact same size (3/4 inch) and length (50 cm) as the source product, and it is also a preferred brand (NASH). The product type 'self-tapping screw' is close enough to 'j-bolt' given the lack of an exact 'j-bolt' type in the candidates.",
       "gt_status": "CORRECT"
     },
     {
@@ -34,8 +35,8 @@
       "target_brand": "POWER MAX",
       "target_url": "https://www.dohome.co.th/th/power-max-led-downlight-18w-square-dhp013-warm-white-10268585.html",
       "expected_url": "https://www.dohome.co.th/th/power-max-led-downlight-18w-square-dhp013-warm-white-10268585.html",
-      "confidence": 70,
-      "reason": "The candidate is a downlight from a preferred brand (POWER MAX) with matching wattage (18W) and color temperature (WARMWHITE), and a high SpecMatch of 51%.",
+      "confidence": 90,
+      "reason": "The candidate is a downlight with matching wattage and color temperature, from the top preferred brand (POWER MAX), offering the highest spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,7 +50,7 @@
       "target_url": "https://www.dohome.co.th/th/nash-heavy-duty-trolley-with-air-wheels-10-inches-250-kg-10383695.html",
       "expected_url": "https://www.dohome.co.th/th/nash-heavy-duty-trolley-with-air-wheels-10-inches-250-kg-10383695.html",
       "confidence": 85,
-      "reason": "The candidate is a NASH brand heavy-duty trolley, matching the source product type 'trolley' and sharing the key spec of 10 inch wheels and 250 KG capacity, aligning with the highest preferred brand and a high spec match percentage.",
+      "reason": "Candidate 1 is a NASH heavy-duty trolley with 10-inch wheels, matching the source's product type and key size spec, and aligns with the preferred brand. Although missing the exact volume spec, it's a suitable equivalent.",
       "gt_status": "CORRECT"
     },
     {
@@ -62,8 +63,8 @@
       "target_brand": "DE'COS",
       "target_url": "https://www.dohome.co.th/th/decos-duvet-cover-size-70x90-inch-no-ct-streak-white-10303565.html",
       "expected_url": "https://www.dohome.co.th/th/decos-duvet-cover-size-70x90-inch-no-ct-streak-white-10303565.html",
-      "confidence": 75,
-      "reason": "Candidate is a preferred brand 'DE'COS' and is a duvet cover with matching dimensions, making it the closest product type match despite a lower SpecMatch% due to 'size_inch' being extracted differently.",
+      "confidence": 85,
+      "reason": "Candidate 12 is a preferred brand (DE'COS), is the same product type (duvet cover), and has matching dimensions (70x90).",
       "gt_status": "CORRECT"
     },
     {
@@ -76,8 +77,8 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/nash-cement-trolley-single-air-wheel-14-inches-green-200-kg-10383679.html",
       "expected_url": "https://www.dohome.co.th/th/nash-cement-trolley-single-air-wheel-14-inches-green-200-kg-10383679.html",
-      "confidence": 90,
-      "reason": "The candidate is a wheelbarrow from a preferred brand (NASH) with the exact same wheel size (14 inch) as the source product.",
+      "confidence": 70,
+      "reason": "The candidate is a NASH brand wheelbarrow, which is a preferred brand, and matches the critical 'size_inch' spec of 14 inches from the source product. The product type 'wheelbarrow' also matches.",
       "gt_status": "CORRECT"
     }
   ]

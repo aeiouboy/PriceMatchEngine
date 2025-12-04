@@ -5,10 +5,11 @@
   "end_idx": 30,
   "products_tested": 15,
   "matches_found": 9,
-  "correct": 7,
-  "incorrect": 0,
-  "accuracy": 100.0,
-  "timestamp": "2025-12-03T07:33:20.996251",
+  "correct": 5,
+  "incorrect": 2,
+  "gt_missing": 0,
+  "accuracy": 71.42857142857143,
+  "timestamp": "2025-12-03T14:16:52.944699",
   "matches": [
     {
       "chunk": 2,
@@ -16,13 +17,13 @@
       "source_name": "เครื่องพ่นเมล็ดพ่นยา 26 ลิตร เครื่องยนต์ 2 จังหวะ KARTEN รุ่น 3WF-3A สีขาว - ส้ม",
       "source_brand": "KARTEN",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60389441",
-      "target_name": "OOPOWER เครื่องพ่นปุ๋ยและเมล็ด ขนาด 26 ลิตร รุ่น3WF-3A สีส้มดำ",
-      "target_brand": "OO POWER",
-      "target_url": "https://globalhouse.co.th/product/OOPOWER-%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B9%88%E0%B8%99%E0%B8%9B%E0%B8%B8%E0%B9%8B%E0%B8%A2%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%A1%E0%B8%A5%E0%B9%87%E0%B8%94-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-26-%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A3-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%993WF3A-%E0%B8%AA%E0%B8%B5%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%94%E0%B8%B3-i.3922007950539",
+      "target_name": "TUF เครื่องพ่นยาเครื่องยนต์ 4จังหวะ รุ่นQL-767 25ลิตร สีแดงขาว",
+      "target_brand": "TUF",
+      "target_url": "https://globalhouse.co.th/product/TUF-%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B9%88%E0%B8%99%E0%B8%A2%E0%B8%B2%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%A2%E0%B8%99%E0%B8%95%E0%B9%8C-4%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B0-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99QL767-25%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A3-%E0%B8%AA%E0%B8%B5%E0%B9%81%E0%B8%94%E0%B8%87%E0%B8%82%E0%B8%B2%E0%B8%A7-i.6222003810545",
       "expected_url": "https://globalhouse.co.th/product/OOPOWER-%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B9%88%E0%B8%99%E0%B8%9B%E0%B8%B8%E0%B9%8B%E0%B8%A2%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%A1%E0%B8%A5%E0%B9%87%E0%B8%94-%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-26-%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A3-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%993WF3A-%E0%B8%AA%E0%B8%B5%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%94%E0%B8%B3-i.3922007950539",
-      "confidence": 100,
-      "reason": "Candidate 0 is a knapsack sprayer with identical volume, wattage, and model number, and is from a preferred brand (OO POWER).",
-      "gt_status": "CORRECT"
+      "confidence": 65,
+      "reason": "Candidate 0 is a preferred brand and has a product type 'sprayer' that is reasonably close to 'mist sprayer', and its volume (25L) is very close to the source's (26L), although other specs are not directly comparable. Other candidates are completely different product types.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 2,
@@ -34,8 +35,8 @@
       "target_brand": "PROTX",
       "target_url": "https://globalhouse.co.th/product/PROTX-%E0%B8%A1%E0%B8%B8%E0%B9%89%E0%B8%87%E0%B8%A5%E0%B8%A7%E0%B8%94%E0%B8%AD%E0%B8%B0%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1-36-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-x-10%E0%B9%80%E0%B8%A1%E0%B8%95%E0%B8%A3-Dia-0.21mm-18x16%E0%B8%95%E0%B8%A3.%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-4TCS0023610AL-i.5922007040603",
       "expected_url": "https://globalhouse.co.th/product/PROTX-%E0%B8%A1%E0%B8%B8%E0%B9%89%E0%B8%87%E0%B8%A5%E0%B8%A7%E0%B8%94%E0%B8%AD%E0%B8%B0%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1-36-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-x-10%E0%B9%80%E0%B8%A1%E0%B8%95%E0%B8%A3-Dia-0.21mm-18x16%E0%B8%95%E0%B8%A3.%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-4TCS0023610AL-i.5922007040603",
-      "confidence": 100,
-      "reason": "Candidate 0 is an aluminum screen with the same size (36 inch) and is from the highly preferred brand PROTX, achieving a 100% spec match.",
+      "confidence": 95,
+      "reason": "The source product is an aluminum mosquito net with a size of 36 inches. Candidate 0 is also an aluminum mosquito net from a preferred brand (PROTX) with the exact same 36-inch size, resulting in a 100% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -48,8 +49,8 @@
       "target_brand": "HUMMER",
       "target_url": "https://globalhouse.co.th/product/HUMMER-%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B9%84%E0%B8%94%E0%B8%AD%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1%E0%B8%A1%E0%B8%B5%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%88%E0%B8%B1%E0%B8%9A-4-%E0%B8%82%E0%B8%B1%E0%B9%89%E0%B8%99-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-LJG304D-i.5922005600199",
       "expected_url": "https://globalhouse.co.th/product/HUMMER-%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B9%84%E0%B8%94%E0%B8%AD%E0%B8%A5%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A1%E0%B8%A1%E0%B8%B5%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%88%E0%B8%B1%E0%B8%9A-4-%E0%B8%82%E0%B8%B1%E0%B9%89%E0%B8%99-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-LJG304D-i.5922005600199",
-      "confidence": 85,
-      "reason": "The candidate is the same product type (aluminum ladder), has the preferred brand (HUMMER), and an excellent spec match for 'steps' (4 steps).",
+      "confidence": 90,
+      "reason": "The candidate is a preferred brand (HUMMER), has a high spec match (66%), and is the correct product type (ladder) with the same number of steps.",
       "gt_status": "CORRECT"
     },
     {
@@ -63,7 +64,7 @@
       "target_url": "https://globalhouse.co.th/product/TUF-%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B9%88%E0%B8%99%E0%B8%A2%E0%B8%B2%E0%B9%81%E0%B8%9A%E0%B8%95%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B8%B5%E0%B9%88-20-%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A3-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-JNMD20B-%E0%B8%AA%E0%B8%B5%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99--i.3922007880218",
       "expected_url": "https://globalhouse.co.th/product/TUF-%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B9%88%E0%B8%99%E0%B8%A2%E0%B8%B2%E0%B9%81%E0%B8%9A%E0%B8%95%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B8%B5%E0%B9%88-20-%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A3-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-JNMD20B-%E0%B8%AA%E0%B8%B5%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99--i.3922007880218",
       "confidence": 95,
-      "reason": "The candidate is a sprayer, matches the critical volume specification, and is from a preferred brand with a high SpecMatch%. The difference in 'model' is acceptable for an equivalent product.",
+      "reason": "Candidate 0 is a sprayer with the exact same volume (20 L) and is from a preferred brand (TUF) with a different model, making it a strong equivalent.",
       "gt_status": "CORRECT"
     },
     {
@@ -72,13 +73,13 @@
       "source_name": "ลูกกลิ้งทาสีขนขาวแถบเหลือง GIANT KINGKONG รุ่น HP 10YS ขนาด 10 นิ้ว สีขาว",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60304687",
-      "target_name": "HUMMER ลูกกลิ้งทาสี พร้อมด้าม(G-014) รุ่น DTPT371 สีเหลือง-ดำ 10นิ้ว",
+      "target_name": "Hummer ลูกกลิ้งทาสี พร้อมด้าม 10นิ้ว (Light yellow) รุ่น SOM010",
       "target_brand": "HUMMER",
-      "target_url": "https://globalhouse.co.th/product/HUMMER-%E0%B8%A5%E0%B8%B9%E0%B8%81%E0%B8%81%E0%B8%A5%E0%B8%B4%E0%B9%89%E0%B8%87%E0%B8%97%E0%B8%B2%E0%B8%AA%E0%B8%B5-%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%94%E0%B9%89%E0%B8%B2%E0%B8%A1G014-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-DTPT371-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%87%E0%B8%94%E0%B8%B3-10%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-i.6022001930371",
+      "target_url": "https://globalhouse.co.th/product/Hummer-%E0%B8%A5%E0%B8%B9%E0%B8%81%E0%B8%81%E0%B8%A5%E0%B8%B4%E0%B9%89%E0%B8%87%E0%B8%97%E0%B8%B2%E0%B8%AA%E0%B8%B5-%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%94%E0%B9%89%E0%B8%B2%E0%B8%A1-10%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-Light-yellow-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-SOM010-i.5922005602544",
       "expected_url": "https://globalhouse.co.th/product/HUMMER-%E0%B8%A5%E0%B8%B9%E0%B8%81%E0%B8%81%E0%B8%A5%E0%B8%B4%E0%B9%89%E0%B8%87%E0%B8%97%E0%B8%B2%E0%B8%AA%E0%B8%B5-%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%94%E0%B9%89%E0%B8%B2%E0%B8%A1G014-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-DTPT371-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%87%E0%B8%94%E0%B8%B3-10%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-i.6022001930371",
       "confidence": 95,
-      "reason": "The candidate is a preferred brand (HUMMER), has a 100% spec match, and is the correct product type (paint roller).",
-      "gt_status": "CORRECT"
+      "reason": "The candidate is a 'paint roller' with matching size and full roller type, and is from a preferred brand (HUMMER) with a 100% spec match.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 2,
@@ -91,7 +92,7 @@
       "target_url": "https://globalhouse.co.th/product/detail/3922007950560",
       "expected_url": "https://globalhouse.co.th/product/detail/3922007950560",
       "confidence": 95,
-      "reason": "Candidate 0 is an auger bit of the preferred brand OO POWER, with an exact size match and 100% spec match.",
+      "reason": "Candidate 0 is an exact product type match for 'earth drill bit' and has a 100% spec match for size, is a preferred brand (OO POWER), and is the best available alternative.",
       "gt_status": "CORRECT"
     },
     {
@@ -104,8 +105,8 @@
       "target_brand": "KAMPER",
       "target_url": "https://globalhouse.co.th/product/KAMPER-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%99%E0%B8%B1%E0%B9%88%E0%B8%87%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B9%82%E0%B8%9E%E0%B8%A5%E0%B8%B5%E0%B8%A2%E0%B8%B9%E0%B8%A3%E0%B8%B5%E0%B9%80%E0%B8%97%E0%B8%99-PU-%E0%B8%82%E0%B8%B2%E0%B8%AB%E0%B8%A1%E0%B8%B8%E0%B8%99-%E0%B8%A1%E0%B8%B5%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%84-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-1152152B-6-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-i.6032698301842",
       "expected_url": "https://globalhouse.co.th/product/KAMPER-%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%99%E0%B8%B1%E0%B9%88%E0%B8%87%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B9%82%E0%B8%9E%E0%B8%A5%E0%B8%B5%E0%B8%A2%E0%B8%B9%E0%B8%A3%E0%B8%B5%E0%B9%80%E0%B8%97%E0%B8%99-PU-%E0%B8%82%E0%B8%B2%E0%B8%AB%E0%B8%A1%E0%B8%B8%E0%B8%99-%E0%B8%A1%E0%B8%B5%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%84-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-1152152B-6-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-i.6032698301842",
-      "confidence": 85,
-      "reason": "The candidate is a 'caster' with a brake, matching the source's type and brake specification. The size is also very close (6 inches is approximately 15.24 cm).",
+      "confidence": 68,
+      "reason": "The candidate is the only one with the exact product type 'caster' and has the highest SpecMatch% among relevant alternatives, matching brake presence and nearly matching the size after conversion.",
       "gt_status": "CORRECT"
     },
     {
@@ -118,8 +119,8 @@
       "target_brand": "SANE",
       "target_url": "https://globalhouse.co.th/product/SANE-%E0%B8%84%E0%B8%A3%E0%B8%81%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%AA%E0%B8%B2%E0%B8%81%E0%B8%AA%E0%B9%80%E0%B8%95%E0%B8%99%E0%B9%80%E0%B8%A5%E0%B8%AA-SUS304-6-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-JAKA05-i.4622007261435",
       "expected_url": "",
-      "confidence": 100,
-      "reason": "Candidate 0 is a perfect spec match with the same product type (mortar and pestle) and belongs to a preferred brand (SANE).",
+      "confidence": 95,
+      "reason": "Candidate 0 is the exact same product type (mortar and pestle) and has a 100% spec match for size, from a preferred brand (SANE).",
       "gt_status": "NO_GT"
     },
     {
@@ -132,8 +133,8 @@
       "target_brand": "HUMMER",
       "target_url": "https://globalhouse.co.th/product/HUMMER-%E0%B8%9B%E0%B8%B7%E0%B8%99%E0%B8%A2%E0%B8%B4%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A7%E0%B8%8B%E0%B8%B4%E0%B8%A5%E0%B8%B4%E0%B9%82%E0%B8%84%E0%B8%99-9-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-DTSG269-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%87-i.6022001932269",
       "expected_url": "",
-      "confidence": 60,
-      "reason": "The candidate has the correct product type (glue gun) and is from a preferred brand, even though the model number does not match.",
+      "confidence": 70,
+      "reason": "The candidate is a glue gun, matching the product type, and is from HUMMER, a preferred brand. While the model number and size don't match, it is the closest functional equivalent among the preferred brands.",
       "gt_status": "NO_GT"
     }
   ]

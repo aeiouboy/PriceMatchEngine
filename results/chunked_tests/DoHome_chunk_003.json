@@ -4,11 +4,12 @@
   "start_idx": 30,
   "end_idx": 45,
   "products_tested": 15,
-  "matches_found": 8,
+  "matches_found": 7,
   "correct": 5,
-  "incorrect": 2,
-  "accuracy": 71.42857142857143,
-  "timestamp": "2025-12-03T07:44:11.609570",
+  "incorrect": 0,
+  "gt_missing": 0,
+  "accuracy": 100.0,
+  "timestamp": "2025-12-03T14:24:18.022589",
   "matches": [
     {
       "chunk": 3,
@@ -20,23 +21,23 @@
       "target_brand": "DECOS",
       "target_url": "https://www.dohome.co.th/th/stretch-film-20-micron-300-m-clear-10236868.html",
       "expected_url": "",
-      "confidence": 100,
-      "reason": "Candidate 0 is a 'pallet wrap film' which is an exact product type match for 'pallet stretch film'. It has the highest SpecMatch of 78% and is from the DECOS brand which is PREFERRED#6, matching the critical 'length' spec of 300M with the source. The price is also identical to the source.",
+      "confidence": 90,
+      "reason": "The candidate has the highest SpecMatch%, is a preferred brand, and is the correct product type (stretch film) with matching length.",
       "gt_status": "NO_GT"
     },
     {
       "chunk": 3,
-      "source_idx": 34,
-      "source_name": "แม่แรงตะเข้จาน 6 นิ้ว GIANT KINGKONG รุ่น STFL322 ขนาด 3 ตัน สีแดง",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60165872",
-      "target_name": "NASH แม่แรงกระปุก 32 ตัน รุ่น GF3204",
-      "target_brand": "NASH",
-      "target_url": "https://www.dohome.co.th/th/nash-hydraulic-bottle-jack-32-t-no-gf3204-10227282.html",
-      "expected_url": "https://www.dohome.co.th/th/yoshino-3-tons-1-piston-hip-jack-no-jk32-10376065.html",
+      "source_idx": 33,
+      "source_name": "โคมไฟเสาสนาม E27x1 LUZINO รุ่น GD-ABZ11-E27-600 สีดำ - ใส",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/sku/60402140",
+      "target_name": "DECOS โคมไฟสนาม 60 ซม. อลูมิเนียม รุ่น WAFFLE สีดำ",
+      "target_brand": "DECOS",
+      "target_url": "https://www.dohome.co.th/th/decos-outdoor-lamp-60-cm-aluminum-model-waffle-black-10412789.html",
+      "expected_url": "",
       "confidence": 70,
-      "reason": "The source product is a 'trolley jack'. Candidate 9 is a 'แม่แรงกระปุก' which is a type of jack. While not identical, it serves a similar function and is from a PREFERRED brand (NASH). SpecMatch is 0% as the source specifies 'size_inch=6 inch' and the candidate lacks this specific spec, but it is a similar product type and the highest ranked PREFERRED brand acting as a jack.",
-      "gt_status": "INCORRECT"
+      "reason": "The candidate is a garden light of a preferred brand (DECOS) but the spec match is low at 0% due to missing socket type.",
+      "gt_status": "NO_GT"
     },
     {
       "chunk": 3,
@@ -48,23 +49,9 @@
       "target_brand": "POWER MAX",
       "target_url": "https://www.dohome.co.th/th/powermax-track-light-2m-no-lumos-black-10400229.html",
       "expected_url": "https://www.dohome.co.th/th/powermax-track-light-2m-no-lumos-black-10400229.html",
-      "confidence": 90,
-      "reason": "The candidate has the highest SpecMatch% among preferred brands for the correct product type (track light rail). Although the length spec format differs (200CM vs 2M), they are equivalent and the model is different but consistent for a preferred brand.",
+      "confidence": 95,
+      "reason": "The candidate has the correct product type, is from the preferred brand POWER MAX, and has a similar length (2m vs 200cm, which are equivalent).",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 3,
-      "source_idx": 36,
-      "source_name": "โคมดาวน์ไลท์หน้าเหลี่ยม 4 นิ้ว LED 9W Daylight LUZINO รุ่น PN-JYX0102-9W/DL สีขาว",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60308458",
-      "target_name": "POWER MAX ดาวน์ไลท์ 4 นิ้ว ติดลอย กล่องเหลี่ยม สีขาว [ไม่รวมหลอดไฟ]",
-      "target_brand": "POWER MAX",
-      "target_url": "https://www.dohome.co.th/th/heap-downlight-4-inch-square-white-10204670.html",
-      "expected_url": "https://www.dohome.co.th/th/power-max-led-downlight-9w-square-dhp010-day-linght-10268578.html",
-      "confidence": 75,
-      "reason": "The candidate has the exact same product type (downlight) and size (4 inch) as the source, and is from a preferred brand (POWER MAX). While it doesn't specify wattage or color temperature, it is the best available match among the preferred brands.",
-      "gt_status": "INCORRECT"
     },
     {
       "chunk": 3,
@@ -76,8 +63,8 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/trolley-150-kg-10066707.html",
       "expected_url": "https://www.dohome.co.th/th/trolley-150-kg-10066707.html",
-      "confidence": 70,
-      "reason": "The candidate is a NASH brand trolley and has a matching volume spec of 150 KG, making it the closest product type and spec match among the preferred brands.",
+      "confidence": 65,
+      "reason": "The candidate is a 'cart' which is a close match to 'flat cart' and shares the critical 'volume=150 KG' spec with the source product. It is also from the most preferred brand, NASH.",
       "gt_status": "CORRECT"
     },
     {
@@ -90,8 +77,8 @@
       "target_brand": "JCJ",
       "target_url": "https://www.dohome.co.th/th/jcj-square-plastic-box-70-l-no-5117-10365718.html",
       "expected_url": "https://www.dohome.co.th/th/jcj-square-plastic-box-70-l-no-5117-10365718.html",
-      "confidence": 80,
-      "reason": "The candidate is a preferred brand (JCJ), matches the primary product type (storage box), and the volume (70 L) and model number (5117) match exactly, providing a high SpecMatch%.",
+      "confidence": 100,
+      "reason": "The candidate is a preferred brand (JCJ), has the exact same volume (70 L), and the source product name mentions 'JCJ-5117' and the candidate model is '5117', indicating a precise model match. The product types also align as both are storage boxes.",
       "gt_status": "CORRECT"
     },
     {
@@ -104,8 +91,8 @@
       "target_brand": "SANKI",
       "target_url": "https://www.dohome.co.th/th/sanki-aluminum-ladder-with-tray-6-steps-10391217.html",
       "expected_url": "https://www.dohome.co.th/th/sanki-aluminum-ladder-with-tray-6-steps-10391217.html",
-      "confidence": 70,
-      "reason": "The candidate has the exact same number of steps and is from a preferred brand (SANKI), making it the closest available alternative despite the lower SpecMatch% due to fewer extracted specs.",
+      "confidence": 75,
+      "reason": "Candidate 0 is the only 'ladder' type, from a preferred brand, and has a 31% spec match on 'steps'.",
       "gt_status": "CORRECT"
     },
     {
@@ -118,8 +105,8 @@
       "target_brand": "NASH",
       "target_url": "https://www.dohome.co.th/th/nash-safety-belt-no-np-787b-10231061.html",
       "expected_url": "https://www.dohome.co.th/th/nash-safety-belt-no-np-787b-10231061.html",
-      "confidence": 75,
-      "reason": "Candidate is the same product type (เข็มขัดเซฟตี้ - safety belt, synonymous with full body harness), and is from a preferred brand (NASH).",
+      "confidence": 70,
+      "reason": "Candidate is a full body harness from a preferred brand, even though the specific model and length from the source product are not matched it's the closest option.",
       "gt_status": "CORRECT"
     }
   ]

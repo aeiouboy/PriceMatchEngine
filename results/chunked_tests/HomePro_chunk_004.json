@@ -1,0 +1,43 @@
+{
+  "retailer": "HomePro",
+  "chunk": 4,
+  "start_idx": 45,
+  "end_idx": 60,
+  "products_tested": 15,
+  "matches_found": 2,
+  "correct": 2,
+  "incorrect": 0,
+  "gt_missing": 0,
+  "accuracy": 100.0,
+  "timestamp": "2025-12-04T10:26:36.800458",
+  "matches": [
+    {
+      "chunk": 4,
+      "source_idx": 50,
+      "source_name": "เก้าอี้ทานอาหารหุ้มผ้า KASSA รุ่น DC409-G สีเทา",
+      "source_brand": "KASSA",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60349118",
+      "target_name": "เก้าอี้ทานข้าว SB FURNITURE LALADA สีเทา",
+      "target_brand": "SB FURNITURE",
+      "target_url": "https://www.homepro.co.th/p/1223708",
+      "expected_url": "https://www.homepro.co.th/p/1223708",
+      "confidence": 70,
+      "reason": "The candidate is a 'dining chair' from a preferred brand (SB FURNITURE) with a high SpecMatch% of 50%, making it the best available equivalent product.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 4,
+      "source_idx": 57,
+      "source_name": "รถเข็นพื้นพลาสติกมือจับข้างเดียว GIANT KINGKONG รุ่น TT4150CA-3 ขนาด 150 กก. สีน้ำเงิน",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60311468",
+      "target_name": "รถเข็น 4 ล้อ MATALL FD150 150 กก. สีดำ",
+      "target_brand": "MATALL",
+      "target_url": "https://www.homepro.co.th/p/1028878",
+      "expected_url": "https://www.homepro.co.th/p/1028878",
+      "confidence": 95,
+      "reason": "The candidate is a trolley from a preferred brand (MATALL) and has an exact match on the critical volume spec (150 KG), making it a strong equivalent.",
+      "gt_status": "CORRECT"
+    }
+  ]
+}

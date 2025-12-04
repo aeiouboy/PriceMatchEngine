@@ -1,0 +1,71 @@
+{
+  "retailer": "HomePro",
+  "chunk": 28,
+  "start_idx": 405,
+  "end_idx": 420,
+  "products_tested": 15,
+  "matches_found": 4,
+  "correct": 3,
+  "incorrect": 1,
+  "gt_missing": 0,
+  "accuracy": 75.0,
+  "timestamp": "2025-12-04T04:18:45.381056",
+  "matches": [
+    {
+      "chunk": 28,
+      "source_idx": 405,
+      "source_name": "ตู้เสื้อผ้า 2 บาน พร้อมลิ้นชัก KASSA รุ่น Very ขนาด 90 ซม. สีไวท์เมเปิ้ล",
+      "source_brand": "KASSA",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60398540",
+      "target_name": "ตู้เสื้อผ้า 2 บานเปิด FURDINI GREATE 90 ซม. สีไวท์โอ๊ค",
+      "target_brand": "FURDINI",
+      "target_url": "https://www.homepro.co.th/p/1259491",
+      "expected_url": "https://www.homepro.co.th/p/1259491",
+      "confidence": 95,
+      "reason": "The candidate has the correct product type (wardrobe), matches the critical length spec (90CM), and is from a preferred brand (FURDINI) with 100% spec match.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 28,
+      "source_idx": 409,
+      "source_name": "ล้อเก็บสายไฟเหล็ก 4 ช่อง 16 แอมป์ LUZINO รุ่น TLM-1530 สายไฟยาว 30 เมตร",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60321375",
+      "target_name": "ล้อเก็บสายไฟ 4 ช่อง ELECKTA ET-BD1530 3600 วัตต์ 30 เมตร เหลือง",
+      "target_brand": "ELECKTA",
+      "target_url": "https://www.homepro.co.th/p/1167727",
+      "expected_url": "https://www.homepro.co.th/p/1167727",
+      "confidence": 95,
+      "reason": "Candidate 0 is a cable reel with matching length and number of outlets, from a preferred brand (ELECKTA) and has 100% spec match.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 28,
+      "source_idx": 410,
+      "source_name": "เกรียงโป๊วสีเหล็กด้ามพลาสติก GIANT KINGKONG PRO รุ่น H36-5 ขนาด 5 นิ้ว สีน้ำเงิน",
+      "source_brand": "GIANT KINGKONG PRO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60292792",
+      "target_name": "เกรียงโป๊วด้ามพลาสติก MATALL 5 นิ้ว",
+      "target_brand": "MATALL",
+      "target_url": "https://www.homepro.co.th/p/1167130",
+      "expected_url": "https://www.homepro.co.th/p/1167130",
+      "confidence": 95,
+      "reason": "The candidate is the correct product type (putty knife), has the exact matching size (5 inch), and is from a highly preferred brand (MATALL).",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 28,
+      "source_idx": 411,
+      "source_name": "ชั้นคว่ำจานเหล็กชุบโครเมียมตั้งพื้น 2 ชั้น (เล็ก) Dylan KASSA HOME รุ่น MHC-5534 ขนาด 50 ซม. สีเงิน",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60344842",
+      "target_name": "ชั้นคว่ำจานอลูมิเนียม 2 ชั้น มีถาดรองน้ำ KECH SAKURA",
+      "target_brand": "KECH",
+      "target_url": "https://www.homepro.co.th/p/1201175",
+      "expected_url": "https://www.homepro.co.th/p/194804",
+      "confidence": 75,
+      "reason": "The candidate has the correct product type, tiers, and is from a preferred brand (KECH) with a good SpecMatch percentage. Although the length is not specified, it's the closest match given the available data.",
+      "gt_status": "INCORRECT"
+    }
+  ]
+}
