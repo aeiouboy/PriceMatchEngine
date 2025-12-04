@@ -4,12 +4,12 @@
   "start_idx": 315,
   "end_idx": 330,
   "products_tested": 15,
-  "matches_found": 11,
-  "correct": 9,
-  "incorrect": 2,
+  "matches_found": 10,
+  "correct": 6,
+  "incorrect": 4,
   "gt_missing": 0,
-  "accuracy": 81.81818181818183,
-  "timestamp": "2025-12-04T02:55:41.724532",
+  "accuracy": 60.0,
+  "timestamp": "2025-12-04T04:13:22.959845",
   "matches": [
     {
       "chunk": 22,
@@ -22,7 +22,7 @@
       "target_url": "https://www.homepro.co.th/p/1043474",
       "expected_url": "https://www.homepro.co.th/p/1043474",
       "confidence": 75,
-      "reason": "Candidate 0 is a preferred brand (DEXZON) and is the exact product type (gloves), with a 50% spec match based on the 'GIANT KINGKONG' identifier being less specific.",
+      "reason": "The candidate has the correct PRODUCT TYPE 'gloves' and is from the most preferred brand 'DEXZON', with a reasonable SpecMatch% of 50.",
       "gt_status": "CORRECT"
     },
     {
@@ -31,13 +31,13 @@
       "source_name": "โคมไฟเพดานอะคริลิกพร้อมรีโมต LED 60 วัตต์ Tri-Color LUZINO รุ่น PP-0666-600(CL) สีใส",
       "source_brand": "LUZINO",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60296298",
-      "target_name": "ไฟเพดาน LED LAMPTAN MULTI SMART STELLA 20 นิ้ว 60 วัตต์ DAYLIGHT/COOL WHITE/WARM WHITE สีขาว",
-      "target_brand": "LAMPTAN",
-      "target_url": "https://www.homepro.co.th/p/1108059",
+      "target_name": "ไฟเพดาน LED RACER AI IU 18 นิ้ว 60 วัตต์ DAYLIGHT/COOL WHITE/WARM WHITE/RGB สีขาว",
+      "target_brand": "RACER",
+      "target_url": "https://www.homepro.co.th/p/1273927",
       "expected_url": "https://www.homepro.co.th/p/1108059",
-      "confidence": 85,
-      "reason": "Candidate 3 is a ceiling light with identical wattage (60W) and high SpecMatch (100%), aligning well with the source product's type and critical specifications.",
-      "gt_status": "CORRECT"
+      "confidence": 95,
+      "reason": "Candidate 1 (RACER) is a ceiling light and has 100% spec match on wattage, making it a strong equivalent to the source's 60W ceiling lamp, despite RACER being a less preferred brand.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 22,
@@ -49,8 +49,8 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/1243610",
       "expected_url": "https://www.homepro.co.th/p/1243610",
-      "confidence": 100,
-      "reason": "The candidate is a perfect spec match for dimensions, length, and tiers, and is from a highly preferred brand.",
+      "confidence": 95,
+      "reason": "The candidate is a preferred brand (STACKO), has identical dimensions and number of tiers, and is the same product type (shelf).",
       "gt_status": "CORRECT"
     },
     {
@@ -63,8 +63,8 @@
       "target_brand": "SPRING",
       "target_url": "https://www.homepro.co.th/p/1182193",
       "expected_url": "https://www.homepro.co.th/p/1182193",
-      "confidence": 75,
-      "reason": "Candidate is the same product type and from the top preferred brand (SPRING), with 50% spec match on identifiers, which is the highest available match.",
+      "confidence": 70,
+      "reason": "The candidate has the exact same product type (garden bench) and is from the highest preferred brand (SPRING) with a 50% spec match (identifier match).",
       "gt_status": "CORRECT"
     },
     {
@@ -77,22 +77,8 @@
       "target_brand": "PLIM",
       "target_url": "https://www.homepro.co.th/p/1249480",
       "expected_url": "https://www.homepro.co.th/p/1249480",
-      "confidence": 95,
-      "reason": "Candidate 0 is a hanger and has an identical pack count (6 pcs) and is from a preferred brand (PLIM), resulting in a 100% spec match.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 22,
-      "source_idx": 321,
-      "source_name": "บันไดอะลูมิเนียมทรง A ขึ้นลง 2 ทาง GIANT KINGKONG PRO รุ่น LDA2005D ขนาด 5 ขั้น สีเงิน",
-      "source_brand": "GIANT KINGKONG PRO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60289688",
-      "target_name": "บันไดอะลูมิเนียม MATALL HEAVY DUTY 5 ขั้น",
-      "target_brand": "MATALL",
-      "target_url": "https://www.homepro.co.th/p/195810",
-      "expected_url": "https://www.homepro.co.th/p/195810",
-      "confidence": 60,
-      "reason": "The candidate is a MATALL a-frame ladder with the same number of steps, making it the most suitable match despite a lower SpecMatch than 70%.",
+      "confidence": 90,
+      "reason": "The candidate is a hanger from a preferred brand (PLIM) with identical pack count and a high spec match percentage.",
       "gt_status": "CORRECT"
     },
     {
@@ -106,7 +92,7 @@
       "target_url": "https://www.homepro.co.th/p/1181364",
       "expected_url": "https://www.homepro.co.th/p/1189085",
       "confidence": 95,
-      "reason": "Candidate 1 (MATALL) is a preferred brand (PREFERRED#2) with a 100% spec match, exact product type match, and a lower price than Candidate 0.",
+      "reason": "The candidate 'ลูกกลิ้งทาสี MATALL 7 นิ้ว' is a paint roller of the same size (7 inch) and type (FULL) as the source product, and MATALL is a preferred brand (PREFERRED#2). It also has a competitive price.",
       "gt_status": "INCORRECT"
     },
     {
@@ -115,13 +101,13 @@
       "source_name": "พุกเหล็ก GIANT KINGKONG รุ่น P-10516 ขนาด 5/16 นิ้ว (แพ็ก 100 ตัว) สีซิงค์รุ้ง",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60374086",
-      "target_name": "พุกเหล็ก DEXZON 5/16 นิ้ว 50 ตัว",
+      "target_name": "พุกเหล็ก DEXZON 5/8 นิ้ว 10 ชิ้น/ชุด",
       "target_brand": "DEXZON",
-      "target_url": "https://www.homepro.co.th/p/1174595",
+      "target_url": "https://www.homepro.co.th/p/1184655",
       "expected_url": "https://www.homepro.co.th/p/1174595",
-      "confidence": 95,
-      "reason": "The candidate has the correct product type (anchor bolt), matches the critical size spec (5/16 inch), and is from the highly preferred brand DEXZON, with a similar pack size (50 vs 100).",
-      "gt_status": "CORRECT"
+      "confidence": 75,
+      "reason": "Candidate 4 is a preferred brand (DEXZON, PREFERRED#1) and matches the product type 'steel anchor' with 100% spec match, despite a size mismatch (5/8 inch vs 5/16 inch).",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 22,
@@ -134,7 +120,7 @@
       "target_url": "https://www.homepro.co.th/p/1152429",
       "expected_url": "https://www.homepro.co.th/p/1152429",
       "confidence": 90,
-      "reason": "The candidate has the exact same product type (pallet jack) and the highest SpecMatch% among preferred brands, which is a strong indicator for a good match. The brand is also a preferred brand (MATALL, PREFERRED#2).",
+      "reason": "Candidate 0 is the only product of type 'pallet jack' and it is from a preferred brand MATALL, matching the product type of the source product.",
       "gt_status": "CORRECT"
     },
     {
@@ -148,7 +134,7 @@
       "target_url": "https://www.homepro.co.th/p/1277055",
       "expected_url": "https://www.homepro.co.th/p/1277055",
       "confidence": 75,
-      "reason": "The candidate is a wardrobe, which matches the source product type. It is also from a preferred brand (FURDINI) and has a similar length (119cm vs 120cm).",
+      "reason": "The candidate is a wardrobe, which matches the source product type, and is from a preferred brand (FURDINI). While the length_cm is slightly off (119cm vs 120cm), it is a close match in both product type and brand preference, making it the best available option.",
       "gt_status": "CORRECT"
     },
     {
@@ -162,7 +148,7 @@
       "target_url": "https://www.homepro.co.th/p/1215244",
       "expected_url": "https://www.homepro.co.th/p/1040942",
       "confidence": 95,
-      "reason": "The candidate is a rotary air compressor with the exact same volume (50L) and is from a preferred brand (ROWEL) with a high SpecMatch%.",
+      "reason": "Highest SpecMatch (100%) and preferred brand (ROWEL) for air compressor with matching volume.",
       "gt_status": "INCORRECT"
     }
   ]

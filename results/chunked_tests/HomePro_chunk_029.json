@@ -5,11 +5,11 @@
   "end_idx": 435,
   "products_tested": 15,
   "matches_found": 11,
-  "correct": 10,
-  "incorrect": 1,
+  "correct": 11,
+  "incorrect": 0,
   "gt_missing": 0,
-  "accuracy": 90.9090909090909,
-  "timestamp": "2025-12-04T03:01:11.283080",
+  "accuracy": 100.0,
+  "timestamp": "2025-12-04T04:19:58.497241",
   "matches": [
     {
       "chunk": 29,
@@ -17,13 +17,13 @@
       "source_name": "ล้อเก็บสายไฟเหล็กพร้อมเบรกเกอร์กันไฟดูด กำลัง 3,600 วัตต์ LUZINO รุ่น LT-RCBO-1530 ขนาด 30 เมตร",
       "source_brand": "LUZINO",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60365960",
-      "target_name": "ล้อเก็บสายไฟ 4 ช่อง ELECKTA ET-BD1530 3600 วัตต์ 30 เมตร เหลือง",
+      "target_name": "ล้อเก็บสายไฟ พร้อมเบรคเกอร์กันไฟดูด ELECKTA ET-BC1530 3600 วัตต์ 30 เมตร สีเหลือง",
       "target_brand": "ELECKTA",
-      "target_url": "https://www.homepro.co.th/p/1167727",
+      "target_url": "https://www.homepro.co.th/p/1176803",
       "expected_url": "https://www.homepro.co.th/p/1176803",
       "confidence": 95,
-      "reason": "Candidate 0 is a power cord reel (matching product type 'wire reel') from a preferred brand (ELECKTA), with an excellent spec match for wattage and length.",
-      "gt_status": "INCORRECT"
+      "reason": "The candidate is an excellent spec match for wattage and length, from a preferred brand, and explicitly includes a circuit breaker like the source.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 29,
@@ -36,7 +36,7 @@
       "target_url": "https://www.homepro.co.th/p/1214022",
       "expected_url": "https://www.homepro.co.th/p/1214022",
       "confidence": 75,
-      "reason": "The candidate is the correct product type (egg beater/whisk) and from a preferred brand (KECH), although the SpecMatch is 50% due to missing specific model number.",
+      "reason": "Candidate 0 is an 'egg whisk' from a preferred brand (KECH) and has the highest SpecMatch% among relevant alternatives. While not explicitly 'silicone whisk', 'egg whisk' is a very close functional match.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,8 +49,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1185566",
       "expected_url": "https://www.homepro.co.th/p/1185566",
-      "confidence": 100,
-      "reason": "Candidate 0 is the exact product type 'varnish brush' and matches the critical size spec of 3 inches, and is from a preferred brand (MATALL) with 100% spec match.",
+      "confidence": 95,
+      "reason": "The candidate is a varnish brush with the exact same size (3 inch) and is from a preferred brand (MATALL).",
       "gt_status": "CORRECT"
     },
     {
@@ -64,7 +64,7 @@
       "target_url": "https://www.homepro.co.th/p/1184213",
       "expected_url": "https://www.homepro.co.th/p/1184213",
       "confidence": 90,
-      "reason": "Candidate 0 is a cabinet with identical tiers and very similar dimensions (70x50 vs 69x50) and length (160CM), and a preferred brand (ME LIVING).",
+      "reason": "Candidate 0 is the strongest match with 84% SpecMatch, identical product type (cabinet), and a preferred brand (ME LIVING). The dimensions are very close (70x50 vs 69x50) and other key specs like tiers and length are exact.",
       "gt_status": "CORRECT"
     },
     {
@@ -77,8 +77,8 @@
       "target_brand": "SPRING",
       "target_url": "https://www.homepro.co.th/p/255801",
       "expected_url": "https://www.homepro.co.th/p/255801",
-      "confidence": 70,
-      "reason": "The candidate product is a tent from a preferred brand (SPRING) with matching product type (tent) and similar dimensions (3x3m vs 2.95x2.95m). Although the source is 'folding tent', 'tent' is a close enough match in absence of a direct 'folding tent' in preferred brands.",
+      "confidence": 85,
+      "reason": "The candidate is a 'tent' by a preferred brand (SPRING) and has highly similar dimensions (3x3 vs 2.95x2.95) and length (3M vs 2.6M) to the source product.",
       "gt_status": "CORRECT"
     },
     {
@@ -91,8 +91,8 @@
       "target_brand": "CARINI",
       "target_url": "https://www.homepro.co.th/p/1052627",
       "expected_url": "https://www.homepro.co.th/p/1052627",
-      "confidence": 85,
-      "reason": "Candidate 0 is a downlight, matches the critical product type, has a preferred brand (CARINI - PREFERRED#1), and shares the exact 'size_inch' spec with the source product with a SpecMatch of 57%.",
+      "confidence": 90,
+      "reason": "Candidate 0 is a downlight with matching size and is from the highest preferred brand (CARINI).",
       "gt_status": "CORRECT"
     },
     {
@@ -106,7 +106,7 @@
       "target_url": "https://www.homepro.co.th/p/1076758",
       "expected_url": "https://www.homepro.co.th/p/1076758",
       "confidence": 75,
-      "reason": "The candidate has the exact product type and a matching model number (4A5B) with a similar name, indicating a strong match despite the brand not being a top preferred one.",
+      "reason": "Candidate 20 is a 'dry chemical fire extinguisher', matching the source product type exactly. It also has the model number '4A5B' explicitly mentioned in its name, which is a critical spec match. Although not a preferred brand, the explicit product type and model match are strong.",
       "gt_status": "CORRECT"
     },
     {
@@ -120,7 +120,7 @@
       "target_url": "https://www.homepro.co.th/p/1189091",
       "expected_url": "https://www.homepro.co.th/p/1189091",
       "confidence": 90,
-      "reason": "The candidate is a 'paint roller extension pole' and matches the source product type, length, and is from a preferred brand (MATALL) with the highest spec match.",
+      "reason": "The candidate is a 'roller extension pole' matching the source's product type, has identical length, and is from a preferred brand (MATALL).",
       "gt_status": "CORRECT"
     },
     {
@@ -134,7 +134,7 @@
       "target_url": "https://www.homepro.co.th/p/1128417",
       "expected_url": "https://www.homepro.co.th/p/1128417",
       "confidence": 95,
-      "reason": "The candidate is identical in product type and all key specifications (dimensions and size_inch), achieving a 100% spec match.",
+      "reason": "Candidate 0 is a 100% spec match and the product type 'waterproof box' matches the source product exactly, although it is not a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -148,7 +148,7 @@
       "target_url": "https://www.homepro.co.th/p/1226525",
       "expected_url": "https://www.homepro.co.th/p/1226525",
       "confidence": 95,
-      "reason": "The candidate is a garden hose of the same hose diameter and a very close length (15M vs 16M) with a highly preferred brand.",
+      "reason": "The candidate is a preferred brand (SPRING) garden hose with a 1/2 inch size, matching the critical product type and primary specifications, despite a slightly shorter length (15M vs 16M).",
       "gt_status": "CORRECT"
     },
     {
@@ -161,8 +161,8 @@
       "target_brand": "DEXZON",
       "target_url": "https://www.homepro.co.th/p/1153945",
       "expected_url": "https://www.homepro.co.th/p/1153945",
-      "confidence": 70,
-      "reason": "Candidate 2 is a traffic vest, matching the critical product type, and is from the most preferred brand DEXZON. Although spec match is low, other candidates are different product types.",
+      "confidence": 75,
+      "reason": "The best match is 'เสื้อจราจรสะท้อนแสง 2 แถบ HS713 สีส้ม' by DEXZON, which is a preferred brand (PREFFERED#1) and also a 'reflective vest' which is a type of 'traffic vest'.",
       "gt_status": "CORRECT"
     }
   ]

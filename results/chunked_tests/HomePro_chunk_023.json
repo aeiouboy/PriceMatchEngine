@@ -4,12 +4,12 @@
   "start_idx": 330,
   "end_idx": 345,
   "products_tested": 15,
-  "matches_found": 8,
+  "matches_found": 7,
   "correct": 5,
-  "incorrect": 3,
+  "incorrect": 2,
   "gt_missing": 0,
-  "accuracy": 62.5,
-  "timestamp": "2025-12-04T02:56:33.643001",
+  "accuracy": 71.42857142857143,
+  "timestamp": "2025-12-04T04:14:40.541900",
   "matches": [
     {
       "chunk": 23,
@@ -22,7 +22,7 @@
       "target_url": "https://www.homepro.co.th/p/1176083",
       "expected_url": "https://www.homepro.co.th/p/1185016",
       "confidence": 95,
-      "reason": "The candidate is a self-drilling screw from a preferred brand (DEXZON) with an exact match on dimensions and size_inch.",
+      "reason": "The candidate is a self-drilling screw from a preferred brand (DEXZON) with a 100% spec match, including dimensions and size.",
       "gt_status": "INCORRECT"
     },
     {
@@ -36,7 +36,7 @@
       "target_url": "https://www.homepro.co.th/p/1030366",
       "expected_url": "https://www.homepro.co.th/p/1030366",
       "confidence": 95,
-      "reason": "The candidate is a dish drying rack (equivalent to dish rack), has a 100% spec match on length (80CM), and is from a preferred brand (KECH).",
+      "reason": "The candidate is a dish drying rack, the same product type, with 100% spec match on length and from a preferred brand (KECH).",
       "gt_status": "CORRECT"
     },
     {
@@ -49,23 +49,9 @@
       "target_brand": "BY TORA",
       "target_url": "https://www.homepro.co.th/p/1076795",
       "expected_url": "https://www.homepro.co.th/p/1076795",
-      "confidence": 75,
-      "reason": "Candidate 15 is a 'dry chemical fire extinguisher', matching the product type, and has the model identifier with a similar specification, making it the most suitable alternative.",
+      "confidence": 90,
+      "reason": "The candidate is a dry chemical fire extinguisher with the same model number (4A5B) as the source product, and it is a directly equivalent product despite the brand not being a top preferred one.",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 23,
-      "source_idx": 338,
-      "source_name": "เตาแก๊สปิกนิก ชุด 4 ชิ้น ZAGIO รุ่น ZG-1551 สีดำ-สเตนเลส",
-      "source_brand": "ZAGIO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60286042",
-      "target_name": "เตาแก๊สปิกนิก AIKO EGP-1000 BLACK",
-      "target_brand": "AIKO",
-      "target_url": "https://www.homepro.co.th/p/1147572",
-      "expected_url": "https://www.homepro.co.th/p/1192960",
-      "confidence": 70,
-      "reason": "The candidate is exactly the correct product type (picnic stove) and from a preferred brand (AIKO), despite a 0% spec match on enumerated details.",
-      "gt_status": "INCORRECT"
     },
     {
       "chunk": 23,
@@ -77,8 +63,8 @@
       "target_brand": "ACCO",
       "target_url": "https://www.homepro.co.th/p/191609",
       "expected_url": "https://www.homepro.co.th/p/191609",
-      "confidence": 60,
-      "reason": "Candidate 2 (ACCO) is a preferred brand (PREFERRED#4) and is a garbage bag with matching dimensions 36x45 inches, despite a lower pack count.",
+      "confidence": 85,
+      "reason": "Candidate 2 is a trash bag with matching dimensions (36x45 inches) and is from a preferred brand (ACCO), despite a slightly lower pack count.",
       "gt_status": "CORRECT"
     },
     {
@@ -92,7 +78,7 @@
       "target_url": "https://www.homepro.co.th/p/1173468",
       "expected_url": "https://www.homepro.co.th/p/1121822",
       "confidence": 95,
-      "reason": "Candidate 0 is a preferred brand (SPRING) and has a 100% spec match (size_inch=72 inch) for the plastic tarp type.",
+      "reason": "Candidate 0 (SPRING) is a preferred brand and has 100% spec match (72 inch x 40หลา) and the product type 'canvas' is considered an equivalent of 'plastic sheeting' with similar use case despite the slight difference in material description.",
       "gt_status": "INCORRECT"
     },
     {
@@ -106,7 +92,7 @@
       "target_url": "https://www.homepro.co.th/p/1056287",
       "expected_url": "https://www.homepro.co.th/p/1056287",
       "confidence": 95,
-      "reason": "The candidate 'สแคว์บ๊อกตื้น ELECKTA 4X4 นิ้ว' is a square box, matching the product type and all key specifications (dimensions and size) perfectly with high SpecMatch (100%).",
+      "reason": "Candidate 0 is a shallow box with matching dimensions and size, making it a strong equivalent to the source's box type.",
       "gt_status": "CORRECT"
     },
     {
@@ -119,8 +105,8 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/1276400",
       "expected_url": "https://www.homepro.co.th/p/1276400",
-      "confidence": 95,
-      "reason": "The candidate is a shelf, has the top preferred brand STACKO, and a 100% spec match including exact dimensions and number of tiers.",
+      "confidence": 100,
+      "reason": "The candidate is a perfect spec match for dimensions, length, and tiers, and is from the highest preferred brand STACKO.",
       "gt_status": "CORRECT"
     }
   ]

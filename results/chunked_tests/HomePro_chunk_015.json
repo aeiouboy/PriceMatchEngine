@@ -9,7 +9,7 @@
   "incorrect": 0,
   "gt_missing": 0,
   "accuracy": 100.0,
-  "timestamp": "2025-12-03T18:05:29.636161",
+  "timestamp": "2025-12-04T04:07:30.582104",
   "matches": [
     {
       "chunk": 15,
@@ -21,8 +21,8 @@
       "target_brand": "DEXZON",
       "target_url": "https://www.homepro.co.th/p/1251658",
       "expected_url": "https://www.homepro.co.th/p/1251658",
-      "confidence": 75,
-      "reason": "The candidate is a preferred brand (DEXZON), has the correct product type (scaffolding castor), and a high spec match (66%) including the presence of a brake, though the size is in inches instead of cm.",
+      "confidence": 90,
+      "reason": "Candidate 0 is a scaffolding caster from the preferred brand DEXZON with a good spec match on brake and similar size (8 inch vs 20 cm).",
       "gt_status": "CORRECT"
     },
     {
@@ -35,8 +35,8 @@
       "target_brand": "ME LIVING",
       "target_url": "https://www.homepro.co.th/p/1230386",
       "expected_url": "https://www.homepro.co.th/p/1230386",
-      "confidence": 100,
-      "reason": "The candidate is a storage box with the exact same volume (235 L) as the source, and is from a preferred brand (ME LIVING). The SpecMatch is 100%.",
+      "confidence": 90,
+      "reason": "Candidate 0 is a storage box with the exact same volume (235 L) and is from a preferred brand (ME LIVING). The source model WIN-DCS903 is likely a KASSA HOME specific model name, and the ME LIVING product has a different model 903L that is likely its equivalent.",
       "gt_status": "CORRECT"
     },
     {
@@ -50,7 +50,7 @@
       "target_url": "https://www.homepro.co.th/p/1162955",
       "expected_url": "https://www.homepro.co.th/p/1162955",
       "confidence": 90,
-      "reason": "The candidate is a 'pvc pipe cutter' which closely matches the source's 'pipe cutter' product type, is by the most preferred brand MATALL, and has a 50% spec match.",
+      "reason": "The candidate is a pipe cutter by MATALL (a preferred brand) with a 50% spec match, making it the closest available alternative to the source product.",
       "gt_status": "CORRECT"
     },
     {
@@ -64,7 +64,7 @@
       "target_url": "https://www.homepro.co.th/p/1220492",
       "expected_url": "https://www.homepro.co.th/p/1220492",
       "confidence": 95,
-      "reason": "Candidate has a matching product type (trash can) and volume (12L), and is from a preferred brand (ACCO).",
+      "reason": "Candidate 0 is a trash can with the correct volume (12 L) and a preferred brand (ACCO), making it a strong equivalent to the source product.",
       "gt_status": "CORRECT"
     }
   ]

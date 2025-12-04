@@ -9,20 +9,34 @@
   "incorrect": 2,
   "gt_missing": 0,
   "accuracy": 60.0,
-  "timestamp": "2025-12-04T03:04:46.092677",
+  "timestamp": "2025-12-04T04:23:04.176223",
   "matches": [
+    {
+      "chunk": 33,
+      "source_idx": 481,
+      "source_name": "กล่องอเนกประสงค์พร้อมล้อและฝาล็อก KASSA HOME รุ่น KPC-K40B ขนาด 40 ลิตร สีดำ",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60234565",
+      "target_name": "กล่องเก็บของ STACKO 2006 39X55X28 ซม. สีเทา",
+      "target_brand": "STACKO",
+      "target_url": "https://www.homepro.co.th/p/1120669",
+      "expected_url": "https://www.homepro.co.th/p/195587",
+      "confidence": 70,
+      "reason": "The source product is a storage box, and candidate 2 is also a storage box from a preferred brand (STACKO), although the volume specification is not directly comparable, the core product type matches.",
+      "gt_status": "INCORRECT"
+    },
     {
       "chunk": 33,
       "source_idx": 485,
       "source_name": "ตู้ลิ้นชักอเนกประสงค์ท็อปไม้ 5 ชั้น (โครงทึบ) KASSA HOME รุ่น UDC-A05AB5 ขนาด 63 x 40 x 112 ซม.",
       "source_brand": "KASSA HOME",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60372921",
-      "target_name": "ตู้ลิ้นชัก 5 ชั้น STACKO MAX(L) 58.5x41x109 ซม. สีใส",
+      "target_name": "ชั้นลิ้นชัก 5 ชั้น STACKO BONNIE 32.2x36.5x91 ซม. สีขาว",
       "target_brand": "STACKO",
-      "target_url": "https://www.homepro.co.th/p/1150070",
+      "target_url": "https://www.homepro.co.th/p/1245455",
       "expected_url": "https://www.homepro.co.th/p/1102787",
       "confidence": 65,
-      "reason": "The candidate is a preferred brand (STACKO), has a matching product type (drawer cabinet) and number of tiers (5 tiers), and its dimensions are acceptably close to the source.",
+      "reason": "The candidate is a preferred brand (STACKO), has the correct product type (drawer cabinet), and matches on 5 tiers, but the dimensions are significantly different. However, it's the closest available match.",
       "gt_status": "INCORRECT"
     },
     {
@@ -35,8 +49,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1165025",
       "expected_url": "https://www.homepro.co.th/p/1165025",
-      "confidence": 75,
-      "reason": "The candidate has the highest spec match percentage at 70%, is the exact product type, and is from the most preferred brand (MATALL).",
+      "confidence": 90,
+      "reason": "Candidate is a tool kit (subtype of tool set) from the preferred brand MATALL, with a very close pack count (62 pcs vs 61 pcs) resulting in a high SpecMatch of 70%.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,8 +63,8 @@
       "target_brand": "DEXZON",
       "target_url": "https://www.homepro.co.th/p/1184365",
       "expected_url": "https://www.homepro.co.th/p/1184365",
-      "confidence": 95,
-      "reason": "The candidate is a self-drilling screw from a preferred brand (DEXZON) with a 100% spec match, including dimensions and size.",
+      "confidence": 100,
+      "reason": "Candidate 0 is a perfect match for product type, dimensions, and preferred brand (DEXZON is PREFERRED#1 with 100% spec match).",
       "gt_status": "CORRECT"
     },
     {
@@ -64,22 +78,8 @@
       "target_url": "https://www.homepro.co.th/p/195633",
       "expected_url": "https://www.homepro.co.th/p/195633",
       "confidence": 95,
-      "reason": "The candidate is the correct product type (bubble wrap), matches all key specifications, and is a preferred brand (PACK IN).",
+      "reason": "The candidate has a 100% spec match, is the correct product type (bubble wrap), and belongs to a preferred brand.",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 33,
-      "source_idx": 491,
-      "source_name": "ประตูภายใน UPVC พร้อมวงกบ KASSA รุ่น BT-002 ขนาด 70 x 200 ซม. สีขาว (ไม่เจาะลูกบิด)",
-      "source_brand": "KASSA",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60392591",
-      "target_name": "ประตู UPVC ASARA G925 ดอกซากุระ 70x200 ซม. สีขาว พร้อมวงกบ ไม่เจาะลูกบิด",
-      "target_brand": "ASARA",
-      "target_url": "https://www.homepro.co.th/p/1157824",
-      "expected_url": "https://www.homepro.co.th/p/1093233",
-      "confidence": 85,
-      "reason": "Candidate 8 is an UPVC door with the same dimensions and 'no knob hole' feature as the source, making it the closest match despite not being a preferred brand.",
-      "gt_status": "INCORRECT"
     }
   ]
 }

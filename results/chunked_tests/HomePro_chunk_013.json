@@ -5,11 +5,11 @@
   "end_idx": 195,
   "products_tested": 15,
   "matches_found": 6,
-  "correct": 4,
-  "incorrect": 2,
+  "correct": 5,
+  "incorrect": 1,
   "gt_missing": 0,
-  "accuracy": 66.66666666666666,
-  "timestamp": "2025-12-03T18:03:42.077487",
+  "accuracy": 83.33333333333334,
+  "timestamp": "2025-12-04T04:05:26.335654",
   "matches": [
     {
       "chunk": 13,
@@ -22,7 +22,7 @@
       "target_url": "https://www.homepro.co.th/p/1158408",
       "expected_url": "https://www.homepro.co.th/p/1158408",
       "confidence": 90,
-      "reason": "Candidate is an oil paint brush of the same size and type, and has a high spec match percentage.",
+      "reason": "Candidate 9 is an oil paint brush with a perfect spec match for size, and while not a preferred brand, it's the only one with the correct product type.",
       "gt_status": "CORRECT"
     },
     {
@@ -31,13 +31,13 @@
       "source_name": "กล่องกันน้ำ GIANT KINGKONG รุ่น V-128 ขนาด 4 x 4 นิ้ว สีขาว",
       "source_brand": "GIANT KINGKONG",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60388257",
-      "target_name": "กล่องกันน้ำ SOKAWA 4x4 นิ้ว สีเหลือง",
-      "target_brand": "SOKAWA",
-      "target_url": "https://www.homepro.co.th/p/1115049",
+      "target_name": "กล่องพลาสติกกันน้ำ ELECKTA 4x4 นิ้ว สีขาว",
+      "target_brand": "ELECKTA",
+      "target_url": "https://www.homepro.co.th/p/1137997",
       "expected_url": "https://www.homepro.co.th/p/1137997",
-      "confidence": 98,
-      "reason": "The candidate is a perfect spec match for dimensions, size, and product type, differing only in brand and color.",
-      "gt_status": "INCORRECT"
+      "confidence": 95,
+      "reason": "The candidate is a 'plastic box' which is a very close match to 'waterproof box' and has a 100% spec match for dimensions and size. Although not a preferred brand, ELECKTA is listed as PREFERRED#9.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 13,
@@ -50,7 +50,7 @@
       "target_url": "https://www.homepro.co.th/p/1049741",
       "expected_url": "https://www.homepro.co.th/p/1049741",
       "confidence": 75,
-      "reason": "The candidate has the exact same product type, a preferred brand (MATALL), and shares the model number HL3042-P as a key identifier, despite a lower calculated spec match percentage for other criteria. The source and candidate appear to be the exact same product from different brands.",
+      "reason": "Candidate 15 is a tool box, matches the source product type, and is from a preferred brand (MATALL) with a matching model identifier (HL3042-P).",
       "gt_status": "CORRECT"
     },
     {
@@ -63,8 +63,8 @@
       "target_brand": "CARINI",
       "target_url": "https://www.homepro.co.th/p/1091371",
       "expected_url": "https://www.homepro.co.th/p/1091371",
-      "confidence": 90,
-      "reason": "The candidate is the correct product type (track light), features a preferred brand (CARINI), and shares the key identifier 'GU5' which is highly specific.",
+      "confidence": 75,
+      "reason": "Candidate is the same product type (track light), matches the 'GU5' identifier, and is from the highest preferred brand (CARINI), despite model number variation.",
       "gt_status": "CORRECT"
     },
     {
@@ -78,7 +78,7 @@
       "target_url": "https://www.homepro.co.th/p/1153132",
       "expected_url": "https://www.homepro.co.th/p/1153132",
       "confidence": 90,
-      "reason": "Candidate 0 is an OPP packing tape with matching size and identifiers, and is from a preferred brand.",
+      "reason": "Candidate 0 is the only packing tape and matches the X 45 identifier and is from a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -92,7 +92,7 @@
       "target_url": "https://www.homepro.co.th/p/1178949",
       "expected_url": "https://www.homepro.co.th/p/1157496",
       "confidence": 95,
-      "reason": "The candidate is a sealant gun with the same size and a preferred brand (DEXZON), resulting in a 100% spec match for critical attributes and a brand match.",
+      "reason": "The candidate is a 'silicone gun' which is a very close functional match to a 'caulking gun', and shares the critical 'size_inch' spec of 9 inches. It is also from a PREFERRED brand (DEXZON) with 100% SpecMatch for the size.",
       "gt_status": "INCORRECT"
     }
   ]

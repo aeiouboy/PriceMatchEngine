@@ -5,11 +5,11 @@
   "end_idx": 210,
   "products_tested": 15,
   "matches_found": 6,
-  "correct": 5,
-  "incorrect": 1,
+  "correct": 6,
+  "incorrect": 0,
   "gt_missing": 0,
-  "accuracy": 83.33333333333334,
-  "timestamp": "2025-12-03T18:04:37.596631",
+  "accuracy": 100.0,
+  "timestamp": "2025-12-04T04:06:15.840636",
   "matches": [
     {
       "chunk": 14,
@@ -21,8 +21,8 @@
       "target_brand": "PACK IN",
       "target_url": "https://www.homepro.co.th/p/1153064",
       "expected_url": "https://www.homepro.co.th/p/1153064",
-      "confidence": 70,
-      "reason": "The candidate has a matching product type (opp tape vs packing tape), a high SpecMatch% (50%), and is from a preferred brand (PACK IN).",
+      "confidence": 75,
+      "reason": "Candidate 1 is a packing tape from a preferred brand (PACK IN) and has matching dimensions and pack count. The color difference (brown vs. tea) is a minor aesthetic variation often considered equivalent for house brand matching.",
       "gt_status": "CORRECT"
     },
     {
@@ -36,7 +36,7 @@
       "target_url": "https://www.homepro.co.th/p/1204502",
       "expected_url": "https://www.homepro.co.th/p/1204502",
       "confidence": 95,
-      "reason": "The candidate 'สายยางม้วน PVC เด้ง SPRING 5/8 นิ้ว x 30 ม. สีน้ำเงิน' is a garden hose with matching size and length, from the preferred brand SPRING, and has a high spec match of 89%.",
+      "reason": "The candidate is a garden hose with matching size and length, and is from the highest preferred brand SPRING.",
       "gt_status": "CORRECT"
     },
     {
@@ -50,7 +50,7 @@
       "target_url": "https://www.homepro.co.th/p/1103618",
       "expected_url": "https://www.homepro.co.th/p/1103618",
       "confidence": 70,
-      "reason": "The candidate has a 100% spec match for volume and is of a preferred brand, but the product type is slightly different (electric kettle vs electric water boiler).",
+      "reason": "The candidate has the exact same volume and product type as the source, is from a preferred brand (MITSUMARU - PREFERRED#1), and shares common identifiers.",
       "gt_status": "CORRECT"
     },
     {
@@ -63,8 +63,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1168190",
       "expected_url": "https://www.homepro.co.th/p/1168190",
-      "confidence": 80,
-      "reason": "The candidate is a wheelbarrow from a preferred brand (MATALL) and has the correct product type, despite lacking specific attribute matches in the provided data, a common issue when original specs are not fully parsed.",
+      "confidence": 75,
+      "reason": "The candidate is a wheelbarrow from a preferred brand (MATALL) and is the only other wheelbarrow among the alternatives, despite a low initial SpecMatch.",
       "gt_status": "CORRECT"
     },
     {
@@ -78,7 +78,7 @@
       "target_url": "https://www.homepro.co.th/p/1112300",
       "expected_url": "https://www.homepro.co.th/p/1112300",
       "confidence": 95,
-      "reason": "The candidate is a trash can with the exact same volume (120 L) and is the closest product type match to the source 'trash bin'.",
+      "reason": "The candidate is a trash bin with the exact same volume (120 L) and is the same product type as the source trash can, making it a strong spec match, despite not being a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -87,13 +87,13 @@
       "source_name": "โคมดาวน์ไลท์หน้ากลม 4 นิ้ว LED 9W Daylight LUZINO รุ่น PN-JYX0101-9W/DL สีขาว",
       "source_brand": "LUZINO",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60308450",
-      "target_name": "ดาวน์ไลท์ LED PHILIPS 59449 MESON105 4 นิ้ว 9 วัตต์ DAYLIGHT สีขาว",
-      "target_brand": "PHILIPS",
-      "target_url": "https://www.homepro.co.th/p/1112838",
+      "target_name": "ดาวน์ไลท์ LED RACER EVO TECH 4 นิ้ว 9 วัตต์ DAYLIGHT สีขาว",
+      "target_brand": "RACER",
+      "target_url": "https://www.homepro.co.th/p/1145118",
       "expected_url": "https://www.homepro.co.th/p/1145118",
-      "confidence": 75,
-      "reason": "Candidate has the highest SpecMatch and is a downlight, matching wattage, size, and color temperature. Although not a preferred brand, it's the closest match.",
-      "gt_status": "INCORRECT"
+      "confidence": 85,
+      "reason": "Candidate 1 has the highest SpecMatch% (60%) among preferred brands, perfectly matching wattage, size, and color temperature with the source product's type (downlight).",
+      "gt_status": "CORRECT"
     }
   ]
 }

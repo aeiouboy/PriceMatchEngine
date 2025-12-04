@@ -5,11 +5,11 @@
   "end_idx": 465,
   "products_tested": 15,
   "matches_found": 6,
-  "correct": 4,
-  "incorrect": 2,
+  "correct": 3,
+  "incorrect": 3,
   "gt_missing": 0,
-  "accuracy": 66.66666666666666,
-  "timestamp": "2025-12-04T03:02:56.554703",
+  "accuracy": 50.0,
+  "timestamp": "2025-12-04T04:21:34.952673",
   "matches": [
     {
       "chunk": 31,
@@ -21,8 +21,8 @@
       "target_brand": "FURDINI",
       "target_url": "https://www.homepro.co.th/p/1287255",
       "expected_url": "https://www.homepro.co.th/p/1169721",
-      "confidence": 75,
-      "reason": "The candidate is a FURDINI dining chair, matching the product type and a preferred brand, with a reasonable price difference.",
+      "confidence": 70,
+      "reason": "The candidate is a dining chair from the most preferred brand FURDINI, matching the critical product type and brand preference.",
       "gt_status": "INCORRECT"
     },
     {
@@ -35,8 +35,8 @@
       "target_brand": "ACCO",
       "target_url": "https://www.homepro.co.th/p/1255584",
       "expected_url": "https://www.homepro.co.th/p/1255584",
-      "confidence": 85,
-      "reason": "Candidate is the same product type, a preferred brand, and has dimensions (22x22 cm) close to the source (20x20 cm), and matches the pack count (20pcs).",
+      "confidence": 75,
+      "reason": "Candidate 20 is a 'multipurpose cloth' with a matching category and an ACCO brand, which is a PREFERRED brand. While the dimensions are slightly off (22x22 vs 20x20) and the price is higher, it is the best available match given the lack of perfect matches and the preference for ACCO.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,8 +49,8 @@
       "target_brand": "PUMPKIN",
       "target_url": "https://www.homepro.co.th/p/1176512",
       "expected_url": "https://www.homepro.co.th/p/1176512",
-      "confidence": 90,
-      "reason": "The candidate is also a 19-inch plastic tool box, matching the source product type and critical size specification, and has the highest SpecMatch.",
+      "confidence": 95,
+      "reason": "The candidate is also a tool box and matches the critical size spec of 19 inches exactly, with a high SpecMatch%.",
       "gt_status": "CORRECT"
     },
     {
@@ -63,8 +63,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1181364",
       "expected_url": "https://www.homepro.co.th/p/1181364",
-      "confidence": 95,
-      "reason": "Candidate 0 is a preferred brand (MATALL) and has a 100% spec match, sharing the same product type and critical 'size_inch' spec as the source product.",
+      "confidence": 100,
+      "reason": "The candidate is a paint roller of the same size (7 inch) and a preferred brand (MATALL) with 100% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -73,13 +73,13 @@
       "source_name": "ผ้าเช็ดอเนกประสงค์แบบกล่อง KASSA HOME ขนาด 20 x 20 ซม. (กล่อง 20 แผ่น) สีเขียว",
       "source_brand": "KASSA HOME",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60394649",
-      "target_name": "ผ้าไมโครไฟเบอร์ทำความสะอาดแบบกล่อง ACCO 22x22 ซม. 20 ชิ้น สีเทา",
+      "target_name": "ผ้าไมโครไฟเบอร์แบบกล่อง ACCO 22x22 ซม. สีเทา",
       "target_brand": "ACCO",
-      "target_url": "https://www.homepro.co.th/p/1255549",
+      "target_url": "https://www.homepro.co.th/p/1182203",
       "expected_url": "https://www.homepro.co.th/p/1255549",
-      "confidence": 75,
-      "reason": "Candidate is the correct product type (disposable wipes), has the preferred brand ACCO, and a good spec match for dimensions and pack count. Although dimensions are slightly off (22x22 vs 20x20), the pack count of 20 pieces perfectly matches the source.",
-      "gt_status": "CORRECT"
+      "confidence": 70,
+      "reason": "Candidate 20 is a 'ผ้าไมโครไฟเบอร์แบบกล่อง' (microfiber towel in a box) from the preferred brand ACCO, with dimensions 22x22 cm, which is reasonably close to the source's 20x20 cm dimensions and is also a 'towel' PRODUCT TYPE.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 31,
@@ -91,8 +91,8 @@
       "target_brand": "DEXZON",
       "target_url": "https://www.homepro.co.th/p/1174886",
       "expected_url": "https://www.homepro.co.th/p/1172635",
-      "confidence": 90,
-      "reason": "Candidate 0 is a face mask, matches the pack count, and is from the most preferred brand DEXZON.",
+      "confidence": 95,
+      "reason": "The candidate is a face mask, has the exact pack count, is a preferred brand (DEXZON), and has 100% spec match.",
       "gt_status": "INCORRECT"
     }
   ]

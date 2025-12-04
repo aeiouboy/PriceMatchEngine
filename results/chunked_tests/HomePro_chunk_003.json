@@ -4,27 +4,13 @@
   "start_idx": 30,
   "end_idx": 45,
   "products_tested": 15,
-  "matches_found": 4,
-  "correct": 2,
-  "incorrect": 2,
+  "matches_found": 3,
+  "correct": 3,
+  "incorrect": 0,
   "gt_missing": 0,
-  "accuracy": 50.0,
-  "timestamp": "2025-12-04T03:07:17.276924",
+  "accuracy": 100.0,
+  "timestamp": "2025-12-04T03:56:20.093106",
   "matches": [
-    {
-      "chunk": 3,
-      "source_idx": 31,
-      "source_name": "กระทะด้ามสเตนเลสทรงตื้น 24 ซม. Plata KASSA HOME รุ่น CC-0022 สีเงิน",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60299411",
-      "target_name": "กระทะตื้น 24 ซม. TEFAL EVERYDAY COOKING",
-      "target_brand": "TEFAL",
-      "target_url": "https://www.homepro.co.th/p/1118583",
-      "expected_url": "https://www.homepro.co.th/p/1114764",
-      "confidence": 95,
-      "reason": "The candidate is a frying pan with the same length (24CM) as the source product, making it a strong spec match, even though the brand is not preferred.",
-      "gt_status": "INCORRECT"
-    },
     {
       "chunk": 3,
       "source_idx": 33,
@@ -35,8 +21,8 @@
       "target_brand": "ME LIVING",
       "target_url": "https://www.homepro.co.th/p/1248873",
       "expected_url": "https://www.homepro.co.th/p/1248873",
-      "confidence": 70,
-      "reason": "The candidate is a preferred brand and has the highest SpecMatch (63%) with the same product type and number of tiers, which is the closest available alternative despite slightly different dimensions.",
+      "confidence": 75,
+      "reason": "The candidate is also a 4-tier chest of drawers (wicker drawer cabinet is a close enough type) from a preferred brand, with a good spec match for the number of tiers, but the length does not match.",
       "gt_status": "CORRECT"
     },
     {
@@ -50,22 +36,22 @@
       "target_url": "https://www.homepro.co.th/p/1147572",
       "expected_url": "https://www.homepro.co.th/p/1147572",
       "confidence": 90,
-      "reason": "The candidate 'เตาแก๊สปิกนิก AIKO EGP-1000 BLACK' is a 'picnic stove' with a 50% spec match, and AIKO is a preferred brand (ranked #4).",
+      "reason": "The candidate has the exact same product type 'picnic stove' as the source, is from a preferred brand (AIKO), and has a 50% spec match.",
       "gt_status": "CORRECT"
     },
     {
       "chunk": 3,
-      "source_idx": 38,
-      "source_name": "ไม้แขวนเสื้อหัวเหล็ก ตัวเคลือบ PVC Sandee KASSA HOME รุ่น LMS1172-2.2 (แพ็ก 6 ชิ้น) สีเขียว",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60372118",
-      "target_name": "ไม้แขวนเสื้อ PLIM H-059 สีขาว แพ็ก 6 ชิ้น",
-      "target_brand": "PLIM",
-      "target_url": "https://www.homepro.co.th/p/1249480",
-      "expected_url": "https://www.homepro.co.th/p/1221406",
-      "confidence": 95,
-      "reason": "The candidate is a hanger and has an exact match on 'pack_count' with a preferred brand (PLIM) and 100% SpecMatch.",
-      "gt_status": "INCORRECT"
+      "source_idx": 44,
+      "source_name": "เหล็กเพลทสี่เหลี่ยมหนา 6 มม. (เจาะรู 1.2ซม.) GIANT KINGKONG รุ่น HSD-1050-50 ขนาด 4 x 4 นิ้ว",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60315066",
+      "target_name": "แผ่นเหล็กเพลทเหลี่ยม (เจาะรู 3/8 นิ้ว) BIH 4X4X1/4 นิ้ว",
+      "target_brand": "BIH",
+      "target_url": "https://www.homepro.co.th/p/1144388",
+      "expected_url": "https://www.homepro.co.th/p/1144388",
+      "confidence": 75,
+      "reason": "Candidate 15 is a steel plate, matching the critical product type, and has similar dimensions to the source product, despite a lower SpecMatch% due to slight size discrepancy.",
+      "gt_status": "CORRECT"
     }
   ]
 }

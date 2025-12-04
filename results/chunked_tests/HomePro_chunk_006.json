@@ -4,13 +4,27 @@
   "start_idx": 75,
   "end_idx": 90,
   "products_tested": 15,
-  "matches_found": 6,
+  "matches_found": 8,
   "correct": 2,
-  "incorrect": 4,
+  "incorrect": 6,
   "gt_missing": 0,
-  "accuracy": 33.33333333333333,
-  "timestamp": "2025-12-04T03:08:08.874725",
+  "accuracy": 25.0,
+  "timestamp": "2025-12-04T03:58:49.585140",
   "matches": [
+    {
+      "chunk": 6,
+      "source_idx": 77,
+      "source_name": "ถังขยะมีล้อและที่เหยียบ GIANT KINGKONG รุ่น YY-240C-RD ความจุ 240 ลิตร สีแดง",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60332257",
+      "target_name": "ถังขยะเหลี่ยมขาเหยียบ ฝาเปิด-ปิด ACCO 240 ลิตร สีแดง",
+      "target_brand": "ACCO",
+      "target_url": "https://www.homepro.co.th/p/1154350",
+      "expected_url": "https://www.homepro.co.th/p/1154350",
+      "confidence": 95,
+      "reason": "The candidate is the same product type (trash can) with an exact volume match (240 L) to the source product. Although not a preferred brand, it is the only candidate that matches the critical product type and primary spec.",
+      "gt_status": "CORRECT"
+    },
     {
       "chunk": 6,
       "source_idx": 78,
@@ -21,8 +35,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1157044",
       "expected_url": "https://www.homepro.co.th/p/1102878",
-      "confidence": 60,
-      "reason": "The candidate is an aluminum ladder with 5 steps, matching the critical product type and step count of the source, and is a preferred brand (MATALL).",
+      "confidence": 80,
+      "reason": "The candidate is the same product type (ladder) and has a preferred brand with a good spec match on the number of steps.",
       "gt_status": "INCORRECT"
     },
     {
@@ -36,7 +50,7 @@
       "target_url": "https://www.homepro.co.th/p/183697",
       "expected_url": "https://www.homepro.co.th/p/183697",
       "confidence": 95,
-      "reason": "Candidate 0 is a KECH brand dish drying rack with 2 tiers, matching the source product's type and critical spec, and KECH is a preferred brand (PREFERRED#3).",
+      "reason": "Highest SpecMatch% (100%) and preferred brand (KECH) with exact product type match.",
       "gt_status": "CORRECT"
     },
     {
@@ -45,13 +59,13 @@
       "source_name": "สายยางเด้ง 5/8 นิ้ว FONTE ยาว 20 เมตร",
       "source_brand": "FONTE",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60314436",
-      "target_name": "สายยางม้วนทึบ PVC SPRING 5/8 นิ้วx20 ม. สีน้ำเงิน",
-      "target_brand": "SPRING",
-      "target_url": "https://www.homepro.co.th/p/1096252",
+      "target_name": "สายยางเด้ง GARTENE 5/8 นิ้วX20 ม. สีฟ้า",
+      "target_brand": "GARTENE",
+      "target_url": "https://www.homepro.co.th/p/1132429",
       "expected_url": "https://www.homepro.co.th/p/1096252",
       "confidence": 95,
-      "reason": "Candidate 1 (SPRING) is a garden hose with identical size and length specifications, and SPRING is the top preferred brand. Candidate 0 (GARTENE) is also a good match but SPRING is preferred over GARTENE.",
-      "gt_status": "CORRECT"
+      "reason": "Candidate 0 is a garden hose from a preferred brand (GARTENE) with an excellent spec match (89%) and identical critical specs (size_inch and length).",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 6,
@@ -59,12 +73,12 @@
       "source_name": "โคมไฟผนังภายนอก (PS) 6 นิ้ว E27x1 LUZINO รุ่น JEWEL W06(CL) สีใส",
       "source_brand": "LUZINO",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60252715",
-      "target_name": "ไฟผนังภายนอก CARINI DL8009S-BK สีดำ",
+      "target_name": "ไฟผนังภายนอก CARINI DL8009S-WH สีขาว",
       "target_brand": "CARINI",
-      "target_url": "https://www.homepro.co.th/p/1170743",
+      "target_url": "https://www.homepro.co.th/p/1170703",
       "expected_url": "https://www.homepro.co.th/p/267461",
       "confidence": 85,
-      "reason": "Candidate 5 is a 'wall lamp' which exactly matches the product type of the source, has a preferred brand 'CARINI' (PREFERRED#1), and the highest SpecMatch% (32%) among products of the correct type and preferred brands.",
+      "reason": "Candidate 5 is an outdoor wall lamp from a preferred brand (CARINI) and has the highest product type match with similar specs, despite the lower SpecMatch% due to fewer explicit numeric matches.",
       "gt_status": "INCORRECT"
     },
     {
@@ -77,8 +91,22 @@
       "target_brand": "CARINI",
       "target_url": "https://www.homepro.co.th/p/1074150",
       "expected_url": "https://www.homepro.co.th/p/1021139",
-      "confidence": 80,
-      "reason": "The candidate is a 'pole lamp' from a preferred brand 'CARINI', which is the closest product type and brand match available, despite a low SpecMatch indicating a lack of detailed spec overlap in the provided data.",
+      "confidence": 85,
+      "reason": "Candidate 6 is a 'pole lamp' from a preferred brand (CARINI) with matching product type, making it the best available equivalent despite the low SpecMatch% due to fewer extracted specs.",
+      "gt_status": "INCORRECT"
+    },
+    {
+      "chunk": 6,
+      "source_idx": 84,
+      "source_name": "ม้านั่ง HDPE ลายไม้ Fonte รุ่น SBK-140 ขนาด 140.5 x 28.5 x 42 ซม. สีเทา - ขาว",
+      "source_brand": "FONTE",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60359021",
+      "target_name": "ม้านั่งสนาม SPRING EVELYN PALM สี BRONZE",
+      "target_brand": "SPRING",
+      "target_url": "https://www.homepro.co.th/p/1182193",
+      "expected_url": "https://www.homepro.co.th/p/1087038",
+      "confidence": 70,
+      "reason": "The source product is a 'bench' and candidate 8 is also a 'bench' from the preferred brand 'SPRING', closest product type match among candidates.",
       "gt_status": "INCORRECT"
     },
     {
@@ -91,8 +119,8 @@
       "target_brand": "SPRING",
       "target_url": "https://www.homepro.co.th/p/1226508",
       "expected_url": "https://www.homepro.co.th/p/194138",
-      "confidence": 90,
-      "reason": "The candidate is a preferred brand (SPRING) and has the highest spec match (81%), with a very close length (20M vs 21M) and identical size/diameter.",
+      "confidence": 95,
+      "reason": "Candidate 0 is a garden hose from the preferred brand SPRING, matching the critical product type and having the highest SpecMatch percentage (81%) with closely matching size and length.",
       "gt_status": "INCORRECT"
     }
   ]

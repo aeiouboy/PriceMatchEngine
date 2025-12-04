@@ -9,7 +9,7 @@
   "incorrect": 2,
   "gt_missing": 0,
   "accuracy": 66.66666666666666,
-  "timestamp": "2025-12-03T17:55:09.062831",
+  "timestamp": "2025-12-04T03:57:12.353543",
   "matches": [
     {
       "chunk": 4,
@@ -21,8 +21,8 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/1235138",
       "expected_url": "https://www.homepro.co.th/p/1235138",
-      "confidence": 80,
-      "reason": "Candidate 0 is the correct product type (cable organizer) and has the highest SpecMatch% among preferred brands, with similar dimensions.",
+      "confidence": 75,
+      "reason": "Candidate 0 is a STACKO branded cable organizer with a good spec match (41%) in dimensions and length, making it the closest equivalent product.",
       "gt_status": "CORRECT"
     },
     {
@@ -36,7 +36,7 @@
       "target_url": "https://www.homepro.co.th/p/1247818",
       "expected_url": "https://www.homepro.co.th/p/1245097",
       "confidence": 70,
-      "reason": "The candidate has the exact product type (grass trimmer), a preferred brand (MATALL), and the highest spec match percentage among relevant alternatives.",
+      "reason": "The candidate is a 'brush cutter' and the source is a 'grass trimmer', which are very similar product types, and it's from a preferred brand (MATALL) with 50% spec match.",
       "gt_status": "INCORRECT"
     },
     {
@@ -49,8 +49,8 @@
       "target_brand": "DEXZON",
       "target_url": "https://www.homepro.co.th/p/1251658",
       "expected_url": "https://www.homepro.co.th/p/1144449",
-      "confidence": 85,
-      "reason": "Candidate 0 is a scaffolding caster wheel with a brake, matching the product type and a key spec (brake) of the source, and is from a preferred brand (DEXZON).",
+      "confidence": 75,
+      "reason": "Candidate 0 is the correct product type (scaffolding wheel/caster) and has a brake. It is also from a PREFERRED brand (DEXZON) and has the highest spec match among relevant candidates, though the size is different in units (inches vs cm).",
       "gt_status": "INCORRECT"
     },
     {
@@ -63,8 +63,8 @@
       "target_brand": "TARA",
       "target_url": "https://www.homepro.co.th/p/1092152",
       "expected_url": "https://www.homepro.co.th/p/1092152",
-      "confidence": 75,
-      "reason": "Candidate is the same product type (tile leveling pliers) and a preferred brand (TARA), with a reasonable price, despite low spec match.",
+      "confidence": 80,
+      "reason": "The candidate has the exact same product type (tile leveling pliers) and is from a preferred brand (TARA), despite low spec match due to missing comparable specs.",
       "gt_status": "CORRECT"
     },
     {
@@ -78,7 +78,7 @@
       "target_url": "https://www.homepro.co.th/p/1223708",
       "expected_url": "https://www.homepro.co.th/p/1223708",
       "confidence": 75,
-      "reason": "Candidate 3 is a dining chair from a preferred brand (SB FURNITURE) and has a 50% spec match, making it the best available option, even though full specs aren't present.",
+      "reason": "The candidate is a 'dining chair' (exact product type match) from 'SB FURNITURE' (preferred brand #3), with a 50% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -91,8 +91,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1028878",
       "expected_url": "https://www.homepro.co.th/p/1028878",
-      "confidence": 85,
-      "reason": "Candidate is a plastic trolley with the exact same volume (150 KG) and from a preferred brand (MATALL, PREFERRED#2), although the color and model differ slightly from the source.",
+      "confidence": 95,
+      "reason": "The candidate is a MATALL brand trolley with the same volume (150 KG) as the source product, and MATALL is a preferred brand (PREFERRED#2).",
       "gt_status": "CORRECT"
     }
   ]

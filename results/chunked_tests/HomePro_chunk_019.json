@@ -4,12 +4,12 @@
   "start_idx": 270,
   "end_idx": 285,
   "products_tested": 15,
-  "matches_found": 6,
+  "matches_found": 5,
   "correct": 5,
-  "incorrect": 1,
+  "incorrect": 0,
   "gt_missing": 0,
-  "accuracy": 83.33333333333334,
-  "timestamp": "2025-12-03T18:09:34.974022",
+  "accuracy": 100.0,
+  "timestamp": "2025-12-04T04:10:50.770997",
   "matches": [
     {
       "chunk": 19,
@@ -21,8 +21,8 @@
       "target_brand": "CARINI",
       "target_url": "https://www.homepro.co.th/p/1004031",
       "expected_url": "https://www.homepro.co.th/p/1004031",
-      "confidence": 70,
-      "reason": "The candidate has the highest spec match percentage (40%) and is the correct product type ('post light' often interchangeable with 'post lamp'), and it is from the most preferred brand 'CARINI'.",
+      "confidence": 95,
+      "reason": "Highest SpecMatch% among preferred brands, and product type 'post top light' is considered equivalent to 'post lamp'.",
       "gt_status": "CORRECT"
     },
     {
@@ -36,7 +36,7 @@
       "target_url": "https://www.homepro.co.th/p/1167597",
       "expected_url": "https://www.homepro.co.th/p/1167597",
       "confidence": 100,
-      "reason": "Candidate 0 is the exact product type 'ceiling fan light' (equivalent to 'fan lamp'), shares the identical 52-inch size, a highly preferred brand (CARINI), and has a 100% spec match for the critical 'size_inch' spec.",
+      "reason": "The candidate is a ceiling fan with light, has the highest SpecMatch (100%), and is from a highly preferred brand (CARINI).",
       "gt_status": "CORRECT"
     },
     {
@@ -49,8 +49,8 @@
       "target_brand": "BIH",
       "target_url": "https://www.homepro.co.th/p/1144390",
       "expected_url": "https://www.homepro.co.th/p/1144390",
-      "confidence": 90,
-      "reason": "Candidate 1 is the same product type (steel plate) and has the highest spec match (78%) among preferred brands, with matching dimensions.",
+      "confidence": 95,
+      "reason": "Candidate 1 is a steel plate, matches the critical product type, and has a high spec match percentage of 78% for dimensions/size, and is from a preferred brand (BIH).",
       "gt_status": "CORRECT"
     },
     {
@@ -63,23 +63,9 @@
       "target_brand": "FURDINI",
       "target_url": "https://www.homepro.co.th/p/1231109",
       "expected_url": "https://www.homepro.co.th/p/1231109",
-      "confidence": 75,
-      "reason": "The candidate is a preferred brand 'FURDINI' and is the correct product type 'safe', although specific dimensions are not provided for a direct comparison, it is the most relevant match.",
+      "confidence": 90,
+      "reason": "Candidate is the correct product type ('ตู้นิรภัย' which translates to 'safe') and is from the highest preferred brand 'FURDINI', despite a lower SpecMatch% due to missing specific dimension details. It's a much better type match than other high SpecMatch% candidates.",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 19,
-      "source_idx": 281,
-      "source_name": "ไม้แขวนเสื้อหัวเหล็ก ตัวเคลือบ PVC Sandee KASSA HOME รุ่น LMS1172-2.2 (แพ็ก 6 ชิ้น) สีฟ้า",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60372131",
-      "target_name": "ไม้แขวนเสื้อ PLIM H-059 สีขาว แพ็ก 6 ชิ้น",
-      "target_brand": "PLIM",
-      "target_url": "https://www.homepro.co.th/p/1249480",
-      "expected_url": "https://www.homepro.co.th/p/1221434",
-      "confidence": 95,
-      "reason": "The candidate is a 'hanger' with the exact same pack count and is from a preferred brand (PLIM), making it an excellent product type and spec match.",
-      "gt_status": "INCORRECT"
     },
     {
       "chunk": 19,
@@ -91,8 +77,8 @@
       "target_brand": "COLOR KIT",
       "target_url": "https://www.homepro.co.th/p/1012656",
       "expected_url": "https://www.homepro.co.th/p/1012656",
-      "confidence": 95,
-      "reason": "Candidate 0 is a perfect product type match ('stone mortar and pestle' vs 'mortar and pestle'), has a high SpecMatch of 83% for size (7.5 inch vs 7.6 inch), and is from a preferred brand (COLOR KIT).",
+      "confidence": 85,
+      "reason": "The candidate is the correct product type (mortar and pestle) and has the highest spec match (83%) on size to the source product.",
       "gt_status": "CORRECT"
     }
   ]

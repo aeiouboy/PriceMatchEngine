@@ -4,12 +4,12 @@
   "start_idx": 165,
   "end_idx": 180,
   "products_tested": 15,
-  "matches_found": 9,
-  "correct": 6,
-  "incorrect": 3,
+  "matches_found": 7,
+  "correct": 5,
+  "incorrect": 2,
   "gt_missing": 0,
-  "accuracy": 66.66666666666666,
-  "timestamp": "2025-12-04T03:08:56.933023",
+  "accuracy": 71.42857142857143,
+  "timestamp": "2025-12-04T04:04:36.102598",
   "matches": [
     {
       "chunk": 12,
@@ -21,8 +21,8 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/1104652",
       "expected_url": "https://www.homepro.co.th/p/1104652",
-      "confidence": 70,
-      "reason": "The candidate has the highest SpecMatch% (49%) among preferred brands, matching the product type (drawer cabinet) and number of tiers (4 floors), while having similar dimensions to the source (source: 58x40, candidate: 40x59).",
+      "confidence": 60,
+      "reason": "The selected candidate is a STACKO brand (preferred) 4-tier drawer cabinet with similar dimensions (40x59) and length (90.8CM) to the source (58x40, 93.5CM), indicating a reasonable but not perfect match.",
       "gt_status": "CORRECT"
     },
     {
@@ -35,8 +35,8 @@
       "target_brand": "PACK IN",
       "target_url": "https://www.homepro.co.th/p/194753",
       "expected_url": "https://www.homepro.co.th/p/194753",
-      "confidence": 85,
-      "reason": "The candidate is a 'box' which is a close subtype of 'cardboard box', has identical dimensions, and is from a preferred brand (PACK IN) with a high SpecMatch of 63%.",
+      "confidence": 70,
+      "reason": "The candidate is a 'box' which is a close type match to 'cardboard box', has matching dimensions and length specifications, and is from a preferred brand (PACK IN) ranking 3rd.",
       "gt_status": "CORRECT"
     },
     {
@@ -50,7 +50,7 @@
       "target_url": "https://www.homepro.co.th/p/1003945",
       "expected_url": "https://www.homepro.co.th/p/1032598",
       "confidence": 75,
-      "reason": "The candidate is from the preferred brand CARINI, is the correct product type (post light), and has the highest spec match at 40% for 'lamp_type=POLE_LAMP'.",
+      "reason": "Candidate 0 is the highest preferred brand (CARINI, PREFERRED#1) and has the highest SpecMatch% (40%) among other pole lamps, matching the critical 'lamp_type' spec 'POLE_LAMP' and general product type 'post light' to 'outdoor post lamp'.",
       "gt_status": "INCORRECT"
     },
     {
@@ -59,12 +59,12 @@
       "source_name": "ตู้ลิ้นชักอเนกประสงค์ท็อปไม้ 4 ชั้น (โครงทึบ) KASSA HOME รุ่น UDC-A05AB4 ขนาด 63 x 40 x 90 ซม.",
       "source_brand": "KASSA HOME",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60372918",
-      "target_name": "ตู้ลิ้นชัก 4 ชั้นทึบ STACKO MORI 40x59x90.8 ซม. สีขาว",
-      "target_brand": "STACKO",
-      "target_url": "https://www.homepro.co.th/p/1104652",
+      "target_name": "ตู้บานเปิด 4 ชั้น ME LIVING COLOR VID 70x50x160 ซม.",
+      "target_brand": "ME LIVING",
+      "target_url": "https://www.homepro.co.th/p/1184213",
       "expected_url": "https://www.homepro.co.th/p/1102758",
-      "confidence": 85,
-      "reason": "The candidate is a 'drawer cabinet' with the highest SpecMatch% among preferred brands, and dimensions are within an acceptable range.",
+      "confidence": 60,
+      "reason": "Candidate is the same product type ('cabinet') and a preferred brand, with a reasonable although not perfect spec match for tiers.",
       "gt_status": "INCORRECT"
     },
     {
@@ -78,7 +78,7 @@
       "target_url": "https://www.homepro.co.th/p/1092084",
       "expected_url": "https://www.homepro.co.th/p/1092084",
       "confidence": 75,
-      "reason": "The candidate is the same product type (cable tie), has a good spec match (55%), and matches the key specs of size and pack count.",
+      "reason": "The candidate is also a cable tie with matching size and pack count, though from a different brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -91,36 +91,8 @@
       "target_brand": "COLOR KIT",
       "target_url": "https://www.homepro.co.th/p/1170031",
       "expected_url": "https://www.homepro.co.th/p/1170031",
-      "confidence": 95,
-      "reason": "Candidate has 100% spec match, matching product type (stone mortar and pestle) and size, making it a strong equivalent.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 12,
-      "source_idx": 177,
-      "source_name": "โคมไฟกิ่งภายนอก E27x1 LUZINO รุ่น 0313-WD BK สีดำ",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60370246",
-      "target_name": "ไฟกิ่งภายนอก CARINI BO-G3101/2 สีดำ",
-      "target_brand": "CARINI",
-      "target_url": "https://www.homepro.co.th/p/1003063",
-      "expected_url": "https://www.homepro.co.th/p/1200198",
-      "confidence": 75,
-      "reason": "Candidate 6 is an outdoor wall lamp from the preferred brand CARINI, matching the critical product type of the source.",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 12,
-      "source_idx": 178,
-      "source_name": "ตู้บานเปิดอเนกประสงค์แบบพับเก็บได้ 4 ชั้น KASSA HOME รุ่น C-2026-L4 ขนาด 70 x 46 x 149 ซม.",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60393930",
-      "target_name": "ตู้เสื้อผ้าพับเก็บได้ 4 ชั้น STACKO CLAIRE 69x50x136 ซม. สีขาว",
-      "target_brand": "STACKO",
-      "target_url": "https://www.homepro.co.th/p/1241775",
-      "expected_url": "https://www.homepro.co.th/p/1241775",
-      "confidence": 66,
-      "reason": "The candidate is a STACKO foldable wardrobe with 4 tiers and similar dimensions (69x50) to the source's (70x46), making it the closest match despite a slight difference in type.",
+      "confidence": 100,
+      "reason": "The candidate is a mortar and pestle with matching size, and COLOR KIT is a preferred brand (rank 8).",
       "gt_status": "CORRECT"
     },
     {
@@ -134,7 +106,7 @@
       "target_url": "https://www.homepro.co.th/p/1218486",
       "expected_url": "https://www.homepro.co.th/p/1218486",
       "confidence": 75,
-      "reason": "Candidate is a 'tile leveling kit' from a preferred brand (TARA), which is a very close product type match to 'tile leveling device'. Although the SpecMatch is 0% based on numerical/identifier specs, the product type and brand preference make it the strongest candidate.",
+      "reason": "The candidate is the correct product type (tile leveling kit) and from a preferred brand (TARA), although its model and pack count do not directly match the source.",
       "gt_status": "CORRECT"
     }
   ]

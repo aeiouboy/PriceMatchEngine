@@ -9,7 +9,7 @@
   "incorrect": 1,
   "gt_missing": 0,
   "accuracy": 80.0,
-  "timestamp": "2025-12-03T18:01:46.434823",
+  "timestamp": "2025-12-04T04:03:20.300486",
   "matches": [
     {
       "chunk": 11,
@@ -21,8 +21,8 @@
       "target_brand": "ELECKTA",
       "target_url": "https://www.homepro.co.th/p/1167863",
       "expected_url": "https://www.homepro.co.th/p/1167863",
-      "confidence": 85,
-      "reason": "The candidate is an ELECKTA cable reel, a preferred brand, with high spec match for length, outlets, and the correct product type.",
+      "confidence": 75,
+      "reason": "The candidate is also a cable reel, has the same preferred brand ranking, and matches on length, outlets, and brand, leading to the highest SpecMatch% among preferred brands.",
       "gt_status": "CORRECT"
     },
     {
@@ -35,8 +35,8 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/1150070",
       "expected_url": "https://www.homepro.co.th/p/1138783",
-      "confidence": 60,
-      "reason": "The candidate has the highest SpecMatch% among preferred brands, the same product type (drawer cabinet), and matches the '5 tiers' specification. While dimensions vary, the overall product likeness is the best available.",
+      "confidence": 70,
+      "reason": "The candidate is a preferred brand and has the highest SpecMatch for a 5-tier drawer cabinet, with dimensions reasonably close to the source.",
       "gt_status": "INCORRECT"
     },
     {
@@ -49,8 +49,8 @@
       "target_brand": "ACCO",
       "target_url": "https://www.homepro.co.th/p/1154492",
       "expected_url": "https://www.homepro.co.th/p/1154492",
-      "confidence": 95,
-      "reason": "The candidate is a trash can with the exact same volume (240 L) as the source product. Although the brand is not preferred, it is the only exact spec match for a trash can.",
+      "confidence": 100,
+      "reason": "The candidate is a trash can with the exact same volume (240 L) as the source product, and it is also made by ACCO, a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -63,8 +63,8 @@
       "target_brand": "COLT LITE",
       "target_url": "https://www.homepro.co.th/p/1181331",
       "expected_url": "https://www.homepro.co.th/p/1181331",
-      "confidence": 95,
-      "reason": "The candidate is a door knob for the bathroom, matching the product type and room specification of the source. The model number K5791BKSS is very similar to the source's 5791BK-SS, suggesting a strong product resemblance, despite being from a non-preferred brand.",
+      "confidence": 100,
+      "reason": "The candidate is an exact product type match, shares the critical 'BATHROOM' knob_room spec, and has a related model number (5791BK-SS vs K5791BKSS).",
       "gt_status": "CORRECT"
     },
     {
@@ -78,7 +78,7 @@
       "target_url": "https://www.homepro.co.th/p/1168235",
       "expected_url": "https://www.homepro.co.th/p/1168235",
       "confidence": 100,
-      "reason": "The candidate is the same product type (rope) and brand (DEXZON) is a preferred brand, with 100% spec match on length.",
+      "reason": "Candidate 0 is a rope, the same product type as the source, has identical length and color specifications, and is one of the preferred brands.",
       "gt_status": "CORRECT"
     }
   ]

@@ -9,7 +9,7 @@
   "incorrect": 0,
   "gt_missing": 0,
   "accuracy": 100.0,
-  "timestamp": "2025-12-04T02:58:45.204780",
+  "timestamp": "2025-12-04T04:17:08.399685",
   "matches": [
     {
       "chunk": 26,
@@ -21,8 +21,8 @@
       "target_brand": "NEOFLAM",
       "target_url": "https://www.homepro.co.th/p/1240600",
       "expected_url": "https://www.homepro.co.th/p/1240600",
-      "confidence": 90,
-      "reason": "The candidate is a 'pot with lid' which is the closest product type to 'pot', has a 100% spec match, and while not a preferred brand, it's the best available direct product type match.",
+      "confidence": 95,
+      "reason": "The candidate is a 'pot' and has identical length_cm (24CM) to the source product, and a 100% SpecMatch.",
       "gt_status": "CORRECT"
     },
     {
@@ -35,8 +35,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1247818",
       "expected_url": "https://www.homepro.co.th/p/1247818",
-      "confidence": 60,
-      "reason": "The candidate has the highest spec match percentage (50%) and is a brush cutter, which is a very similar product type to a grass trimmer.",
+      "confidence": 75,
+      "reason": "The candidate is a grass trimmer, matching the product type, has a preferred brand (MATALL), and a 50% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,8 +49,8 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/1263081",
       "expected_url": "https://www.homepro.co.th/p/1263081",
-      "confidence": 70,
-      "reason": "The candidate is a preferred brand (STACKO), has the correct product type (shoe box), matches the dimensions (53x34) and length (99CM), and has a similar concept of 'tiers' or 'outlets' for shoe storage, even though the exact count differs (6 tiers vs 12 outlets).",
+      "confidence": 75,
+      "reason": "The candidate is the same product type, a preferred brand (STACKO), and has a good spec match (63%) with identical dimensions and height (length_cm), despite a different 'outlets' spec instead of 'tiers'.",
       "gt_status": "CORRECT"
     },
     {
@@ -63,8 +63,8 @@
       "target_brand": "ELEKTRA",
       "target_url": "https://www.homepro.co.th/p/1154352",
       "expected_url": "https://www.homepro.co.th/p/1154352",
-      "confidence": 70,
-      "reason": "The candidate is a cable tie, matching the product type, and has a good spec match including size and pack count, even though the brand is not preferred.",
+      "confidence": 85,
+      "reason": "Candidate 1 (ELEKTRA) is a cable tie, matching the product type, has a strong spec match for length and pack count, and is close in price.",
       "gt_status": "CORRECT"
     },
     {
@@ -77,8 +77,8 @@
       "target_brand": "PACK IN",
       "target_url": "https://www.homepro.co.th/p/194752",
       "expected_url": "https://www.homepro.co.th/p/194752",
-      "confidence": 85,
-      "reason": "Candidate 0 is a cardboard box with matching dimensions (40x45x35 cm) and comes from a preferred brand (PACK IN). While the 'tiers' spec is missing, the core product type and dimensions are a strong match.",
+      "confidence": 75,
+      "reason": "The candidate 'กล่องฝาปิด PACK IN 40x45x35 ซม.' is the same product type (box/cardboard box) and has identical dimensions (40x45x35cm) with a preferred brand. Although 'tiers' is not specified, the core function and size match closely.",
       "gt_status": "CORRECT"
     },
     {
@@ -92,7 +92,7 @@
       "target_url": "https://www.homepro.co.th/p/1167138",
       "expected_url": "https://www.homepro.co.th/p/1167138",
       "confidence": 95,
-      "reason": "The candidate is the same product type (putty knife) with an exact size match (3 inch) and is from a preferred brand (MATALL, PREFERRED#1).",
+      "reason": "The candidate is a putty knife with the exact same size (3 inch) and is from the highest preferred brand 'MATALL'.",
       "gt_status": "CORRECT"
     },
     {
@@ -105,8 +105,8 @@
       "target_brand": "SUMO",
       "target_url": "https://www.homepro.co.th/p/1140156",
       "expected_url": "https://www.homepro.co.th/p/1140156",
-      "confidence": 65,
-      "reason": "Candidate 10 is the only female socket type (เพาเวอร์ปลั๊ก 3 ตัวเมีย) and is from a preferred brand (SUMO).",
+      "confidence": 60,
+      "reason": "The candidate has a product type 'socket' which is similar to the source 'socket' and is from a preferred brand (SUMO). Although the spec match is 50%, it's the closest available alternative for the product type.",
       "gt_status": "CORRECT"
     },
     {
@@ -120,7 +120,7 @@
       "target_url": "https://www.homepro.co.th/p/1021279",
       "expected_url": "https://www.homepro.co.th/p/1021279",
       "confidence": 90,
-      "reason": "Candidate 0 is a measuring wheel, matching the product type, has a preferred brand, and has the highest spec match among relevant candidates.",
+      "reason": "Candidate 0 is the only 'measuring wheel' product type and is from a preferred brand (HACHI) with a good spec match.",
       "gt_status": "CORRECT"
     }
   ]

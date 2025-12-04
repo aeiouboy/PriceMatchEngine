@@ -4,27 +4,13 @@
   "start_idx": 15,
   "end_idx": 30,
   "products_tested": 15,
-  "matches_found": 8,
-  "correct": 8,
-  "incorrect": 0,
+  "matches_found": 7,
+  "correct": 6,
+  "incorrect": 1,
   "gt_missing": 0,
-  "accuracy": 100.0,
-  "timestamp": "2025-12-03T17:53:15.838253",
+  "accuracy": 85.71428571428571,
+  "timestamp": "2025-12-04T03:55:32.137956",
   "matches": [
-    {
-      "chunk": 2,
-      "source_idx": 15,
-      "source_name": "โคมไฟหัวเสาภายนอก E27x1 LUZINO รุ่น GD-BL10-E27-40 สีดำ - ใส",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60402143",
-      "target_name": "ไฟหัวเสา CARINI 5018S/N สีดำ",
-      "target_brand": "CARINI",
-      "target_url": "https://www.homepro.co.th/p/1074150",
-      "expected_url": "https://www.homepro.co.th/p/1074150",
-      "confidence": 75,
-      "reason": "The candidate is the same product type (pole lamp) from the highest-ranked preferred brand (CARINI). Although the spec match percentage is 40% (below 50), the product type is critical and matches, and it is a preferred brand.",
-      "gt_status": "CORRECT"
-    },
     {
       "chunk": 2,
       "source_idx": 16,
@@ -36,7 +22,7 @@
       "target_url": "https://www.homepro.co.th/p/1154473",
       "expected_url": "https://www.homepro.co.th/p/1154473",
       "confidence": 100,
-      "reason": "Candidate 0 is a trash can with the exact same volume (240 L) as the source, making it a perfect functional match. Although the brand is not preferred, the critical product type and key spec match are exact.",
+      "reason": "Candidate 0 is the exact product type 'trash can' and has a 100% spec match for volume, making it an equivalent product. While an ACCO brand, the specs are identical.",
       "gt_status": "CORRECT"
     },
     {
@@ -50,7 +36,7 @@
       "target_url": "https://www.homepro.co.th/p/1184261",
       "expected_url": "https://www.homepro.co.th/p/1184261",
       "confidence": 70,
-      "reason": "The source product is a 'drain cleaner powder' and candidate 8 (as well as 9) is also a 'drain cleaner powder'. Candidate 8 is from brand ACCO, which is a preferred brand (ranked #4).",
+      "reason": "The candidate has a matching product type ('drain cleaner powder') and a brand (ACCO) that is on the preferred list, though lower in rank. It also has a 50% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -64,7 +50,7 @@
       "target_url": "https://www.homepro.co.th/p/1154102",
       "expected_url": "https://www.homepro.co.th/p/1154102",
       "confidence": 90,
-      "reason": "Candidate 0 is a metal cutting disc, matches the critical product type, has a high SpecMatch% (78%) and is from the most preferred brand (MATALL).",
+      "reason": "The candidate has the highest SpecMatch%, exactly matches the product type and preferred brand (MATALL) while matching the critical 4-inch size.",
       "gt_status": "CORRECT"
     },
     {
@@ -77,9 +63,23 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/195587",
       "expected_url": "https://www.homepro.co.th/p/195587",
-      "confidence": 95,
-      "reason": "The candidate is a storage box with the exact same volume (42 L) and is from the preferred brand STACKO, despite a different model number.",
+      "confidence": 100,
+      "reason": "The candidate is a storage box with the exact same volume (42 L) and is from the highest preferred brand (STACKO, PREFERRED#1).",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 2,
+      "source_idx": 21,
+      "source_name": "ตู้ลิ้นชักอเนกประสงค์ 4 ชั้น Jasmin KASSA HOME รุ่น API-1500M4 ขนาด 50 x 47.2 x 92.3 ซม. สีพาสเทล",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60335317",
+      "target_name": "ตู้ลิ้นชัก 4 ชั้น STACKO 1200M4 45x40x84 ซม. สีพาสเทล",
+      "target_brand": "STACKO",
+      "target_url": "https://www.homepro.co.th/p/1102019",
+      "expected_url": "https://www.homepro.co.th/p/1117329",
+      "confidence": 60,
+      "reason": "Candidate 0 is a preferred brand (STACKO) and has the highest spec match at 50% with matching product type (drawer cabinet, a subtype of cabinet) and tier count, although dimensions are not a perfect match.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 2,
@@ -91,8 +91,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1163258",
       "expected_url": "https://www.homepro.co.th/p/1163258",
-      "confidence": 70,
-      "reason": "The candidate has the highest spec match percentage among the preferred brands and matches the critical product type 'tool set'. The pack count is close (53 vs 54).",
+      "confidence": 75,
+      "reason": "The candidate is a preferred brand (MATALL) and has the highest spec match at 35%, with a similar 'pack_count' and matching product type 'tool kit'.",
       "gt_status": "CORRECT"
     },
     {
@@ -106,21 +106,7 @@
       "target_url": "https://www.homepro.co.th/p/1098200",
       "expected_url": "https://www.homepro.co.th/p/1098200",
       "confidence": 85,
-      "reason": "Candidate 0 is a STACKO (preferred brand) shelving unit with identical number of tiers and very close dimensions (46x39.5 vs 46x38 and 87cm vs 86cm) resulting in a high SpecMatch of 63%.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 2,
-      "source_idx": 28,
-      "source_name": "โคมไฟหัวเสาภายนอก E27x1 LUZINO รุ่น JEWEL P08(CL) สีใส",
-      "source_brand": "LUZINO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60252718",
-      "target_name": "ไฟหัวเสา CARINI HK-K2013 สีขาว/ดำ",
-      "target_brand": "CARINI",
-      "target_url": "https://www.homepro.co.th/p/1262899",
-      "expected_url": "https://www.homepro.co.th/p/1262899",
-      "confidence": 75,
-      "reason": "The candidate 'ไฟหัวเสา CARINI HK-K2013' is a post lamp, matching the source product type, and is from a preferred brand (CARINI, PREFERRED#1). Although the SpecMatch is 40%, it is the best available option given the product type matches, and other candidates are either wrong product types or have lower overall relevance.",
+      "reason": "Highest preferred brand with closest spec match, including product type and number of tiers.",
       "gt_status": "CORRECT"
     }
   ]

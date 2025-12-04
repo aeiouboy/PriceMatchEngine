@@ -4,12 +4,12 @@
   "start_idx": 345,
   "end_idx": 360,
   "products_tested": 15,
-  "matches_found": 10,
+  "matches_found": 9,
   "correct": 6,
-  "incorrect": 4,
+  "incorrect": 3,
   "gt_missing": 0,
-  "accuracy": 60.0,
-  "timestamp": "2025-12-04T02:57:23.537466",
+  "accuracy": 66.66666666666666,
+  "timestamp": "2025-12-04T04:15:30.335582",
   "matches": [
     {
       "chunk": 24,
@@ -22,7 +22,7 @@
       "target_url": "https://www.homepro.co.th/p/1052627",
       "expected_url": "https://www.homepro.co.th/p/1061675",
       "confidence": 75,
-      "reason": "The candidate is a 'downlight' (subtype of surface-mounted downlight), matches the critical 'size_inch' and is from the highest preferred brand 'CARINI'.",
+      "reason": "The candidate has the exact product type 'downlight' (though not explicitly 'surface downlight', it's the closest), matches the 4-inch size, and is from the highest preferred brand 'CARINI'.",
       "gt_status": "INCORRECT"
     },
     {
@@ -35,8 +35,22 @@
       "target_brand": "CARINI",
       "target_url": "https://www.homepro.co.th/p/1091353",
       "expected_url": "https://www.homepro.co.th/p/1091353",
-      "confidence": 85,
-      "reason": "The candidate is a track light from a preferred brand (CARINI) and shares the 'GU5' and 'CS15' identifiers with the source product, making it a strong alternative despite a lower SpecMatch% due to missing dimension/volume data.",
+      "confidence": 90,
+      "reason": "Candidate 1 (CARINI CS15) is a track light, a preferred brand, and has the most matching specs for a track light product among the candidates.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 24,
+      "source_idx": 348,
+      "source_name": "ฟิล์มยืดพันพาเลท 15 ไมครอน GIANT KINGKONG รุ่น MH50-220-15 ขนาด 0.5 x 220 เมตร สีใส",
+      "source_brand": "GIANT KINGKONG",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60358586",
+      "target_name": "ฟิล์มยืดพันพาเลท PACK IN 15 ไมครอน 50 ซม. x 300 ม. สีใส",
+      "target_brand": "PACK IN",
+      "target_url": "https://www.homepro.co.th/p/195910",
+      "expected_url": "https://www.homepro.co.th/p/195910",
+      "confidence": 70,
+      "reason": "The candidate has the exact product type 'pallet wrap film' which is generally equivalent to 'stretch film', and 'PACK IN' is a preferred brand (ranked #3). Although the length differs (300M vs 220M), it's the closest match by product type and brand preference.",
       "gt_status": "CORRECT"
     },
     {
@@ -49,8 +63,8 @@
       "target_brand": "PACK IN",
       "target_url": "https://www.homepro.co.th/p/1192467",
       "expected_url": "https://www.homepro.co.th/p/1192467",
-      "confidence": 90,
-      "reason": "Candidate 8 is a 'foam sheet' from a preferred brand (PACK IN) and has matching size_inch and similar length_cm, making it the closest available alternative product type.",
+      "confidence": 95,
+      "reason": "The candidate has the exact product type 'foam sheet', the same size_inch and similar length, and is from a preferred brand (PACK IN).",
       "gt_status": "CORRECT"
     },
     {
@@ -64,7 +78,7 @@
       "target_url": "https://www.homepro.co.th/p/1041376",
       "expected_url": "https://www.homepro.co.th/p/1145251",
       "confidence": 75,
-      "reason": "Candidate is a 'drying rack' with a preferred brand (PLIM) and similar dimensions (143x60 vs 144x60.5) and total length (1.4M vs 1.44M).",
+      "reason": "The candidate is a drying rack from a preferred brand (PLIM) and has highly similar dimensions of 143x60cm compared to the source's 144x60.5cm.",
       "gt_status": "INCORRECT"
     },
     {
@@ -77,8 +91,8 @@
       "target_brand": "PLIM",
       "target_url": "https://www.homepro.co.th/p/1266790",
       "expected_url": "https://www.homepro.co.th/p/1266790",
-      "confidence": 85,
-      "reason": "The candidate has the correct product type, a preferred brand (PLIM), and the highest SpecMatch% among relevant alternatives.",
+      "confidence": 80,
+      "reason": "The candidate is the same product type (ironing board) and is from a preferred brand (PLIM) with a 50% spec match, which is the highest spec match among relevant candidates.",
       "gt_status": "CORRECT"
     },
     {
@@ -91,22 +105,8 @@
       "target_brand": "DEXZON",
       "target_url": "https://www.homepro.co.th/p/1174146",
       "expected_url": "https://www.homepro.co.th/p/1174146",
-      "confidence": 95,
-      "reason": "The candidate is a drywall screw from a preferred brand (DEXZON) with identical dimensions (6x1-1/4 inch) and a 100% SpecMatch.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 24,
-      "source_idx": 356,
-      "source_name": "ตะกร้าผ้าเหลี่ยมหวายเทียม Rattania KASSA HOME รุ่น ZY2726 ขนาด 36 x 36 x 40 ซม. สีน้ำตาล",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60375571",
-      "target_name": "ตะกร้าผ้าเหลี่ยม MONARCH 36x36x40 ซม. สีน้ำตาล",
-      "target_brand": "MONARCH",
-      "target_url": "https://www.homepro.co.th/p/1114713",
-      "expected_url": "https://www.homepro.co.th/p/1114713",
-      "confidence": 95,
-      "reason": "Candidate 0 is an exact product type and spec match with 100% SpecMatch, despite not being a preferred brand. Candidates 2-16 have significant spec or product type mismatches.",
+      "confidence": 100,
+      "reason": "Candidate 0 is a drywall screw from the preferred brand DEXZON with a 100% spec match, including identical dimensions and size.",
       "gt_status": "CORRECT"
     },
     {
@@ -120,7 +120,7 @@
       "target_url": "https://www.homepro.co.th/p/1184047",
       "expected_url": "https://www.homepro.co.th/p/1173626",
       "confidence": 90,
-      "reason": "The candidate is from a preferred brand (ME LIVING), has an 84% spec match, exact product type (cabinet), and very similar dimensions (70x50 vs 69x50) and number of tiers (3 layers).",
+      "reason": "The candidate is the same product type (cabinet), has a very high SpecMatch (84%), and is from a preferred brand (ME LIVING), with very similar dimensions (70x50 vs 69x50) and identical length (121CM) and number of tiers (3 tiers).",
       "gt_status": "INCORRECT"
     },
     {
@@ -134,22 +134,8 @@
       "target_url": "https://www.homepro.co.th/p/1243765",
       "expected_url": "https://www.homepro.co.th/p/1243765",
       "confidence": 95,
-      "reason": "The candidate is a preferred brand MATALL, has a 100% spec match on length and product type, making it a strong equivalent.",
+      "reason": "Candidate 0 is a measuring tape with the exact same length (8M) and is from a PREFERRED brand (MATALL), making it a 100% spec match.",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 24,
-      "source_idx": 359,
-      "source_name": "โซฟาผ้ารูปตัวแอล (ซ้าย) CALINA รุ่น โอบาม่า ขนาด 200 ซม. สีน้ำตาลเข้ม",
-      "source_brand": "CALINA",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60348594",
-      "target_name": "โซฟาเบด FURDINI FOSTER PVC สีน้ำตาล",
-      "target_brand": "FURDINI",
-      "target_url": "https://www.homepro.co.th/p/1250506",
-      "expected_url": "https://www.homepro.co.th/p/1245079",
-      "confidence": 60,
-      "reason": "The source is an l-shaped fabric sofa and candidate 34 is a sofa bed of a preferred brand (FURDINI), which is the closest type match among the candidates, despite the spec match being 0% due to differing specific specs.",
-      "gt_status": "INCORRECT"
     }
   ]
 }
