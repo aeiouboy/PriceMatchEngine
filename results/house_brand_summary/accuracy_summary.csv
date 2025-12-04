@@ -1,0 +1,5 @@
+Retailer,Chunks,Total Matches,Correct,Incorrect,GT Missing,Accuracy %,Target Met
+Boonthavorn,5,18,10,1,5,90.9,YES
+GlobalHouse,7,57,35,6,0,85.4,YES
+DoHome,23,160,108,19,13,85.0,YES
+HomePro,33,228,169,59,0,74.1,NO
