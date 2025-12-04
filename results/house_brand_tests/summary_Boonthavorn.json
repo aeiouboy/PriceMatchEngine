@@ -1,18 +1,20 @@
 {
   "retailer": "Boonthavorn",
-  "report_date": "2025-12-04 03:04:31",
-  "latest_sample_test": {
-    "test_date": "2025-12-03",
-    "correct_matches": 9,
-    "total_tested": 15,
-    "not_found": 34,
-    "accuracy_percentage": 60.0
+  "report_date": "2025-12-04 03:12:54",
+  "chunked_tests": {
+    "total_chunks": 3,
+    "correct_matches": 5,
+    "total_tested": 19,
+    "accuracy_percentage": 26.3
   },
-  "full_aggregated_test": {
+  "house_brand_tests": {
     "files_analyzed": 17,
     "correct_matches": 130,
-    "incorrect_matches": 209,
     "total_tested": 339,
-    "accuracy_percentage": 38.3
+    "accuracy_percentage": 38.3,
+    "best_file": {
+      "name": "house_brand_Boonthavorn_20251202_100526.json",
+      "accuracy": 75.8
+    }
   }
 }

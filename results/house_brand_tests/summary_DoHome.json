@@ -1,17 +1,49 @@
 {
   "retailer": "DoHome",
-  "report_date": "2025-12-04 03:04:31",
-  "latest_sample_test": {
-    "test_date": "2025-12-03",
-    "correct_matches": 7,
-    "total_tested": 11,
-    "not_found": 35,
-    "accuracy_percentage": 63.6
+  "report_date": "2025-12-04 03:12:54",
+  "chunked_tests": {
+    "total_chunks": 23,
+    "correct_matches": 111,
+    "total_tested": 167,
+    "accuracy_percentage": 66.5,
+    "high_accuracy_chunks": [
+      {
+        "chunk": 6,
+        "accuracy": 100.0
+      },
+      {
+        "chunk": 13,
+        "accuracy": 100.0
+      },
+      {
+        "chunk": 17,
+        "accuracy": 100.0
+      },
+      {
+        "chunk": 19,
+        "accuracy": 100.0
+      },
+      {
+        "chunk": 22,
+        "accuracy": 100.0
+      },
+      {
+        "chunk": 18,
+        "accuracy": 87.5
+      },
+      {
+        "chunk": 11,
+        "accuracy": 85.7
+      },
+      {
+        "chunk": 20,
+        "accuracy": 85.7
+      }
+    ]
   },
-  "full_aggregated_test": {
+  "house_brand_tests": {
     "files_analyzed": 10,
     "correct_matches": 157,
-    "incorrect_matches": 114,
     "total_tested": 271,
     "accuracy_percentage": 57.9
   }
