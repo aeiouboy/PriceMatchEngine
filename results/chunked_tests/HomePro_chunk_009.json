@@ -4,13 +4,27 @@
   "start_idx": 120,
   "end_idx": 135,
   "products_tested": 15,
-  "matches_found": 4,
+  "matches_found": 5,
   "correct": 3,
-  "incorrect": 1,
+  "incorrect": 2,
   "gt_missing": 0,
-  "accuracy": 75.0,
-  "timestamp": "2025-12-04T04:01:39.622322",
+  "accuracy": 60.0,
+  "timestamp": "2025-12-04T10:31:34.538838",
   "matches": [
+    {
+      "chunk": 9,
+      "source_idx": 120,
+      "source_name": "โคมไฟหัวเสาภายนอก E27x1 LUZINO RARE HOUSE รุ่น 0288-PF-B(BK) สีดำ",
+      "source_brand": "LUZINO",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60272336",
+      "target_name": "ไฟหัวเสา L&E BDR610/B สีขาว/ดำ",
+      "target_brand": "L&E",
+      "target_url": "https://www.homepro.co.th/p/151407",
+      "expected_url": "https://www.homepro.co.th/p/1032598",
+      "confidence": 80,
+      "reason": "The candidate is also a 'post lamp' and has the highest SpecMatch (40%) among candidates of the correct product type. It is also from a preferred brand (L&E).",
+      "gt_status": "INCORRECT"
+    },
     {
       "chunk": 9,
       "source_idx": 127,
@@ -22,7 +36,7 @@
       "target_url": "https://www.homepro.co.th/p/1173468",
       "expected_url": "https://www.homepro.co.th/p/1173468",
       "confidence": 95,
-      "reason": "Candidate 0 is the exact same product type (canvas, which is a type of plastic sheet) and has a 100% spec match, a preferred brand (SPRING), and a lower price.",
+      "reason": "Candidate 0 is the exact product type (canvas, which is a subtype of plastic sheet roll) with identical size specifications and is from the most preferred brand, SPRING.",
       "gt_status": "CORRECT"
     },
     {
@@ -35,8 +49,8 @@
       "target_brand": "ACCO",
       "target_url": "https://www.homepro.co.th/p/1016460",
       "expected_url": "https://www.homepro.co.th/p/1083202",
-      "confidence": 70,
-      "reason": "The candidate is the same product type and from the most preferred brand, but lacks specific length_cm match and overall spec match is low, suggesting an alternative due to brand preference.",
+      "confidence": 75,
+      "reason": "Candidate is the same product type and from a preferred brand (ACCO), but the length specification differs significantly (85cm vs 12 inches is roughly 30cm).",
       "gt_status": "INCORRECT"
     },
     {
@@ -50,7 +64,7 @@
       "target_url": "https://www.homepro.co.th/p/1170703",
       "expected_url": "https://www.homepro.co.th/p/1170703",
       "confidence": 70,
-      "reason": "The candidate has a 40% spec match, is the correct product type (wall lamp) and is from the highest preferred brand CARINI.",
+      "reason": "The candidate has the highest spec match percentage at 40%, is the exact product type (wall lamp), and is from the most preferred brand (CARINI).",
       "gt_status": "CORRECT"
     },
     {
@@ -64,7 +78,7 @@
       "target_url": "https://www.homepro.co.th/p/242081",
       "expected_url": "https://www.homepro.co.th/p/242081",
       "confidence": 95,
-      "reason": "The candidate is a trash can and perfectly matches the source's volume (9L). Although not a preferred brand, it has a 100% spec match.",
+      "reason": "The candidate is a 'trash can', which is synonymous with 'dustbin'. It has a 100% SpecMatch based on volume (9L) and is the closest functional equivalent despite a non-preferred brand.",
       "gt_status": "CORRECT"
     }
   ]

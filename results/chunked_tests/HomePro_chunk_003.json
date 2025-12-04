@@ -4,12 +4,12 @@
   "start_idx": 30,
   "end_idx": 45,
   "products_tested": 15,
-  "matches_found": 3,
-  "correct": 3,
+  "matches_found": 2,
+  "correct": 2,
   "incorrect": 0,
   "gt_missing": 0,
   "accuracy": 100.0,
-  "timestamp": "2025-12-04T03:56:20.093106",
+  "timestamp": "2025-12-04T10:25:09.964565",
   "matches": [
     {
       "chunk": 3,
@@ -21,8 +21,8 @@
       "target_brand": "ME LIVING",
       "target_url": "https://www.homepro.co.th/p/1248873",
       "expected_url": "https://www.homepro.co.th/p/1248873",
-      "confidence": 75,
-      "reason": "The candidate is also a 4-tier chest of drawers (wicker drawer cabinet is a close enough type) from a preferred brand, with a good spec match for the number of tiers, but the length does not match.",
+      "confidence": 65,
+      "reason": "The ME LIVING cabinet is the closest match, sharing the '4 tiers' spec and the 'wicker' identifier category (rattan) while being a 'storage cabinet' type. Its length of 110cm is considerably off compared to the 40cm of the source product, but no other candidate is a 'storage cabinet' type or has a better spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -36,21 +36,7 @@
       "target_url": "https://www.homepro.co.th/p/1147572",
       "expected_url": "https://www.homepro.co.th/p/1147572",
       "confidence": 90,
-      "reason": "The candidate has the exact same product type 'picnic stove' as the source, is from a preferred brand (AIKO), and has a 50% spec match.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 3,
-      "source_idx": 44,
-      "source_name": "เหล็กเพลทสี่เหลี่ยมหนา 6 มม. (เจาะรู 1.2ซม.) GIANT KINGKONG รุ่น HSD-1050-50 ขนาด 4 x 4 นิ้ว",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60315066",
-      "target_name": "แผ่นเหล็กเพลทเหลี่ยม (เจาะรู 3/8 นิ้ว) BIH 4X4X1/4 นิ้ว",
-      "target_brand": "BIH",
-      "target_url": "https://www.homepro.co.th/p/1144388",
-      "expected_url": "https://www.homepro.co.th/p/1144388",
-      "confidence": 75,
-      "reason": "Candidate 15 is a steel plate, matching the critical product type, and has similar dimensions to the source product, despite a lower SpecMatch% due to slight size discrepancy.",
+      "reason": "The candidate has the exact same product type (picnic stove) and a high SpecMatch of 50%, with AIKO being a preferred brand (ranked 4th).",
       "gt_status": "CORRECT"
     }
   ]

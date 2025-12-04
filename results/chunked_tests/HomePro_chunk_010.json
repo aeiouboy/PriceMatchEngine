@@ -4,12 +4,12 @@
   "start_idx": 135,
   "end_idx": 150,
   "products_tested": 15,
-  "matches_found": 9,
-  "correct": 8,
-  "incorrect": 1,
+  "matches_found": 7,
+  "correct": 7,
+  "incorrect": 0,
   "gt_missing": 0,
-  "accuracy": 88.88888888888889,
-  "timestamp": "2025-12-04T04:02:29.612847",
+  "accuracy": 100.0,
+  "timestamp": "2025-12-04T10:32:28.563069",
   "matches": [
     {
       "chunk": 10,
@@ -21,36 +21,8 @@
       "target_brand": "MATALL",
       "target_url": "https://www.homepro.co.th/p/1165718",
       "expected_url": "https://www.homepro.co.th/p/1165718",
-      "confidence": 85,
-      "reason": "Candidate 12 is a tool box, which matches the source product type. It also matches the size and model number, and is from a preferred brand (MATALL) with a high SpecMatch% (82%).",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 10,
-      "source_idx": 136,
-      "source_name": "บัวพื้นโพลีสไตรีน TIMELESS KASSA รุ่น 1041-E136 ขนาด 290 x 0.8 x 9 ซม. สีไม้พะยูง",
-      "source_brand": "KASSA",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60328506",
-      "target_name": "บัวพื้น PS CROBERN LD-3405 9x300x0.7 ซม. สีสัก",
-      "target_brand": "CROBERN",
-      "target_url": "https://www.homepro.co.th/p/1173437",
-      "expected_url": "https://www.homepro.co.th/p/1173517",
-      "confidence": 70,
-      "reason": "Candidate 0 is a skirting board from a preferred brand (CROBERN) and has some dimension overlap, though the length is quite different, making it the closest available option.",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 10,
-      "source_idx": 140,
-      "source_name": "ลูกกลิ้งทาสีขนขาวแถบเหลือง GIANT KINGKONG รุ่น HP 10YS ขนาด 10 นิ้ว สีขาว",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60304687",
-      "target_name": "ลูกกลิ้งทาสี MATALL R03 10 นิ้ว",
-      "target_brand": "MATALL",
-      "target_url": "https://www.homepro.co.th/p/1188969",
-      "expected_url": "https://www.homepro.co.th/p/1188969",
       "confidence": 95,
-      "reason": "Candidate 0 is a paint roller with the exact same size as the source and is from a preferred brand (MATALL) with 100% spec match.",
+      "reason": "Candidate 15 is a 'กล่องเครื่องมือ' (toolbox) which matches the product type 'plastic toolbox', has a high spec match of 82%, and is from the preferred brand MATALL.",
       "gt_status": "CORRECT"
     },
     {
@@ -64,7 +36,7 @@
       "target_url": "https://www.homepro.co.th/p/1150457",
       "expected_url": "https://www.homepro.co.th/p/1150457",
       "confidence": 95,
-      "reason": "The candidate is an exact product type match, matches the critical volume spec, and is from a preferred brand (ACCO) with 100% spec match.",
+      "reason": "Candidate 0 is a liquid hand soap with matching volume and is from a preferred brand ACCO, with 100% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -77,8 +49,8 @@
       "target_brand": "SPRING",
       "target_url": "https://www.homepro.co.th/p/1173622",
       "expected_url": "https://www.homepro.co.th/p/1173622",
-      "confidence": 90,
-      "reason": "Candidate 1 (canvas) is a very close spec match (82%) with the same size and is from a preferred brand (SPRING), which is acceptable given the slight product type difference (plastic tarp vs canvas).",
+      "confidence": 85,
+      "reason": "Candidate 1 (SPRING) is a preferred brand, has the exact same size (52 inch x 25 หลา), and is an equivalent product type (canvas cloth, which is a type of tarp/fabric), making it the closest match despite a slight product type difference from 'plastic tarp'.",
       "gt_status": "CORRECT"
     },
     {
@@ -91,8 +63,8 @@
       "target_brand": "ELECKTA",
       "target_url": "https://www.homepro.co.th/p/1217572",
       "expected_url": "https://www.homepro.co.th/p/1217572",
-      "confidence": 70,
-      "reason": "The product types match exactly (wall socket vs dual socket), and ELECKTA is a preferred brand.",
+      "confidence": 60,
+      "reason": "Candidate 0 is a preferred brand (ELECKTA) and the product type 'double socket' is considered a suitable equivalent for 'power outlet', with a 50% spec match.",
       "gt_status": "CORRECT"
     },
     {
@@ -106,7 +78,7 @@
       "target_url": "https://www.homepro.co.th/p/1084528",
       "expected_url": "https://www.homepro.co.th/p/1084528",
       "confidence": 95,
-      "reason": "Highest spec match (100%) and correct product type ('tape measure') from a preferred brand (MATALL, PREFERRED#1).",
+      "reason": "The candidate is a MATALL tape measure with identical length specs (5M) and is from a preferred brand (MATALL, PREFERRED#1), matching the source product type.",
       "gt_status": "CORRECT"
     },
     {
@@ -119,8 +91,8 @@
       "target_brand": "DEXZON",
       "target_url": "https://www.homepro.co.th/p/1178949",
       "expected_url": "https://www.homepro.co.th/p/1178949",
-      "confidence": 100,
-      "reason": "The product types are a perfect match (glue gun vs silicone gun, which are functionally identical) and the key specification of size_inch=9 inch is identical. DEXZON is also the highest preferred brand.",
+      "confidence": 95,
+      "reason": "The candidate is a DEXZON brand (preferred), has the same product type (silicone gun, which is equivalent to glue gun), and matches the critical 'size_inch' spec at 9 inches.",
       "gt_status": "CORRECT"
     },
     {
@@ -134,7 +106,7 @@
       "target_url": "https://www.homepro.co.th/p/1123665",
       "expected_url": "https://www.homepro.co.th/p/1123665",
       "confidence": 95,
-      "reason": "The candidate is the same product type (drain cleaning spring) and shares the exact length spec with the source, and its brand is a preferred one.",
+      "reason": "The candidate has the exact same product type (drain unblocker/pipe auger) and length, and is a preferred brand (HACHI).",
       "gt_status": "CORRECT"
     }
   ]

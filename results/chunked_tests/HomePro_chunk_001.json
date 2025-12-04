@@ -4,27 +4,13 @@
   "start_idx": 0,
   "end_idx": 15,
   "products_tested": 15,
-  "matches_found": 8,
+  "matches_found": 7,
   "correct": 5,
-  "incorrect": 3,
+  "incorrect": 2,
   "gt_missing": 0,
-  "accuracy": 62.5,
-  "timestamp": "2025-12-04T03:54:42.115884",
+  "accuracy": 71.42857142857143,
+  "timestamp": "2025-12-04T10:23:21.243434",
   "matches": [
-    {
-      "chunk": 1,
-      "source_idx": 1,
-      "source_name": "แปรงทาสีขนสัตว์ ด้ามพลาสติก GIANT KINGKONG รุ่น BPB08 ขนาด 4 นิ้ว สีน้ำตาล",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60342251",
-      "target_name": "แปรงทาสีน้ำมัน FONKEY 4 นิ้ว",
-      "target_brand": "FONKEY",
-      "target_url": "https://www.homepro.co.th/p/1158356",
-      "expected_url": "https://www.homepro.co.th/p/1158356",
-      "confidence": 90,
-      "reason": "The candidate is a paint brush of the same size (4 inch) and type as the source product, making it the best functional equivalent despite brand difference.",
-      "gt_status": "CORRECT"
-    },
     {
       "chunk": 1,
       "source_idx": 2,
@@ -36,7 +22,7 @@
       "target_url": "https://www.homepro.co.th/p/1236064",
       "expected_url": "https://www.homepro.co.th/p/1236064",
       "confidence": 75,
-      "reason": "The candidate OZZIE H100 is a bluetooth speaker, matching the source product type, and OZZIE is a preferred brand.",
+      "reason": "Candidate 29 is the only other bluetooth speaker, and OZZIE is a preferred brand.",
       "gt_status": "CORRECT"
     },
     {
@@ -50,7 +36,7 @@
       "target_url": "https://www.homepro.co.th/p/1167119",
       "expected_url": "https://www.homepro.co.th/p/1167119",
       "confidence": 95,
-      "reason": "The candidate is a preferred brand (MATALL) and has the exact same product type (putty knife, which is a common term for steel trowel in English) and size_inch specification as the source product.",
+      "reason": "The candidate is the same product type (putty knife), has the same size (1 inch), and is a preferred brand (MATALL) with a perfect spec match for the available specs.",
       "gt_status": "CORRECT"
     },
     {
@@ -64,7 +50,7 @@
       "target_url": "https://www.homepro.co.th/p/1181393",
       "expected_url": "https://www.homepro.co.th/p/1181393",
       "confidence": 95,
-      "reason": "Candidate 0 is a paint roller of the same size (10 inch) and roller type (FULL) as the source, and is from a preferred brand (MATALL, #2).",
+      "reason": "Candidate 0 is a paint roller with 100% spec match (size and full roller type), and MATALL is a preferred brand (ranked #2).",
       "gt_status": "CORRECT"
     },
     {
@@ -73,12 +59,12 @@
       "source_name": "โคมไฟหัวเสาภายนอก E27x1 LUZINO รุ่น IMAGINI RH1106A4(BK) สีดำ",
       "source_brand": "LUZINO",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60262131",
-      "target_name": "ไฟหัวเสา CARINI 5018S/N สีดำ",
-      "target_brand": "CARINI",
-      "target_url": "https://www.homepro.co.th/p/1074150",
+      "target_name": "ไฟหัวเสา L&E BDR610/B สีขาว/ดำ",
+      "target_brand": "L&E",
+      "target_url": "https://www.homepro.co.th/p/151407",
       "expected_url": "https://www.homepro.co.th/p/1003945",
-      "confidence": 75,
-      "reason": "The candidate ไฟหัวเสา CARINI 5018S/N สีดำ is a post lamp, matching the critical product type, and is from a preferred brand (CARINI). Although its SpecMatch (40%) is below the ideal threshold, it is the only candidate that matches the product type and is from a preferred brand, making it the best available option.",
+      "confidence": 85,
+      "reason": "Candidate 0 is a 'post lamp' which matches the source product type, has identical high SpecMatch for 'lamp_type=POLE_LAMP', and is from a preferred brand (L&E).",
       "gt_status": "INCORRECT"
     },
     {
@@ -91,8 +77,8 @@
       "target_brand": "MAKITA",
       "target_url": "https://www.homepro.co.th/p/1162943",
       "expected_url": "https://www.homepro.co.th/p/1177335",
-      "confidence": 95,
-      "reason": "The candidate is the same product type (electric drill) and has identical wattage (350W) as the source product, resulting in a 100% spec match.",
+      "confidence": 75,
+      "reason": "The candidate is an electric drill with the same wattage (350W) as the source, making it a strong functional match despite a different brand.",
       "gt_status": "INCORRECT"
     },
     {
@@ -101,13 +87,13 @@
       "source_name": "วงกบประตู WPC KASSA รุ่น 100T-O2 ขนาด 80 x 200 ซม. สีออริจินอล",
       "source_brand": "KASSA",
       "source_url": "https://www.thaiwatsadu.com/th/sku/60297313",
-      "target_name": "วงกบประตูไม้สังเคราะห์ WPC ECO-DOOR 80x200 ซม. สีโอ๊ค",
+      "target_name": "วงกบประตูไม้สังเคราะห์ WPC ECO-DOOR 80x200 ซม.",
       "target_brand": "ECO-DOOR",
-      "target_url": "https://www.homepro.co.th/p/1110489",
+      "target_url": "https://www.homepro.co.th/p/1083200",
       "expected_url": "https://www.homepro.co.th/p/1083200",
       "confidence": 95,
-      "reason": "The candidate has a 100% spec match, exact product type match, and is a strong alternative, although not a preferred brand.",
-      "gt_status": "INCORRECT"
+      "reason": "The candidate is a door frame, matching the source product type, and has 100% spec match including dimensions and WPC material, with a brand ranked #10 in preferred order.",
+      "gt_status": "CORRECT"
     },
     {
       "chunk": 1,
@@ -119,8 +105,8 @@
       "target_brand": "ELEKTRA",
       "target_url": "https://www.homepro.co.th/p/1092055",
       "expected_url": "https://www.homepro.co.th/p/1092055",
-      "confidence": 70,
-      "reason": "The candidate is the same product type (cable tie), matches the critical size and pack count, and has a good SpecMatch percentage. Although it's not a preferred brand, it's the closest equivalent.",
+      "confidence": 75,
+      "reason": "The candidate is the correct product type (cable tie), matches the size and pack count, and has a good SpecMatch percentage. While not a preferred brand, it's the best available option combining type and spec matching.",
       "gt_status": "CORRECT"
     }
   ]

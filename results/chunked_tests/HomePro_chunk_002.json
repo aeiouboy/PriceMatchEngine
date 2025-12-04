@@ -4,12 +4,12 @@
   "start_idx": 15,
   "end_idx": 30,
   "products_tested": 15,
-  "matches_found": 7,
-  "correct": 6,
+  "matches_found": 5,
+  "correct": 4,
   "incorrect": 1,
   "gt_missing": 0,
-  "accuracy": 85.71428571428571,
-  "timestamp": "2025-12-04T03:55:32.137956",
+  "accuracy": 80.0,
+  "timestamp": "2025-12-04T10:24:15.944320",
   "matches": [
     {
       "chunk": 2,
@@ -22,7 +22,7 @@
       "target_url": "https://www.homepro.co.th/p/1154473",
       "expected_url": "https://www.homepro.co.th/p/1154473",
       "confidence": 100,
-      "reason": "Candidate 0 is the exact product type 'trash can' and has a 100% spec match for volume, making it an equivalent product. While an ACCO brand, the specs are identical.",
+      "reason": "Candidate 0 is an exact product type match and has 100% spec match for volume, making it an equivalent product.",
       "gt_status": "CORRECT"
     },
     {
@@ -36,7 +36,7 @@
       "target_url": "https://www.homepro.co.th/p/1184261",
       "expected_url": "https://www.homepro.co.th/p/1184261",
       "confidence": 70,
-      "reason": "The candidate has a matching product type ('drain cleaner powder') and a brand (ACCO) that is on the preferred list, though lower in rank. It also has a 50% spec match.",
+      "reason": "Candidate 8 and 9 are the only options that are also 'drain cleaner powder', and ACCO is a preferred brand (PREFERRED#4). Both have 50% SpecMatch based on identifiers.",
       "gt_status": "CORRECT"
     },
     {
@@ -50,21 +50,7 @@
       "target_url": "https://www.homepro.co.th/p/1154102",
       "expected_url": "https://www.homepro.co.th/p/1154102",
       "confidence": 90,
-      "reason": "The candidate has the highest SpecMatch%, exactly matches the product type and preferred brand (MATALL) while matching the critical 4-inch size.",
-      "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 2,
-      "source_idx": 19,
-      "source_name": "กล่องอเนกประสงค์พร้อมล้อและฝาล็อก KASSA HOME รุ่น API-2006 ขนาด 42 ลิตร สีเทา",
-      "source_brand": "KASSA HOME",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60322051",
-      "target_name": "กล่องเก็บของ มีล้อ ฝาล็อค STACKO 2000 42 ลิตร สีขาว",
-      "target_brand": "STACKO",
-      "target_url": "https://www.homepro.co.th/p/195587",
-      "expected_url": "https://www.homepro.co.th/p/195587",
-      "confidence": 100,
-      "reason": "The candidate is a storage box with the exact same volume (42 L) and is from the highest preferred brand (STACKO, PREFERRED#1).",
+      "reason": "The candidate is a metal cutting disc, matches the critical product type, has the exact size (4 inch), and is from the preferred brand MATALL.",
       "gt_status": "CORRECT"
     },
     {
@@ -77,23 +63,9 @@
       "target_brand": "STACKO",
       "target_url": "https://www.homepro.co.th/p/1102019",
       "expected_url": "https://www.homepro.co.th/p/1117329",
-      "confidence": 60,
-      "reason": "Candidate 0 is a preferred brand (STACKO) and has the highest spec match at 50% with matching product type (drawer cabinet, a subtype of cabinet) and tier count, although dimensions are not a perfect match.",
-      "gt_status": "INCORRECT"
-    },
-    {
-      "chunk": 2,
-      "source_idx": 23,
-      "source_name": "ชุดเครื่องมือช่างอเนกประสงค์ GIANT KINGKONG PRO รุ่น KKP3991M (54 ชิ้น) สีน้ำเงิน - เทา",
-      "source_brand": "GIANT KINGKONG PRO",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60293221",
-      "target_name": "ชุดเครื่องมือช่าง MATALL 53 ชิ้น/ชุด",
-      "target_brand": "MATALL",
-      "target_url": "https://www.homepro.co.th/p/1163258",
-      "expected_url": "https://www.homepro.co.th/p/1163258",
       "confidence": 75,
-      "reason": "The candidate is a preferred brand (MATALL) and has the highest spec match at 35%, with a similar 'pack_count' and matching product type 'tool kit'.",
-      "gt_status": "CORRECT"
+      "reason": "The candidate is a preferred brand (STACKO), has the correct number of tiers (4), and a similar product type (chest of drawers vs storage cabinet). Dimensions are a bit smaller but within an acceptable range for a functional equivalent.",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 2,
@@ -106,7 +78,7 @@
       "target_url": "https://www.homepro.co.th/p/1098200",
       "expected_url": "https://www.homepro.co.th/p/1098200",
       "confidence": 85,
-      "reason": "Highest preferred brand with closest spec match, including product type and number of tiers.",
+      "reason": "The candidate is a STACKO (preferred brand) shelving unit with 3 tiers and very similar dimensions (46x39.5 vs 46x38, and 87cm length vs 86cm).",
       "gt_status": "CORRECT"
     }
   ]

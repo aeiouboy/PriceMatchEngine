@@ -4,12 +4,12 @@
   "start_idx": 105,
   "end_idx": 120,
   "products_tested": 15,
-  "matches_found": 5,
-  "correct": 4,
+  "matches_found": 6,
+  "correct": 5,
   "incorrect": 1,
   "gt_missing": 0,
-  "accuracy": 80.0,
-  "timestamp": "2025-12-04T04:00:37.364713",
+  "accuracy": 83.33333333333334,
+  "timestamp": "2025-12-04T10:30:42.195412",
   "matches": [
     {
       "chunk": 8,
@@ -22,8 +22,22 @@
       "target_url": "https://www.homepro.co.th/p/1167129",
       "expected_url": "https://www.homepro.co.th/p/1167129",
       "confidence": 100,
-      "reason": "The candidate is a putty knife (same product type as steel trowel) with the exact same size (2.5 inch) and is from the most preferred brand (MATALL).",
+      "reason": "Candidate 0 is the exact product type, has the same size (2.5 inch), and is from the highest preferred brand (MATALL).",
       "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 8,
+      "source_idx": 109,
+      "source_name": "ราวแขวนตั้งพื้น 9 เส้น 1.7 ม. เหล็ก KASSA HOME สีดำเกล็ดเงิน",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60277209",
+      "target_name": "ราวตากผ้าเหล็กมีล้อ 8 เส้น PLIM 1.5 ม. สีขาว",
+      "target_brand": "PLIM",
+      "target_url": "https://www.homepro.co.th/p/1133475",
+      "expected_url": "https://www.homepro.co.th/p/1143084",
+      "confidence": 75,
+      "reason": "The candidate is a clothes drying rack with a similar length and number of lines, and it's from a preferred brand (PLIM).",
+      "gt_status": "INCORRECT"
     },
     {
       "chunk": 8,
@@ -35,8 +49,22 @@
       "target_brand": "SPRING",
       "target_url": "https://www.homepro.co.th/p/1182198",
       "expected_url": "https://www.homepro.co.th/p/1182198",
-      "confidence": 75,
-      "reason": "The candidate has the exact same product type (folding table) and is from a preferred brand (SPRING#1). Although the SpecMatch is 0%, the product name 'โต๊ะอเนกประสงค์พับครึ่ง 3 ระดับ SPRING 120 ซม. สีเทา' strongly suggests it is a folding table with 3 height adjustments and a length of 120 cm, similar to the source which has 'ขาปรับได้ 3 ระดับ' and 'ขนาด 120 x 60 x 90 ซม.' (length is 120 or 90 depending on interpretation, but 120 cm matches the spring item better).",
+      "confidence": 70,
+      "reason": "Candidate is a folding table from a preferred brand (SPRING) with matching product type, although the spec match is low, other candidates are of completely different product types.",
+      "gt_status": "CORRECT"
+    },
+    {
+      "chunk": 8,
+      "source_idx": 114,
+      "source_name": "ราวแขวนตั้งพื้น 4 เส้น 0.8 ม. ยางพารา KASSA HOME ขนาด 35 x 90 x 80 ซม. สีธรรมชาติ",
+      "source_brand": "KASSA HOME",
+      "source_url": "https://www.thaiwatsadu.com/th/sku/60277210",
+      "target_name": "ราวพาดผ้าไม้ยางพารา4เส้น MINI สีธรรมชาติ PLIM",
+      "target_brand": "PLIM",
+      "target_url": "https://www.homepro.co.th/p/1159460",
+      "expected_url": "https://www.homepro.co.th/p/1159460",
+      "confidence": 70,
+      "reason": "The candidate is also a clothes rack type product (towel rack is very similar), has 4 lines like the source, and is from a preferred brand (PLIM).",
       "gt_status": "CORRECT"
     },
     {
@@ -50,7 +78,7 @@
       "target_url": "https://www.homepro.co.th/p/1193332",
       "expected_url": "https://www.homepro.co.th/p/1193332",
       "confidence": 95,
-      "reason": "Candidate 8 (PACK IN) is a foam sheet, matching the critical product type, and has the highest spec match percentage at 46% among all foam sheet candidates, while also being a preferred brand (PACK IN).",
+      "reason": "Candidate 8 is the only 'foam sheet' product type and has a matching size_inch and similar length_cm, with a preferred brand PACK IN.",
       "gt_status": "CORRECT"
     },
     {
@@ -64,22 +92,8 @@
       "target_url": "https://www.homepro.co.th/p/1229396",
       "expected_url": "https://www.homepro.co.th/p/1229396",
       "confidence": 100,
-      "reason": "Candidate 0 is an earth drill bit with matching size, has a preferred brand (EUROX), and 100% spec match.",
+      "reason": "Candidate is the exact same product type 'earth drill bit' and matches the critical 'size_inch' spec (6 inch) perfectly. It is also from a preferred brand (EUROX, PREFERRED#2).",
       "gt_status": "CORRECT"
-    },
-    {
-      "chunk": 8,
-      "source_idx": 119,
-      "source_name": "บานพับประตูผีเสื้อสเตนเลส201 4แหวน2ลูกปืน GIANT KINGKONG รุ่น 4325 ขนาด4x3นิ้ว หนา2.2มม. (แพ็ก3ชิ้น)",
-      "source_brand": "GIANT KINGKONG",
-      "source_url": "https://www.thaiwatsadu.com/th/sku/60365797",
-      "target_name": "บานพับ 4x3 นิ้ว x 2.2 มม. ISON SM4325 ไม่เซาะร่อง สีสเตนเลส (แพ็ก 3 ชิ้น)",
-      "target_brand": "ISON",
-      "target_url": "https://www.homepro.co.th/p/286157",
-      "expected_url": "https://www.homepro.co.th/p/1228500",
-      "confidence": 95,
-      "reason": "The candidate has a 100% spec match, including the critical thickness of 2.2mm, and is a door hinge, matching all key attributes of the source product.",
-      "gt_status": "INCORRECT"
     }
   ]
 }
