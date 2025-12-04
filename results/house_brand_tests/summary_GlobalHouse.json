@@ -1,0 +1,18 @@
+{
+  "retailer": "GlobalHouse",
+  "report_date": "2025-12-04 03:04:31",
+  "latest_sample_test": {
+    "test_date": "2025-12-03",
+    "correct_matches": 15,
+    "total_tested": 17,
+    "not_found": 25,
+    "accuracy_percentage": 88.2
+  },
+  "full_aggregated_test": {
+    "files_analyzed": 6,
+    "correct_matches": 110,
+    "incorrect_matches": 63,
+    "total_tested": 173,
+    "accuracy_percentage": 63.6
+  }
+}

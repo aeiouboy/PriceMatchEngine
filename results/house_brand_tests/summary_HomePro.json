@@ -1,0 +1,18 @@
+{
+  "retailer": "HomePro",
+  "report_date": "2025-12-04 03:04:31",
+  "latest_sample_test": {
+    "test_date": "2025-12-03",
+    "correct_matches": 16,
+    "total_tested": 20,
+    "not_found": 30,
+    "accuracy_percentage": 80.0
+  },
+  "full_aggregated_test": {
+    "files_analyzed": 25,
+    "correct_matches": 265,
+    "incorrect_matches": 143,
+    "total_tested": 408,
+    "accuracy_percentage": 65.0
+  }
+}
